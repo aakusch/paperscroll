@@ -634,7 +634,7 @@ function AgentSheet({ frame }: { frame: number }) {
           <br />
           If-None-Match: &quot;previous-etag&quot;
           <br />
-          <span style={{ fontFamily: agentSans, color: "#4a4a46" }}>200 · schema 1.0 · complete 10 · process delivery.key once</span>
+          <span style={{ fontFamily: agentSans, color: "#4a4a46" }}>200 · schema 1.1 · complete 10 · process delivery.key once</span>
         </div>
         <Interactive.Div
           name="Place"

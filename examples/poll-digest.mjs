@@ -81,7 +81,7 @@ async function writeState(path, value) {
 function assertDigest(value) {
   if (
     value?.schema !== "paperscroll.digest" ||
-    value?.schemaVersion !== "1.0" ||
+    value?.schemaVersion !== "1.1" ||
     value?.board?.complete !== true ||
     value?.board?.count !== 10 ||
     !Array.isArray(value?.papers) ||

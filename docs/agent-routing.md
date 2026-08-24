@@ -55,7 +55,7 @@ desk context, safe links, and structured host packets:
 ```json
 {
   "schema": "paperscroll.digest",
-  "schemaVersion": "1.0",
+  "schemaVersion": "1.1",
   "board": {
     "id": "2026-08-24",
     "version": "sha256-…",
@@ -81,9 +81,11 @@ desk context, safe links, and structured host packets:
 }
 ```
 
-Raw authors' abstracts are never part of this payload. Automated packets are
-bounded by the supplied title and abstract and say so in their metadata; they
-are not represented as full-PDF reads.
+Raw authors' abstracts are never part of this payload. Read
+`board.packetBasis` and each packet's `automation.basis`: unattended packets
+declare `title-and-abstract`, while a deliberately repaired complete batch may
+declare `full-paper` only after every source was reviewed. Neither is a reason
+to invent details absent from the packet.
 
 ## Runnable example
 

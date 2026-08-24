@@ -49,7 +49,9 @@ export function HostBrief({ paper }: { paper: Paper }) {
           <section className="block brief-block">
           {paper.automation ? (
             <p className="packet-basis">
-              PaperScroll packet · generated from the authors’ title and abstract, not the PDF
+              {paper.automation.packetBasis === "full-paper"
+                ? "PaperScroll packet · reviewed against the full paper"
+                : "PaperScroll packet · generated from the authors’ title and abstract, not the PDF"}
             </p>
           ) : null}
           <div className="host-head">

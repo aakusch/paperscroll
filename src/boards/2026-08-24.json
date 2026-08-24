@@ -6,9 +6,9 @@
   "live": true,
   "selection": {
     "version": "balanced-source-v1",
-    "generatedAt": "2026-08-24T16:30:00.000Z",
-    "model": "codex-backfill",
-    "packetBasis": "title-and-abstract"
+    "generatedAt": "2026-08-24T19:10:11.000Z",
+    "model": "codex-full-paper-review",
+    "packetBasis": "full-paper"
   },
   "papers": [
     {
@@ -17,29 +17,29 @@
       "url": "https://arxiv.org/abs/2608.20910",
       "topic": "AI",
       "verdict": "Try",
-      "verdictWhy": "The listing pairs a concrete streaming-edit architecture with declared code, though its experiment details still need checking.",
+      "verdictWhy": "The adapter leads the authors' three-round benchmark and ships code, but “infinite” rests on a short quantitative chain and one qualitative 1,000-frame case.",
       "title": "InfinityEdit: Infinite Video Editing with a Lightweight Edit-Ignition Adapter",
       "authors": "Yunze Tong, Mushui Liu, Canyu Zhao, Shiyi Zhang, Didi Zhu, Peng Zhang, Wanggui He, Jinlong Liu, Ying Chen, Hao Jiang, Pipei Huang, Bo Zheng",
-      "takeaway": "InfinityEdit adds a lightweight adapter to a streaming video generator so edit requests can affect future chunks without ending the stream.",
-      "brief": "The authors define infinite video editing as repeatedly continuing an open-ended video stream while applying new edit requests, and propose InfinityEdit as a lightweight adapter for that setting.\n\nThe adapter combines history cross-attention, temporal causal self-attention, and edit cross-attention, then activates only for the chunk receiving a request before resetting an anchor frame. The abstract says experiments show faithful continuation and stability over unbounded edit sequences, but gives no dataset, comparison, or numerical result.\n\nOpen this if you work on streaming generation or instruction-based video editing and can inspect long-run stability in the paper and repository. Ignore it if your problem is fixed-length, frame-aligned editing.",
+      "takeaway": "InfinityEdit injects an edit into only the first new chunk, then lets a frozen streaming generator carry that change forward through an updated history window and anchor.",
+      "brief": "InfinityEdit turns editing into forward continuation rather than rewriting an existing clip: a trainable adapter adds history, causal-temporal, and instruction cross-attention around a frozen 14B Helios-Distilled backbone, runs for the first chunk after each request, then hands later chunks back to the backbone.\n\nOn the authors' 200-video out-of-distribution benchmark, each sample receives three edits of four chunks each. InfinityEdit scores 0.7654 on directional camera motion versus 0.5494 for the next-best baseline, 3.828 versus 3.303 on Gemini-judged edit faithfulness, and a 0.023 faithfulness standard deviation across the three rounds. Those comparisons mix in-place editors and prompt-switching generators that do not solve exactly the same task; the main quality judgments are reference-free metrics and one VLM judge, the quantitative chain stops after three edits, and the sole >1,000-frame result is qualitative. The paper also provides no ablation, adapter parameter count, training-set size, or the promised appendix of training hyperparameters.\n\nOpen it if you build streaming video generation and can test persistence, boundary quality, and cost on your own footage. Ignore it for ordinary finished-clip editing, or if “unbounded” operation must already be demonstrated under long, diverse edit sequences.",
       "abstract": "With large pretrained models, existing methods have effectively improved instruction-based video editing. However, most of them rely on an in-place editing assumption. They align the edited video with the given source clip frame by frame over a fixed time span. This pattern fails for open-ended streams, e.g., restyling a live game or applying a camera move to an ongoing shot. In such cases, edits must extend to future frames as they arrive, rather than be applied to a static input clip. In this paper, we study this setting and name it infinite video editing: given a preceding segment and an edit request, a model must generate the next segment that continues the stream while applying the requested edit. This process repeats as an unbounded sequence of edit instructions arrives. This task brings two challenges: the edit must be a faithful continuation rather than a frame-wise rewrite, and generation quality must remain stable as edits accumulate. To address them, we first design a data-collection pipeline for infinite video editing. Based on the collected data, we propose InfinityEdit, a lightweight edit adapter that equips a streaming video generator with unbounded editing ability. The adapter contains three attention modules. History cross-attention guides the denoising frames using the input frames. Temporal causal self-attention keeps temporal cues flowing only from earlier frames to later ones. Edit cross-attention injects the edit request into generation. During inference, the adapter is activated only in the chunk where an edit request arrives. Subsequent chunks are generated by the original model with a reset anchor frame. This scheme applies the edit while preserving the original model's infinite generation ability. Extensive experiments show that InfinityEdit faithfully continues the stream under each edit, and stays stable over unbounded edit sequences.",
       "takeaways": [
-        "Object: a three-attention-module adapter that applies requests while a video generator continues producing chunks.",
-        "Visible limit: the listing claims faithful, stable unbounded editing but supplies no quantitative result or evaluation setup.",
-        "Artifact: a GitHub repository is declared in the nomination, so the implementation can be inspected rather than inferred."
+        "Object: a three-attention edit-ignition adapter that modifies one new chunk while a frozen streaming backbone carries the edit forward.",
+        "Limit: quantitative evidence covers three edits; the long-run claim is supported by one qualitative sequence, and abrupt edit boundaries remain an acknowledged failure mode.",
+        "Artifact: the paper links a live project page and Apache-2.0 repository with training and inference code, but the public workflow still requires an external backbone, prepared training data, and an adapter checkpoint."
       ],
       "plain": {
-        "verdictWhy": "Worth a look because it tackles edits to video that keeps arriving and provides code, but the performance claim is not quantified here.",
-        "brief": "Most video editors assume the whole clip already exists. This paper instead asks a model to keep extending a live video while new editing instructions arrive.\n\nIts small add-on uses earlier frames, enforces forward-only timing, and injects the latest request. The abstract says the result remains faithful and stable through repeated edits, but does not show the measurements behind that claim.\n\nOpen it if you need to restyle or redirect an ongoing stream. Skip it if ordinary editing of a finished clip is your concern.",
+        "verdictWhy": "Worth testing for live video edits because it beats the paper's baselines and has code, but it has not proved unlimited stable editing.",
+        "brief": "Most video editors rewrite frames that already exist. InfinityEdit instead makes the next part of a video, applies the newest instruction there, and then lets the original generator continue from that edited result.\n\nAcross 200 source videos and three edits per video, it scored best on the paper's camera-control, AI-judge, and repeated-edit tests. The test lasts only three edit rounds, however; the more-than-1,000-frame example is visual rather than measured, and the paper does not provide human evaluation, component ablations, or complete training details.\n\nOpen it if you need an edit to persist into future video. Skip it if you only edit completed clips or need evidence that quality survives many more instructions and hard scene changes.",
         "takeaways": [
-          "The object is a small add-on for applying edits to a video stream as it continues.",
-          "The main uncertainty is how long and under what tests the reported stability holds.",
-          "The authors provide a code repository for direct inspection."
+          "The object is an add-on that applies an instruction to the next video chunk and lets that result continue.",
+          "The main limit is that “infinite” is tested quantitatively for only three edits, with abrupt transitions still possible.",
+          "The authors provide runnable training and inference code plus a project page, but not a turnkey model-and-data package."
         ]
       },
       "actions": [
-        "Read the evaluation section to identify sequence lengths, baselines, datasets, and the measurements behind the stability claim.",
-        "Inspect the declared repository and test whether repeated edits accumulate visible drift on a representative stream."
+        "Inspect Tables 1–3 and Figures 4–7, separating the three-round measured evidence from the single long qualitative example.",
+        "Run the repository on one representative stream for far more than three edits, logging identity drift, edit-boundary discontinuity, latency, and memory rather than judging a highlight reel."
       ],
       "intake": "HF Daily",
       "github": "https://github.com/YunzeTong/InfinityEdit",
@@ -67,9 +67,19 @@
           "sourceCount": 1,
           "publishedOn": "2026-08-21"
         },
-        "packetBasis": "title-and-abstract",
-        "model": "codex-backfill",
-        "generatedAt": "2026-08-24T16:30:00.000Z"
+        "packetBasis": "full-paper",
+        "model": "codex-full-paper-review",
+        "generatedAt": "2026-08-24T19:10:11.000Z"
+      },
+      "review": {
+        "basis": "full-paper",
+        "reviewedAt": "2026-08-24T19:10:11.000Z",
+        "sourceUrl": "https://arxiv.org/pdf/2608.20910",
+        "evidence": [
+          "Sections 5–6 and Tables 1–3: adapter design, 200-source benchmark, three-edit protocol, and measured quality results.",
+          "Figures 4–7 and Section 8: three-round stability, the single qualitative 1,000-frame sequence, and abrupt-transition limitation.",
+          "Appendix and artifact review: no ablation, adapter size, retained training-set size, or complete training-hyperparameter appendix."
+        ]
       }
     },
     {
@@ -78,29 +88,29 @@
       "url": "https://arxiv.org/abs/2608.21156",
       "topic": "AI",
       "verdict": "Watch",
-      "verdictWhy": "This is a broad organizing survey with a useful declared collection, but the abstract establishes a taxonomy rather than evidence that the paradigm works.",
+      "verdictWhy": "This is a high-coverage taxonomy and resource map, not evidence that graph-shaped orchestration is causally better.",
       "title": "Graph Engineering in the Era of LLM Agents: From Individual Intelligence to System Intelligence",
       "authors": "Yuyuan Feng, Zhishang Xiang, Chaobin Yang, Qichao Ma, Zerui Chen, Yujing Zhang, Ke Huang, Chuanjie Wu, Zhaoxu Liu, Yili Wang, Xin He, Jiapu Wang, Zijin Hong, Hao Chen, Yuanchen Bei, Kun Wang, Shengyuan Chen, Ningyu Zhang, Enyan Dai, Linhao Luo, Qingyi Pan, Qi Wang, Wenqi Fan, Guangjing Wang, Na Zou, Yangqiu Song, Xin Wang, Zechao Li, Xia Hu, Qing Li, Xiao Huang, Zhihong Zhang, Jinsong Su, Qinggang Zhang, Yi Chang",
-      "takeaway": "The paper proposes Graph Engineering as a systems-level framework for organizing tasks, agents, and evolving execution state in multi-agent systems.",
-      "brief": "The authors argue that individual agents cannot organize work requiring heterogeneous expertise, dependent subtasks, parallel execution, verification, and persistent state, and name the systems-level alternative Graph Engineering.\n\nTheir proposed abstraction uses explicit, dynamic graphs for tasks, agents, and system states, and the paper systematically reviews principles, methods, and applications. The listing does not report a controlled comparison or evidence that graph organization outperforms other orchestration structures.\n\nOpen this for a map of multi-agent system design and its associated paper-and-project collection. Treat it as a survey and vocabulary proposal, not a validated recipe for improving an agent system.",
+      "takeaway": "The survey treats task dependencies, agent roles, and runtime state as coupled graph views, with execution evidence feeding governed structural evolution.",
+      "brief": "The authors define system intelligence as organizing work, heterogeneous agents, and persistent execution state rather than merely adding agents. Their “Graph Engineering” frame couples task graphs, agent and capability graphs, and runtime-state graphs, then adds system evolution and shared ontology as the mechanisms for retaining and governing structural change.\n\nThe paper is a broad map: it groups methods, benchmarks, libraries, and applications across model, individual, and system intelligence, and Table 4 compares its coverage with ten neighboring surveys. Its strongest finding is also a restraint: deployed systems commonly expose work, team, and state structures, while persistent cross-run structural evolution remains rare. The paper discloses no literature-search query, database set, screening flow, paper-level inclusion or exclusion protocol, or quality appraisal, and it presents no controlled experiment showing that the proposed umbrella improves an agent system; many category assignments are explicitly the authors' interpretation.\n\nOpen it to audit an agent platform's decomposition, ownership, provenance, recovery, and versioning, or to find primary work in one of those areas. Ignore it if you need a validated architecture, implementation recipe, or proof that a graph representation beats a simpler workflow or state machine.",
       "abstract": "LLMs have evolved from language generators to autonomous agents capable of complex, long-horizon tasks. This evolution has produced paradigms including Prompt Engineering to elicit model capabilities, Context Engineering to manage information access, Harness Engineering to organize external tools and resources, and Loop Engineering to support continual reflection and self-improvement. Yet as tasks grow more complex, individual intelligence faces a fundamental limit: many tasks require heterogeneous expertise, interdependent subtasks, parallel execution, independent verification, and persistent state, exceeding any single agent's organizational capacity. Augmenting one agent's capabilities or context cannot resolve this architectural mismatch; intelligence must instead be distributed across specialized agents and organized at the system level. We call this System Intelligence: an agent system's ability to organize and coordinate multiple intelligent components into a coherent, adaptive whole pursuing a shared objective. Achieving it requires more than adding agents; it demands explicit structures to organize work, coordinate heterogeneous agents, and maintain evolving execution states. We introduce Graph Engineering, an emerging paradigm for next-generation agent systems. Unlike prior paradigms that mainly optimize individual interactions or agent-level behavior, Graph Engineering constructs explicit, dynamic, evolving graph structures representing tasks, agents, and system states. These abstractions provide a unified foundation for organizing complex objectives, orchestrating heterogeneous agents, modeling system dynamics, and enabling scalable agent evolution. We systematically review the principles, methodologies, and applications of Graph Engineering for LLM agents. Related papers, open-source data, and projects are collected at https://github.com/DEEP-JLU/Awesome-Graph-Engineering.",
       "takeaways": [
-        "Object: a survey and framework that represents tasks, agents, and execution states as explicit evolving graphs.",
-        "Visible limit: the listing motivates the architecture but reports no comparative evaluation of graph-based orchestration.",
-        "Artifact: the authors declare a GitHub collection of related papers, open-source data, and projects."
+        "Object: a survey taxonomy coupling task organization, agent coordination, runtime state, and persistent system evolution.",
+        "Limit: it offers vocabulary and literature synthesis without a reproducible systematic-review protocol or causal evaluation of Graph Engineering itself.",
+        "Artifact: a live MIT-licensed GitHub collection indexes the survey's papers, benchmarks, libraries, and applications; it is a reading list, not an implementation."
       ],
       "plain": {
-        "verdictWhy": "Use it as a reading map for coordinating many agents, not as proof that its proposed structure is better.",
-        "brief": "The paper says one agent is a poor fit for work that needs different specialists, parallel tasks, checks, and memory. It proposes organizing those parts as a changing network.\n\nThat network records the work, the agents, and the system's current state. The paper reviews this design space, but the abstract gives no experiment comparing it with other ways to coordinate agents.\n\nOpen it when you need terminology and references for multi-agent architecture. Do not treat the new name as a demonstrated performance result.",
+        "verdictWhy": "Use it as a checklist and reading map for multi-agent systems, not as proof that turning everything into a graph improves results.",
+        "brief": "The paper says a capable group of agents still needs an explicit map of the work, who owns each part, and what state the system is in. It calls the engineering of those linked structures Graph Engineering.\n\nIt surveys many task planners, agent teams, state stores, benchmarks, frameworks, and applications. It also admits that most current systems change routes inside a fixed design rather than learning a durable new organization, and it gives no controlled comparison or reproducible literature-selection method for the new umbrella.\n\nOpen it when you need terminology, system-design questions, or links to primary projects. Skip it when you need a tested recipe or a reason to replace a simpler scheduler, workflow engine, or event log.",
         "takeaways": [
-          "The object is a survey of systems that organize agents and work as connected graphs.",
-          "The listing does not test whether this organization beats alternatives.",
-          "A public collection of related work and projects accompanies the paper."
+          "The object is a map of how work, agents, and execution state can be connected and governed.",
+          "The main limit is that the map is author-organized and does not prove the named approach performs better.",
+          "The accompanying repository is a maintained resource collection rather than runnable Graph Engineering software."
         ]
       },
       "actions": [
-        "Check the review methodology and inclusion criteria before using the survey as a map of the field.",
-        "Inspect the declared collection for concrete systems that expose task, agent, and state graphs rather than adopting the label alone."
+        "Use Figure 5 to audit one real system: write down the task dependencies, capability and authority edges, state transitions, failure boundaries, and recovery path it actually exposes.",
+        "Follow the primary sources for the subsystem you intend to change, then require a structural ablation, trace-level evidence, provenance, and rollback before adopting the broader label."
       ],
       "intake": "HF Daily",
       "github": "https://github.com/DEEP-JLU/Awesome-Graph-Engineering",
@@ -128,9 +138,19 @@
           "sourceCount": 1,
           "publishedOn": "2026-08-21"
         },
-        "packetBasis": "title-and-abstract",
-        "model": "codex-backfill",
-        "generatedAt": "2026-08-24T16:30:00.000Z"
+        "packetBasis": "full-paper",
+        "model": "codex-full-paper-review",
+        "generatedAt": "2026-08-24T19:10:11.000Z"
+      },
+      "review": {
+        "basis": "full-paper",
+        "reviewedAt": "2026-08-24T19:10:11.000Z",
+        "sourceUrl": "https://arxiv.org/pdf/2608.21156",
+        "evidence": [
+          "Figure 5 and Sections 4–6: coupled task, agent, and runtime-state graphs, plus governance and structural-ablation requirements.",
+          "Sections 7–9 and Appendix Table 4: author-curated ecosystem map and the finding that persistent structural evolution remains rare.",
+          "Full-text methods review: no reproducible database query, screening flow, inclusion protocol, or quality appraisal is disclosed."
+        ]
       }
     },
     {
@@ -139,29 +159,29 @@
       "url": "https://arxiv.org/abs/2608.20061",
       "topic": "AI",
       "verdict": "Try",
-      "verdictWhy": "The two-step transfer recipe targets an expensive practical decision and reports a concrete extrapolation result, though the full evidence is not in the listing.",
+      "verdictWhy": "It gives a credible large-scale tuning recipe and a real 10T-token run, but demonstrates stability—not that the predicted learning rate is optimal.",
       "title": "Let's Scale Step by Step: Compute-Efficient Hyperparameter Transfer for Large-Scale Mixture-of-Experts",
       "authors": "Nayeon Kim, Hojin Lee, Yunju Bak, Jaesun Park, Boseop Kim",
-      "takeaway": "The paper transfers an optimal learning rate across model widths and then extrapolates it across token budgets to avoid full-scale Mixture-of-Experts sweeps.",
-      "brief": "The authors propose a two-step method for choosing learning rates for very large Mixture-of-Experts models: transfer across model width under an MoE adaptation of μP, then extrapolate across training-token budgets with a scaling law.\n\nThey report that regression on small proxy runs predicts a 10-trillion-token learning rate with R²=0.95, and that the resulting configuration trained a 155B-total, 17B-active model stably. The abstract does not expose the proxy sizes, error bands beyond that fit, comparator sweeps, or evaluation results.\n\nOpen this if you plan costly MoE pretraining with Multi-head Latent Attention and the Muon optimizer. Verify the stated transfer regime before applying it to a different architecture or optimizer.",
+      "takeaway": "The paper estimates learning-rate optima on a 10.8B-total, 3.3B-active proxy, extrapolates them across token budget, and transfers the result by μP to a 155B-total, 17B-active MLA–Muon MoE.",
+      "brief": "The recipe separates two costly axes: μP carries a tuned learning rate across jointly increased width and expert count, while a log-log fit carries the estimated optimum from shorter proxy runs to a longer token horizon. Proxy checkpoints use EMA, and validation loss is fit quadratically against log learning rate at each budget before the optima are regressed against token count.\n\nWidth transfer is shown from a 0.6B-total, 0.3B-active proxy through 30.7B-total, 3.6B-active models after 1.3B tokens. For the long-horizon step, a 10.8B-total, 3.3B-active proxy is trained to about 500B tokens; estimated optima from 255B–502B yield R²=0.95 and predict 3.85×10⁻⁴ at 10T. A held-out backtest trained on roughly 255B–350B predicts five points near 500B within 4.4% on average, and the single 155B-total, 17B-active 10T run is stable and competitive. There is no full-scale neighboring-learning-rate run, so neither stability nor benchmark quality proves optimality; the extrapolation target is about twenty times the observed token range, width and sparsity are coupled, and the evidence is specific to fixed-depth MLA, Muon, WSD, large batches, and an internal training stack.\n\nOpen it if you are budgeting a closely matched large MoE pretraining run and need a defensible way to narrow the learning-rate search. Ignore it as a universal scaling law, or if your optimizer, attention, depth, batch regime, or expert-scaling path differs materially.",
       "abstract": "Mixture-of-Experts (MoE) architectures significantly expand model capacity without a proportional increase in computational cost. However, optimizing their hyperparameters---particularly the learning rate---at extreme scales of both model size and token budget via sweeping remains computationally prohibitive. In this paper, we propose a compute-efficient, two-step hyperparameter transfer framework that estimates optimal learning rates for training large MoE models by transferring them across scaling model widths, and subsequently extrapolating to trillion-token horizons. First, we formulate a Maximal Update Parameterization (μP) adaptation for MoE architectures utilizing Multi-head Latent Attention (MLA) and the Muon optimizer, demonstrating that optimal learning rates transfer consistently across width-scaled models. Second, we extend this transferability along the token dimension by establishing a predictive scaling law. By applying linear regression to the optimal values derived from small proxy models on limited budgets, we successfully extrapolate the ideal learning rate to massive training horizons (e.g., 10 trillion tokens) with high fidelity (R^2=0.95). Consequently, this indicates that proxy training on small models is sufficient to determine the optimal learning rate for the extensive training of large-scale MoEs. We apply the proposed methodology to pretrain our foundation model (155B total, 17B active parameters) from scratch, and the stable training and evaluation results validate that optimal configurations for full-scale target models can be accurately predicted with minimal ablation costs.",
       "takeaways": [
-        "Object: a learning-rate transfer procedure across both MoE width and token budget, tailored to MLA and Muon.",
-        "Visible limit: the abstract reports a strong fit and stable large run but omits the proxy grid, prediction errors, and detailed evaluation.",
-        "Artifact: no code or training artifact is declared in the nomination."
+        "Object: a two-step learning-rate procedure using μP transfer over model scale, then log-log extrapolation over token budget.",
+        "Limit: the 10T optimum is not directly validated; the only full-scale run uses the predicted value, and the held-out test reaches about 500B rather than 10T.",
+        "Artifact: no public code, model, data recipe, checkpoints, or training artifact is linked; experiments use an internal Megatron-LM fork."
       ],
       "plain": {
-        "verdictWhy": "This may reduce the cost of tuning a huge expert model, but its transfer assumptions need checking before reuse.",
-        "brief": "Choosing a learning rate for a huge model normally requires expensive trial runs. This paper proposes learning the setting from smaller models first, then projecting it to much longer training.\n\nThe authors report a close statistical fit when projecting to 10 trillion tokens and say the choice supported stable training of a 155-billion-parameter model with 17 billion active at once. The abstract leaves out the run grid and detailed evaluations.\n\nOpen it if you are budgeting large expert-model training. Do not assume the same rule carries to architectures or optimizers outside the setup described here.",
+        "verdictWhy": "This can make one enormous expert-model run less guessy, but it does not prove that its chosen learning rate was the best possible one.",
+        "brief": "The authors test learning rates on smaller expert models, use a scaling setup that keeps the best setting aligned as the model gets wider, and then project how that setting should change when training lasts much longer.\n\nTheir smaller run reaches about 500 billion tokens and predicts a learning rate of 0.000385 for a 10-trillion-token model. The resulting 155-billion-parameter model, with 17 billion active per token, trains smoothly and scores competitively; a shorter held-out test misses nearby best-rate estimates by about 4.4%. But the authors did not train the giant model at alternative learning rates, so smooth training shows the choice works, not that it is optimal.\n\nOpen it if your costly training run closely matches its expert model, optimizer, attention, and batch setup. Skip direct reuse if those ingredients differ, and do not read the reported R² as a measured 10T prediction error.",
         "takeaways": [
-          "The object is a cheaper process for choosing the learning rate of a very large expert model.",
-          "The public listing does not show enough runs to judge how broadly the projection transfers.",
-          "No code or training artifact is listed with the nomination."
+          "The object is a cheaper way to choose one learning rate for a very large expert model.",
+          "The main limit is that the projected 10T setting has no full-scale alternative run to prove it was best.",
+          "The paper links no code, model, checkpoints, or reproducible training package."
         ]
       },
       "actions": [
-        "Inspect the proxy-model grid, regression residuals, and sensitivity tests behind the reported R² before budgeting a target run.",
-        "Confirm that the target architecture, parameterization, attention design, and optimizer match the paper's transfer assumptions."
+        "Reproduce the quadratic fits and Appendix E holdout at the longest affordable horizons, then run a small neighborhood around the predicted rate before committing full-scale compute.",
+        "Confirm that the μP tensor rules, fixed depth, MLA, Muon RMS scaling, WSD schedule, large-batch transition, and coupled width and expert-count path all match your system."
       ],
       "intake": "HF Daily",
       "tags": [
@@ -188,9 +208,19 @@
           "sourceCount": 1,
           "publishedOn": "2026-08-20"
         },
-        "packetBasis": "title-and-abstract",
-        "model": "codex-backfill",
-        "generatedAt": "2026-08-24T16:30:00.000Z"
+        "packetBasis": "full-paper",
+        "model": "codex-full-paper-review",
+        "generatedAt": "2026-08-24T19:10:11.000Z"
+      },
+      "review": {
+        "basis": "full-paper",
+        "reviewedAt": "2026-08-24T19:10:11.000Z",
+        "sourceUrl": "https://arxiv.org/pdf/2608.20061",
+        "evidence": [
+          "Sections 2–3 and Figures 3–5: μP width transfer, proxy fits through roughly 500B tokens, and the 3.85×10⁻⁴ extrapolation to 10T.",
+          "Figures 6–8 and Conclusion: one stable 155B-total, 17B-active 10T run with no neighboring full-scale learning-rate comparison.",
+          "Appendix E and Table 4: the narrower 255B–350B fit predicts roughly 500B optima with about 4.4% average discrepancy."
+        ]
       }
     },
     {
@@ -199,29 +229,29 @@
       "url": "https://arxiv.org/abs/2608.21360",
       "topic": "AI",
       "verdict": "Try",
-      "verdictWhy": "The benchmark exposes failures that static video tests miss and comes with declared code, while its fixed-route simulation remains a meaningful constraint.",
+      "verdictWhy": "It supplies a useful interaction-shaped diagnostic and runnable evaluation code, but fixed routes, offline clips, LLM judging, and unequal input handling keep the leaderboard from measuring live-assistant reliability.",
       "title": "OmniAssistBench: Assistant-style Interaction Benchmark for Omni-LLMs",
       "authors": "Xianyun Sun, Chaoyou Fu, Zhengye Zhang, Feiyang Duan, Qingyuan Cao, Yonghui Niu, Sihang Yuan, Ge Zhang, Caifeng Shan",
-      "takeaway": "OmniAssistBench evaluates real-time video assistants over multi-turn interactions by turning Internet videos into fixed-route simulated user tasks.",
-      "brief": "The authors introduce OmniAssistBench to test video assistants whose responses can change a user's next action, a behavior that static offline datasets do not capture.\n\nThey reverse-engineer Internet videos into goals and multi-turn clips, then give models source-video priors so every system must guide the same route. Gemini-3-Pro scores 66.4/100 and Qwen3-Omni-Instruct 51.2; the listing reports failures on gestures, interaction history, and response timing, while the fixed routes limit natural path variation.\n\nOpen this if you evaluate continuously observing assistants and need an interaction-centered test. Inspect the rubric, data construction, and declared repository before using its scores as evidence of real-world reliability.",
+      "takeaway": "Across 300 videos and 685 open-ended question-answer pairs, the benchmark finds failures in gestures, delayed responses, and cross-turn tracking, but it simulates rather than permits response-dependent interaction.",
+      "brief": "OmniAssistBench reframes video evaluation around assistance over time: 300 videos support 685 open-ended question-answer pairs across seven major tasks, 16 subtasks, and three separately filmed scenarios. Prompts are embedded as audio or visual cues, advanced tasks span proactive response and process tracking, and the published scoring pipeline penalizes wrong timing, hallucination, and irrelevant narration.\n\nUnder the authors' GPT-5 rubric, Gemini-3-Pro leads at 66.4 out of 100 and Qwen3-Omni-Instruct leads the open models at 51.2. Most non-Gemini models receive one-frame-per-second video, overlong histories are truncated first-in-first-out, and judge correlation is reported without human agreement. Crucially, supplied priors force the source-video route: model responses never choose the next clip.\n\nOpen it if you evaluate continuously observing audio-video assistants and want task-level cases for nonverbal prompts, silence, and long-horizon state. Ignore the aggregate score if your decision concerns live branching behavior, latency, safety, or deployment reliability; the paper does not evaluate those properties.",
       "abstract": "Recent omni-modal large language models (Omni-LLMs) show great potential as real-time video assistants, which continuously perceive environments and guide users to achieve specific goals. Unlike traditional passive video understanding, interactive assistants should actively combine visual states, user goals, and prior knowledge to provide effective help. Evaluating this is rather challenging, as the model's unpredictable response dynamically changes the user's subsequent actions, which static offline datasets cannot accommodate. To address this bottleneck, we introduce OmniAssistBench. To solve the issue of diverging interaction paths where the same user goal can be achieved through various methods, we provide models with predefined priors derived from the source video, requiring them to guide users along the exact same routes. Since real interaction videos are rare, we construct the dataset by reverse-engineering existing Internet videos. We deduce logical user goals and segment the videos into multi-turn clips to simulate continuous interactions. This rigorous pipeline required over 1000 expert person-hours to build the dataset. Results show that the proprietary Gemini-3-Pro reaches 66.4 out of the max point of 100, while the open-source Qwen3-Omni-Instruct achieves 51.2. Although current models generally understand user inputs, they frequently provide incorrect or incomplete answers. Specifically, they struggle with visual prompts (e.g., hand gestures), fail to maintain historical context during multi-turn interactions, and fail to delay response until the target event. Results indicate substantial room for improvement before models can become reliable assistants.",
       "takeaways": [
-        "Object: a multi-turn benchmark for video assistants that must combine visual state, user goals, and interaction history.",
-        "Visible limit: predefined priors force systems along the source video's route, reducing the path divergence found in open interaction.",
-        "Artifact: the nomination declares a GitHub repository for the benchmark."
+        "Object: a 300-video, 685-QA benchmark of open-ended basic perception, proactive response, process tracking, and three scripted multi-ability cases.",
+        "Limit: offline source-video routes are fixed by supplied priors; model inputs and context handling differ, and an LLM judge—not a human reliability assessment—produces the scores.",
+        "Artifact: the paper declares a project page that links a public repository, evaluation scripts, rubric, and dataset; these are inspectable, but the paper reports no independent reproduction."
       ],
       "plain": {
-        "verdictWhy": "It tests whether a video assistant can help over time, not merely describe a clip, and publishes a repository to inspect.",
-        "brief": "A useful video assistant must watch what changes, remember earlier turns, and respond at the right moment. This benchmark simulates that process with goals and clips made from existing Internet videos.\n\nTo keep systems comparable, every assistant receives hints that constrain it to the same route. The best reported system scores 66.4 out of 100, and the paper reports mistakes involving gestures, memory, and timing.\n\nOpen it if static video question-answer tests are too weak for your product. Check how the fixed routes and constructed interactions differ from the users you expect.",
+        "verdictWhy": "It tests whether a video assistant can remember, wait, and help across several turns, but the videos cannot change in response to what the assistant says.",
+        "brief": "The benchmark turns existing videos into staged conversations. It includes 300 videos and 685 questions covering gestures, references, reminders, procedure tracking, and three longer scenarios filmed by the authors.\n\nThe highest score is 66.4 out of 100 under a GPT-5 grading rubric, while the leading open model scores 51.2. The comparison is not fully level: most non-Gemini models see one frame per second, old context is discarded when it gets too long, and every model receives hints that force it down the same prepared route.\n\nOpen it when static video question answering is too weak for your evaluation plan. Do not use the leaderboard alone to claim that a model will be a dependable live assistant, because the benchmark does not test free interaction, response latency, or safety.",
         "takeaways": [
-          "The benchmark tests ongoing assistance rather than one response about a finished video.",
-          "Its fixed routes make scoring possible but remove some freedom found in real interactions.",
-          "A code repository is declared for examining the benchmark."
+          "The object is a set of multi-turn video tasks that asks assistants to notice cues, remember earlier events, stay quiet when appropriate, and track work.",
+          "The main limit is that the conversations are edited offline and constrained to one path, so an assistant's answer never changes what the user does next.",
+          "A project page, code repository, grading scripts, and public dataset are linked and reachable."
         ]
       },
       "actions": [
-        "Review the scoring rubric, predefined priors, and video-to-interaction construction for leakage and route dependence.",
-        "Use the declared repository to compare a target assistant's errors on gestures, history, and response timing."
+        "Run one target model through the published task-level pipeline with a fixed, documented frame and context policy, then manually audit a stratified sample of the judge's scores.",
+        "Add a small live branching test with response timing and recovery from a wrong suggestion before using OmniAssistBench results in a product-readiness decision."
       ],
       "intake": "HF Daily",
       "github": "https://github.com/XianyunSun/OmniAssistBench",
@@ -249,9 +279,19 @@
           "sourceCount": 1,
           "publishedOn": "2026-08-21"
         },
-        "packetBasis": "title-and-abstract",
-        "model": "codex-backfill",
-        "generatedAt": "2026-08-24T16:30:00.000Z"
+        "packetBasis": "full-paper",
+        "model": "codex-full-paper-review",
+        "generatedAt": "2026-08-24T19:10:11.000Z"
+      },
+      "review": {
+        "basis": "full-paper",
+        "reviewedAt": "2026-08-24T19:10:11.000Z",
+        "sourceUrl": "https://arxiv.org/pdf/2608.21360",
+        "evidence": [
+          "Table 1 and Figures 1–4: 300 videos, 685 QA pairs, fixed-route construction, embedded prompts, and offline simulation.",
+          "Tables 2–3 and Sections 4.1–4.3: headline scores, one-frame-per-second preprocessing, FIFO context truncation, and GPT-5 judging.",
+          "Appendix Tables 4, 7, and 8: judge-specific scoring and correlations among LLM judges rather than human agreement."
+        ]
       }
     },
     {
@@ -260,29 +300,29 @@
       "url": "https://arxiv.org/abs/2608.20418",
       "topic": "Health",
       "verdict": "Watch",
-      "verdictWhy": "The out-of-distribution comparison reports concrete screening metrics, but it is computational evidence for virtual screening rather than evidence of a discovered drug.",
+      "verdictWhy": "The dissimilarity split and released dataset make this auditable, but duplicate LLM runs, default classical baselines, unequal closed-model tests, and no wet-lab hits leave the superiority claim provisional.",
       "title": "Rigorous Evaluation of Large Language Models for Malaria Drug Discovery: Trade-offs in Performance, Scale, and Resource Utility",
       "authors": "Marvellous O. Ajala (Magami Open Sciences Initiative), Zainab Ashimiyu-Abdusalam (Magami Open Sciences Initiative), Comfort Adesina (Magami Open Sciences Initiative)",
-      "takeaway": "On a ChEMBL-derived malaria virtual-screening dataset, domain-fine-tuned open models outperform the listed classical and proprietary few-shot baselines.",
-      "brief": "The authors introduce Malaria-Instruct from the ChEMBL Legacy Malaria corpus and compare five open-source language models with Random Forest, XGBoost, Gemini 2.5, and OpenAI o3 on an out-of-distribution split.\n\nFine-tuned TxGemma-9B reaches ROC-AUC 0.731 ± 0.005, while LlaSMol-Mistral-7B reaches EF@1% of about 4.99; TxGemma-9B falls to 0.499 without domain fine-tuning under its best few-shot condition. These are virtual-screening results, and the abstract does not report wet-lab or clinical validation.\n\nOpen this if you evaluate molecular-screening models and need a resource-and-performance comparison. Do not read the title as evidence that the evaluated systems discovered an antimalarial drug.",
+      "takeaway": "Fine-tuned TxGemma-9B leads global discrimination and LlaSMol-Mistral leads top-1% enrichment on a ChEMBL-derived benchmark, while the evidence remains retrospective, SMILES-only virtual screening.",
+      "brief": "The paper builds Malaria-Instruct from the ChEMBL Legacy Malaria corpus and evaluates Gemma-2, TxGemma, and LlaSMol models after QLoRA fine-tuning. Its strongest design choice is assay-wise Lo-Hi splitting on ECFP4 fingerprints, capping train-to-test Tanimoto similarity at 0.4 and train-to-validation similarity at 0.55 to make structural novelty harder than a random split.\n\nTxGemma-9B reports ROC-AUC 0.7315 ± 0.0053; LlaSMol-Mistral reports MCC 0.5642 ± 0.0257 and EF@1% 4.9865 ± 0.0048; Random Forest reaches ROC-AUC 0.6828. The headline needs restraint: there are two LLM runs, default Random Forest and XGBoost settings, and unmatched 500-molecule few-shot tests for Gemini and o3. Corpus counts are omitted, negatives are augmented, and no hits are tested experimentally.\n\nOpen it if you work on antimalarial virtual screening and want the dataset, split recipe, resource table, or the ROC-AUC-versus-enrichment distinction. Ignore it as drug-discovery evidence: no compound is experimentally confirmed, and the paper's own limitations restrict the result to SMILES and historically screened ChEMBL malaria chemical space.",
       "abstract": "We introduce Malaria-Instruct, a curated instruction-following dataset derived from the ChEMBL Legacy Malaria corpus for Malaria virtual screening, and conduct a systematic evaluation of five open-source LLMs; Gemma-2 2B/9B, TxGemma-2B/9B, and LlaSMol-Mistral-7B, on a rigorous out-of-distribution data split. Performance was benchmarked against classical ML models (Random Forest, XGBoost) and frontier proprietary models (Gemini 2.5, OpenAI o3) under few-shot conditions. Fine-tuned LLMs substantially outperformed all baselines: TxGemma-9B achieved the highest ROC-AUC ($0.731 \\pm 0.005$) and LlaSMol-Mistral-7B the best enrichment factor (EF@1\\% $\\approx$ 4.99). Domain-specific fine-tuning proved categorically indispensable with TxGemma-9B collapsing from ROC-AUC 0.731 to 0.499, under its best few-shot condition, and neither Gemini 2.5 (ROC-AUC $\\approx$ 0.53) nor o3 (ROC-AUC $\\approx$ 0.59) achieved reliable discrimination without fine-tuning. Biomedical pretraining conferred a measurable advantage at equivalent scale, while chemistry-aware pretraining yielded superior prospective enrichment. Fine-tuned open-source LLMs represent a compelling, resource-efficient paradigm for antimalarial VS, outperforming both classical pipelines and proprietary reasoning models under structurally challenging conditions.",
       "takeaways": [
-        "Object: an out-of-distribution virtual-screening comparison built from a ChEMBL malaria corpus.",
-        "Visible limit: the listing reports model discrimination and enrichment, not experimental confirmation that selected compounds work as drugs.",
-        "Artifact: Malaria-Instruct is described, but no dataset or code URL is declared in the nomination."
+        "Object: a ChEMBL-derived, assay-contextualized antimalarial bioactivity benchmark comparing fine-tuned molecular LLMs, few-shot LLMs, Random Forest, and XGBoost under Lo-Hi splits.",
+        "Limit: results come from two LLM fine-tuning replicates, unmatched baseline conditions, SMILES-only known chemical space, augmented negatives, and no wet-lab validation.",
+        "Artifact: Malaria-Instruct is reachable on Zenodo; the paper's declared GitHub code URL returned 404 at review time, so code reproducibility is not presently verified."
       ],
       "plain": {
-        "verdictWhy": "The study gives useful model-comparison numbers for ranking malaria candidates, but it does not show that any candidate becomes a medicine.",
-        "brief": "The paper turns an existing malaria-chemistry collection into an instruction dataset and tests several models on examples kept outside their training split.\n\nA malaria-tuned 9-billion-parameter model separates active from inactive candidates better than the listed baselines, and its result collapses without that tuning. The reported evidence is a computer-based screening test, not laboratory or patient evidence.\n\nOpen it if you build early-stage molecular ranking systems. Keep its performance claim separate from the much longer process of proving a drug is safe and effective.",
+        "verdictWhy": "It is a serious computer-screening benchmark with public data, but it does not show that an AI found a malaria drug or that LLMs win under a fully matched comparison.",
+        "brief": "The authors train several language models to label malaria-related molecules from SMILES strings. They deliberately keep structurally similar molecules apart across the main data splits, which is more demanding than randomly dividing the collection.\n\nOne tuned model ranks active molecules best overall, while another puts the most actives in its top 1 percent. Those results use only two training runs, compare against untuned default tree models and separately sampled few-shot commercial models, and stop before laboratory testing.\n\nOpen it to inspect an antimalarial ranking dataset or plan a more controlled benchmark. Do not call the ranked molecules leads, treatments, or drugs until the predictions are reproduced and experimentally tested.",
         "takeaways": [
-          "The object is a benchmark for ranking possible malaria-active molecules.",
-          "Its strongest numbers depend on domain fine-tuning and stop at virtual screening.",
-          "The listing names a dataset but provides no repository link."
+          "The object is a comparison of computer models that rank historically tested molecules by predicted malaria activity.",
+          "The main limit is a small replication count, unmatched comparisons, and no laboratory confirmation.",
+          "The dataset download works; the code link printed in the paper did not resolve during this review."
         ]
       },
       "actions": [
-        "Inspect how the out-of-distribution split controls scaffold or structural overlap and how enrichment is calculated.",
-        "Check the full paper for dataset access, calibration, and any experimental validation before treating high-ranked compounds as leads."
+        "Rebuild the exact Lo-Hi partitions from the Zenodo record, report assay and split counts, and compare tuned classical and strong non-LLM molecular baselines under identical samples and repetitions.",
+        "Treat top-ranked compounds as hypotheses only: deduplicate structural clusters and pre-register a prospective wet-lab assay before claiming screening utility."
       ],
       "intake": "arXiv",
       "tags": [
@@ -310,9 +350,19 @@
           "sourceCount": 1,
           "publishedOn": "2026-08-24"
         },
-        "packetBasis": "title-and-abstract",
-        "model": "codex-backfill",
-        "generatedAt": "2026-08-24T16:30:00.000Z"
+        "packetBasis": "full-paper",
+        "model": "codex-full-paper-review",
+        "generatedAt": "2026-08-24T19:10:11.000Z"
+      },
+      "review": {
+        "basis": "full-paper",
+        "reviewedAt": "2026-08-24T19:10:11.000Z",
+        "sourceUrl": "https://arxiv.org/pdf/2608.20418",
+        "evidence": [
+          "Sections 2–3: Malaria-Instruct curation, ECFP4 Lo-Hi thresholds, default classical baselines, QLoRA setup, and two-run protocol.",
+          "Tables 1–4 and Sections 5.2–5.8: discrimination and enrichment results, unmatched few-shot samples, resource use, and explicit limitations.",
+          "Data links on paper page 3: working Zenodo record and currently unresolved declared GitHub repository."
+        ]
       }
     },
     {
@@ -320,30 +370,30 @@
       "arxivId": "2608.20435",
       "url": "https://arxiv.org/abs/2608.20435",
       "topic": "Physics",
-      "verdict": "Try",
-      "verdictWhy": "The comment makes a precise polynomial-time correction to one cost claim and carefully states which results it does not challenge.",
+      "verdict": "Watch",
+      "verdictWhy": "The correction is exact and useful for version history, but the target paper's v2 already removes the disputed claims and states fixed-body simulability.",
       "title": "Comment on \"Scalable Quantum Machine Learning: Trainability, Expressivity and Efficiency\": Polynomial Evaluation of the Triplet-Block Readout",
       "authors": "Erfan Amidi",
-      "takeaway": "For the triplet-block two-body readout, an explicitly available reduced density matrix yields an O(n⁴) classical correlator algorithm rather than the challenged exponential-cost conclusion.",
-      "brief": "The author challenges the classical-cost conclusion for a triplet-block two-body readout in arXiv:2607.24014v1, arguing that the Gaussian-state expansion used there is unnecessary for fixed-body observables.\n\nAn explicitly computable diagonal two-particle reduced density matrix is propagated through the two-particle representation of passive fermionic linear optics, yielding all two-body number correlators in deterministic O(n⁴) time. The scope is narrow: the abstract says the correction does not affect gradient variance, barren plateaus, parameter shift, or sampling hardness.\n\nOpen this if you rely on the original supervised-readout cost claim or analyze fixed-body observables in fermionic systems. Read it alongside the original paper and verify the availability assumptions for the reduced density matrix.",
+      "takeaway": "A diagonal two-particle reduced density matrix yields all triplet-block two-body correlators and their gradients in polynomial time, correcting an exponential-cost claim that the original author has already withdrawn in v2.",
+      "brief": "The comment shows that expanding the triplet-block state into exponentially many Gaussian cross terms is unnecessary for the supervised two-body feature vector. It propagates the input two-particle reduced density matrix through the exterior-square representation of passive fermionic linear optics and derives an explicit formula for every correlator, giving deterministic O(n⁴) arithmetic complexity independent of k; the associated gradients are polynomial as well.\n\nThe result requires fixed body order and a classically available input reduced density matrix; it does not cover body order growing with n, full probabilities, or sampling hardness. The note added on page 3 says the target paper's v2, posted the same day, removed the triplet encoding and all expectation-value-hardness claims and now states fixed-body simulability.\n\nOpen this if you cited, implemented, or reviewed version 1's supervised-readout hardness argument and need the explicit correction. Otherwise read the target paper's v2; this three-page note is now primarily a clean derivation and record of a resolved issue, not a live challenge to the current paper.",
       "abstract": "We examine the classical-cost claim for the triplet-block two-body readout in arXiv:2607.24014v1. The Gaussian-state expansion used there gives an $O(2^{2k/3}\\mathrm{poly}(n))$ classical algorithm, but it is not necessary for fixed-body observables. The triplet-block input has an explicitly computable diagonal two-particle reduced density matrix, which passive fermionic linear optics propagates through $\\bigwedge^2 W$. This gives a deterministic $O(n^4)$ algorithm for the complete correlator vector $(\\langle n_i n_j\\rangle)_{i<j}$, independently of $k$ and the fermionic-linear-optics extent. More generally, every number-conserving fixed-$r$-body expectation is polynomially computable whenever the input $r$-particle reduced density matrix is classically available; if that matrix is diagonal, all diagonal correlators are computable in $O(n^{2r})$ time. This invalidates the algorithm-relative exponential-cost conclusion for the supervised two-body readout, without affecting the gradient-variance, barren-plateau, parameter-shift, or sampling-hardness results.",
       "takeaways": [
-        "Object: a corrective analysis of the classical cost of a specific triplet-block two-body readout.",
-        "Visible limit: the polynomial result assumes the relevant fixed-particle reduced density matrix is classically available and does not overturn the original paper's other results.",
-        "Artifact: no code or separate computational artifact is declared in the nomination."
+        "Object: an exact reduced-density-matrix evaluation of one triplet-block two-body readout, its full correlator vector, and its gradients.",
+        "Limit: polynomiality requires fixed body order and a classically available input reduced density matrix; it does not change sampling or growing-body-order hardness.",
+        "Artifact: the artifact is a three-page analytic derivation with no code or data; the relevant paired source is the already-corrected v2 of arXiv:2607.24014."
       ],
       "plain": {
-        "verdictWhy": "Read this if one exponential-cost statement matters to your work; the correction is specific and does not reject the rest of the original paper.",
-        "brief": "An earlier paper used a method whose cost grows exponentially for one quantum-model readout. This comment says a simpler calculation is available for that particular two-particle quantity.\n\nBecause the needed two-particle description can be calculated directly, the author derives a fourth-power-time method for all listed correlations. That conclusion depends on having the reduced description and leaves the earlier paper's other hardness and training results intact.\n\nOpen it when citing or implementing the disputed readout. Compare the assumptions and derivation directly with the original paper before generalizing the correction.",
+        "verdictWhy": "It fixes one old cost claim with a shorter calculation, but the original paper has already incorporated the correction.",
+        "brief": "Version 1 of another paper evaluated one quantum-model output by expanding a state into exponentially many pieces. This comment shows that the output depends only on a much smaller two-particle description and gives a fourth-power-time formula for all of its correlations.\n\nThat shortcut works because the requested quantity involves a fixed number of particles and the needed reduced description can be calculated. It does not make full sampling easy, and it does not apply automatically when the number of particles in the measured quantity grows with the system.\n\nOpen it if your code or citation still follows version 1. If you only need the present state of the proposal, use version 2, which has removed the disputed hardness claim.",
         "takeaways": [
-          "The object is a correction to the claimed classical cost of one quantum readout.",
-          "The correction applies to fixed-body quantities with an available reduced description, not every result in the target paper.",
-          "No code artifact is listed."
+          "The object is a simpler exact calculation for one two-particle output that had been assigned exponential classical cost.",
+          "The main limit is that the shortcut is for fixed-size measurements with an available reduced description, not for full quantum sampling.",
+          "There is no software artifact; the practical companion is the corrected second version of the target paper."
         ]
       },
       "actions": [
-        "Check the derivation of the diagonal two-particle reduced density matrix and the O(n⁴) propagation cost in the full comment.",
-        "Compare the corrected claim with arXiv:2607.24014v1 and update only conclusions that depend on the supervised two-body readout cost."
+        "Update any citation or implementation based on arXiv:2607.24014v1 so the supervised two-body feature vector and gradients are treated as polynomially evaluable, then point readers to v2.",
+        "Check equations 13–15 against your exact input encoding, and do not extend the result to growing-body observables or sampling without a separate argument."
       ],
       "intake": "arXiv",
       "tags": [
@@ -369,9 +419,19 @@
           "sourceCount": 1,
           "publishedOn": "2026-08-24"
         },
-        "packetBasis": "title-and-abstract",
-        "model": "codex-backfill",
-        "generatedAt": "2026-08-24T16:30:00.000Z"
+        "packetBasis": "full-paper",
+        "model": "codex-full-paper-review",
+        "generatedAt": "2026-08-24T19:10:11.000Z"
+      },
+      "review": {
+        "basis": "full-paper",
+        "reviewedAt": "2026-08-24T19:10:11.000Z",
+        "sourceUrl": "https://arxiv.org/pdf/2608.20435",
+        "evidence": [
+          "Proposition 1 and equations 5–12: fixed-body closure and reduced-density-matrix propagation.",
+          "Equations 13–15: explicit triplet input, O(n⁴) correlator-vector evaluation, and polynomial gradients.",
+          "Page 3 Note Added: the target paper's v2 removes the disputed triplet encoding and expectation-value-hardness claims."
+        ]
       }
     },
     {
@@ -380,29 +440,29 @@
       "url": "https://arxiv.org/abs/2608.20481",
       "topic": "Security",
       "verdict": "Watch",
-      "verdictWhy": "The policy layer addresses a real cross-modal resource-abuse problem, but the abstract gives no effectiveness or overhead results.",
+      "verdictWhy": "The full paper reports useful schema-classification results and one overload test, but AEGIS leaves uncached tools outside enforcement and has not yet been tested across real services or attack modalities.",
       "title": "AEGIS: Preventing Cross-Domain Resource Abuse in MCP",
       "authors": "Shriti Priya, Teryl Taylor, Frederico Araujo",
-      "takeaway": "AEGIS uses an LLM to normalize heterogeneous MCP tool requests for fine-grained resource policies enforced through Open Policy Agent and ContextForge AI Gateway.",
-      "brief": "The authors present AEGIS as a policy-enforcement component for resource abuse through Model Context Protocol tools, including oversized search radii, long video requests, and other modality-specific loads.\n\nAEGIS uses a language model to analyze and normalize varied tool calls into a shared policy representation, then integrates with Open Policy Agent and ContextForge AI Gateway to enforce safeguards. The abstract claims detection and mitigation but reports no attack corpus, detection rate, policy-bypass analysis, latency, or model-failure behavior.\n\nOpen this if you operate heterogeneous MCP tools and need one administrative policy surface. Keep it in review until the full paper establishes how an LLM-based normalizer fails and whether deterministic schema controls would cover the same risks.",
+      "takeaway": "AEGIS converts MCP tool schemas into cached ontologies and OPA policies, reaching 91.96% resource-risk accuracy and keeping a synthetic image server available during a count=1000 overload, while its only end-to-end test covers one parameter on one custom server.",
+      "brief": "AEGIS is a gateway policy pipeline: an offline Claude 4 Sonnet pass classifies each registered tool's modality, operation, risky parameters, and normalized names; load tests set per-parameter thresholds; cached ontologies are enforced at runtime through OPA.\n\nOn 937 manually labeled definitions from 56 MCP servers, resource-consumption detection reached 91.96% accuracy and 85.71% recall, while exact parameter normalization reached 83.21%. In a custom CIFAR-10 server, a count=10 threshold kept errors below 0.1%, and the protected count=1000, 200-user run reported 200 successes versus 4 without AEGIS. That is one image tool on one machine, and Table III contains impossible or suspicious accounting—average CPU exceeds maximum in both columns, and protected average memory equals wall time—so the benchmark needs replication.\n\nOpen it if you operate many heterogeneous MCP schemas and want to reduce policy-authoring work. Do not put it alone on a critical boundary yet: uncached tools are explicitly out of scope, and the paper does not test adversarial schemas, normalization bypasses, cascading calls, or request-path overhead on real services.",
       "abstract": "The Model Context Protocol (MCP) is an open source JSON-RPC protocol that standardizes how large language models (LLMs) interact with external systems through programmatic functions known as tools. Attackers or malicious agents can exploit certain modalities of these MCP tools to degrade the overall quality of service of agent-based applications. For example, an agent may request an excessively large search radius or very long videos, overloading backend systems and potentially causing slowdowns or denial-of-service. Each modality including text, images, video, and location introduces distinct vectors for resource abuse, complicating the development of consistent mitigation strategies. Moreover, multimodal and crossdomain tools expose diverse request schemas and parameters, making it difficult to define policies that are both generalizable and precise enough to enforce meaningful resource constraints. In this paper, we present AEGIS, a policy enforcement component that enables administrators to define fine-grained safeguards against resource abuse across heterogeneous MCP tools and modalities. AEGIS leverages the reasoning capabilities of large language models to analyze, categorize, and normalize diverse tool invocations into a unified, policy-friendly representation accessible to security practitioners. Integrated with the Open Policy Agent and the ContextForge AI Gateway, AEGIS detects and mitigates abusive behaviors while preserving the flexibility of MCP-based agent ecosystems.",
       "takeaways": [
-        "Object: a shared policy-enforcement layer for limiting resource-intensive MCP tool calls across modalities.",
-        "Visible limit: the listing provides architecture and examples but no quantitative security, reliability, or performance evaluation.",
-        "Artifact: integrations are named, but no AEGIS code or repository URL is declared in the nomination."
+        "Object: an offline schema-to-ontology and benchmarking pipeline that produces normalized OPA limits for MCP gateway enforcement.",
+        "Limit: risk detection misses about 14% of positive cases by recall, runtime enforcement excludes uncached tools, and the overload evaluation is one get_images.count case with internally inconsistent resource rows.",
+        "Artifact: AEGIS is built on ContextForge and OPA, but the paper declares no AEGIS source, labeled dataset, or benchmark release; it links only the underlying ContextForge repository."
       ],
       "plain": {
-        "verdictWhy": "It proposes one place to limit expensive tool requests, but the listing does not show how reliably or cheaply it works.",
-        "brief": "An agent can overload a service by requesting an enormous search area, a very long video, or another costly operation. Different kinds of tools describe those limits in different ways.\n\nAEGIS asks a language model to translate those requests into one form that administrators can govern, then applies rules through named policy and gateway systems. The abstract does not report test results or what happens when the translator gets a request wrong.\n\nOpen it if inconsistent tool schemas make resource controls hard to maintain. Do not place it on a critical boundary without examining bypasses, fallback behavior, and overhead.",
+        "verdictWhy": "It shows that one gateway can learn common limits for differently named tool inputs, but the safety test is narrow and unknown tools bypass its checks.",
+        "brief": "Different MCP tools use different names for limits such as item count, duration, and resolution. AEGIS asks a language model to translate each registered tool schema into a common vocabulary, benchmarks safe limits before deployment, and applies the resulting rules through OPA.\n\nThe authors hand-labeled 937 tool definitions. Their model correctly classified resource risk 91.96% of the time but found only 85.71% of the risky cases; exact name normalization was 83.21%. A single custom image server stayed available in the reported overload test, but the paper does not reproduce that result on real services, and its performance table contains values that cannot all be correct.\n\nOpen it if maintaining separate limits for many MCP schemas has become expensive. Keep deterministic schema validation and a fail-closed path in front of production tools until the authors test unknown schemas, malicious descriptions, more modalities, and real gateway overhead.",
         "takeaways": [
-          "The object is a common rule layer for controlling costly requests to agent tools.",
-          "The listing does not measure attacks caught, mistakes, or added delay.",
-          "It names integrations but does not declare an implementation repository."
+          "The object is one common rule layer for expensive parameters across MCP tools.",
+          "The main limit is that the model still misses risky tools, uncached tools are not enforced, and the protection test covers one image-count parameter.",
+          "The paper links ContextForge, which AEGIS extends, but does not publish AEGIS itself or its evaluation data."
         ]
       },
       "actions": [
-        "Read the threat model and evaluation for normalization errors, policy bypasses, adversarial inputs, and enforcement latency.",
-        "Compare AEGIS with deterministic validation on the same tool schemas before assigning its language-model output enforcement authority."
+        "Reproduce Figure 5 and Table III, resolve the CPU-average, CPU-maximum, and memory-to-wall-time inconsistencies, and state whether a policy rejection counts as a successful request.",
+        "Compare AEGIS with deterministic JSON-Schema limits under uncached tools, adversarial descriptions, normalization errors, chained calls, and measured end-to-end gateway latency."
       ],
       "intake": "arXiv",
       "tags": [
@@ -429,9 +489,19 @@
           "sourceCount": 1,
           "publishedOn": "2026-08-24"
         },
-        "packetBasis": "title-and-abstract",
-        "model": "codex-backfill",
-        "generatedAt": "2026-08-24T16:30:00.000Z"
+        "packetBasis": "full-paper",
+        "model": "codex-full-paper-review",
+        "generatedAt": "2026-08-24T19:10:11.000Z"
+      },
+      "review": {
+        "basis": "full-paper",
+        "reviewedAt": "2026-08-24T19:10:11.000Z",
+        "sourceUrl": "https://arxiv.org/pdf/2608.20481",
+        "evidence": [
+          "Approach and Figures 1–4: offline ontology creation, threshold estimation, caching, and OPA runtime flow.",
+          "Table II: 937 definitions from 56 servers, with 91.96% risk accuracy, 85.71% recall, and 83.21% exact normalization.",
+          "Runtime section, Figure 5, and Table III: uncached-tool bypass, one CIFAR-10 count test, and internally inconsistent resource rows."
+        ]
       }
     },
     {
@@ -439,30 +509,30 @@
       "arxivId": "2608.20486",
       "url": "https://arxiv.org/abs/2608.20486",
       "topic": "Engineering",
-      "verdict": "Watch",
-      "verdictWhy": "This dedicated review connects wireless foundation-model designs to hardware budgets, but the listing offers a taxonomy rather than a demonstrated deployment.",
+      "verdict": "Try",
+      "verdictWhy": "This is a useful field map: 28 representative models are tied to signal form, task, adaptation, and hardware, with unusually candid limits on zero-shot and size claims.",
       "title": "Wireless Physical-Layer Foundation Models: Architectures, Learning Paradigms, Applications, and Deployment",
       "authors": "Mohammad Cheraghinia, Davide Buffelli, Liu Li, Mohammad Alhellani, Jaron Fontaine, Sattar Vakili, Mamoun Guenach, Eli De Poorter, Adnan Shahid",
-      "takeaway": "The review organizes wireless physical-layer foundation models from signal representations and pretraining through downstream applications and deployment constraints.",
-      "brief": "The authors review Wireless Physical-Layer Foundation Models: large pretrained networks intended to learn transferable representations of channel state information, in-phase and quadrature samples, and spectrograms for multiple wireless tasks.\n\nThe review covers neural architectures, masked, contrastive, and generative pretraining, fine-tuning, and a five-part taxonomy spanning architecture, input, objective, scale and deployment, and generalization. It maps model size to memory, compute, and latency budgets of representative hardware, but the abstract reports no measured deployment or comparative performance result.\n\nOpen this if you need a structured map from wireless-signal pretraining to channel estimation, prediction, localization, or sensing. Treat its feasibility analysis as a review to verify against the target hardware, not proof that one backbone meets a production budget.",
+      "takeaway": "Across 28 representative wireless physical-layer foundation models, physics-aware tokenization and test-time adaptation can matter more than parameter count, but non-comparable datasets, transfer protocols, and hardware measurements prevent a universal deployment ranking.",
+      "brief": "The survey organizes 28 representative wireless physical-layer foundation models by architecture, signal and tokenization, pretraining objective, scale and deployment target, and generalization, then follows the same backbones through telecommunications, localization, sensing, and compression.\n\nIts most useful contribution is a deployability screen: a model-size upper bound takes the minimum allowed by memory, compute, and bandwidth under a latency budget, followed by more conservative task-specific estimates. The synthesis also resists “bigger is better”: WiMamba's cited 2.5M-parameter result cuts latency 15.3× and memory 42.3× versus LWM, while another cited study gains about 2.3 dB by scaling 12M to 96M parameters but 7.2 dB from five test-time adaptation steps at 12M. These are results reported by different source papers, not a common benchmark, and the survey gives no literature-search or inclusion protocol.\n\nOpen it when choosing a signal representation, pretraining objective, adaptation method, or rough hardware envelope. Ignore any implied winner: Table IV says its data units are not interchangeable, “zero-shot” protocols differ, and the sizing equations are theoretical screens rather than end-to-end latency, energy, memory, and accuracy measurements.",
       "abstract": "Foundation models, i.e., large neural networks pretrained on broad unlabeled data and adapted to many downstream tasks, have reshaped natural language processing and computer vision and are now being explored for the wireless physical layer. Wireless Physical-Layer Foundation Models (WPFMs) aim to learn transferable representations of signals such as channel state information (CSI), in-phase and quadrature (IQ) samples, and spectrograms so that a single pretrained backbone can support tasks ranging from channel estimation and prediction to localization and sensing while using limited task-specific data. This paper provides a dedicated review of WPFMs from learning design to practical deployment. We first establish the theoretical background, covering the neural architectures used for wireless signals, the self-supervised pretraining paradigms of masked modeling, contrastive learning, and generative pretraining, and the fine-tuning strategies that adapt pretrained models to downstream tasks. We then introduce a taxonomy that organizes existing models along five dimensions: architecture family, input modality and tokenization, pretraining objective, model scale and deployment target, and generalization capability. Building on this basis, we review applications across telecommunications, localization, and sensing, and, for each domain, analyze deployment feasibility by mapping model size to the memory, compute, and latency budgets of representative wireless hardware. Finally, we discuss model compression and efficient deployment, summarize the cross-cutting challenges, and outline open research directions. Our goal is to provide a reference that connects pretraining, architecture, and fine-tuning with the practical constraints of wireless systems.",
       "takeaways": [
-        "Object: a review and five-dimension taxonomy of pretrained backbones for wireless physical-layer signals and tasks.",
-        "Visible limit: deployment feasibility is analyzed by mapping model size to representative budgets, while the listing reports no measured deployment result.",
-        "Artifact: no review collection, code, model, or data repository is declared in the nomination."
+        "Object: a five-axis taxonomy and deployment-oriented review of 28 representative backbones spanning CSI, IQ, spectrogram, environmental, localization, and sensing inputs.",
+        "Limit: selection is not documented as a systematic review, source-study datasets and transfer definitions are heterogeneous, and parameter-count sizing cannot establish production feasibility by itself.",
+        "Artifact: the paper declares no companion code, model collection, extracted comparison data, or review spreadsheet; its references point readers to the individual source papers."
       ],
       "plain": {
-        "verdictWhy": "Use this as a map of reusable models for wireless signals and their device constraints, not as evidence that a particular model is ready to deploy.",
-        "brief": "The paper reviews large models trained on broad collections of wireless signals so one model can later support several jobs, including estimating channels, predicting them, locating devices, and sensing.\n\nIt groups prior work by model design, signal format, training objective, size and target hardware, and ability to transfer. It also compares model size with representative memory, computing, and delay limits, but the abstract gives no real-device measurement.\n\nOpen it when choosing what wireless-model literature or deployment constraint to investigate. Check any claimed fit against the exact hardware and task you intend to use.",
+        "verdictWhy": "Use this to narrow a wireless-model design and hardware target, but not to select a winner from reported numbers that were measured under different conditions.",
+        "brief": "The paper maps 28 reusable models for wireless signals: what each model reads, how it learns without labels, which tasks it supports, how it transfers, and where it might fit from a handset or base station to an edge GPU or cloud server.\n\nThe evidence says model size alone is a poor guide. Wireless-specific patching, masking, state-space designs, and adaptation sometimes beat much larger models, while the paper's memory, compute, and bandwidth formula gives only a first-pass size limit. The compared studies use different datasets, units, meanings of “zero-shot,” and hardware, and the authors do not describe a formal search or inclusion method for the survey.\n\nOpen it before deciding what literature and deployment constraints to investigate. For an actual build, return to the cited model paper and measure the complete pipeline on the exact signal, target hardware, latency budget, and accuracy requirement.",
         "takeaways": [
-          "The object is a review of reusable pretrained models for wireless signals.",
-          "Its deployment discussion uses representative hardware budgets rather than a reported live deployment result.",
-          "The nomination does not list a code, model, or data repository."
+          "The object is a map from wireless signal representation and pretraining to communication, localization, sensing, and deployment.",
+          "The main limit is that the numbers come from unlike experiments, and the paper's hardware envelopes are estimates rather than a shared real-device benchmark.",
+          "No downloadable review dataset, codebase, or model bundle is provided by this paper."
         ]
       },
       "actions": [
-        "Inspect the review's inclusion criteria and taxonomy tables before using it as a comprehensive map of wireless foundation models.",
-        "Recalculate memory, compute, and latency fit for the specific model, hardware, and downstream task under consideration."
+        "Use Table IV and the strict zero-shot and few-shot definitions to shortlist models by the exact input modality, task, and transfer axis, then normalize results from the cited primary papers before comparing them.",
+        "Recalculate the paper's memory, compute, and bandwidth bound for the target hardware, then measure end-to-end latency, energy, buffering, accuracy, and fallback behavior."
       ],
       "intake": "arXiv",
       "tags": [
@@ -488,9 +558,19 @@
           "sourceCount": 1,
           "publishedOn": "2026-08-24"
         },
-        "packetBasis": "title-and-abstract",
-        "model": "codex-backfill",
-        "generatedAt": "2026-08-24T16:30:00.000Z"
+        "packetBasis": "full-paper",
+        "model": "codex-full-paper-review",
+        "generatedAt": "2026-08-24T19:10:11.000Z"
+      },
+      "review": {
+        "basis": "full-paper",
+        "reviewedAt": "2026-08-24T19:10:11.000Z",
+        "sourceUrl": "https://arxiv.org/pdf/2608.20486",
+        "evidence": [
+          "Figure 4 and theoretical-foundations section: model architecture, adaptation, deployment equations, and the warning that practical on-chip availability may be only 10–30%.",
+          "Table IV and taxonomy synthesis: 28 models, non-interchangeable data units, differing zero-shot protocols, and mixed scaling evidence.",
+          "Computational-aspects and challenges sections: task-specific estimates and the need for complete real-hardware validation."
+        ]
       }
     },
     {
@@ -498,30 +578,30 @@
       "arxivId": "2608.20505",
       "url": "https://arxiv.org/abs/2608.20505",
       "topic": "Stats",
-      "verdict": "Watch",
-      "verdictWhy": "The harm-aware objective is decision-relevant and illustrated on a clinical trial, but its guarantees depend on modeled counterfactual relationships.",
+      "verdict": "Try",
+      "verdictWhy": "The theory, finite-sample recovery study, and public replication materials make this worth opening, provided its harm budget is not mistaken for an individual safety guarantee.",
       "title": "Counterfactual Optimization of Policy Interventions: Lexical Ordering and Leapfrogging",
       "authors": "Martina Scauda, Tobias Freidling, Qingyuan Zhao",
-      "takeaway": "The paper optimizes a change from a baseline policy by improving welfare while constraining worst-case individual counterfactual harm.",
-      "brief": "The authors study policy transitions that improve overall welfare while limiting the worst-case probability or expected amount of harm to an individual relative to a baseline policy.\n\nUnder stated sufficient conditions, the optimal transition ranks covariate-and-current-treatment groups by a priority score and moves changed groups directly to their conditionally optimal treatment. The score depends on models for potential-outcome dependence, and an I-SPY2 breast-cancer trial reanalysis shows that accounting for counterfactual harm can change which treatment-subgroup pairs are deprioritized.\n\nOpen this if average policy value is inadequate for a high-stakes treatment decision. Treat the application as a model-based reanalysis and inspect identifiability, dependence assumptions, and sensitivity before operational use.",
+      "takeaway": "Under explicit dominance, recoupling, and harm-function conditions, an optimal policy transition ranks current-treatment groups by expected gain per worst-case counterfactual harm and moves selected groups directly to the conditionally best arm.",
+      "brief": "The paper replaces “choose the policy with the highest mean outcome” with a transition from a current policy that maximizes expected outcome subject to a bound on worst-case population expected counterfactual harm. For multiple treatments, its lexical leapfrogging theorem ranks covariate-and-current-treatment groups by expected gain divided by worst-case harm and moves chosen groups directly to the conditionally best arm.\n\nThe I-SPY2 illustration uses 987 patients across 10 arms and four receptor subtypes. CATE's population ranking correlates 0.83 with the non-negative-dependence score and 0.61 with the unrestricted Fréchet score; at the observed cell sizes, simulations expect recovery of only about half of the top-three or top-six groups, and posterior priority tiers differ by harm model. The authors warn that crude arm-by-subtype rates need not identify potential-outcome marginals and that this analysis is illustrative, not clinical advice.\n\nOpen it if you design causal policy transitions where average benefit is not enough and can defend the outcome, baseline, harm budget, marginal potential-outcome models, and dependence class. Do not use the tier plot as treatment guidance: the guarantee controls a population-level worst-case expected loss, not harm to every individual or subgroup, and the one-score solution relies on one scalar outcome and one linear harm constraint.",
       "abstract": "Most data-driven policy learning methods maximize average outcomes, overlooking the possibility that a policy beneficial on average may still harm a substantial fraction of individuals. Motivated by the ethical principle of \"first do no harm\", we study how to design a change from a baseline policy that improves overall welfare while keeping the worst-case probability or expectation of individual harm below a specified limit. We establish sufficient conditions under which an optimal policy transition has a lexical leapfrogging structure: groups defined by covariates and current treatment are ranked by a priority score, and any treatment change moves them directly to the conditionally optimal treatment. We derive this score under several models for the dependence among potential outcomes. We demonstrate this harm-aware policy optimization approach in a reanalysis of the I-SPY2 breast cancer platform trial and show how the consideration of counterfactual harm may lead to different conclusions about which treatment-subgroup pairs may warrant deprioritization in further clinical evaluation.",
       "takeaways": [
-        "Object: a counterfactual policy-learning objective that constrains individual harm while improving aggregate welfare.",
-        "Visible limit: the priority score changes with assumptions about dependence among potential outcomes, which cannot all be observed jointly.",
-        "Artifact: the listing describes theory and an I-SPY2 reanalysis but declares no code or data repository."
+        "Object: a policy-transition rule that allocates a counterfactual-harm budget by lexical benefit-to-worst-case-harm priority and, under sufficient conditions, leapfrogs directly to the best arm.",
+        "Limit: the multi-arm theorem needs stochastic dominance and recoupling or dependence conditions; finite-sample ranks are uncertain, and the population expected-harm bound does not protect each person or subgroup.",
+        "Artifact: the authors publish replication code and materials for the theory, simulations, and I-SPY2 illustration at their Cambridge Statistical Laboratory page."
       ],
       "plain": {
-        "verdictWhy": "It asks whether a better policy on average still hurts some people, but the answer depends on assumptions about outcomes that cannot all be observed.",
-        "brief": "A policy can improve the average result while making some individuals worse off. This paper chooses policy changes that raise overall welfare while placing a limit on the worst individual harm.\n\nUnder specific conditions, groups can be placed in a priority order and moved directly to their best predicted treatment. A breast-cancer trial reanalysis shows that adding the harm constraint can change which group-treatment combinations receive less priority.\n\nOpen it for high-stakes policy or treatment assignment where average benefit is not enough. Examine how conclusions move when the unobserved relationships between possible outcomes are modeled differently.",
+        "verdictWhy": "It gives a concrete way to trade average improvement against possible harm and ships replication materials, but its clinical example is illustrative and its guarantee is about a population average under worst-case assumptions.",
+        "brief": "A policy can improve outcomes on average while making some people worse off. This paper starts from the policy already in use, sets a maximum amount of worst-case expected harm for the population, and prioritizes changes that deliver the most expected gain per unit of that harm.\n\nIn the breast-cancer-trial example, different assumptions about how each patient's possible outcomes relate to one another produce different treatment-subtype rankings. With the observed group sizes, simulations recover only about half of the true top-three or top-six groups, and the paper says the raw response-rate comparison is not identified well enough for clinical advice.\n\nOpen it for the decision rule, proofs, sensitivity models, and replication workflow. Do not read it as a promise that nobody will be harmed: the paper explicitly says its budget does not protect every person or subgroup, and extra safety, fairness, or subgroup constraints remove the simple one-score solution.",
         "takeaways": [
-          "The object is a policy rule that balances overall benefit against possible harm to individuals.",
-          "Its ordering depends on assumptions about the outcomes each person would have received under other treatments.",
-          "No code or data repository is listed."
+          "The object is a ranked way to change an existing policy while limiting worst-case expected harm.",
+          "The main limit is that the ranking depends on unobserved relationships between possible outcomes, strong multi-treatment conditions, and noisy subgroup estimates.",
+          "Public replication code and materials are declared by the authors."
         ]
       },
       "actions": [
-        "Inspect the sufficient conditions and potential-outcome dependence models used to derive the priority score.",
-        "Review sensitivity analyses in the I-SPY2 reanalysis before interpreting changed subgroup priorities as treatment guidance."
+        "Before applying the score, verify the baseline policy, exchangeability and positivity, stochastic-dominance and recoupling conditions, and sensitivity to the chosen dependence class.",
+        "Run the published replication materials, replace crude cells with design-history-adjusted marginal estimates where required, and report posterior and rank-recovery uncertainty before domain review."
       ],
       "intake": "arXiv",
       "tags": [
@@ -547,9 +627,19 @@
           "sourceCount": 1,
           "publishedOn": "2026-08-24"
         },
-        "packetBasis": "title-and-abstract",
-        "model": "codex-backfill",
-        "generatedAt": "2026-08-24T16:30:00.000Z"
+        "packetBasis": "full-paper",
+        "model": "codex-full-paper-review",
+        "generatedAt": "2026-08-24T19:10:11.000Z"
+      },
+      "review": {
+        "basis": "full-paper",
+        "reviewedAt": "2026-08-24T19:10:11.000Z",
+        "sourceUrl": "https://arxiv.org/pdf/2608.20505",
+        "evidence": [
+          "Introduction and multi-valued treatment results: population expected-harm objective, lexical ordering, and leapfrogging conditions.",
+          "Table I and I-SPY2 analysis: 987 patients, 10 arms, four subtypes, rank correlations, and finite-sample recovery limits.",
+          "Discussion and Data availability: no per-person guarantee, scalar single-constraint limits, and public replication materials."
+        ]
       }
     },
     {
@@ -558,29 +648,29 @@
       "url": "https://arxiv.org/abs/2608.20698",
       "topic": "Econ",
       "verdict": "Try",
-      "verdictWhy": "The conflict between the theoretical and laboratory welfare orderings turns a simple transparency recommendation into a useful implementation result.",
+      "verdictWhy": "The 180-person lab study shows full priority disclosure beats coarser policies by reducing decision errors, but its recommendation comes from a stripped-down three-student assignment market, not a field rollout.",
       "title": "Priority Transparency, Admission Chances, and Information Acquisition in School Choice",
       "authors": "Georgy Artemov, Siqi Pan",
-      "takeaway": "Priority disclosure changes which students learn their own preferences, while laboratory understanding effects reverse the model's predicted welfare ranking of disclosure regimes.",
-      "brief": "The authors study how disclosing school priorities or admission chances affects whether students acquire information about their own preferences before choosing schools.\n\nThe model predicts that full disclosure concentrates learning among high-priority students, while partial pooling spreads incentives and produces higher welfare. In the laboratory, full disclosure has the highest welfare, followed by partial and no disclosure, because transparency improves understanding and reduces mistakes; subjects still respond suboptimally to stated admission chances.\n\nOpen this if you design school-choice information or admissions guidance. The disagreement between model and experiment is the main result to inspect, especially before transferring the laboratory recommendation to a different mechanism or student population.",
+      "takeaway": "In a three-student school-choice model, coarse disclosure can preserve learning incentives, yet across three lab experiments full priority disclosure yields the highest reconstructed welfare because subjects make fewer strategic mistakes.",
+      "brief": "The paper studies information disclosure under sequential random serial dictatorship with three students and two schools. Students may pay to learn which school they prefer, while Unknown, Known, and Coarse treatments reveal different amounts of admission-priority information; theory predicts that coarse grouping can sometimes induce more information acquisition than full disclosure.\n\nAcross nine University of Melbourne sessions with 180 participants, the authors combine a controlled robot-opponent experiment, elicited willingness to pay under grouped costs, and a direct-admission-chance treatment. Recombining elicited strategies over 27 cost combinations and broader grids gives Known at least as much reconstructed welfare as Coarse, which in turn beats Unknown, even where the model favors partial grouping. All treatments remain below theoretical payoff, and even directly stated admission chances are used imperfectly.\n\nOpen it if you design assignment mechanisms or disclosures and need to separate incentives to acquire information from people's ability to understand and use it. Treat the policy lesson as a lab result: welfare is reconstructed from elicited strategies in one small mechanism, not observed in a field assignment, and more transparency may still need decision guidance.",
       "abstract": "We study, theoretically and experimentally, how transparency about students' priorities and admission chances shapes their incentives to acquire information about their own preferences in school choice and college admissions. In the model, uninformed students choose schools based on a common prior. When they learn their own preferences, their choices become more heterogeneous, which frees up seats at popular schools. Students who know they have high priority have stronger incentives to learn because they can more readily act on what they learn, whereas students who know they have low priority are discouraged. Full priority disclosure concentrates learning among high-priority students. By pooling priorities, partial disclosure spreads learning incentives to pooled students and yields higher welfare. In the laboratory, however, full disclosure yields the highest welfare instead, followed by partial disclosure, and then no disclosure, because greater transparency improves subjects' understanding of the strategic environment, leading to fewer mistakes. These findings support full disclosure of priorities or admission chances to guide information acquisition. However, deviations in learning remain even under greater priority transparency, partly because subjects respond suboptimally to admission chances when these are provided directly rather than inferred. Students' ability to interpret and use them is therefore itself a policy concern.",
       "takeaways": [
-        "Object: a theoretical and laboratory study of how admissions transparency changes preference learning and school choice.",
-        "Visible limit: the laboratory welfare ranking reverses the model prediction, and subjects still misuse directly provided admission chances.",
-        "Artifact: no experiment materials, data, or code repository is declared in the nomination."
+        "Object: a model and three lab experiments comparing unknown, fully known, and coarsely grouped school-admission priorities.",
+        "Limit: welfare is recombined from elicited strategies in a three-person, two-school lab mechanism, so the ranking is not yet field evidence.",
+        "Artifact: the arXiv source contains the manuscript tables and figures, but the paper declares no public data, code, instructions, or replication package."
       ],
       "plain": {
-        "verdictWhy": "The study shows that clearer admissions information can help people understand the system even when theory predicts a different incentive effect.",
-        "brief": "Students may spend effort learning which schools they truly prefer only when that information can change their choice. Telling them their admission priority changes that incentive.\n\nThe theory favors partially grouping priority information because more students then choose to learn. In the lab, full disclosure works best because people understand the choice problem better and make fewer mistakes, though they still struggle to use stated admission chances well.\n\nOpen it when deciding how much admissions information to disclose. Pay attention to both incentives and whether recipients can interpret the information correctly.",
+        "verdictWhy": "Clearer priority information helped participants make fewer mistakes in this lab market, but the result has not been tested in a real admissions process.",
+        "brief": "Students may spend effort learning which schools they truly prefer only when that information can change their choice. This paper tests whether telling them more or less about admission priority changes that incentive.\n\nTheory sometimes favors grouping priority information because more students then choose to learn. In the lab, full disclosure produces the best reconstructed welfare because people understand the choice problem better and make fewer mistakes, though they still struggle to use stated admission chances well.\n\nOpen it when deciding how much admissions information to disclose. Before changing policy, test both incentives and whether the actual recipients can interpret the information correctly.",
         "takeaways": [
           "The object is the effect of admissions transparency on learning and choices.",
-          "Theory and the laboratory rank disclosure policies differently, so understanding and mistakes matter alongside incentives.",
-          "No study materials or code link is listed."
+          "The main limit is the simplified lab market and reconstructed welfare rather than a real admissions rollout.",
+          "No public study materials, data, code, or replication link is declared."
         ]
       },
       "actions": [
-        "Read the experimental design and welfare calculation to understand why reduced mistakes outweigh the model's learning-incentive effect.",
-        "Before changing disclosure policy, test whether the target population can correctly interpret priorities and admission chances."
+        "Inspect the experimental design and recombinant welfare calculation, then reproduce the Known, Coarse, and Unknown comparisons before using the ranking in policy work.",
+        "Run a comprehension test or field pilot with the target mechanism, real priorities, admission chances, and search costs, pairing transparency with decision guidance."
       ],
       "intake": "arXiv",
       "tags": [
@@ -607,9 +697,19 @@
           "sourceCount": 1,
           "publishedOn": "2026-08-24"
         },
-        "packetBasis": "title-and-abstract",
-        "model": "codex-backfill",
-        "generatedAt": "2026-08-24T16:30:00.000Z"
+        "packetBasis": "full-paper",
+        "model": "codex-full-paper-review",
+        "generatedAt": "2026-08-24T19:10:11.000Z"
+      },
+      "review": {
+        "basis": "full-paper",
+        "reviewedAt": "2026-08-24T19:10:11.000Z",
+        "sourceUrl": "https://arxiv.org/pdf/2608.20698",
+        "evidence": [
+          "Experimental setup, treatments, and Figure 1: three-student serial dictatorship with Unknown, Known, and Coarse disclosures.",
+          "Experimental procedure and welfare results: nine sessions, 180 participants, and recombinant comparisons over 27 cost combinations and broader grids.",
+          "Results 3–6 and Conclusion: strategic mistakes, direct-chance deviations, and the limits of disclosure without guidance."
+        ]
       }
     }
   ]

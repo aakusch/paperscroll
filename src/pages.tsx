@@ -1,5 +1,5 @@
 import { useEffect, useState, type FormEvent, type ReactNode } from "react";
-import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import {
   createToken,
   getPublicProfile,
@@ -55,9 +55,10 @@ export function AboutPage() {
             The abstract is the authors’ context. PaperScroll generates the
             decision layer in one source-grounded batch: Try, Watch, or Skip;
             the claim, visible limit, artifact status, and next action. The
-            model has the title and abstract, not the PDF, and the paper page
-            says so. If any of the ten packets fails validation, the whole day
-            stays unpublished rather than silently shrinking.
+            unattended publisher uses title and abstract and says so. A
+            deliberately repaired batch may declare a full-paper review only
+            after all ten sources are read. If any packet fails validation, the
+            whole day stays unpublished rather than silently shrinking.
           </p>
         </section>
 
@@ -366,6 +367,7 @@ export function AccountPage() {
 function AccountForm({ account }: { account: User }) {
   const { logout, saveProfile, toast } = useSession();
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [name, setName] = useState(account.name);
   const [bio, setBio] = useState(account.bio ?? "");
   const [x, setX] = useState(account.x ?? "");
@@ -373,6 +375,7 @@ function AccountForm({ account }: { account: User }) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const nameCheck = useUsernameAvailability(name, account.name);
+  const accountView = searchParams.get("view") === "agent" ? "agent" : "reader";
 
   const joined = formatJoined(account.joinedAt);
 
@@ -400,6 +403,16 @@ function AccountForm({ account }: { account: User }) {
     }
   }
 
+  function selectAccountView(view: "reader" | "agent", focus = false) {
+    const next = new URLSearchParams(searchParams);
+    if (view === "reader") next.delete("view");
+    else next.set("view", "agent");
+    setSearchParams(next, { replace: true });
+    if (focus) {
+      requestAnimationFrame(() => document.getElementById(`account-tab-${view}`)?.focus());
+    }
+  }
+
   return (
     <AuthCard
       wide
@@ -407,112 +420,162 @@ function AccountForm({ account }: { account: User }) {
       title={account.name}
       aside={joined ? `Joined ${joined}` : undefined}
     >
-      <nav className="profile-nav">
-        <Link to={`/u/${account.name}`}>Public profile</Link>
-        <Link to="/welcome">Change fields</Link>
-      </nav>
-
-      <div className="account-composition">
-        <strong>Morning composition</strong>
-        <span>
-          {account.interests.length ? account.interests.join(", ") : "All fields"}
-          {account.workingOn ? ` · Desk: ${account.workingOn}` : ""}
-        </span>
+      <div
+        className="account-tabs"
+        role="tablist"
+        aria-label="Account sections"
+        onKeyDown={(event) => {
+          if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+          event.preventDefault();
+          selectAccountView(accountView === "reader" ? "agent" : "reader", true);
+        }}
+      >
+        <button
+          id="account-tab-reader"
+          type="button"
+          role="tab"
+          aria-selected={accountView === "reader"}
+          aria-controls="account-panel-reader"
+          tabIndex={accountView === "reader" ? 0 : -1}
+          onClick={() => selectAccountView("reader")}
+        >
+          Reader
+        </button>
+        <button
+          id="account-tab-agent"
+          type="button"
+          role="tab"
+          aria-selected={accountView === "agent"}
+          aria-controls="account-panel-agent"
+          tabIndex={accountView === "agent" ? 0 : -1}
+          onClick={() => selectAccountView("agent")}
+        >
+          Agent routing
+        </button>
       </div>
 
-      <form className="auth-form" onSubmit={onSave}>
-        <label>
-          Username
-          <input
-            value={name}
-            onChange={(e) => {
-              setName(e.target.value);
-              if (error) setError("");
-            }}
-            autoComplete="username"
-            spellCheck={false}
-            minLength={3}
-            maxLength={24}
-            pattern="[A-Za-z][A-Za-z0-9_]{2,23}"
-            title="Start with a letter, then letters, numbers, or underscore"
-            required
-            aria-invalid={
-              nameCheck.status === "taken" || nameCheck.status === "invalid" || undefined
-            }
-          />
-          <span
-            className={
-              nameCheck.status === "taken" || nameCheck.status === "invalid"
-                ? "form-error"
-                : nameCheck.status === "free" && nameCheck.hint
-                  ? "form-ok"
-                  : "form-note"
-            }
-          >
-            {nameCheck.hint || "Shown on comments and your public profile."}
-          </span>
-        </label>
-        <label>
-          Email
-          <input type="email" value={account.email} readOnly autoComplete="email" />
-          <span className="form-note">Used to sign in. Not shown on your public profile.</span>
-        </label>
-        {error ? (
-          <p className="form-error" role="alert">
-            {error}
-          </p>
-        ) : null}
-        <label>
-          Bio
-          <textarea
-            value={bio}
-            onChange={(e) => setBio(e.target.value)}
-            rows={4}
-            maxLength={500}
-            placeholder="What you’re working on, or how you read the board."
-          />
-        </label>
-        <label>
-          X
-          <input
-            value={x}
-            onChange={(e) => setX(e.target.value)}
-            placeholder="@handle or x.com/…"
-            autoComplete="off"
-          />
-        </label>
-        <label>
-          LinkedIn
-          <input
-            value={linkedin}
-            onChange={(e) => setLinkedin(e.target.value)}
-            placeholder="linkedin.com/in/…"
-            autoComplete="off"
-          />
-        </label>
-        <button
-          className="btn primary"
-          type="submit"
-          disabled={
-            busy ||
-            nameCheck.status === "taken" ||
-            nameCheck.status === "checking" ||
-            nameCheck.status === "invalid"
-          }
+      {accountView === "reader" ? (
+        <section
+          id="account-panel-reader"
+          className="account-panel"
+          role="tabpanel"
+          aria-labelledby="account-tab-reader"
         >
-          {busy ? (
-            <span key="saving" className="btn-face">
-              Saving…
-            </span>
-          ) : (
-            <span key="save" className="btn-face">
-              Save profile
-            </span>
-          )}
-        </button>
-      </form>
+          <nav className="profile-nav">
+            <Link to={`/u/${account.name}`}>Public profile</Link>
+            <Link to="/welcome">Change fields</Link>
+          </nav>
 
-      <AgentDigest />
+          <div className="account-composition">
+            <strong>Morning composition</strong>
+            <span>
+              {account.interests.length ? account.interests.join(", ") : "All fields"}
+              {account.workingOn ? ` · Desk: ${account.workingOn}` : ""}
+            </span>
+          </div>
+
+          <form className="auth-form" onSubmit={onSave}>
+            <label>
+              Username
+              <input
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                  if (error) setError("");
+                }}
+                autoComplete="username"
+                spellCheck={false}
+                minLength={3}
+                maxLength={24}
+                pattern="[A-Za-z][A-Za-z0-9_]{2,23}"
+                title="Start with a letter, then letters, numbers, or underscore"
+                required
+                aria-invalid={
+                  nameCheck.status === "taken" || nameCheck.status === "invalid" || undefined
+                }
+              />
+              <span
+                className={
+                  nameCheck.status === "taken" || nameCheck.status === "invalid"
+                    ? "form-error"
+                    : nameCheck.status === "free" && nameCheck.hint
+                      ? "form-ok"
+                      : "form-note"
+                }
+              >
+                {nameCheck.hint || "Shown on comments and your public profile."}
+              </span>
+            </label>
+            <label>
+              Email
+              <input type="email" value={account.email} readOnly autoComplete="email" />
+              <span className="form-note">Used to sign in. Not shown on your public profile.</span>
+            </label>
+            {error ? (
+              <p className="form-error" role="alert">
+                {error}
+              </p>
+            ) : null}
+            <label>
+              Bio
+              <textarea
+                value={bio}
+                onChange={(e) => setBio(e.target.value)}
+                rows={4}
+                maxLength={500}
+                placeholder="What you’re working on, or how you read the board."
+              />
+            </label>
+            <label>
+              X
+              <input
+                value={x}
+                onChange={(e) => setX(e.target.value)}
+                placeholder="@handle or x.com/…"
+                autoComplete="off"
+              />
+            </label>
+            <label>
+              LinkedIn
+              <input
+                value={linkedin}
+                onChange={(e) => setLinkedin(e.target.value)}
+                placeholder="linkedin.com/in/…"
+                autoComplete="off"
+              />
+            </label>
+            <button
+              className="btn primary"
+              type="submit"
+              disabled={
+                busy ||
+                nameCheck.status === "taken" ||
+                nameCheck.status === "checking" ||
+                nameCheck.status === "invalid"
+              }
+            >
+              {busy ? (
+                <span key="saving" className="btn-face">
+                  Saving…
+                </span>
+              ) : (
+                <span key="save" className="btn-face">
+                  Save profile
+                </span>
+              )}
+            </button>
+          </form>
+        </section>
+      ) : (
+        <section
+          id="account-panel-agent"
+          className="account-panel account-panel-agent"
+          role="tabpanel"
+          aria-labelledby="account-tab-agent"
+        >
+          <AgentDigest />
+        </section>
+      )}
 
       <div className="sheet-mark">
         <button
@@ -556,7 +619,7 @@ function AgentDigest() {
   const routingPrompt = `Once each weekday after PaperScroll publishes its morning board:
 1. GET ${digestUrl} with Authorization: Bearer <PAPERSCROLL_TOKEN>, Accept: application/json, and the last ETag in If-None-Match.
 2. On 304, stop. There is no new composed board for this route.
-3. On 200, require schema=paperscroll.digest, schemaVersion=1.0, board.complete=true, and board.count=10.
+3. On 200, require schema=paperscroll.digest, schemaVersion=1.1, board.complete=true, and board.count=10.
 4. Process delivery.key only if it has not already succeeded. Use the host packet; never substitute an author's abstract. Map useful papers onto the current workspace without inventing methods, numbers, artifacts, or GitHub URLs.
 5. After successful ingestion, persist delivery.key and the response ETag.`;
   const curlExample = `curl --fail-with-body \\

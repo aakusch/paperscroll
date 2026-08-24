@@ -162,6 +162,9 @@ complete PaperScroll deployment because those flows would lose state.
    seats are filled. One structured model request creates all ten packets from
    title and abstract. Exact IDs, packet shape, and verbatim evidence spans are
    validated before anything is written. There is no partial-board fallback.
+   A deliberately repaired board may instead use `full-paper` packets after all
+   ten sources have been read and the complete batch has been reviewed again;
+   that evidence basis is carried through the UI and digest contract.
 
 3. Run `npm run lint` and `npm run build`. A published date is immutable unless
    an operator deliberately invokes the repair path; routine reruns exit without

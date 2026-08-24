@@ -167,9 +167,10 @@ export default function PaperPage() {
         ) : null}
         {paper.automation ? (
           <p className="evidence">
-            <strong>Board #{paper.automation.rank}.</strong> {paper.automation.reason}. The
-            packet below is constrained to the authors’ title and abstract; verify the PDF
-            before relying on details.
+            <strong>Board #{paper.automation.rank}.</strong> {paper.automation.reason}.{" "}
+            {paper.automation.packetBasis === "full-paper"
+              ? "The packet below was reviewed against the full paper."
+              : "The packet below is constrained to the authors’ title and abstract; verify the PDF before relying on details."}
           </p>
         ) : null}
         <div className="paper-actions">
@@ -201,7 +202,14 @@ export default function PaperPage() {
           </details>
         </div>
 
-        <HostBrief paper={paper} />
+        <nav className="tabs paper-tabs" aria-label="Paper sections">
+          <NavLink to={`/p/${paper.id}`} end>
+            PaperScroll review
+          </NavLink>
+          <NavLink to={`/p/${paper.id}/discussion`}>
+            Discussion{comments.length ? <em>{comments.length}</em> : null}
+          </NavLink>
+        </nav>
 
         {onDiscussion ? (
           <section className="discussion-section" id="discussion">
@@ -210,7 +218,6 @@ export default function PaperPage() {
                 <p className="sheet-kicker">Discussion</p>
                 <h2>Caveats, replications, and useful artifacts</h2>
               </div>
-              <NavLink to={`/p/${paper.id}`} end>Close</NavLink>
             </header>
             {commentsStatus === "loading" ? (
               <p className="empty">Loading reader notes…</p>
@@ -283,10 +290,7 @@ export default function PaperPage() {
             )}
           </section>
         ) : (
-          <Link className="discussion-entry" to={`/p/${paper.id}/discussion`}>
-            <span>Reader discussion{comments.length ? ` · ${comments.length}` : ""}</span>
-            <small>Caveats, replications, and useful artifacts only.</small>
-          </Link>
+          <HostBrief paper={paper} />
         )}
       </article>
     </div>

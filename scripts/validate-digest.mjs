@@ -22,12 +22,19 @@ try {
   assert.equal(first.kind, "json");
   assert.equal(first.body, repeat.body, "the same route must be byte-stable");
   assert.equal(payload.schema, "paperscroll.digest");
-  assert.equal(payload.schemaVersion, "1.0");
+  assert.equal(payload.schemaVersion, "1.1");
   assert.equal(payload.board.complete, true);
   assert.equal(payload.board.count, 10);
+  assert.equal(payload.board.packetBasis, "full-paper");
   assert.equal(payload.papers.length, 10);
   assert.equal(new Set(payload.papers.map((paper) => paper.arxivId)).size, 10);
   assert.equal(typeof payload.papers[0].packet, "object", "structured packet was overwritten");
+  assert.equal(
+    payload.papers.every((paper) => paper.packet.automation?.basis === "full-paper"),
+    true,
+    "digest mixed packet evidence bases",
+  );
+  assert.match(payload.instruction, /reviewed against the full papers/);
   assert.equal(typeof payload.papers[0].markdown, "string");
   assert.equal(JSON.stringify(payload).includes('"abstract"'), false, "digest leaked an abstract key");
   assert.equal(payload.board.version, composed.board.version, "composition changed the frozen board version");

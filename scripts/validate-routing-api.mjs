@@ -80,6 +80,7 @@ try {
 
   const payload = JSON.parse(first.body);
   assert.equal(payload.schema, "paperscroll.digest");
+  assert.equal(payload.schemaVersion, "1.1");
   assert.equal(payload.board.complete, true);
   assert.equal(payload.board.count, 10);
   assert.equal(payload.papers.length, 10);

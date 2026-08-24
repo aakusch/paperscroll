@@ -18,7 +18,10 @@ const expected = rankMorningPool(pool, 10).selected;
 
 assert(board.date === date, "board date does not match filename");
 assert(board.selection?.version === RANKING_VERSION, "ranking version is missing or stale");
-assert(board.selection?.packetBasis === "title-and-abstract", "packet basis is missing");
+assert(
+  ["title-and-abstract", "full-paper"].includes(board.selection?.packetBasis),
+  "packet basis is missing",
+);
 assert(Array.isArray(board.papers) && board.papers.length === 10, "board must contain exactly ten papers");
 assert(expected.length === 10, "pool no longer produces exactly ten papers");
 
@@ -29,7 +32,10 @@ for (let index = 0; index < expected.length; index += 1) {
   assert(paper.topic === selected.field, `field mismatch for ${paper.arxivId}`);
   assert(paper.automation?.rank === index + 1, `board rank mismatch for ${paper.arxivId}`);
   assert(paper.automation?.version === RANKING_VERSION, `ranking metadata mismatch for ${paper.arxivId}`);
-  assert(paper.automation?.packetBasis === "title-and-abstract", `packet basis mismatch for ${paper.arxivId}`);
+  assert(
+    paper.automation?.packetBasis === board.selection.packetBasis,
+    `packet basis mismatch for ${paper.arxivId}`,
+  );
   assert(paper.url === `https://arxiv.org/abs/${paper.arxivId}`, `unsafe paper URL for ${paper.arxivId}`);
   assert(String(paper.abstract || "").trim().length >= 80, `abstract missing for ${paper.arxivId}`);
   assert(String(paper.verdictWhy || "").trim(), `verdict line missing for ${paper.arxivId}`);
@@ -37,6 +43,34 @@ for (let index = 0; index < expected.length; index += 1) {
   assert(paper.takeaways?.length === 3, `takeaways incomplete for ${paper.arxivId}`);
   assert(paper.actions?.length === 2, `actions incomplete for ${paper.arxivId}`);
   assert(paper.plain?.brief?.trim() && paper.plain.takeaways?.length === 3, `Plain packet incomplete for ${paper.arxivId}`);
+  if (board.selection.packetBasis === "full-paper") {
+    assert(
+      paper.brief.split(/\n\s*\n/).filter(Boolean).length === 3,
+      `full-paper brief must have three paragraphs for ${paper.arxivId}`,
+    );
+    assert(
+      paper.plain.brief.split(/\n\s*\n/).filter(Boolean).length === 3,
+      `full-paper Plain brief must have three paragraphs for ${paper.arxivId}`,
+    );
+    assert(paper.review?.basis === "full-paper", `full-paper provenance missing for ${paper.arxivId}`);
+    assert(
+      paper.review?.reviewedAt === board.selection.generatedAt,
+      `full-paper review timestamp mismatch for ${paper.arxivId}`,
+    );
+    assert(
+      paper.review?.sourceUrl === `https://arxiv.org/pdf/${paper.arxivId}`,
+      `full-paper source mismatch for ${paper.arxivId}`,
+    );
+    assert(
+      paper.review?.evidence?.length >= 2 && paper.review.evidence.every((item) => item.trim()),
+      `full-paper evidence trail incomplete for ${paper.arxivId}`,
+    );
+    assert(
+      paper.automation?.model === board.selection.model &&
+        paper.automation?.generatedAt === board.selection.generatedAt,
+      `full-paper batch metadata mismatch for ${paper.arxivId}`,
+    );
+  }
   if (paper.github) {
     assert(/^https:\/\/github\.com\//i.test(paper.github), `unsafe code URL for ${paper.arxivId}`);
   }

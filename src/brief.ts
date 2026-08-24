@@ -81,7 +81,10 @@ export function paperAgentPrompt(paper: Paper, desk?: string) {
   const who = desk?.trim()
     ? `I work on: ${desk.trim()}.`
     : `I'm catching up on ${paper.topic} this morning.`;
-  return `You are reading a PaperScroll board packet, not the authors' raw abstract. Automated packets are constrained to the supplied title and abstract, not the PDF. Do not treat a missing PDF as a reason to hallucinate methods, numbers, or a GitHub URL. If this packet is not enough, say you need the PDF.
+  const basis = paper.automation?.packetBasis === "full-paper"
+    ? "This packet was reviewed against the full paper, but it remains an editorial routing note rather than a substitute for checking the source."
+    : "This automated packet is constrained to the supplied title and abstract, not the PDF.";
+  return `You are reading a PaperScroll board packet, not the authors' raw abstract. ${basis} Do not treat a missing detail as a reason to hallucinate methods, numbers, or a GitHub URL. If this packet is not enough, say you need the paper.
 
 ${who}
 

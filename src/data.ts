@@ -14,6 +14,7 @@ export type Topic =
   | "Physics"
   | "Security";
 export type Verdict = "Try" | "Watch" | "Skip";
+export type PacketBasis = "title-and-abstract" | "full-paper";
 export type Intake =
   | "HF Daily"
   | "arXiv"
@@ -60,9 +61,16 @@ export type Paper = {
       sourceCount: number;
       publishedOn: string;
     };
-    packetBasis: "title-and-abstract";
+    packetBasis: PacketBasis;
     model: string;
     generatedAt: string;
+  };
+  /** Auditable provenance for a packet deliberately rewritten after reading the source. */
+  review?: {
+    basis: "full-paper";
+    reviewedAt: string;
+    sourceUrl: string;
+    evidence: string[];
   };
 };
 
@@ -100,7 +108,7 @@ export type Edition = {
     version: string;
     generatedAt: string;
     model: string;
-    packetBasis: "title-and-abstract";
+    packetBasis: PacketBasis;
   };
 };
 

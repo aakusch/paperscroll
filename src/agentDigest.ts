@@ -43,6 +43,9 @@ export async function buildDigest(query: DigestQuery) {
   const papers = [...focus, ...rest].filter(isHostedPacket);
   const format = query.format === "json" ? "json" : "md";
   const origin = (query.origin || "").replace(/\/$/, "");
+  const instruction = edition.selection?.packetBasis === "full-paper"
+    ? "This is a PaperScroll board digest, not the authors’ raw abstracts. Its packets were reviewed against the full papers and remain routing notes, not substitutes for source verification. If a paper maps to the current workspace, say how. Do not invent methods, numbers, or GitHub URLs."
+    : "This is a PaperScroll board digest, not the authors’ raw abstracts. Automated packets are based on title and abstract, not a full PDF read. Use them as morning context. If a paper maps to the current workspace, say how. If a packet is thin, say you need the PDF. Do not invent methods, numbers, or GitHub URLs.";
 
   if (contract === "v1") {
     const sharedPackets = edition.papers.map((paper) => ({
@@ -60,7 +63,7 @@ export async function buildDigest(query: DigestQuery) {
     const deliveryKey = `paperscroll:${edition.date}:${boardVersion}`;
     const payload = {
       schema: "paperscroll.digest",
-      schemaVersion: "1.0",
+      schemaVersion: "1.1",
       schemaUrl: origin ? `${origin}/schemas/digest-v1.json` : null,
       source: "PaperScroll",
       board: {
@@ -86,8 +89,7 @@ export async function buildDigest(query: DigestQuery) {
         semantics:
           "Persist this key only after successful ingestion. Repeated 200 responses with the same key are retries, not new mornings.",
       },
-      instruction:
-        "This is a PaperScroll board digest, not the authors’ raw abstracts. Automated packets are based on title and abstract, not a full PDF read. Use them as morning context. If a paper maps to the current workspace, say how. If a packet is thin, say you need the PDF. Do not invent methods, numbers, or GitHub URLs.",
+      instruction,
       papers: papers.map((paper) => ({
         ...paperPacket(paper),
         page: origin ? `${origin}/p/${paper.arxivId}` : null,
@@ -122,8 +124,7 @@ export async function buildDigest(query: DigestQuery) {
     fields: fields.length ? fields : "all",
     desk: desk || null,
     count: papers.length,
-    instruction:
-      "This is a PaperScroll board digest, not the authors’ raw abstracts. Automated packets are based on title and abstract, not a full PDF read. Use them as morning context. If a paper maps to the current workspace, say how. If a packet is thin, say you need the PDF. Do not invent methods, numbers, or GitHub URLs.",
+    instruction,
     papers: papers.map((paper) => ({
       ...paperPacket(paper),
       page: origin ? `${origin}/p/${paper.arxivId}` : null,
