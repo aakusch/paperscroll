@@ -2,10 +2,6 @@
  * Users, sessions, comments, saves, digest tokens. Used by Vite in dev and by server/index.mjs.
  */
 import { createHash, randomBytes } from "node:crypto";
-import { mkdirSync } from "node:fs";
-import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
-import { DatabaseSync } from "node:sqlite";
 import {
   checkPassword,
   emailIssue,
@@ -16,132 +12,7 @@ import {
   passwordNeedsRehash,
   usernameIssue,
 } from "./identity.mjs";
-
-const ROOT = dirname(fileURLToPath(import.meta.url));
-mkdirSync(join(ROOT, "..", "data"), { recursive: true });
-const db = new DatabaseSync(join(ROOT, "..", "data", "paperscroll.sqlite"));
-db.exec("PRAGMA foreign_keys = ON;");
-db.exec("PRAGMA journal_mode = WAL;");
-
-db.exec(`
-  CREATE TABLE IF NOT EXISTS users (
-    id TEXT PRIMARY KEY,
-    name TEXT NOT NULL,
-    email TEXT NOT NULL UNIQUE,
-    password_hash TEXT NOT NULL,
-    newsletter INTEGER NOT NULL DEFAULT 0,
-    created_at TEXT NOT NULL
-  );
-  CREATE TABLE IF NOT EXISTS sessions (
-    id TEXT PRIMARY KEY,
-    user_id TEXT NOT NULL REFERENCES users(id),
-    expires_at TEXT NOT NULL
-  );
-  CREATE TABLE IF NOT EXISTS comments (
-    id TEXT PRIMARY KEY,
-    paper_id TEXT NOT NULL,
-    user_id TEXT NOT NULL REFERENCES users(id),
-    body TEXT NOT NULL,
-    created_at TEXT NOT NULL
-  );
-  CREATE INDEX IF NOT EXISTS comments_paper ON comments(paper_id, created_at);
-  CREATE TABLE IF NOT EXISTS saves (
-    user_id TEXT NOT NULL REFERENCES users(id),
-    paper_id TEXT NOT NULL,
-    created_at TEXT NOT NULL,
-    PRIMARY KEY (user_id, paper_id)
-  );
-  CREATE TABLE IF NOT EXISTS api_tokens (
-    id TEXT PRIMARY KEY,
-    user_id TEXT NOT NULL REFERENCES users(id),
-    token_hash TEXT NOT NULL UNIQUE,
-    prefix TEXT NOT NULL,
-    created_at TEXT NOT NULL,
-    last_used_at TEXT,
-    expires_at TEXT
-  );
-  CREATE INDEX IF NOT EXISTS api_tokens_user ON api_tokens(user_id);
-`);
-
-const userCols = db.prepare("PRAGMA table_info(users)").all().map((row) => row.name);
-for (const [name, sql] of [
-  ["bio", "ALTER TABLE users ADD COLUMN bio TEXT NOT NULL DEFAULT ''"],
-  ["x_url", "ALTER TABLE users ADD COLUMN x_url TEXT NOT NULL DEFAULT ''"],
-  ["linkedin_url", "ALTER TABLE users ADD COLUMN linkedin_url TEXT NOT NULL DEFAULT ''"],
-  ["interests", "ALTER TABLE users ADD COLUMN interests TEXT NOT NULL DEFAULT '[]'"],
-  ["working_on", "ALTER TABLE users ADD COLUMN working_on TEXT NOT NULL DEFAULT ''"],
-]) {
-  if (!userCols.includes(name)) db.exec(sql);
-}
-
-const tokenCols = db.prepare("PRAGMA table_info(api_tokens)").all().map((row) => row.name);
-if (!tokenCols.includes("expires_at")) {
-  db.exec("ALTER TABLE api_tokens ADD COLUMN expires_at TEXT");
-}
-db.exec(`
-  UPDATE api_tokens
-  SET expires_at = strftime('%Y-%m-%dT%H:%M:%fZ', created_at, '+90 days')
-  WHERE expires_at IS NULL
-`);
-
-try {
-  db.exec("CREATE UNIQUE INDEX IF NOT EXISTS users_name_ci ON users(lower(name));");
-} catch {
-  console.warn("users_name_ci skipped: duplicate names already exist");
-}
-
-const q = {
-  userByEmail: db.prepare("SELECT * FROM users WHERE email = ?"),
-  userById: db.prepare("SELECT * FROM users WHERE id = ?"),
-  userByName: db.prepare("SELECT * FROM users WHERE lower(name) = lower(?)"),
-  insertUser: db.prepare(
-    "INSERT INTO users (id, name, email, password_hash, newsletter, created_at) VALUES (?, ?, ?, ?, ?, ?)",
-  ),
-  setNewsletter: db.prepare("UPDATE users SET newsletter = 1 WHERE id = ?"),
-  insertSession: db.prepare(
-    "INSERT INTO sessions (id, user_id, expires_at) VALUES (?, ?, ?)",
-  ),
-  session: db.prepare("SELECT * FROM sessions WHERE id = ? AND expires_at > ?"),
-  deleteSession: db.prepare("DELETE FROM sessions WHERE id = ?"),
-  deleteSessionsForUser: db.prepare("DELETE FROM sessions WHERE user_id = ?"),
-  deleteExpiredSessions: db.prepare("DELETE FROM sessions WHERE expires_at <= ?"),
-  comments: db.prepare(
-    `SELECT c.id, c.body, c.created_at AS createdAt, u.id AS userId, u.name AS author
-     FROM comments c JOIN users u ON u.id = c.user_id
-     WHERE c.paper_id = ? ORDER BY c.created_at ASC`,
-  ),
-  insertComment: db.prepare(
-    "INSERT INTO comments (id, paper_id, user_id, body, created_at) VALUES (?, ?, ?, ?, ?)",
-  ),
-  saves: db.prepare("SELECT paper_id AS paperId FROM saves WHERE user_id = ?"),
-  insertSave: db.prepare(
-    "INSERT OR IGNORE INTO saves (user_id, paper_id, created_at) VALUES (?, ?, ?)",
-  ),
-  deleteSave: db.prepare("DELETE FROM saves WHERE user_id = ? AND paper_id = ?"),
-  updateProfile: db.prepare(
-    "UPDATE users SET name = ?, bio = ?, x_url = ?, linkedin_url = ? WHERE id = ?",
-  ),
-  updatePrefs: db.prepare(
-    "UPDATE users SET interests = ?, working_on = ? WHERE id = ?",
-  ),
-  setPassword: db.prepare("UPDATE users SET password_hash = ? WHERE id = ?"),
-  tokensForUser: db.prepare(
-    `SELECT id, prefix, created_at AS createdAt, last_used_at AS lastUsedAt,
-            expires_at AS expiresAt
-     FROM api_tokens WHERE user_id = ? ORDER BY created_at DESC`,
-  ),
-  tokenCount: db.prepare("SELECT COUNT(*) AS n FROM api_tokens WHERE user_id = ?"),
-  tokenByHash: db.prepare(
-    "SELECT * FROM api_tokens WHERE token_hash = ? AND expires_at > ?",
-  ),
-  tokenById: db.prepare("SELECT * FROM api_tokens WHERE id = ? AND user_id = ?"),
-  insertToken: db.prepare(
-    "INSERT INTO api_tokens (id, user_id, token_hash, prefix, created_at, expires_at) VALUES (?, ?, ?, ?, ?, ?)",
-  ),
-  touchToken: db.prepare("UPDATE api_tokens SET last_used_at = ? WHERE id = ?"),
-  deleteToken: db.prepare("DELETE FROM api_tokens WHERE id = ? AND user_id = ?"),
-  deleteExpiredTokens: db.prepare("DELETE FROM api_tokens WHERE expires_at <= ?"),
-};
+import { q, ready as storeReady } from "./store.mjs";
 
 const MAX_BODY = 32 * 1024;
 const MAX_PAPER_ID = 80;
@@ -149,8 +20,26 @@ const PAPER_ID_OK = /^[A-Za-z0-9][A-Za-z0-9._:-]{0,79}$/;
 
 const rateBuckets = new Map();
 
+function proxyTrusted() {
+  return process.env.TRUST_PROXY === "1" || process.env.VERCEL === "1";
+}
+
+function requestProtocol(req) {
+  if (proxyTrusted()) {
+    const forwarded = String(req.headers["x-forwarded-proto"] || "")
+      .split(",")[0]
+      .trim();
+    if (forwarded === "http" || forwarded === "https") return forwarded;
+  }
+  return process.env.VERCEL === "1" ? "https" : "http";
+}
+
+function requestOrigin(req) {
+  return `${requestProtocol(req)}://${req.headers.host || "localhost"}`;
+}
+
 function clientKey(req) {
-  if (process.env.TRUST_PROXY === "1") {
+  if (proxyTrusted()) {
     const xf = String(req.headers["x-forwarded-for"] || "")
       .split(",")[0]
       .trim();
@@ -205,12 +94,12 @@ function parseCookies(header) {
   return out;
 }
 
-function userFromCookie(req) {
+async function userFromCookie(req) {
   const sid = parseCookies(req.headers.cookie).ps_session;
   if (!sid) return null;
-  const session = q.session.get(hashToken(sid), now());
+  const session = await q.session.get(hashToken(sid), now());
   if (!session) return null;
-  return q.userById.get(session.user_id) ?? null;
+  return (await q.userById.get(session.user_id)) ?? null;
 }
 
 function publicProfile(row) {
@@ -323,11 +212,7 @@ function normalizeLinkedIn(raw) {
 function cookieSecure(req) {
   if (process.env.COOKIE_SECURE === "0") return false;
   if (process.env.COOKIE_SECURE === "1") return true;
-  if (process.env.TRUST_PROXY !== "1") return false;
-  const proto = String(req.headers["x-forwarded-proto"] || "")
-    .split(",")[0]
-    .trim();
-  return proto === "https";
+  return requestProtocol(req) === "https";
 }
 
 function cookieFlags(req, maxAge) {
@@ -381,11 +266,11 @@ function clearSession(req) {
   };
 }
 
-function startSession(req, userId) {
-  q.deleteExpiredSessions.run(now());
-  q.deleteSessionsForUser.run(userId);
+async function startSession(req, userId) {
+  await q.deleteExpiredSessions.run(now());
+  await q.deleteSessionsForUser.run(userId);
   const sid = id();
-  q.insertSession.run(hashToken(sid), userId, later(30));
+  await q.insertSession.run(hashToken(sid), userId, later(30));
   return setSession(req, sid);
 }
 
@@ -396,7 +281,7 @@ function sameOrigin(req) {
   if (!origin) return false;
   try {
     const from = new URL(origin);
-    const here = new URL(`http://${req.headers.host || "localhost"}`);
+    const here = new URL(requestOrigin(req));
     if (from.host === here.host) return true;
     const loop = (h) =>
       h === "localhost" || h === "127.0.0.1" || h === "::1" || h === "[::1]";
@@ -429,8 +314,8 @@ function paperIdOk(value) {
   return PAPER_ID_OK.test(value) && value.length <= MAX_PAPER_ID;
 }
 
-function nameTaken(name, exceptId) {
-  const row = q.userByName.get(name);
+async function nameTaken(name, exceptId) {
+  const row = await q.userByName.get(name);
   return Boolean(row && row.id !== exceptId);
 }
 
@@ -451,12 +336,14 @@ function route(method, path) {
  * @returns {Promise<boolean>} true if this was an /api request
  */
 export async function handleApi(req, res, hooks = {}) {
-  const url = new URL(req.url || "/", `http://${req.headers.host || "localhost"}`);
+  const url = new URL(req.url || "/", requestOrigin(req));
   if (!url.pathname.startsWith("/api")) return false;
 
   const key = route(req.method || "GET", url.pathname);
 
   try {
+    await storeReady();
+
     if (!sameOrigin(req)) {
       send(res, 403, { error: "Bad origin." });
       return true;
@@ -484,26 +371,26 @@ export async function handleApi(req, res, hooks = {}) {
         send(res, 400, { error: "Passwords don’t match." });
         return true;
       }
-      if (nameTaken(name)) {
+      if (await nameTaken(name)) {
         send(res, 409, { error: "That username is already taken." });
         return true;
       }
-      if (q.userByEmail.get(email)) {
+      if (await q.userByEmail.get(email)) {
         send(res, 400, { error: "Could not create account." });
         return true;
       }
       const userId = id();
       try {
-        q.insertUser.run(
+        await q.insertUser.run(
           userId,
           name,
           email,
           hashPassword(password),
-          body.newsletter ? 1 : 0,
+          Boolean(body.newsletter),
           now(),
         );
       } catch {
-        if (nameTaken(name)) {
+        if (await nameTaken(name)) {
           send(res, 409, { error: "That username is already taken." });
           return true;
         }
@@ -513,8 +400,8 @@ export async function handleApi(req, res, hooks = {}) {
       send(
         res,
         201,
-        { user: publicUser(q.userById.get(userId)) },
-        startSession(req, userId),
+        { user: publicUser(await q.userById.get(userId)) },
+        await startSession(req, userId),
       );
       return true;
     }
@@ -533,32 +420,32 @@ export async function handleApi(req, res, hooks = {}) {
         send(res, 429, { error: "Try again later." });
         return true;
       }
-      const row = q.userByEmail.get(email);
+      const row = await q.userByEmail.get(email);
       if (!row || !checkPassword(password, row.password_hash)) {
         send(res, 401, { error: "Email or password is wrong." });
         return true;
       }
       if (passwordNeedsRehash(row.password_hash)) {
-        q.setPassword.run(hashPassword(password), row.id);
+        await q.setPassword.run(hashPassword(password), row.id);
       }
-      send(res, 200, { user: publicUser(row) }, startSession(req, row.id));
+      send(res, 200, { user: publicUser(row) }, await startSession(req, row.id));
       return true;
     }
 
     if (key === "POST /api/logout") {
       const sid = parseCookies(req.headers.cookie).ps_session;
-      if (sid) q.deleteSession.run(hashToken(sid));
+      if (sid) await q.deleteSession.run(hashToken(sid));
       send(res, 200, { ok: true }, clearSession(req));
       return true;
     }
 
     if (key === "GET /api/me") {
-      const user = userFromCookie(req);
+      const user = await userFromCookie(req);
       if (!user) {
         send(res, 200, { user: null, saves: [] });
         return true;
       }
-      const saves = q.saves.all(user.id).map((row) => row.paperId);
+      const saves = (await q.saves.all(user.id)).map((row) => row.paperId);
       send(res, 200, { user: publicUser(user), saves });
       return true;
     }
@@ -574,14 +461,15 @@ export async function handleApi(req, res, hooks = {}) {
         send(res, 200, { available: false });
         return true;
       }
-      send(res, 200, { available: !nameTaken(name) });
+      send(res, 200, { available: !(await nameTaken(name)) });
       return true;
     }
 
     const userGet = url.pathname.match(/^\/api\/users\/([^/]+)$/);
     if (req.method === "GET" && userGet) {
       const handle = decodePath(userGet[1]);
-      const row = q.userByName.get(handle) ?? q.userById.get(handle);
+      const row =
+        (await q.userByName.get(handle)) ?? (await q.userById.get(handle));
       if (!row) {
         send(res, 404, { error: "No such profile." });
         return true;
@@ -591,7 +479,7 @@ export async function handleApi(req, res, hooks = {}) {
     }
 
     if (key === "PATCH /api/profile") {
-      const user = userFromCookie(req);
+      const user = await userFromCookie(req);
       if (!user) {
         send(res, 401, { error: "Sign in to edit your profile." });
         return true;
@@ -608,7 +496,7 @@ export async function handleApi(req, res, hooks = {}) {
         send(res, 400, { error: badName });
         return true;
       }
-      if (nameTaken(name, user.id)) {
+      if (await nameTaken(name, user.id)) {
         send(res, 409, { error: "That username is already taken." });
         return true;
       }
@@ -619,17 +507,17 @@ export async function handleApi(req, res, hooks = {}) {
       const x = normalizeX(body.x ?? user.x_url);
       const linkedin = normalizeLinkedIn(body.linkedin ?? user.linkedin_url);
       try {
-        q.updateProfile.run(name, bio, x, linkedin, user.id);
+        await q.updateProfile.run(name, bio, x, linkedin, user.id);
       } catch {
         send(res, 409, { error: "That username is already taken." });
         return true;
       }
-      send(res, 200, { user: publicUser(q.userById.get(user.id)) });
+      send(res, 200, { user: publicUser(await q.userById.get(user.id)) });
       return true;
     }
 
     if (key === "PATCH /api/prefs") {
-      const user = userFromCookie(req);
+      const user = await userFromCookie(req);
       if (!user) {
         send(res, 401, { error: "Sign in to save fields." });
         return true;
@@ -642,7 +530,7 @@ export async function handleApi(req, res, hooks = {}) {
       try {
         const interests = parseInterests(body.interests, readInterests(user));
         const workingOn = parseWorkingOn(body.workingOn, user.working_on || "");
-        q.updatePrefs.run(JSON.stringify(interests), workingOn, user.id);
+        await q.updatePrefs.run(JSON.stringify(interests), workingOn, user.id);
       } catch (err) {
         if (err instanceof HttpError) {
           send(res, err.status, { error: err.message });
@@ -650,23 +538,23 @@ export async function handleApi(req, res, hooks = {}) {
         }
         throw err;
       }
-      send(res, 200, { user: publicUser(q.userById.get(user.id)) });
+      send(res, 200, { user: publicUser(await q.userById.get(user.id)) });
       return true;
     }
 
     if (key === "GET /api/tokens") {
-      const user = userFromCookie(req);
+      const user = await userFromCookie(req);
       if (!user) {
         send(res, 401, { error: "Sign in to manage digest tokens." });
         return true;
       }
-      q.deleteExpiredTokens.run(now());
-      send(res, 200, { tokens: q.tokensForUser.all(user.id) });
+      await q.deleteExpiredTokens.run(now());
+      send(res, 200, { tokens: await q.tokensForUser.all(user.id) });
       return true;
     }
 
     if (key === "POST /api/tokens") {
-      const user = userFromCookie(req);
+      const user = await userFromCookie(req);
       if (!user) {
         send(res, 401, { error: "Sign in to create a digest token." });
         return true;
@@ -676,8 +564,8 @@ export async function handleApi(req, res, hooks = {}) {
         return true;
       }
       await readBody(req);
-      q.deleteExpiredTokens.run(now());
-      const count = q.tokenCount.get(user.id)?.n ?? 0;
+      await q.deleteExpiredTokens.run(now());
+      const count = (await q.tokenCount.get(user.id))?.n ?? 0;
       if (count >= 5) {
         send(res, 400, { error: "Revoke a token before creating another (max 5)." });
         return true;
@@ -686,7 +574,7 @@ export async function handleApi(req, res, hooks = {}) {
       const tokenId = id();
       const createdAt = now();
       const expiresAt = later(90);
-      q.insertToken.run(
+      await q.insertToken.run(
         tokenId,
         user.id,
         hashToken(secret),
@@ -706,18 +594,18 @@ export async function handleApi(req, res, hooks = {}) {
 
     const tokenDelete = url.pathname.match(/^\/api\/tokens\/([^/]+)$/);
     if (req.method === "DELETE" && tokenDelete) {
-      const user = userFromCookie(req);
+      const user = await userFromCookie(req);
       if (!user) {
         send(res, 401, { error: "Sign in to revoke a digest token." });
         return true;
       }
       const tokenId = decodePath(tokenDelete[1]);
-      const row = q.tokenById.get(tokenId, user.id);
+      const row = await q.tokenById.get(tokenId, user.id);
       if (!row) {
         send(res, 404, { error: "Token not found." });
         return true;
       }
-      q.deleteToken.run(tokenId, user.id);
+      await q.deleteToken.run(tokenId, user.id);
       send(res, 200, { ok: true });
       return true;
     }
@@ -728,7 +616,7 @@ export async function handleApi(req, res, hooks = {}) {
         send(res, 401, { error: "Send Authorization: Bearer with a digest token from your account." });
         return true;
       }
-      const tokenRow = q.tokenByHash.get(hashToken(secret), now());
+      const tokenRow = await q.tokenByHash.get(hashToken(secret), now());
       if (!tokenRow) {
         send(res, 401, { error: "Unknown digest token." });
         return true;
@@ -737,7 +625,7 @@ export async function handleApi(req, res, hooks = {}) {
         send(res, 429, { error: "Try again later." });
         return true;
       }
-      const user = q.userById.get(tokenRow.user_id);
+      const user = await q.userById.get(tokenRow.user_id);
       if (!user) {
         send(res, 401, { error: "Unknown digest token." });
         return true;
@@ -756,7 +644,7 @@ export async function handleApi(req, res, hooks = {}) {
           format: url.searchParams.get("format") || undefined,
           origin: `${url.protocol}//${url.host}`,
         });
-        q.touchToken.run(now(), tokenRow.id);
+        await q.touchToken.run(now(), tokenRow.id);
         if (result.kind === "json") {
           sendText(res, 200, result.body, "application/json; charset=utf-8");
         } else {
@@ -770,13 +658,13 @@ export async function handleApi(req, res, hooks = {}) {
     }
 
     if (key === "POST /api/newsletter") {
-      const user = userFromCookie(req);
+      const user = await userFromCookie(req);
       await readBody(req);
       if (!user) {
         send(res, 401, { error: "Sign in to subscribe. We’ll send mail later." });
         return true;
       }
-      q.setNewsletter.run(user.id);
+      await q.setNewsletter.run(user.id);
       send(res, 200, { user: { ...publicUser(user), newsletter: true } });
       return true;
     }
@@ -788,7 +676,7 @@ export async function handleApi(req, res, hooks = {}) {
         send(res, 200, { comments: [] });
         return true;
       }
-      send(res, 200, { comments: q.comments.all(paperId) });
+      send(res, 200, { comments: await q.comments.all(paperId) });
       return true;
     }
     if (req.method === "POST" && commentGet) {
@@ -796,7 +684,7 @@ export async function handleApi(req, res, hooks = {}) {
         send(res, 429, { error: "Try again later." });
         return true;
       }
-      const user = userFromCookie(req);
+      const user = await userFromCookie(req);
       if (!user) {
         send(res, 401, { error: "Sign in to comment." });
         return true;
@@ -813,7 +701,7 @@ export async function handleApi(req, res, hooks = {}) {
         return true;
       }
       const commentId = id();
-      q.insertComment.run(commentId, paperId, user.id, text, now());
+      await q.insertComment.run(commentId, paperId, user.id, text, now());
       send(res, 201, {
         comment: {
           id: commentId,
@@ -827,7 +715,7 @@ export async function handleApi(req, res, hooks = {}) {
     }
 
     if (key === "PUT /api/saves") {
-      const user = userFromCookie(req);
+      const user = await userFromCookie(req);
       if (!user) {
         send(res, 401, { error: "Sign in to save papers." });
         return true;
@@ -839,9 +727,9 @@ export async function handleApi(req, res, hooks = {}) {
         send(res, 400, { error: "Missing paper." });
         return true;
       }
-      if (on) q.insertSave.run(user.id, paperId, now());
-      else q.deleteSave.run(user.id, paperId);
-      const saves = q.saves.all(user.id).map((row) => row.paperId);
+      if (on) await q.insertSave.run(user.id, paperId, now());
+      else await q.deleteSave.run(user.id, paperId);
+      const saves = (await q.saves.all(user.id)).map((row) => row.paperId);
       send(res, 200, { saves });
       return true;
     }

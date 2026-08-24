@@ -1,4 +1,4 @@
-import type { Paper } from "./data";
+import type { Paper } from "./data.js";
 
 export type HostedPaper = Paper & { brief: string };
 
@@ -20,4 +20,3 @@ export function isHostedPacket(paper: Paper | undefined): paper is HostedPaper {
       paper.actions.every((line) => line.trim()),
   );
 }
-

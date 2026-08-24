@@ -1,6 +1,6 @@
-import type { Paper } from "./data";
-import { isHostedPacket, type HostedPaper } from "./hostPacket";
-import { belongsOnBoard } from "./listing";
+import type { Paper } from "./data.js";
+import { isHostedPacket, type HostedPaper } from "./hostPacket.js";
+import { belongsOnBoard } from "./listing.js";
 
 /** Shared morning board length. The feed ends. */
 export const BOARD_SIZE = 10;

@@ -1,5 +1,5 @@
-import type { Paper, Topic } from "./data";
-import type { User } from "./api";
+import type { Paper, Topic } from "./data.js";
+import type { User } from "./api.js";
 
 export type Prefs = {
   interests: Topic[];

@@ -1,5 +1,5 @@
-import type { Paper } from "./data";
-import { safeGithubUrl, safePaperUrl } from "./links";
+import type { Paper } from "./data.js";
+import { safeGithubUrl, safePaperUrl } from "./links.js";
 
 /** Structured host packet shared by copy actions and the digest. Never add abstract. */
 export function paperPacket(paper: Paper) {

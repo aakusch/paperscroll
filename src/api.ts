@@ -1,6 +1,6 @@
 const API = "/api";
 
-import type { Topic } from "./data";
+import type { Topic } from "./data.js";
 
 export type PublicProfile = {
   id: string;

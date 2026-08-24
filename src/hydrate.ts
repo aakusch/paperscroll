@@ -1,8 +1,8 @@
-import { selectBoard } from "./board";
-import type { Edition, Paper } from "./data";
-import { isHostedPacket } from "./hostPacket";
-import { dailyTrends, intakeOk } from "./listing";
-import { topicFromCategories, type MorningPool, type Nomination } from "./pool";
+import { selectBoard } from "./board.js";
+import type { Edition, Paper } from "./data.js";
+import { isHostedPacket } from "./hostPacket.js";
+import { dailyTrends, intakeOk } from "./listing.js";
+import { topicFromCategories, type MorningPool, type Nomination } from "./pool.js";
 
 export function editionFromPool(
   pool: MorningPool,

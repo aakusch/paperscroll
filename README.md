@@ -61,7 +61,7 @@ Hugging Face Daily Papers + selected arXiv new lists
           ▼                   ▼
       React site         GET /api/digest
 
-SQLite: users, sessions, comments, saves, field picks, digest tokens
+User store: users, sessions, comments, saves, field picks, digest tokens
 ```
 
 The boundary is intentional:
@@ -72,13 +72,20 @@ The boundary is intentional:
 | Reviewed host packets and archive copy | `src/data.ts` |
 | Explicit daily order and publication gate | `src/slates.ts`, `src/hostPacket.ts` |
 | Pool/packet join and eligibility | `src/hydrate.ts`, `src/board.ts` |
-| Accounts and reader-owned state | `data/paperscroll.sqlite` via `server/` |
+| Accounts and reader-owned state | `server/` store (`data/paperscroll.sqlite` locally; Neon on Vercel) |
 | Agent packet formats | `src/brief.ts`, `src/agentDigest.ts` |
 
 Vite mounts the SQLite API from `server/vite-plugin.mjs`, so `npm run dev`
 serves both the site and `/api` on port 5173. The standalone `npm run api`
 command is useful for identity/API diagnostics, but it cannot assemble a digest
 because the catalog is loaded through Vite.
+
+The storage adapter is deliberately small: `server/store.mjs` selects
+`server/sqlite-store.mjs` for the one-process local app and
+`server/neon-store.mjs` only on Vercel (or when explicitly selected with
+`PAPERSCROLL_DATABASE=neon`). Editorial catalog and host packets never move into
+the user database. Vercel's filesystem is ephemeral, so production reader state
+must not use the local SQLite file.
 
 ## Run locally
 
@@ -99,6 +106,26 @@ Useful checks:
 npm run lint
 npm run build
 ```
+
+## Deploy
+
+The Vercel project builds the Vite site and serves the existing API through the
+dispatcher function in `api/dispatch.mjs`; development remains one Vite process.
+Connect a managed Postgres database and expose its `DATABASE_URL` to production,
+preview, and development deployments. PaperScroll uses that database only for
+accounts and reader-owned state. No catalog or brief is generated at request
+time.
+
+For this repository, the Vercel project is linked through `.vercel/` (ignored by
+git) and a free Neon resource supplies `DATABASE_URL`. Deploy with:
+
+```bash
+vercel deploy --prod
+```
+
+After deployment, check sign-up, Account token creation and revocation, and both
+digest formats against the production URL. A static-only deployment is not a
+complete PaperScroll deployment because those flows would lose state.
 
 ## Host a morning
 

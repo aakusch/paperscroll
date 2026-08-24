@@ -1,5 +1,5 @@
-import type { DailyTrend, Listing, ListingIntake, Paper } from "./data";
-import { safePaperUrl } from "./links";
+import type { DailyTrend, Listing, ListingIntake, Paper } from "./data.js";
+import { safePaperUrl } from "./links.js";
 
 /** Community daily lists (e.g. HF Daily Papers) allow items up to 14 days after arXiv. */
 export const DAILY_LIST_MAX_AGE_DAYS = 14;

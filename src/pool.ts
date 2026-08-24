@@ -1,5 +1,5 @@
-import type { Topic } from "./data";
-import type { ListingIntake } from "./data";
+import type { Topic } from "./data.js";
+import type { ListingIntake } from "./data.js";
 
 /**
  * Morning pool — the only ingest object.

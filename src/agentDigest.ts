@@ -1,7 +1,7 @@
-import { catalog, FIELDS, type Topic } from "./data";
-import { isHostedPacket } from "./hostPacket";
-import { paperMarkdown, paperPacket } from "./brief";
-import { composeBoard, type Prefs } from "./rank";
+import { catalog, FIELDS, type Topic } from "./data.js";
+import { isHostedPacket } from "./hostPacket.js";
+import { paperMarkdown, paperPacket } from "./brief.js";
+import { composeBoard, type Prefs } from "./rank.js";
 
 const FIELD_IDS = new Set(FIELDS.map((field) => field.id));
 
