@@ -40,6 +40,26 @@ export type AppContext = {
 const boardDates = catalog.map((edition) => edition.date);
 const latestBoard = boardDates[0];
 
+function newYorkDate() {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/New_York",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(new Date());
+  const part = (type: Intl.DateTimeFormatPartTypes) =>
+    parts.find((item) => item.type === type)?.value ?? "";
+  return `${part("year")}-${part("month")}-${part("day")}`;
+}
+
+function fullDayLabel(date: string) {
+  return new Date(`${date}T12:00:00Z`).toLocaleDateString("en-US", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+  });
+}
+
 function boardPath(date: string) {
   return date === latestBoard ? "/" : `/d/${date}`;
 }
@@ -80,7 +100,7 @@ function Shell() {
                 : undefined
             }
           >
-            Today
+            The board
           </NavLink>
           <NavLink to="/saved">Saved{laterCount ? ` (${laterCount})` : ""}</NavLink>
           <NavLink to="/about">About</NavLink>
@@ -279,7 +299,9 @@ function FeedPage() {
   if (!source || !day || dayIndex < 0) return <Navigate to="/" replace />;
 
   const allFields = prefs.interests.length === 0;
-  const isLatest = boardDate === latestBoard;
+  const today = newYorkDate();
+  const isToday = boardDate === today;
+  const isLatestHosted = boardDate === latestBoard;
   const newer = dayIndex > 0 ? boardDates[dayIndex - 1] : null;
   const older =
     dayIndex < boardDates.length - 1 ? boardDates[dayIndex + 1] : null;
@@ -288,7 +310,9 @@ function FeedPage() {
     <div className="feed-page">
       <header className="feed-head">
         <div>
-          <p className="feed-kicker">{isLatest ? "Today" : "Archive"}</p>
+          <p className="feed-kicker">
+            {isToday ? "Today" : isLatestHosted ? "Last hosted" : "Archive"}
+          </p>
           <h1 className="feed-title">The board</h1>
         </div>
         <div className="feed-actions">
@@ -308,8 +332,16 @@ function FeedPage() {
           )}
         </div>
       </header>
-      <p className="board-note">
-        {allFields
+      <p
+        className={
+          isLatestHosted && !isToday
+            ? "board-note board-note-stale"
+            : "board-note"
+        }
+      >
+        {isLatestHosted && !isToday
+          ? `No hosted board is ready for ${fullDayLabel(today)}. Showing the latest complete board; intake alone never publishes papers.`
+          : allFields
           ? "One shared hosted slate. Card dates are when each paper first appeared."
           : `${prefs.interests.join(", ")} first. Same hosted slate as everyone.`}
       </p>
@@ -352,7 +384,9 @@ function FeedPage() {
           ))}
           {day.rest.length > 0 ? (
             <>
-              <h2 className="also">{isLatest ? "Also today" : "Also this board"}</h2>
+              <h2 className="also">
+                {isToday ? "Also today" : "Also this board"}
+              </h2>
               {day.rest.map((paper) => (
                 <PaperCard
                   key={paper.id}

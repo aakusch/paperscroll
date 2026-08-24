@@ -489,6 +489,12 @@ a {
   max-width: 40rem;
 }
 
+.board-note-stale {
+  padding-left: 12px;
+  border-left: 2px solid var(--accent);
+  color: var(--ink);
+}
+
 .day-pager {
   display: flex;
   align-items: center;
