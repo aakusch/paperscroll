@@ -113,6 +113,7 @@ Useful checks:
 npm run lint
 npm run build
 npm run validate-digest
+npm run validate-routing
 ```
 
 ## Deploy
