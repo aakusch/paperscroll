@@ -29,6 +29,7 @@ export function AboutPage() {
           deserves a full read.
         </p>
 
+        <div className="about-sections">
         <section className="block">
           <h2>One shared top ten</h2>
           <p className="brief-p">
@@ -92,6 +93,7 @@ export function AboutPage() {
             packet was ingested. The route is optional; the packet is still the product.
           </p>
         </section>
+        </div>
 
         <p className="about-foot">
           <Link to="/">See today’s board</Link>
@@ -425,9 +427,14 @@ function AccountForm({ account }: { account: User }) {
         role="tablist"
         aria-label="Account sections"
         onKeyDown={(event) => {
-          if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+          if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End"].includes(event.key)) return;
           event.preventDefault();
-          selectAccountView(accountView === "reader" ? "agent" : "reader", true);
+          const view = event.key === "Home"
+            ? "reader"
+            : event.key === "End"
+              ? "agent"
+              : accountView === "reader" ? "agent" : "reader";
+          selectAccountView(view, true);
         }}
       >
         <button
@@ -595,6 +602,7 @@ function AccountForm({ account }: { account: User }) {
 function AgentDigest() {
   const { toast } = useSession();
   const [tokens, setTokens] = useState<DigestToken[]>([]);
+  const [tokensStatus, setTokensStatus] = useState<"loading" | "ready" | "error">("loading");
   const [secret, setSecret] = useState<{ id: string; value: string } | null>(null);
   const [label, setLabel] = useState("Morning research route");
   const [busy, setBusy] = useState(false);
@@ -603,10 +611,16 @@ function AgentDigest() {
     let live = true;
     void listTokens()
       .then((data) => {
-        if (live) setTokens(data.tokens);
+        if (live) {
+          setTokens(data.tokens);
+          setTokensStatus("ready");
+        }
       })
       .catch(() => {
-        if (live) toast("Could not load digest tokens.");
+        if (live) {
+          setTokensStatus("error");
+          toast("Could not load digest tokens.");
+        }
       });
     return () => {
       live = false;
@@ -678,25 +692,6 @@ function AgentDigest() {
         <li><span>2</span><p>Schedule one weekday pull and keep the response ETag.</p></li>
         <li><span>3</span><p>On <code>200</code>, process a new <code>delivery.key</code>. On <code>304</code>, stop.</p></li>
       </ol>
-      <label className="digest-url">
-        Latest complete board
-        <input readOnly value={digestUrl} />
-        <span className="form-note">
-          For a frozen date, replace <code>latest</code> with <code>YYYY-MM-DD</code>.
-        </span>
-      </label>
-      <pre className="routing-code"><code>{curlExample}</code></pre>
-      <div className="digest-actions">
-        <button type="button" className="btn" onClick={() => void copy(digestUrl, "URL copied.")}>
-          Copy URL
-        </button>
-        <button type="button" className="btn" onClick={() => void copy(routingPrompt, "Routing instructions copied.")}>
-          Copy routing instructions
-        </button>
-        <a className="btn" href={schemaUrl} target="_blank" rel="noreferrer">
-          JSON schema
-        </a>
-      </div>
       <label className="digest-url token-label">
         Route name
         <input
@@ -710,7 +705,7 @@ function AgentDigest() {
         <button
           type="button"
           className="btn primary"
-          disabled={busy || tokens.length >= 5 || !label.trim()}
+          disabled={busy || tokensStatus !== "ready" || tokens.length >= 5 || !label.trim()}
           onClick={() => void mint()}
         >
           {busy ? "Working…" : "Create read-only token"}
@@ -725,7 +720,11 @@ function AgentDigest() {
           </button>
         </label>
       ) : null}
-      {tokens.length ? (
+      {tokensStatus === "loading" ? (
+        <p className="form-note" role="status" aria-live="polite">Checking routes…</p>
+      ) : tokensStatus === "error" ? (
+        <p className="form-error" role="status">Routes could not be loaded. Refresh before creating a token.</p>
+      ) : tokens.length ? (
         <ul className="token-list">
           {tokens.map((item) => (
             <li key={item.id}>
@@ -756,6 +755,30 @@ function AgentDigest() {
       ) : (
         <p className="form-note">No routes yet. Tokens expire after 90 days and are stored only as hashes.</p>
       )}
+
+      <section className="digest-connect">
+        <p className="digest-connect-kicker">Connect it</p>
+        <label className="digest-url">
+          Latest complete board
+          <input readOnly value={digestUrl} />
+          <span className="form-note">
+            For a frozen date, replace <code>latest</code> with <code>YYYY-MM-DD</code>.
+          </span>
+        </label>
+        <div className="digest-actions">
+          <button type="button" className="btn" onClick={() => void copy(digestUrl, "URL copied.")}>
+            Copy URL
+          </button>
+          <button type="button" className="btn" onClick={() => void copy(routingPrompt, "Routing instructions copied.")}>
+            Copy routing instructions
+          </button>
+        </div>
+        <details className="routing-manual">
+          <summary>Manual setup</summary>
+          <pre className="routing-code"><code>{curlExample}</code></pre>
+          <a href={schemaUrl} target="_blank" rel="noreferrer">Open JSON schema ↗</a>
+        </details>
+      </section>
     </section>
   );
 }

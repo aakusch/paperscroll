@@ -152,7 +152,7 @@ function SheetMeta({ paper }: { paper: DemoPaper }) {
         {paper.title}
       </div>
       <div style={{ fontSize: 15, color: colors.mute, marginTop: 8, lineHeight: 1.45 }}>
-        {paper.authors} · {paper.listed}
+        {paper.listed} · {paper.authors}
       </div>
     </>
   );
@@ -176,7 +176,7 @@ function Card({ children }: { children: ReactNode }) {
   );
 }
 
-function RoutineFoot({ nextTopic }: { nextTopic: string }) {
+function RoutineFoot({ nextPaper }: { nextPaper: DemoPaper }) {
   return (
     <div
       style={{
@@ -189,7 +189,28 @@ function RoutineFoot({ nextTopic }: { nextTopic: string }) {
       }}
     >
       <Pill>Read paper</Pill>
-      <Pill primary>Next · {nextTopic}</Pill>
+      <div
+        style={{
+          width: 390,
+          minHeight: 46,
+          display: "grid",
+          gridTemplateColumns: "auto minmax(0, 1fr)",
+          alignItems: "center",
+          gap: 10,
+          padding: "8px 14px",
+          borderRadius: 10,
+          boxSizing: "border-box",
+          backgroundColor: colors.ink,
+          color: "#f7f7f4",
+        }}
+      >
+        <span style={{ color: "rgba(247,247,244,.72)", fontSize: 11, fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase" }}>
+          Next · {nextPaper.topic}
+        </span>
+        <span style={{ overflow: "hidden", fontSize: 13, fontWeight: 600, textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+          {nextPaper.title}
+        </span>
+      </div>
     </div>
   );
 }
@@ -319,7 +340,7 @@ function TracesSheet({ frame }: { frame: number }) {
           </div>
         </Interactive.Div>
       </Card>
-      <RoutineFoot nextTopic="AI" />
+      <RoutineFoot nextPaper={boardPapers[2]} />
     </>
   );
 }
@@ -346,7 +367,7 @@ function HostSheet({ paper }: { paper: DemoPaper }) {
           </div>
         </div>
       </Card>
-      <RoutineFoot nextTopic="Math" />
+      <RoutineFoot nextPaper={boardPapers[5]} />
     </>
   );
 }
@@ -463,7 +484,19 @@ function CollateSheet({ frame }: { frame: number }) {
             overflow: "hidden",
           }}
         >
-          <Interactive.Div name="BoardScroll" style={{ display: "flex", flexDirection: "column", gap: 14, translate: scroll }}>
+          <Interactive.Div
+            name="BoardScroll"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 0,
+              overflow: "hidden",
+              border: `1px solid ${colors.line}`,
+              borderRadius: 14,
+              backgroundColor: colors.card,
+              translate: scroll,
+            }}
+          >
             {boardPapers.map((paper, i) => {
               const on = interpolate(frame, [56 + i * 6, 68 + i * 6], [0, 1], { ...clamp, easing: move });
               return (
@@ -487,6 +520,7 @@ function CollateSheet({ frame }: { frame: number }) {
                     verdict={paper.verdict}
                     rank={paper.rank}
                     votes={paper.votes}
+                    boardRank={i + 1}
                   />
                 </Interactive.Div>
               );

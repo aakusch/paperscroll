@@ -1,4 +1,4 @@
-import { useLayoutEffect, useMemo, useState } from "react";
+import { useLayoutEffect, useMemo, useState, type MouseEvent } from "react";
 import {
   Link,
   NavLink,
@@ -22,7 +22,8 @@ import {
 } from "./pages";
 import { RoutinePage, RoutineStart } from "./RoutinePage";
 import { FIELDS, catalog, type Paper, type Topic } from "./data";
-import { listingLine } from "./listing";
+import { listingLine, shortDate } from "./listing";
+import { beginRouteMotion } from "./motion";
 import { TrendMark } from "./Trend";
 import {
   composeBoard,
@@ -139,12 +140,18 @@ function PaperCard({
   paper: Paper;
   saved?: boolean;
 }) {
+  const rank = paper.automation?.rank;
+  const authors = compactCardAuthors(paper.authors);
+
   return (
     <Link to={`/p/${paper.id}`} className="paper">
-      <p className="paper-kicker">{paper.topic}</p>
+      <p className="paper-kicker">
+        <span>{paper.topic}</span>
+        {rank ? <span className="paper-rank">Board {String(rank).padStart(2, "0")}</span> : null}
+      </p>
       <h3>{paper.title}</h3>
       <p className="byline">
-        {listingLine(paper)} · {paper.authors}
+        {listingLine(paper)} · <span aria-label={paper.authors}>{authors}</span>
       </p>
       <p className="host-line">
         <span className={`host-verdict v-${paper.verdict.toLowerCase()}`}>
@@ -152,15 +159,20 @@ function PaperCard({
         </span>{" "}
         {paper.verdictWhy}
       </p>
-      {paper.automation || paper.trend || saved ? (
+      {paper.trend || saved ? (
         <div className="metrics">
-          {paper.automation ? <span>Board #{paper.automation.rank}</span> : null}
           {paper.trend ? <TrendMark trend={paper.trend} /> : null}
           {saved ? <span>Saved</span> : null}
         </div>
       ) : null}
     </Link>
   );
+}
+
+function compactCardAuthors(authors: string) {
+  const names = authors.split(",").map((name) => name.trim()).filter(Boolean);
+  if (names.length <= 3) return authors;
+  return `${names.slice(0, 2).join(", ")} +${names.length - 2}`;
 }
 
 function WelcomePage() {
@@ -281,6 +293,7 @@ function FeedPage() {
   const { date: dateParam } = useParams();
   const { prefs } = useOutletContext<AppContext>();
   const { account, saves } = useSession();
+  const navigate = useNavigate();
 
   const boardDate = dateParam ?? latestBoard;
   const dayIndex = boardDates.indexOf(boardDate);
@@ -306,6 +319,26 @@ function FeedPage() {
   const newer = dayIndex > 0 ? boardDates[dayIndex - 1] : null;
   const older =
     dayIndex < boardDates.length - 1 ? boardDates[dayIndex + 1] : null;
+
+  function changeBoard(
+    event: MouseEvent<HTMLAnchorElement>,
+    target: string,
+    mode: "board-newer" | "board-older",
+  ) {
+    if (
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.altKey ||
+      event.shiftKey ||
+      event.detail === 0
+    ) return;
+    const cleanup = beginRouteMotion(mode);
+    if (!cleanup) return;
+    event.preventDefault();
+    navigate(boardPath(target), { viewTransition: true });
+    window.setTimeout(cleanup, 280);
+  }
 
   return (
     <div className="feed-page">
@@ -352,17 +385,29 @@ function FeedPage() {
       {boardDates.length > 1 ? (
       <nav className="day-pager" aria-label="Board date">
         {newer ? (
-          <Link to={boardPath(newer)}>Newer</Link>
+          <Link
+            to={boardPath(newer)}
+            aria-label={`Newer board, ${fullDayLabel(newer)}`}
+            onClick={(event) => changeBoard(event, newer, "board-newer")}
+          >
+            ← {shortDate(newer)}
+          </Link>
         ) : (
-          <span className="dead">Newer</span>
+          <span className="dead">Latest</span>
         )}
         <span className="when">
           {day.label} · {day.papers.length} papers
         </span>
         {older ? (
-          <Link to={boardPath(older)}>Older</Link>
+          <Link
+            to={boardPath(older)}
+            aria-label={`Older board, ${fullDayLabel(older)}`}
+            onClick={(event) => changeBoard(event, older, "board-older")}
+          >
+            {shortDate(older)} →
+          </Link>
         ) : (
-          <span className="dead">Older</span>
+          <span className="dead">Oldest</span>
         )}
       </nav>
       ) : (

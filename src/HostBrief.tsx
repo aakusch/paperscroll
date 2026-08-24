@@ -5,7 +5,7 @@ import { updateWithMotion } from "./motion";
 import { Tip } from "./Tip";
 import { hasPlainBrief, hostCopy, useHostVoice } from "./voice";
 
-export function HostBrief({ paper }: { paper: Paper }) {
+export function HostBrief({ paper, showBasis = true }: { paper: Paper; showBasis?: boolean }) {
   const [voice, setVoice] = useHostVoice();
   const ready = isHostedPacket(paper);
   const host = hostCopy(paper, voice);
@@ -47,7 +47,7 @@ export function HostBrief({ paper }: { paper: Paper }) {
       <div className="host-copy">
         {ready && host.brief ? (
           <section className="block brief-block">
-          {paper.automation ? (
+          {showBasis && paper.automation ? (
             <p className="packet-basis">
               {paper.automation.packetBasis === "full-paper"
                 ? "PaperScroll packet · reviewed against the full paper"

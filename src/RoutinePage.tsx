@@ -52,7 +52,9 @@ export function RoutinePage() {
     if (transitionLock.current) return;
     transitionLock.current = true;
     setTransitioning(true);
-    const cleanup = animate ? beginRouteMotion("routine-next") : null;
+    const cleanup = animate
+      ? beginRouteMotion(last ? "routine-done" : "routine-next")
+      : null;
     routeMotionCleanup.current = cleanup;
     navigate(nextTo, cleanup ? { viewTransition: true } : undefined);
     transitionTimer.current = window.setTimeout(() => {
@@ -62,7 +64,7 @@ export function RoutinePage() {
       routeMotionCleanup.current = null;
       transitionTimer.current = null;
     }, cleanup ? 280 : 100);
-  }, [navigate, nextTo]);
+  }, [last, navigate, nextTo]);
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -228,38 +230,40 @@ export function RoutinePage() {
 
       <article className="sheet routine-sheet">
         <p className="sheet-meta">
+          <span>{edition.label}</span>
           <span>{paper.topic}</span>
           <span>{paper.arxivId}</span>
+          {paper.automation?.packetBasis === "full-paper" ? <span>Full-paper review</span> : null}
         </p>
         <h1>{paper.title}</h1>
         <p className="sheet-byline">
-          {paper.authors}
-          <span>{listingLine(paper)}</span>
+          {listingLine(paper)} · {paper.authors}
         </p>
         {paper.trend ? <TrendMark trend={paper.trend} /> : null}
-        <HostBrief paper={paper} />
+        <HostBrief paper={paper} showBasis={false} />
       </article>
 
+      <div className="routine-secondary routine-secondary-flow">
+        {pdf ? (
+          <a className="btn" href={pdf} target="_blank" rel="noreferrer">
+            Read paper
+          </a>
+        ) : null}
+        <button
+          type="button"
+          className={saved ? "btn on" : "btn"}
+          aria-pressed={saved}
+          aria-busy={saveBusy}
+          disabled={saveBusy}
+          onClick={() => void savePaper()}
+        >
+          <span key={saved ? "saved" : "save"} className="btn-face">
+            {saveBusy ? "Saving…" : saved ? "Saved" : "Save for later"}
+          </span>
+        </button>
+      </div>
+
       <footer className="routine-foot">
-        <div className="routine-secondary">
-          {pdf ? (
-            <a className="btn" href={pdf} target="_blank" rel="noreferrer">
-              Read paper
-            </a>
-          ) : null}
-          <button
-            type="button"
-            className={saved ? "btn on" : "btn"}
-            aria-pressed={saved}
-            aria-busy={saveBusy}
-            disabled={saveBusy}
-            onClick={() => void savePaper()}
-          >
-            <span key={saved ? "saved" : "save"} className="btn-face">
-              {saveBusy ? "Saving…" : saved ? "Saved" : "Save for later"}
-            </span>
-          </button>
-        </div>
         <button
           type="button"
           className="btn primary routine-next"
@@ -267,7 +271,12 @@ export function RoutinePage() {
           aria-label={last ? "Finish the morning routine" : `Next paper: ${nextPaper?.title || "paper"}`}
           onClick={(event) => advance(event.detail > 0)}
         >
-          {last ? "Finish" : `Next · ${nextPaper?.topic || "paper"}`}
+          <span className="routine-next-label">
+            {last ? "Finish the board" : `Next · ${nextPaper?.topic || "paper"}`}
+          </span>
+          {!last && nextPaper ? (
+            <span className="routine-next-title">{nextPaper.title}</span>
+          ) : null}
         </button>
       </footer>
     </div>

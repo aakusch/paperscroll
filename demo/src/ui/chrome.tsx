@@ -5,20 +5,17 @@ import { colors, sans, serif } from "../theme";
 export const AppChrome = ({
   children,
   active = "Today",
-  sidebarWidth = 220,
-  sidebarOpacity = 1,
   contentWidth = 720,
 }: {
   children: ReactNode;
   active?: "Today" | "Saved" | "About";
-  sidebarWidth?: number;
-  sidebarOpacity?: number;
   contentWidth?: number;
 }) => {
   return (
     <div
       style={{
         display: "flex",
+        flexDirection: "column",
         height: "100%",
         width: "100%",
         backgroundColor: colors.bg,
@@ -27,52 +24,51 @@ export const AppChrome = ({
         overflow: "hidden",
       }}
     >
-      <aside
+      <header
         style={{
-          width: sidebarWidth,
+          width: "100%",
+          minHeight: 76,
           flexShrink: 0,
-          opacity: sidebarOpacity,
-          overflow: "hidden",
-          borderRight: `1px solid ${colors.line}`,
-          padding: sidebarWidth > 8 ? "28px 18px 22px" : "28px 0 22px",
+          borderBottom: `1px solid ${colors.line}`,
+          padding: "12px 54px",
           boxSizing: "border-box",
           display: "flex",
-          flexDirection: "column",
-          gap: 28,
+          alignItems: "center",
+          gap: 54,
         }}
       >
-        <div style={{ minWidth: 184 }}>
+        <div>
           <div
             style={{
               fontFamily: serif,
-              fontSize: 26,
+              fontSize: 23,
               fontWeight: 600,
               letterSpacing: "-0.03em",
             }}
           >
             PaperScroll
           </div>
-          <div style={{ marginTop: 6, fontSize: 14, color: colors.mute, lineHeight: 1.35 }}>
+          <div style={{ marginTop: 4, fontSize: 12, color: colors.mute, lineHeight: 1.25 }}>
             Catch up over coffee
           </div>
         </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 4, minWidth: 184 }}>
+        <nav style={{ display: "flex", alignItems: "center", gap: 30 }}>
           {(["Today", "Saved", "About"] as const).map((item) => (
             <div
               key={item}
               style={{
-                padding: "9px 12px",
-                borderRadius: 10,
-                fontSize: 17,
+                padding: "6px 0 5px",
+                borderBottom: `1px solid ${item === active ? colors.accent : "transparent"}`,
+                fontSize: 15,
                 color: item === active ? colors.ink : colors.mute,
-                backgroundColor: item === active ? "#ecece8" : "transparent",
               }}
             >
-              {item}
+              {item === "Today" ? "The board" : item}
             </div>
           ))}
-        </div>
-      </aside>
+        </nav>
+        <div style={{ marginLeft: "auto", color: colors.mute, fontSize: 14 }}>Sign in</div>
+      </header>
       <main
         style={{
           flex: 1,
@@ -148,7 +144,7 @@ export const Pill = ({
       backgroundColor: primary ? colors.ink : colors.card,
       color: primary ? "#f7f7f4" : colors.ink,
       border: `1px solid ${primary ? colors.ink : colors.line}`,
-      borderRadius: 999,
+      borderRadius: 10,
       padding: size === "sm" ? "8px 14px" : "10px 18px",
       fontSize: size === "sm" ? 15 : 17,
       fontWeight: 500,
@@ -188,6 +184,7 @@ export const PaperCardMock = ({
   topic,
   rank,
   votes,
+  boardRank,
 }: {
   title: string;
   authors: string;
@@ -197,14 +194,14 @@ export const PaperCardMock = ({
   topic?: string;
   rank?: number;
   votes?: number;
+  boardRank?: number;
 }) => (
     <div
       style={{
         backgroundColor: colors.card,
-        borderRadius: 16,
-        padding: "22px 24px 18px",
+        padding: "20px 24px 18px",
         minWidth: 0,
-        boxShadow: "0 1px 2px rgba(28, 28, 26, 0.04)",
+        borderBottom: `1px solid ${colors.line}`,
         boxSizing: "border-box",
       }}
     >
@@ -217,9 +214,18 @@ export const PaperCardMock = ({
           textTransform: "uppercase",
           color: colors.mute,
           marginBottom: 6,
+          display: "flex",
+          alignItems: "baseline",
+          justifyContent: "space-between",
+          gap: 16,
         }}
       >
-        {topic}
+        <span>{topic}</span>
+        {boardRank != null ? (
+          <span style={{ color: colors.accent, fontVariantNumeric: "tabular-nums" }}>
+            Board {String(boardRank).padStart(2, "0")}
+          </span>
+        ) : null}
       </div>
     ) : null}
     <div
@@ -240,10 +246,10 @@ export const PaperCardMock = ({
     </div>
     <div
       style={{
-        fontFamily: serif,
-        fontSize: 17,
-        fontWeight: 600,
-        lineHeight: 1.45,
+        fontFamily: sans,
+        fontSize: 16.5,
+        fontWeight: 400,
+        lineHeight: 1.5,
         color: "#3f3f3a",
         display: "-webkit-box",
         WebkitLineClamp: 2,

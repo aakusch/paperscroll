@@ -133,6 +133,46 @@ export default function PaperPage() {
     </>
   );
 
+  const paperActions = (
+    <div className="paper-actions">
+      {actions}
+      <details className="agent-more">
+        <summary className="btn">More</summary>
+        <div className="menu-pop">
+          <button type="button" onClick={() => copy("Packet copied", paperMarkdown(paper))}>
+            Copy board packet
+          </button>
+          <button type="button" onClick={() => copy("JSON copied", paperJson(paper))}>
+            Copy JSON
+          </button>
+          <button
+            type="button"
+            onClick={() => copy("Prompt copied", paperAgentPrompt(paper, desk))}
+          >
+            Copy agent prompt
+          </button>
+          <button
+            type="button"
+            onClick={() => copy("Link copied", window.location.origin + `/p/${paper.id}`)}
+          >
+            Copy link
+          </button>
+        </div>
+      </details>
+    </div>
+  );
+
+  const paperTabs = (
+    <nav className="tabs paper-tabs" aria-label="Paper sections">
+      <NavLink to={`/p/${paper.id}`} end>
+        PaperScroll review
+      </NavLink>
+      <NavLink to={`/p/${paper.id}/discussion`}>
+        Discussion{comments.length ? <em>{comments.length}</em> : null}
+      </NavLink>
+    </nav>
+  );
+
   return (
     <div className="subpage paper-layout">
       <nav className="crumbs" aria-label="Breadcrumb">
@@ -150,85 +190,48 @@ export default function PaperPage() {
           </p>
           <h1>{paper.title}</h1>
           <p className="sheet-byline">
-            {paper.authors}
-            <span>{listingLine(paper)}</span>
+            {listingLine(paper)} · {paper.authors}
           </p>
           {paper.trend ? <TrendMark trend={paper.trend} /> : null}
         </header>
-        {evidence ? (
-          <p className="evidence">
-            <strong>{evidence.label}.</strong> {evidence.text}{" "}
+        {evidence || paper.automation ? (
+          <p className="paper-provenance" aria-label="Board provenance">
+            {paper.automation ? <strong>Board {String(paper.automation.rank).padStart(2, "0")}</strong> : null}
+            {evidence ? <span>{evidence.sourceName}</span> : null}
+            {paper.automation ? (
+              <span className="provenance-basis">
+                {paper.automation.packetBasis === "full-paper"
+                  ? "Full-paper review"
+                  : "Title + abstract packet"}
+              </span>
+            ) : null}
             {source ? (
               <a href={source} target="_blank" rel="noreferrer">
-                Source
+                Source ↗
               </a>
             ) : null}
           </p>
         ) : null}
-        {paper.automation ? (
-          <p className="evidence">
-            <strong>Board #{paper.automation.rank}.</strong> {paper.automation.reason}.{" "}
-            {paper.automation.packetBasis === "full-paper"
-              ? "The packet below was reviewed against the full paper."
-              : "The packet below is constrained to the authors’ title and abstract; verify the PDF before relying on details."}
-          </p>
-        ) : null}
-        <div className="paper-actions">
-          {actions}
-          <details className="agent-more">
-            <summary className="btn">More</summary>
-            <div className="menu-pop">
-              <button type="button" onClick={() => copy("Packet copied", paperMarkdown(paper))}>
-                Copy board packet
-              </button>
-              <button type="button" onClick={() => copy("JSON copied", paperJson(paper))}>
-                Copy JSON
-              </button>
-              <button
-                type="button"
-                onClick={() => copy("Prompt copied", paperAgentPrompt(paper, desk))}
-              >
-                Copy agent prompt
-              </button>
-              <button
-                type="button"
-                onClick={() =>
-                  copy("Link copied", window.location.origin + `/p/${paper.id}`)
-                }
-              >
-                Copy link
-              </button>
-            </div>
-          </details>
-        </div>
-
-        <nav className="tabs paper-tabs" aria-label="Paper sections">
-          <NavLink to={`/p/${paper.id}`} end>
-            PaperScroll review
-          </NavLink>
-          <NavLink to={`/p/${paper.id}/discussion`}>
-            Discussion{comments.length ? <em>{comments.length}</em> : null}
-          </NavLink>
-        </nav>
-
         {onDiscussion ? (
-          <section className="discussion-section" id="discussion">
+          <>
+            {paperTabs}
+            <section className="discussion-section" id="discussion">
             <header className="discussion-head">
-              <div>
-                <p className="sheet-kicker">Discussion</p>
-                <h2>Caveats, replications, and useful artifacts</h2>
-              </div>
+              <h2>Caveats, replications, and useful artifacts</h2>
             </header>
             {commentsStatus === "loading" ? (
-              <p className="empty">Loading reader notes…</p>
+              <p className="empty" role="status" aria-live="polite">Loading reader notes…</p>
             ) : commentsStatus === "error" ? (
               <p className="form-error" role="status">
                 Reader notes are unavailable. The board packet above is unaffected.
               </p>
             ) : comments.length === 0 ? (
               <p className="empty">
-                No reader notes yet. Add something only if it helps test or use
-                the board packet.
+                No reader notes yet. {account ? (
+                  "Add a caveat, replication result, or useful artifact."
+                ) : (
+                  <><Link to="/signup">Sign in</Link> to add a caveat, replication result, or useful artifact.</>
+                )}
               </p>
             ) : (
               <ul className="thread">
@@ -283,14 +286,20 @@ export default function PaperPage() {
                   )}
                 </button>
               </form>
-            ) : (
+            ) : comments.length > 0 ? (
               <p className="gate">
                 <Link to="/signup">Sign in</Link> to leave a note.
               </p>
-            )}
-          </section>
+            ) : null}
+            </section>
+            {paperActions}
+          </>
         ) : (
-          <HostBrief paper={paper} />
+          <>
+            <HostBrief paper={paper} showBasis={false} />
+            {paperActions}
+            {paperTabs}
+          </>
         )}
       </article>
     </div>

@@ -109,6 +109,7 @@ export function listingDetail(paper: Paper) {
   const daily = ok.find((intake) => intake.kind === "hf-daily");
   return {
     label: "Board source",
+    sourceName: daily ? "Hugging Face Daily Papers" : "arXiv watch",
     text: daily
       ? "Picked up by Hugging Face Daily Papers for this morning’s pool."
       : "Picked up by this morning’s arXiv watch.",
