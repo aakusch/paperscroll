@@ -9,6 +9,7 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
+    "previews": "node scripts/previews.mjs",
     "publish": "node scripts/publish.mjs",
     "validate-board": "node scripts/validate-board.mjs",
     "validate-digest": "node scripts/validate-digest.mjs",

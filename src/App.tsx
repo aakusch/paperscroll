@@ -12,6 +12,7 @@ import {
   useParams,
 } from "react-router-dom";
 import PaperPage from "./PaperPage";
+import { compactAuthors } from "./authorFormat";
 import {
   AccountPage,
   AboutPage,
@@ -24,6 +25,7 @@ import { RoutinePage, RoutineStart } from "./RoutinePage";
 import { FIELDS, catalog, type Paper, type Topic } from "./data";
 import { listingLine, shortDate } from "./listing";
 import { beginRouteMotion } from "./motion";
+import { PaperPreview } from "./PaperPreview";
 import { TrendMark } from "./Trend";
 import {
   composeBoard,
@@ -142,37 +144,39 @@ function PaperCard({
 }) {
   const rank = paper.automation?.rank;
   const authors = compactCardAuthors(paper.authors);
+  const boardHook = paper.plain?.verdictWhy || paper.verdictWhy;
 
   return (
     <Link to={`/p/${paper.id}`} className="paper">
-      <p className="paper-kicker">
-        <span>{paper.topic}</span>
-        {rank ? <span className="paper-rank">Board {String(rank).padStart(2, "0")}</span> : null}
-      </p>
-      <h3>{paper.title}</h3>
-      <p className="byline">
-        {listingLine(paper)} · <span aria-label={paper.authors}>{authors}</span>
-      </p>
-      <p className="host-line">
-        <span className={`host-verdict v-${paper.verdict.toLowerCase()}`}>
-          {paper.verdict}
-        </span>{" "}
-        {paper.verdictWhy}
-      </p>
-      {paper.trend || saved ? (
-        <div className="metrics">
-          {paper.trend ? <TrendMark trend={paper.trend} /> : null}
-          {saved ? <span>Saved</span> : null}
-        </div>
-      ) : null}
+      <PaperPreview paper={paper} />
+      <span className="paper-copy">
+        <span className="paper-kicker">
+          <span>{paper.topic}</span>
+          {rank ? <span className="paper-rank">Board {String(rank).padStart(2, "0")}</span> : null}
+        </span>
+        <h3>{paper.title}</h3>
+        <span className="byline">
+          {listingLine(paper)} · <span>{authors}</span>
+        </span>
+        <span className="host-line">
+          <span className={`host-verdict v-${paper.verdict.toLowerCase()}`}>
+            {paper.verdict}
+          </span>{" "}
+          {boardHook}
+        </span>
+        {paper.trend || saved ? (
+          <span className="metrics">
+            {paper.trend ? <TrendMark trend={paper.trend} /> : null}
+            {saved ? <span>Saved</span> : null}
+          </span>
+        ) : null}
+      </span>
     </Link>
   );
 }
 
 function compactCardAuthors(authors: string) {
-  const names = authors.split(",").map((name) => name.trim()).filter(Boolean);
-  if (names.length <= 3) return authors;
-  return `${names.slice(0, 2).join(", ")} +${names.length - 2}`;
+  return compactAuthors(authors, 2);
 }
 
 function WelcomePage() {

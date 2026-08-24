@@ -76,12 +76,24 @@ jobs:
           PAPERSCROLL_MODEL: gpt-4o-mini
         run: npm run publish -- "${{ steps.board.outputs.date }}"
 
+      - name: Derive source-page previews
+        if: steps.frozen.outputs.value != 'true'
+        run: |
+          if ! command -v pdftoppm >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y poppler-utils
+          fi
+          if ! npm run previews -- "${{ steps.board.outputs.date }}"; then
+            echo "::warning::Source previews were incomplete; publishing the text board."
+          fi
+
       - name: Validate product build
         if: steps.frozen.outputs.value != 'true'
         run: |
           node --check scripts/pool.mjs
           node --check scripts/rank.mjs
           node --check scripts/publish.mjs
+          node --check scripts/previews.mjs
           node --check scripts/validate-board.mjs
           npm run validate-board -- "${{ steps.board.outputs.date }}"
           npm run validate-digest
@@ -95,7 +107,7 @@ jobs:
         env:
           BOARD_DATE: ${{ steps.board.outputs.date }}
         run: |
-          unexpected="$(git status --porcelain | awk '{print $2}' | grep -Ev "^(src/pools/$BOARD_DATE.json|src/boards/$BOARD_DATE.json|src/boards/generated.ts)$" || true)"
+          unexpected="$(git status --porcelain | awk '{print $2}' | grep -Ev "^(src/pools/$BOARD_DATE.json|src/boards/$BOARD_DATE.json|src/boards/generated.ts|src/previewIds.ts|public/previews/[0-9]+\.[0-9]+\.jpg)$" || true)"
           if [[ -n "$unexpected" ]]; then
             echo "Unexpected generated paths:" >&2
             echo "$unexpected" >&2
@@ -117,6 +129,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "src/pools/$BOARD_DATE.json" "src/boards/$BOARD_DATE.json" src/boards/generated.ts
+          git add "src/pools/$BOARD_DATE.json" "src/boards/$BOARD_DATE.json" src/boards/generated.ts src/previewIds.ts public/previews
           git commit -m "Publish morning board for $BOARD_DATE"
           git push origin "HEAD:$GITHUB_REF_NAME"

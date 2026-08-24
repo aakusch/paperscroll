@@ -31,8 +31,8 @@ only when all ten packets validate; partial boards fail closed.
 
 The live product is deliberately narrow:
 
-- The board leads with PaperScroll's decision line, not an abstract preview or fake paper
-  thumbnail.
+- The board leads with PaperScroll's decision line. Its image is a derived first-page
+  preview of the source PDF, never an invented illustration or abstract substitute.
 - Routine is the primary completion path: board → board packets → caught up.
 - Save means "read later." It never downranks a paper or changes tomorrow.
 - Discussion is for a concrete caveat, replication note, or useful artifact and
@@ -166,11 +166,22 @@ complete PaperScroll deployment because those flows would lose state.
    ten sources have been read and the complete batch has been reviewed again;
    that evidence basis is carried through the UI and digest contract.
 
-3. Run `npm run lint` and `npm run build`. A published date is immutable unless
+3. Derive the board-card previews from the first page of each source PDF:
+
+   ```bash
+   npm run previews -- YYYY-MM-DD
+   ```
+
+   This writes small JPEGs under `public/previews/`; it does not change the board,
+   ranking, or host packet. The script uses Quick Look on macOS and `pdftoppm` on
+   Linux. A missing or failed preview degrades to the same text card rather than
+   blocking the morning.
+
+4. Run `npm run lint` and `npm run build`. A published date is immutable unless
    an operator deliberately invokes the repair path; routine reruns exit without
    reranking history.
 
-`.github/workflows/morning-pool.yml` runs all three stages at 8:17 a.m.
+`.github/workflows/morning-pool.yml` runs all four stages at 8:17 a.m.
 `America/New_York` on weekdays, validates the complete product build, confirms
 `main` did not advance during generation, and pushes one non-force commit to
 `main`. The schedule requires `OPENAI_API_KEY` as an Actions repository secret.

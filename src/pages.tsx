@@ -9,6 +9,7 @@ import {
   type PublicProfile,
   type User,
 } from "./api";
+import { AuthorList } from "./Authors";
 import { catalog } from "./data";
 import { IconLinkedIn, IconX } from "./icons";
 import { passwordStrength } from "./identity";
@@ -929,9 +930,11 @@ export function SavedPage() {
             {saved.map(({ paper, edition }) => (
               <li key={paper.id}>
                 <Link to={`/p/${paper.id}`}>{paper.title}</Link>
-                <span>
-                  {edition.label} · {paper.authors}
-                </span>
+                <div className="saved-meta">
+                  <span>{edition.label}</span>
+                  <span aria-hidden="true">·</span>
+                  <AuthorList authors={paper.authors} visible={2} />
+                </div>
               </li>
             ))}
           </ul>

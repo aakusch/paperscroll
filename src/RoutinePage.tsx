@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { Link, Navigate, useNavigate, useOutletContext, useParams } from "react-router-dom";
 import { digestAgentPrompt } from "./brief";
+import { AuthorList } from "./Authors";
 import { catalog } from "./data";
 import { HostBrief } from "./HostBrief";
 import { listingLine } from "./listing";
@@ -236,9 +237,10 @@ export function RoutinePage() {
           {paper.automation?.packetBasis === "full-paper" ? <span>Full-paper review</span> : null}
         </p>
         <h1>{paper.title}</h1>
-        <p className="sheet-byline">
-          {listingLine(paper)} · {paper.authors}
-        </p>
+        <div className="sheet-byline">
+          <span>{listingLine(paper)} <span aria-hidden="true">·</span></span>
+          <AuthorList authors={paper.authors} visible={2} />
+        </div>
         {paper.trend ? <TrendMark trend={paper.trend} /> : null}
         <HostBrief paper={paper} showBasis={false} />
       </article>

@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useState, type FormEvent } from "react";
 import { Link, NavLink, Navigate, useLocation, useParams } from "react-router-dom";
 import { listComments, postComment, type ThreadComment } from "./api";
+import { AuthorList } from "./Authors";
 import { paperAgentPrompt, paperJson, paperMarkdown } from "./brief";
 import { findPaper } from "./data";
 import { IconGit } from "./icons";
@@ -189,9 +190,10 @@ export default function PaperPage() {
             <span>{paper.arxivId}</span>
           </p>
           <h1>{paper.title}</h1>
-          <p className="sheet-byline">
-            {listingLine(paper)} · {paper.authors}
-          </p>
+          <div className="sheet-byline">
+            <span>{listingLine(paper)} <span aria-hidden="true">·</span></span>
+            <AuthorList authors={paper.authors} visible={4} />
+          </div>
           {paper.trend ? <TrendMark trend={paper.trend} /> : null}
         </header>
         {evidence || paper.automation ? (
