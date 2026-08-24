@@ -26,3 +26,5 @@ data/*.sqlite-*
 *.sw?
 .vercel
 .env*.local
+.paperscroll-route-state.json
+.paperscroll-route-state.json.*.tmp

@@ -37,8 +37,8 @@ The live product is deliberately narrow:
 - Save means "read later." It never downranks a paper or changes tomorrow.
 - Discussion is for a concrete caveat, replication note, or useful artifact and
   stays behind the board packet.
-- Agent forwarding is optional. `GET /api/digest` returns the same board packets
-  as the site and never includes raw authors' abstracts.
+- Agent forwarding is optional. `GET /api/v1/digest/latest` returns the same
+  board packets as the site and never includes raw authors' abstracts.
 
 There are no ranking controls. The operational bet is that one reproducible,
 cross-field cut is more useful than another personalized feed.
@@ -64,7 +64,7 @@ Hugging Face Daily Papers + selected arXiv new lists
                     │
           ┌─────────┴─────────┐
           ▼                   ▼
-      React site         GET /api/digest
+      React site         GET /api/v1/digest/latest
 
 User store: users, sessions, comments, saves, field picks, digest tokens
 ```
@@ -112,6 +112,7 @@ Useful checks:
 ```bash
 npm run lint
 npm run build
+npm run validate-digest
 ```
 
 ## Deploy
@@ -172,20 +173,29 @@ complete PaperScroll deployment because those flows would lose state.
 Vercel then deploys that bot-authored commit through its GitHub
 connection.
 
-## Digest
+## Morning routing
 
-A signed-in reader creates a bearer token under Account. By default the digest
-uses that account's saved fields and desk:
+A signed-in reader creates a named, read-only bearer token under Account. The
+canonical v1 route returns the latest complete board as stable JSON, using that
+account's saved fields and desk:
 
 ```bash
 curl -H "Authorization: Bearer ps_live_..." \
-  "http://localhost:5173/api/digest"
+  -H "Accept: application/json" \
+  "http://localhost:5173/api/v1/digest/latest"
 ```
 
-Options are `date=YYYY-MM-DD` and `format=json`. The authenticated account owns
-the fields and desk; fields reorder the full board and never hide it. The
-response contains board packets, links, and composition metadata. It does not contain raw abstracts. Tokens are
-shown once, stored only as hashes, expire, and can be revoked from Account.
+The response supplies a schema version, immutable board version, consumer
+`delivery.key`, and ETag. A poller sends `If-None-Match` on later checks and gets
+`304` while its composed board is unchanged. Fields reorder the full shared
+membership and never hide it. The response contains structured host packets and
+links, never raw abstracts. Tokens have the fixed `digest:read` scope, are shown
+once, stored only as hashes, expire after 90 days, and can be rotated or revoked
+from Account.
+
+The old `/api/digest` route remains available for Markdown and legacy JSON
+clients. New integrations should follow [the routing contract](docs/agent-routing.md)
+and can start from [`examples/poll-digest.mjs`](examples/poll-digest.mjs).
 
 ## Demo
 

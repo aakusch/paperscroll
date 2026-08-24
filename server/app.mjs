@@ -38,6 +38,23 @@ function requestOrigin(req) {
   return `${requestProtocol(req)}://${req.headers.host || "localhost"}`;
 }
 
+function publicOrigin(url) {
+  const configured = String(process.env.PAPERSCROLL_PUBLIC_ORIGIN || "").trim();
+  const vercelProduction = String(process.env.VERCEL_PROJECT_PRODUCTION_URL || "").trim();
+  const candidate = configured || (vercelProduction ? `https://${vercelProduction}` : "");
+  if (candidate) {
+    try {
+      const parsed = new URL(candidate);
+      if (parsed.protocol === "https:" || parsed.protocol === "http:") {
+        return parsed.origin;
+      }
+    } catch {
+      // Fall back to the request origin locally or when configuration is invalid.
+    }
+  }
+  return `${url.protocol}//${url.host}`;
+}
+
 function clientKey(req) {
   if (proxyTrusted()) {
     const xf = String(req.headers["x-forwarded-for"] || "")
@@ -240,13 +257,39 @@ function send(res, status, body, extra = {}) {
   res.end(json);
 }
 
-function sendText(res, status, body, type) {
+function sendText(res, status, body, type, extra = {}) {
   res.writeHead(status, {
     "Content-Type": type,
     "X-Content-Type-Options": "nosniff",
     "Cache-Control": "no-store",
+    ...extra,
   });
   res.end(body);
+}
+
+function sendEmpty(res, status, extra = {}) {
+  res.writeHead(status, {
+    "X-Content-Type-Options": "nosniff",
+    ...extra,
+  });
+  res.end();
+}
+
+function representationEtag(body) {
+  return `"${createHash("sha256").update(body).digest("base64url")}"`;
+}
+
+function etagMatches(header, etag) {
+  return String(header || "")
+    .split(",")
+    .map((value) => value.trim().replace(/^W\//, ""))
+    .some((value) => value === etag || value === "*");
+}
+
+function validIsoDate(value) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const parsed = new Date(`${value}T00:00:00Z`);
+  return !Number.isNaN(parsed.getTime()) && parsed.toISOString().slice(0, 10) === value;
 }
 
 function hashToken(secret) {
@@ -341,7 +384,7 @@ function route(method, path) {
 }
 
 /**
- * @param {{ digest?: (query: Record<string, string | undefined>) => Promise<{ kind: string, body: string }> }} [hooks]
+ * @param {{ digest?: (query: Record<string, string | undefined>) => Promise<{ kind: string, body: string, boardId?: string, boardVersion?: string, deliveryKey?: string, schemaUrl?: string | null }> }} [hooks]
  * @returns {Promise<boolean>} true if this was an /api request
  */
 export async function handleApi(req, res, hooks = {}) {
@@ -572,7 +615,16 @@ export async function handleApi(req, res, hooks = {}) {
         send(res, 429, { error: "Try again later." });
         return true;
       }
-      await readBody(req);
+      const body = await readBody(req);
+      if (!body || typeof body !== "object" || Array.isArray(body)) {
+        send(res, 400, { error: "Bad JSON" });
+        return true;
+      }
+      const label = String(body.label || "Morning route").trim().replace(/\s+/g, " ");
+      if (!label || label.length > 60) {
+        send(res, 400, { error: "Token label should be 1–60 characters." });
+        return true;
+      }
       await q.deleteExpiredTokens.run(now());
       const count = (await q.tokenCount.get(user.id))?.n ?? 0;
       if (count >= 5) {
@@ -588,6 +640,8 @@ export async function handleApi(req, res, hooks = {}) {
         user.id,
         hashToken(secret),
         secret.slice(0, 16),
+        label,
+        "digest:read",
         createdAt,
         expiresAt,
       );
@@ -595,7 +649,13 @@ export async function handleApi(req, res, hooks = {}) {
         token: secret,
         id: tokenId,
         prefix: secret.slice(0, 16),
+        label,
+        scope: "digest:read",
         createdAt,
+        lastCheckedAt: null,
+        lastReturnedAt: null,
+        lastReturnedBoardId: null,
+        lastReturnedBoardVersion: null,
         expiresAt,
       });
       return true;
@@ -619,41 +679,103 @@ export async function handleApi(req, res, hooks = {}) {
       return true;
     }
 
-    if (key === "GET /api/digest" || key === "GET /api/v1/digest") {
+    const routedDigest = url.pathname.match(/^\/api\/v1\/digest\/([^/]+)$/);
+    const stableDigest = req.method === "GET" && routedDigest;
+    const legacyDigest = key === "GET /api/digest" || key === "GET /api/v1/digest";
+    if (legacyDigest || stableDigest) {
+      const stableDate = stableDigest && routedDigest[1] !== "latest"
+        ? decodePath(routedDigest[1])
+        : undefined;
+      if (stableDate && !validIsoDate(stableDate)) {
+        send(res, 400, {
+          error: { code: "invalid_date", message: "Use a board date such as 2026-08-24." },
+        });
+        return true;
+      }
+      if (stableDigest && url.searchParams.has("format") && url.searchParams.get("format") !== "json") {
+        send(res, 406, {
+          error: { code: "unsupported_format", message: "The v1 routing endpoint returns JSON." },
+        });
+        return true;
+      }
       const secret = bearerSecret(req);
       if (!secret) {
-        send(res, 401, { error: "Send Authorization: Bearer with a digest token from your account." });
+        send(res, 401, stableDigest
+          ? { error: { code: "invalid_token", message: "Send a valid PaperScroll bearer token." } }
+          : { error: "Send Authorization: Bearer with a digest token from your account." });
         return true;
       }
       const tokenRow = await q.tokenByHash.get(hashToken(secret), now());
       if (!tokenRow) {
-        send(res, 401, { error: "Unknown digest token." });
+        send(res, 401, stableDigest
+          ? { error: { code: "invalid_token", message: "Send a valid PaperScroll bearer token." } }
+          : { error: "Unknown digest token." });
+        return true;
+      }
+      if ((tokenRow.scope || "digest:read") !== "digest:read") {
+        send(res, 403, stableDigest
+          ? { error: { code: "insufficient_scope", message: "This token cannot read the digest." } }
+          : { error: "This token cannot read the digest." });
         return true;
       }
       if (!rateOk(`digest:${tokenRow.id}`, 120, 60 * 60 * 1000)) {
-        send(res, 429, { error: "Try again later." });
+        send(res, 429, stableDigest
+          ? { error: { code: "rate_limited", message: "Try again in a minute." } }
+          : { error: "Try again later." }, { "Retry-After": "60" });
         return true;
       }
       const user = await q.userById.get(tokenRow.user_id);
       if (!user) {
-        send(res, 401, { error: "Unknown digest token." });
+        send(res, 401, stableDigest
+          ? { error: { code: "invalid_token", message: "Send a valid PaperScroll bearer token." } }
+          : { error: "Unknown digest token." });
         return true;
       }
       if (!hooks.digest) {
-        send(res, 503, { error: "Digest is only available when the site is running (Vite)." });
+        send(res, 503, stableDigest
+          ? { error: { code: "digest_unavailable", message: "The digest is temporarily unavailable." } }
+          : { error: "Digest is only available when the site is running (Vite)." });
         return true;
       }
       const fields = readInterests(user).join(",");
       const desk = user.working_on || "";
       try {
         const result = await hooks.digest({
-          date: url.searchParams.get("date") || undefined,
+          date: stableDigest ? stableDate : url.searchParams.get("date") || undefined,
           fields,
           desk,
-          format: url.searchParams.get("format") || undefined,
-          origin: `${url.protocol}//${url.host}`,
+          format: stableDigest ? "json" : url.searchParams.get("format") || undefined,
+          origin: publicOrigin(url),
+          contract: stableDigest ? "v1" : "legacy",
         });
-        await q.touchToken.run(now(), tokenRow.id);
+        const checkedAt = now();
+        if (stableDigest) {
+          const etag = representationEtag(result.body);
+          const headers = {
+            "Cache-Control": "private, no-cache",
+            ETag: etag,
+            Vary: "Authorization, Accept",
+            ...(result.boardId ? { "X-PaperScroll-Board-Id": result.boardId } : {}),
+            ...(result.deliveryKey ? { "X-PaperScroll-Delivery-Key": result.deliveryKey } : {}),
+            ...(result.schemaUrl ? { Link: `<${result.schemaUrl}>; rel="describedby"; type="application/schema+json"` } : {}),
+          };
+          if (etagMatches(req.headers["if-none-match"], etag)) {
+            await q.recordTokenCheck.run(checkedAt, checkedAt, tokenRow.id);
+            sendEmpty(res, 304, headers);
+            return true;
+          }
+          await q.recordTokenReturn.run(
+            checkedAt,
+            checkedAt,
+            checkedAt,
+            result.boardId || null,
+            result.boardVersion || null,
+            tokenRow.id,
+          );
+          sendText(res, 200, result.body, "application/json; charset=utf-8", headers);
+          return true;
+        }
+        await q.recordTokenCheck.run(checkedAt, checkedAt, tokenRow.id);
         if (result.kind === "json") {
           sendText(res, 200, result.body, "application/json; charset=utf-8");
         } else {
@@ -661,7 +783,14 @@ export async function handleApi(req, res, hooks = {}) {
         }
       } catch (err) {
         const status = Number(err?.status) || 500;
-        send(res, status, { error: err?.message || "Could not build digest." });
+        send(res, status, stableDigest
+          ? {
+              error: {
+                code: err?.code || (status === 404 ? "board_not_found" : "digest_unavailable"),
+                message: err?.message || "Could not build digest.",
+              },
+            }
+          : { error: err?.message || "Could not build digest." });
       }
       return true;
     }

@@ -11,6 +11,8 @@
     "preview": "vite preview",
     "publish": "node scripts/publish.mjs",
     "validate-board": "node scripts/validate-board.mjs",
+    "validate-digest": "node scripts/validate-digest.mjs",
+    "validate-store": "node scripts/validate-store-migration.mjs",
     "pool": "node scripts/pool.mjs"
   },
   "dependencies": {

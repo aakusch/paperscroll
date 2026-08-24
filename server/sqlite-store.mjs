@@ -4,8 +4,10 @@ import { fileURLToPath } from "node:url";
 import { DatabaseSync } from "node:sqlite";
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
-mkdirSync(join(ROOT, "..", "data"), { recursive: true });
-const db = new DatabaseSync(join(ROOT, "..", "data", "paperscroll.sqlite"));
+const databasePath = process.env.PAPERSCROLL_SQLITE_PATH ||
+  join(ROOT, "..", "data", "paperscroll.sqlite");
+mkdirSync(dirname(databasePath), { recursive: true });
+const db = new DatabaseSync(databasePath);
 db.exec("PRAGMA foreign_keys = ON;");
 db.exec("PRAGMA journal_mode = WAL;");
 
@@ -42,8 +44,14 @@ db.exec(`
     user_id TEXT NOT NULL REFERENCES users(id),
     token_hash TEXT NOT NULL UNIQUE,
     prefix TEXT NOT NULL,
+    label TEXT NOT NULL DEFAULT 'Morning route',
+    scope TEXT NOT NULL DEFAULT 'digest:read',
     created_at TEXT NOT NULL,
     last_used_at TEXT,
+    last_checked_at TEXT,
+    last_returned_at TEXT,
+    last_returned_board_id TEXT,
+    last_returned_board_version TEXT,
     expires_at TEXT
   );
   CREATE INDEX IF NOT EXISTS api_tokens_user ON api_tokens(user_id);
@@ -61,8 +69,16 @@ for (const [column, sql] of [
 }
 
 const tokenCols = db.prepare("PRAGMA table_info(api_tokens)").all().map((row) => row.name);
-if (!tokenCols.includes("expires_at")) {
-  db.exec("ALTER TABLE api_tokens ADD COLUMN expires_at TEXT");
+for (const [column, sql] of [
+  ["expires_at", "ALTER TABLE api_tokens ADD COLUMN expires_at TEXT"],
+  ["label", "ALTER TABLE api_tokens ADD COLUMN label TEXT NOT NULL DEFAULT 'Morning route'"],
+  ["scope", "ALTER TABLE api_tokens ADD COLUMN scope TEXT NOT NULL DEFAULT 'digest:read'"],
+  ["last_checked_at", "ALTER TABLE api_tokens ADD COLUMN last_checked_at TEXT"],
+  ["last_returned_at", "ALTER TABLE api_tokens ADD COLUMN last_returned_at TEXT"],
+  ["last_returned_board_id", "ALTER TABLE api_tokens ADD COLUMN last_returned_board_id TEXT"],
+  ["last_returned_board_version", "ALTER TABLE api_tokens ADD COLUMN last_returned_board_version TEXT"],
+]) {
+  if (!tokenCols.includes(column)) db.exec(sql);
 }
 db.exec(`
   UPDATE api_tokens
@@ -125,7 +141,11 @@ export const q = {
   ),
   setPassword: db.prepare("UPDATE users SET password_hash = ? WHERE id = ?"),
   tokensForUser: db.prepare(
-    `SELECT id, prefix, created_at AS createdAt, last_used_at AS lastUsedAt,
+    `SELECT id, prefix, label, scope, created_at AS createdAt,
+            COALESCE(last_checked_at, last_used_at) AS lastCheckedAt,
+            last_returned_at AS lastReturnedAt,
+            last_returned_board_id AS lastReturnedBoardId,
+            last_returned_board_version AS lastReturnedBoardVersion,
             expires_at AS expiresAt
      FROM api_tokens WHERE user_id = ? ORDER BY created_at DESC`,
   ),
@@ -135,9 +155,17 @@ export const q = {
   ),
   tokenById: db.prepare("SELECT * FROM api_tokens WHERE id = ? AND user_id = ?"),
   insertToken: db.prepare(
-    "INSERT INTO api_tokens (id, user_id, token_hash, prefix, created_at, expires_at) VALUES (?, ?, ?, ?, ?, ?)",
+    "INSERT INTO api_tokens (id, user_id, token_hash, prefix, label, scope, created_at, expires_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
   ),
-  touchToken: db.prepare("UPDATE api_tokens SET last_used_at = ? WHERE id = ?"),
+  recordTokenCheck: db.prepare(
+    "UPDATE api_tokens SET last_used_at = ?, last_checked_at = ? WHERE id = ?",
+  ),
+  recordTokenReturn: db.prepare(
+    `UPDATE api_tokens
+     SET last_used_at = ?, last_checked_at = ?, last_returned_at = ?,
+         last_returned_board_id = ?, last_returned_board_version = ?
+     WHERE id = ?`,
+  ),
   deleteToken: db.prepare("DELETE FROM api_tokens WHERE id = ? AND user_id = ?"),
   deleteExpiredTokens: db.prepare("DELETE FROM api_tokens WHERE expires_at <= ?"),
 };

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useLayoutEffect, useMemo, useState } from "react";
 import {
   Link,
   NavLink,
@@ -286,7 +286,7 @@ function FeedPage() {
   const dayIndex = boardDates.indexOf(boardDate);
   const source = catalog.find((edition) => edition.date === boardDate);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     window.scrollTo(0, 0);
   }, [boardDate]);
 

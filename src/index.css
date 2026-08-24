@@ -94,6 +94,23 @@ a {
   color: var(--ink);
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:is(a, button, input, textarea, select, summary):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 .app {
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr);
@@ -173,8 +190,28 @@ a {
   position: sticky;
   top: 0;
   z-index: 4;
-  padding: 16px 0 14px;
+  padding: calc(16px + env(safe-area-inset-top)) 0 16px;
   background: var(--bg);
+}
+
+.routine-progress {
+  position: absolute;
+  right: 0;
+  bottom: 6px;
+  left: 0;
+  height: 1px;
+  overflow: hidden;
+  background: var(--line);
+}
+
+.routine-progress::after {
+  display: block;
+  width: var(--routine-progress, 10%);
+  height: 100%;
+  background: var(--accent);
+  content: "";
+  transform-origin: left;
+  transition: width 180ms var(--ease-out);
 }
 
 .routine-count {
@@ -198,8 +235,13 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 16px 0 20px;
+  padding: 16px 0 calc(20px + env(safe-area-inset-bottom));
   background: linear-gradient(transparent, var(--bg) 28%);
+}
+
+.routine-next {
+  min-width: 8.5rem;
+  min-height: 44px;
 }
 
 .caught-page {
@@ -214,6 +256,23 @@ a {
   padding: 12vh 8px 40px;
 }
 
+.caught-progress {
+  width: min(18rem, 72vw);
+  height: 1px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  background: var(--line);
+}
+
+.caught-progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  animation: caught-rule 240ms var(--ease-out) both;
+  transform-origin: left;
+}
+
 .caught-mark {
   display: grid;
   place-items: center;
@@ -223,13 +282,12 @@ a {
   border: 1.5px solid var(--accent);
   border-radius: 50%;
   color: var(--accent);
-  animation: caught-pop 560ms var(--ease-out);
+  animation: caught-settle 220ms 40ms var(--ease-out) both;
 }
 
 .caught-check {
-  stroke-dasharray: 32;
-  stroke-dashoffset: 32;
-  animation: caught-draw 500ms 120ms var(--ease-out) forwards;
+  stroke-dasharray: none;
+  stroke-dashoffset: 0;
 }
 
 .caught-kicker {
@@ -246,7 +304,7 @@ a {
   font-size: clamp(32px, 6vw, 48px);
   font-weight: 600;
   letter-spacing: -0.03em;
-  animation: caught-pop 640ms 80ms var(--ease-out) both;
+  animation: caught-settle 220ms 80ms var(--ease-out) both;
 }
 
 .caught-lede {
@@ -291,10 +349,52 @@ a {
   gap: 8px;
 }
 
-@keyframes caught-pop {
+html[data-route-motion="routine-next"] .routine-bar {
+  view-transition-name: routine-bar;
+}
+
+html[data-route-motion="routine-next"] .routine-foot {
+  view-transition-name: routine-foot;
+}
+
+html[data-route-motion="routine-next"]::view-transition-old(root) {
+  animation: routine-page-out 180ms var(--ease-in-out) both;
+}
+
+html[data-route-motion="routine-next"]::view-transition-new(root) {
+  animation: routine-page-in 220ms var(--ease-out) both;
+}
+
+html[data-route-motion="routine-next"]::view-transition-old(routine-bar),
+html[data-route-motion="routine-next"]::view-transition-new(routine-bar),
+html[data-route-motion="routine-next"]::view-transition-old(routine-foot),
+html[data-route-motion="routine-next"]::view-transition-new(routine-foot) {
+  animation: routine-chrome 140ms linear both;
+}
+
+@keyframes routine-page-out {
+  to {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+}
+
+@keyframes routine-page-in {
   from {
     opacity: 0;
-    transform: scale(0.84);
+    transform: translateX(8px);
+  }
+}
+
+@keyframes routine-chrome {
+  from { opacity: 0.72; }
+  to { opacity: 1; }
+}
+
+@keyframes caught-settle {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
   }
   to {
     opacity: 1;
@@ -302,19 +402,23 @@ a {
   }
 }
 
-@keyframes caught-draw {
-  to {
-    stroke-dashoffset: 0;
+@keyframes caught-rule {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .caught-mark,
   .caught h1,
-  .caught-check {
-    animation: none;
-    stroke-dashoffset: 0;
+  .caught-progress span {
+    animation: caught-fade 160ms linear both;
   }
+}
+
+@keyframes caught-fade {
+  from { opacity: 0; }
 }
 
 .nav {
@@ -651,7 +755,6 @@ a {
 .git-link,
 .nav-links a,
 .nav-user,
-.paper,
 .tabs a,
 .day-pager a,
 .menu-pop button,
@@ -669,7 +772,6 @@ a {
 .git-link:active,
 .nav-links a:active,
 .nav-user:active,
-.paper:active,
 .tabs a:active,
 .day-pager a:active,
 .menu-pop button:active,
@@ -682,13 +784,19 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+  }
+
   .btn,
   .field,
   .ghost,
   .git-link,
   .nav-links a,
   .nav-user,
-  .paper,
   .tabs a,
   .day-pager a,
   .menu-pop button,
@@ -697,7 +805,6 @@ a {
   .later-list a,
   .rail-card button,
   .voice-switch,
-  .voice-switch button,
   .tip-bubble,
   .btn-face,
   .form-error,
@@ -712,13 +819,17 @@ a {
     animation: none;
   }
 
+  .paper::before {
+    transition: opacity 120ms linear;
+    transform: none;
+  }
+
   .btn:active:not(:disabled),
   .field:active,
   .ghost:active,
   .git-link:active,
   .nav-links a:active,
   .nav-user:active,
-  .paper:active,
   .tabs a:active,
   .day-pager a:active,
   .menu-pop button:active,
@@ -800,6 +911,7 @@ a {
 }
 
 .paper {
+  position: relative;
   display: block;
   background: var(--card);
   border-radius: 16px;
@@ -813,9 +925,37 @@ a {
   overflow: hidden;
 }
 
+.paper::before {
+  position: absolute;
+  top: 16px;
+  bottom: 16px;
+  left: 0;
+  width: 2px;
+  background: var(--accent);
+  content: "";
+  opacity: 0;
+  transform: scaleY(0.35);
+  transform-origin: top;
+  transition: opacity 150ms linear, transform 180ms var(--ease-out);
+}
+
 .paper:hover,
-.paper.selected {
+.paper.selected,
+.paper:focus-visible {
   border-color: var(--line);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .paper:hover::before {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+.paper:focus-visible::before,
+.paper:active::before {
+  opacity: 1;
+  transform: scaleY(1);
 }
 
 .paper h3 {
@@ -1294,7 +1434,7 @@ a {
   margin-left: auto;
   color: var(--mute);
   transform: rotate(0deg);
-  transition: transform 280ms var(--ease-out), color 150ms ease;
+  transition: transform 180ms var(--ease-out), color 140ms linear;
 }
 
 .abs-block[open] .abs-chev {
@@ -1307,7 +1447,7 @@ a {
 
 .abs-block[open] .abs-panel {
   display: block;
-  animation: abs-peek 320ms var(--ease-out);
+  animation: abs-peek 180ms var(--ease-out);
 }
 
 .abs-panel-inner {
@@ -1318,7 +1458,7 @@ a {
 @keyframes abs-peek {
   from {
     opacity: 0;
-    transform: translateY(-6px);
+    transform: translateY(-3px);
   }
   to {
     opacity: 1;
@@ -1502,6 +1642,7 @@ a {
   font-size: 13px;
   line-height: 1.2;
   cursor: pointer;
+  transition: background-color 140ms linear, color 140ms linear;
 }
 
 .voice-switch button.on {
@@ -1511,6 +1652,42 @@ a {
 
 .voice-switch button:hover:not(.on) {
   color: var(--ink);
+}
+
+html[data-local-motion="voice"] .host-copy {
+  view-transition-name: host-copy;
+}
+
+html[data-local-motion="voice"]::view-transition-old(root),
+html[data-local-motion="voice"]::view-transition-new(root) {
+  animation: none;
+}
+
+html[data-local-motion="voice"]::view-transition-group(host-copy) {
+  animation-duration: 170ms;
+  animation-timing-function: var(--ease-in-out);
+}
+
+html[data-local-motion="voice"]::view-transition-old(host-copy) {
+  animation: host-copy-out 120ms var(--ease-in-out) both;
+}
+
+html[data-local-motion="voice"]::view-transition-new(host-copy) {
+  animation: host-copy-in 160ms 10ms var(--ease-out) both;
+}
+
+@keyframes host-copy-out {
+  to {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes host-copy-in {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
 }
 
 .points,
@@ -1862,8 +2039,10 @@ a {
 }
 
 .digest-panel h2 {
-  margin: 0 0 8px;
-  font-size: 16px;
+  margin: 2px 0 8px;
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .digest-panel p {
@@ -1871,6 +2050,49 @@ a {
   font-size: 14px;
   line-height: 1.5;
   color: #353530;
+}
+
+.digest-panel .digest-kicker {
+  margin: 0;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.routing-steps {
+  display: grid;
+  gap: 7px;
+  margin: 18px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.routing-steps li {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  align-items: start;
+  gap: 9px;
+}
+
+.routing-steps li > span {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--accent) 38%, var(--line));
+  border-radius: 50%;
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.digest-panel .routing-steps p {
+  margin: 1px 0 0;
+  color: var(--ink);
+  font-size: 13px;
 }
 
 .digest-url,
@@ -1902,6 +2124,29 @@ a {
   margin-bottom: 16px;
 }
 
+.routing-code {
+  max-width: 100%;
+  margin: -2px 0 12px;
+  padding: 12px 14px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #f7f6f2;
+  color: #353530;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.token-label {
+  max-width: 25rem;
+  margin-top: 18px;
+}
+
+.token-create {
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
 .token-once .btn {
   align-self: flex-start;
 }
@@ -1916,16 +2161,44 @@ a {
 }
 
 .token-list li {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(9rem, 0.9fr) minmax(12rem, 1.1fr) auto;
   align-items: center;
   gap: 8px 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
   font-size: 13px;
   color: var(--mute);
 }
 
+.token-list li:last-child {
+  border-bottom: 0;
+}
+
 .token-list code {
   color: var(--ink);
+}
+
+.token-identity,
+.token-status {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.token-identity strong {
+  overflow: hidden;
+  color: var(--ink);
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.token-identity span,
+.token-status span {
+  font-size: 11px;
+  line-height: 1.35;
 }
 
 .profile-bio {
@@ -2337,12 +2610,31 @@ a {
   }
 
   .routine-foot {
-    align-items: flex-end;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    padding-top: 22px;
   }
 
   .routine-secondary {
-    flex-direction: column;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .routine-secondary .btn,
+  .routine-next {
+    width: 100%;
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  .token-list li {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .token-status {
+    grid-column: 1 / -1;
+    grid-row: 2;
   }
 }
 

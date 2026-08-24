@@ -1,9 +1,10 @@
-import { useEffect, useMemo } from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { Link, Navigate, useNavigate, useOutletContext, useParams } from "react-router-dom";
 import { digestAgentPrompt } from "./brief";
 import { catalog } from "./data";
 import { HostBrief } from "./HostBrief";
 import { listingLine } from "./listing";
+import { beginRouteMotion } from "./motion";
 import { safePaperUrl } from "./links";
 import { composeBoard, type Prefs } from "./rank";
 import { useSession } from "./session-context";
@@ -26,6 +27,11 @@ export function RoutinePage() {
   const { prefs } = useOutletContext<{ prefs: Prefs }>();
   const { account, saves, toggleSave, toast } = useSession();
   const navigate = useNavigate();
+  const transitionLock = useRef(false);
+  const transitionTimer = useRef<number | null>(null);
+  const routeMotionCleanup = useRef<(() => void) | null>(null);
+  const [transitioning, setTransitioning] = useState(false);
+  const [saveBusy, setSaveBusy] = useState(false);
   const edition = catalog.find((item) => item.date === date);
 
   const papers = useMemo(() => {
@@ -42,8 +48,27 @@ export function RoutinePage() {
     ? `/routine/${date}/done`
     : `/routine/${date}/${index + 2}`;
 
-  useEffect(() => {
+  const advance = useCallback((animate: boolean) => {
+    if (transitionLock.current) return;
+    transitionLock.current = true;
+    setTransitioning(true);
+    const cleanup = animate ? beginRouteMotion("routine-next") : null;
+    routeMotionCleanup.current = cleanup;
+    navigate(nextTo, cleanup ? { viewTransition: true } : undefined);
+    transitionTimer.current = window.setTimeout(() => {
+      transitionLock.current = false;
+      setTransitioning(false);
+      routeMotionCleanup.current?.();
+      routeMotionCleanup.current = null;
+      transitionTimer.current = null;
+    }, cleanup ? 280 : 100);
+  }, [navigate, nextTo]);
+
+  useLayoutEffect(() => {
     window.scrollTo(0, 0);
+  }, [done, paper]);
+
+  useEffect(() => {
     document.title = done
       ? "Caught up · PaperScroll"
       : paper
@@ -54,22 +79,38 @@ export function RoutinePage() {
     };
   }, [done, paper]);
 
+  useEffect(() => () => {
+    if (transitionTimer.current != null) window.clearTimeout(transitionTimer.current);
+    routeMotionCleanup.current?.();
+  }, []);
+
   useEffect(() => {
     function onKey(event: KeyboardEvent) {
-      if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.altKey) {
+      if (
+        event.defaultPrevented ||
+        event.repeat ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.altKey ||
+        transitionLock.current
+      ) {
         return;
       }
-      const tag = (event.target as HTMLElement | null)?.tagName;
-      if (tag === "INPUT" || tag === "TEXTAREA") return;
+      const target = event.target as HTMLElement | null;
+      if (
+        target?.closest(
+          "a, button, input, textarea, select, summary, [contenteditable='true'], [role='button'], [role='radio']",
+        )
+      ) return;
       if (done) return;
       if (event.key === "ArrowRight" || event.key === "n" || event.key === "N") {
         event.preventDefault();
-        navigate(nextTo);
+        advance(false);
       }
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [done, navigate, nextTo]);
+  }, [advance, done]);
 
   if (!edition || papers.length === 0) {
     return <Navigate to={boardPath(date || latestBoard)} replace />;
@@ -91,6 +132,18 @@ export function RoutinePage() {
     );
   }
 
+  async function savePaper() {
+    if (saveBusy) return;
+    setSaveBusy(true);
+    try {
+      await toggleSave(paper?.arxivId || "");
+    } catch (error) {
+      toast(error instanceof Error ? error.message : "Could not update saved papers.");
+    } finally {
+      setSaveBusy(false);
+    }
+  }
+
   if (done) {
     return (
       <div className="routine-page caught-page">
@@ -100,6 +153,7 @@ export function RoutinePage() {
           </Link>
         </header>
         <div className="caught">
+          <div className="caught-progress" aria-hidden="true"><span /></div>
           <span className="caught-mark" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 28 28">
               <path
@@ -148,10 +202,14 @@ export function RoutinePage() {
 
   const pdf = safePaperUrl(paper.url);
   const saved = saves.includes(paper.id) || saves.includes(paper.arxivId);
+  const nextPaper = papers[index + 1];
+  const progressStyle = {
+    "--routine-progress": `${((index + 1) / papers.length) * 100}%`,
+  } as CSSProperties;
 
   return (
-    <div className="routine-page">
-      <header className="routine-bar">
+    <div className="routine-page" data-routine-step={index + 1}>
+      <header className="routine-bar" style={progressStyle}>
         <Link to={boardPath(date)} className="quiet-link">
           Leave
         </Link>
@@ -161,7 +219,12 @@ export function RoutinePage() {
         <Link to={`/p/${paper.id}`} className="quiet-link">
           Full page
         </Link>
+        <span className="routine-progress" role="progressbar" aria-label="Morning routine progress" aria-valuemin={1} aria-valuemax={papers.length} aria-valuenow={index + 1} />
       </header>
+
+      <p className="sr-only" aria-live="polite">
+        Paper {index + 1} of {papers.length}: {paper.title}
+      </p>
 
       <article className="sheet routine-sheet">
         <p className="sheet-meta">
@@ -187,13 +250,24 @@ export function RoutinePage() {
           <button
             type="button"
             className={saved ? "btn on" : "btn"}
-            onClick={() => void toggleSave(paper.arxivId)}
+            aria-pressed={saved}
+            aria-busy={saveBusy}
+            disabled={saveBusy}
+            onClick={() => void savePaper()}
           >
-            {saved ? "Saved" : "Save for later"}
+            <span key={saved ? "saved" : "save"} className="btn-face">
+              {saveBusy ? "Saving…" : saved ? "Saved" : "Save for later"}
+            </span>
           </button>
         </div>
-        <button type="button" className="btn primary" onClick={() => navigate(nextTo)}>
-          {last ? "Finish" : "View next"}
+        <button
+          type="button"
+          className="btn primary routine-next"
+          disabled={transitioning}
+          aria-label={last ? "Finish the morning routine" : `Next paper: ${nextPaper?.title || "paper"}`}
+          onClick={(event) => advance(event.detail > 0)}
+        >
+          {last ? "Finish" : `Next · ${nextPaper?.topic || "paper"}`}
         </button>
       </footer>
     </div>

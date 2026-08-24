@@ -81,14 +81,14 @@ export function AboutPage() {
         </section>
 
         <section className="block">
-          <h2>Optional agent handoff</h2>
+          <h2>Optional morning route</h2>
           <p className="brief-p">
-            A signed-in reader can mint a token for <code>/api/digest</code>.
-            It returns the same full board reordered by the account’s fields,
-            with board packets and links but never raw abstracts. An agent may map
-            those packets onto a workspace; it must not invent missing methods,
-            numbers, or repositories. The handoff is optional. The packet is
-            still the product.
+            A signed-in reader can give an outside agent a read-only token for
+            <code>/api/v1/digest/latest</code>. The versioned endpoint returns one
+            complete board, reordered by the account’s fields, with stable retry
+            and deduplication keys. It contains board packets and links, never raw
+            abstracts. PaperScroll does not host the agent or claim a returned
+            packet was ingested. The route is optional; the packet is still the product.
           </p>
         </section>
 
@@ -533,6 +533,7 @@ function AgentDigest() {
   const { toast } = useSession();
   const [tokens, setTokens] = useState<DigestToken[]>([]);
   const [secret, setSecret] = useState<{ id: string; value: string } | null>(null);
+  const [label, setLabel] = useState("Morning research route");
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
@@ -550,23 +551,25 @@ function AgentDigest() {
   }, [toast]);
 
   const origin = typeof window === "undefined" ? "" : window.location.origin;
-  const digestUrl = `${origin}/api/digest`;
+  const digestUrl = `${origin}/api/v1/digest/latest`;
+  const schemaUrl = `${origin}/schemas/digest-v1.json`;
+  const routingPrompt = `Once each weekday after PaperScroll publishes its morning board:
+1. GET ${digestUrl} with Authorization: Bearer <PAPERSCROLL_TOKEN>, Accept: application/json, and the last ETag in If-None-Match.
+2. On 304, stop. There is no new composed board for this route.
+3. On 200, require schema=paperscroll.digest, schemaVersion=1.0, board.complete=true, and board.count=10.
+4. Process delivery.key only if it has not already succeeded. Use the host packet; never substitute an author's abstract. Map useful papers onto the current workspace without inventing methods, numbers, artifacts, or GitHub URLs.
+5. After successful ingestion, persist delivery.key and the response ETag.`;
+  const curlExample = `curl --fail-with-body \\
+  -H "Authorization: Bearer $PAPERSCROLL_TOKEN" \\
+  -H "Accept: application/json" \\
+  "${digestUrl}"`;
 
   async function mint() {
     setBusy(true);
     try {
-      const created = await createToken();
+      const created = await createToken(label);
       setSecret({ id: created.id, value: created.token });
-      setTokens((prev) => [
-        {
-          id: created.id,
-          prefix: created.prefix,
-          createdAt: created.createdAt,
-          lastUsedAt: null,
-          expiresAt: created.expiresAt,
-        },
-        ...prev,
-      ]);
+      setTokens((prev) => [{ ...created }, ...prev]);
       toast("Token created. Copy it now — it won’t be shown again.");
     } catch (err) {
       toast(err instanceof Error ? err.message : "Could not create token.");
@@ -600,31 +603,54 @@ function AgentDigest() {
 
   return (
     <section className="digest-panel">
-      <h2>Agent digest</h2>
+      <p className="digest-kicker">External agent routing</p>
+      <h2>Morning route</h2>
       <p>
-        Optional handoff for the same morning you just read. An agent sends a
-        bearer token to this endpoint; your saved fields reorder the full shared
-        board and your desk supplies workspace context. The payload contains
-        board packets, never raw abstracts.
+        Point an agent or automation at one read-only endpoint after the morning
+        board publishes. It returns the same complete ten, reordered by your
+        fields with your desk as context. PaperScroll hosts the packet, not your agent.
       </p>
+      <ol className="routing-steps">
+        <li><span>1</span><p>Create a named <code>digest:read</code> token.</p></li>
+        <li><span>2</span><p>Schedule one weekday pull and keep the response ETag.</p></li>
+        <li><span>3</span><p>On <code>200</code>, process a new <code>delivery.key</code>. On <code>304</code>, stop.</p></li>
+      </ol>
       <label className="digest-url">
-        Endpoint
+        Latest complete board
         <input readOnly value={digestUrl} />
         <span className="form-note">
-          Optional: <code>date=YYYY-MM-DD</code> and <code>format=json</code>
+          For a frozen date, replace <code>latest</code> with <code>YYYY-MM-DD</code>.
         </span>
       </label>
+      <pre className="routing-code"><code>{curlExample}</code></pre>
       <div className="digest-actions">
         <button type="button" className="btn" onClick={() => void copy(digestUrl, "URL copied.")}>
           Copy URL
         </button>
+        <button type="button" className="btn" onClick={() => void copy(routingPrompt, "Routing instructions copied.")}>
+          Copy routing instructions
+        </button>
+        <a className="btn" href={schemaUrl} target="_blank" rel="noreferrer">
+          JSON schema
+        </a>
+      </div>
+      <label className="digest-url token-label">
+        Route name
+        <input
+          value={label}
+          maxLength={60}
+          onChange={(event) => setLabel(event.target.value)}
+          placeholder="Morning research route"
+        />
+      </label>
+      <div className="digest-actions token-create">
         <button
           type="button"
           className="btn primary"
-          disabled={busy || tokens.length >= 5}
+          disabled={busy || tokens.length >= 5 || !label.trim()}
           onClick={() => void mint()}
         >
-          {busy ? "Working…" : "Create token"}
+          {busy ? "Working…" : "Create read-only token"}
         </button>
       </div>
       {secret ? (
@@ -640,12 +666,19 @@ function AgentDigest() {
         <ul className="token-list">
           {tokens.map((item) => (
             <li key={item.id}>
-              <code>{item.prefix}…</code>
-              <span>
-                {formatJoined(item.createdAt)}
-                {item.lastUsedAt ? ` · used ${formatJoined(item.lastUsedAt)}` : " · unused"}
-                {item.expiresAt ? ` · expires ${formatTokenDate(item.expiresAt)}` : ""}
-              </span>
+              <div className="token-identity">
+                <strong>{item.label}</strong>
+                <span><code>{item.prefix}…</code> · {item.scope}</span>
+              </div>
+              <div className="token-status">
+                <span>{item.lastCheckedAt ? `Checked ${formatTokenMoment(item.lastCheckedAt)}` : "Not checked yet"}</span>
+                <span>
+                  {item.lastReturnedBoardId
+                    ? `Last board returned ${item.lastReturnedBoardId}`
+                    : "No board returned yet"}
+                </span>
+                <span>Expires {formatTokenDate(item.expiresAt)}</span>
+              </div>
               <button
                 type="button"
                 className="btn"
@@ -658,10 +691,22 @@ function AgentDigest() {
           ))}
         </ul>
       ) : (
-        <p className="form-note">No digest tokens yet.</p>
+        <p className="form-note">No routes yet. Tokens expire after 90 days and are stored only as hashes.</p>
       )}
     </section>
   );
+}
+
+function formatTokenMoment(iso?: string | null) {
+  if (!iso) return "";
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) return "";
+  return date.toLocaleString("en-US", {
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  });
 }
 
 export function PublicProfilePage() {

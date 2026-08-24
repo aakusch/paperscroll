@@ -1,6 +1,7 @@
 import { AbstractText } from "./abstractText";
 import type { Paper } from "./data";
 import { isHostedPacket } from "./hostPacket";
+import { updateWithMotion } from "./motion";
 import { Tip } from "./Tip";
 import { hasPlainBrief, hostCopy, useHostVoice } from "./voice";
 
@@ -14,7 +15,7 @@ export function HostBrief({ paper }: { paper: Paper }) {
     <>
       {paper.abstract || paper.takeaway ? (
         ready ? (
-          <details className="abs-block">
+          <details key={paper.arxivId} className="abs-block">
             <summary>
               <span className="abs-k">Abstract</span>
               <svg
@@ -43,8 +44,9 @@ export function HostBrief({ paper }: { paper: Paper }) {
         ) : null
       ) : null}
 
-      {ready && host.brief ? (
-        <section className="block brief-block">
+      <div className="host-copy">
+        {ready && host.brief ? (
+          <section className="block brief-block">
           {paper.automation ? (
             <p className="packet-basis">
               PaperScroll packet · generated from the authors’ title and abstract, not the PDF
@@ -55,22 +57,32 @@ export function HostBrief({ paper }: { paper: Paper }) {
               Why this paper
             </h2>
             {dual ? (
-              <div className="voice-switch" role="radiogroup" aria-label="Brief language">
+              <div className="voice-switch" role="group" aria-label="Brief language">
                 <button
                   type="button"
-                  role="radio"
-                  aria-checked={voice === "technical"}
+                  aria-pressed={voice === "technical"}
                   className={voice === "technical" ? "on" : undefined}
-                  onClick={() => setVoice("technical")}
+                  onClick={(event) =>
+                    updateWithMotion(
+                      "voice",
+                      () => setVoice("technical"),
+                      event.detail > 0,
+                    )
+                  }
                 >
                   Field
                 </button>
                 <button
                   type="button"
-                  role="radio"
-                  aria-checked={voice === "plain"}
+                  aria-pressed={voice === "plain"}
                   className={voice === "plain" ? "on" : undefined}
-                  onClick={() => setVoice("plain")}
+                  onClick={(event) =>
+                    updateWithMotion(
+                      "voice",
+                      () => setVoice("plain"),
+                      event.detail > 0,
+                    )
+                  }
                 >
                   Plain
                 </button>
@@ -86,11 +98,11 @@ export function HostBrief({ paper }: { paper: Paper }) {
               {graf}
             </p>
           ))}
-        </section>
-      ) : null}
+          </section>
+        ) : null}
 
-      {ready && host.takeaways.length > 0 ? (
-        <section className="block">
+        {ready && host.takeaways.length > 0 ? (
+          <section className="block">
           <h2>Key takeaways</h2>
           <ol className="points">
             {host.takeaways.map((line, index) => (
@@ -106,8 +118,9 @@ export function HostBrief({ paper }: { paper: Paper }) {
               </li>
             ))}
           </ol>
-        </section>
-      ) : null}
+          </section>
+        ) : null}
+      </div>
 
       {ready && paper.actions.length > 0 ? (
         <section className="block action-block">

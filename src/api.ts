@@ -138,8 +138,13 @@ export function setSaved(paperId: string, on: boolean) {
 export type DigestToken = {
   id: string;
   prefix: string;
+  label: string;
+  scope: "digest:read";
   createdAt: string;
-  lastUsedAt: string | null;
+  lastCheckedAt: string | null;
+  lastReturnedAt: string | null;
+  lastReturnedBoardId: string | null;
+  lastReturnedBoardVersion: string | null;
   expiresAt: string;
 };
 
@@ -147,10 +152,10 @@ export function listTokens() {
   return request<{ tokens: DigestToken[] }>("/tokens");
 }
 
-export function createToken() {
+export function createToken(label: string) {
   return request<DigestToken & { token: string }>("/tokens", {
     method: "POST",
-    body: JSON.stringify({}),
+    body: JSON.stringify({ label }),
   });
 }
 

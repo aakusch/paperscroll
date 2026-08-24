@@ -74,10 +74,22 @@ async function initialize() {
       user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
       token_hash TEXT NOT NULL UNIQUE,
       prefix TEXT NOT NULL,
+      label TEXT NOT NULL DEFAULT 'Morning route',
+      scope TEXT NOT NULL DEFAULT 'digest:read',
       created_at TEXT NOT NULL,
       last_used_at TEXT,
+      last_checked_at TEXT,
+      last_returned_at TEXT,
+      last_returned_board_id TEXT,
+      last_returned_board_version TEXT,
       expires_at TEXT NOT NULL
     )`,
+    `ALTER TABLE api_tokens ADD COLUMN IF NOT EXISTS label TEXT NOT NULL DEFAULT 'Morning route'`,
+    `ALTER TABLE api_tokens ADD COLUMN IF NOT EXISTS scope TEXT NOT NULL DEFAULT 'digest:read'`,
+    `ALTER TABLE api_tokens ADD COLUMN IF NOT EXISTS last_checked_at TEXT`,
+    `ALTER TABLE api_tokens ADD COLUMN IF NOT EXISTS last_returned_at TEXT`,
+    `ALTER TABLE api_tokens ADD COLUMN IF NOT EXISTS last_returned_board_id TEXT`,
+    `ALTER TABLE api_tokens ADD COLUMN IF NOT EXISTS last_returned_board_version TEXT`,
     `CREATE INDEX IF NOT EXISTS api_tokens_user ON api_tokens(user_id)`,
   ];
   for (const text of statements) await sql.query(text, []);
@@ -119,7 +131,11 @@ export const q = {
   ),
   setPassword: statement("UPDATE users SET password_hash = $1 WHERE id = $2"),
   tokensForUser: statement(
-    `SELECT id, prefix, created_at AS "createdAt", last_used_at AS "lastUsedAt",
+    `SELECT id, prefix, label, scope, created_at AS "createdAt",
+            COALESCE(last_checked_at, last_used_at) AS "lastCheckedAt",
+            last_returned_at AS "lastReturnedAt",
+            last_returned_board_id AS "lastReturnedBoardId",
+            last_returned_board_version AS "lastReturnedBoardVersion",
             expires_at AS "expiresAt"
      FROM api_tokens WHERE user_id = $1 ORDER BY created_at DESC`,
   ),
@@ -129,9 +145,17 @@ export const q = {
   ),
   tokenById: statement("SELECT * FROM api_tokens WHERE id = $1 AND user_id = $2"),
   insertToken: statement(
-    "INSERT INTO api_tokens (id, user_id, token_hash, prefix, created_at, expires_at) VALUES ($1, $2, $3, $4, $5, $6)",
+    "INSERT INTO api_tokens (id, user_id, token_hash, prefix, label, scope, created_at, expires_at) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)",
   ),
-  touchToken: statement("UPDATE api_tokens SET last_used_at = $1 WHERE id = $2"),
+  recordTokenCheck: statement(
+    "UPDATE api_tokens SET last_used_at = $1, last_checked_at = $2 WHERE id = $3",
+  ),
+  recordTokenReturn: statement(
+    `UPDATE api_tokens
+     SET last_used_at = $1, last_checked_at = $2, last_returned_at = $3,
+         last_returned_board_id = $4, last_returned_board_version = $5
+     WHERE id = $6`,
+  ),
   deleteToken: statement("DELETE FROM api_tokens WHERE id = $1 AND user_id = $2"),
   deleteExpiredTokens: statement("DELETE FROM api_tokens WHERE expires_at <= $1"),
 };

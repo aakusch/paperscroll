@@ -93,13 +93,12 @@ export function digestAgentPrompt(opts: {
   origin: string;
   date: string;
 }) {
-  const params = new URLSearchParams();
-  params.set("date", opts.date);
-  const url = `${opts.origin.replace(/\/$/, "")}/api/digest?${params}`;
-  return `Fetch my PaperScroll morning from this endpoint, then relay it to me. If a paper maps onto this workspace, say how. If the packet is thin, say you need the PDF. Do not invent methods, numbers, or GitHub URLs.
+  const url = `${opts.origin.replace(/\/$/, "")}/api/v1/digest/${opts.date}`;
+  return `Fetch my PaperScroll morning from this endpoint, then relay it to me. Process a delivery.key only once; a repeated key is a retry. If a paper maps onto this workspace, say how. If the packet is thin, say you need the PDF. Do not invent methods, numbers, or GitHub URLs.
 
 GET ${url}
-Authorization: Bearer <token from PaperScroll → Account → Agent digest>
+Authorization: Bearer <digest:read token from PaperScroll → Account → Morning route>
+Accept: application/json
 
-The body is the PaperScroll board digest, not the authors' raw abstracts.`;
+The body is the PaperScroll host packet, not the authors' raw abstracts. It is always one complete shared board of ten papers.`;
 }

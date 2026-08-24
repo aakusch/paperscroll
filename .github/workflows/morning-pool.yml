@@ -84,6 +84,8 @@ jobs:
           node --check scripts/publish.mjs
           node --check scripts/validate-board.mjs
           npm run validate-board -- "${{ steps.board.outputs.date }}"
+          npm run validate-digest
+          npm run validate-store
           npm run lint
           npm run build
 

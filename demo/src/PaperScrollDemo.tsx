@@ -95,13 +95,16 @@ function Plate({ name, opacity, children }: { name: string; opacity: number; chi
 }
 
 function RoutineBar({ step }: { step: string }) {
+  const progress = (Number(step) / n) * 100;
   return (
     <div
       style={{
+        position: "relative",
         display: "grid",
         gridTemplateColumns: "1fr auto 1fr",
         alignItems: "center",
         marginBottom: 12,
+        paddingBottom: 16,
         fontSize: 15,
         color: colors.mute,
         flexShrink: 0,
@@ -112,6 +115,9 @@ function RoutineBar({ step }: { step: string }) {
         {step} / {n}
       </span>
       <span style={{ textAlign: "right" }}>Full page</span>
+      <div style={{ position: "absolute", right: 0, bottom: 6, left: 0, height: 1, backgroundColor: colors.line }}>
+        <div style={{ width: `${progress}%`, height: 1, backgroundColor: colors.accent }} />
+      </div>
     </div>
   );
 }
@@ -170,7 +176,7 @@ function Card({ children }: { children: ReactNode }) {
   );
 }
 
-function RoutineFoot() {
+function RoutineFoot({ nextTopic }: { nextTopic: string }) {
   return (
     <div
       style={{
@@ -183,7 +189,7 @@ function RoutineFoot() {
       }}
     >
       <Pill>Read paper</Pill>
-      <Pill primary>View next</Pill>
+      <Pill primary>Next · {nextTopic}</Pill>
     </div>
   );
 }
@@ -313,7 +319,7 @@ function TracesSheet({ frame }: { frame: number }) {
           </div>
         </Interactive.Div>
       </Card>
-      <RoutineFoot />
+      <RoutineFoot nextTopic="AI" />
     </>
   );
 }
@@ -340,7 +346,7 @@ function HostSheet({ paper }: { paper: DemoPaper }) {
           </div>
         </div>
       </Card>
-      <RoutineFoot />
+      <RoutineFoot nextTopic="Math" />
     </>
   );
 }
@@ -494,7 +500,7 @@ function CollateSheet({ frame }: { frame: number }) {
 
 function HandoffSheet({ frame }: { frame: number }) {
   const toast = interpolate(frame, [beat.caught + 46, beat.caught + 60], [0, 1], { ...clamp, easing: move });
-  const check = interpolate(frame, [beat.caught + 4, beat.caught + 18], [32, 0], { ...clamp, easing: move });
+  const rule = interpolate(frame, [beat.caught + 4, beat.caught + 18], [0, 1], { ...clamp, easing: move });
 
   return (
     <div
@@ -508,6 +514,9 @@ function HandoffSheet({ frame }: { frame: number }) {
         position: "relative",
       }}
     >
+      <div style={{ width: 288, height: 1, marginBottom: 30, backgroundColor: colors.line }}>
+        <div style={{ width: "100%", height: 1, backgroundColor: colors.accent, scale: `${rule} 1`, transformOrigin: "left" }} />
+      </div>
       <div
         style={{
           width: 56,
@@ -528,8 +537,6 @@ function HandoffSheet({ frame }: { frame: number }) {
             strokeWidth="2.2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeDasharray="32"
-            strokeDashoffset={check}
           />
         </svg>
       </div>
@@ -604,7 +611,7 @@ function AgentSheet({ frame }: { frame: number }) {
           }}
         >
           <div style={{ fontSize: 20, fontWeight: 600, letterSpacing: "-0.02em", color: colors.ink }}>Agent</div>
-          <div style={{ fontSize: 14, color: colors.mute }}>PaperScroll digest · 20 Aug</div>
+          <div style={{ fontSize: 14, color: colors.mute }}>PaperScroll route · latest complete board</div>
         </div>
         <div
           style={{
@@ -619,11 +626,15 @@ function AgentSheet({ frame }: { frame: number }) {
             fontFamily: "ui-monospace, Menlo, monospace",
           }}
         >
-          GET /api/digest?date=2026-08-20&amp;format=json
+          GET /api/v1/digest/latest
           <br />
           Authorization: Bearer ps_live_…
           <br />
-          <span style={{ fontFamily: agentSans, color: "#4a4a46" }}>Board digest. No raw abstracts.</span>
+          Accept: application/json
+          <br />
+          If-None-Match: &quot;previous-etag&quot;
+          <br />
+          <span style={{ fontFamily: agentSans, color: "#4a4a46" }}>200 · schema 1.0 · complete 10 · process delivery.key once</span>
         </div>
         <Interactive.Div
           name="Place"

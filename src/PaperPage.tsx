@@ -1,4 +1,4 @@
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useLayoutEffect, useState, type FormEvent } from "react";
 import { Link, NavLink, Navigate, useLocation, useParams } from "react-router-dom";
 import { listComments, postComment, type ThreadComment } from "./api";
 import { paperAgentPrompt, paperJson, paperMarkdown } from "./brief";
@@ -30,8 +30,11 @@ export default function PaperPage() {
   const comments = commentState.paperKey === paperKey ? commentState.comments : [];
   const commentsStatus = commentState.paperKey === paperKey ? commentState.status : "loading";
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     window.scrollTo(0, 0);
+  }, [paperTitle]);
+
+  useEffect(() => {
     document.title = paperTitle ? `${paperTitle} · PaperScroll` : "PaperScroll";
     return () => {
       document.title = "PaperScroll";
