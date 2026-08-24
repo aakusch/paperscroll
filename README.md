@@ -70,7 +70,7 @@ The boundary is intentional:
 | --- | --- |
 | Daily nominations and listing evidence | `src/pools/*.json` |
 | Reviewed host packets and archive copy | `src/data.ts` |
-| Explicit daily order and publication gate | `src/slates.ts`, `src/hostPacket.ts` |
+| Hosted pool imports, explicit order, and publication gate | `src/slates.ts`, `src/hostPacket.ts` |
 | Pool/packet join and eligibility | `src/hydrate.ts`, `src/board.ts` |
 | Accounts and reader-owned state | `server/` store (`data/paperscroll.sqlite` locally; Neon on Vercel) |
 | Agent packet formats | `src/brief.ts`, `src/agentDigest.ts` |
@@ -138,7 +138,14 @@ complete PaperScroll deployment because those flows would lose state.
    This writes `src/pools/YYYY-MM-DD.json` from Hugging Face Daily Papers and
    selected non-firehose arXiv categories. Duplicate arXiv IDs are merged. Daily
    list items may be at most 14 days old; raw arXiv-new items may be at most two
-   days old. The script prints a suggested briefing queue, not a published board.
+   days old. The script writes intake evidence and a review count, not a
+   published board.
+
+   `.github/workflows/morning-pool.yml` runs this intake at 8:17 a.m.
+   `America/New_York` on weekdays and opens a dated review PR. Current mornings
+   use arXiv's cached category RSS feeds; manual historical dispatches use one
+   date-bounded search query. The workflow never writes host packets or a slate,
+   and merging an intake PR cannot publish an unbriefed paper.
 
 2. For a candidate, produce a draft packet:
 
@@ -151,9 +158,10 @@ complete PaperScroll deployment because those flows would lose state.
    the verdict, object, limit, artifact, and actions your own, then add the
    reviewed packet to `src/data.ts`. Never invent a repository URL.
 
-3. Add at most ten reviewed arXiv IDs, in the host's intended order, to
-   `src/slates.ts`. This explicit list publishes the morning; popularity and
-   source order do not choose it.
+3. Import the dated pool in `src/slates.ts` and add at most ten reviewed arXiv
+   IDs in the host's intended order. This explicit import and list publish the
+   morning; unhosted pool files are not bundled, and popularity or source order
+   never choose the slate.
 
 4. Run the app. Pool nominations are joined to reviewed packets by arXiv ID.
    Unreviewed nominations remain intake evidence only; they cannot become cards.

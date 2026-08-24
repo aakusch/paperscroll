@@ -1,7 +1,6 @@
 import { editionFromPool } from "./hydrate.js";
 import { belongsOnBoard } from "./listing.js";
-import { MORNING_POOLS } from "./pools/index.js";
-import { HOSTED_SLATES } from "./slates.js";
+import { HOSTED_DAYS } from "./slates.js";
 
 export type Topic = "AI" | "Stats" | "Math" | "Econ" | "Health" | "Physics" | "Security";
 export type Verdict = "Try" | "Watch" | "Skip";
@@ -1028,10 +1027,8 @@ for (const edition of editions) {
   }
 }
 
-const liveEditions = MORNING_POOLS.flatMap((pool) => {
-  const slate = HOSTED_SLATES[pool.boardDate];
-  if (!slate?.length) return [];
-  const edition = editionFromPool(pool, briefsByArxiv, slate);
+const liveEditions = HOSTED_DAYS.flatMap(({ pool, paperIds }) => {
+  const edition = editionFromPool(pool, briefsByArxiv, paperIds);
   return edition.papers.length ? [edition] : [];
 });
 export const catalog: Edition[] = [...liveEditions].sort(

@@ -1,0 +1,100 @@
+name: Morning pool
+
+on:
+  schedule:
+    - cron: "17 8 * * 1-5"
+      timezone: "America/New_York"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Board date to pool (YYYY-MM-DD); defaults to today in New York"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: morning-pool
+  cancel-in-progress: false
+
+jobs:
+  pool:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Resolve board date
+        id: board
+        env:
+          INPUT_DATE: ${{ inputs.date }}
+        run: |
+          if [[ -n "$INPUT_DATE" ]]; then
+            date="$INPUT_DATE"
+          else
+            date="$(TZ=America/New_York date +%F)"
+          fi
+          if [[ ! "$date" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+            echo "Invalid date: $date" >&2
+            exit 1
+          fi
+          echo "date=$date" >> "$GITHUB_OUTPUT"
+
+      - name: Pull nominations
+        run: npm run pool -- "${{ steps.board.outputs.date }}"
+
+      - run: npm run lint
+      - run: npm run build
+
+      - name: Check for intake changes
+        id: changed
+        env:
+          BOARD_DATE: ${{ steps.board.outputs.date }}
+        run: |
+          git status --porcelain -- "src/pools/$BOARD_DATE.json" > /tmp/paperscroll-pool-status
+          if [[ -s /tmp/paperscroll-pool-status ]]; then
+            echo "value=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Push review branch
+        if: steps.changed.outputs.value == 'true'
+        env:
+          BOARD_DATE: ${{ steps.board.outputs.date }}
+        run: |
+          branch="automation/pool-$BOARD_DATE"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$branch"
+          git add "src/pools/$BOARD_DATE.json"
+          git commit -m "Pool papers for $BOARD_DATE"
+          git push --force origin "HEAD:refs/heads/$branch"
+
+      - name: Open intake review
+        if: steps.changed.outputs.value == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BOARD_DATE: ${{ steps.board.outputs.date }}
+        run: |
+          branch="automation/pool-$BOARD_DATE"
+          if ! gh pr create \
+            --base "$GITHUB_REF_NAME" \
+            --head "$branch" \
+            --title "Morning pool · $BOARD_DATE" \
+            --body "Automated intake only. Review the nominations, write host packets from the papers, and publish an explicit slate separately. Merging this PR does not put an unbriefed paper on the board."
+          then
+            gh pr edit "$branch" \
+              --title "Morning pool · $BOARD_DATE" \
+              --body "Automated intake only. Review the nominations, write host packets from the papers, and publish an explicit slate separately. Merging this PR does not put an unbriefed paper on the board."
+          fi
