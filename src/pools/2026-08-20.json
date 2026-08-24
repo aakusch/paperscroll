@@ -1,0 +1,2003 @@
+{
+  "boardDate": "2026-08-20",
+  "pulledAt": "2026-08-20T16:10:47.577Z",
+  "nominations": [
+    {
+      "arxivId": "2608.17426",
+      "title": "SemComp-Bench: Benchmarking Semantic Task Completion in Video Generation",
+      "authors": "Keyu Tu, Zhuowei Chen, Mengqi Huang, Yuxin Wang, Jiahao Zhu, Zhendong Mao, Yongdong Zhang",
+      "abstract": "We introduce Semantic Task Completion Video Generation, an outcome-oriented video generation task. Under this formulation, success requires both achievement of the intended outcome and semantic grounding. Semantic grounding characterizes the correspondence between the reference image and the generated outcome in terms of high-level semantics relevant to the task. Evaluation focuses on the generated outcome and requires neither the presentation of a complete sequence of intermediate task steps nor conventional appearance consistency with the reference image. To support systematic evaluation, we construct SemComp-Data, an evaluation dataset covering six domains. Each instance comprises a reference image, a detailed instruction, a brief instruction, and an outcome-centric video clip. A scalable four-stage curation pipeline converts raw videos into standardized SemComp-Data instances. We further introduce SemComp-Bench, an evaluation protocol that uses a vision-language model (VLM) to answer structured binary questions. SemComp-Bench reports the OA Score and the GR Score for Outcome Achievement and Generation Reliability, respectively. Experiments on representative video generation models show that achieving intended outcomes while maintaining task-relevant semantic grounding in reference images remains challenging.",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "cs.LG"
+      ],
+      "github": "https://github.com/Kelly372/SemComp-Bench",
+      "intakes": [
+        {
+          "kind": "hf-daily",
+          "evidenceUrl": "https://huggingface.co/papers/2608.17426",
+          "upvotes": 151
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.16590",
+      "title": "Zetta ζ: An Efficient Closed-Loop Embodied Harness for Self-Evolving Physical Intelligence",
+      "authors": "Xin Ding, Liang Mi, Mingzhe Huang, Zixuan Wang, Chao Zhang, Zixu Hao, Fu Chen, Xiangyu Li, Yikai Zheng, Yaoyu Guo, Weijun Wang, Kun Li, Hao Wu, Yunxin Liu, Ting Cao",
+      "abstract": "Embodied agents are increasingly used to close the gap left by end-to-end policy models. Yet the agentic path has not realized closed-loop learning in physical execution: existing harnesses remain largely open-loop, following fixed skills during rollout and reflecting only after an episode completes. Such post-hoc reflection cannot govern execution as it unfolds, because physical interaction requires decisions to track rapidly changing robot-environment states at a frequency beyond today's large agentic models. We present Zetta, a closed-loop embodied harness that evolves code-based runtime critics and recovery skills online while keeping the base policy frozen. Through three timescale-separated loops, Zetta provides action-frequency governance, rollout-level critic-recovery proposal, and validation-gated skill updates. Together with Z-Infra, a rollout infrastructure decoupling agent logic from heterogeneous execution resources, Zetta achieves state-of-the-art success on LIBERO-Pro and RoboCasa under our current rollout budget, reaching 90.8% and 93.6%, with an 11.1x inference speedup; success continues to scale with self-exploration experience; learned skills transfer zero-shot, and clear robotic \"Aha Moments\" emerge. These results show that closed-loop harness self-evolution opens a scaling path for reliable physical intelligence.",
+      "publishedOn": "2026-08-17",
+      "categories": [
+        "cs.LG"
+      ],
+      "github": "https://github.com/air-embodied-brain/Zetta-Embodiment",
+      "intakes": [
+        {
+          "kind": "hf-daily",
+          "evidenceUrl": "https://huggingface.co/papers/2608.16590",
+          "upvotes": 128
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18565",
+      "title": "SemaPLC: A Project-Grounded, Verification-Gated Agent Harness for PLC Code Generation",
+      "authors": "Yanlun Tu, Huacan Wang, Ziyue Zhou, Jie Zhou, Ningyan Zhu, Ge Chen, Wangyi Chen, Tengfei Zhou, Yifan Zhou, Dasheng Yang, Xiaofeng Mou, Hui Zhang, Yi Xu",
+      "abstract": "Programmable logic controllers (PLCs) run industrial plants, and large language models can already generate independent program organization units (POUs) for them. Whether such logic integrates into an existing PLC project and then runs correctly has been checked only in limited tests. We present SemaPLC, a project-grounded and verification-gated agent harness assembled from conventional tools but governed by a strict completion rule. Rather than stopping when the model judges its own output adequate, SemaPLC declares a task complete only when logged external checks confirm it. Those checks cover the specification, the compilation, and the behavior on a live runtime. On 117 independent-POU tasks matching existing benchmarks, it attains the highest strict verified pass rate on all seven models (72.6\\% mean). On a project-context track of 65 tasks whose generated logic must compile and run inside a real project, it attains the highest mean on integrated compilation, static behavior, and dynamic behavior. Of the three layers, dynamic behavior is the most revealing. We measure it by deploying the generated and the reference logic to a live PLC runtime and comparing their executed traces. All methods fall within 10 static points of one another, whereas dynamic scores separate them sharply, from 22.4 to 31.4 for the baselines against 52.2 for SemaPLC. Overall, our verification-gated harness raises the mean at every layer and most sharply at runtime. Execution, not static scoring, is the faithful test of whether generated control logic actually works. SemaPLC is open-sourced at https://github.com/midea-ai/SemaPLC.",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "cs.LG"
+      ],
+      "github": "https://github.com/midea-ai/SemaPLC",
+      "intakes": [
+        {
+          "kind": "hf-daily",
+          "evidenceUrl": "https://huggingface.co/papers/2608.18565",
+          "upvotes": 110
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.13558",
+      "title": "OmniScientist: An Omni-Modal Omni-Discipline AI Scientist",
+      "authors": "Bobo Li, Hao Fei, Tianjie Ju, Mong-Li Lee, Wynne Hsu",
+      "abstract": "",
+      "publishedOn": "2026-08-13",
+      "categories": [
+        "cs.LG"
+      ],
+      "github": "https://github.com/Omni-Scientist/OmniScientist",
+      "intakes": [
+        {
+          "kind": "hf-daily",
+          "evidenceUrl": "https://huggingface.co/papers/2608.13558",
+          "upvotes": 81
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17253",
+      "title": "Co-RL: Unsupervised Reasoning Emerges from Diverse Cohort in Multi-agent RL",
+      "authors": "Yunhao Yang, Yuexin Bian, Yunjie Tian, Di Fu, Tianjin Huang, Yuanyuan Shi, Ziang Xiao, Nuno Vasconcelos, Yijiang Li",
+      "abstract": "Reinforcement learning (RL) has emerged as a powerful approach for improving reasoning in language and vision-language models, yet its strongest successes still depend heavily on ground-truth supervision (e.g., verifiable reward). Such annotations are costly to obtain and become increasingly scarce as reasoning capabilities advance beyond what humans can reliably evaluate. Self-rewarding RL reduces this dependence by enabling models to derive reward signals from their own completions. However, training solely on self-generated feedback can reinforce existing biases and suboptimal behaviors, reduce response diversity, and ultimately lead to homogenized responses and training collapse. In this work, we show that unsupervised reasoning can emerge through cooperative multi-agent training. We introduce Co-RL, a framework in which multiple decoupled models, sharing no parameters, are simultaneously optimized through RL using rewards derived from their peers. We further show that increasing cohort diversity, through heterogeneous model families, sizes, and rephrased training samples, reduces the correlated errors that drive self-reinforcing feedback loops. This diversity consistently improves reasoning performance, maintains behavioral diversity, and mitigates training collapse. Across text-only and multimodal domains, Co-RL consistently outperforms the base models and prior label-free approaches, while matching or surpassing supervised methods, without access to any ground-truth labels. Concretely, Co-RL yields average gains of 3.0-8.6% across seven text-only benchmarks for LLMs and 2.3-7.2% across four multimodal benchmarks for VLMs. Code is available at https://github.com/DrStranded/Co-RL.",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "cs.LG"
+      ],
+      "github": "https://github.com/DrStranded/Co-RL",
+      "intakes": [
+        {
+          "kind": "hf-daily",
+          "evidenceUrl": "https://huggingface.co/papers/2608.17253",
+          "upvotes": 77
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.19197",
+      "title": "SPADE: Self-Play in Adaptive Synthetic Executable Environments",
+      "authors": "Bo Liu, Simon Yu, Yiding Jiang, Ao Qu, Andrew Zhao, Zichen Liu, Junsu Kim, Zijian Zhou, Seungone Kim, Tongzheng Ren, Mickel Liu, Hanfei Yu, Zhaorun Chen, Weiyan Shi, Paul Pu Liang, Luke Zettlemoyer, Yejin Choi, Natasha Jaques",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "cs.LG"
+      ],
+      "github": "https://github.com/spade-rl/spade",
+      "intakes": [
+        {
+          "kind": "hf-daily",
+          "evidenceUrl": "https://huggingface.co/papers/2608.19197",
+          "upvotes": 36
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18940",
+      "title": "Training Chemical Plausibility-Aware Large Language Models for Single-Step Retrosynthesis",
+      "authors": "Bogdan Zagribelnyy, Ivan Ilin, Nikita Bondarev, Maksim Kuznetsov, Mathieu Reymond, Vladimir Aladinskiy, Alex Aliper, Alex Zhavoronkov",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "cs.LG"
+      ],
+      "intakes": [
+        {
+          "kind": "hf-daily",
+          "evidenceUrl": "https://huggingface.co/papers/2608.18940",
+          "upvotes": 28
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18746",
+      "title": "Decision-Metric Alignment in Latent World Models: Diagnostics and Action-Conditioned Objectives for MPC Planning",
+      "authors": "Jiawei Wang, Ke Rui, Yushen Zuo, Yichun Feng, Minglei Li",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "cs.LG"
+      ],
+      "intakes": [
+        {
+          "kind": "hf-daily",
+          "evidenceUrl": "https://huggingface.co/papers/2608.18746",
+          "upvotes": 15
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.14929",
+      "title": "Training Leaves Traces: Centered Residual Signatures for Language Model Lineage Verification",
+      "authors": "Aman Singh Thakur, Rayan Khoury",
+      "abstract": "",
+      "publishedOn": "2026-08-14",
+      "categories": [
+        "cs.LG"
+      ],
+      "intakes": [
+        {
+          "kind": "hf-daily",
+          "evidenceUrl": "https://huggingface.co/papers/2608.14929",
+          "upvotes": 15
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18171",
+      "title": "Looped Language Models Improve Compositional Tool Calling",
+      "authors": "Andrei Cristian Popescu, Haitz Sáez de Ocáriz Borde, Pietro Liò",
+      "abstract": "",
+      "publishedOn": "2026-08-17",
+      "categories": [
+        "cs.LG"
+      ],
+      "intakes": [
+        {
+          "kind": "hf-daily",
+          "evidenceUrl": "https://huggingface.co/papers/2608.18171",
+          "upvotes": 14
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18701",
+      "title": "SoftVTBench: A Deformation-Aware Visuo-Tactile Dataset and Benchmark for Deformable-Object Manipulation",
+      "authors": "Bowen Jing, Mingxin Wang, Ruiyang Hao, Chenchen Ge, Hanwen Shen, Junjie He, Yang Cui, Yiming Hou, Weitao Zhou, Jiawei Wang, Minglei Li, Dandan Zhang, Ding Zhao, Houde Liu, Xiaofan Li, Si Liu, Ping Luo, Haibao Yu",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "cs.LG"
+      ],
+      "intakes": [
+        {
+          "kind": "hf-daily",
+          "evidenceUrl": "https://huggingface.co/papers/2608.18701",
+          "upvotes": 12
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18423",
+      "title": "FM-Bench: A Benchmark for Long-Horizon Management with Competing Agents",
+      "authors": "Tianyou Wang, Chongyang Gao, Kezhen Chen, Chen Dong, Yinghao He, Donghan Li, Wangcheng Xu, Hongjiu Zhang, Chi Li",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "cs.LG"
+      ],
+      "github": "https://github.com/Analogy-AI/fm-bench",
+      "intakes": [
+        {
+          "kind": "hf-daily",
+          "evidenceUrl": "https://huggingface.co/papers/2608.18423",
+          "upvotes": 12
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.13947",
+      "title": "Scaling Creative Writing Beyond Story-Centric Data with Attribute-Guided Genre Expansion",
+      "authors": "Hwan Chang, Yongil Kim, Heuiyeen Yeen, Yireun Kim, Jinsik Lee, Hwanhee Lee",
+      "abstract": "",
+      "publishedOn": "2026-08-14",
+      "categories": [
+        "cs.LG"
+      ],
+      "intakes": [
+        {
+          "kind": "hf-daily",
+          "evidenceUrl": "https://huggingface.co/papers/2608.13947",
+          "upvotes": 12
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.14229",
+      "title": "The More Popular, The Harder to Forget: Adaptive Popularity for LLM Unlearning",
+      "authors": "Anna Borisiuk, Andrey Savchenko, Alexander Panchenko, Elena Tutubalina",
+      "abstract": "",
+      "publishedOn": "2026-08-14",
+      "categories": [
+        "cs.LG"
+      ],
+      "intakes": [
+        {
+          "kind": "hf-daily",
+          "evidenceUrl": "https://huggingface.co/papers/2608.14229",
+          "upvotes": 11
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18115",
+      "title": "Temporal Multi-Signal Fusion for Token-Level Hallucination Detection",
+      "authors": "Igor Itkin",
+      "abstract": "",
+      "publishedOn": "2026-06-30",
+      "categories": [
+        "cs.LG"
+      ],
+      "github": "https://github.com/YehudaItkin/temporal-hallucination-detection",
+      "intakes": [
+        {
+          "kind": "hf-daily",
+          "evidenceUrl": "https://huggingface.co/papers/2608.18115",
+          "upvotes": 2
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18852",
+      "title": "SkillGate: Training In-Policy Skill Selection in Long-Horizon Agents",
+      "authors": "Qingyao Li, Wenxiang Jiao, Shuai Shao, Kangning Zhang, Yuan Lu, Yi Guo, Weiwen Liu, Weinan Zhang, Yong Yu",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "cs.LG"
+      ],
+      "github": "https://github.com/DeepExperience/SkillGate",
+      "intakes": [
+        {
+          "kind": "hf-daily",
+          "evidenceUrl": "https://huggingface.co/papers/2608.18852",
+          "upvotes": 1
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.19022",
+      "title": "Scalable Amortized Variational Inference for Non-Poisson Buy-'Til-You-Die Models",
+      "authors": "Sulagna Ghosh, Aaron Schein",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "stat.AP",
+        "stat.ME",
+        "stat.ML"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.19022"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18973",
+      "title": "Don't Drop the Singletons: Efficient Inference for Pairwise Experiments with Independent Attrition",
+      "authors": "Simon Heß, Patrick W. Schmidt",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "econ.EM",
+        "stat.AP",
+        "stat.ME"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18973"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18953",
+      "title": "Mixed Membership Model of Low-rank Matrices with Multimodal Extension",
+      "authors": "David Snider, Zhongyuan Lyu, Jian Kang, Yuqi Gu",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "stat.ME"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18953"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18914",
+      "title": "A Composite Divergence Approach to Robust Multivariate Estimation under Cellwise and Casewise Contamination",
+      "authors": "Abhik Ghosh, Claudio Agostinelli, Ayanendranath Basu",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "math.ST",
+        "stat.CO",
+        "stat.ME"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18914"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18893",
+      "title": "Model-based bootstrap inference for Cox models after Lasso selection",
+      "authors": "Lena Schemet, Andreas Groll, Sarah Friedrich-Welz",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "stat.ME"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18893"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18858",
+      "title": "Functional forms in joint models for longitudinal and time-to-event data: A practical guide with application and interpretation",
+      "authors": "Felix Boakye Oppong, Dimitris Rizopoulos, Thierry Gorlia, Nicole Erler",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "stat.ME"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18858"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18849",
+      "title": "GEAR: Generative Expansion and Real Anchoring for Two-Stage Distillation of Tabular Foundation Models",
+      "authors": "Qi Qin, Jiajie Zhu, Dali Chen, Yuzhao Zhang, Jia-Xing Han, Yu Su, Peng Zhang, Ying Yan, Yifan Sun",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "cs.LG",
+        "stat.ME",
+        "stat.ML"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18849"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18742",
+      "title": "Regularised Iterative Generalised Least Squares with Optimal Selection of the Hyper-Parameter for Identifying Nonlinear Phenomenological Models",
+      "authors": "Mark Cary, Charles Bokor",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "stat.ME",
+        "cs.LG",
+        "eess.SY"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18742"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18735",
+      "title": "Robust Modeling of Extremes in the Presence of Inliers with Enhanced Tail Estimation",
+      "authors": "Shivshankar Nila, Ishapathik Das, N. Balakrishna",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "stat.ME",
+        "math.ST"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18735"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18695",
+      "title": "gridcp: Fast Online Changepoint Detection in Python",
+      "authors": "Per August Jarval Moen, Sebastian Grau Nielsen, Espen Bjørge Urheim, Martin Tveten, Ingrid Kristine Glad",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "stat.ME"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18695"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18643",
+      "title": "ProxyGuard: Direct Reliability Inference for Randomized Data Release Mechanisms with Shared Targets",
+      "authors": "Dipesh Tharu Mahato, Pramod Dhungana",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "cs.LG",
+        "stat.ME",
+        "stat.ML"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18643"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18441",
+      "title": "Convex Reparameterization and Self-Concordant Algorithms for Multivariate Regression with Covariance Estimation",
+      "authors": "Hongru Zhao, Huiqian Feng",
+      "abstract": "Building on a reparameterization for multivariate linear regression that yields a jointly convex penalized likelihood in the reparameterized regression coefficient matrix and the precision matrix, we show that the resulting scaled Gaussian loss is standard self-concordant. This places the joint estimation problem within composite self-concordant optimization and leads to two algorithms: a proximal gradient method and a damped proximal Newton method. In simulations, we evaluate algorithmic robustness, iterations to convergence, and elapsed time. In a protein expression application, compared with the classical-parameterization formulation, the proposed convex formulation attains similar mean squared prediction error and can be substantially faster when the fitted precision matrix is dense.",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "stat.CO",
+        "stat.ME"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18441"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18435",
+      "title": "A seamless dose-optimization design for monotherapy and combination therapy",
+      "authors": "Kentaro Takeda, Masahiro Kojima",
+      "abstract": "The emergence of molecular-targeted agents and immune-oncology therapies has fundamentally transformed oncology drug development, necessitating evolution beyond traditional dose-finding approaches designed for cytotoxic agents. While conventional agents exhibit predictable monotonic dose-response relationships, novel anticancer agents often demonstrate plateau-effect patterns where higher doses may compromise therapeutic benefit, requiring identification of optimal biological doses that balance efficacy and tolerability. The FDA's Project Optimus initiative emphasizes comprehensive dose optimization through parallel randomized cohorts and patient backfilling to better understand pharmacological profiles across multiple dose levels. Contemporary drug development increasingly prioritizes combination therapy alongside monotherapy evaluation, yet existing designs typically assume equivalent roles for both agents, diverging from clinical practice where novel agents combine with established treatments having limited dose options. This paper proposes a seamless dose-optimization design that adaptively evaluates both monotherapy and combination therapy based on efficacy and toxicity outcomes through adaptive subtrials with patient backfilling capabilities. The model-assisted framework employs predetermined Bayesian optimal boundaries, eliminating real-time model fitting while accommodating evaluation of both monotherapy and combination therapy and enabling sequential enrollment with strategic backfilling. Simulation studies demonstrate robust performance across diverse dose-response patterns relevant to contemporary oncology. The design addresses critical gaps between methodological assumptions and clinical reality, offering a practical approach that integrates monotherapy and combination therapy evaluation with efficacy-toxicity-based backfilling.",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "stat.ME"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18435"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18430",
+      "title": "Multi-Level Bayesian Calibration of a Multi-Component Dynamic System Model",
+      "authors": "Berkcan Kapusuzoglu, Sankaran Mahadevan, Shunsaku Matsumoto, Yoshitomo Miyagi, Daigo Watanabe",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "cs.CE",
+        "eess.SY",
+        "stat.ME",
+        "stat.ML"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18430"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18417",
+      "title": "Centroid-Referenced Mahalanobis Matching (CRM): A Scalable, Representation-Based Framework for Causal Inference in Large Observational Studies",
+      "authors": "Keming Hu, Yingpei He",
+      "abstract": "Matching for causal inference can be computationally expensive at scale and can silently change the target population when overlap is limited. We propose Centroid-Referenced Mahalanobis Matching (CRM), which replaces global pairwise search with stratified sampling in two reference coordinates: each unit's Mahalanobis distance from the treated centroid and its Fisher coordinate along the treated-control mean shift. All covariates enter through the treated covariance geometry; CRM is therefore not principal-component preprocessing followed by nearest-neighbor matching. For $n$ units and $p$ pretreatment covariates, its implemented cost is $O(np^2+p^3+n\\log n)$, simplifying to $O(np^2+n\\log n)$ when $n \\ge p$. We derive an error decomposition separating representation, support, discretization, and stochastic components. A pre-matching shortage fraction $\\hatπ$ estimates the population support restriction $π$, which enters a gap bound under bounded treatment-effect heterogeneity. Final retention is reported separately for capacity-driven exclusions. Under representation sufficiency, smoothness, and adequate cell capacity, CRM has a conservative two-dimensional histogram mean-squared-error bound $O(n_T^{-1/2})$; representation sufficiency is an additional assumption, not a consequence of ignorability given the original covariates. On Criteo, CRM retains at least 99.4% of treated units, has lower MaxSMD than corrected propensity-score matching in 31 of 36 large-scale configurations, and is roughly an order of magnitude faster. Moderate-size simulations favor some pairwise and weighting baselines on balance, locating CRM's contribution in scalability and explicit support diagnostics rather than universal finite-sample dominance.",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "stat.ME"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18417"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18387",
+      "title": "Adaptive therapy under parametric, structural, and measurement uncertainty",
+      "authors": "Alexander P Browning, Rebecca M Crossley, Ryan J Murphy, Helen Byrne, Sara Hamis",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "q-bio.TO",
+        "stat.AP",
+        "stat.ME"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18387"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18365",
+      "title": "Posterior Convergence without Force Convergence: Resolution-Stable Sampling for Rough Bayesian Inverse Problems",
+      "authors": "Zhiliang Deng, Xiaomei Yang",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "math.NA",
+        "stat.ME"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18365"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18326",
+      "title": "Causal Mediation Analysis for an Interrupted Time Series: Stabilized Mediator Weighting with an Application to a Vehicle Emissions Policy",
+      "authors": "Shalini Jayanetti, Sumeet Kalia",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "stat.ME"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18326"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18294",
+      "title": "Debiased Inference for AI-Generated Data without Gold-Standard Labels: Identification via Multiple Imperfect Measurements",
+      "authors": "Naoki Egami, Sooahn Shin",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "stat.ME",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18294"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18243",
+      "title": "Evaluating Spacing Tests of Multi-Modality",
+      "authors": "Greg Kreider",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "stat.ME"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18243"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18228",
+      "title": "Using Spacing to Detect Multi-Modality",
+      "authors": "Greg Kreider",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "stat.ME"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18228"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18057",
+      "title": "The Limits of Experimental Design: Covariate Balance Beyond Low Dimension",
+      "authors": "Max Cytrynbaum",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "econ.EM",
+        "math.ST",
+        "stat.ME"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18057"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18018",
+      "title": "Scalable Heteroskedastic Gaussian Process Models for Large Inhomogeneous Datasets",
+      "authors": "K. Potter, K. R. Moran, R. Ulrich, D. C. Stenning, D. Bingham, L. Castro, G. Wilson, C. A. Maldonado",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "stat.ME"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18018"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17999",
+      "title": "Transporting Trial Evidence Under Posterior Drift and Possible Hidden Confounding",
+      "authors": "Xilin Mao, Bosen Cui, Yuhong Yang",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "stat.ME"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17999"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17976",
+      "title": "Colour Blinded by the Noise",
+      "authors": "Harriet Mason, Rachel Rogers, Alison Kleffner, Dianne Cook",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "cs.HC",
+        "stat.ME"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17976"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17858",
+      "title": "Graph-Adaptive Horseshoe for Compositional Regression",
+      "authors": "Satabdi Saha, Christine B. Peterson",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "stat.ME",
+        "stat.AP"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17858"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17784",
+      "title": "Blinded sample size review for McNemar's test based on primary and surrogate endpoints",
+      "authors": "Markus Schepers, Werner Brannath, Esther Hoffmann, Julia Stingl, Irene Schmidtmann",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "stat.ME"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17784"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17595",
+      "title": "Modified Bryson-Frazier Smoothing and Hyperparameter Learning for Temporal Gaussian Process Regression",
+      "authors": "Tom Colemont, Brecht Evens, Tjonnie G. F. Li, Frederik De Ceuster",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "stat.ME",
+        "stat.ML"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17595"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17353",
+      "title": "SDR Variance Estimates in Small Domains",
+      "authors": "Eric Slud, Tim Trudell",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "stat.ME"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17353"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17250",
+      "title": "Adaptive surrogate modeling for high-dimensional spatio-temporal output",
+      "authors": "Berkcan Kapusuzoglu, Shunsaku Matsumoto, Yoshitomo Miyagi, Daigo Watanabe, Sankaran Mahadevan",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "cs.CE",
+        "cs.AI",
+        "cs.LG",
+        "stat.ME",
+        "stat.ML"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17250"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17248",
+      "title": "Information fusion and machine learning for sensitivity analysis using physics knowledge and experimental data",
+      "authors": "Berkcan Kapusuzoglu, Sankaran Mahadevan",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "cs.CE",
+        "cs.LG",
+        "stat.ME",
+        "stat.ML"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17248"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18443",
+      "title": "Limit Theory for U-Statistics under Clustered and Weakly Dependent Data",
+      "authors": "Emmanuel Selorm Tsyawo",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "econ.EM",
+        "math.ST"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18443"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18375",
+      "title": "Difference-in-Differences Models in the Presence of Time-Varying Mediators",
+      "authors": "Kyunghoon Ban, Zhengrun Chen, Désiré Kédagni",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "econ.EM"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18375"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18690",
+      "title": "Europe's Climate Ambition Under Scrutiny: Evidence from Deep Learning Emission Projections",
+      "authors": "Jacopo Ghirri, Carlos Rodriguez-Pardo, Lara Aleluia Reis, Massimo Tavoni",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "econ.GN"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18690"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18657",
+      "title": "Accounting for intra-household joint travel in agent-based transport simulations",
+      "authors": "Javaudin Lucas, Araldo Andrea, Coulombel Nicolas",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "econ.GN"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18657"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18554",
+      "title": "CentaurBench: Benchmarking LLM Capabilities on Augmenting vs. Automating Real-World Work Tasks",
+      "authors": "Pattaraphon Kenny Wongchamcharoen, Kris Gulati, Min Min Fong, Abhishek Nagaraj",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "cs.CY",
+        "cs.AI",
+        "cs.MA",
+        "econ.GN"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18554"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18069",
+      "title": "Revisiting the Intra-Team Communication Method to Elicit Level-k Reasoning in Beauty Contests and 11-20 Games",
+      "authors": "Zitian Wang, Istiak Ahmed, Patarasate Unjitwattana, Emily Yunxi Xie, Meng-Jhang Fong, Po-Hsuan Lin",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "econ.GN"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18069"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17624",
+      "title": "Governing Delegation to Generative Artificial Intelligence: Human Direction, Work-Related Orientation, and Modes of Use",
+      "authors": "Jorge Fábrega",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "cs.CY",
+        "econ.GN"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17624"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17436",
+      "title": "The Long-Term Effects of British and French Colonization in Africa on Trust in Traditional Leaders",
+      "authors": "Brice Romuald Gueyap Kounga",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "econ.GN"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17436"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17312",
+      "title": "Reputation and institutional certification as complementary trust mechanisms in a single online market",
+      "authors": "Yuta Kido, Yohsuke Ohtsubo",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "physics.soc-ph",
+        "econ.GN"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17312"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.19070",
+      "title": "Function-On-Function Regression Through Separable Neural Operators",
+      "authors": "Tailen Hsing, Su-Yun Huang, Toshinari Morimoto",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "math.ST",
+        "stat.ML"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.19070"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.19067",
+      "title": "Diffusion Models for High-Dimensional Clustered Data: Intrinsic-Dimension Adaptivity via Bayesian Classification",
+      "authors": "Yuga Iguchi, Paul Fearnhead",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "stat.ML",
+        "cs.LG",
+        "math.ST"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.19067"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.19045",
+      "title": "Distributed Online Estimation of Spiked Eigenvalues with Adaptive Weighting under Persistent Aspect Ratio Heterogeneity",
+      "authors": "Lu Yan, Jiang Hu, Yonghan Zhang, Xiaoyue Li",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "math.ST"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.19045"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18990",
+      "title": "Proving Lehner's formulas via RDT -- indefinite and asymmetric scenarios",
+      "authors": "Mihailo Stojnic",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "math.PR",
+        "math.ST"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18990"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18434",
+      "title": "Boundaries of logarithmic Voronoi cells can be transcendental",
+      "authors": "Yulia Alexandr",
+      "abstract": "We show that logarithmic Voronoi boundaries for one-dimensional algebraic models in the probability simplex need not be algebraic. We give two explicit examples. For a union of two lines, the logarithmic Voronoi cell at a specific smooth rational point has a transcendental boundary point. For a cuspidal curve, the cell at the singular point contains a non-algebraic real-analytic boundary branch.",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "math.ST",
+        "math.AG"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18434"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18402",
+      "title": "Algorithms for adaptive and heteroskedastic linear regression at the computational threshold",
+      "authors": "Spencer Compton, Tselil Schramm",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "math.ST",
+        "cs.DS",
+        "cs.LG"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18402"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18391",
+      "title": "Quickest Change Detection in Parametric Models With 1-Bit Measurements",
+      "authors": "Liyan Xie, Martina Cardone",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "cs.IT",
+        "math.ST"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18391"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18335",
+      "title": "The Decoherence Exponent: Stable Phase Noise and Constraints on Objective State Reduction",
+      "authors": "Milen V. Velev, Ivo D. Dinov",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "math-ph",
+        "math.ST",
+        "quant-ph"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18335"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18293",
+      "title": "Critical tensor covariance at the Marchenko--Pastur threshold",
+      "authors": "Xiaohui Xie",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "math.PR",
+        "math.ST"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18293"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18286",
+      "title": "How far are $d$-dimensional copulas with uniform $(d-1)$-marginals from (total) independence?",
+      "authors": "Damjana Kokol Bukovšek, Nik Stopar, Wolfgang Trutschnig",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "math.ST",
+        "math.PR"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18286"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18061",
+      "title": "The concentration game: Bayesian updating, regret, and information",
+      "authors": "Akshay Balsubramani",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "cs.LG",
+        "cs.GT",
+        "math.PR",
+        "math.ST"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18061"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17961",
+      "title": "Hamiltonian dynamics for sampling on discrete spaces",
+      "authors": "Raphaël Barboni, Sebastiano Grazzi, Giacomo Zanella",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "math.ST"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17961"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17958",
+      "title": "A First-Order Entropy Law for Canonical T-Complexity of Finite-Alphabet i.i.d. Sources",
+      "authors": "Thomas Schürmann",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "math.ST",
+        "cs.IT"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17958"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17927",
+      "title": "Near-unit-root persistence of symmetric stable autoregressive sequences",
+      "authors": "José Ricardo G. Mendonça, Boubaker Smii",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "math.PR",
+        "cond-mat.stat-mech",
+        "math.ST"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17927"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17908",
+      "title": "An RKHS Framework for Fixed Effects in Permanental Process Models",
+      "authors": "Matthew LeDuc",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "math.ST",
+        "stat.ML"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17908"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17841",
+      "title": "Toward the Optimal Regret-Instability Trade-off in Multi-Armed Bandits",
+      "authors": "Kaifei Wang, Yinyu Ye, Han Zhong",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "stat.ML",
+        "cs.LG",
+        "math.OC",
+        "math.ST"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17841"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17669",
+      "title": "A Characterization of Measures of Concordance of Degree Two",
+      "authors": "Takaaki Koike, Haruki Tsunekawa",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "math.ST",
+        "math.PR"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17669"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17648",
+      "title": "Semicircular law with a few independent entries in a random matrix",
+      "authors": "Debapratim Banerjee, Himasish Talukdar",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "math.PR",
+        "math-ph",
+        "math.ST"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17648"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17533",
+      "title": "Regularization of Statistical Inverse Problems on Non-Reflexive Banach Spaces",
+      "authors": "Darrel K Joseph, M P Rajan",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "math.NA",
+        "math.FA",
+        "math.ST",
+        "stat.ML"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17533"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17466",
+      "title": "Online Generalized Sparse Regression: How Does Overparametrization Help?",
+      "authors": "Shuoguang Yang, Qiang Sun",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "stat.ML",
+        "cs.LG",
+        "math.ST"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17466"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17260",
+      "title": "Minimax Optimal Estimator and Improved Error Rate for the MLE in Logistic Regression with Gaussian Design",
+      "authors": "Junren Chen, Arya Mazumdar",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "math.ST",
+        "cs.IT",
+        "stat.ML"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17260"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17244",
+      "title": "Maximum Tsallis Entropy Distributions for Robust and Efficient Sparse Learning from Correlated Data",
+      "authors": "Kai Yang, Masoud Asgharian, Celia M. T. Greenwood",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "math.OC",
+        "cs.AI",
+        "math.ST",
+        "stat.CO",
+        "stat.ML"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17244"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18982",
+      "title": "Monroe: A Molecular Foundation Model for In-Context Probabilistic Inference",
+      "authors": "Blazej Banaszewski, Andrew W. Fitzgibbon",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "cs.LG",
+        "q-bio.BM",
+        "q-bio.QM"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18982"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18898",
+      "title": "Polarization controlled second harmonic generation imaging of stretched collagen fibrils reveals collagen deformation pathway in situ",
+      "authors": "MacAulay Harvey, Konstantin Roeder, Richard Cisek, Danielle Tokarz, Laurent Kreplak",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "q-bio.QM"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18898"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18451",
+      "title": "Atrial Fibrillation Detection with Arbitrary Leads via a Codebook-Based Reconstruction-Classification Framework",
+      "authors": "Hongtao Li, Jia Wei, Guoyao Li, Yuchen Lei, Guangnian Ma, Jia Xiao, Yuanjun Lai, Shuzhen Lv, Xueqiang Ouyang",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "cs.LG",
+        "q-bio.QM"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18451"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18238",
+      "title": "GenEx: A Graph-Based Representational Paradigm for SARS-CoV-2 Variant Detection via Codon Co-occurrence Networks",
+      "authors": "Arefin Amin, Labiba Faiza Karim, M. Monir Uddin",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "cs.AI",
+        "q-bio.QM"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18238"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17712",
+      "title": "A Leakage-Proof Benchmark and Conformal Selective Triage for Electrohysterogram-Based Preterm Birth Prediction",
+      "authors": "Sunday A. Adetunji, Rhoda O. Oyewusi",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "q-bio.QM",
+        "q-bio.TO"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17712"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17643",
+      "title": "Empirical mode decomposition and interpretable machine learning for preterm birth classification from electrohysterography",
+      "authors": "Umesha Tilakarathna, Senith Jayakody, Kalana Jayasooriya, Roshan Godaliyadda, Parakrama Ekanayake, Isuru Nawinne, Chathura Rathnayake",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "eess.SP",
+        "q-bio.QM"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17643"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17571",
+      "title": "DMT-Dens: Density-preserving manifold visualization for biological data",
+      "authors": "Ruizhe Wang, Yixuan Dong, Bolin Yang, Bingo Wing-Kuen Ling, Fuji Yang, Zelin Zang",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "q-bio.QM",
+        "cs.AI"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17571"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17381",
+      "title": "Leveraging generative hallucination and biophysics-informed modeling for unified biomolecular sequence-structure co-design",
+      "authors": "Xuefeng Liu, Mingxuan Cao, Xiao Luo, Songhao Jiang, Tobin Sosnick, Jinbo Xu, Louis Maher, Rick Stevens",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "q-bio.QM",
+        "cs.AI",
+        "cs.LG",
+        "q-bio.BM"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17381"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17228",
+      "title": "scDNM-VAE enables directly inspectable deep clustering of single-cell RNA-seq data through signed dendritic gating",
+      "authors": "Melih Agraz, Deniz Karapinar, Aysel Topsir, Qianying Cao, Erol Egrioglu, Gaurav Choudhary",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "q-bio.QM",
+        "q-bio.GN"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17228"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.19109",
+      "title": "Distributed Target Tracking using Radar Networks",
+      "authors": "Shao-Hsuan Hung, Raj Thilak Rajan",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "eess.SP",
+        "eess.SY"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.19109"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.19049",
+      "title": "Multi-Agent Off-Policy Deep Reinforcement Learning for Smart Campus Coverage",
+      "authors": "Omar Rady, Mohamed Ayman, Ali Arafa, Mohamed Shalma",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "cs.LG",
+        "eess.SP"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.19049"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.19048",
+      "title": "Robust and Efficient Feature Extraction for Spike Sorting via the Walsh-Hadamard Transform",
+      "authors": "Emily Yang, Liyuan Guo, Seyed Mohammad Ali Zeinolabedin, Meng Zhang, Ke Yang, Matthieu Couriol, Christian Mayr, Pierre-Emmanuel Gaillardon",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "eess.SP",
+        "cs.HC"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.19048"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18902",
+      "title": "Towards Lawful ISAC in Cellular Networks",
+      "authors": "Stefano Tomasin, Annalisa Volpato, Marco Centenaro",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "eess.SP"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18902"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18873",
+      "title": "Integrated Sensing and Communications over Hierarchical Cellular and Cell-Free MIMO Systems",
+      "authors": "Wei Jiang, Hans D. Schotten",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "cs.IT",
+        "eess.SP"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18873"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18760",
+      "title": "Exploiting Pilot Contamination to Improve UL Sum Rate under Maximum Ratio Combining",
+      "authors": "Emanuel Wennemo, Ki Won Sung, Emil Björnson",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "eess.SP"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18760"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18737",
+      "title": "Comparing GNSS Derived Sea Ice Drift in the Arctic and Antarctic using Rotary Spectra and Principal Component Analysis",
+      "authors": "James H. Hepworth, Amit Kumar Mishra",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "eess.SP"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18737"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18711",
+      "title": "EgoHRV: Continuous Heart Rate Variability Estimation from Egocentric Systems for Autonomic Response and Skill Assessment",
+      "authors": "Berken Utku Demirel, Christian Holz",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "cs.CV",
+        "eess.SP"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18711"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18639",
+      "title": "Change Point--Aware Evaluation and Re-Calibration of PPG-Based Blood Pressure Estimation",
+      "authors": "Yunwon Tae, Minje Park, Gyunho Rho, Dongjoon Yoo, Sunghoon Joo",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "eess.SP",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18639"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18636",
+      "title": "Coordination of Ground-to-Space Reference Networks for High-Precision GNSS",
+      "authors": "Xue Xian Zheng, Xing Liu, José A. López-Salcedo, Gonzalo Seco-Granados, Tareq Y. Al-Naffouri",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "eess.SP"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18636"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18582",
+      "title": "Score-based Fading-Aware Decision Fusion",
+      "authors": "Domenico Ciuonzo",
+      "abstract": "",
+      "publishedOn": "2026-08-19",
+      "categories": [
+        "eess.SP"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18582"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18395",
+      "title": "BR-FiLM: Bounded Residual Channel-Quality Conditioning for Automatic Modulation Recognition",
+      "authors": "Tahmid Zaman Tahi, Syed Samiul Alam, Haolin Tang, Yanxiao Zhao, Jun Huang, Min Song",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "eess.SP"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18395"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18272",
+      "title": "SeisEvo: Evolution of Seismic Data Reconstruction Algorithms by Agents",
+      "authors": "Yingjie Xu, Siwei Yu, Jianwei Ma",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "physics.geo-ph",
+        "cs.AI",
+        "cs.NE",
+        "eess.SP"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18272"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.18055",
+      "title": "Primitive Representation Learning for Unsupervised Dynamic Contrast Enhanced MRI Reconstruction",
+      "authors": "Veronika Spieker, Wenqi Huang, Cemre Ariyurek, Liam Timms, Daniel Rueckert, Onur Afacan, Julia A. Schnabel, Sila Kurugol",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "eess.IV",
+        "cs.CV",
+        "cs.LG",
+        "eess.SP",
+        "physics.med-ph"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.18055"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17897",
+      "title": "The Zonotopic Mixture Filter",
+      "authors": "Rodrigo A. González, Angel L. Cedeño, Vicenç Puig",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "eess.SY",
+        "eess.SP"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17897"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17774",
+      "title": "Edge-Native Embodied Intelligence for Action-Aware Wireless Edge Networks",
+      "authors": "Yiru Wang, Chuanao Jiang, Jiahui Cui, Zide Fan, Lei Wang, Zehui Xiong, Dong In Kim",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "eess.SY",
+        "eess.SP"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17774"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17769",
+      "title": "Electromagnetic World Model for 6G: A Unified Framework for Joint Environment Reconstruction and Channel Prediction",
+      "authors": "Yizhu Zhao, Li Yu, Jianhua Zhang, Yuxiang Zhang, Zhen Zhang, Guangyi Liu",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "eess.SP"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17769"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17760",
+      "title": "Learnware for CSI Feedback: Scene-specific Small Models Can Do Big",
+      "authors": "Xiangyi Li, Jiajia Guo, Chao-Kai Wen, Xin Geng, Shi Jin, Zhi-Hua Zhou",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "cs.IT",
+        "cs.AI",
+        "eess.SP"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17760"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17721",
+      "title": "M-QAM MIMO Maximum-Likelihood Detection with QAOA: ML-Rate Offline Angle Design and Correlated Infinite-Size Spin-Glass Models",
+      "authors": "Burhan Gülbahar",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "eess.SP",
+        "cs.IT",
+        "quant-ph"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17721"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17683",
+      "title": "Statistical Characterization and Block-EM Estimation of Frequency-Domain NSI for OFDM Systems in Bursty Impulsive Noise",
+      "authors": "Chin-Hung Chen, Wim van Houtum, Yan Wu, Alex Alvarado",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "eess.SP",
+        "cs.IT"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17683"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17622",
+      "title": "On the Probability of Network States with Gaussian Connectivity Functions",
+      "authors": "Amy S. Inwood, Peter J. Smith, Pawel Dmochowski, Carl P. Dettmann, Justin P. Coon, Michail Matthaiou",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "eess.SP",
+        "math.PR"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17622"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17612",
+      "title": "Geometry-Aware DRL for Multi-Subband Scheduling in Satellite-Assisted UAM Networks",
+      "authors": "Hyung-Joo Moon, Sangha Park, Chan-Byoung Chae, Robert W. Heath",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "eess.SP"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17612"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17544",
+      "title": "Channel2World: A Wireless Foundation Model for RF Environment Representation",
+      "authors": "Hyung-Joo Moon, Joonkyu Jang, Kwang Soon Kim, Seong-Lyun Kim, Robert W. Heath, Chan-Byoung Chae",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "eess.SP"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17544"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17497",
+      "title": "Channel Modeling for Phase-Based Ranging",
+      "authors": "Till Droemmer, Markus Gardill",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "eess.SP"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17497"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17476",
+      "title": "Super-resolution ranging using a sub-terahertz self-injection-locked frequency-modulated radar",
+      "authors": "Hossein Naghavi, Zainulabideen Khalifa, Hamad Alotaibi, Farzad Khoeini, James Gruber, Morteza Tavakoli Taba, Aditya Varma Muppala, Saghar Adler, Ali Mostajeran, Mohammed Aseeri, Andreia Cathelin, Ehsan Afshari",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "eess.SP"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17476"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17448",
+      "title": "Multi-Sensor Edge Angle Detection for Performance Analysis in Ski Jumping",
+      "authors": "Ivan Simeonov, Lukas Schulthess, Hanna Mueller, Marc Nölke, Michele Magno, Luca Benini, Christoph Leitner",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "eess.SP",
+        "eess.SY"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17448"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17327",
+      "title": "Finite-range Lattice Momentum Operators for Quantum Field Theory",
+      "authors": "Jan C Olivier, Etienne Barnard",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "eess.SP",
+        "hep-lat",
+        "quant-ph"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17327"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17322",
+      "title": "Channel Knowledge Map Enabled Low-Complexity Dynamic Radio Environment Reconstruction",
+      "authors": "Yujun Lin, Zhiqiang Xiao, Hao Wu, Xiaoqiang Qiao, Fayu Wan, Tao Zhang",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "eess.SP"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17322"
+        }
+      ]
+    },
+    {
+      "arxivId": "2608.17269",
+      "title": "Task-Based Evaluation of Raw Radar Data Compression: A Pre-Registered Study of Where Classical Codecs Fail to Preserve Target Detection, and Why",
+      "authors": "Eric Michael Chrabot",
+      "abstract": "",
+      "publishedOn": "2026-08-18",
+      "categories": [
+        "eess.SP"
+      ],
+      "intakes": [
+        {
+          "kind": "arxiv-new",
+          "evidenceUrl": "https://arxiv.org/abs/2608.17269"
+        }
+      ]
+    }
+  ]
+}

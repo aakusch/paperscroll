@@ -1,0 +1,119 @@
+import { AbstractText } from "./abstractText";
+import type { Paper } from "./data";
+import { isHostedPacket } from "./hostPacket";
+import { Tip } from "./Tip";
+import { hasPlainBrief, hostCopy, useHostVoice } from "./voice";
+
+export function HostBrief({ paper }: { paper: Paper }) {
+  const [voice, setVoice] = useHostVoice();
+  const ready = isHostedPacket(paper);
+  const host = hostCopy(paper, voice);
+  const dual = hasPlainBrief(paper);
+
+  return (
+    <>
+      {paper.abstract || paper.takeaway ? (
+        ready ? (
+          <details className="abs-block">
+            <summary>
+              <span className="abs-k">Abstract</span>
+              <svg
+                className="abs-chev"
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2.25 4.25 L6 8 L9.75 4.25"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </summary>
+            <div className="abs-panel">
+              <div className="abs-panel-inner">
+                <AbstractText text={paper.abstract || paper.takeaway || ""} />
+              </div>
+            </div>
+          </details>
+        ) : null
+      ) : null}
+
+      {ready && host.brief ? (
+        <section className="block brief-block">
+          <div className="host-head">
+            <h2>
+              Why this paper
+            </h2>
+            {dual ? (
+              <div className="voice-switch" role="radiogroup" aria-label="Brief language">
+                <button
+                  type="button"
+                  role="radio"
+                  aria-checked={voice === "technical"}
+                  className={voice === "technical" ? "on" : undefined}
+                  onClick={() => setVoice("technical")}
+                >
+                  Field
+                </button>
+                <button
+                  type="button"
+                  role="radio"
+                  aria-checked={voice === "plain"}
+                  className={voice === "plain" ? "on" : undefined}
+                  onClick={() => setVoice("plain")}
+                >
+                  Plain
+                </button>
+              </div>
+            ) : null}
+          </div>
+          <p className={`host-decision v-${paper.verdict.toLowerCase()}`}>
+            {paper.verdict}
+          </p>
+          {host.verdictWhy ? <p className="why-lede">{host.verdictWhy}</p> : null}
+          {host.brief.split(/\n\n/).map((graf) => (
+            <p key={graf.slice(0, 40)} className="brief-p">
+              {graf}
+            </p>
+          ))}
+        </section>
+      ) : null}
+
+      {ready && host.takeaways.length > 0 ? (
+        <section className="block">
+          <h2>Key takeaways</h2>
+          <ol className="points">
+            {host.takeaways.map((line, index) => (
+              <li key={line}>
+                <span className="n">{index + 1}</span>
+                <p>
+                  {paper.notes?.[index] ? (
+                    <Tip label={paper.notes[index]}>{line}</Tip>
+                  ) : (
+                    line
+                  )}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ) : null}
+
+      {ready && paper.actions.length > 0 ? (
+        <section className="block action-block">
+          <h2>If it’s on your desk</h2>
+          <ul className="do">
+            {paper.actions.map((line) => (
+              <li key={line}><p>{line}</p></li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+    </>
+  );
+}
