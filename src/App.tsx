@@ -152,8 +152,9 @@ function PaperCard({
         </span>{" "}
         {paper.verdictWhy}
       </p>
-      {paper.trend || saved ? (
+      {paper.automation || paper.trend || saved ? (
         <div className="metrics">
+          {paper.automation ? <span>Board #{paper.automation.rank}</span> : null}
           {paper.trend ? <TrendMark trend={paper.trend} /> : null}
           {saved ? <span>Saved</span> : null}
         </div>
@@ -311,7 +312,7 @@ function FeedPage() {
       <header className="feed-head">
         <div>
           <p className="feed-kicker">
-            {isToday ? "Today" : isLatestHosted ? "Last hosted" : "Archive"}
+            {isToday ? "Today" : isLatestHosted ? "Last board" : "Archive"}
           </p>
           <h1 className="feed-title">The board</h1>
         </div>
@@ -340,10 +341,12 @@ function FeedPage() {
         }
       >
         {isLatestHosted && !isToday
-          ? `No hosted board is ready for ${fullDayLabel(today)}. Showing the latest complete board; intake alone never publishes papers.`
+          ? `No complete board is ready for ${fullDayLabel(today)}. Showing the latest finished board.`
+          : day.selection
+            ? `One shared top ten from ${day.poolSize ?? "the"} eligible papers. Source signal plus field coverage chooses membership; your fields only change the order.`
           : allFields
-          ? "One shared hosted slate. Card dates are when each paper first appeared."
-          : `${prefs.interests.join(", ")} first. Same hosted slate as everyone.`}
+            ? "One shared board. Card dates are when each paper first appeared."
+            : `${prefs.interests.join(", ")} first. Same top ten as everyone.`}
       </p>
 
       {boardDates.length > 1 ? (
@@ -370,8 +373,8 @@ function FeedPage() {
 
       {day.focus.length + day.rest.length === 0 ? (
         <div className="empty-card">
-          <h2>No hosted papers were ready</h2>
-          <p>The board only publishes complete host packets. Try an older morning.</p>
+          <h2>No complete board is ready</h2>
+          <p>Selection and all ten packets publish atomically. Try an older morning.</p>
         </div>
       ) : (
         <section className="day">

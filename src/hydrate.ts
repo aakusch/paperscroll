@@ -58,8 +58,7 @@ function nominationToPaper(
   trend?: Paper["trend"],
 ): Paper | null {
   if (!isHostedPacket(hand)) return null;
-  // The reviewed host packet is authoritative. Intake metadata can be wrong or
-  // overly broad (HF entries do not always expose the paper's full categories).
+  // Legacy manual packets are authoritative for their frozen historical board.
   const topic = hand.topic;
   const listing = {
     listedOn: boardDate,

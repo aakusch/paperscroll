@@ -4,8 +4,8 @@ import type { ListingIntake } from "./data.js";
 /**
  * Morning pool — the only ingest object.
  *
- * Watches nominate. Gates drop stale IDs. The host publishes an explicit
- * ordered slate separately; nominations never become cards on their own.
+ * Watches nominate. Gates drop stale IDs. The daily publisher applies one
+ * deterministic shared cut; user preferences never change its membership.
  * Do not put verdict, comments, or accounts in this file.
  */
 export type MorningPool = {
@@ -20,6 +20,8 @@ export type Nomination = {
   authors: string;
   abstract: string;
   publishedOn: string;
+  /** Persisted at intake time so merged sources cannot rewrite field coverage. */
+  field: Topic;
   categories: string[];
   github?: string;
   intakes: ListingIntake[];
@@ -41,9 +43,10 @@ const CAT_TOPIC: Array<{ test: (c: string) => boolean; topic: Topic }> = [
   { test: (c) => c.startsWith("cs."), topic: "AI" },
   { test: (c) => c.startsWith("stat."), topic: "Stats" },
   { test: (c) => c.startsWith("econ."), topic: "Econ" },
+  { test: (c) => c === "eess.SP", topic: "Engineering" },
   {
     test: (c) =>
-      c.startsWith("q-bio") || c === "eess.SP" || c === "eess.IV",
+      c.startsWith("q-bio") || c === "eess.IV",
     topic: "Health",
   },
   { test: (c) => c.startsWith("math."), topic: "Math" },

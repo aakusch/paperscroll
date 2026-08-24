@@ -1,4 +1,4 @@
-name: Morning pool
+name: Morning board
 
 on:
   schedule:
@@ -13,19 +13,22 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
 
 concurrency:
   group: morning-pool
   cancel-in-progress: false
 
 jobs:
-  pool:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
         with:
           fetch-depth: 0
+
+      - name: Record checked-out revision
+        id: base
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - uses: actions/setup-node@v5
         with:
@@ -50,51 +53,67 @@ jobs:
           fi
           echo "date=$date" >> "$GITHUB_OUTPUT"
 
-      - name: Pull nominations
-        run: npm run pool -- "${{ steps.board.outputs.date }}"
-
-      - run: npm run lint
-      - run: npm run build
-
-      - name: Check for intake changes
-        id: changed
+      - name: Keep published boards frozen
+        id: frozen
         env:
           BOARD_DATE: ${{ steps.board.outputs.date }}
         run: |
-          git status --porcelain -- "src/pools/$BOARD_DATE.json" > /tmp/paperscroll-pool-status
-          if [[ -s /tmp/paperscroll-pool-status ]]; then
+          if [[ -f "src/boards/$BOARD_DATE.json" ]]; then
             echo "value=true" >> "$GITHUB_OUTPUT"
+            echo "$BOARD_DATE is already published; nothing to do."
           else
             echo "value=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Push review branch
-        if: steps.changed.outputs.value == 'true'
+      - name: Pull nominations
+        if: steps.frozen.outputs.value != 'true'
+        run: npm run pool -- "${{ steps.board.outputs.date }}"
+
+      - name: Cut and generate the complete board
+        if: steps.frozen.outputs.value != 'true'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PAPERSCROLL_MODEL: gpt-4o-mini
+        run: npm run publish -- "${{ steps.board.outputs.date }}"
+
+      - name: Validate product build
+        if: steps.frozen.outputs.value != 'true'
+        run: |
+          node --check scripts/pool.mjs
+          node --check scripts/rank.mjs
+          node --check scripts/publish.mjs
+          node --check scripts/validate-board.mjs
+          npm run validate-board -- "${{ steps.board.outputs.date }}"
+          npm run lint
+          npm run build
+
+      - name: Validate publication diff
+        if: steps.frozen.outputs.value != 'true'
         env:
           BOARD_DATE: ${{ steps.board.outputs.date }}
         run: |
-          branch="automation/pool-$BOARD_DATE"
+          unexpected="$(git status --porcelain | awk '{print $2}' | grep -Ev "^(src/pools/$BOARD_DATE.json|src/boards/$BOARD_DATE.json|src/boards/generated.ts)$" || true)"
+          if [[ -n "$unexpected" ]]; then
+            echo "Unexpected generated paths:" >&2
+            echo "$unexpected" >&2
+            exit 1
+          fi
+          test -f "src/pools/$BOARD_DATE.json"
+          test -f "src/boards/$BOARD_DATE.json"
+
+      - name: Publish to main
+        if: steps.frozen.outputs.value != 'true'
+        env:
+          BOARD_DATE: ${{ steps.board.outputs.date }}
+          BASE_SHA: ${{ steps.base.outputs.sha }}
+        run: |
+          git fetch origin "$GITHUB_REF_NAME"
+          if [[ "$(git rev-parse "origin/$GITHUB_REF_NAME")" != "$BASE_SHA" ]]; then
+            echo "main advanced during generation; refusing to publish stale output" >&2
+            exit 1
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -B "$branch"
-          git add "src/pools/$BOARD_DATE.json"
-          git commit -m "Pool papers for $BOARD_DATE"
-          git push --force origin "HEAD:refs/heads/$branch"
-
-      - name: Open intake review
-        if: steps.changed.outputs.value == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          BOARD_DATE: ${{ steps.board.outputs.date }}
-        run: |
-          branch="automation/pool-$BOARD_DATE"
-          if ! gh pr create \
-            --base "$GITHUB_REF_NAME" \
-            --head "$branch" \
-            --title "Morning pool · $BOARD_DATE" \
-            --body "Automated intake only. Review the nominations, write host packets from the papers, and publish an explicit slate separately. Merging this PR does not put an unbriefed paper on the board."
-          then
-            gh pr edit "$branch" \
-              --title "Morning pool · $BOARD_DATE" \
-              --body "Automated intake only. Review the nominations, write host packets from the papers, and publish an explicit slate separately. Merging this PR does not put an unbriefed paper on the board."
-          fi
+          git add "src/pools/$BOARD_DATE.json" "src/boards/$BOARD_DATE.json" src/boards/generated.ts
+          git commit -m "Publish morning board for $BOARD_DATE"
+          git push origin "HEAD:$GITHUB_REF_NAME"

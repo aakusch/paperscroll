@@ -2,11 +2,11 @@ import type { MorningPool } from "./pool.js";
 import pool20260820 from "./pools/2026-08-20.json" with { type: "json" };
 
 /**
- * The host's published order. Pooling nominates; this list publishes.
+ * Legacy host order for mornings published before automatic ranking v1.
  *
- * Import a pool here only when its host packets have been reviewed. Keep each
- * shared slate at ten or fewer arXiv IDs. An ID is visible only when it resolves
- * to an eligible, complete host packet.
+ * New mornings are generated under src/boards/ by scripts/publish.mjs. Keep
+ * these historical rows frozen; an ID remains visible only when it resolves to
+ * an eligible, complete packet.
  */
 export const HOSTED_DAYS: Array<{ pool: MorningPool; paperIds: string[] }> = [
   {

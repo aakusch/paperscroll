@@ -1,7 +1,7 @@
 # PaperScroll
 
-PaperScroll is a shared morning board of research: one hosted cut, no endless
-feed, and enough judgment to decide what deserves a full read. The tagline is
+PaperScroll is a shared morning board of research: one deterministic top ten,
+no endless feed, and enough judgment to decide what deserves a full read. The tagline is
 **Catch up over coffee.**
 
 ## The job
@@ -13,34 +13,35 @@ In five to ten minutes, a reader should finish the morning routine and know:
 - the artifact or next step worth opening; and
 - which papers belong on their saved shelf.
 
-The host packet is the product. It contains the verdict, brief, object / limit /
-artifact takeaways, actions, and safe links. The authors' abstract is supporting
-context, collapsed by default. Comments and agent forwarding are secondary.
+The board packet is the product. It contains the verdict, brief, object / limit /
+artifact takeaways, actions, and safe links. Automated packets are constrained
+to the supplied title and authors' abstract; they are not represented as a full
+PDF read. The raw abstract is supporting context, collapsed by default.
+Comments and agent forwarding are secondary.
 
 Everyone sees the same board. Signed-in readers can put their fields first, but
 fields never hide papers or create a private slate. "Today" is the day this
-board was hosted; each card separately says when the paper first appeared.
+board was published; each card separately says when the paper first appeared.
 
-This is not search, a PDF warehouse, a recommendation engine, or an automated
-summary feed. A paper without a complete host packet cannot appear on the board
-or in the digest.
+This is not search, a PDF warehouse, a personalized recommendation engine, or an
+endless summary feed. Selection is one transparent shared ranking. A day appears
+only when all ten packets validate; partial boards fail closed.
 
 ## Product cuts
 
 The live product is deliberately narrow:
 
-- The board leads with the host's line, not an abstract preview or fake paper
+- The board leads with PaperScroll's decision line, not an abstract preview or fake paper
   thumbnail.
-- Routine is the primary completion path: board → hosted packets → caught up.
+- Routine is the primary completion path: board → board packets → caught up.
 - Save means "read later." It never downranks a paper or changes tomorrow.
 - Discussion is for a concrete caveat, replication note, or useful artifact and
-  stays behind the host packet.
-- Agent forwarding is optional. `GET /api/digest` returns the same host packets
-  as the site and never includes authors' abstracts.
+  stays behind the board packet.
+- Agent forwarding is optional. `GET /api/digest` returns the same board packets
+  as the site and never includes raw authors' abstracts.
 
-If readers do not return for the host judgment, adding feeds, ranking controls,
-or more agent features is not the answer. The operational bet is that a host can
-publish a credible short board consistently.
+There are no ranking controls. The operational bet is that one reproducible,
+cross-field cut is more useful than another personalized feed.
 
 ## Architecture
 
@@ -50,12 +51,16 @@ PaperScroll stays one process in development and preview:
 Hugging Face Daily Papers + selected arXiv new lists
                     │
                     ▼
-          src/pools/YYYY-MM-DD.json       catalog / editorial data in git
+          src/pools/YYYY-MM-DD.json       intake evidence + persisted field
                     │
-          join only to reviewed host packets in src/data.ts
+          balanced-source-v1 cut: exactly ten shared IDs
+                    │
+          one structured, source-grounded packet batch
+                    │
+          exact-ID + evidence + completeness validation
                     │
                     ▼
-       complete packets + explicit host order → shared slate of ≤10
+          src/boards/YYYY-MM-DD.json      frozen published board
                     │
           ┌─────────┴─────────┐
           ▼                   ▼
@@ -69,9 +74,11 @@ The boundary is intentional:
 | Concern | Source of truth |
 | --- | --- |
 | Daily nominations and listing evidence | `src/pools/*.json` |
-| Reviewed host packets and archive copy | `src/data.ts` |
-| Hosted pool imports, explicit order, and publication gate | `src/slates.ts`, `src/hostPacket.ts` |
-| Pool/packet join and eligibility | `src/hydrate.ts`, `src/board.ts` |
+| Deterministic shared ranking | `scripts/rank.mjs` |
+| Atomic packet generation and board publication | `scripts/publish.mjs` |
+| Frozen automatic boards and static registry | `src/boards/*.json`, `src/boards/generated.ts` |
+| Legacy August 20 host packets and order | `src/data.ts`, `src/slates.ts` |
+| Complete-packet gate | `src/hostPacket.ts` |
 | Accounts and reader-owned state | `server/` store (`data/paperscroll.sqlite` locally; Neon on Vercel) |
 | Agent packet formats | `src/brief.ts`, `src/agentDigest.ts` |
 
@@ -83,7 +90,7 @@ because the catalog is loaded through Vite.
 The storage adapter is deliberately small: `server/store.mjs` selects
 `server/sqlite-store.mjs` for the one-process local app and
 `server/neon-store.mjs` only on Vercel (or when explicitly selected with
-`PAPERSCROLL_DATABASE=neon`). Editorial catalog and host packets never move into
+`PAPERSCROLL_DATABASE=neon`). Board catalog and packets never move into
 the user database. Vercel's filesystem is ephemeral, so production reader state
 must not use the local SQLite file.
 
@@ -113,7 +120,7 @@ The Vercel project builds the Vite site and serves the existing API through the
 dispatcher function in `api/dispatch.mjs`; development remains one Vite process.
 Connect a managed Postgres database and expose its `DATABASE_URL` to production,
 preview, and development deployments. PaperScroll uses that database only for
-accounts and reader-owned state. No catalog or brief is generated at request
+accounts and reader-owned state. No catalog or packet is generated at request
 time.
 
 For this repository, the Vercel project is linked through `.vercel/` (ignored by
@@ -127,7 +134,7 @@ After deployment, check sign-up, Account token creation and revocation, and both
 digest formats against the production URL. A static-only deployment is not a
 complete PaperScroll deployment because those flows would lose state.
 
-## Host a morning
+## Publish a morning
 
 1. Pull nominations for the board date:
 
@@ -136,39 +143,34 @@ complete PaperScroll deployment because those flows would lose state.
    ```
 
    This writes `src/pools/YYYY-MM-DD.json` from Hugging Face Daily Papers and
-   selected non-firehose arXiv categories. Duplicate arXiv IDs are merged. Daily
-   list items may be at most 14 days old; raw arXiv-new items may be at most two
-   days old. The script writes intake evidence and a review count, not a
-   published board.
+   selected non-firehose arXiv categories. Duplicate arXiv IDs are merged and
+   the arXiv watch field is persisted instead of being overwritten by the
+   Hugging Face `cs.LG` placeholder. Daily list items may be at most 14 days old;
+   raw arXiv-new items may be at most two days old.
 
-   `.github/workflows/morning-pool.yml` runs this intake at 8:17 a.m.
-   `America/New_York` on weekdays and opens a dated review PR. Current mornings
-   use arXiv's cached category RSS feeds; manual historical dispatches use one
-   date-bounded search query. The workflow never writes host packets or a slate,
-   and merging an intake PR cannot publish an unbriefed paper.
-
-2. For a candidate, produce a draft packet:
+2. Cut and publish the board:
 
    ```bash
-   OPENAI_API_KEY=... npm run summarize -- <arxiv-id>
+   OPENAI_API_KEY=... npm run publish -- YYYY-MM-DD
    ```
 
-   The command prints draft JSON. It does not write the catalog and its output is
-   never publishable as-is. Read the paper and evidence, correct the draft, make
-   the verdict, object, limit, artifact, and actions your own, then add the
-   reviewed packet to `src/data.ts`. Never invent a repository URL.
+   `balanced-source-v1` orders eligible nominations by HF listing, HF votes,
+   independent-source count, publication date, and arXiv ID. The strongest
+   nomination from each represented field is guaranteed a seat before remaining
+   seats are filled. One structured model request creates all ten packets from
+   title and abstract. Exact IDs, packet shape, and verbatim evidence spans are
+   validated before anything is written. There is no partial-board fallback.
 
-3. Import the dated pool in `src/slates.ts` and add at most ten reviewed arXiv
-   IDs in the host's intended order. This explicit import and list publish the
-   morning; unhosted pool files are not bundled, and popularity or source order
-   never choose the slate.
+3. Run `npm run lint` and `npm run build`. A published date is immutable unless
+   an operator deliberately invokes the repair path; routine reruns exit without
+   reranking history.
 
-4. Run the app. Pool nominations are joined to reviewed packets by arXiv ID.
-   Unreviewed nominations remain intake evidence only; they cannot become cards.
-   A slate ID with an incomplete packet fails closed.
-
-5. Check the board, every routine step, the caught-up screen, and both Markdown
-   and JSON digests before treating the day as hosted.
+`.github/workflows/morning-pool.yml` runs all three stages at 8:17 a.m.
+`America/New_York` on weekdays, validates the complete product build, confirms
+`main` did not advance during generation, and pushes one non-force commit to
+`main`. The schedule requires `OPENAI_API_KEY` as an Actions repository secret.
+Vercel then deploys that bot-authored commit through its GitHub
+connection.
 
 ## Digest
 
@@ -182,7 +184,7 @@ curl -H "Authorization: Bearer ps_live_..." \
 
 Options are `date=YYYY-MM-DD` and `format=json`. The authenticated account owns
 the fields and desk; fields reorder the full board and never hide it. The
-response contains host packets, links, and composition metadata. It does not contain abstracts. Tokens are
+response contains board packets, links, and composition metadata. It does not contain raw abstracts. Tokens are
 shown once, stored only as hashes, expire, and can be revoked from Account.
 
 ## Demo

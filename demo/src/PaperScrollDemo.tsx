@@ -373,7 +373,7 @@ function CollateSheet({ frame }: { frame: number }) {
             The board
           </div>
           <div style={{ fontSize: 14, color: colors.mute, marginTop: 6 }}>
-            Thu 20 Aug · {listed} of {n} host picks on the shared slate
+            Thu 20 Aug · {listed} of {n} papers entering the balanced shared cut
           </div>
         </div>
         <Interactive.Div name="StartRoutine" style={{ opacity: startOp, flexShrink: 0 }}>
@@ -449,7 +449,7 @@ function CollateSheet({ frame }: { frame: number }) {
         </Interactive.Div>
 
         <Interactive.Div
-          name="HostedBoard"
+          name="RankedBoard"
           style={{
             position: "absolute",
             inset: 0,
@@ -540,14 +540,14 @@ function HandoffSheet({ frame }: { frame: number }) {
         Caught up
       </div>
       <div style={{ fontSize: 16, color: "#353530", marginTop: 12, maxWidth: "28rem", lineHeight: 1.5 }}>
-        {n} hosted packets finished. Save the papers that deserve a full read; the shared slate stays the same.
+        {n} board packets finished. Save the papers that deserve a full read; the shared top ten stays the same.
       </div>
       <div style={{ display: "flex", gap: 10, justifyContent: "center", marginTop: 28, flexWrap: "wrap" }}>
         <Pill primary>Back to the board</Pill>
         <Pill>Open saved</Pill>
       </div>
       <div style={{ marginTop: 28, fontSize: 14, color: colors.mute, lineHeight: 1.5 }}>
-        Optional: send the same host packets to an agent for workspace context.
+        Optional: send the same board packets to an agent for workspace context.
         <br />
         <span style={{ color: colors.ink, textDecoration: "underline" }}>Copy agent handoff</span>
         <span> · Manage digest token</span>
@@ -623,7 +623,7 @@ function AgentSheet({ frame }: { frame: number }) {
           <br />
           Authorization: Bearer ps_live_…
           <br />
-          <span style={{ fontFamily: agentSans, color: "#4a4a46" }}>Host digest. Not the authors’ abstracts.</span>
+          <span style={{ fontFamily: agentSans, color: "#4a4a46" }}>Board digest. No raw abstracts.</span>
         </div>
         <Interactive.Div
           name="Place"
@@ -640,7 +640,7 @@ function AgentSheet({ frame }: { frame: number }) {
           Stats is a methods stop, not a model card.
         </Interactive.Div>
         <Interactive.Div
-          name="HostChip"
+          name="BoardPacket"
           style={{
             opacity: packet,
             marginTop: 16,
@@ -659,7 +659,7 @@ function AgentSheet({ frame }: { frame: number }) {
               color: colors.accent,
             }}
           >
-            Host packet · AI
+            PaperScroll packet · AI
           </div>
           <div style={{ fontFamily: serif, fontSize: 22, fontWeight: 600, marginTop: 8, lineHeight: 1.28 }}>
             {traces.title}

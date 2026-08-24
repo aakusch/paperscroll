@@ -1,7 +1,7 @@
 import type { Paper } from "./data.js";
 import { safeGithubUrl, safePaperUrl } from "./links.js";
 
-/** Structured host packet shared by copy actions and the digest. Never add abstract. */
+/** Structured board packet shared by copy actions and the digest. Never add the raw abstract. */
 export function paperPacket(paper: Paper) {
   const paperUrl = safePaperUrl(paper.url) ?? null;
   const codeUrl = safeGithubUrl(paper.github) ?? null;
@@ -14,7 +14,7 @@ export function paperPacket(paper: Paper) {
     title: paper.title,
     authors: paper.authors,
     topic: paper.topic,
-    host: {
+    packet: {
       verdict: paper.verdict,
       verdictWhy: paper.verdictWhy,
       brief: paper.brief?.trim() || null,
@@ -24,6 +24,14 @@ export function paperPacket(paper: Paper) {
         paper: paperUrl,
         code: codeUrl,
       },
+      automation: paper.automation
+        ? {
+            boardRank: paper.automation.rank,
+            selection: paper.automation.reason,
+            basis: paper.automation.packetBasis,
+            model: paper.automation.model,
+          }
+        : null,
       plain: paper.plain
         ? {
             verdictWhy: paper.plain.verdictWhy,
@@ -35,7 +43,7 @@ export function paperPacket(paper: Paper) {
   };
 }
 
-/** Host packet for an agent. Abstract is not the payload. */
+/** Board packet for an agent. The raw abstract is not the payload. */
 export function paperMarkdown(paper: Paper) {
   const pdf = safePaperUrl(paper.url) ?? paper.url;
   const code = safeGithubUrl(paper.github);
@@ -48,13 +56,13 @@ export function paperMarkdown(paper: Paper) {
   if (code) lines.push(`Code: ${code}`);
   lines.push(
     "",
-    `Host verdict: ${paper.verdict}. ${paper.verdictWhy}`,
+    `PaperScroll verdict: ${paper.verdict}. ${paper.verdictWhy}`,
     "",
   );
   if (paper.brief?.trim()) {
     lines.push("## Brief", paper.brief.trim(), "");
   } else {
-    lines.push("_No host brief yet. Do not improvise one from a title._", "");
+    lines.push("_No complete board packet. Do not improvise one from a title._", "");
   }
   if (paper.takeaways.length) {
     lines.push("## Our take", ...paper.takeaways.map((line, i) => `${i + 1}. ${line}`), "");
@@ -73,12 +81,12 @@ export function paperAgentPrompt(paper: Paper, desk?: string) {
   const who = desk?.trim()
     ? `I work on: ${desk.trim()}.`
     : `I'm catching up on ${paper.topic} this morning.`;
-  return `You are reading a PaperScroll host brief, not the authors' abstract. Do not treat a missing PDF as a reason to hallucinate methods, numbers, or a GitHub URL. If this packet is not enough, say you need the PDF.
+  return `You are reading a PaperScroll board packet, not the authors' raw abstract. Automated packets are constrained to the supplied title and abstract, not the PDF. Do not treat a missing PDF as a reason to hallucinate methods, numbers, or a GitHub URL. If this packet is not enough, say you need the PDF.
 
 ${who}
 
 ${paperMarkdown(paper)}
-Using only this packet: (1) state the claim in one sentence, (2) say what would weaken it, (3) Try / Watch / Skip for my desk — disagree with the host if the brief warrants it, (4) one next step this week, or ignore.`;
+Using only this packet: (1) state the claim in one sentence, (2) say what would weaken it, (3) Try / Watch / Skip for my desk — disagree with PaperScroll if the brief warrants it, (4) one next step this week, or ignore.`;
 }
 
 export function digestAgentPrompt(opts: {
@@ -93,5 +101,5 @@ export function digestAgentPrompt(opts: {
 GET ${url}
 Authorization: Bearer <token from PaperScroll → Account → Agent digest>
 
-The body is the host digest, not the authors' abstracts.`;
+The body is the PaperScroll board digest, not the authors' raw abstracts.`;
 }

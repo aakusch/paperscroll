@@ -276,4 +276,32 @@ export const boardPapers: DemoPaper[] = [
       "Use ordinary matching when it still fits.",
     ],
   },
+  {
+    topic: "Security",
+    arxivId: "2608.20637",
+    title: "ARQ: Agentic CodeQL Query Refinement for C/C++ Vulnerability Detection",
+    authors: "Wang et al.",
+    listed: "First appeared 21 Aug",
+    abstract:
+      "ARQ refines C/C++ CodeQL queries using disagreements between a query verdict and the execution of synthesized programs. The authors report evaluations on Juliet and FormAI, fixes for three existing query issues, and two bugs found in libpng and zlib.",
+    code: false,
+    fieldWhy:
+      "Execution disagreements become ground truth for repairing CodeQL queries without a labeled vulnerability set.",
+    plainWhy:
+      "Use programs whose behavior is known to find where a security query misses bugs or cries wolf.",
+    fieldBody:
+      "The loop synthesizes programs, executes them, compares behavior with the CodeQL verdict, and asks a model to repair false-positive or false-negative weaknesses. The listing reports benchmark and repository-issue results; the PDF is still needed to audit synthesis coverage and leakage.",
+    plainBody:
+      "ARQ makes small test programs, runs them, and checks whether CodeQL agreed with what the program actually did. Those disagreements guide query repairs. The reported gains are promising, but the paper is needed to judge whether the generated tests cover realistic code.",
+    fieldTakes: [
+      "The useful object is execution-grounded query repair, not generic agentic code generation.",
+      "The abstract reports both benchmark gains and real query fixes; audit how synthesized programs were constrained.",
+      "No repository URL is listed in the supplied metadata.",
+    ],
+    plainTakes: [
+      "The system repairs the security rule, not the vulnerable program.",
+      "Real issue fixes matter more than another synthetic score, but need PDF verification.",
+      "The listing does not establish that code is available.",
+    ],
+  },
 ];

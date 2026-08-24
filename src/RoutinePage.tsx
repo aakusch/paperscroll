@@ -116,7 +116,7 @@ export function RoutinePage() {
           <p className="caught-kicker">{edition.label}</p>
           <h1>Caught up</h1>
           <p className="caught-lede">
-            {papers.length} hosted packet{papers.length === 1 ? "" : "s"} finished.
+            {papers.length} board packet{papers.length === 1 ? "" : "s"} finished.
             Save the papers that deserve a full read; the shared slate stays the same.
           </p>
           <div className="caught-actions">
@@ -126,7 +126,7 @@ export function RoutinePage() {
             <Link to="/saved" className="btn">Open saved</Link>
           </div>
           <div className="caught-handoff">
-            <p>Optional: send the same host packets to an agent for workspace context.</p>
+            <p>Optional: send the same board packets to an agent for workspace context.</p>
             <button type="button" className="quiet-link" onClick={() => void copyPrompt()}>
               Copy agent handoff
             </button>

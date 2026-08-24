@@ -4,12 +4,9 @@
  *
  *   npm run pool -- 2026-08-20
  *
- * Writes src/pools/YYYY-MM-DD.json (HF Daily + arXiv-new in a few
- * non-ML cats). Pooling nominates; it never publishes or ranks the board.
- * The host reviews candidates, writes packets, and explicitly orders the
- * shared slate in src/slates.ts.
- *
- *   npm run summarize -- <arxiv-id>
+ * Writes src/pools/YYYY-MM-DD.json (HF Daily + selected arXiv watches).
+ * Each nomination persists the field assigned by its intake so the shared,
+ * deterministic cut cannot change fields after sources are merged.
  */
 
 import { mkdirSync, writeFileSync } from "node:fs";
@@ -29,7 +26,7 @@ const ARXIV_NEW_CATS = [
 ];
 const ARXIV_PER_CAT = 20;
 
-const boardDate = (process.argv[2] || new Date().toISOString().slice(0, 10)).slice(
+const boardDate = (process.argv[2] || todayInNewYork()).slice(
   0,
   10,
 );
@@ -56,7 +53,7 @@ console.error(
   `wrote ${nominations.length} nominations → ${outPath}`,
 );
 console.error(
-  "Review the pool, draft only credible candidates, then publish <=10 IDs in src/slates.ts.",
+  "Run npm run publish -- YYYY-MM-DD to cut and publish the shared top ten.",
 );
 
 function merge(...items) {
@@ -75,11 +72,19 @@ function merge(...items) {
       kinds.add(intake.kind);
       intakes.push(intake);
     }
+    const prevHasArxiv = prev.intakes.some((intake) => intake.kind === "arxiv-new");
+    const itemHasArxiv = item.intakes.some((intake) => intake.kind === "arxiv-new");
+    const preferItemField = itemHasArxiv && !prevHasArxiv;
     byId.set(id, {
       ...prev,
       github: prev.github || item.github,
       abstract: prev.abstract || item.abstract,
-      categories: prev.categories.length ? prev.categories : item.categories,
+      field: preferItemField ? item.field : prev.field || item.field,
+      categories: preferItemField
+        ? item.categories
+        : prev.categories.length
+          ? prev.categories
+          : item.categories,
       intakes,
     });
   }
@@ -106,6 +111,7 @@ async function pullHf(date) {
       authors: authors.length ? authors.join(", ") : "Unknown",
       abstract: (paper.summary || row.summary || "").replace(/\s+/g, " ").trim(),
       publishedOn,
+      field: "AI",
       categories: ["cs.LG"],
       github: paper.githubRepo || undefined,
       intakes: [
@@ -144,7 +150,7 @@ async function pullArxivNew(date) {
     const count = counts.get(bucket) || 0;
     if (count >= ARXIV_PER_CAT) continue;
     counts.set(bucket, count + 1);
-    out.push(item);
+    out.push({ ...item, field: fieldForWatch(bucket) });
   }
   return out;
 }
@@ -153,9 +159,24 @@ async function pullArxivRss(date) {
   const out = [];
   for (const cat of ARXIV_NEW_CATS) {
     const xml = await getText(`https://rss.arxiv.org/rss/${cat}`);
-    out.push(...parseArxivRss(xml, date).slice(0, ARXIV_PER_CAT));
+    out.push(
+      ...parseArxivRss(xml, date)
+        .slice(0, ARXIV_PER_CAT)
+        .map((item) => ({ ...item, field: fieldForWatch(cat) })),
+    );
   }
   return out;
+}
+
+function fieldForWatch(category) {
+  if (category === "cs.CR") return "Security";
+  if (category === "quant-ph") return "Physics";
+  if (category === "eess.SP") return "Engineering";
+  if (category === "q-bio.QM") return "Health";
+  if (category.startsWith("econ.")) return "Econ";
+  if (category.startsWith("math.")) return "Math";
+  if (category.startsWith("stat.")) return "Stats";
+  return "AI";
 }
 
 function parseArxivRss(xml, boardDate) {

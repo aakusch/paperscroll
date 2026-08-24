@@ -40,7 +40,7 @@ export function buildDigest(query: DigestQuery) {
     desk: desk || null,
     count: papers.length,
     instruction:
-      "This is a PaperScroll host digest, not the authors’ abstracts. Use it as morning context. If a paper maps to the current workspace, say how. If the packet is thin, say you need the PDF. Do not invent methods, numbers, or GitHub URLs.",
+      "This is a PaperScroll board digest, not the authors’ raw abstracts. Automated packets are based on title and abstract, not a full PDF read. Use them as morning context. If a paper maps to the current workspace, say how. If a packet is thin, say you need the PDF. Do not invent methods, numbers, or GitHub URLs.",
     papers: papers.map((paper) => ({
       ...paperPacket(paper),
       page: origin ? `${origin}/p/${paper.arxivId}` : null,

@@ -5,9 +5,9 @@ import { belongsOnBoard } from "./listing.js";
 /** Shared morning board length. The feed ends. */
 export const BOARD_SIZE = 10;
 /**
- * Resolve the host's explicit slate. Order is editorial, never personalized or
- * inferred from popularity. Missing, stale, duplicate, and incomplete packets
- * fail closed.
+ * Resolve a legacy explicit slate. New mornings are cut before packet creation
+ * by scripts/rank.mjs. Missing, stale, duplicate, and incomplete packets fail
+ * closed here for the historical path.
  */
 export function selectBoard(
   papers: Paper[],

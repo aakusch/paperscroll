@@ -113,7 +113,16 @@ function publicProfile(row) {
   };
 }
 
-const TOPICS = ["AI", "Stats", "Math", "Econ", "Health", "Physics", "Security"];
+const TOPICS = [
+  "AI",
+  "Stats",
+  "Math",
+  "Econ",
+  "Health",
+  "Engineering",
+  "Physics",
+  "Security",
+];
 
 function parseInterests(raw, fallback) {
   if (raw == null) return fallback;

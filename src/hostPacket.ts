@@ -3,11 +3,9 @@ import type { Paper } from "./data.js";
 export type HostedPaper = Paper & { brief: string };
 
 /**
- * Publication gate for every product surface.
- *
- * A title, abstract, score, or generated draft can never become a card. The
- * host must make a verdict, write the brief, cover object / limit / artifact,
- * and leave at least one concrete action.
+ * Completeness gate for every product surface. Manual legacy packets and
+ * automatically generated packets must both include a decision, brief,
+ * takeaways, and a concrete action before they can become a card.
  */
 export function isHostedPacket(paper: Paper | undefined): paper is HostedPaper {
   return Boolean(

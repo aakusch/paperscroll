@@ -30,33 +30,44 @@ export function AboutPage() {
         </p>
 
         <section className="block">
-          <h2>One hosted slate</h2>
+          <h2>One shared top ten</h2>
           <p className="brief-p">
-            Everyone gets the same papers in the same hosted morning. Signed-in
+            Everyone gets the same papers on the same morning. Signed-in
             readers can put their fields first, but nothing disappears. Saved
             papers are a shelf, not training data for a private feed.
           </p>
         </section>
 
         <section className="block">
-          <h2>What the host adds</h2>
+          <h2>How the cut works</h2>
           <p className="brief-p">
-            The abstract is the authors’ context. The host packet is the
-            decision: Try, Watch, or Skip; why it is on your desk; the object,
-            limit, and artifact; and what to do next. Field and Plain keep the
-            same facts at two reading depths. A generated draft is never enough
-            to publish a paper.
+            Eligibility is mechanical: a current intake, mapped field, title,
+            authors, and abstract. Hugging Face listing, votes, independent
+            source count, recency, and arXiv ID form a stable ordering. The
+            strongest paper in every represented field is guaranteed a seat; remaining
+            seats follow that same ordering. No reader profile changes the ten.
+          </p>
+        </section>
+
+        <section className="block">
+          <h2>What the packet adds</h2>
+          <p className="brief-p">
+            The abstract is the authors’ context. PaperScroll generates the
+            decision layer in one source-grounded batch: Try, Watch, or Skip;
+            the claim, visible limit, artifact status, and next action. The
+            model has the title and abstract, not the PDF, and the paper page
+            says so. If any of the ten packets fails validation, the whole day
+            stays unpublished rather than silently shrinking.
           </p>
         </section>
 
         <section className="block">
           <h2>What “today” means</h2>
           <p className="brief-p">
-            Today is when this board was hosted, not when every PDF appeared.
-            Cards keep the first-appearance date. The host reviews nominations
-            from Hugging Face Daily Papers and selected arXiv fields, then
-            explicitly publishes at most ten complete packets. Popularity is
-            context, never the editor.
+            Today is the board date, not when every PDF first appeared. Cards
+            retain that first-appearance date. The daily pool, deterministic
+            cut, packet batch, validation, and publication run as one weekday
+            job. Once published, a dated board is frozen.
           </p>
         </section>
 
@@ -74,7 +85,7 @@ export function AboutPage() {
           <p className="brief-p">
             A signed-in reader can mint a token for <code>/api/digest</code>.
             It returns the same full board reordered by the account’s fields,
-            with host packets and links but never abstracts. An agent may map
+            with board packets and links but never raw abstracts. An agent may map
             those packets onto a workspace; it must not invent missing methods,
             numbers, or repositories. The handoff is optional. The packet is
             still the product.
@@ -594,7 +605,7 @@ function AgentDigest() {
         Optional handoff for the same morning you just read. An agent sends a
         bearer token to this endpoint; your saved fields reorder the full shared
         board and your desk supplies workspace context. The payload contains
-        host packets, never abstracts.
+        board packets, never raw abstracts.
       </p>
       <label className="digest-url">
         Endpoint

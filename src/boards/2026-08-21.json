@@ -1,0 +1,618 @@
+{
+  "date": "2026-08-21",
+  "label": "Fri, Aug 21",
+  "minutes": 10,
+  "poolSize": 340,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-08-24T16:30:00.000Z",
+    "model": "codex-backfill",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2608.19880",
+      "arxivId": "2608.19880",
+      "url": "https://arxiv.org/abs/2608.19880",
+      "topic": "AI",
+      "verdict": "Try",
+      "verdictWhy": "A verifier-preserving wrapper for adapting static agent environments, with a public implementation.",
+      "title": "EnvHarness: Awakening Static Worlds for Agent Learning",
+      "authors": "Chengsong Huang, Zifeng Wang, Rujun Han, Jun Yan, Yanfei Chen, Zoey CuiZhu, Ke Jiang, Peng Xia, Han Yu, Yufan Zhuang, Yifei Ming, Jiaqi Pan, Bhavana Dalvi Mishra, Jiaxin Huang, Burak Gokturk, Tomas Pfister, Chen-Yu Lee",
+      "takeaway": "EnvHarness wraps an existing environment with programmable components, while EnvRigger uses policy trajectories and fresh rollouts to target diagnosed weaknesses.",
+      "brief": "The paper proposes EnvHarness, a programmable layer of plug-in components that changes how a static agent environment behaves without changing its underlying logic or original verifier. EnvRigger treats the policy as a black box, diagnoses flaws from execution trajectories, synthesizes components, and validates them with fresh rollouts.\n\nThe authors report results across five benchmarks in four domains, including up to a 9.0-point held-out improvement with 9.8% fewer execution steps. The listing does not establish how those gains vary by benchmark or how much synthesis and rollout validation cost, so inspect the comparisons before generalizing the headline.\n\nOpen this if you maintain agent-training environments and need targeted adaptation without rebuilding them. Skip it if you need a new policy or a domain-specific benchmark rather than environment infrastructure; the supplied GitHub repository makes the harness directly inspectable.",
+      "abstract": "LLM agents learn by interacting with environments, yet these environments are hand-built and static: blind to an agent's weaknesses, and quickly left behind as it improves. While recent environment generation methods attempt to address this, they require domain-specific pipelines, rely on expensive or unreliable verifiers, and still produce static environments. To alleviate the engineering burden of rebuilding environments from scratch, we propose Environment Harness (EnvHarness), a programmable layer of plug-in components that wraps a static environment to reshape its behavior without modifying the underlying logic. Operating through standard interfaces, EnvHarness applies across diverse domains while ensuring every reshaped environment retains its original verifier. To automate this process, we introduce EnvRigger, which treats the target policy as a black box, observing its execution trajectories to synthesize EnvHarness components targeting diagnosed flaws, and validating them via fresh rollouts. Across five benchmarks in four domains, EnvHarness outperforms both original environments and domain-specific environment generation pipelines, achieving up to a 9.0-point improvement on held-out instances with 9.8% fewer execution steps. Furthermore, EnvHarness provides a superior optimization signal for reinforcement learning, enabling continuous, targeted co-evolution of the policy and its environment.",
+      "takeaways": [
+        "Object: a programmable wrapper around static environments, paired with an automated component generator that learns from a target policy's trajectories.",
+        "Limit: the abstract gives an up-to result across five benchmarks, but not the per-benchmark spread, verifier quality, or total generation and rollout cost.",
+        "Artifact: the supplied listing includes https://github.com/google-research/envharness, so the wrapper and its interfaces can be inspected rather than inferred from the claim alone."
+      ],
+      "plain": {
+        "verdictWhy": "A public toolkit for changing practice worlds around an agent without rebuilding their underlying rules.",
+        "brief": "Agent training worlds are usually fixed even as the agent changes. EnvHarness adds small interchangeable parts around an existing world so its behavior can be reshaped while keeping the same rule checker. EnvRigger watches what the agent does, targets weaknesses, and tests proposed changes with new runs.\n\nThe authors say this helped on five benchmarks in four areas, with a best reported gain of 9.0 points and 9.8% fewer execution steps. The abstract does not show whether every benchmark improved similarly or what the added generation and testing cost, so those details still need the paper.\n\nRead it if you operate agent-training environments and want them to keep challenging a changing agent. It is not a new agent model. A GitHub repository is supplied, which makes this a practical inspection rather than a paper-only idea.",
+        "takeaways": [
+          "It is a layer around an existing practice environment, plus a system that proposes changes after watching an agent fail.",
+          "The strongest number is an up-to result; the abstract does not give the full spread or the cost of producing and checking changes.",
+          "The listing supplies a GitHub repository for the implementation."
+        ]
+      },
+      "actions": [
+        "Inspect the supplied repository's plug-in interfaces and verifier-preservation path against one environment you already operate.",
+        "Read the per-benchmark tables and account for synthesis plus fresh-rollout cost before using the 9.0-point and 9.8% figures in a decision."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/google-research/envharness",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-08-21",
+        "publishedOn": "2026-08-20",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.19880",
+            "upvotes": 258
+          }
+        ]
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 258,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-20"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "codex-backfill",
+        "generatedAt": "2026-08-24T16:30:00.000Z"
+      }
+    },
+    {
+      "id": "2608.18580",
+      "arxivId": "2608.18580",
+      "url": "https://arxiv.org/abs/2608.18580",
+      "topic": "AI",
+      "verdict": "Try",
+      "verdictWhy": "A public terminal-task pipeline grounded in one executable container state rather than disconnected generated artifacts.",
+      "title": "FACET: Preserving Source Intent and Executable State in Terminal Task Synthesis",
+      "authors": "Kou Shi, Zun Wang, Qisheng Su, Shiting Huang, Ziao Zhang, Zhen Fang, Qingnan Ren, Jin Liu, Yu Zeng, Yiming Zhao, Lin Chen, Zehui Chen, Feng Zhao",
+      "takeaway": "FACET builds and repairs the execution environment before producing instructions, solutions, and verifiers from the same grounded state.",
+      "brief": "FACET is a framework for synthesizing terminal tasks whose instruction, initialized environment, reference solution, and verifier share the same assumptions. It reconstructs related skills into scenarios, realizes and repairs the environment first, then uses the resulting container state to ground the remaining artifacts.\n\nThe authors report complex tasks with dense executable checks and say fine-tuning on successful trajectories improves Terminal-Bench 2.1 performance across multiple model scales. The abstract does not state task counts, effect sizes, or the residual invalid-task rate, so the strength of the supervision still needs verification in the paper.\n\nOpen this if you generate executable training or evaluation tasks and artifact consistency is a known failure mode. Skip it if you only need a terminal-agent score; the supplied repository is the useful object for inspecting validation and targeted repair.",
+      "abstract": "Training terminal agents requires scalable executable supervision, yet synthesizing high-quality terminal tasks remains challenging. Each task couples an instruction, an initialized environment, a reference solution, and an executable verifier; if these artifacts are generated from inconsistent assumptions, the resulting task may be unsolvable or incorrectly evaluated. Meanwhile, multi-stage synthesis can discard the goals, dependencies, state transitions, and procedural constraints encoded in the original sources. We present FACET (Fine-grained Agentic Construction of Executable Tasks), a framework that addresses both information preservation and cross-artifact consistency. FACET reconstructs related agent skills into coherent, information-rich scenarios, then realizes and repairs the execution environment before generating the final task artifacts. The resulting container state serves as shared grounding for the instruction, solution, and verifier, while execution-based validation and targeted repair correct artifact-specific failures without unnecessarily regenerating valid components. FACET produces complex terminal tasks with dense executable checks, and successful trajectories collected from these tasks provide effective, data-efficient supervision. Fine-tuning models across multiple scales consistently improves performance on Terminal-Bench 2.1, while analyses of alternative generation schemes support the importance of environment-grounded construction for task validity and solution-verifier alignment. These results establish source-intent preservation and shared executable-state grounding as key principles for scalable terminal-task synthesis.",
+      "takeaways": [
+        "Object: an executable-task construction pipeline that preserves source intent and grounds every generated artifact in one repaired container state.",
+        "Limit: the abstract reports consistent downstream improvement but gives no counts, magnitudes, or remaining rate of unsolvable or incorrectly evaluated tasks.",
+        "Artifact: the supplied listing includes https://github.com/StoKou/FACET-Terminal for examining construction, validation, and targeted repair."
+      ],
+      "plain": {
+        "verdictWhy": "A public pipeline that makes terminal instructions, starting files, answers, and tests agree about the same runnable setup.",
+        "brief": "A generated terminal task can look plausible but be impossible because its instruction, files, solution, and checker were made from different assumptions. FACET builds and repairs the runnable container first, then uses that shared state to create the other pieces.\n\nThe authors say the resulting tasks have detailed executable checks and that training on successful solutions improves Terminal-Bench 2.1 results across model sizes. The abstract does not provide the number of tasks, size of gains, or how many bad tasks remain, so those claims need the full results.\n\nRead it if you produce runnable tasks for training or evaluation. If you only want a leaderboard number, this is less relevant. The listing supplies a GitHub repository for reviewing the actual pipeline.",
+        "takeaways": [
+          "FACET builds one working container and makes the instruction, solution, and checker refer to that same state.",
+          "The abstract says training improved, but omits the size of that improvement and the remaining task-failure rate.",
+          "The implementation is linked in the supplied GitHub repository."
+        ]
+      },
+      "actions": [
+        "Run a small sample from the supplied repository and inspect whether instruction, solution, and verifier all derive from the same realized container state.",
+        "Check the task-validity ablations and Terminal-Bench 2.1 effect sizes before treating successful trajectories as data-efficient supervision."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/StoKou/FACET-Terminal",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-08-21",
+        "publishedOn": "2026-08-19",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.18580",
+            "upvotes": 115
+          }
+        ]
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 115,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-19"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "codex-backfill",
+        "generatedAt": "2026-08-24T16:30:00.000Z"
+      }
+    },
+    {
+      "id": "2608.20335",
+      "arxivId": "2608.20335",
+      "url": "https://arxiv.org/abs/2608.20335",
+      "topic": "AI",
+      "verdict": "Try",
+      "verdictWhy": "A public monocular-to-4D pipeline aimed at maintaining consistency across enough generated views for reconstruction.",
+      "title": "4DAnyone: Create Anyone in 4D from a Casual Monocular Video",
+      "authors": "Yudong Jin, Tao Xie, Qihang Zhang, Zehong Shen, Zhen Xu, Yujun Shen, Hujun Bao, Xiaowei Zhou, Yinghao Xu",
+      "takeaway": "4DAnyone packs reference context and rotates target-view groupings so generated multiview videos remain usable for 4D Gaussian Splatting.",
+      "brief": "4DAnyone reconstructs a moving person in 4D from an uncalibrated single-camera video by generating multiview-consistent videos and lifting them into 4D Gaussian Splatting. Its two named mechanisms compress growing reference views into fixed-length context and rotate target-view groups during denoising so information crosses group boundaries.\n\nThe authors report better novel-view video quality and downstream reconstruction than prior methods on DNA-Rendering and DyMVHumans, plus in-the-wild generalization. The listing does not quantify those gains or isolate failure cases from casual capture, and training uses an in-house game-engine dataset alongside other datasets.\n\nOpen this if your pipeline needs many consistent views of a person from monocular video. Skip it if your requirement is measured geometry from calibrated cameras; the supplied code link and project page support inspection, but the abstract alone does not establish production robustness.",
+      "abstract": "We present 4DAnyone, a framework for reconstructing 4D humans from an uncalibrated monocular video by generating reconstruction-grade multiview-consistent videos and lifting them into 4D Gaussian Splatting (4DGS). Existing camera-controlled video diffusion models synthesize plausible novel-view videos but fail to maintain consistency when scaled to the tens of target views required for 4DGS reconstruction. We identify this failure as a bounded-attention-context problem: when target views exceed the capacity of a single DiT forward pass, they must be split into groups, exposing two coupled bottlenecks. On the reference-context side, conditioning on all previously generated views grows as O(N), weakening cross-view appearance guidance. On the target-context side, disjoint groups cannot directly exchange information, causing global structural drift. 4DAnyone addresses both bottlenecks with two complementary designs: Reference Context Packing (RCP) compresses growing reference views into a fixed-length mixed-resolution context with O(1) reference-context complexity, while Target Context Routing (TCR) rotates target-view groupings during denoising to share context across groups at high-noise steps and stabilize details at low-noise steps. We further build the MVGameHuman dataset using our in-house game engine and combine it with light-stage and in-the-wild video datasets for training. Experiments on DNA-Rendering and DyMVHumans show that 4DAnyone outperforms prior methods in both novel-view video quality and downstream 4DGS reconstruction, with robust in-the-wild generalization. See our project page for video results and source code: https://4danyone.github.io.",
+      "takeaways": [
+        "Object: a video-generation and 4DGS reconstruction pipeline for dynamic humans captured by one uncalibrated camera.",
+        "Limit: the abstract claims benchmark wins and in-the-wild robustness without effect sizes or failure cases, and training includes a new in-house game-engine dataset.",
+        "Artifact: the supplied listing includes https://github.com/ant-research/4DAnyone, while the abstract also names a project page for video results and source code."
+      ],
+      "plain": {
+        "verdictWhy": "A public system that turns one ordinary video of a person into a viewable moving 3D reconstruction.",
+        "brief": "Making a moving 3D person from one camera requires inventing many new views that agree with one another. 4DAnyone keeps earlier views in a compact reference and repeatedly reshuffles groups of new views while generating them, then uses those videos for a 4D Gaussian Splatting reconstruction.\n\nThe authors report better generated views and reconstructions on two benchmarks and say the method works on videos outside the training setting. The abstract gives no improvement sizes or failure examples, and the training mix includes an in-house game-engine dataset.\n\nRead it if you need many consistent angles from a casual single-camera human video. It does not establish calibrated geometric accuracy from the abstract alone. The listing supplies code for a direct test.",
+        "takeaways": [
+          "The system generates consistent views from one video, then turns those views into a moving 3D representation.",
+          "The abstract reports wins but not their sizes, and does not show where casual-video reconstruction fails.",
+          "A GitHub repository is supplied, and the abstract points to a project page with video results."
+        ]
+      },
+      "actions": [
+        "Use the supplied repository on one uncalibrated video and compare cross-view identity and structure across the full target-view set.",
+        "Read the DNA-Rendering and DyMVHumans tables and dataset ablations before accepting the robustness claim for your capture conditions."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/ant-research/4DAnyone",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-08-21",
+        "publishedOn": "2026-08-20",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.20335",
+            "upvotes": 72
+          }
+        ]
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 72,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-20"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "codex-backfill",
+        "generatedAt": "2026-08-24T16:30:00.000Z"
+      }
+    },
+    {
+      "id": "2608.20637",
+      "arxivId": "2608.20637",
+      "url": "https://arxiv.org/abs/2608.20637",
+      "topic": "Security",
+      "verdict": "Watch",
+      "verdictWhy": "Execution disagreements offer a concrete refinement signal, but the listing supplies no implementation.",
+      "title": "ARQ: Agentic CodeQL Query Refinement for C/C++ Vulnerability Detection",
+      "authors": "Chunyi Wang, Yunfei Ke, Junfeng Yang, Yun-Yun Tsai, Penghui Li",
+      "takeaway": "ARQ synthesizes C/C++ programs and uses disagreements between their execution and CodeQL verdicts to drive an LLM query-repair loop.",
+      "brief": "ARQ automatically refines C/C++ CodeQL queries by synthesizing programs, executing them, and treating disagreement with the query verdict as evidence of a false-positive or false-negative weakness. An LLM-based loop repairs the query from those grounded disagreements without labeled datasets, commit histories, or vulnerability-specific templates.\n\nThe authors refine 12 official queries with three commercial models and report up to 119.8% more true positives while maintaining at least 98.0% precision on Juliet v1.3 and FormAI v2. They also report fixes for three open CodeQL issues and two bugs in libpng and zlib, but the abstract does not give absolute counts or external reproduction.\n\nOpen this if you maintain C/C++ CodeQL queries and can audit synthesized-program semantics. Watch rather than try if you need a runnable artifact today: no repository URL is supplied in the listing.",
+      "abstract": "Static analyzers have been widely adopted for vulnerability detection in C/C++ programs. Query-based static analyzers (e.g., CodeQL) encode vulnerable code patterns in detection queries and match them against source code. However, existing queries still suffer from false positives (FPs, incorrectly flagging benign code as vulnerable) and false negatives (FNs, missing real vulnerabilities). We present ARQ, an agentic framework that automatically refines C/C++ CodeQL queries using execution-grounded evidence from synthesized C/C++ programs. Our key insight is that a synthesized program exposes a query's weakness whenever its execution disagrees with the query's verdict. If the program is genuinely vulnerable but the query stays silent, the query has an FN weakness; if the program is safe but the query fires anyway, it has an FP weakness. ARQ then runs an LLM-based refinement loop that repairs the query using these disagreements as ground truth. Unlike previous query refining methods, ARQ requires no labeled datasets, no commit history, and no vulnerability-specific templates. We demonstrate the effectiveness of ARQ by refining 12 official CodeQL queries using three commercial LLMs (GPT-5.4, Claude-Sonnet-4.6, and Gemini-3.5-flash). We compare both ARQ-refined and original CodeQL queries on the Juliet v1.3 and FormAI v2 datasets and show that ARQ-refined queries detect substantially more true positives, by up to 119.8\\%, with a Precision of at least 98.0\\% throughout. ARQ successfully fixed three unresolved GitHub issues raised in the official CodeQL query repository that had remained open for as long as \\textit{27 months}. The refined queries also exposed two previously undiscovered bugs in the real-world libraries libpng and zlib.",
+      "takeaways": [
+        "Object: an LLM refinement loop for C/C++ CodeQL queries, grounded by execution of synthesized vulnerable and safe programs.",
+        "Limit: results cover 12 queries and two evaluation datasets; the abstract reports relative gains and precision but not absolute findings or synthesis-validity errors.",
+        "Artifact: no GitHub or other implementation URL is supplied with this nomination, so the framework and refined queries are not directly inspectable from the listing."
+      ],
+      "plain": {
+        "verdictWhy": "Running generated C/C++ examples can reveal when a security rule is wrong, but no implementation is supplied.",
+        "brief": "CodeQL looks for security bugs using written rules, and those rules can flag safe code or miss dangerous code. ARQ generates small C/C++ programs, runs them, and uses cases where execution disagrees with the rule to ask a language model to repair that rule.\n\nAcross 12 official queries and two datasets, the authors report up to 119.8% more true detections with precision of at least 98.0%. They also report resolving three old query issues and finding bugs in libpng and zlib. The abstract omits absolute counts and independent reproduction.\n\nRead it if you own C/C++ CodeQL rules and can verify that generated examples are truly safe or vulnerable. There is no implementation link in the supplied listing, so this is not yet a direct trial.",
+        "takeaways": [
+          "ARQ repairs security rules using cases where running a generated program contradicts the rule's answer.",
+          "Only 12 queries and two datasets are described, and the headline improvement is relative rather than an absolute count.",
+          "The supplied nomination contains no repository for the system or repaired rules."
+        ]
+      },
+      "actions": [
+        "Read how ARQ establishes whether each synthesized program is genuinely vulnerable or safe before trusting execution disagreement as ground truth.",
+        "Reproduce one reported query repair against Juliet v1.3 and FormAI v2 if an implementation or refined query becomes available."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "listing": {
+        "listedOn": "2026-08-21",
+        "publishedOn": "2026-08-21",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.20637"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "codex-backfill",
+        "generatedAt": "2026-08-24T16:30:00.000Z"
+      }
+    },
+    {
+      "id": "2608.20641",
+      "arxivId": "2608.20641",
+      "url": "https://arxiv.org/abs/2608.20641",
+      "topic": "Stats",
+      "verdict": "Watch",
+      "verdictWhy": "A Firth-style fix for divergent cure-model estimates, supported in the listing by simulations and one application.",
+      "title": "A modified score function for monotone likelihood in promotion time cure rate models",
+      "authors": "Stephany Lima de Oliveira, Frederico Machado Almeida",
+      "takeaway": "The proposed modified score adjusts promotion-time cure-model estimation to keep parameter estimates finite under monotone likelihood.",
+      "brief": "This paper addresses monotone likelihood in promotion-time cure-rate models, where heavy censoring or highly unbalanced binary covariates can make maximum-likelihood estimates diverge. It proposes a modified score function based on Firth's bias-reduction method to produce finite, stable estimates.\n\nThe authors evaluate the method with extensive Monte Carlo simulations and a real-data application in which a mitosis factor becomes statistically significant. The listing does not provide simulation regimes, coverage, bias, or sensitivity details, and changed significance is an application outcome rather than proof of correctness.\n\nOpen this if you fit cure models and encounter infinite estimates under censoring or imbalance. Skip it if your survival model has no cure fraction or monotone-likelihood symptom; no code repository is supplied with the nomination.",
+      "abstract": "Survival models that incorporate a cure fraction provide a flexible framework for jointly modeling the cure and the survival distributions. However, when the data comprise a high proportion of censored observations or highly unbalanced binary covariates, maximum likelihood estimation may become unstable, leading to parameter estimates that diverge to infinity. This phenomenon, commonly referred to in the literature as monotone likelihood, compromises statistical inference by precluding the existence of finite maximum likelihood estimates. Specifically, the likelihood function increases monotonically along certain directions in the parameter space, so no finite maximizer exists. To the best of our knowledge, the monotone likelihood problem has received little or no attention in the context involving the promotion time model. This paper addresses this gap by proposing a modified score function based on Firth's bias-reduction method, which adjusts the estimation procedure to ensure finite and stable parameter estimates. The performance of the proposed approach is evaluated through extensive Monte Carlo simulation studies. An application to a real dataset further demonstrates its practical advantages, showing that the mitosis factor, an established prognostic marker, becomes statistically significant under the proposed methodology.",
+      "takeaways": [
+        "Object: a Firth-based modified score for promotion-time cure-rate models whose ordinary likelihood has no finite maximizer.",
+        "Limit: the abstract does not report simulation settings, interval coverage, bias, or comparison magnitudes, and one changed significance result is not general validation.",
+        "Artifact: the nomination supplies the paper listing but no code, package, or repository for the estimator."
+      ],
+      "plain": {
+        "verdictWhy": "A proposed way to stop estimates from running to infinity in a particular kind of survival model.",
+        "brief": "Some survival analyses estimate both how long events take and the share of people who may never experience the event. With lots of censoring or very uneven binary groups, the usual calculation can keep improving as an estimate runs toward infinity, leaving no usable final answer.\n\nThe paper changes the estimating equation using Firth's bias-reduction method. The authors report simulation studies and one real-data example, where a known marker becomes statistically significant. The abstract does not show bias, uncertainty coverage, or the conditions where the fix performs well.\n\nRead it if you use promotion-time cure models and have unstable or infinite estimates. It is narrow otherwise, and no code is supplied in the listing.",
+        "takeaways": [
+          "The method targets a cure-model calculation that cannot settle on finite parameter estimates.",
+          "The abstract mentions simulations but gives none of the numerical accuracy or uncertainty results needed for adoption.",
+          "No software implementation is linked in the supplied nomination."
+        ]
+      },
+      "actions": [
+        "Check the simulation tables for bias, interval coverage, and convergence across censoring and covariate-imbalance regimes before adopting the modified score.",
+        "Reanalyze one cure-model fit that currently diverges and compare finite estimates without treating changed statistical significance as validation by itself."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-08-21",
+        "publishedOn": "2026-08-21",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.20641"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "codex-backfill",
+        "generatedAt": "2026-08-24T16:30:00.000Z"
+      }
+    },
+    {
+      "id": "2608.20657",
+      "arxivId": "2608.20657",
+      "url": "https://arxiv.org/abs/2608.20657",
+      "topic": "Physics",
+      "verdict": "Watch",
+      "verdictWhy": "A matrix-free symmetry reduction for exact open-quantum-system dynamics, with no implementation supplied.",
+      "title": "Symmetry Adapted Hierarchical Equations of Motion for Exact Simulations of Large Polariton Systems",
+      "authors": "M. Elious Mondal, Pengfei Huo",
+      "takeaway": "The method removes permutation-equivalent auxiliary operators and repeated matrix elements so the propagated state count saturates with ensemble size at fixed hierarchy settings.",
+      "brief": "The paper develops symmetry-adapted hierarchical equations of motion for the permutationally invariant Holstein-Tavis-Cummings model. It replaces auxiliary density operators related by molecule and bath-channel relabeling with canonical representatives, then propagates only distinct complex variables instead of full matrices.\n\nAt fixed hierarchy depth L and bath-exponential count m, the authors state that canonical representatives become independent of ensemble size for N at least L and unique variables saturate for N at least L + 2. Benchmarks reproduce conventional HEOM dynamics with fewer variables and less memory, but the abstract does not quantify speed, memory, or scaling outside the invariant model.\n\nOpen this if exact open-system simulation for large symmetric polariton ensembles is your bottleneck. Skip it if disorder or nonidentical local environments dominate your model; extensions are claimed, but no code or benchmark artifact is supplied in the listing.",
+      "abstract": "Hierarchical equations of motion(HEOM) provide exact dynamics of open quantum systems coupled to harmonic baths, but their computational cost becomes prohibitive for systems with many independent local environments. In this work, we develop a symmetry-adapted HEOM formalism to significantly reduce the computational cost for the permutationally invariant Holstein-Tavis-Cummings (HTC) model. The method removes redundant information in two stages. First, all auxiliary density operators (ADOs) related only by relabeling identical molecules and their bath channels are replaced by a single canonical occupation-pattern representative. Second, molecules with the same local hierarchy occupation produce repeated matrix elements within each representative, allowing only the distinct complex variables to be propagated instead of the full (N + 1) $\\times$ (N + 1) ADO matrices. The resulting matrix-free equations are evaluated using precomputed connections and molecular multiplicities. At fixed hierarchy depth L and number of bath correlation exponentials m, the number of canonical representatives becomes independent of the ensemble size for N $\\geq$ L and the number of unique variables saturates for N $\\geq$ L + 2. The formulation easily extends to multiple-exponential bath decompositions, arbitrary initial density operators, static disorders, and cavity loss. Our benchmarks reproduce conventional HEOM dynamics while requiring far fewer propagated variables and substantially less memory.",
+      "takeaways": [
+        "Object: a symmetry-adapted, matrix-free HEOM formulation for the permutationally invariant Holstein-Tavis-Cummings model.",
+        "Limit: the saturation statements hold at fixed hierarchy depth and bath decomposition, while runtime, memory ratios, and behavior beyond the invariant setting are absent from the abstract.",
+        "Artifact: the nomination supplies no implementation or benchmark repository, so the claimed reductions require verification from the derivation and tables."
+      ],
+      "plain": {
+        "verdictWhy": "A way to avoid repeating equivalent calculations when simulating many identical light-coupled molecules, but no code is supplied.",
+        "brief": "Exact simulations of open quantum systems become expensive when many molecules each interact with a local environment. In the symmetric model studied here, many intermediate objects differ only because identical molecules were relabeled, and many entries inside those objects repeat. The method keeps one representative and calculates only distinct values.\n\nWith the approximation settings held fixed, the authors say the number of representatives stops growing once the molecular ensemble is large enough, and their results match conventional calculations with fewer variables and less memory. The abstract gives no timing or memory ratios and centers on a permutation-symmetric model.\n\nRead it if large symmetric polariton simulations are blocked by HEOM cost. The paper says the equations extend to disorder and loss, but the listing offers no code for testing that claim.",
+        "takeaways": [
+          "The method removes calculations that are duplicates under relabeling of identical molecules and their environments.",
+          "The strongest scaling claim fixes the hierarchy settings and comes from a symmetric model; numerical cost ratios are not in the abstract.",
+          "No code or benchmark files are linked in the supplied nomination."
+        ]
+      },
+      "actions": [
+        "Check the derivation's symmetry assumptions and the benchmark memory/runtime tables against the ensemble and bath decomposition you use.",
+        "Implement or request a small conventional-versus-symmetry-adapted reproduction before relying on the claimed extensions to static disorder or cavity loss."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "physics.chem-ph",
+        "physics.comp-ph",
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-08-21",
+        "publishedOn": "2026-08-21",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.20657"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "codex-backfill",
+        "generatedAt": "2026-08-24T16:30:00.000Z"
+      }
+    },
+    {
+      "id": "2608.20698",
+      "arxivId": "2608.20698",
+      "url": "https://arxiv.org/abs/2608.20698",
+      "topic": "Econ",
+      "verdict": "Watch",
+      "verdictWhy": "Theory and lab results point to different mechanisms behind priority transparency in school choice.",
+      "title": "Priority Transparency, Admission Chances, and Information Acquisition in School Choice",
+      "authors": "Georgy Artemov, Siqi Pan",
+      "takeaway": "Priority disclosure changes who learns their preferences, while laboratory transparency also improves understanding and reduces strategic mistakes.",
+      "brief": "The paper studies how information about students' priorities and admission chances affects their incentive to learn their own school preferences. In the model, full disclosure concentrates learning among high-priority students, while pooling priorities spreads learning incentives and produces higher welfare.\n\nThe laboratory reverses that welfare ordering: full disclosure performs best, followed by partial and no disclosure, because more transparency improves understanding of the strategic environment and reduces mistakes. Subjects still respond suboptimally to directly provided admission chances, so interpretation remains a policy concern.\n\nOpen this if you design or communicate school-choice and college-admission mechanisms. Skip it if you need field evidence of actual applicant behavior: the supplied evidence is theoretical and experimental, and no data or code link accompanies the listing.",
+      "abstract": "We study, theoretically and experimentally, how transparency about students' priorities and admission chances shapes their incentives to acquire information about their own preferences in school choice and college admissions. In the model, uninformed students choose schools based on a common prior. When they learn their own preferences, their choices become more heterogeneous, which frees up seats at popular schools. Students who know they have high priority have stronger incentives to learn because they can more readily act on what they learn, whereas students who know they have low priority are discouraged. Full priority disclosure concentrates learning among high-priority students. By pooling priorities, partial disclosure spreads learning incentives to pooled students and yields higher welfare. In the laboratory, however, full disclosure yields the highest welfare instead, followed by partial disclosure, and then no disclosure, because greater transparency improves subjects' understanding of the strategic environment, leading to fewer mistakes. These findings support full disclosure of priorities or admission chances to guide information acquisition. However, deviations in learning remain even under greater priority transparency, partly because subjects respond suboptimally to admission chances when these are provided directly rather than inferred. Students' ability to interpret and use them is therefore itself a policy concern.",
+      "takeaways": [
+        "Object: a theoretical model and laboratory experiment linking admission-priority transparency to preference learning and school choices.",
+        "Limit: theory favors partial disclosure on welfare while the laboratory favors full disclosure, and the abstract supplies no field setting or external-behavior evidence.",
+        "Artifact: no experimental data, analysis code, or repository is supplied with the nomination."
+      ],
+      "plain": {
+        "verdictWhy": "Telling applicants their place in line changes both whether they learn what they want and whether they understand the application game.",
+        "brief": "Students may spend time learning which school they actually prefer only if that information can change their choice. The model says high-priority students have more reason to learn, low-priority students have less, and hiding exact priority within groups spreads that incentive more evenly.\n\nIn the lab, however, full transparency produces the highest welfare because people understand the strategic setting better and make fewer mistakes. Even then, participants misuse admission chances when the numbers are given directly, which makes communication ability part of the policy problem.\n\nRead it if you design or explain school assignment and admissions. It does not provide field evidence about real applicants, and the listing supplies no data or code.",
+        "takeaways": [
+          "Priority information affects whether students bother learning their own preferences, not just where they apply.",
+          "The model and laboratory disagree on the best disclosure policy, and the abstract includes no real-world field test.",
+          "No experimental data or analysis repository is linked in the supplied nomination."
+        ]
+      },
+      "actions": [
+        "Compare the model assumptions with your mechanism, especially whether students can act on learned preferences at different priority levels.",
+        "Read the laboratory treatment and mistake measures before translating the full-disclosure result into applicant-facing admission-chance communication."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN"
+      ],
+      "listing": {
+        "listedOn": "2026-08-21",
+        "publishedOn": "2026-08-21",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.20698"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "codex-backfill",
+        "generatedAt": "2026-08-24T16:30:00.000Z"
+      }
+    },
+    {
+      "id": "2608.20728",
+      "arxivId": "2608.20728",
+      "url": "https://arxiv.org/abs/2608.20728",
+      "topic": "Engineering",
+      "verdict": "Watch",
+      "verdictWhy": "A field-validated communications-channel twin for rural single-wire grids, but tied to site-specific measurements.",
+      "title": "Channel Modeling of Single Wire Earth Return Networks for Narrowband Power Line Communication and Sensing: A Field-Validated High-Frequency Digital Twin",
+      "authors": "Wania Anoosh, Cagil Ozansoy, Douglas Gomes, Mike Faulkner, Kristi Beqirllari",
+      "takeaway": "The model combines segment-level transmission lines with measured hardware responses to reproduce path loss and frequency-selective fading in an operational SWER network.",
+      "brief": "The paper builds a high-frequency digital twin, up to 300 kHz, for narrowband power-line communication over a Single-Wire Earth Return network. It combines segment-by-segment transmission-line modeling with Vector Network Analyzer measurements of physical components rather than treating the infrastructure as uniform.\n\nField measurements from three transmitters yield reported path-loss RMSEs from 4.65 dB to 9.73 dB. Sensitivity analysis distinguishes environmental magnitude offsets from resonant-shape effects, and cross-brand analysis warns against generic transformer models; validation remains one operational network and three paths in the abstract.\n\nOpen this if you plan NB-PLC or sensing on rural SWER infrastructure and can collect manufacturer-, tap-, and site-specific measurements. Skip it if you need a generic grid model or a health paper; no model files or code are supplied with the listing.",
+      "abstract": "Upgrading Single-Wire Earth Return (SWER) networks for smart grid capabilities requires a reliable communications technology. Narrowband Power Line Communication (NB-PLC) is a potential low cost solution. Real-world deployment is challenging due to the severe, frequency-dependent attenuation caused by complex earth-return paths and heterogeneous network infrastructure. To accurately characterize the communication channel, this paper develops a high-frequency (up to 300 kHz) digital twin of an operational SWER network. The digital twin integrates a segment-by-segment transmission line model with Vector Network Analyzer (VNA) measurements of physical grid hardware, replacing standard uniform assumptions with empirical component responses. Parametric sensitivity analysis demonstrates that distributed environmental factors, such as soil moisture and line sag, act as uniform magnitude offsets. Conversely, the conductor's magnetic permeability and local injection-transformer impedances dictate the channel's resonant spectral shape. Furthermore, cross-brand analysis proves that utilizing generic transformer models introduces significant prediction errors, confirming that accurate simulation requires manufacturer- and tap-specific data. Validated against in-situ field measurements from three transmitters, this digital twin replicates the path loss and dominant frequency-selective fading of the physical grid. Yielding a Root Mean Square Error (RMSE) between 4.65 dB and 9.73 dB across the three transmit paths, the model provides a practically reliable framework for deploying NB-PLC across rural SWER infrastructure.",
+      "takeaways": [
+        "Object: a measurement-informed, high-frequency digital twin of one operational SWER network for NB-PLC and sensing deployment.",
+        "Limit: validation covers three transmitter paths on one network, with RMSE from 4.65 dB to 9.73 dB, so transfer to other hardware and soils is not established.",
+        "Artifact: the nomination supplies neither code nor component-response data, even though manufacturer- and tap-specific measurements are central to the claim."
+      ],
+      "plain": {
+        "verdictWhy": "A measured computer model of how data signals travel over a rural one-wire power network, but it is site-specific and not released here.",
+        "brief": "Rural Single-Wire Earth Return grids use the earth as part of the electrical path, which makes data signals weaken differently at different frequencies. This paper models each line section and measures real transformers and other hardware instead of assuming every component behaves the same.\n\nThe digital twin matches important signal loss and fading patterns on three measured paths, with reported errors between 4.65 dB and 9.73 dB. The authors find that generic transformer models cause meaningful prediction errors. The abstract validates only one operating network.\n\nRead it if you are planning power-line communications on SWER infrastructure and can measure the actual site hardware. This is an engineering result tied to those measurements, and no model or data files are linked.",
+        "takeaways": [
+          "The model combines a section-by-section grid description with measurements of the actual installed hardware.",
+          "Only three paths on one network are reported, so accuracy on another network is unresolved.",
+          "The listing does not supply the model, code, or measured component responses needed to reproduce it."
+        ]
+      },
+      "actions": [
+        "Compare the three-path error range and sensitivity analysis with your link budget before treating the twin as deployment-grade.",
+        "Collect manufacturer- and tap-specific transformer measurements for the target network rather than substituting a generic response."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP",
+        "eess.SY"
+      ],
+      "listing": {
+        "listedOn": "2026-08-21",
+        "publishedOn": "2026-08-21",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.20728"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "codex-backfill",
+        "generatedAt": "2026-08-24T16:30:00.000Z"
+      }
+    },
+    {
+      "id": "2608.20739",
+      "arxivId": "2608.20739",
+      "url": "https://arxiv.org/abs/2608.20739",
+      "topic": "Math",
+      "verdict": "Watch",
+      "verdictWhy": "A clean extremal ordering for a Laplacian quantum-walk graph invariant, without a supplied artifact.",
+      "title": "Laziness of Quantum Walks on Graphs",
+      "authors": "Amulya Mohan, Christino Tamon, Yichi Xu, Hanmeng Zhan",
+      "takeaway": "For the trace of the average mixing matrix, the paper identifies the star and an unbalanced complete multipartite graph immediately below the complete graph among connected graphs.",
+      "brief": "The paper studies the trace of the average mixing matrix for Laplacian quantum walks, interpreting a higher trace as a greater long-run tendency for a walker to return to its starting vertex. It develops tools for comparing this graph invariant across connected graphs and trees.\n\nBuilding on the known extremality of the complete graph, the authors identify the star as the second-laziest connected graph and laziest tree, the graph K_{n-2,1,1} as the third-laziest connected graph, and one double star as the second-laziest tree. They also show that more unbalanced double stars are lazier; the abstract gives no proof conditions or algorithmic application.\n\nOpen this if you work on spectral graph invariants or Laplacian quantum walks and need these extremal classifications. Skip it if you need an implementation or immediate engineering result: no code or computational artifact is supplied.",
+      "abstract": "The trace of the average mixing matrix of a quantum walk measures the \"laziness\" of the walk: the higher the trace, the more likely that the walker returns home in the long run. In this paper, we develop tools to study this graph invariant arising from Laplacian quantum walks. It is known that the complete graph $K_n$ is the laziest connected graph on $n$ vertices. Using our machinery, we show that the star $S_n$ is the second laziest connected graph on $n$ vertices (and hence the laziest tree on $n$ vertices), the complete multipartite graph $K_{n-2,1,1}$ is the third laziest connected graph on $n$ vertices, and the double star $DS(n-3,1)$ is the second laziest tree on $n$ vertices. We also show that on the same number of vertices, more unbalanced double stars are lazier.",
+      "takeaways": [
+        "Object: extremal results for the trace of the average mixing matrix, a graph invariant from Laplacian quantum walks.",
+        "Limit: the abstract states graph orderings but does not expose proof assumptions, equality cases, computational methods, or an application beyond the invariant itself.",
+        "Artifact: the nomination supplies no code, data, or repository; the value is the mathematical argument in the paper."
+      ],
+      "plain": {
+        "verdictWhy": "The paper ranks several graph shapes by how strongly a quantum walk tends to return to where it started.",
+        "brief": "For this kind of quantum walk on a graph, the trace of an average mixing matrix summarizes how likely the walker is to return home over the long run. The paper calls larger values lazier and develops ways to compare graph shapes.\n\nThe complete graph was already known to be the laziest connected graph. The authors place the star second among connected graphs and first among trees, identify the next named connected graph and tree, and show that more uneven double stars are lazier. The abstract does not show the proofs or a practical use.\n\nRead it if you study quantum walks or spectral graph theory and need these extremal results. There is no linked code or dataset; this is a theorem paper.",
+        "takeaways": [
+          "The main object is a number describing long-run return behavior for a quantum walk on a graph.",
+          "The abstract gives the extremal rankings but not their assumptions, equality details, or an applied consequence.",
+          "No implementation or computational artifact is supplied with the nomination."
+        ]
+      },
+      "actions": [
+        "Read the definitions and extremal proofs to confirm graph-size conditions and equality cases before citing the ordering.",
+        "Compare the invariant with the return or mixing quantity your work actually uses; the abstract only addresses Laplacian quantum walks."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "math.CO",
+        "cs.DM",
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-08-21",
+        "publishedOn": "2026-08-21",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.20739"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Math signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "codex-backfill",
+        "generatedAt": "2026-08-24T16:30:00.000Z"
+      }
+    },
+    {
+      "id": "2608.21349",
+      "arxivId": "2608.21349",
+      "url": "https://arxiv.org/abs/2608.21349",
+      "topic": "Health",
+      "verdict": "Watch",
+      "verdictWhy": "A treatment-conditioned response representation with aggregate benchmark wins, but no implementation or effect sizes in the listing.",
+      "title": "PerturbRx: Learning Treatment-Conditioned Latent Transitions for Patient Drug Response Prediction",
+      "authors": "Yoshitaka Inoue, Minoh Jeong, Alfred Hero, Rui Kuang, Augustin Luna",
+      "takeaway": "PerturbRx learns drug- and dose-conditioned molecular transitions from unpaired single-cell populations, then transfers the frozen predictor to pretreatment patient profiles.",
+      "brief": "PerturbRx predicts patient drug response by explicitly representing the molecular transition expected under a treatment. It trains a drug- and dose-conditioned transition predictor from context-matched but cell-unpaired control and treated single-cell populations, then freezes that predictor and applies it to pretreatment patient profiles without requiring post-treatment measurements.\n\nThe authors report the strongest aggregate predictive performance among evaluated methods across TCGA and patient-derived xenograft benchmarks. The abstract does not state cohort sizes, response endpoints, absolute metrics, comparator results, or how performance varies across drugs and tumor contexts.\n\nOpen this if you evaluate patient-level cancer drug-response models and want perturbation-pretrained features rather than pretreatment profiles alone. Watch rather than try if you need a reproducible pipeline today: the supplied nomination includes no code or model artifact.",
+      "abstract": "Scarce data and tumor heterogeneity limit patient-level cancer treatment-response prediction. Existing approaches predict response from pretreatment molecular profiles and drug representations, without explicitly modeling the molecular changes expected under treatment. We propose PerturbRx, a treatment-conditioned representation learning framework that learns intervention-induced latent transitions and uses them as patient-drug response features. PerturbRx trains a drug- and dose-conditioned transition predictor from context-matched but cell-unpaired control and treated single-cell populations, then freezes and transfers the predictor to pretreatment patient profiles without requiring post-treatment measurements. The transition is combined with patient and drug representations to predict response. Across TCGA and patient-derived xenograft benchmarks, PerturbRx achieves the strongest aggregate predictive performance among the evaluated methods. These results support perturbation-pretrained latent transitions as useful representations for patient-level drug-response prediction.",
+      "takeaways": [
+        "Object: a treatment-conditioned latent-transition predictor pretrained on control and treated single-cell populations and transferred to patient-drug response prediction.",
+        "Limit: the abstract reports only aggregate comparative strength across TCGA and xenograft benchmarks, without sample sizes, endpoint definitions, metric values, or subgroup behavior.",
+        "Artifact: the nomination supplies no repository, trained model, or implementation for inspecting or reproducing the transition predictor."
+      ],
+      "plain": {
+        "verdictWhy": "A model that predicts how treatment may shift a patient's molecular state before estimating response, but no runnable artifact is supplied.",
+        "brief": "Most drug-response predictors combine a patient's measurements before treatment with a description of the drug. PerturbRx first learns how a drug and dose tend to move cells from an untreated to a treated state, using matched groups of cells rather than the same cell measured twice.\n\nThat transition model is frozen and applied to patient samples taken before treatment, so it does not require a post-treatment patient measurement. The authors report the best aggregate prediction among compared methods on TCGA and patient-derived xenograft benchmarks, but the abstract omits the sizes of the gains and the cohort details.\n\nRead it if you build cancer drug-response models and can assess whether single-cell perturbation patterns transfer to your patients and drugs. The listing provides no code or trained model, so the method is not ready for a direct trial from this packet.",
+        "takeaways": [
+          "The method learns an expected before-to-after treatment change and uses that change as an extra response-prediction feature.",
+          "The abstract gives an aggregate win but no numerical metrics, sample sizes, or results for particular drugs or tumor settings.",
+          "No implementation, repository, or trained model is linked in the supplied nomination."
+        ]
+      },
+      "actions": [
+        "Read the benchmark definitions, data splits, and per-cohort metrics before treating the aggregate TCGA and xenograft result as evidence for a target clinical setting.",
+        "Verify how context matching and cell-unpaired transition training avoid leakage before attempting a reproduction with pretreatment-only patient profiles."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-08-21",
+        "publishedOn": "2026-08-21",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.21349"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "codex-backfill",
+        "generatedAt": "2026-08-24T16:30:00.000Z"
+      }
+    }
+  ]
+}

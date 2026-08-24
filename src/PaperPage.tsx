@@ -162,13 +162,20 @@ export default function PaperPage() {
             ) : null}
           </p>
         ) : null}
+        {paper.automation ? (
+          <p className="evidence">
+            <strong>Board #{paper.automation.rank}.</strong> {paper.automation.reason}. The
+            packet below is constrained to the authors’ title and abstract; verify the PDF
+            before relying on details.
+          </p>
+        ) : null}
         <div className="paper-actions">
           {actions}
           <details className="agent-more">
             <summary className="btn">More</summary>
             <div className="menu-pop">
-              <button type="button" onClick={() => copy("Brief copied", paperMarkdown(paper))}>
-                Copy host packet
+              <button type="button" onClick={() => copy("Packet copied", paperMarkdown(paper))}>
+                Copy board packet
               </button>
               <button type="button" onClick={() => copy("JSON copied", paperJson(paper))}>
                 Copy JSON
@@ -206,12 +213,12 @@ export default function PaperPage() {
               <p className="empty">Loading reader notes…</p>
             ) : commentsStatus === "error" ? (
               <p className="form-error" role="status">
-                Reader notes are unavailable. The host packet above is unaffected.
+                Reader notes are unavailable. The board packet above is unaffected.
               </p>
             ) : comments.length === 0 ? (
               <p className="empty">
                 No reader notes yet. Add something only if it helps test or use
-                the host packet.
+                the board packet.
               </p>
             ) : (
               <ul className="thread">

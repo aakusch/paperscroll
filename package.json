@@ -9,7 +9,8 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "summarize": "node scripts/summarize.mjs",
+    "publish": "node scripts/publish.mjs",
+    "validate-board": "node scripts/validate-board.mjs",
     "pool": "node scripts/pool.mjs"
   },
   "dependencies": {

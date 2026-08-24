@@ -1,8 +1,18 @@
 import { editionFromPool } from "./hydrate.js";
 import { belongsOnBoard } from "./listing.js";
 import { HOSTED_DAYS } from "./slates.js";
+import { AUTOMATED_BOARDS } from "./boards/generated.js";
+import { isHostedPacket } from "./hostPacket.js";
 
-export type Topic = "AI" | "Stats" | "Math" | "Econ" | "Health" | "Physics" | "Security";
+export type Topic =
+  | "AI"
+  | "Stats"
+  | "Math"
+  | "Econ"
+  | "Health"
+  | "Engineering"
+  | "Physics"
+  | "Security";
 export type Verdict = "Try" | "Watch" | "Skip";
 export type Intake =
   | "HF Daily"
@@ -25,7 +35,7 @@ export type Paper = {
   brief?: string;
   abstract?: string;
   takeaways: string[];
-  /** Same facts as the host brief, written for a smart reader outside the subfield. */
+  /** Same packet facts, written for a smart reader outside the subfield. */
   plain?: {
     verdictWhy: string;
     brief: string;
@@ -39,6 +49,21 @@ export type Paper = {
   listing?: Listing;
   /** Hugging Face Daily Papers heat on the morning this card was listed. */
   trend?: DailyTrend;
+  /** Present on boards cut and packeted by the unattended daily publisher. */
+  automation?: {
+    rank: number;
+    version: string;
+    reason: string;
+    signals: {
+      hfListed: boolean;
+      hfVotes: number;
+      sourceCount: number;
+      publishedOn: string;
+    };
+    packetBasis: "title-and-abstract";
+    model: string;
+    generatedAt: string;
+  };
 };
 
 export type DailyTrend = {
@@ -71,6 +96,12 @@ export type Edition = {
   poolSize?: number;
   /** True when this day was hydrated from src/pools/*.json */
   live?: boolean;
+  selection?: {
+    version: string;
+    generatedAt: string;
+    model: string;
+    packetBasis: "title-and-abstract";
+  };
 };
 
 export const TOPICS: Array<"All" | Topic> = [
@@ -80,6 +111,7 @@ export const TOPICS: Array<"All" | Topic> = [
   "Math",
   "Econ",
   "Health",
+  "Engineering",
   "Physics",
   "Security",
 ];
@@ -90,6 +122,7 @@ export const FIELDS: Array<{ id: Topic; blurb: string }> = [
   { id: "Math", blurb: "Theory that might land in a method." },
   { id: "Econ", blurb: "Labor, markets, policy papers." },
   { id: "Health", blurb: "Clinics, EHR, bio when it’s a paper." },
+  { id: "Engineering", blurb: "Signals, devices, and applied systems." },
   { id: "Physics", blurb: "Quantum, condensed matter, the lab sciences." },
   { id: "Security", blurb: "Crypto, systems, privacy, proofs." },
 ];
@@ -1031,7 +1064,18 @@ const liveEditions = HOSTED_DAYS.flatMap(({ pool, paperIds }) => {
   const edition = editionFromPool(pool, briefsByArxiv, paperIds);
   return edition.papers.length ? [edition] : [];
 });
-export const catalog: Edition[] = [...liveEditions].sort(
+const automatedEditions = AUTOMATED_BOARDS.filter(
+  (edition) =>
+    edition.papers.length === 10 &&
+    edition.papers.every(
+      (paper, index) => isHostedPacket(paper) && paper.automation?.rank === index + 1,
+    ),
+);
+const automatedDates = new Set(automatedEditions.map((edition) => edition.date));
+export const catalog: Edition[] = [
+  ...automatedEditions,
+  ...liveEditions.filter((edition) => !automatedDates.has(edition.date)),
+].sort(
   (a, b) => b.date.localeCompare(a.date),
 );
 
