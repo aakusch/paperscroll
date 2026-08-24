@@ -16,6 +16,10 @@ import { passwordStrength } from "./identity";
 import { useSession } from "./session-context";
 import { useUsernameAvailability } from "./useUsername";
 
+function safeNextPath(value: string | null) {
+  return value?.startsWith("/") && !value.startsWith("//") ? value : "/";
+}
+
 export function AboutPage() {
   return (
     <div className="subpage about-page">
@@ -272,12 +276,14 @@ export function SignupPage() {
 export function LoginPage() {
   const { account, login } = useSession();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const nextPath = safeNextPath(searchParams.get("next"));
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
 
-  if (account) return <Navigate to="/" replace />;
+  if (account) return <Navigate to={nextPath} replace />;
 
   async function onSubmit(event: FormEvent) {
     event.preventDefault();
@@ -285,7 +291,7 @@ export function LoginPage() {
     setError("");
     try {
       await login(email.trim(), password);
-      navigate("/");
+      navigate(nextPath);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Could not sign in");
     } finally {
@@ -349,6 +355,11 @@ export function LoginPage() {
 
 export function AccountPage() {
   const { account, ready } = useSession();
+  const [searchParams] = useSearchParams();
+
+  if (searchParams.get("view") === "agent") {
+    return <Navigate to="/agent" replace />;
+  }
 
   if (!ready) {
     return (
@@ -370,7 +381,6 @@ export function AccountPage() {
 function AccountForm({ account }: { account: User }) {
   const { logout, saveProfile, toast } = useSession();
   const navigate = useNavigate();
-  const [searchParams, setSearchParams] = useSearchParams();
   const [name, setName] = useState(account.name);
   const [bio, setBio] = useState(account.bio ?? "");
   const [x, setX] = useState(account.x ?? "");
@@ -378,7 +388,6 @@ function AccountForm({ account }: { account: User }) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const nameCheck = useUsernameAvailability(name, account.name);
-  const accountView = searchParams.get("view") === "agent" ? "agent" : "reader";
 
   const joined = formatJoined(account.joinedAt);
 
@@ -406,69 +415,13 @@ function AccountForm({ account }: { account: User }) {
     }
   }
 
-  function selectAccountView(view: "reader" | "agent", focus = false) {
-    const next = new URLSearchParams(searchParams);
-    if (view === "reader") next.delete("view");
-    else next.set("view", "agent");
-    setSearchParams(next, { replace: true });
-    if (focus) {
-      requestAnimationFrame(() => document.getElementById(`account-tab-${view}`)?.focus());
-    }
-  }
-
   return (
     <AuthCard
-      wide
       kicker="Account"
       title={account.name}
       aside={joined ? `Joined ${joined}` : undefined}
     >
-      <div
-        className="account-tabs"
-        role="tablist"
-        aria-label="Account sections"
-        onKeyDown={(event) => {
-          if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End"].includes(event.key)) return;
-          event.preventDefault();
-          const view = event.key === "Home"
-            ? "reader"
-            : event.key === "End"
-              ? "agent"
-              : accountView === "reader" ? "agent" : "reader";
-          selectAccountView(view, true);
-        }}
-      >
-        <button
-          id="account-tab-reader"
-          type="button"
-          role="tab"
-          aria-selected={accountView === "reader"}
-          aria-controls="account-panel-reader"
-          tabIndex={accountView === "reader" ? 0 : -1}
-          onClick={() => selectAccountView("reader")}
-        >
-          Reader
-        </button>
-        <button
-          id="account-tab-agent"
-          type="button"
-          role="tab"
-          aria-selected={accountView === "agent"}
-          aria-controls="account-panel-agent"
-          tabIndex={accountView === "agent" ? 0 : -1}
-          onClick={() => selectAccountView("agent")}
-        >
-          Agent routing
-        </button>
-      </div>
-
-      {accountView === "reader" ? (
-        <section
-          id="account-panel-reader"
-          className="account-panel"
-          role="tabpanel"
-          aria-labelledby="account-tab-reader"
-        >
+      <section className="account-panel">
           <nav className="profile-nav">
             <Link to={`/u/${account.name}`}>Public profile</Link>
             <Link to="/welcome">Change fields</Link>
@@ -573,17 +526,7 @@ function AccountForm({ account }: { account: User }) {
               )}
             </button>
           </form>
-        </section>
-      ) : (
-        <section
-          id="account-panel-agent"
-          className="account-panel account-panel-agent"
-          role="tabpanel"
-          aria-labelledby="account-tab-agent"
-        >
-          <AgentDigest />
-        </section>
-      )}
+      </section>
 
       <div className="sheet-mark">
         <button
@@ -597,6 +540,43 @@ function AccountForm({ account }: { account: User }) {
         </button>
       </div>
     </AuthCard>
+  );
+}
+
+export function AgentPage() {
+  const { account, ready } = useSession();
+
+  if (!ready) {
+    return (
+      <AuthCard kicker="Agent routing" title="Loading your route…">
+        <p className="form-note">Checking your session.</p>
+      </AuthCard>
+    );
+  }
+  if (!account) {
+    return (
+      <AuthCard kicker="Agent routing" title="Route the morning board">
+        <p className="lede">
+          Sign in to create a read-only token for the same complete host packets you read here.
+        </p>
+        <p className="sheet-mark">
+          <Link className="btn primary" to="/login?next=/agent">Sign in</Link>
+          <Link className="btn" to="/signup">Create account</Link>
+        </p>
+      </AuthCard>
+    );
+  }
+
+  return (
+    <div className="subpage agent-page">
+      <article className="sheet agent-sheet">
+        <header className="sheet-head">
+          <p className="sheet-kicker">Agent routing</p>
+          <h1>Daily host packets</h1>
+        </header>
+        <AgentDigest />
+      </article>
+    </div>
   );
 }
 

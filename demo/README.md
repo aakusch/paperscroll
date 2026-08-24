@@ -5,7 +5,7 @@ follows the live site: morning nominations become a deterministic ten-paper boar
 the routine opens the abstract on Traces, returns to the decision line and numbered
 takeaways, switches from Field to Plain, then reads a Stats paper; the reader
 gets caught up; finally an agent on another platform fetches the same board
-packets with an Account bearer token. The digest never contains authors’
+packets with an Agent routing bearer token. The digest never contains authors’
 abstracts.
 
 ```sh

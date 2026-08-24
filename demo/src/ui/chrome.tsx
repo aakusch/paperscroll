@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Interactive } from "remotion";
+import { Img, Interactive, staticFile } from "remotion";
 import { colors, sans, serif } from "../theme";
 
 export const AppChrome = ({
@@ -8,14 +8,14 @@ export const AppChrome = ({
   contentWidth = 720,
 }: {
   children: ReactNode;
-  active?: "Today" | "Saved" | "About";
+  active?: "Today" | "Saved" | "Agent" | "About";
   contentWidth?: number;
 }) => {
   return (
     <div
       style={{
-        display: "flex",
-        flexDirection: "column",
+        display: "grid",
+        gridTemplateColumns: "184px minmax(0, 1fr)",
         height: "100%",
         width: "100%",
         backgroundColor: colors.bg,
@@ -24,41 +24,30 @@ export const AppChrome = ({
         overflow: "hidden",
       }}
     >
-      <header
+      <aside
         style={{
-          width: "100%",
-          minHeight: 76,
-          flexShrink: 0,
-          borderBottom: `1px solid ${colors.line}`,
-          padding: "12px 54px",
+          minWidth: 0,
+          height: "100%",
+          borderRight: `1px solid ${colors.line}`,
+          padding: "24px 18px 20px",
           boxSizing: "border-box",
           display: "flex",
-          alignItems: "center",
-          gap: 54,
+          flexDirection: "column",
+          alignItems: "stretch",
+          gap: 24,
         }}
       >
-        <div>
-          <div
-            style={{
-              fontFamily: serif,
-              fontSize: 23,
-              fontWeight: 600,
-              letterSpacing: "-0.03em",
-            }}
-          >
-            PaperScroll
-          </div>
-          <div style={{ marginTop: 4, fontSize: 12, color: colors.mute, lineHeight: 1.25 }}>
-            Catch up over coffee
-          </div>
-        </div>
-        <nav style={{ display: "flex", alignItems: "center", gap: 30 }}>
-          {(["Today", "Saved", "About"] as const).map((item) => (
+        <Img
+          src={staticFile("favicon.png")}
+          style={{ width: 34, height: 34, display: "block" }}
+        />
+        <nav style={{ display: "flex", flexDirection: "column", gap: 3 }}>
+          {(["Today", "Saved", "Agent", "About"] as const).map((item) => (
             <div
               key={item}
               style={{
-                padding: "6px 0 5px",
-                borderBottom: `1px solid ${item === active ? colors.accent : "transparent"}`,
+                padding: "7px 10px",
+                borderLeft: `2px solid ${item === active ? colors.accent : "transparent"}`,
                 fontSize: 15,
                 color: item === active ? colors.ink : colors.mute,
               }}
@@ -67,8 +56,8 @@ export const AppChrome = ({
             </div>
           ))}
         </nav>
-        <div style={{ marginLeft: "auto", color: colors.mute, fontSize: 14 }}>Sign in</div>
-      </header>
+        <div style={{ marginTop: "auto", padding: "6px 10px", color: colors.mute, fontSize: 14 }}>Sign in</div>
+      </aside>
       <main
         style={{
           flex: 1,
@@ -155,19 +144,6 @@ export const Pill = ({
   </div>
 );
 
-export const Trend = ({
-  rank,
-  votes,
-}: {
-  rank: number;
-  votes: number;
-}) => (
-  <span style={{ display: "inline-flex", gap: 4, alignItems: "baseline", fontSize: 13 }}>
-    <span style={{ fontWeight: 600, color: colors.ink }}>Daily Papers #{rank}</span>
-    <span style={{ color: colors.mute }}>of 15 · {votes} votes</span>
-  </span>
-);
-
 const clamp2: React.CSSProperties = {
   display: "-webkit-box",
   WebkitLineClamp: 2,
@@ -176,107 +152,121 @@ const clamp2: React.CSSProperties = {
 };
 
 export const PaperCardMock = ({
+  arxivId,
   title,
   authors,
   hostLine,
   verdict = "Watch",
   listed,
   topic,
-  rank,
-  votes,
   boardRank,
 }: {
+  arxivId: string;
   title: string;
   authors: string;
   hostLine: string;
   verdict?: "Try" | "Watch" | "Skip";
   listed: string;
   topic?: string;
-  rank?: number;
-  votes?: number;
   boardRank?: number;
 }) => (
     <div
       style={{
+        display: "grid",
+        gridTemplateColumns: "100px minmax(0, 1fr)",
+        gap: 16,
+        alignItems: "start",
         backgroundColor: colors.card,
-        padding: "20px 24px 18px",
+        padding: "14px 18px",
         minWidth: 0,
         borderBottom: `1px solid ${colors.line}`,
         boxSizing: "border-box",
       }}
     >
-    {topic ? (
       <div
         style={{
-          fontSize: 11,
-          fontWeight: 600,
-          letterSpacing: "0.12em",
-          textTransform: "uppercase",
-          color: colors.mute,
-          marginBottom: 6,
-          display: "flex",
-          alignItems: "baseline",
-          justifyContent: "space-between",
-          gap: 16,
+          width: 100,
+          height: 125,
+          overflow: "hidden",
+          border: `1px solid ${colors.line}`,
+          borderRadius: 8,
+          backgroundColor: "#f7f6f2",
         }}
       >
-        <span>{topic}</span>
-        {boardRank != null ? (
-          <span style={{ color: colors.accent, fontVariantNumeric: "tabular-nums" }}>
-            Board {String(boardRank).padStart(2, "0")}
-          </span>
-        ) : null}
+        <Img
+          src={staticFile(`previews/${arxivId}.jpg`)}
+          style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: "top center" }}
+        />
       </div>
-    ) : null}
-    <div
-      style={{
-        fontFamily: serif,
-        fontSize: 22,
-        fontWeight: 600,
-        letterSpacing: "-0.02em",
-        lineHeight: 1.25,
-        marginBottom: 6,
-        ...clamp2,
-      }}
-    >
-      {title}
-    </div>
-    <div style={{ fontSize: 14, color: colors.mute, marginBottom: 8 }}>
-      {listed} · {authors}
-    </div>
-    <div
-      style={{
-        fontFamily: sans,
-        fontSize: 16.5,
-        fontWeight: 400,
-        lineHeight: 1.5,
-        color: "#3f3f3a",
-        display: "-webkit-box",
-        WebkitLineClamp: 2,
-        WebkitBoxOrient: "vertical",
-        overflow: "hidden",
-      }}
-    >
-      <span
-        style={{
-          marginRight: 7,
-          color: verdict === "Try" ? "#2f6b4f" : verdict === "Watch" ? "#8a6a24" : colors.mute,
-          fontFamily: sans,
-          fontSize: 11,
-          fontWeight: 600,
-          letterSpacing: "0.08em",
-          textTransform: "uppercase",
-        }}
-      >
-        {verdict}
-      </span>
-      {hostLine}
-    </div>
-    <div style={{ display: "flex", gap: 8, alignItems: "center", marginTop: 12, flexWrap: "wrap" }}>
-      {rank != null && votes != null ? (
-        <Trend rank={rank} votes={votes} />
-      ) : null}
-    </div>
+      <div style={{ minWidth: 0 }}>
+        {topic ? (
+          <div
+            style={{
+              fontSize: 11,
+              fontWeight: 600,
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              color: colors.mute,
+              marginBottom: 4,
+              display: "flex",
+              alignItems: "baseline",
+              justifyContent: "space-between",
+              gap: 16,
+            }}
+          >
+            <span>{topic}</span>
+            {boardRank != null ? (
+              <span style={{ color: colors.accent, fontVariantNumeric: "tabular-nums" }}>
+                Board {String(boardRank).padStart(2, "0")}
+              </span>
+            ) : null}
+          </div>
+        ) : null}
+        <div
+          style={{
+            fontFamily: serif,
+            fontSize: 19,
+            fontWeight: 600,
+            letterSpacing: "-0.02em",
+            lineHeight: 1.22,
+            marginBottom: 5,
+            ...clamp2,
+          }}
+        >
+          {title}
+        </div>
+        <div style={{ fontSize: 12.5, lineHeight: 1.35, color: colors.mute, marginBottom: 6 }}>
+          {listed.replace("First appeared ", "")} · {authors}
+        </div>
+        <div
+          style={{
+            fontFamily: sans,
+            fontSize: 14,
+            fontWeight: 400,
+            lineHeight: 1.4,
+            color: "#3f3f3a",
+            display: "-webkit-box",
+            WebkitLineClamp: 1,
+            WebkitBoxOrient: "vertical",
+            overflow: "hidden",
+          }}
+        >
+          <span
+            style={{
+              marginRight: 7,
+              color: verdict === "Try" ? "#2f6b4f" : verdict === "Watch" ? "#8a6a24" : colors.mute,
+              fontFamily: sans,
+              fontSize: 11,
+              fontWeight: 600,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+            }}
+          >
+            {verdict}
+          </span>
+          {hostLine}
+        </div>
+      </div>
   </div>
 );
 

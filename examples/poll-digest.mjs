@@ -17,7 +17,7 @@ const statePath = resolve(
 );
 
 if (!token) {
-  console.error("Set PAPERSCROLL_TOKEN to a digest:read token from Account.");
+  console.error("Set PAPERSCROLL_TOKEN to a digest:read token from Agent routing.");
   process.exit(1);
 }
 

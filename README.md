@@ -1,8 +1,9 @@
 # PaperScroll
 
-PaperScroll is a shared morning board of research: one deterministic top ten,
-no endless feed, and enough judgment to decide what deserves a full read. The tagline is
-**Catch up over coffee.**
+PaperScroll is a shared morning board of research: one deterministic top ten per
+morning and enough judgment to decide what deserves a full read. Readers can
+optionally continue into older, frozen editions without changing any day’s cut.
+The tagline is **Catch up over coffee.**
 
 ## The job
 
@@ -35,6 +36,8 @@ The live product is deliberately narrow:
   preview of the source PDF, never an invented illustration or abstract substitute.
 - Routine is the primary completion path: board → board packets → caught up.
 - Save means "read later." It never downranks a paper or changes tomorrow.
+- Continuous days appends complete dated boards. It never merges rankings across
+  mornings or turns the archive into a personalized feed.
 - Discussion is for a concrete caveat, replication note, or useful artifact and
   stays behind the board packet.
 - Agent forwarding is optional. `GET /api/v1/digest/latest` returns the same
@@ -132,7 +135,7 @@ git) and a free Neon resource supplies `DATABASE_URL`. Deploy with:
 vercel deploy --prod
 ```
 
-After deployment, check sign-up, Account token creation and revocation, and both
+After deployment, check sign-up, Agent token creation and revocation, and both
 digest formats against the production URL. A static-only deployment is not a
 complete PaperScroll deployment because those flows would lose state.
 
@@ -190,7 +193,7 @@ connection.
 
 ## Morning routing
 
-A signed-in reader creates a named, read-only bearer token under Account. The
+A signed-in reader creates a named, read-only bearer token under Agent routing. The
 canonical v1 route returns the latest complete board as stable JSON, using that
 account's saved fields and desk:
 
@@ -206,7 +209,7 @@ The response supplies a schema version, immutable board version, consumer
 membership and never hide it. The response contains structured host packets and
 links, never raw abstracts. Tokens have the fixed `digest:read` scope, are shown
 once, stored only as hashes, expire after 90 days, and can be rotated or revoked
-from Account.
+from Agent routing.
 
 The old `/api/digest` route remains available for Markdown and legacy JSON
 clients. New integrations should follow [the routing contract](docs/agent-routing.md)

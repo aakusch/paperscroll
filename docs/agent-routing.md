@@ -5,7 +5,7 @@ Any runtime that can make a scheduled authenticated `GET` can use it.
 
 ## Set up a morning route
 
-1. In **Account → Morning route**, create a named `digest:read` token. The
+1. In **Agent routing**, create a named `digest:read` token. The
    secret is shown once, stored by PaperScroll only as a hash, expires after 90
    days, and can be revoked without affecting other routes.
 2. Store the secret in the agent runtime as `PAPERSCROLL_TOKEN`, not in a
@@ -41,7 +41,7 @@ provides the pieces for safe at-least-once delivery:
 - a `delivery.key` derived from both, for consumer deduplication; and
 - a representation ETag, so an unchanged account composition returns `304`.
 
-The Account page reports when each token last checked and which board was last
+The Agent routing page reports when each token last checked and which board was last
 returned. “Returned” means PaperScroll sent a `200`; only the receiving runtime
 can know whether downstream ingestion completed.
 

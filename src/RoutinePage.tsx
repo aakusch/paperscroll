@@ -130,7 +130,7 @@ export function RoutinePage() {
     await navigator.clipboard.writeText(text);
     toast(
       account
-        ? "Prompt copied. The agent needs a digest token from Account."
+        ? "Prompt copied. The agent needs a digest token from Agent routing."
         : "Prompt copied. Sign in and mint a digest token so the agent can auth.",
     );
   }
@@ -189,7 +189,7 @@ export function RoutinePage() {
             </button>
             <span> · </span>
             {account ? (
-              <Link to="/account" className="quiet-link">Manage digest token</Link>
+              <Link to="/agent" className="quiet-link">Manage digest token</Link>
             ) : (
               <Link to="/login" className="quiet-link">Sign in for a token</Link>
             )}
@@ -245,27 +245,26 @@ export function RoutinePage() {
         <HostBrief paper={paper} showBasis={false} />
       </article>
 
-      <div className="routine-secondary routine-secondary-flow">
-        {pdf ? (
-          <a className="btn" href={pdf} target="_blank" rel="noreferrer">
-            Read paper
-          </a>
-        ) : null}
-        <button
-          type="button"
-          className={saved ? "btn on" : "btn"}
-          aria-pressed={saved}
-          aria-busy={saveBusy}
-          disabled={saveBusy}
-          onClick={() => void savePaper()}
-        >
-          <span key={saved ? "saved" : "save"} className="btn-face">
-            {saveBusy ? "Saving…" : saved ? "Saved" : "Save for later"}
-          </span>
-        </button>
-      </div>
-
       <footer className="routine-foot">
+        <div className="routine-secondary">
+          {pdf ? (
+            <a className="routine-utility" href={pdf} target="_blank" rel="noreferrer">
+              Read paper
+            </a>
+          ) : null}
+          <button
+            type="button"
+            className="routine-utility"
+            aria-pressed={saved}
+            aria-busy={saveBusy}
+            disabled={saveBusy}
+            onClick={() => void savePaper()}
+          >
+            <span key={saved ? "saved" : "save"} className="btn-face">
+              {saveBusy ? "Saving…" : saved ? "Saved" : "Save for later"}
+            </span>
+          </button>
+        </div>
         <button
           type="button"
           className="btn primary routine-next"
@@ -274,11 +273,8 @@ export function RoutinePage() {
           onClick={(event) => advance(event.detail > 0)}
         >
           <span className="routine-next-label">
-            {last ? "Finish the board" : `Next · ${nextPaper?.topic || "paper"}`}
+            {last ? "Finish board" : `Next · ${nextPaper?.topic || "paper"}`} <span aria-hidden="true">→</span>
           </span>
-          {!last && nextPaper ? (
-            <span className="routine-next-title">{nextPaper.title}</span>
-          ) : null}
         </button>
       </footer>
     </div>

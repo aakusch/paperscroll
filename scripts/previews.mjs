@@ -31,13 +31,19 @@ if (!/^\d{4}-\d{2}-\d{2}$/.test(boardDate)) {
 const force = process.argv.includes("--force");
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const boardPath = join(root, "src", "boards", `${boardDate}.json`);
-if (!existsSync(boardPath)) {
+const legacyPapers = boardDate === "2026-08-20"
+  ? [
+      "2608.16590", "2608.14929", "2608.18171", "2608.18565", "2608.18973",
+      "2608.19070", "2608.18375", "2608.18451", "2608.18417",
+    ].map((arxivId) => ({ arxivId }))
+  : null;
+if (!existsSync(boardPath) && !legacyPapers) {
   console.error(`No generated board at src/boards/${boardDate}.json`);
   process.exit(1);
 }
 
-const board = JSON.parse(readFileSync(boardPath, "utf8"));
-const papers = Array.isArray(board.papers) ? board.papers : [];
+const board = existsSync(boardPath) ? JSON.parse(readFileSync(boardPath, "utf8")) : null;
+const papers = board && Array.isArray(board.papers) ? board.papers : legacyPapers || [];
 if (!papers.length) {
   console.error(`${boardDate} has no papers.`);
   process.exit(1);

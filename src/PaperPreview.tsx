@@ -4,7 +4,7 @@ import { PREVIEW_IDS } from "./previewIds";
 
 const availablePreviews = new Set<string>(PREVIEW_IDS);
 
-export function PaperPreview({ paper }: { paper: Paper }) {
+export function PaperPreview({ paper, priority = false }: { paper: Paper; priority?: boolean }) {
   const [failed, setFailed] = useState(false);
   if (!availablePreviews.has(paper.arxivId)) return null;
 
@@ -14,7 +14,7 @@ export function PaperPreview({ paper }: { paper: Paper }) {
         <img
           src={`/previews/${paper.arxivId}.jpg`}
           alt=""
-          loading={paper.automation?.rank && paper.automation.rank <= 2 ? "eager" : "lazy"}
+          loading={priority && paper.automation?.rank && paper.automation.rank <= 2 ? "eager" : "lazy"}
           decoding="async"
           onError={() => setFailed(true)}
         />

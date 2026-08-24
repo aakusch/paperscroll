@@ -100,7 +100,7 @@ export function digestAgentPrompt(opts: {
   return `Fetch my PaperScroll morning from this endpoint, then relay it to me. Process a delivery.key only once; a repeated key is a retry. If a paper maps onto this workspace, say how. If the packet is thin, say you need the PDF. Do not invent methods, numbers, or GitHub URLs.
 
 GET ${url}
-Authorization: Bearer <digest:read token from PaperScroll → Account → Morning route>
+Authorization: Bearer <digest:read token from PaperScroll → Agent routing>
 Accept: application/json
 
 The body is the PaperScroll host packet, not the authors' raw abstracts. It is always one complete shared board of ten papers.`;

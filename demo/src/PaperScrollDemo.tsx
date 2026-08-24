@@ -183,32 +183,30 @@ function RoutineFoot({ nextPaper }: { nextPaper: DemoPaper }) {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "14px 0 8px",
+        padding: "10px 0 8px",
         flexShrink: 0,
         marginTop: "auto",
+        borderTop: `1px solid ${colors.line}`,
       }}
     >
-      <Pill>Read paper</Pill>
+      <div style={{ display: "flex", alignItems: "center", gap: 18, color: colors.mute, fontSize: 13 }}>
+        <span>Read paper</span>
+        <span>Save for later</span>
+      </div>
       <div
         style={{
-          width: 390,
-          minHeight: 46,
-          display: "grid",
-          gridTemplateColumns: "auto minmax(0, 1fr)",
+          minHeight: 38,
+          display: "flex",
           alignItems: "center",
-          gap: 10,
-          padding: "8px 14px",
+          padding: "7px 12px",
           borderRadius: 10,
           boxSizing: "border-box",
           backgroundColor: colors.ink,
           color: "#f7f7f4",
         }}
       >
-        <span style={{ color: "rgba(247,247,244,.72)", fontSize: 11, fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase" }}>
-          Next · {nextPaper.topic}
-        </span>
-        <span style={{ overflow: "hidden", fontSize: 13, fontWeight: 600, textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-          {nextPaper.title}
+        <span style={{ fontSize: 12, fontWeight: 600, whiteSpace: "nowrap" }}>
+          Next · {nextPaper.topic} →
         </span>
       </div>
     </div>
@@ -393,14 +391,11 @@ function CollateSheet({ frame }: { frame: number }) {
         }}
       >
         <div>
-          <div style={{ fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: colors.mute }}>
-            Today
-          </div>
-          <div style={{ fontFamily: serif, fontSize: 28, fontWeight: 600, letterSpacing: "-0.03em", marginTop: 4 }}>
+          <div style={{ fontFamily: serif, fontSize: 28, fontWeight: 600, letterSpacing: "-0.03em" }}>
             The board
           </div>
-          <div style={{ fontSize: 14, color: colors.mute, marginTop: 6 }}>
-            Thu 20 Aug · {listed} of {n} papers entering the balanced shared cut
+          <div style={{ fontSize: 13, color: colors.mute, marginTop: 5 }}>
+            Thu 20 Aug · {listed} / {n} papers
           </div>
         </div>
         <Interactive.Div name="StartRoutine" style={{ opacity: startOp, flexShrink: 0 }}>
@@ -512,14 +507,13 @@ function CollateSheet({ frame }: { frame: number }) {
                   }}
                 >
                   <PaperCardMock
+                    arxivId={paper.arxivId}
                     topic={paper.topic}
                     title={paper.title}
                     authors={paper.authors}
                     listed={paper.listed}
                     hostLine={paper.fieldWhy}
                     verdict={paper.verdict}
-                    rank={paper.rank}
-                    votes={paper.votes}
                     boardRank={i + 1}
                   />
                 </Interactive.Div>
@@ -612,7 +606,7 @@ function HandoffSheet({ frame }: { frame: number }) {
           whiteSpace: "nowrap",
         }}
       >
-        Prompt copied. The agent needs a digest token from Account.
+        Prompt copied. The agent needs a digest token from Agent routing.
       </Interactive.Div>
     </div>
   );

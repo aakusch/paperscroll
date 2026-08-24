@@ -1,4 +1,4 @@
-import { useLayoutEffect, useMemo, useState, type MouseEvent } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
 import {
   Link,
   NavLink,
@@ -10,11 +10,13 @@ import {
   useNavigate,
   useOutletContext,
   useParams,
+  useSearchParams,
 } from "react-router-dom";
 import PaperPage from "./PaperPage";
 import { compactAuthors } from "./authorFormat";
 import {
   AccountPage,
+  AgentPage,
   AboutPage,
   SavedPage,
   LoginPage,
@@ -22,11 +24,10 @@ import {
   SignupPage,
 } from "./pages";
 import { RoutinePage, RoutineStart } from "./RoutinePage";
-import { FIELDS, catalog, type Paper, type Topic } from "./data";
+import { FIELDS, catalog, type Edition, type Paper, type Topic } from "./data";
 import { listingLine, shortDate } from "./listing";
 import { beginRouteMotion } from "./motion";
 import { PaperPreview } from "./PaperPreview";
-import { TrendMark } from "./Trend";
 import {
   composeBoard,
   prefsFromUser,
@@ -88,10 +89,10 @@ function Shell() {
 
   return (
     <div className={onFeed || onWelcome ? "app" : "app reading"}>
-      <aside className="nav">
+      <nav className="nav" aria-label="Primary">
         <Link to="/" className="logo">
-          PaperScroll
-          <span>Catch up over coffee</span>
+          <img src="/favicon.png" width="32" height="32" alt="" />
+          <span className="sr-only">PaperScroll</span>
         </Link>
         <div className="nav-links">
           <NavLink
@@ -106,6 +107,7 @@ function Shell() {
             The board
           </NavLink>
           <NavLink to="/saved">Saved{laterCount ? ` (${laterCount})` : ""}</NavLink>
+          <NavLink to="/agent">Agent</NavLink>
           <NavLink to="/about">About</NavLink>
         </div>
         <div className="nav-foot">
@@ -122,7 +124,7 @@ function Shell() {
             </NavLink>
           )}
         </div>
-      </aside>
+      </nav>
       <div className="main">
         {error ? (
           <p className="session-warning" role="status">
@@ -138,17 +140,22 @@ function Shell() {
 function PaperCard({
   paper,
   saved,
+  priority,
 }: {
   paper: Paper;
   saved?: boolean;
+  priority?: boolean;
 }) {
   const rank = paper.automation?.rank;
   const authors = compactCardAuthors(paper.authors);
   const boardHook = paper.plain?.verdictWhy || paper.verdictWhy;
+  const appeared = paper.listing
+    ? shortDate(paper.listing.publishedOn)
+    : listingLine(paper);
 
   return (
     <Link to={`/p/${paper.id}`} className="paper">
-      <PaperPreview paper={paper} />
+      <PaperPreview paper={paper} priority={priority} />
       <span className="paper-copy">
         <span className="paper-kicker">
           <span>{paper.topic}</span>
@@ -156,7 +163,7 @@ function PaperCard({
         </span>
         <h3>{paper.title}</h3>
         <span className="byline">
-          {listingLine(paper)} · <span>{authors}</span>
+          {appeared} · <span>{authors}</span>{saved ? " · Saved" : ""}
         </span>
         <span className="host-line">
           <span className={`host-verdict v-${paper.verdict.toLowerCase()}`}>
@@ -164,19 +171,13 @@ function PaperCard({
           </span>{" "}
           {boardHook}
         </span>
-        {paper.trend || saved ? (
-          <span className="metrics">
-            {paper.trend ? <TrendMark trend={paper.trend} /> : null}
-            {saved ? <span>Saved</span> : null}
-          </span>
-        ) : null}
       </span>
     </Link>
   );
 }
 
 function compactCardAuthors(authors: string) {
-  return compactAuthors(authors, 2);
+  return compactAuthors(authors, 1);
 }
 
 function WelcomePage() {
@@ -298,25 +299,63 @@ function FeedPage() {
   const { prefs } = useOutletContext<AppContext>();
   const { account, saves } = useSession();
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const loadMoreRef = useRef<HTMLSpanElement>(null);
+  const manualLoadRef = useRef<HTMLButtonElement>(null);
 
   const boardDate = dateParam ?? latestBoard;
   const dayIndex = boardDates.indexOf(boardDate);
   const source = catalog.find((edition) => edition.date === boardDate);
+  const availableCount = dayIndex < 0 ? 0 : catalog.length - dayIndex;
+  const continuous = !dateParam && searchParams.get("view") === "continuous";
+  const throughIndex = catalog.findIndex((edition) => edition.date === searchParams.get("through"));
+  const requestedCount = continuous && throughIndex >= dayIndex
+    ? throughIndex - dayIndex + 1
+    : 2;
+  const continuousCount = continuous
+    ? Math.max(1, Math.min(requestedCount, availableCount || 1))
+    : 1;
 
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  }, [boardDate]);
+  const days = useMemo(() => {
+    if (dayIndex < 0) return [];
+    const count = continuous ? continuousCount : 1;
+    return catalog.slice(dayIndex, dayIndex + count).map((edition) => ({
+      ...edition,
+      ...composeBoard([...edition.papers], prefs),
+    }));
+  }, [continuous, continuousCount, dayIndex, prefs]);
 
-  const day = useMemo(() => {
-    if (!source) return null;
-    const papers = [...source.papers];
-    const { focus, rest } = composeBoard(papers, prefs);
-    return { ...source, focus, rest };
-  }, [prefs, source]);
+  const loadOlder = useCallback(() => {
+    const nextCount = Math.min(continuousCount + 1, availableCount);
+    if (!continuous || nextCount <= continuousCount) return;
+    const through = catalog[dayIndex + nextCount - 1]?.date;
+    if (through) {
+      const next = new URLSearchParams(searchParams);
+      next.set("view", "continuous");
+      next.set("through", through);
+      setSearchParams(next, { replace: true });
+    }
+  }, [availableCount, continuous, continuousCount, dayIndex, searchParams, setSearchParams]);
 
+  useEffect(() => {
+    const target = loadMoreRef.current;
+    if (!continuous || !target || continuousCount >= availableCount) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (
+          document.activeElement !== manualLoadRef.current &&
+          entries.some((entry) => entry.isIntersecting)
+        ) loadOlder();
+      },
+      { rootMargin: "96px 0px" },
+    );
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, [availableCount, continuous, continuousCount, loadOlder]);
+
+  const day = days[0];
   if (!source || !day || dayIndex < 0) return <Navigate to="/" replace />;
 
-  const allFields = prefs.interests.length === 0;
   const today = newYorkDate();
   const isToday = boardDate === today;
   const isLatestHosted = boardDate === latestBoard;
@@ -341,18 +380,25 @@ function FeedPage() {
     if (!cleanup) return;
     event.preventDefault();
     navigate(boardPath(target), { viewTransition: true });
+    window.scrollTo(0, 0);
     window.setTimeout(cleanup, 280);
+  }
+
+  function openCanonicalBoard(event: MouseEvent<HTMLAnchorElement>) {
+    if (
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.altKey ||
+      event.shiftKey
+    ) return;
+    window.scrollTo(0, 0);
   }
 
   return (
     <div className="feed-page">
       <header className="feed-head">
-        <div>
-          <p className="feed-kicker">
-            {isToday ? "Today" : isLatestHosted ? "Last board" : "Archive"}
-          </p>
-          <h1 className="feed-title">The board</h1>
-        </div>
+        <h1 className="feed-title">The board</h1>
         <div className="feed-actions">
           {day.papers.length ? (
             <Link className="btn primary" to={`/routine/${boardDate}/1`}>
@@ -370,87 +416,180 @@ function FeedPage() {
           )}
         </div>
       </header>
-      <p
-        className={
-          isLatestHosted && !isToday
-            ? "board-note board-note-stale"
-            : "board-note"
-        }
-      >
-        {isLatestHosted && !isToday
-          ? `No complete board is ready for ${fullDayLabel(today)}. Showing the latest finished board.`
-          : day.selection
-            ? `One shared top ten from ${day.poolSize ?? "the"} eligible papers. Source signal plus field coverage chooses membership; your fields only change the order.`
-          : allFields
-            ? "One shared board. Card dates are when each paper first appeared."
-            : `${prefs.interests.join(", ")} first. Same top ten as everyone.`}
-      </p>
-
-      {boardDates.length > 1 ? (
-      <nav className="day-pager" aria-label="Board date">
-        {newer ? (
-          <Link
-            to={boardPath(newer)}
-            aria-label={`Newer board, ${fullDayLabel(newer)}`}
-            onClick={(event) => changeBoard(event, newer, "board-newer")}
-          >
-            ← {shortDate(newer)}
-          </Link>
-        ) : (
-          <span className="dead">Latest</span>
-        )}
-        <span className="when">
-          {day.label} · {day.papers.length} papers
-        </span>
-        {older ? (
-          <Link
-            to={boardPath(older)}
-            aria-label={`Older board, ${fullDayLabel(older)}`}
-            onClick={(event) => changeBoard(event, older, "board-older")}
-          >
-            {shortDate(older)} →
-          </Link>
-        ) : (
-          <span className="dead">Oldest</span>
-        )}
-      </nav>
-      ) : (
-        <p className="when-solo">
-          {day.label} · {day.papers.length} papers
+      {isLatestHosted && !isToday ? (
+        <p className="board-note board-note-stale">
+          No complete board is ready for {fullDayLabel(today)}. Showing the latest finished board.
         </p>
-      )}
+      ) : null}
 
-      {day.focus.length + day.rest.length === 0 ? (
-        <div className="empty-card">
-          <h2>No complete board is ready</h2>
-          <p>Selection and all ten packets publish atomically. Try an older morning.</p>
+      <div className="board-browser">
+        {continuous ? (
+          <p className="when-solo">
+            From{" "}
+            <Link
+              id={`board-date-${day.date}`}
+              to={boardPath(day.date)}
+              onClick={openCanonicalBoard}
+            >
+              {day.label}
+            </Link>
+            {" · older complete boards follow"}
+          </p>
+        ) : boardDates.length > 1 ? (
+          <nav className="day-pager" aria-label="Board date">
+            {newer ? (
+              <Link
+                to={boardPath(newer)}
+                aria-label={`Newer board, ${fullDayLabel(newer)}`}
+                onClick={(event) => changeBoard(event, newer, "board-newer")}
+              >
+                ← {shortDate(newer)}
+              </Link>
+            ) : (
+              <span className="dead">Latest</span>
+            )}
+            <span className="when">
+              {day.label} · {day.papers.length} papers
+            </span>
+            {older ? (
+              <Link
+                to={boardPath(older)}
+                aria-label={`Older board, ${fullDayLabel(older)}`}
+                onClick={(event) => changeBoard(event, older, "board-older")}
+              >
+                {shortDate(older)} →
+              </Link>
+            ) : (
+              <span className="dead">Oldest</span>
+            )}
+          </nav>
+        ) : (
+          <p className="when-solo">{day.label} · {day.papers.length} papers</p>
+        )}
+        {!dateParam ? (
+          <label className="continuous-toggle">
+            <input
+              type="checkbox"
+              role="switch"
+              checked={continuous}
+              onChange={(event) => {
+                const next = new URLSearchParams(searchParams);
+                if (event.target.checked) {
+                  next.set("view", "continuous");
+                  const through = catalog[Math.min(dayIndex + 1, catalog.length - 1)]?.date;
+                  if (through) next.set("through", through);
+                } else {
+                  next.delete("view");
+                  next.delete("through");
+                }
+                setSearchParams(next);
+              }}
+            />
+            Continuous days
+          </label>
+        ) : null}
+      </div>
+
+      <div className="board-stream">
+        {days.map((streamDay, index) => (
+          <div className="stream-day" key={streamDay.date}>
+            {continuous && index > 0 ? (
+              <h2 className="stream-day-label" id={`board-date-${streamDay.date}`}>
+                <Link to={boardPath(streamDay.date)} onClick={openCanonicalBoard}>
+                  {streamDay.label}
+                </Link>
+                <span>{streamDay.papers.length} papers</span>
+              </h2>
+            ) : null}
+            <BoardCards
+              day={streamDay}
+              saves={saves}
+              isToday={streamDay.date === today}
+              priority={index === 0}
+              labelledBy={continuous ? `board-date-${streamDay.date}` : undefined}
+            />
+          </div>
+        ))}
+      </div>
+      {continuous ? (
+        <div className="stream-sentinel">
+          {continuousCount < availableCount ? (
+            <span ref={loadMoreRef} className="stream-observer" aria-hidden="true" />
+          ) : null}
+          <button
+            ref={manualLoadRef}
+            type="button"
+            className="quiet-link"
+            aria-disabled={continuousCount >= availableCount}
+            onClick={loadOlder}
+          >
+            {continuousCount >= availableCount
+              ? "End of complete boards"
+              : "Load older mornings"}
+          </button>
+          <span className="sr-only" role="status" aria-live="polite">
+            {continuousCount >= availableCount
+              ? `All ${days.length} complete mornings loaded`
+              : `${days.length} mornings loaded`}
+          </span>
         </div>
-      ) : (
-        <section className="day">
-          {day.focus.map((paper) => (
+      ) : null}
+    </div>
+  );
+}
+
+type ComposedEdition = Edition & ReturnType<typeof composeBoard>;
+
+function BoardCards({
+  day,
+  saves,
+  isToday,
+  priority,
+  labelledBy,
+}: {
+  day: ComposedEdition;
+  saves: string[];
+  isToday: boolean;
+  priority: boolean;
+  labelledBy?: string;
+}) {
+  if (day.focus.length + day.rest.length === 0) {
+    return (
+      <div className="empty-card">
+        <h2>No complete board is ready</h2>
+        <p>Selection and all ten packets publish atomically. Try an older morning.</p>
+      </div>
+    );
+  }
+
+  return (
+    <section
+      className="day"
+      aria-labelledby={labelledBy}
+      aria-label={labelledBy ? undefined : `${day.label} board`}
+    >
+      {day.focus.map((paper) => (
+        <PaperCard
+          key={paper.id}
+          paper={paper}
+          saved={saves.includes(paper.id) || saves.includes(paper.arxivId)}
+          priority={priority}
+        />
+      ))}
+      {day.rest.length > 0 ? (
+        <>
+          <h2 className="also">{isToday ? "Also today" : "Also this board"}</h2>
+          {day.rest.map((paper) => (
             <PaperCard
               key={paper.id}
               paper={paper}
               saved={saves.includes(paper.id) || saves.includes(paper.arxivId)}
+              priority={priority}
             />
           ))}
-          {day.rest.length > 0 ? (
-            <>
-              <h2 className="also">
-                {isToday ? "Also today" : "Also this board"}
-              </h2>
-              {day.rest.map((paper) => (
-                <PaperCard
-                  key={paper.id}
-                  paper={paper}
-                  saved={saves.includes(paper.id) || saves.includes(paper.arxivId)}
-                />
-              ))}
-            </>
-          ) : null}
-        </section>
-      )}
-    </div>
+        </>
+      ) : null}
+    </section>
   );
 }
 
@@ -500,8 +639,9 @@ export default function App() {
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/account" element={<AccountPage />} />
+          <Route path="/agent" element={<AgentPage />} />
           <Route path="/u/:name" element={<PublicProfilePage />} />
-          <Route path="/newsletter" element={<Navigate to="/account" replace />} />
+          <Route path="/newsletter" element={<Navigate to="/agent" replace />} />
           <Route path="/saved" element={<SavedPage />} />
           <Route path="/later" element={<Navigate to="/saved" replace />} />
           <Route path="*" element={<NotFoundPage />} />
