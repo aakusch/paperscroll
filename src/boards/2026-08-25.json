@@ -1,0 +1,747 @@
+{
+  "date": "2026-08-25",
+  "label": "Tue, Aug 25",
+  "minutes": 10,
+  "poolSize": 131,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-08-25T13:08:15.000Z",
+    "model": "codex-full-paper-review",
+    "packetBasis": "full-paper"
+  },
+  "papers": [
+    {
+      "id": "2608.23283",
+      "arxivId": "2608.23283",
+      "url": "https://arxiv.org/abs/2608.23283",
+      "topic": "AI",
+      "verdict": "Try",
+      "verdictWhy": "The open harness and matched ReAct-to-team gains merit a pilot, but extra compute and bundled system changes prevent a causal efficiency claim.",
+      "title": "Apodex 1.1: Scaling Agentic Intelligence for Complex Work",
+      "authors": "Apodex Team, B. An, B. Li, B. Wang, B. Zhang, B. L. Wang, C. Feng, C. Wei, C. Xue, C. Zhang, D. Ng, D. Ye, E. Min, F. Chen, F. Liu, F. Yang, F. Ye, H. Xu, H. Yang, H. Ye, H. Zhang, H. Zhao, J. Li, J. Lin, J. Xia, K. Jin, K. Wang, K. Yang, L. Bing, L. Lei, L. Su, Le. Wang, Lu. Wang, N. Wang, Q. Ren, Q. Yang, R. Li, S. Bai, S. Du, S. Li, S. Lin, S. Nie, S. Wang, S. Zhang, S. Z. Wang, Ta. Q. Fang, Ti. Q. Fang, W. Fang, W. Li, W. Zhang, X. Chen, X. Li, X. Tang, X. Wang, X. Xu, X. Zhang, X. Q. Wang, X. Y. Wang, Y. Deng, Y. Gao, Y. Hu, Y. Li, Y. Sui, Y. Wang, Y. Xiao, Y. Zhang, Z. Chen, Z. Cheng, Z. Feng, Z. Liang, Z. Zhang",
+      "takeaway": "Apodex 1.1 combines executable-environment training, learned coordination, and persistent workspace state to improve completion of long-horizon verifiable work.",
+      "brief": "The object is working capability: sustained, verifiable completion of research, file, code, and professional tasks. The system combines training in executable environments, a policy that decomposes and delegates work, and AgentOS state for task boards, provenance, artifacts, and recovery across tools and agents.\n\nUsing the same model, Agent Team raises APEX-Agents from 34.4 to 38.5, GDPVal from 69.5 to 78.8, FrontierFinance from 48.7 to 54.3, and FrontierScience-Research from 55.0 to 63.3. Those are real system-level comparisons, but the team receives additional organized computation and the paper does not cost-match it to ReAct. The overall release also changes model training, environments, coordination, and harness together; external leaderboard rows are not all reproduced under one protocol, and the authors' 97-task FrontierResearchBench still gives Agent Team a 12.4% pass rate versus 20.6% for the strongest shown systems.\n\nOpen it if you operate research or file-working agents and can test the Apache-2.0 harness on your own deliverables, budgets, and failure cases. Ignore the headline ranking if you need an isolated causal result, a cost-normalized team benefit, or proof that the system dominates frontier agents.",
+      "abstract": "General-purpose language models can reason and synthesize knowledge, but complex work also requires sustained interaction with files, information sources, and executable code, together with state maintenance, failure recovery, and verifiable delivery. We call this working capability: sustained, verifiable progress toward a real-world objective. Apodex 1.1 develops this capability along two complementary dimensions. Environment Scaling expands the diversity and verifiability of executable file, search, and code environments, while Agentic Coordination Scaling trains agents to decompose long-horizon tasks, delegate parallel work, integrate asynchronous results, and replan. A shared execution harness and AgentOS maintain task state and provenance across tools and agents, and training turns environment trajectories and coordination traces into reliable behavior. Across complex professional work, finance, scientific research, mathematics, coding, and search, Apodex 1.1 reaches the leading performance band despite using a substantially smaller model than many frontier systems. The 35B-parameter Apodex 1.1 Mini further retains strong working capability in a locally deployable form. These results ground agentic intelligence in useful, verifiable work completed over time and advance our goal of building a Heavy-Duty Solver for ambitious, long-running tasks.",
+      "takeaways": [
+        "Object: a model, executable training environments, Agent Team workflow, and persistent AgentOS harness aimed at long-horizon verifiable work.",
+        "Limit: same-model team gains use additional computation, while the full release bundles several interventions and mixes internally reproduced with external reference results.",
+        "Artifact: the live Apache-2.0 FrontierAgent repository includes ReAct and Agent Team workflows, sandboxed file work, traces, recovery, approvals, and benchmark runners."
+      ],
+      "plain": {
+        "verdictWhy": "The released agent system is worth testing, but the paper does not show that teams win for the same cost or that one component caused the gains.",
+        "brief": "Apodex 1.1 is designed to keep working on files, research, code, and other checkable deliverables over many steps. It trains in executable environments and ships a terminal harness where one agent can work alone or coordinate several specialist agents around a shared task board and workspace.\n\nWith the same model, the team setup improves several published scores over the single-agent setup, including 34.4 to 38.5 on APEX-Agents and 69.5 to 78.8 on GDPVal. The team is allowed extra organized work, however, so this is not an equal-cost comparison. The release also changes multiple layers at once, and on the authors' hardest internal workflow set it completes only 12.4% of tasks.\n\nTry the open harness on a few real deliverables while logging cost, elapsed time, failed branches, and final correctness. Do not read the benchmark table as proof that adding agents is always efficient or better than another frontier system.",
+        "takeaways": [
+          "The object is a trained model plus a work environment that can preserve files, divide tasks, and verify outputs.",
+          "The main limit is that the team gets more computation and several system parts change together, so the source of improvement is unclear.",
+          "The agent runtime and evaluation tools are available in an Apache-2.0 repository with installation and operating documentation."
+        ]
+      },
+      "actions": [
+        "Run the repository's ReAct and Agent Team modes on the same representative deliverables with fixed model, tool access, token and wall-time budgets, then compare completion quality and cost.",
+        "Inspect Tables 3–9 and the AgentOS recovery section before adoption, separating internally reproduced rows from external references and testing resume behavior under worker failure."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/ApodexAI/FrontierAgent",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-08-25",
+        "publishedOn": "2026-08-24",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.23283",
+            "upvotes": 151
+          }
+        ]
+      },
+      "trend": {
+        "votes": 151,
+        "rank": 1,
+        "of": 30,
+        "perDay": 151
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 151,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-24"
+        },
+        "packetBasis": "full-paper",
+        "model": "codex-full-paper-review",
+        "generatedAt": "2026-08-25T13:08:15.000Z"
+      },
+      "review": {
+        "basis": "full-paper",
+        "reviewedAt": "2026-08-25T13:08:15.000Z",
+        "sourceUrl": "https://arxiv.org/pdf/2608.23283",
+        "evidence": [
+          "Sections 3.1–3.4, PDF pp. 10–23: executable environments, Agentic Coordination Scaling, shared harness, AgentOS state, provenance, delegation, and recovery behavior.",
+          "Tables 3–5, PDF pp. 27–31: matched Apodex ReAct and Agent Team results, plus notes distinguishing internal reproductions from external leaderboard and reference values.",
+          "Tables 7–9, PDF pp. 33–36: coding, search, and 97-task FrontierResearchBench results, including the 12.4% Agent Team pass rate and 20.6% leading reference rows.",
+          "Section 4.5 and Figure 6, PDF pp. 37–39: HDS6 is an end-to-end system comparison, not a causal isolation of individual components."
+        ]
+      }
+    },
+    {
+      "id": "2608.23189",
+      "arxivId": "2608.23189",
+      "url": "https://arxiv.org/abs/2608.23189",
+      "topic": "AI",
+      "verdict": "Try",
+      "verdictWhy": "Its camera control and visual quality lead the shown public comparisons, but drift, action limits, and a research-only release keep it from being a simulator.",
+      "title": "EchoWM: Open and Enterable Omnimodal World Models",
+      "authors": "Songchun Zhang, Yaowei Li, Junhao Zhuang, Weiyang Jin, Haoyu Wang, Xin Lu, Yilang Sun, Shiyi Zhang, Haoran Li, Xiaoxiao Ma, Yuming Li, Yijun Liu, Yaofeng Su, Yanwen Ma, Haoyu Wu, Zihan Su, Yue Ma, Lvmin Zhang, Haoyang Huang, Zeyue Xue, Anyi Rao, Nan Duan",
+      "takeaway": "EchoWM maps discrete and continuous camera intent to a shared metric-scale 6-DoF trajectory while jointly generating 720p video, environmental sound, music, and speech over repeated continuation.",
+      "brief": "The object is an enterable audio-visual generator rather than a game engine. Discrete keys and continuous camera poses become one relative 6-DoF condition; progressive audio-visual pretraining, frozen-backbone action tuning, joint fine-tuning, and causal self-rollout training teach a joint video-audio backbone to continue under navigation.\n\nOn the 158-case WBench Navigation split, EchoWM scores 81.7 overall and EchoWM-Flash 81.0, ahead of the listed baselines. On SANA-WM-Bench, EchoWM has the highest visual score at 241 and 961 frames, but SANA-WM has lower hard-trajectory pose errors at 241 frames and lower hard rotation error at 961 frames; EchoWM's hard rotation error grows to 12.05 degrees. In a 200-case user study, EchoWM wins overall preference against both comparators, yet loses semantic following to HappyOyster and performs especially weakly on that measure for embodied-robot and natural-outdoor scenes. The paper explicitly limits control to navigation and viewpoint, lacks rules, collision state, deterministic transitions, and persistent 3D memory, and does not separately supervise action-to-sound behavior.\n\nOpen it if you research controllable audio-visual generation and can evaluate drift and control on your own trajectories. Ignore it if you need arbitrary character actions, deterministic simulation, safety-relevant physics, commercial deployment rights, or an already released EchoWM checkpoint and inference path.",
+      "abstract": "We present EchoWM, an omnimodal world model for enterable generative media that responds to continuous navigation while jointly generating 720p video, environmental sound, music and speech. We organize interaction around camera intent: in first-person scenes, it specifies observer motion, while in third-person scenes, camera--character dynamics are learned from data without view-specific controllers. Discrete commands and continuous poses are mapped to a shared metric-scale relative 6-DoF trajectory, with dataset-level calibration preserving motion magnitude across heterogeneous data. To jointly learn audio-visual generation and trajectory control, we construct a complementary data engine and adopt progressive training followed by autoregressive post-training for long-horizon generation. Extensive evaluations show that \\model achieves strong trajectory following and high visual quality on public world-model benchmarks, supporting both first- and third-person interaction across varied subjects, and maintaining synchronized environmental sound and speech over long-horizon generation.",
+      "takeaways": [
+        "Object: a joint audio-video world generator controlled by a calibrated relative 6-DoF camera trajectory, with a four-step causal streaming variant.",
+        "Limit: navigation-only controls, imperfect long-horizon pose tracking, no persistent 3D state or deterministic world rules, and no separately trained action-to-audio controller.",
+        "Artifact: the linked JoyAI-Echo repository releases inference code and a roughly 46 GB long-video checkpoint, but labels EchoWM code as forthcoming and restricts the project to academic, non-commercial use."
+      ],
+      "plain": {
+        "verdictWhy": "It is a strong research preview for steering generated video and sound, but it can drift and is not a controllable game or physical simulator.",
+        "brief": "EchoWM generates video and sound while the viewer moves a virtual camera. Keyboard commands and camera poses are translated into the same movement format, and the model is trained in stages so navigation does not completely overwrite its audio-visual generation ability.\n\nIt leads the paper's WBench overall score and has the best visual-quality scores in the shown SANA-WM tests. Hard camera paths still accumulate substantial rotation error, and human raters expose weak instruction following in several non-game scenes. The system cannot represent general actions such as jumping or manipulation, does not track collision rules or exact state, and can lose geometry, identity, or audio consistency over time.\n\nRead it if you are comparing interactive media generators and can test your own paths. Do not treat its output as deterministic simulation or assume the current public repository contains the reviewed world-model release.",
+        "takeaways": [
+          "The object is a video-and-sound generator that responds to camera movement over several continuation steps.",
+          "The main limit is drift: it has no permanent 3D memory, supports camera navigation rather than general actions, and does not enforce world rules.",
+          "A related research-only repository has large-model inference code and weights, but says the EchoWM code will be released later."
+        ]
+      },
+      "actions": [
+        "Reproduce the 961-frame protocol on representative camera paths and log pose error, revisit consistency, identity drift, audio continuity, latency, and peak GPU memory.",
+        "Before planning integration, confirm the exact EchoWM checkpoint and code release plus license terms; do not substitute the repository's existing long-video model without labeling the difference."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/jd-opensource/JoyAI-Echo",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-08-25",
+        "publishedOn": "2026-08-24",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.23189",
+            "upvotes": 58
+          }
+        ]
+      },
+      "trend": {
+        "votes": 58,
+        "rank": 2,
+        "of": 30,
+        "perDay": 58
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 58,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-24"
+        },
+        "packetBasis": "full-paper",
+        "model": "codex-full-paper-review",
+        "generatedAt": "2026-08-25T13:08:15.000Z"
+      },
+      "review": {
+        "basis": "full-paper",
+        "reviewedAt": "2026-08-25T13:08:15.000Z",
+        "sourceUrl": "https://arxiv.org/pdf/2608.23189",
+        "evidence": [
+          "Sections 3–4, PDF pp. 5–20: complementary data engine, relative metric-scale 6-DoF control, progressive audio-visual and action training, and causal self-rollout post-training.",
+          "Tables 3–6, PDF pp. 21–29: WBench and SANA-WM-Bench results, including the 961-frame protocol and accumulated hard-trajectory pose error.",
+          "Tables 7–8, PDF pp. 29–34: 200-case, seven- or eight-annotator user study and scene-level semantic-following weaknesses.",
+          "Section 7, PDF pp. 38–39: navigation-only action space, no game rules or persistent 3D memory, drift, and unestablished motion generalization."
+        ]
+      }
+    },
+    {
+      "id": "2608.20958",
+      "arxivId": "2608.20958",
+      "url": "https://arxiv.org/abs/2608.20958",
+      "topic": "AI",
+      "verdict": "Try",
+      "verdictWhy": "The released 4B and 9B models make this unusually broad live-commerce stack testable, but the private target-domain suite and missing component ablations leave its causal claims unresolved.",
+      "title": "TLive-Omni: An Omni-Modal Understanding Model for E-Commerce Live Streaming",
+      "authors": "Yibo Hu, Yu Qian, Mao Gu, Yingfan Tao, Yuhao Chen, Yongdong Luo, Zhuoqun Liu, Meiguang Jin, Junfeng Ma",
+      "takeaway": "TLive-Omni combines a Qwen3.5 vision-language backbone, a Qwen3-Omni audio encoder, timestamped Per-vGrid audio-video packing, staged supervision, and task-routed reinforcement fine-tuning for text-output understanding of long e-commerce livestreams.",
+      "brief": "TLive-Omni is a 4B/9B text-output system for image, video, audio, and text inputs. Its main design is Per-vGrid, which places each sampled video grid beside audio from the realized frame interval, followed by three supervised stages over 5M ASR, 26M audio, and 14M multimodal samples and a task-conditioned GRPO stage called Faithful-RFT.\n\nOn the authors' in-house suite, the 9B model reports 6.46 live-commerce ASR CER and 12.27 speaker-attributed cpWER in Table 1, 89.96 product-grounding AP and 4.24 OCR normalized edit distance in Table 2, and 81.49 temporal-grounding mIoU with 8.76 dense-caption hallucination rate in Table 3. On public TimeLens tasks, Table 7 reports 57.0/58.2/69.2 mIoU for the 4B model versus 48.7/51.6/55.0 for its Qwen3.5-4B backbone. The paper does not disclose the private suite's sample counts or split construction and reports no ablation isolating Per-vGrid, Faithful-RFT, or the synchronized sampler, so those components cannot be credited individually.\n\nOpen it if you build audio-video understanding for long, noisy streams and can test the released checkpoint on your own held-out traffic. Ignore it if you need generation, full-duplex interaction, a public live-commerce benchmark, or evidence that any one proposed component causes the reported gains.",
+      "abstract": "E-commerce live streaming requires omni-modal understanding of noisy, temporally extended streams, where product facts are distributed across speech, video frames, product images, overlaid text, and user queries. We present TLive-Omni, an omni-modal understanding model tailored to live-commerce scenarios. It maps image, video, audio, and text inputs into a unified representation space. For long-form live streaming analysis, we introduce Per-vGrid, a timestamped token organization that groups each video grid with its temporally corresponding audio within explicit boundary tokens to facilitate temporal alignment. We design a three-stage supervised training recipe that progressively develops live-commerce understanding, from omni-modal perception to instruction-following responses. We then propose Faithful-RFT, a reinforcement fine-tuning stage that further improves answer faithfulness and expression quality while meeting real-time demands, scoring final responses directly with task-verifiable feedback rather than optimizing for reasoning-style exploration during rollout. Moreover, TLive-Omni is supported by a scenario-oriented atomic capability taxonomy and a compact data production engine that converts live-commerce audio, image, and video streams into training signals for speech recognition, speaker analysis, product visual grounding, text recognition, temporal grounding, video dense caption, and omni-modal QA, etc. For scalable training, a synchronized length-grouped sampler reduces padding while preserving comparable workloads across workers, while a lightweight dynamic sampling strategy regenerates rollout groups with near-zero reward variance to maintain meaningful relative advantages for GRPO. Experiments on e-commerce live streaming benchmarks demonstrate strong performance across live-commerce domain tasks, together with excellent generalization on general benchmarks.",
+      "takeaways": [
+        "Object: two released text-output omni-modal models use a Qwen3.5 backbone, a grafted audio encoder, 256K context, timestamped audio-video grids, and staged SFT plus GRPO for live-commerce understanding.",
+        "Limit: the core commerce suite is in-house with undisclosed size and splits, and there is no component ablation; the paper also excludes generation and full-duplex interaction and defers robustness on longer, noisier streams.",
+        "Artifact: Apache-2.0 inference code is verified at https://github.com/TaoLiveAIGC/TLive-Omni and populated 4B and 9B checkpoints are verified at https://huggingface.co/TaoLiveAIGC/TLive-Omni-4B and https://huggingface.co/TaoLiveAIGC/TLive-Omni-9B; the repository does not expose the paper's training pipeline or private evaluation suite."
+      ],
+      "plain": {
+        "verdictWhy": "You can run the released models, but you cannot yet audit the private shopping-video test or tell which proposed technique produced the gains.",
+        "brief": "TLive-Omni listens to speech, watches video, reads images and text, and answers in text. It divides a stream into timestamped chunks so the audio beside each group of frames covers the same realized time interval, then trains progressively from transcription to broader multimodal tasks and reward-based answer tuning.\n\nThe authors report strong shopping-stream transcription, product localization, text reading, and temporal-localization numbers, and the 4B model improves over its base model on three public temporal-grounding datasets. However, the shopping benchmark is private and its size and train-test construction are not reported, while the paper never removes the new components one at a time to show which one matters.\n\nTry the checkpoint if your own workflow has long videos whose useful facts are split between speech, frames, and on-screen text. Skip the paper as evidence for production reliability, real-time conversation, or a specific architectural win until those claims are tested on public or independently held-out streams.",
+        "takeaways": [
+          "Object: a runnable 4B/9B model joins speech, video, images, and text in one text-answering interface for livestream analysis.",
+          "Limit: the strongest shopping results use a private test with missing split details, and the paper does not show which new component is responsible.",
+          "Artifact: the authors provide Apache-2.0 inference code and downloadable 4B/9B weights, but not the private benchmark or the reported training system."
+        ]
+      },
+      "actions": [
+        "Run the released 4B checkpoint on a held-out sample of your own noisy livestreams and compare it with the corresponding Qwen3.5/Qwen-Omni baseline under identical sampling, prompts, and latency limits.",
+        "Before adopting the recipe, reproduce Per-vGrid and Faithful-RFT as separate ablations on a public temporal-grounding set and measure accuracy, hallucination, latency, and long-context degradation."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/TaoLiveAIGC/TLive-Omni",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-08-25",
+        "publishedOn": "2026-08-21",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.20958",
+            "upvotes": 48
+          }
+        ]
+      },
+      "trend": {
+        "votes": 48,
+        "rank": 3,
+        "of": 30,
+        "perDay": 12
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 48,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-21"
+        },
+        "packetBasis": "full-paper",
+        "model": "codex-full-paper-review",
+        "generatedAt": "2026-08-25T13:08:15.000Z"
+      },
+      "review": {
+        "basis": "full-paper",
+        "reviewedAt": "2026-08-25T13:08:15.000Z",
+        "sourceUrl": "https://arxiv.org/pdf/2608.20958",
+        "evidence": [
+          "Sections 2.1-2.4 and Figure 1, pp. 2-3: Qwen3.5 backbone, grafted AuT audio encoder, 256K context claim, and Per-vGrid's realized-frame timestamp and audio-span construction.",
+          "Sections 3.2-4.2, pp. 5-8, and Appendix D, pp. 18-19: 5M/26M/14M staged supervision, synchronized length grouping, task-routed GRPO, dynamic zero-variance resampling, and reported optimization settings.",
+          "Tables 1-3, pp. 8-10: live-commerce ASR, speaker ASR, product grounding, OCR, temporal grounding, dense-caption, video-QA, and shot-understanding results on the authors' in-house suite.",
+          "Tables 7-8, p. 14, and Section 6, p. 16: public temporal/omni benchmark results, lack of component ablations in the report, and stated limits to understanding rather than generation or full-duplex interaction."
+        ]
+      }
+    },
+    {
+      "id": "2608.16812",
+      "arxivId": "2608.16812",
+      "url": "https://arxiv.org/abs/2608.16812",
+      "topic": "AI",
+      "verdict": "Try",
+      "verdictWhy": "The released taxonomy, synthesis pipeline, 12M archive, benchmark, and controlled 2M/5M experiments make the recipe useful, but its quality filter is validated against Gemini pseudo-labels rather than human ground truth.",
+      "title": "Unlocking the Potential of Image Editing via Concept Scaling and Dense Supervision",
+      "authors": "Long Cui, Xiaoqian Liu, Qi Qin, Yi Xin, Tao Lin, Jianguo Li, Linfeng Zhang",
+      "takeaway": "ConceptEdit organizes image-editing data around 1,028 explicit concepts and spatially non-overlapping composite edits, producing a 12M-pair synthetic dataset and a 1,000-category diagnostic benchmark.",
+      "brief": "ConceptEdit replaces free-form edit-instruction sampling with a three-level library of 1,028 concepts, adaptive category sampling, instance-specific VQA checks, and composite examples that combine spatially disjoint edits. The released system includes the ConceptEdit-12M synthetic archive and ConceptEdit-Bench, which samples 1,000 fine-grained operations from the taxonomy.\n\nIn controlled Z-Image training, Table 1 reports overall ImgEdit scores of 3.48 versus ScaleEdit's 3.17 at 2M samples and 3.75 versus 3.31 at 5M; adding a 1:1 composite mix contributes 0.15 overall at both scales, although several individual categories regress. Table 2 shows that most instruction-following gains arrive when moving from 10 to 500 concepts: at 5M, English GSC rises from 5.91 to 6.84, then only to 6.86 at 1,000, while Chinese GSC moves from 5.83 to 6.80 and then down to 6.75. Tables 3-4 evaluate filtering on 1,000 Gemini-3-Pro pseudo-labels, not human truth, and the reported training experiments stop at 5M rather than testing the full 12M archive.\n\nOpen it if you build or audit image-editing training data and want a runnable taxonomy-driven pipeline, large archive, or fine-grained benchmark. Ignore its 'high-quality' label as a substitute for a human audit, and do not assume that 1,000 concepts, composite training, or the full 12M scale will transfer unchanged to a different base editor or data domain.",
+      "abstract": "Existing image editing frameworks predominantly follow the training paradigm of text-to-image diffusion models. However, extending this paradigm to image editing highlights two inherent discrepancies, specifically, the insufficient attention to edit concept granularity and the training inefficiency caused by sparse supervision signals. To address these issues, we establish a comprehensive hierarchical taxonomy featuring over 1,000 fine-grained edit concepts and build ConceptEdit-12M, a massive dataset of 12 million high-quality editing pairs via an improved synthesis framework. This library-driven approach effectively rectifies the distribution collapse of generated data while ensuring high data fidelity. Furthermore, we propose a dense supervision training strategy that synthesizes multiple non-interfering concepts into single image pairs. By providing richer learning signals, this strategy significantly enhances both training efficiency and overall model performance. Training results validate our strategy, significantly outperforming prior works. Finally, we present ConceptEdit-Bench, a granular evaluation suite designed to diagnose model capabilities across a vast array of real-world scenarios.",
+      "takeaways": [
+        "Object: a 1,028-leaf edit taxonomy drives a VLM instruction-and-checklist pipeline, synthetic editing, instance-specific filtering, and 1:1 single/composite training data with spatially disjoint edits.",
+        "Limit: experiments use one Z-Image setup at 2M/5M samples, most concept-scaling gains occur by 500 concepts, some dense-training categories regress, and filtering quality is measured against Gemini pseudo-labels rather than human judgments.",
+        "Artifact: MIT pipeline and benchmark code is verified at https://github.com/inclusionAI/ConceptEdit; the Apache-2.0 12M dataset and benchmark are materially populated at https://huggingface.co/datasets/inclusionAI/ConceptEdit-12M and https://huggingface.co/datasets/inclusionAI/ConceptEdit-Bench."
+      ],
+      "plain": {
+        "verdictWhy": "The dataset and tools are real and usable, but an AI model rather than people supplies the main quality ground truth.",
+        "brief": "ConceptEdit starts with a catalog of 1,028 specific changes, such as gestures, expressions, text edits, relighting, and object operations. A vision-language model selects changes that fit each source image, writes instructions and checks, an image model makes the edit, and another model filters or rewrites failures; some training examples bundle non-overlapping changes into one pair.\n\nModels trained on 2M and 5M examples score better overall than the compared datasets, and adding composite edits raises the overall ImgEdit score by 0.15 at both scales. The biggest instruction-following jump comes between 10 and 500 concepts rather than between 500 and 1,000, some category scores fall, and the filter's reported 86% F1 is measured against 1,000 labels from Gemini rather than human reviewers. The paper does not train on all 12M released pairs.\n\nUse it when you need a broad editing taxonomy, a reproducible synthesis pipeline, or a dataset to audit and retrain. Do not treat every released pair as verified truth or expect the reported gains without repeating quality checks and controlled training on your own editor and target images.",
+        "takeaways": [
+          "Object: a large synthetic image-editing resource is organized by specific edit types instead of relying on whatever instructions a model happens to invent.",
+          "Limit: the study tests up to 5M examples with one base setup, and its main quality check uses another AI model as the reference rather than people.",
+          "Artifact: the pipeline, taxonomy, benchmark code, 12M dataset archive, and benchmark download are publicly accessible under declared open licenses."
+        ]
+      },
+      "actions": [
+        "Draw a taxonomy-stratified random sample from the released archive and have independent human reviewers score instruction compliance, source preservation, artifacts, duplicates, and concept-label correctness before training on it.",
+        "Run a compute-matched ablation on your base editor comparing 10, 500, and 1,028 concepts and single versus 1:1 composite data, then evaluate on an external benchmark and human preference set rather than ConceptEdit-Bench alone."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/inclusionAI/ConceptEdit",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-08-25",
+        "publishedOn": "2026-08-17",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.16812",
+            "upvotes": 43
+          }
+        ]
+      },
+      "trend": {
+        "votes": 43,
+        "rank": 4,
+        "of": 30,
+        "perDay": 5
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 43,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-17"
+        },
+        "packetBasis": "full-paper",
+        "model": "codex-full-paper-review",
+        "generatedAt": "2026-08-25T13:08:15.000Z"
+      },
+      "review": {
+        "basis": "full-paper",
+        "reviewedAt": "2026-08-25T13:08:15.000Z",
+        "sourceUrl": "https://arxiv.org/pdf/2608.16812",
+        "evidence": [
+          "Sections 3.1-3.3 and Figures 2-5, pp. 3-5: 74.6% top-five style concentration under stochastic sampling, 1,028-concept library construction, adaptive sampling, instance-specific checks, and spatially disjoint composite edits.",
+          "Tables 1-2 and Sections 4.1-4.3, pp. 6-7: controlled 2M/5M Z-Image experiments, concept-count ablations, 1:1 composite mixing, overall gains, and category-level regressions.",
+          "Table 3, p. 7, and Tables 4-5, p. 11: filter scores against Gemini-3-Pro pseudo-labels, the 1,000-case confusion matrix, and 0.069-second reported per-sample overhead.",
+          "Section 3.4, p. 5, Table 7, p. 12, and Appendix H, p. 13: 1,000-category benchmark design, reported benchmark model scores, and the paper's dataset/code availability statement."
+        ]
+      }
+    },
+    {
+      "id": "2608.21428",
+      "arxivId": "2608.21428",
+      "url": "https://arxiv.org/abs/2608.21428",
+      "topic": "Physics",
+      "verdict": "Skip",
+      "verdictWhy": "The toy Q# study shows target amplification, but the paper does not establish its claimed general speedup or cover full quantum-token state.",
+      "title": "On the Reachability Problem in Quantum Petri Nets",
+      "authors": "Syed Asad Shah, A. Yavuz Oruc",
+      "takeaway": "The paper prepares bounded Petri-net transition histories in superposition and applies Grover amplification to find branches whose marking matches a target.",
+      "brief": "The object is reachability in a conservative, bounded quantum Petri net. Algorithm 1 encodes token counts per place, places transition choices and firing bits in ancillary registers for p steps, and marks target-count configurations with a Grover oracle.\n\nIn the five-place, three-token, three-transition example with p=3, six reachable targets appeared 98–100 times in 100 Q# shots and six unreachable targets were not dominant. That is a small constructed case, not hardware evidence. More importantly, the claimed O(sqrt(N) p k m log n) advantage compares against O(Nkm) while leaving p in the quantum cost, treats N as a marking bound despite retaining transition/firing histories, and the marking register tracks token counts rather than the v_t quantum-state assignment in the paper's QPN definition.\n\nOpen it if you study reversible encodings of Petri-net reachability or want the included Q# sketch. Ignore it if you need a demonstrated complexity improvement, hardware feasibility, or reachability over general quantum-token identities and states.",
+      "abstract": "In this paper, we propose a novel quantum solution to address the problem of reachability in bounded quantum Petri nets (QPNs), an advanced modeling framework that combines the classical Petri net model with quantum mechanical principles. The proposed approach exploits quantum parallelism to construct a superposition over all reachable markings from the initial marking. Grover's amplitude amplification algorithm is then applied to efficiently identify a desired target marking, while ancillary q-tokens used solely for transition control are excluded from the search space, significantly reducing its size. Theoretical analysis shows that our approach achieves a quadratic speed up over classical exhaustive algorithms. Experimental results also confirm the correctness and feasibility of the proposed quantum algorithm for solving the bounded reachability problem in Quantum Petri Nets.",
+      "takeaways": [
+        "Object: A two-phase bounded-reachability construction using reversible transition-history preparation and Grover amplification of a target marking.",
+        "Limit: Evidence is one p=3 toy Q# case; the speedup comparison leaves p and ancillary histories unresolved, and the implementation represents place counts rather than full q-token states.",
+        "Artifact: Appendix A embeds three Q# listings for state preparation, amplification, and 100-shot measurement; the paper gives no external code repository or data artifact."
+      ],
+      "plain": {
+        "verdictWhy": "The worked example behaves as intended, but it is too small and incomplete to support the advertised speedup.",
+        "brief": "The method tries every allowed transition choice in quantum superposition for a fixed number of steps, then uses Grover search to boost histories that end at the requested token-count marking.\n\nThe authors test one three-token, five-place network for three steps. Its reachable targets win 98–100 of 100 shots, while unreachable targets do not. The paper does not run on hardware, its cost still depends on the number of prepared steps and stored histories, and its registers omit the individual quantum states attached to tokens.\n\nRead it for a concrete Q# encoding idea. Do not use it as evidence that general quantum Petri-net reachability is nearly quadratically faster than classical search.",
+        "takeaways": [
+          "Object: Search for a requested bounded Petri-net marking with transition superposition and Grover amplification.",
+          "Limit: One tiny simulated network does not settle the algorithm's general cost or full quantum-state coverage.",
+          "Artifact: Three runnable-looking Q# listings are printed in the appendix, but no external repository is linked."
+        ]
+      },
+      "actions": [
+        "Re-derive the runtime using the number of distinct transition histories, the required p bound, and the cost of A and A-dagger before citing a speedup.",
+        "Test a larger net whose transitions depend on token identity or v_t, and report logical qubits, circuit depth, simulator or hardware backend, and failure probability."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-08-25",
+        "publishedOn": "2026-08-25",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.21428"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-25"
+        },
+        "packetBasis": "full-paper",
+        "model": "codex-full-paper-review",
+        "generatedAt": "2026-08-25T13:08:15.000Z"
+      },
+      "review": {
+        "basis": "full-paper",
+        "reviewedAt": "2026-08-25T13:08:15.000Z",
+        "sourceUrl": "https://arxiv.org/pdf/2608.21428",
+        "evidence": [
+          "Section III, Algorithm 1 and footnotes, PDF pp. 2–4: defines p transition registers, firing registers, the reversible U_T, marking-only oracle, and repeated A-dagger/S0/A amplification.",
+          "Section IV, PDF p. 6 and Figures 3–4, pp. 7–8: one n=3, m=5, k=3, p=3 Q# example; reachable targets score 98, 98, 99, 100, 100, and 99 of 100 shots.",
+          "Section V and Conclusion, PDF pp. 6–8: reports O(sqrt(N) p k m log n) quantum time versus O(Nkm) classical time, with N bounded by the number of markings.",
+          "Appendix A, PDF pp. 9–11: prints the three Q# listings; the marking register is ten qubits holding two-bit counts for five places."
+        ]
+      }
+    },
+    {
+      "id": "2608.21469",
+      "arxivId": "2608.21469",
+      "url": "https://arxiv.org/abs/2608.21469",
+      "topic": "Security",
+      "verdict": "Try",
+      "verdictWhy": "Worth piloting for forensic SQLite triage, provided you keep analyst verification and validate it on your own corpus and model.",
+      "title": "Scalable PII Discovery in Mobile App Databases via Hypothesis-Driven Search",
+      "authors": "Jeel Piyushkumar Khatiwala, Samad Afolabi, Ruoyao Xiao, Yu Luo, Dianxiang Xu, Weifeng Xu",
+      "takeaway": "A model-guided search can localize PII-bearing table-column regions with two small probes per database/type, then restrict exhaustive extraction to validated columns.",
+      "brief": "The object is PII localization before extraction in heterogeneous mobile-app SQLite databases. The planner ranks table-column regions from schema, target specifications, and accumulated evidence; each probe samples at most 15 rows, with at most two probes per database and PII type, before deterministic read-only extraction from validated regions.\n\nOn 25 preselected databases from 10 apps on two synthetic CTF devices, Gemini 2.5 Pro reached 94.70% precision, 94.24% recall, and 94.47% F1 against 3,751 distinct ground-truth entities while pruning 79.9% of columns from full extraction. The result is one run on one controlled corpus: postal-address precision was 50.0%, domain precision 68.7%, performance collapsed for many of the 12 backends, confidence scores were model-produced and uncalibrated, and pruning is not a runtime, API-cost, or analyst-effort measure.\n\nOpen it if you triage undocumented mobile databases and can evaluate against audited local truth. Ignore it if you need a schema-independent production guarantee, broad device representativeness, stable small-model performance, or validated resistance to prompt injection.",
+      "abstract": "Discovering personally identifiable information (PII) in mobile forensic databases is difficult because the relevant table-column regions are unknown, distributed across heterogeneous SQLite schemas, and may contain values embedded in free-text or semi-structured fields. We present a hypothesis-driven framework that treats PII localization as bounded, adaptive search under uncertainty. An agent ranks candidate table-column regions, probes sampled values, and maintains a memory of prior evidence, confidence scores, and decisions to refine subsequent hypotheses. The framework separates lightweight PII exploration from targeted extraction, normalization, and deduplication over validated regions, thereby limiting exhaustive inspection to regions supported by sampled evidence. We evaluate the framework on 25 SQLite databases from 10 Android and iOS applications in the Cellebrite CTF corpus, targeting email addresses, phone numbers, domain names, person names, and postal addresses. Against a corpus-level distinct ground-truth set of 3,751 entities, Gemini 2.5 Pro achieves 94.5% F1 while reducing the effective extraction search space by 79.9% on average. Results across 12 model backends show strong performance among several frontier models, but substantial sensitivity to model capability.",
+      "takeaways": [
+        "Object: Bounded agent-guided localization of PII-bearing SQLite columns, followed by targeted normalization and deduplication.",
+        "Limit: Twenty-five hand-selected databases from one synthetic Cellebrite CTF corpus, one run per backend, uncalibrated confidence, and strong model/type sensitivity limit generalization.",
+        "Artifact: The paper declares code, ground truth, prompts, configs, logs, and evaluation scripts at https://anonymous.4open.science/r/IDFC-2026-Agentic_PII_Extraction-86C4/, but that URL currently redirects to an endpoint returning HTTP 401; the NIST source corpus URL is live."
+      ],
+      "plain": {
+        "verdictWhy": "The search strategy looks useful for a controlled pilot, not unattended forensic conclusions.",
+        "brief": "Instead of scanning every value in every SQLite column, the system asks a model which columns look promising, checks up to 15 sample rows, and allows no more than two checks for each database and PII type before extracting from confirmed columns.\n\nWith Gemini 2.5 Pro, the study found about 94% precision and recall while avoiding full scans of about 80% of columns. Those numbers come from 25 chosen databases on two synthetic devices. Other models often performed far worse, addresses and domains produced more false positives, and the study did not measure time, API cost, or analyst workload.\n\nUse it as a read-only triage layer and verify every recovered identifier. Do not assume the same recall on a new app, device, country format, encoded field, deleted record, or weaker model.",
+        "takeaways": [
+          "Object: Let a model choose a few SQLite columns to sample before running full PII extraction.",
+          "Limit: Results are narrow, model-dependent, and do not establish stability or operational cost.",
+          "Artifact: A full artifact bundle is claimed, but its paper-listed anonymous link returned HTTP 401 during review; the NIST CTF dataset link works."
+        ]
+      },
+      "actions": [
+        "Replay the fixed two-probe workflow on an internal, fully audited corpus and report per-type recall, precision, repeated-run variance, latency, token/API cost, and analyst review time.",
+        "Keep all database tools read-only, test adversarial stored text, and require analyst confirmation for every investigative or legal use, especially domains and postal addresses."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR"
+      ],
+      "listing": {
+        "listedOn": "2026-08-25",
+        "publishedOn": "2026-08-25",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.21469"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-25"
+        },
+        "packetBasis": "full-paper",
+        "model": "codex-full-paper-review",
+        "generatedAt": "2026-08-25T13:08:15.000Z"
+      },
+      "review": {
+        "basis": "full-paper",
+        "reviewedAt": "2026-08-25T13:08:15.000Z",
+        "sourceUrl": "https://arxiv.org/pdf/2608.21469",
+        "evidence": [
+          "Section 3 and Figure 1, PDF pp. 3–4: fixes B=2 probes per database/type, at most 15 sampled rows, confidence threshold 0.6, model-produced uncalibrated confidence, and deterministic read-only query mediation.",
+          "Section 4.1, PDF pp. 4–5: 25 databases from 10 apps on two simulated devices; manual 3,751-entity ground truth, pre-run annotation, adjudication, and a 10% stratified spot-check.",
+          "Tables 1–2, PDF pp. 6–7: 64.84%–99.50% application-level column pruning; corpus precision is 68.7% for domains and 50.0% for 12 postal-address ground-truth items.",
+          "Table 3 and Section 5, PDF pp. 7–8: Gemini 94.47% F1/79.9% pruning, GPT-4.1 92.13%, then sharp degradation to 0.90%; one run per backend and no runtime, cost, latency, or analyst-effort evaluation."
+        ]
+      }
+    },
+    {
+      "id": "2608.21557",
+      "arxivId": "2608.21557",
+      "url": "https://arxiv.org/abs/2608.21557",
+      "topic": "Stats",
+      "verdict": "Watch",
+      "verdictWhy": "The consequence-based definition is useful, but this three-page note gives only a simulation and leaves key production choices unspecified.",
+      "title": "Outlier Impact: Detection by Consequences",
+      "authors": "Daniel Ting, Ilya Gorbachev, Sammy Shen",
+      "takeaway": "For a one-sided difference-in-means z-test, candidate upper-tail outliers can be scored by their estimated increase in false-positive rate rather than by rarity alone.",
+      "brief": "The object is outlier handling for randomized experiments. The method hashes observations into many approximately normal bins, sorts them, replaces the top-k candidates with fitted normal order statistics, estimates their added mean effect, and converts that effect into an increase over the nominal one-sided z-test false-positive rate.\n\nThe paper gives a worked scale example—one 10-sigma point among one million changes the z statistic by 0.01 and an alpha=0.05 false-positive rate to about 5.1%—plus a Figure 1 simulation with n=1,000 where 6-sigma contamination moves the score slightly and 20-sigma contamination moves it sharply. It reports no real experiment, baseline comparison, calibration study, sensitivity analysis, or code; bin count g, top-k choice, robust variance details, and operational threshold are not fully specified, and the derivation assumes small treatment effects plus a usable CLT after removal.\n\nOpen it if you design experimentation diagnostics and want an estimand-aligned alternative to rarity thresholds. Ignore it if you need a deployable detector, two-sided or lower-tail coverage, evidence under heavy tails, or measured effects on bias, power, and Type I error in real experiments.",
+      "abstract": "We introduce a novel outlier detection method that utilizes a concrete measure of the statistical impact of an outlier rather than a vague notion of \"unusualness\". This allows practitioners to only flag points that materially affect the inferences made from the data while also ensuring these points are anomalous. This is of particular interest in experimentation, where outliers affect the validity of the causal inferences. In particular, we consider a potential outlier's impact on the mean and the False Positive Rate (FPR) of a hypothesis test.",
+      "takeaways": [
+        "Object: Score upper-tail candidate groups by how much they raise a one-sided z-test's estimated false-positive rate.",
+        "Limit: A three-page methodology note with one simulation, no real-data validation, and underspecified tuning under small-effect and post-removal CLT assumptions.",
+        "Artifact: No code, data, or external implementation is listed; Figure 1 and Equations 1–3 are the only worked artifacts."
+      ],
+      "plain": {
+        "verdictWhy": "It asks the right question—does this point change the decision?—but does not yet show a complete, tested detector.",
+        "brief": "The method calls a large value an outlier only when including it would meaningfully increase a one-sided experiment test's false-positive rate. It first groups observations, examines the largest groups, and compares them with imputed values from a fitted normal distribution.\n\nA ten-standard-deviation point among one million observations barely changes the test in the paper's example, while much larger contamination changes a small simulation sharply. There is no real A/B dataset, comparison with existing methods, released code, or full recipe for choosing the groups, k, or threshold.\n\nThe idea is relevant to experimentation teams deciding when an extreme value actually threatens inference. It is not ready to replace an existing outlier policy without an independent implementation and calibration study.",
+        "takeaways": [
+          "Object: Judge extreme values by their effect on the test, not just how rare they look.",
+          "Limit: Only one-sided upper-tail simulation evidence is provided, with important settings left open.",
+          "Artifact: There is one figure and three equations, but no code or dataset."
+        ]
+      },
+      "actions": [
+        "Implement Equations 1–3 and calibrate g, k, and the allowed FPR increase on held-out randomized A/A experiments, including lower-tail, two-sided, and heavy-tailed outcomes.",
+        "Compare against the current policy on real experiments, reporting empirical Type I error, power, estimate bias, exclusion rate, and sensitivity to treatment-effect size."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME",
+        "stat.AP"
+      ],
+      "listing": {
+        "listedOn": "2026-08-25",
+        "publishedOn": "2026-08-25",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.21557"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-25"
+        },
+        "packetBasis": "full-paper",
+        "model": "codex-full-paper-review",
+        "generatedAt": "2026-08-25T13:08:15.000Z"
+      },
+      "review": {
+        "basis": "full-paper",
+        "reviewedAt": "2026-08-25T13:08:15.000Z",
+        "sourceUrl": "https://arxiv.org/pdf/2608.21557",
+        "evidence": [
+          "Section 2, PDF pp. 1–2: five-step procedure—random bins, top-k sorting, pooled A/A ground truth, robust test after exclusion, and FPR estimation—with small-effect and post-removal CLT assumptions.",
+          "Equations 1–3, PDF p. 2: defines the imputed false effect, robust z statistic, and FPR-increase score for a one-sided test.",
+          "Section 3 and Figure 1, PDF p. 3: n=1,000 simulation with 6- and 20-standard-deviation outliers, plus the one-million-point example mapping a 0.01 z change to roughly 5.1% FPR."
+        ]
+      }
+    },
+    {
+      "id": "2608.21563",
+      "arxivId": "2608.21563",
+      "url": "https://arxiv.org/abs/2608.21563",
+      "topic": "Health",
+      "verdict": "Watch",
+      "verdictWhy": "The SHAP audit surfaces plausible bedtime decision points, but it explains one model’s predicted risk in 20 adults and does not validate the thresholds, recommendations, or causal effects.",
+      "title": "Explainable AI-based Decision Support for Nocturnal Hypoglycemia Prevention in Type 1 Diabetes",
+      "authors": "Valentina Roquemen-Echeverri, Peter G. Jacobs, Leah M. Wilson, Joseph Pinsonault, Deborah Branigan, Jae Eom, Daisy Chen, Hantao Ling, Diana Aby-Daniel, Kyle Chen, Clara Mosquera-Lopez",
+      "takeaway": "Across 502 nights from 20 adults with type 1 diabetes on multiple daily injections, NHPredict relied most on bedtime glucose and recent glucose and activity patterns, and the authors converted SHAP sign changes into candidate prevention prompts.",
+      "brief": "This is a secondary explainability analysis of the intervention arm of a four-week, single-center crossover study. The object is not a new predictor: it applies SHAP to the group’s existing NHPredict evidential neural network, using pre-bedtime CGM features, self-reported physical activity, age, and sex to explain the model’s predicted probability of overnight glucose below 70 mg/dL.\n\nIn 502 nights, bedtime glucose was the strongest model input; the authors identify zero-crossing values such as 133 mg/dL at bedtime and 112 mg/dL for the prior week’s average overnight minimum, and 246 nights included reported activity. But four of the ten glucose features were removed after qualitative judgments about actionability, the current paper does not re-evaluate predictive accuracy or intervention outcomes, and the thresholds explain predicted risk rather than causal effects on nocturnal hypoglycemia. Insulin and meal actions were not recorded, 13 of 18 three-hour activity reports came from one participant, and Table 2 explicitly says its prompts ignore feature interactions and broader clinical context.\n\nOpen it if you design explainable diabetes alerts and need a concrete audit of what a risk model has learned before prospective testing. Ignore it as a source of patient-facing glucose targets, snack instructions, or insulin changes: the paper calls these illustrative prompts, not standalone clinical recommendations.",
+      "abstract": "Purpose: Nocturnal hypoglycemia (NH) remains a challenge for individuals with type 1 diabetes (T1D), particularly those who are physically active or on multiple daily injections (MDI). We leveraged an explainable evidential neural network model that forecasts minimum overnight glucose to identify NH risk factors and generate recommendations for NH prevention. Methods: We analyzed the impact of glucose and physical activity (PA) factors on predicted NH probability using SHapley Additive exPlanations (SHAP). Data were from 20 adults with T1D on MDI (10 females; mean age 39 years; HbA1c 7\\%) who participated in a cross-over study (NCT05967260). Results: A total of 502 nights were analyzed. Bedtime glucose was the strongest predictor of NH. Other relevant factors included recent exposure to high or low glucose, glucose variability before bedtime, and timing of PA. Some associations appeared physiologically counterintuitive, possibly reflecting behavioral adjustments. Based on the identified risk factors and their SHAP values, we determined key decision points and developed recommendations that may help prevent NH, such as consuming a bedtime snack or discussing potential adjustments to insulin therapy with a healthcare provider. Conclusion: Identifying predictors of NH offers insights for managing NH risk in clinical decision support.",
+      "takeaways": [
+        "Object: SHAP explanations and sign-change thresholds for an existing neural model’s predicted nocturnal-hypoglycemia risk in a small MDI cohort.",
+        "Limit: single-center secondary analysis of 20 adults; thresholds are associational explanations of model output, not validated treatment rules or causal effects, and key insulin and meal context is missing.",
+        "Artifact: ClinicalTrials.gov record NCT05967260 is live, but the paper provides no code, data, trained weights, or decision-support implementation; the Methods text also truncates the identifier to NCT0596726 while the abstract gives the valid ID."
+      ],
+      "plain": {
+        "verdictWhy": "Useful for seeing what one overnight-low-glucose model pays attention to, but too small and indirect to turn its cutoffs into medical advice.",
+        "brief": "The authors inspect an existing overnight-glucose model rather than build a new one. They use SHAP to show which bedtime glucose and activity inputs push the model toward or away from predicting a nighttime low in 20 adults using injected insulin.\n\nBedtime glucose mattered most, and the paper turns places where SHAP changes sign into possible decision points. Those cutoffs were not tested as treatments, however: this analysis explains the model’s own predictions, not whether following a prompt prevents real lows. It comes from one center, lacks insulin and meal records, and several odd patterns are explained with hypotheses the study could not check.\n\nOpen it if you build diabetes decision support and need a checklist for auditing a model before a trial. Do not use it to choose a snack, glucose target, or insulin dose without prospective validation and clinical oversight.",
+        "takeaways": [
+          "Object: an explanation of which bedtime signals drive one model’s overnight-low predictions.",
+          "Limit: 20 people and 502 nights can reveal model behavior, not prove that the proposed cutoffs prevent lows.",
+          "Artifact: the clinical-trial registration is public; the model, analysis code, and data are not linked."
+        ]
+      },
+      "actions": [
+        "Before reusing any threshold, read Materials and Methods plus Figure 2 and Table 2 and label it as a SHAP zero crossing for predicted risk, not a validated clinical cutoff.",
+        "If evaluating a similar alert, prospectively test calibration and outcomes in a larger external cohort while recording insulin, meals, prior corrective actions, and feature interactions."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM"
+      ],
+      "listing": {
+        "listedOn": "2026-08-25",
+        "publishedOn": "2026-08-25",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.21563"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-25"
+        },
+        "packetBasis": "full-paper",
+        "model": "codex-full-paper-review",
+        "generatedAt": "2026-08-25T13:08:15.000Z"
+      },
+      "review": {
+        "basis": "full-paper",
+        "reviewedAt": "2026-08-25T13:08:15.000Z",
+        "sourceUrl": "https://arxiv.org/pdf/2608.21563",
+        "evidence": [
+          "Section 2, pp. 2–3: secondary analysis design, 20-person intervention-arm cohort, four-week CGM and self-reported activity inputs, prior rather than current NHPredict performance, and SHAP threshold definition.",
+          "Section 3 and Figure 2, pp. 3–5: 502 nights, bedtime glucose as strongest feature, qualitative exclusion of four top-ten features, 133 and 112 mg/dL zero crossings, and unmeasured-action hypotheses for counterintuitive associations.",
+          "Section 3 and Figure 4, p. 6: 246 activity nights and the duration result dominated by 13 three-hour reports from one participant.",
+          "Table 2 and Section 4, p. 7: illustrative prompts and the explicit warning that they are not standalone recommendations and omit interactions and clinical context."
+        ]
+      }
+    },
+    {
+      "id": "2608.21619",
+      "arxivId": "2608.21619",
+      "url": "https://arxiv.org/abs/2608.21619",
+      "topic": "Econ",
+      "verdict": "Try",
+      "verdictWhy": "The paper proves a computable sharp pathwise rejection bound and backs it with high acceptance across scalar-state designs; the cost is O(T²) setup at the square-root node rule, restricted model assumptions, and no released code.",
+      "title": "Exact Rejection Sampling for Non-Gaussian State Space Models",
+      "authors": "Joshua C. C. Chan",
+      "takeaway": "Tangent-twisted Gaussian transitions yield independent exact smoothing draws and bounded unbiased likelihood weights for scalar affine-Gaussian state models with concave observation log densities, while G proportional to the square root of T controls acceptance.",
+      "brief": "The object is an exact rejection sampler for an entire non-Gaussian latent-state path at a fixed parameter vector. Transition twisting separates the pathwise target-to-proposal ratio into scalar residuals, and tangent-line upper envelopes make every residual nonpositive and zero at the nodes; the first twisted normalizer is therefore an attained, smallest dominating constant, while each transition remains a finite mixture of truncated normals.\n\nTheorem 1 proves exact independent draws and bounded importance weights; Theorem 2 gives an O(T/G²) envelope-error bound for a theoretical companding grid, and exactness holds for any finite nonempty grid. In simulations, the practical grid holds acceptance near 0.87 when G scales with the square root of T, Table 1 reports 0.811–0.931 acceptance across eight T=500 models, and the likelihood estimator is 1,900–3,500 times more efficient than a bootstrap particle filter while roughly matching efficient importance sampling. Limits matter: the latent state must be scalar, dynamics affine Gaussian, observation log density finite/differentiable/concave, exactness is in exact arithmetic, the practical grid’s scaling is empirical, and G proportional to square root T implies O(T²) setup and O(T^(3/2)) per proposal.\n\nOpen it if you implement simulation smoothing, unbiased likelihoods, pseudo-marginal methods, or need an exact benchmark for approximate smoothers. Ignore it for vector states, non-log-concave observation models, or one-off parameter evaluations where rebuilding the backward pass dominates and a well-tested EIS approximation is already adequate.",
+      "abstract": "Rejection sampling requires a proposal that dominates the target by a known constant, generally unavailable for non-Gaussian state space models. We construct such a proposal for the latent state path, yielding independent exact smoothing draws and an unbiased likelihood estimator whose relative variance is at most $1/p-1$ per draw at acceptance probability $p$. The method covers scalar states with affine Gaussian dynamics and log-concave observation densities, including multivariate observations. Transition twisting makes the log target-to-proposal ratio separable, and tangent-line twists make each term nonpositive, producing an attained, sharp dominating constant. With a companding node placement, the accumulated envelope error is $O(T/G^2)$ for a sample of length $T$ with $G$ nodes per date, so $G\\propto\\sqrt{T}$ keeps acceptance bounded away from zero; for stochastic volatility, the required conditions hold almost surely. A simpler mode-centered grid shows the same scaling empirically. At $T=2{,}000$, acceptance is $75\\%$, versus roughly $10^{-16}$ for the Gaussian envelope.",
+      "takeaways": [
+        "Object: a tangent-twisted rejection proposal whose global path-space bound is computable, attained, and sharp for that proposal, giving independent exact smoothing draws and bounded likelihood weights.",
+        "Limit: scalar state, affine Gaussian dynamics, and concave observation log density only; the square-root node rule trades stable acceptance for O(T²) setup and O(T^(3/2)) proposal cost, with floating-point safeguards still required.",
+        "Artifact: Appendix C identifies public Binance daily aggregate-trade archives and exact pairs and dates for the duration application, but no MATLAB code, processed data, or implementation repository is linked."
+      ],
+      "plain": {
+        "verdictWhy": "A real exact-sampling construction with proofs and strong simulations, but only for a specific one-dimensional state-model class and without code.",
+        "brief": "The paper builds a proposal that is guaranteed to sit above the full latent-path target by a known amount. It does this with backward transition adjustments and tangent lines, so accepted paths are independent draws from the intended model rather than approximations or MCMC samples.\n\nThe guarantee is proved, and the experiments are unusually strong: acceptance stays high for long paths and eight observation models, and likelihood estimation beats a bootstrap particle filter by orders of magnitude while remaining comparable to efficient importance sampling. That does not make it universal: the hidden state is one-dimensional, the transition is Gaussian and linear in the previous state, the observation shape must be concave, and stable acceptance requires increasingly expensive setup as the series grows.\n\nOpen it if exact state draws or provably bounded likelihood weights change what you can claim. Skip it if your model has vector states or incompatible observation tails, or if you need a drop-in package rather than a detailed algorithm and proofs.",
+        "takeaways": [
+          "Object: exact independent draws of a whole one-dimensional hidden-state path using a known global rejection bound.",
+          "Limit: the guarantee covers a restricted model class and becomes computationally heavy on long series even though acceptance remains usable.",
+          "Artifact: the application’s raw Binance source is named, but there is no code or prepared dataset."
+        ]
+      },
+      "actions": [
+        "Map your state and observation equations to Assumption 1, then reproduce Theorem 1’s residual diagnostic and the log-domain precautions in Section 3.4 before trusting an implementation.",
+        "Benchmark setup plus draw cost against EIS on one fixed-parameter problem, and reproduce Figure 1 or Table 1 scaling before using the method inside a parameter loop."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.EM"
+      ],
+      "listing": {
+        "listedOn": "2026-08-25",
+        "publishedOn": "2026-08-25",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.21619"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-25"
+        },
+        "packetBasis": "full-paper",
+        "model": "codex-full-paper-review",
+        "generatedAt": "2026-08-25T13:08:15.000Z"
+      },
+      "review": {
+        "basis": "full-paper",
+        "reviewedAt": "2026-08-25T13:08:15.000Z",
+        "sourceUrl": "https://arxiv.org/pdf/2608.21619",
+        "evidence": [
+          "Section 2.4, Theorem 1 and Corollary 1, pp. 10–11: attained smallest dominating constant, exact conditional draw, bounded weights, and relative-variance bound.",
+          "Sections 3.3–3.4, pp. 14–18: theoretical versus practical grids, O(T/G²) result, O(TG²) backward and O(TG) proposal costs, full algorithm, and floating-point diagnostics.",
+          "Section 6, Figure 1 and Tables 1–2, pp. 23–28: acceptance scaling, eight-model results, wall-clock likelihood comparison, and exact-smoother benchmarking against EIS, Gaussian, and genealogy smoothers.",
+          "Section 7 and Appendix C, pp. 29–31 and 51–53: two Binance duration applications, 0.78–0.88 acceptance, gamma model preference, data construction, parameter-loop details, and the remaining outer importance-tail condition."
+        ]
+      }
+    },
+    {
+      "id": "2608.21669",
+      "arxivId": "2608.21669",
+      "url": "https://arxiv.org/abs/2608.21669",
+      "topic": "Engineering",
+      "verdict": "Watch",
+      "verdictWhy": "A useful map of RIS-assisted cognitive-radio design with six worked simulations, but not a reproducible systematic review and not evidence that the large simulated gains survive hardware, control, channel-estimation, or deployment constraints.",
+      "title": "Reconfigurable Intelligent Surfaces for Cognitive Radio Networks: Design, Optimization, and Emerging Trends",
+      "authors": "Diluka Galappaththige, Chintha Tellambura, Ranga Kulathunga, Gayan Amarasuriya Aruma Baduge",
+      "takeaway": "The survey organizes RIS-assisted cognitive radio into system design plus six research strands, and uses literature tables and worked simulations to connect sensing, optimization, security, active and STAR surfaces, and machine learning to unresolved deployment problems.",
+      "brief": "The object is a 30-page tutorial and taxonomy for reconfigurable-intelligent-surface-assisted cognitive radio networks. It covers CRN and RIS fundamentals, channel estimation, spectrum access, deployment and control protocols, joint optimization, and six literature groups: performance analysis, resource allocation, security, active RIS, STAR-RIS, and machine-learning-enabled designs, followed by open directions from IoT and O-RAN to standardization and security.\n\nTables III–VIII make the design space easy to scan, and six worked case studies give concrete simulated behavior: for example, Case Study 1 uses independent Rayleigh links and a 3GPP UMi path-loss model and reports large rate gains from RIS size and optimized phases, while the CNN case raises detection probability from 0.63 to 0.68 at 18 dBm versus classical optimization. Those are illustrative model results, not field evidence. The paper labels itself systematic but documents no database search, cutoff, inclusion criteria, or quality assessment; it releases no case-study code, and its own open-issues section lists CSI and control overhead, finite-resolution hardware, non-convex scaling, mobility, security, standardization, and lack of practical deployment as unresolved.\n\nOpen it if you are entering RIS-assisted spectrum sharing and need terminology, design choices, comparison tables, and references to the underlying studies. Ignore its percentage gains when selecting hardware or promising a 6G deployment; read the cited primary paper and test measured channels, control latency, PU protection, and surface impairments first.",
+      "abstract": "Reconfigurable intelligent surfaces (RISs) enable programmable wireless propagation environments, offering new opportunities for cognitive radio networks (CRNs) to improve spectrum utilization, enhance spectral and energy efficiency, and operate reliably under low signal-to-noise ratio conditions. By combining the complementary strengths of RISs and CRNs, RIS-assisted CRNs (RCNs) have emerged as a promising architecture for future 6G wireless systems. Despite their growing importance, a comprehensive survey of this rapidly evolving field has been lacking. This paper fills this gap by providing a systematic and comprehensive review of RCNs. The paper first introduces the fundamentals of CRNs and RISs, including dynamic spectrum access models, spectrum sensing techniques, RIS operating principles, and RIS architectures. It then examines the design of RCNs, covering their system architectures, deployment strategies, channel estimation, spectrum access mechanisms, communication protocols, and the joint optimization of RIS and CRN parameters. Next, the existing literature is organized into six major research directions: performance analysis, resource allocation and optimization, secure RCNs, active RISs, simultaneously transmitting and reflecting RISs, and machine learning-enabled RCNs. Finally, the paper discusses key research challenges and future directions, including scalability, practical deployment, integration with emerging 6G technologies, coexistence with evolving network architectures, standardization, and security and privacy. This survey provides a unified reference for researchers and practitioners and establishes a roadmap for the future development of RCNs.",
+      "takeaways": [
+        "Object: a broad tutorial taxonomy of RIS-assisted cognitive-radio architectures, metrics, optimization methods, security variants, active and STAR surfaces, ML, and future integrations.",
+        "Limit: the evidence is literature synthesis plus idealized worked simulations; there is no systematic-review protocol, field validation, or demonstration that gains survive channel-estimation, control, hardware, mobility, and regulatory costs.",
+        "Artifact: no code, data, case-study notebook, or supplementary repository is linked; the cited 3GPP 38.901 channel-model portal is a reference standard, not a reproducibility package."
+      ],
+      "plain": {
+        "verdictWhy": "Good orientation for a niche wireless stack, but the eye-catching gains come from simulations and the survey does not ship a reproducible implementation.",
+        "brief": "The paper explains how programmable reflecting surfaces might help a cognitive radio sense licensed users, steer useful signals, and limit interference. It sorts the field into six technical areas and adds tables and six example simulations so a new researcher can see the main system choices.\n\nThe examples show why phase design, surface size, placement, active elements, and learned optimization could matter. They do not prove deployment performance: the cases use modeled channels and idealized assumptions, no review-search protocol is given, and no code is released. The paper itself says real systems still face channel-estimation and control overhead, hardware errors, mobility, scaling, attacks, and missing standards.\n\nOpen it to learn the vocabulary and choose which primary studies to read. Do not copy its simulated percentage gains into a hardware plan or product claim without measured-channel and primary-user-protection tests.",
+        "takeaways": [
+          "Object: one map of the main ways programmable surfaces and cognitive radios can be designed together.",
+          "Limit: the map is broad, but the worked results are simulations and practical deployment remains unresolved.",
+          "Artifact: there is no code or experiment package to run."
+        ]
+      },
+      "actions": [
+        "Use Tables III–VIII to choose the relevant subproblem and then read the cited primary studies; do not treat the survey’s worked examples as comparative benchmarks across methods.",
+        "Before prototyping, rerun one case with measured or site-calibrated channels, finite phase resolution, CSI and control overhead, mobility, and explicit primary-user interference constraints."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-08-25",
+        "publishedOn": "2026-08-25",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.21669"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-25"
+        },
+        "packetBasis": "full-paper",
+        "model": "codex-full-paper-review",
+        "generatedAt": "2026-08-25T13:08:15.000Z"
+      },
+      "review": {
+        "basis": "full-paper",
+        "reviewedAt": "2026-08-25T13:08:15.000Z",
+        "sourceUrl": "https://arxiv.org/pdf/2608.21669",
+        "evidence": [
+          "Section I.C–E, pp. 2–4: claimed survey gap, six-part taxonomy, and six worked case studies; the paper provides no search or inclusion protocol despite calling the review systematic.",
+          "Section III and Table III, pp. 7–8: RCN metrics plus explicit CSI, reconfiguration, control-channel, multi-RIS synchronization, and joint-optimization overheads.",
+          "Section IV.A, Table IV and Case Study 1, pp. 9–11: narrow source literature and the authors’ idealized 3GPP-UMi/Rayleigh simulation with large phase, size, and placement-dependent rate gains.",
+          "Section IV.F Figure 17 and Sections V–VI, pp. 22–28: CNN result of 0.63 to 0.68 detection at 18 dBm, generalization dependence, and unresolved deployment, hardware, standardization, and security issues."
+        ]
+      }
+    }
+  ]
+}
