@@ -28,74 +28,49 @@ export function AboutPage() {
           <p className="sheet-kicker">About</p>
           <h1>Catch up over coffee</h1>
         </header>
-        <p className="lede">
-          PaperScroll is one shared morning board of research. Finish it over
-          coffee and leave knowing what exists, where the claim bends, and what
-          deserves a full read.
-        </p>
+        <p className="lede">One shared morning board of up to ten research papers.</p>
 
         <div className="about-sections">
         <section className="block">
-          <h2>One shared top ten</h2>
+          <h2>Shared board</h2>
           <p className="brief-p">
-            Everyone gets the same papers on the same morning. Signed-in
-            readers can put their fields first, but nothing disappears. Saved
-            papers are a shelf, not training data for a private feed.
+            Everyone sees the same papers. Fields reorder them; saves do not
+            affect the board.
           </p>
         </section>
 
         <section className="block">
-          <h2>How the cut works</h2>
+          <h2>Selection</h2>
           <p className="brief-p">
-            Eligibility is mechanical: a current intake, mapped field, title,
-            authors, and abstract. Hugging Face listing, votes, independent
-            source count, recency, and arXiv ID form a stable ordering. The
-            strongest paper in every represented field is guaranteed a seat; remaining
-            seats follow that same ordering. No reader profile changes the ten.
+            A stable, field-balanced ranking selects up to ten from the current intake.
+            Source signal, recency, and field coverage set the order; account
+            data does not set membership.
           </p>
         </section>
 
         <section className="block">
-          <h2>What the packet adds</h2>
+          <h2>Host packet</h2>
           <p className="brief-p">
-            The abstract is the authors’ context. PaperScroll generates the
-            decision layer in one source-grounded batch: Try, Watch, or Skip;
-            the claim, visible limit, artifact status, and next action. The
-            unattended publisher uses title and abstract and says so. A
-            deliberately repaired batch may declare a full-paper review only
-            after all ten sources are read. If any packet fails validation, the
-            whole day stays unpublished rather than silently shrinking.
+            Every paper has a verdict, brief, takeaways, and next actions. Its
+            review basis is labelled title + abstract or full paper. A board
+            publishes only after every selected packet validates.
           </p>
         </section>
 
         <section className="block">
-          <h2>What “today” means</h2>
+          <h2>Dates</h2>
           <p className="brief-p">
-            Today is the board date, not when every PDF first appeared. Cards
-            retain that first-appearance date. The daily pool, deterministic
-            cut, packet batch, validation, and publication run as one weekday
-            job. Once published, a dated board is frozen.
+            The board date is its morning edition, not a PDF’s first appearance.
+            Published boards are frozen.
           </p>
         </section>
 
         <section className="block">
-          <h2>Finish, then choose</h2>
+          <h2>Agent routing</h2>
           <p className="brief-p">
-            Start routine to read every packet in order. Save what needs a full
-            read. Reader discussion stays secondary and is for caveats,
-            replications, or useful artifacts—not engagement for its own sake.
-          </p>
-        </section>
-
-        <section className="block">
-          <h2>Optional morning route</h2>
-          <p className="brief-p">
-            A signed-in reader can give an outside agent a read-only token for
-            <code>/api/v1/digest/latest</code>. The versioned endpoint returns one
-            complete board, reordered by the account’s fields, with stable retry
-            and deduplication keys. It contains board packets and links, never raw
-            abstracts. PaperScroll does not host the agent or claim a returned
-            packet was ingested. The route is optional; the packet is still the product.
+            A read-only token gives an outside agent the latest complete host
+            packets in field-first order, with retry and deduplication keys and
+            no raw abstracts. The outside runtime owns scheduling and ingestion.
           </p>
         </section>
         </div>
@@ -149,7 +124,6 @@ export function SignupPage() {
 
   return (
     <AuthCard
-      kicker="Welcome"
       title="Create account"
       aside={
         <>
@@ -301,7 +275,6 @@ export function LoginPage() {
 
   return (
     <AuthCard
-      kicker="Account"
       title="Sign in"
       aside={
         <>
@@ -363,9 +336,7 @@ export function AccountPage() {
 
   if (!ready) {
     return (
-      <AuthCard kicker="Account" title="Loading your account…">
-        <p className="form-note">Checking your session.</p>
-      </AuthCard>
+      <AuthCard title="Checking your session…">{null}</AuthCard>
     );
   }
   if (!account) return <Navigate to="/login" replace />;
@@ -428,7 +399,7 @@ function AccountForm({ account }: { account: User }) {
           </nav>
 
           <div className="account-composition">
-            <strong>Morning composition</strong>
+            <strong>Board order</strong>
             <span>
               {account.interests.length ? account.interests.join(", ") : "All fields"}
               {account.workingOn ? ` · Desk: ${account.workingOn}` : ""}
@@ -470,7 +441,7 @@ function AccountForm({ account }: { account: User }) {
             <label>
               Email
               <input type="email" value={account.email} readOnly autoComplete="email" />
-              <span className="form-note">Used to sign in. Not shown on your public profile.</span>
+              <span className="form-note">Private · used to sign in</span>
             </label>
             {error ? (
               <p className="form-error" role="alert">
@@ -484,7 +455,7 @@ function AccountForm({ account }: { account: User }) {
                 onChange={(e) => setBio(e.target.value)}
                 rows={4}
                 maxLength={500}
-                placeholder="What you’re working on, or how you read the board."
+                placeholder="Short public bio"
               />
             </label>
             <label>
@@ -548,17 +519,13 @@ export function AgentPage() {
 
   if (!ready) {
     return (
-      <AuthCard kicker="Agent routing" title="Loading your route…">
-        <p className="form-note">Checking your session.</p>
-      </AuthCard>
+      <AuthCard kicker="Agent routing" title="Checking your session…">{null}</AuthCard>
     );
   }
   if (!account) {
     return (
-      <AuthCard kicker="Agent routing" title="Route the morning board">
-        <p className="lede">
-          Sign in to create a read-only token for the same complete host packets you read here.
-        </p>
+      <AuthCard kicker="Agent routing" title="Connect an agent">
+        <p className="lede">Sign in to create a read-only digest token.</p>
         <p className="sheet-mark">
           <Link className="btn primary" to="/login?next=/agent">Sign in</Link>
           <Link className="btn" to="/signup">Create account</Link>
@@ -572,7 +539,7 @@ export function AgentPage() {
       <article className="sheet agent-sheet">
         <header className="sheet-head">
           <p className="sheet-kicker">Agent routing</p>
-          <h1>Daily host packets</h1>
+          <h1>Morning route</h1>
         </header>
         <AgentDigest />
       </article>
@@ -585,7 +552,7 @@ function AgentDigest() {
   const [tokens, setTokens] = useState<DigestToken[]>([]);
   const [tokensStatus, setTokensStatus] = useState<"loading" | "ready" | "error">("loading");
   const [secret, setSecret] = useState<{ id: string; value: string } | null>(null);
-  const [label, setLabel] = useState("Morning research route");
+  const [label, setLabel] = useState("Morning agent");
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
@@ -600,7 +567,6 @@ function AgentDigest() {
       .catch(() => {
         if (live) {
           setTokensStatus("error");
-          toast("Could not load digest tokens.");
         }
       });
     return () => {
@@ -661,25 +627,23 @@ function AgentDigest() {
 
   return (
     <section className="digest-panel">
-      <p className="digest-kicker">External agent routing</p>
-      <h2>Morning route</h2>
       <p>
-        Point an agent or automation at one read-only endpoint after the morning
-        board publishes. It returns the same complete ten, reordered by your
-        fields with your desk as context. PaperScroll hosts the packet, not your agent.
+        Create a read-only token, then schedule one weekday GET. The endpoint
+        returns the latest complete host packets in your field order, with your
+        desk context; your runtime handles ingestion.
       </p>
       <ol className="routing-steps">
-        <li><span>1</span><p>Create a named <code>digest:read</code> token.</p></li>
-        <li><span>2</span><p>Schedule one weekday pull and keep the response ETag.</p></li>
-        <li><span>3</span><p>On <code>200</code>, process a new <code>delivery.key</code>. On <code>304</code>, stop.</p></li>
+        <li><span>1</span><p>Create a <code>digest:read</code> token.</p></li>
+        <li><span>2</span><p>Schedule a weekday GET with the last ETag.</p></li>
+        <li><span>3</span><p>On <code>200</code>, process each <code>delivery.key</code> once. On <code>304</code>, stop.</p></li>
       </ol>
       <label className="digest-url token-label">
-        Route name
+        Token name
         <input
           value={label}
           maxLength={60}
           onChange={(event) => setLabel(event.target.value)}
-          placeholder="Morning research route"
+          placeholder="Morning agent"
         />
       </label>
       <div className="digest-actions token-create">
@@ -702,9 +666,9 @@ function AgentDigest() {
         </label>
       ) : null}
       {tokensStatus === "loading" ? (
-        <p className="form-note" role="status" aria-live="polite">Checking routes…</p>
+        <p className="form-note" role="status" aria-live="polite">Loading tokens…</p>
       ) : tokensStatus === "error" ? (
-        <p className="form-error" role="status">Routes could not be loaded. Refresh before creating a token.</p>
+        <p className="form-error" role="status">Tokens unavailable. Refresh before creating one.</p>
       ) : tokens.length ? (
         <ul className="token-list">
           {tokens.map((item) => (
@@ -734,16 +698,16 @@ function AgentDigest() {
           ))}
         </ul>
       ) : (
-        <p className="form-note">No routes yet. Tokens expire after 90 days and are stored only as hashes.</p>
+        <p className="form-note">No tokens. New tokens are shown once and expire after 90 days.</p>
       )}
 
       <section className="digest-connect">
-        <p className="digest-connect-kicker">Connect it</p>
+        <p className="digest-connect-kicker">Endpoint</p>
         <label className="digest-url">
           Latest complete board
           <input readOnly value={digestUrl} />
           <span className="form-note">
-            For a frozen date, replace <code>latest</code> with <code>YYYY-MM-DD</code>.
+            Use <code>YYYY-MM-DD</code> instead of <code>latest</code> for a fixed board.
           </span>
         </label>
         <div className="digest-actions">
@@ -803,17 +767,13 @@ export function PublicProfilePage() {
 
   if (missing) {
     return (
-      <AuthCard kicker="Profile" title="No profile">
-        <p className="lede">That account isn’t here.</p>
-      </AuthCard>
+      <AuthCard kicker="Profile" title="Profile not found">{null}</AuthCard>
     );
   }
 
   if (!profile) {
     return (
-      <AuthCard kicker="Profile" title="Profile">
-        <p className="lede">Loading…</p>
-      </AuthCard>
+      <AuthCard kicker="Profile" title="Loading profile…">{null}</AuthCard>
     );
   }
 
@@ -878,13 +838,13 @@ export function SavedPage() {
   );
 
   if (!ready) {
-    return <AuthCard kicker="Saved" title="Loading your shelf…"><p className="form-note">Checking your session.</p></AuthCard>;
+    return <AuthCard kicker="Saved" title="Checking your session…">{null}</AuthCard>;
   }
 
   if (!account) {
     return (
-      <AuthCard kicker="Saved" title="Your shelf lives on your account">
-        <p className="lede">Sign in to save papers without changing the shared board.</p>
+      <AuthCard kicker="Saved" title="Saved papers">
+        <p className="lede">Sign in to save papers.</p>
         <p className="sheet-mark">
           <Link className="btn primary" to="/login">Sign in</Link>
           <Link className="btn" to="/">Back to the board</Link>
@@ -901,10 +861,7 @@ export function SavedPage() {
           <h1>{saved.length ? "Your shelf" : "Nothing saved"}</h1>
         </header>
         {saved.length === 0 ? (
-          <p className="lede">
-            Save a paper from the board and it lands here. This shelf is yours;
-            it does not change today’s ten.
-          </p>
+          <p className="lede">Save a paper from the board.</p>
         ) : (
           <ul className="later-list">
             {saved.map(({ paper, edition }) => (
@@ -937,7 +894,7 @@ function AuthCard({
   wide,
   children,
 }: {
-  kicker: string;
+  kicker?: string;
   title: string;
   aside?: ReactNode;
   wide?: boolean;
@@ -947,7 +904,7 @@ function AuthCard({
     <div className={wide ? "subpage auth-page roomy" : "subpage auth-page"}>
       <article className="sheet auth-sheet">
         <header className="sheet-head">
-          <p className="sheet-kicker">{kicker}</p>
+          {kicker ? <p className="sheet-kicker">{kicker}</p> : null}
           <h1>{title}</h1>
           {aside ? <p className="sheet-lead">{aside}</p> : null}
         </header>

@@ -166,7 +166,7 @@ export default function PaperPage() {
   const paperTabs = (
     <nav className="tabs paper-tabs" aria-label="Paper sections">
       <NavLink to={`/p/${paper.id}`} end>
-        PaperScroll review
+        Host packet
       </NavLink>
       <NavLink to={`/p/${paper.id}/discussion`}>
         Discussion{comments.length ? <em>{comments.length}</em> : null}
@@ -214,27 +214,21 @@ export default function PaperPage() {
             ) : null}
           </p>
         ) : null}
+        {paperTabs}
         {onDiscussion ? (
           <>
-            {paperTabs}
             <section className="discussion-section" id="discussion">
             <header className="discussion-head">
-              <h2>Caveats, replications, and useful artifacts</h2>
+              <h2>Reader notes</h2>
             </header>
             {commentsStatus === "loading" ? (
-              <p className="empty" role="status" aria-live="polite">Loading reader notes…</p>
+              <p className="empty" role="status" aria-live="polite">Loading…</p>
             ) : commentsStatus === "error" ? (
               <p className="form-error" role="status">
-                Reader notes are unavailable. The board packet above is unaffected.
+                Reader notes unavailable. Try again.
               </p>
             ) : comments.length === 0 ? (
-              <p className="empty">
-                No reader notes yet. {account ? (
-                  "Add a caveat, replication result, or useful artifact."
-                ) : (
-                  <><Link to="/signup">Sign in</Link> to add a caveat, replication result, or useful artifact.</>
-                )}
-              </p>
+              <p className="empty">No notes yet.</p>
             ) : (
               <ul className="thread">
                 {comments.map((comment) => (
@@ -267,7 +261,7 @@ export default function PaperPage() {
                 <textarea
                   value={draft}
                   onChange={(event) => setDraft(event.target.value)}
-                  placeholder="Add a caveat, replication note, or useful artifact"
+                  placeholder="Add a reader note"
                   aria-label="Add a reader note"
                   maxLength={2000}
                   rows={3}
@@ -288,11 +282,11 @@ export default function PaperPage() {
                   )}
                 </button>
               </form>
-            ) : comments.length > 0 ? (
+            ) : (
               <p className="gate">
-                <Link to="/signup">Sign in</Link> to leave a note.
+                <Link to={`/login?next=/p/${paper.id}/discussion`}>Sign in</Link> to add a reader note.
               </p>
-            ) : null}
+            )}
             </section>
             {paperActions}
           </>
@@ -300,7 +294,6 @@ export default function PaperPage() {
           <>
             <HostBrief paper={paper} showBasis={false} />
             {paperActions}
-            {paperTabs}
           </>
         )}
       </article>

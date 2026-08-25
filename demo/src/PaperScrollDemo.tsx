@@ -575,17 +575,15 @@ function HandoffSheet({ frame }: { frame: number }) {
         Caught up
       </div>
       <div style={{ fontSize: 16, color: "#353530", marginTop: 12, maxWidth: "28rem", lineHeight: 1.5 }}>
-        {n} board packets finished. Save the papers that deserve a full read; the shared top ten stays the same.
+        {n} papers reviewed.
       </div>
       <div style={{ display: "flex", gap: 10, justifyContent: "center", marginTop: 28, flexWrap: "wrap" }}>
-        <Pill primary>Back to the board</Pill>
-        <Pill>Open saved</Pill>
+        <Pill primary>Board</Pill>
+        <Pill>Saved</Pill>
       </div>
       <div style={{ marginTop: 28, fontSize: 14, color: colors.mute, lineHeight: 1.5 }}>
-        Optional: send the same board packets to an agent for workspace context.
-        <br />
-        <span style={{ color: colors.ink, textDecoration: "underline" }}>Copy agent handoff</span>
-        <span> · Manage digest token</span>
+        <span style={{ color: colors.ink, textDecoration: "underline" }}>Copy agent prompt</span>
+        <span> · Agent routing</span>
       </div>
       <Interactive.Div
         name="Toast"
@@ -606,7 +604,7 @@ function HandoffSheet({ frame }: { frame: number }) {
           whiteSpace: "nowrap",
         }}
       >
-        Prompt copied. The agent needs a digest token from Agent routing.
+        Agent prompt copied.
       </Interactive.Div>
     </div>
   );

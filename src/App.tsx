@@ -231,20 +231,16 @@ function WelcomeForm({ prefs }: { prefs: Prefs }) {
     <div className="subpage welcome">
       <article className="sheet">
         <header className="sheet-head">
-          <p className="sheet-kicker">{returning ? "Fields" : "Your board"}</p>
-          <h1>
-            {returning ? "What sits first?" : "What are you catching up on?"}
-          </h1>
+          <p className="sheet-kicker">Fields</p>
+          <h1>Order your board</h1>
         </header>
         <p className="lede">
-          {returning
-            ? "Everyone still gets the same ten. Your fields only change the order, not what exists. Saved on your profile."
-            : "Everyone still gets the same day. Your fields just start at the top. The rest of the board stays below. This lives on your account, not this browser."}
+          Fields reorder the shared board. No papers are hidden.
         </p>
         <p className="pref-label">
           {picks.length
-            ? `${picks.length} field${picks.length === 1 ? "" : "s"} selected`
-            : "Pick fields you actually read, or show everything."}
+            ? `${picks.length} selected`
+            : "Select fields"}
         </p>
         <div className="field-grid">
           {FIELDS.map((field) => (
@@ -260,9 +256,9 @@ function WelcomeForm({ prefs }: { prefs: Prefs }) {
           ))}
         </div>
         <label className="working-label">
-          Optional — what you’re working on
+          <span className="working-title">Desk context <em>Optional</em></span>
           <span className="working-hint">
-            Adds context to your digest. It never changes the shared board.
+            Included in Agent routing.
           </span>
           <input
             value={workingOn}
@@ -286,7 +282,7 @@ function WelcomeForm({ prefs }: { prefs: Prefs }) {
             disabled={busy}
             onClick={() => void finish([])}
           >
-            Show everything first
+            Show all fields
           </button>
         </div>
       </article>
@@ -418,7 +414,7 @@ function FeedPage() {
       </header>
       {isLatestHosted && !isToday ? (
         <p className="board-note board-note-stale">
-          No complete board is ready for {fullDayLabel(today)}. Showing the latest finished board.
+          {fullDayLabel(today)} is not ready. Showing {day.label}.
         </p>
       ) : null}
 
@@ -433,7 +429,6 @@ function FeedPage() {
             >
               {day.label}
             </Link>
-            {" · older complete boards follow"}
           </p>
         ) : boardDates.length > 1 ? (
           <nav className="day-pager" aria-label="Board date">
@@ -485,7 +480,7 @@ function FeedPage() {
                 setSearchParams(next);
               }}
             />
-            Continuous days
+            Infinite scroll
           </label>
         ) : null}
       </div>
@@ -524,8 +519,8 @@ function FeedPage() {
             onClick={loadOlder}
           >
             {continuousCount >= availableCount
-              ? "End of complete boards"
-              : "Load older mornings"}
+              ? "All boards loaded"
+              : "Load older boards"}
           </button>
           <span className="sr-only" role="status" aria-live="polite">
             {continuousCount >= availableCount
@@ -556,8 +551,8 @@ function BoardCards({
   if (day.focus.length + day.rest.length === 0) {
     return (
       <div className="empty-card">
-        <h2>No complete board is ready</h2>
-        <p>Selection and all ten packets publish atomically. Try an older morning.</p>
+        <h2>No board for this date</h2>
+        <p>Try another date.</p>
       </div>
     );
   }
@@ -609,7 +604,7 @@ function NotFoundPage() {
     <div className="subpage auth-page">
       <article className="sheet auth-sheet">
         <p className="sheet-kicker">Not found</p>
-        <h1>That page isn’t on today’s board.</h1>
+        <h1>Page not found</h1>
         <p className="lede"><Link to="/">Return to the board</Link></p>
       </article>
     </div>

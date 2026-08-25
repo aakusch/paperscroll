@@ -1,6 +1,6 @@
 # PaperScroll
 
-PaperScroll is a shared morning board of research: one deterministic top ten per
+PaperScroll is a shared morning board of research: one deterministic cut of up to ten per
 morning and enough judgment to decide what deserves a full read. Readers can
 optionally continue into older, frozen editions without changing any day’s cut.
 The tagline is **Catch up over coffee.**
@@ -26,7 +26,7 @@ board was published; each card separately says when the paper first appeared.
 
 This is not search, a PDF warehouse, a personalized recommendation engine, or an
 endless summary feed. Selection is one transparent shared ranking. A day appears
-only when all ten packets validate; partial boards fail closed.
+only when every selected packet validates; partial boards fail closed.
 
 ## Product cuts
 

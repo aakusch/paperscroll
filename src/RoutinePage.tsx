@@ -128,11 +128,7 @@ export function RoutinePage() {
       date,
     });
     await navigator.clipboard.writeText(text);
-    toast(
-      account
-        ? "Prompt copied. The agent needs a digest token from Agent routing."
-        : "Prompt copied. Sign in and mint a digest token so the agent can auth.",
-    );
+    toast(account ? "Agent prompt copied." : "Prompt copied. Sign in to create a token.");
   }
 
   async function savePaper() {
@@ -173,25 +169,23 @@ export function RoutinePage() {
           <p className="caught-kicker">{edition.label}</p>
           <h1>Caught up</h1>
           <p className="caught-lede">
-            {papers.length} board packet{papers.length === 1 ? "" : "s"} finished.
-            Save the papers that deserve a full read; the shared slate stays the same.
+            {papers.length} paper{papers.length === 1 ? "" : "s"} reviewed.
           </p>
           <div className="caught-actions">
             <Link to={boardPath(date)} className="btn primary">
-              Back to the board
+              Board
             </Link>
-            <Link to="/saved" className="btn">Open saved</Link>
+            <Link to="/saved" className="btn">Saved</Link>
           </div>
           <div className="caught-handoff">
-            <p>Optional: send the same board packets to an agent for workspace context.</p>
             <button type="button" className="quiet-link" onClick={() => void copyPrompt()}>
-              Copy agent handoff
+              Copy agent prompt
             </button>
             <span> · </span>
             {account ? (
-              <Link to="/agent" className="quiet-link">Manage digest token</Link>
+              <Link to="/agent" className="quiet-link">Agent routing</Link>
             ) : (
-              <Link to="/login" className="quiet-link">Sign in for a token</Link>
+              <Link to="/login" className="quiet-link">Create token</Link>
             )}
           </div>
         </div>
@@ -233,7 +227,6 @@ export function RoutinePage() {
         <p className="sheet-meta">
           <span>{edition.label}</span>
           <span>{paper.topic}</span>
-          <span>{paper.arxivId}</span>
           {paper.automation?.packetBasis === "full-paper" ? <span>Full-paper review</span> : null}
         </p>
         <h1>{paper.title}</h1>

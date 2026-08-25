@@ -125,14 +125,14 @@ export const TOPICS: Array<"All" | Topic> = [
 ];
 
 export const FIELDS: Array<{ id: Topic; blurb: string }> = [
-  { id: "AI", blurb: "Models, evals, systems." },
-  { id: "Stats", blurb: "Inference, uncertainty, experiments." },
-  { id: "Math", blurb: "Theory that might land in a method." },
-  { id: "Econ", blurb: "Labor, markets, policy papers." },
-  { id: "Health", blurb: "Clinics, EHR, bio when it’s a paper." },
-  { id: "Engineering", blurb: "Signals, devices, and applied systems." },
-  { id: "Physics", blurb: "Quantum, condensed matter, the lab sciences." },
-  { id: "Security", blurb: "Crypto, systems, privacy, proofs." },
+  { id: "AI", blurb: "Models · evals · systems" },
+  { id: "Stats", blurb: "Inference · experiments" },
+  { id: "Math", blurb: "Theory · methods" },
+  { id: "Econ", blurb: "Markets · policy" },
+  { id: "Health", blurb: "Clinical · biomedical" },
+  { id: "Engineering", blurb: "Signals · devices" },
+  { id: "Physics", blurb: "Quantum · materials" },
+  { id: "Security", blurb: "Systems · privacy" },
 ];
 
 const editions: Edition[] = [
