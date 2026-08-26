@@ -1,0 +1,669 @@
+{
+  "date": "2026-08-26",
+  "label": "Wed, Aug 26",
+  "minutes": 10,
+  "poolSize": 105,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-08-26T16:33:30.986Z",
+    "model": "qwen3.8-27b-q4_k_m",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2608.20492",
+      "arxivId": "2608.20492",
+      "url": "https://arxiv.org/abs/2608.20492",
+      "topic": "AI",
+      "reported": "The authors report that Video-ORA-9B raises temporal mIoU from 62.5 to 66.0 on their evaluated benchmarks.",
+      "metrics": [
+        "temporal mIoU from 62.5 to 66.0",
+        "tracking AO from 73.0 to 78.2",
+        "segmentation from 64.3 to 70.4"
+      ],
+      "title": "Annotations as Rollouts: Efficient and Scalable Reinforcement Learning for Video MLLMs",
+      "authors": "Yunheng Li, Guohong Mu, Hao Li, Shengsheng Qian, Dingwen Zhang, Qibin Hou, Ming-Ming Cheng",
+      "takeaway": "The paper introduces OraRL, a reinforcement learning method that uses annotations as oracle rollouts to improve sample efficiency and scalability for video MLLMs.",
+      "brief": "The authors propose OraRL, which integrates annotations as oracle rollouts into the on-policy group to address sample efficiency in video MLLM post-training. They introduce a decoupled advantage estimator to prevent advantage inversion caused by high-reward oracles.\n\nThe authors report that OraRL requires 2.2x the step time of SFT and surpasses GRPO up to 100k prompts. They state that Video-ORA-9B decodes in 130 ms without chain-of-thought and improves temporal mIoU from 62.5 to 66.0. The listing does not establish specific limitations or artifacts beyond the reported performance gains.\n\nResearchers working on video MLLM post-training or reinforcement learning sample efficiency may find this relevant. Those not focused on video perception or RL optimization may ignore it.",
+      "abstract": "Multimodal large language models (MLLMs) have become a prevailing paradigm for unified video perception. However, post-training on large multi-task datasets remains challenging, as existing reinforcement learning methods sample on-policy groups with few high-quality rollouts even with costly chain-of-thought (CoT) generation. In this paper, we study the sample efficiency and scalability of RL post-training for video MLLMs and introduce OraRL. We identify an overlooked role for annotations: Beyond scoring rollouts, each can enter its on-policy group as an oracle rollout, a direct positive optimization target. Direct oracle integration, however, is nontrivial: a high-reward oracle raises the group baseline and inverts otherwise positive policy advantages, a failure we term advantage inversion. At the core of OraRL is a decoupled advantage estimator: policy rollouts determine an oracle-free baseline, while the oracle-policy gap modulates both a directional gain and a separate detached oracle advantage. Sign-balanced pruning improves efficiency: by retaining only the oracle and the strongest rollouts of each sign, OraRL requires just 2.2x the step time of SFT, less than half the 4.9x required by GRPO with CoT. OraRL scales with model size and data, surpassing its backbone from 0.8B to 9B and GRPO up to 100k prompts. Without chain-of-thought, Video-ORA-9B decodes in 130 ms instead of 4,780 ms. Compared with the respective prior best models, it raises temporal mIoU from 62.5 to 66.0, tracking AO from 73.0 to 78.2, segmentation from 64.3 to 70.4, and the three-benchmark spatial-intelligence macro average from 51.0 to 56.1; on VSI-Bench, it scores 73.1 against 55.0 for GPT-5 and 55.1 for Gemini-3-Pro.",
+      "takeaways": [
+        "The object is a reinforcement learning post-training method for video MLLMs that treats annotations as oracle rollouts.",
+        "A visible limit is the reliance on a decoupled advantage estimator to handle the nontrivial integration of high-reward oracles.",
+        "The artifact status is indicated by a declared code repository URL, though the listing does not verify its contents or functionality."
+      ],
+      "plain": {
+        "reported": "The authors report that their model, Video-ORA-9B, improved a measure of temporal overlap accuracy from 62.5 to 66.0 on their tests.",
+        "brief": "The authors created a new training method called OraRL for AI models that understand videos. This method uses existing correct answers as extra training examples to make the learning process faster and more efficient. They designed a specific calculation method to ensure these extra examples do not confuse the model's learning process.\n\nThe authors say their method takes only 2.2 times as long to train as a standard method, which is much faster than other advanced methods. They also report that their model processes video data in 130 milliseconds, which is much faster than models that use step-by-step reasoning. They claim their model performs better on several video understanding tasks, such as tracking objects and segmenting scenes.\n\nPeople who are building AI systems that need to understand video content might find this useful. People who do not work with video AI or machine learning training might not need to look at this.",
+        "takeaways": [
+          "The main thing being described is a way to train AI models to understand videos more efficiently by using correct answers as extra training data.",
+          "A potential issue is that adding these correct answers can sometimes mess up the model's learning, so the authors had to create a special fix for that.",
+          "The authors say they have put their code online, but the short description does not confirm if the code actually works or is complete."
+        ]
+      },
+      "actions": [
+        "Verify the reported 130 ms decoding time and benchmark improvements by examining the full PDF and experimental setup.",
+        "Check the declared code repository to confirm the availability of the OraRL implementation and associated datasets."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/HVision-NKU/OraRL",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-08-26",
+        "publishedOn": "2026-08-20",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.20492",
+            "upvotes": 68
+          }
+        ]
+      },
+      "trend": {
+        "votes": 68,
+        "rank": 1,
+        "of": 17,
+        "perDay": 11
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 68,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-20"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "qwen3.8-27b-q4_k_m",
+        "generatedAt": "2026-08-26T16:33:30.986Z"
+      }
+    },
+    {
+      "id": "2608.15875",
+      "arxivId": "2608.15875",
+      "url": "https://arxiv.org/abs/2608.15875",
+      "topic": "AI",
+      "reported": "The authors report that GigaBrain-0.7 achieves substantial improvements in foundation zero-shot capabilities, language-conditioned instruction following, and post-training task success rates compared with prior state-of-the-art models.",
+      "metrics": [
+        "over 37,000 hours of heterogeneous embodied data"
+      ],
+      "title": "GigaBrain-0.7: Scaling Embodied Foundation Models to Emergent Capabilities with a Three-System Architecture",
+      "authors": "GigaBrain Team, Angen Ye, Axiang Sun, Can Jin, Chenxi Cheng, Chong Shi, Dengke Shang, Dingqian Zhang, Guan Huang, Guangqiang Wang, Guangqing Ding, Guo Li, Hangcong Li, Hengyu Zhong, Hongtao Lu, Jianbo Qin, Jiming Mao, Jing Zhu, Jindi Lv, Jingzhi Cui, Junjie Xie, Junyi Bao, Kai Liu, Lei Yuan, Limin Long, Lv Feng, Mingming Yu, Peng Li, Pengfei Yi, Qi Li, Qianli Zhang, Qingfang Li, Qitang Hu, Rui Zhang, Shaoyan Sun, Shibo Sun, Shiying Duan, Tenghui Chen, Tianze Liu, Weijie Ke, Wenyao Xue, Xiaofeng Wang, Xiaoyu Tian, Xinyu Liu, Xinze Chen, Yang Wang, Yankai Wang, Yejun Zeng, Yifan Li, Yifei Nie, Yilong Li, Yilong Liu, Yongchao Feng, Yumeng Wang, Yun Ye, Zhichao Liu, Ziheng He, Zonghai Yang, Zheng Zhu",
+      "takeaway": "The paper presents GigaBrain-0.7, an embodied foundation model with a three-system architecture that unifies understanding, prediction, and action to improve generalization across diverse robot embodiments.",
+      "brief": "The authors propose GigaBrain-0.7, a model designed to unify understanding, prediction, and action through a three-system architecture. They state it scales pretraining to over 37,000 hours of heterogeneous embodied data and uses one-stage alignment training to jointly optimize vision-language understanding and multi-embodiment action generation.\n\nThe authors report substantial improvements in zero-shot capabilities, instruction following, and task success rates compared to prior models like π_{0.5}. They note strong task adaptability on their in-house Maker H01 platform and mainstream robot embodiments in home and industrial scenarios. The listing does not specify quantitative benchmark scores or detailed ablation results for these improvements.\n\nResearchers working on vision-language-action models or multi-embodiment robotics may find the architectural details and scaling approach relevant. Those requiring specific quantitative comparisons against standard public benchmarks may need to verify the full paper for detailed metrics.",
+      "abstract": "Vision-language-action (VLA) models have become a dominant paradigm for generalist embodied agents, demonstrating strong complex and long-horizon task completion in structured settings. Yet it remains an open question whether current VLA systems can benefit from more effective architectural design, scale to substantially larger and more heterogeneous data regimes, and achieve broader generalization across tasks and embodiments. To this end, we present GigaBrain-0.7, an embodied foundation model with substantially improved generalization across diverse robot embodiments. Specifically, GigaBrain-0.7 unifies understanding, prediction, and action through a three-system architecture, scales pretraining to over 37,000 hours of heterogeneous embodied data, and introduces one-stage alignment training that jointly optimizes vision-language understanding and multi-embodiment action generation. Compared with the preceding GigaBrain-0 series and prior state-of-the-art models including π_{0.5}, GigaBrain-0.7 achieves substantial improvements in foundation zero-shot capabilities, language-conditioned instruction following, and post-training task success rates. In particular, on our in-house Maker H01 platform and mainstream robot embodiments, GigaBrain-0.7 demonstrates strong task adaptability and completion ability across both home and industrial scenarios. All training code and pretrained model weights will be released.",
+      "takeaways": [
+        "The object is an embodied foundation model using a three-system architecture for unified understanding, prediction, and action.",
+        "The visible limit is the lack of specific quantitative benchmark scores in the abstract, relying on qualitative terms like 'substantial improvements'.",
+        "The artifact status is declared as released training code and pretrained model weights, with a provided GitHub repository URL."
+      ],
+      "plain": {
+        "reported": "The authors report that their model performs better than previous top models in handling new tasks without specific training, following language commands, and completing tasks after additional training.",
+        "brief": "The authors created a computer model called GigaBrain-0.7 that combines seeing, predicting, and acting into one system. They trained it on more than 37,000 hours of video and data from various robots and used a single training step to improve both its understanding of language and its ability to control different robots.\n\nThey say their model is much better than older models at doing new tasks, following instructions, and succeeding at specific jobs. They tested it on their own robot platform and other common robots in homes and factories. The summary does not give exact scores or detailed test results to prove these improvements.\n\nPeople studying how computers control robots or how to make AI work on many different machines might find this useful. People who need exact numbers to compare this model to others on standard public tests should look at the full document for more details.",
+        "takeaways": [
+          "The thing being described is a computer model that combines seeing, predicting, and acting into one system.",
+          "The clear limitation is that the summary uses words like 'much better' but does not give exact test scores.",
+          "The status of the tools is that the authors say they will release the code and the trained model files, and they gave a website link."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative task success rates and zero-shot capability metrics in the full PDF to confirm the reported improvements.",
+        "Check the provided GitHub repository to confirm the availability and licensing of the training code and pretrained model weights."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/open-gigaai/giga-brain-0",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-08-26",
+        "publishedOn": "2026-08-16",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.15875",
+            "upvotes": 64
+          }
+        ]
+      },
+      "trend": {
+        "votes": 64,
+        "rank": 2,
+        "of": 17,
+        "perDay": 6
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 64,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "qwen3.8-27b-q4_k_m",
+        "generatedAt": "2026-08-26T16:33:30.986Z"
+      }
+    },
+    {
+      "id": "2608.24053",
+      "arxivId": "2608.24053",
+      "url": "https://arxiv.org/abs/2608.24053",
+      "topic": "AI",
+      "reported": "The authors report that the 9B variant achieves a new state-of-the-art overall score of 80.6 on MMEB-v2.",
+      "metrics": [
+        "overall score of 80.6",
+        "2B, 4B, and 9B variants",
+        "26-task in-house benchmark"
+      ],
+      "title": "WeMM-Embedding: WeChat Multi-Modal Embedding Technical Report",
+      "authors": "Junjie Zhou, Ke Mei, Lei Li, Tianyi Wang, Fengyun Rao, Jing Lyu",
+      "takeaway": "The paper presents WeMM-Embedding, a family of universal multimodal embedding models supporting text, images, videos, visual documents, and arbitrarily interleaved multimodal inputs with flexible output dimensions.",
+      "brief": "The authors introduce WeMM-Embedding, a family of multimodal embedding models with 2B, 4B, and 9B parameter variants designed for shared-space representation of heterogeneous content. They report that the 9B variant achieves a new state-of-the-art overall score of 80.6 on MMEB-v2, while the 2B variant surpasses a previously leading 8B open-source baseline on the same benchmark. The listing states that the models were deployed at scale across WeChat applications, but it does not specify the exact metrics or baselines for the in-house 26-task benchmark or the 14 online A/B tests.\n\nThe strongest reported result is the 80.6 overall score on MMEB-v2 for the 9B variant. The authors also claim substantial gains on a 26-task in-house benchmark and consistent improvements across 14 online A/B tests, but the specific numerical values for these internal evaluations are not provided in the abstract. The training process is described as two stages: large-scale multimodal alignment followed by refinement using curated data and cross-scale knowledge transfer.\n\nResearchers working on multimodal retrieval, recommendation, or agentic systems may find the model family relevant due to its support for interleaved inputs and flexible output dimensions. Practitioners interested in open-source baselines for multimodal embeddings may examine the released weights and code. The listing does not establish the specific limitations of the models or the exact performance deltas for the internal WeChat applications.",
+      "abstract": "Universal multimodal embeddings are becoming a core component of modern AI systems, enabling heterogeneous content to be represented in a shared space for applications such as retrieval, recommendation, classification, and agentic systems. In this report, we present WeMM-Embedding, a family of universal multimodal embedding models supporting text, images, videos, visual documents, and arbitrarily interleaved multimodal inputs with flexible output dimensions. The family comprises 2B, 4B, and 9B variants and is trained in two stages: a large-scale multimodal alignment stage, followed by a refinement stage using curated data, fine-grained relevance supervision, and cross-scale knowledge transfer. Across extensive evaluations, WeMM-Embedding achieves leading performance on multiple public benchmarks. Notably, the 2B variant already surpasses the previously leading 8B open-source baseline on MMEB-v2, while the 9B variant further achieves a new state-of-the-art overall score of 80.6. WeMM-Embedding also demonstrates strong practical performance across WeChat applications, with substantial gains on a 26-task in-house benchmark and consistent improvements across 14 online A/B tests. It has been deployed at scale across recommendation and search applications, including WeChat Channels, Official Accounts, Moments, and e-commerce services. We have released the model weights and code to facilitate future research at https://github.com/Tencent/WeMM-Embedding.",
+      "takeaways": [
+        "The object is a family of universal multimodal embedding models with 2B, 4B, and 9B parameter variants supporting text, images, videos, and documents.",
+        "A visible limit is the lack of specific numerical results for the 26-task in-house benchmark and 14 online A/B tests mentioned in the abstract.",
+        "The artifact status is established as released model weights and code at the provided GitHub repository URL."
+      ],
+      "plain": {
+        "reported": "The authors report that their largest model version, with 9 billion parameters, gets a top score of 80.6 on a public test called MMEB-v2.",
+        "brief": "The authors created a set of AI models that can understand and compare different types of content, like text, pictures, and videos, by turning them into a common format. They say their biggest model gets a top score of 80.6 on a public test, and their smallest model beats a larger model from another company on the same test. They also say these models work well in WeChat apps, but they do not give the specific numbers for those internal tests.\n\nThe best result they show is the 80.6 score on the public test. They also mention big improvements in their own internal tests and live user tests, but they do not list the exact numbers for those. They trained the models in two steps: first learning to match different types of content, then refining them with carefully chosen data.\n\nPeople who build systems that search or recommend mixed content might find these models useful because they handle many types of input. People looking for open-source tools for this kind of task can look at the code and models the authors released. The summary does not say what the models are bad at or how much better they are in the internal WeChat tests.",
+        "takeaways": [
+          "The thing being described is a set of AI models that turn text, images, and videos into a common format for comparison.",
+          "A clear gap is that the specific scores for the internal WeChat tests are not given in the summary.",
+          "The authors have made the model files and code available for download at a specific website link."
+        ]
+      },
+      "actions": [
+        "Verify the 80.6 MMEB-v2 score and the 2B vs 8B baseline comparison by consulting the full PDF and the linked GitHub repository.",
+        "Check the repository for the specific metrics and baselines used in the 26-task in-house benchmark and the 14 online A/B tests."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Tencent/WeMM-Embedding",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-08-26",
+        "publishedOn": "2026-08-25",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.24053",
+            "upvotes": 52
+          }
+        ]
+      },
+      "trend": {
+        "votes": 52,
+        "rank": 3,
+        "of": 17,
+        "perDay": 52
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 52,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "qwen3.8-27b-q4_k_m",
+        "generatedAt": "2026-08-26T16:33:30.986Z"
+      }
+    },
+    {
+      "id": "2608.23041",
+      "arxivId": "2608.23041",
+      "url": "https://arxiv.org/abs/2608.23041",
+      "topic": "AI",
+      "reported": "The authors report that AutoSaddler achieves gains of 9.0, 9.6, and 10.0 percentage points over base harnesses on GAIA2, SWE-Bench Pro, and Terminal-Bench 2.0.",
+      "metrics": [
+        "9.0 percentage points",
+        "9.6 percentage points",
+        "10.0 percentage points"
+      ],
+      "title": "AutoSaddler: Automatic Harness Optimization with Durable Updates from Agent Execution Traces",
+      "authors": "Sungho Park, Wonjoong Kim, Rongyuan Tan, Jue Zhang, Wook-Shin Han, Pengfei Gao, Chanyoung Park, Yongqiang Yao, Rao Fu, Elsie Nallipogu, Qingwei Lin, Saravan Rajmohan, Dongmei Zhang",
+      "takeaway": "AutoSaddler is an automatic harness optimization framework that formulates harness improvement as an offline learning problem and iteratively updates the harness using failure signals from mini-batches.",
+      "brief": "The authors propose AutoSaddler, a framework that automatically optimizes agent harnesses by treating them as code and applying structured patches based on failure traces. This approach aims to replace the manual and expensive process of designing robust external harnesses for LLM agents.\n\nThe authors report performance gains of 9.0, 9.6, and 10.0 percentage points on GAIA2, SWE-Bench Pro, and Terminal-Bench 2.0, respectively. Ablation studies suggest that deep debugging, targeted modifications, and generalization-aware selection are key ingredients for effective optimization. The listing does not specify the base harness configurations or the specific failure modes addressed in detail.\n\nResearchers working on LLM agent reliability, harness design, or automated software repair may find this relevant. Those not focused on agent infrastructure or harness optimization may find the specific technical contributions less applicable to their immediate work.",
+      "abstract": "LLM agents remain unreliable on long-horizon tasks, where small local failures can compound over extended interactions and lead to overall task failure. Although external harnesses can substantially improve robustness, harness design remains a manual and expensive process that requires searching over a large space of prompts, tool configurations, and control logic. We propose AutoSaddler, an automatic harness optimization framework that formulates harness improvement as an offline learning problem and iteratively updates the harness using failure signals from mini-batches. AutoSaddler combines failure-trace diagnosis, structured patch generation that treats the harness as code, and validation-based update selection. Experiments on GAIA2, SWE-Bench Pro, and Terminal-Bench 2.0 show that AutoSaddler substantially improves agent performance over the corresponding base harnesses, achieving gains of 9.0, 9.6, and 10.0 percentage points, respectively. Ablation studies further suggest that effective harness optimization benefits from three ingredients: deep debugging rather than shallow reflection, targeted modifications rather than unconstrained editing, and generalization-aware selection rather than trajectory-specific repair. Together, these results suggest that automatic harness optimization is a promising path toward more performant and reliable agent systems.",
+      "takeaways": [
+        "The object is an automatic optimization framework for LLM agent harnesses, treating the harness as code to be patched.",
+        "A visible limit is that the reported gains are relative to unspecified base harnesses, and the listing does not detail the specific failure types or task complexities where the method succeeds or fails.",
+        "The artifact status is indicated by a declared GitHub repository URL, but the listing does not confirm the availability of code, data, or reproducibility details beyond the link."
+      ],
+      "plain": {
+        "reported": "The authors state that their system, AutoSaddler, improved performance by 9.0, 9.6, and 10.0 percentage points on three specific test benchmarks: GAIA2, SWE-Bench Pro, and Terminal-Bench 2.0.",
+        "brief": "The authors created a tool called AutoSaddler that automatically improves the 'harness'—the external software wrapper that helps AI agents perform tasks. Instead of humans manually tweaking this wrapper, the tool analyzes where the AI fails and automatically updates the wrapper's code to fix those issues.\n\nThe authors claim this method improved the AI's success rate by 9.0, 9.6, and 10.0 percentage points on three different sets of tasks. They also found that the tool works best when it deeply analyzes errors, makes specific fixes rather than broad changes, and ensures fixes work generally rather than just for one specific case. The summary does not explain exactly how the original, unimproved wrappers were set up or what specific types of errors the tool fixed.\n\nPeople who build or manage AI systems that perform long, complex tasks might find this useful. People who do not work with AI agent infrastructure or software automation might not find this directly relevant to their daily work.",
+        "takeaways": [
+          "The main thing being described is a tool that automatically fixes the software wrapper around AI agents to make them more reliable.",
+          "A clear limitation is that we do not know from this summary what the starting performance was or exactly what kinds of tasks or errors were involved in the tests.",
+          "The authors provide a link to a code repository, but the summary does not confirm if the code is complete, documented, or easy to use."
+        ]
+      },
+      "actions": [
+        "Verify the specific base harness configurations and evaluation protocols by consulting the full PDF, as the abstract only reports relative percentage point gains.",
+        "Check the declared GitHub repository for code availability, documentation, and reproducibility instructions to assess the practical applicability of the method."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/microsoft/AutoSaddler",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-08-26",
+        "publishedOn": "2026-08-24",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.23041",
+            "upvotes": 47
+          }
+        ]
+      },
+      "trend": {
+        "votes": 47,
+        "rank": 4,
+        "of": 17,
+        "perDay": 24
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 47,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-24"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "qwen3.8-27b-q4_k_m",
+        "generatedAt": "2026-08-26T16:33:30.986Z"
+      }
+    },
+    {
+      "id": "2608.23574",
+      "arxivId": "2608.23574",
+      "url": "https://arxiv.org/abs/2608.23574",
+      "topic": "Health",
+      "reported": "The authors report that on 202 HISTAI gastrointestinal whole-slide images, the adaptive rule uses 83.7% fewer patches on average than a fixed full budget while retaining 97.9% of full-budget composite selection quality.",
+      "metrics": [
+        "202 HISTAI gastrointestinal whole-slide images",
+        "83.7% fewer patches on average",
+        "97.9% of full-budget composite selection quality"
+      ],
+      "title": "InfoDPP-PAC: Principled Patch Selection for Whole Slide Image Analysis",
+      "authors": "Prateek Mittal, Ayush Srivastava, Joohi Chauhan",
+      "takeaway": "The paper introduces InfoDPP-PAC, a patch-selection framework combining Gaussian process relevance modelling, determinantal diversity, submodular optimisation, and adaptive stopping for whole slide image analysis.",
+      "brief": "The authors propose a principled patch-selection framework for whole slide images that couples teacher-seeded Gaussian process relevance with determinantal log-determinant diversity and submodular greedy optimisation. They derive a PAC-style certificate for residual information gain, allowing the number of retained patches to vary by slide rather than being fixed a priori.\n\nThe authors report that on 202 HISTAI gastrointestinal whole-slide images, the adaptive rule uses 83.7% fewer patches on average than a fixed full budget while retaining 97.9% of full-budget composite selection quality. They state that the empirical study evaluates whether the selected subset is diverse, spatially and morphologically covering, non-redundant, and enriched for the teacher-derived relevance signal, but does not claim end-to-end diagnostic improvement after retraining a downstream MIL model.\n\nResearchers working on computational pathology data reduction or multiple-instance learning may find the theoretical link between log-determinant diversity and Gaussian process mutual information relevant. Clinicians seeking validated diagnostic tools should note the authors explicitly state the method is not a downstream clinical predictor and that no end-to-end diagnostic improvement is claimed.",
+      "abstract": "Each WSI slide contains thousands of candidate tissue patches, while supervision is usually available only at slide level. Existing bag-construction strategies like Uniform extraction and handcrafted heuristics do not control redundancy while attention-based multiple-instance models couple patch importance to a particular downstream classifier, and coreset methods optimise embedding-space coverage without modelling task-relevant patch quality. We introduce InfoDPP-PAC, a principled patch-selection framework that combines teacher-seeded Gaussian process relevance modelling, determinantal log-determinant diversity,submodular greedy optimisation, and a concentration-based adaptive stopping rule. The main theoretical result shows that the log-determinant diversity term used in DPP-style selection is the Gaussian process mutual information between a selected subset and the latent relevance function. We further derive a PAC-style certificate for residual information gain, allowing the number of retained patches to vary by slide rather than being fixed a priori. The empirical study evaluates whether the selected subset is diverse, spatially and morphologically covering, non-redundant, and enriched for the teacher-derived relevance signal. It does not claim end-to-end diagnostic improvement after retraining a downstream MIL model. On 202 HISTAI gastrointestinal whole-slide images, the adaptive rule uses 83.7% fewer patches on average than a fixed full budget while retaining 97.9% of full-budget composite selection quality. At a matched budget, InfoDPP-PAC achieves the highest mean teacher-derived relevance score among fourteen baselines, with diversity and composite scores close to the strongest coreset methods. The results support InfoDPP-PAC as a controlled quality-diversity-cardinality selection framework, rather than as a downstream clinical predictor.",
+      "takeaways": [
+        "The object is a patch-selection framework for whole slide images that uses adaptive stopping to vary the number of retained patches by slide.",
+        "A visible limit is that the authors state the study does not claim end-to-end diagnostic improvement after retraining a downstream multiple-instance learning model.",
+        "The artifact status is not established in the listing, as no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that on 202 medical images of gastrointestinal tissue, their method uses 83.7% fewer small image crops on average than using all available crops, while keeping 97.9% of the overall selection quality score.",
+        "brief": "The authors propose a method to choose which small pieces of a large medical image to analyse. It uses a mathematical model to find pieces that are both important and different from each other, and it decides how many pieces to keep for each image automatically.\n\nThe authors report that on 202 medical images of gastrointestinal tissue, their method uses 83.7% fewer small image crops on average than using all available crops, while keeping 97.9% of the overall selection quality score. They state that their tests check if the chosen pieces are varied and cover the image well, but they do not claim that using these pieces improves the accuracy of a final medical diagnosis.\n\nPeople who work on reducing the amount of data needed for medical image analysis may find the mathematical connection between their diversity measure and information theory useful. Doctors looking for a new diagnostic tool should note that the authors say this is not a clinical predictor and that they do not claim it improves diagnosis accuracy.",
+        "takeaways": [
+          "The method is a way to pick which small parts of a large medical image to look at, and it changes the number of parts picked for each image.",
+          "A clear limitation is that the authors say their tests do not show that using their selected parts improves the accuracy of a final medical diagnosis.",
+          "It is not stated in the listing whether the code for this method is available to download or use."
+        ]
+      },
+      "actions": [
+        "Verify the theoretical derivation linking log-determinant diversity to Gaussian process mutual information by reading the full PDF.",
+        "Check the full PDF for details on the teacher model used to seed the Gaussian process relevance modelling, as the abstract does not specify it."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "cs.CV",
+        "cs.IT",
+        "cs.LG",
+        "math.IT"
+      ],
+      "listing": {
+        "listedOn": "2026-08-26",
+        "publishedOn": "2026-08-26",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.23574"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "qwen3.8-27b-q4_k_m",
+        "generatedAt": "2026-08-26T16:33:30.986Z"
+      }
+    },
+    {
+      "id": "2608.23577",
+      "arxivId": "2608.23577",
+      "url": "https://arxiv.org/abs/2608.23577",
+      "topic": "Econ",
+      "reported": "The authors report that fund flows collapse to just four terminal accounts when applied to 76,855 Ethereum wallets from four years of mining data.",
+      "metrics": [
+        "76,855 Ethereum wallets"
+      ],
+      "title": "Where Does Ethereum Validators' Money Go? A Spectral Analysis",
+      "authors": "Irene Aldridge",
+      "takeaway": "The paper introduces a spectral methodology measuring concentration on the destination side of validator value flows using Markov chain steady-state probabilities.",
+      "brief": "The authors propose a spectral methodology to measure concentration on the destination side of validator value flows, modeling wallet-to-wallet transfers as a Markov chain. They report that fund flows collapse to just four terminal accounts when applied to 76,855 Ethereum wallets from four years of mining data. The listing does not establish specific limitations, validation methods, or whether the identified accounts are currently active or dormant.\n\nThe strongest reported result is that none of the four fund destination accounts are among the network's three dominant identifiable revenue-earning miners. This finding is based on the authors' application of the Perron--Frobenius theorem to compute near-real-time steady-state probabilities. The listing does not specify the exact time window for the \"near-real-time\" computation or the criteria for identifying \"dominant\" miners.\n\nResearchers studying blockchain economics, decentralization metrics, or financial network analysis may find this relevant. Those focused solely on origination-side mining concentration or non-Ethereum blockchains may find the scope limited. The paper does not provide code or a public repository for replication.",
+      "abstract": "Existing decentralization measures are almost entirely origination-side, quantifying concentration in who mines or validates blocks. We introduce a spectral methodology measuring concentration on the destination side instead: where value ultimately flows once it leaves a validator wallet. Modeling wallet-to-wallet transfers as a Markov chain, we compute near-real-time steady-state probabilities via the Perron--Frobenius theorem to identify long-run terminal recipients. Applied to 76,855 Ethereum wallets from four years of mining data, fund flows collapse to just four terminal accounts. None of these fund destination accounts are among the network's three dominant identifiable revenue-earning miners.",
+      "takeaways": [
+        "The object is a spectral methodology for measuring destination-side concentration in Ethereum validator fund flows.",
+        "A visible limit is that the listing does not specify how \"near-real-time\" steady-state probabilities are computed or validated against ground truth.",
+        "The artifact status is unclear because no code, dataset, or repository is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that money flows end up in only four final accounts when they analyzed 76,855 Ethereum wallets using four years of mining data.",
+        "brief": "The authors created a new way to track where money goes after it leaves a validator's wallet, rather than just tracking who mines blocks. They used a mathematical model called a Markov chain to predict where the money ultimately ends up. They found that the money flows down to just four final accounts when looking at 76,855 Ethereum wallets over four years. The listing does not say what limits exist, how they checked their results, or if those four accounts are still active today.\n\nThe main result they report is that none of those four final accounts belong to the three biggest known miners on the network. They used a specific mathematical theorem to calculate these predictions in near real-time. The listing does not say exactly how recent the \"near real-time\" data is or how they decided which miners were the \"dominant\" ones.\n\nPeople who study how money moves in blockchain networks or how decentralized Ethereum is might find this useful. People who only care about who mines blocks or who use other cryptocurrencies might find it less relevant. The paper does not list any code or public data for others to check their work.",
+        "takeaways": [
+          "The thing being studied is a new method to track where validator money ends up in Ethereum.",
+          "A clear limit is that we do not know how they calculated the \"near real-time\" predictions or how they verified them.",
+          "It is not clear if there is any code or data available because the listing does not mention any."
+        ]
+      },
+      "actions": [
+        "Verify the PDF to confirm the exact definition of \"terminal accounts\" and the criteria for identifying dominant miners.",
+        "Check the PDF for any mention of code availability, data access, or reproducibility steps not listed in the metadata."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.EM",
+        "q-fin.CP",
+        "q-fin.TR"
+      ],
+      "listing": {
+        "listedOn": "2026-08-26",
+        "publishedOn": "2026-08-26",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.23577"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "qwen3.8-27b-q4_k_m",
+        "generatedAt": "2026-08-26T16:33:30.986Z"
+      }
+    },
+    {
+      "id": "2608.23612",
+      "arxivId": "2608.23612",
+      "url": "https://arxiv.org/abs/2608.23612",
+      "topic": "Stats",
+      "reported": "The authors report that in a synthetic example with normally distributed true effects and measurement error, the method recovers the underlying effect distribution and performs nearly as well as a parametric empirical Bayes normal means approach.",
+      "metrics": [],
+      "title": "Estimating the True Effect Size Distribution with SIMEX",
+      "authors": "Zhaoqi Li, Daniel Ting, Ilya Gorbachev, Ehsan Emamjomeh-Zadeh, Houssam Nassif",
+      "takeaway": "The paper proposes a nonparametric SIMEX-based method to estimate the latent distribution of true effects from estimated average treatment effects with known variances.",
+      "brief": "The authors propose a nonparametric method based on SIMulation-EXtrapolation (SIMEX) to estimate the latent distribution of true effects from estimated average treatment effects with known variances. The method evaluates quantiles after adding progressively more simulated measurement noise and extrapolates the resulting inverse cumulative distribution function to the zero-noise setting while enforcing monotonicity of the quantiles.\n\nThe authors report that in a synthetic example with normally distributed true effects and measurement error, the method recovers the underlying effect distribution and performs nearly as well as a parametric empirical Bayes normal means approach. The listing does not establish performance on real-world experimental data or provide specific quantitative metrics for this comparison.\n\nResearchers working on online experimentation and effect size estimation may find the nonparametric approach relevant for characterizing effect-size distributions without fully specifying a parametric model. Those requiring validated performance on proprietary or real-world A/B test data should note the absence of such evidence in the abstract.",
+      "abstract": "Large-scale online experimentation produces noisy effect estimates, which can overstate gains and complicate decisions about launches and testing policies. We propose a nonparametric method based on SIMulation-EXtrapolation (SIMEX) to estimate the latent distribution of true effects from estimated average treatment effects with known variances. The method evaluates quantiles after adding progressively more simulated measurement noise and extrapolates the resulting inverse cumulative distribution function to the zero-noise setting while enforcing monotonicity of the quantiles. In a synthetic example with normally distributed true effects and measurement error, the method recovers the underlying effect distribution and performs nearly as well as a parametric empirical Bayes normal means approach. This provides a flexible way to characterize effect-size distributions without fully specifying a parametric model.",
+      "takeaways": [
+        "The method targets the latent distribution of true effects using estimated average treatment effects and known variances as inputs.",
+        "The reported evidence is limited to a synthetic example with normally distributed true effects and measurement error, leaving real-world applicability unverified in the listing.",
+        "No code repository or dataset is declared in the supplied metadata, so the artifact status is not established."
+      ],
+      "plain": {
+        "reported": "The authors report that in a computer-generated test case where the true effects and measurement errors follow a normal distribution, their method accurately reconstructs the underlying effect distribution and performs almost as well as a standard statistical approach that assumes a normal distribution.",
+        "brief": "The authors propose a statistical technique called SIMEX to estimate the true distribution of effects from noisy experimental data. The method works by adding simulated noise to the data, calculating statistical quantiles at each noise level, and then extrapolating these quantiles back to a zero-noise scenario while ensuring the quantiles remain in a consistent order.\n\nThe authors state that in a synthetic test case with normally distributed true effects and measurement error, the method successfully recovers the underlying effect distribution and performs nearly as well as a parametric empirical Bayes normal means approach. The abstract does not provide evidence of performance on real-world experimental data or specific numerical metrics for this comparison.\n\nStatisticians and data scientists involved in online experimentation may find this nonparametric approach useful for characterizing effect-size distributions without assuming a specific parametric model. Those who need validation on real-world A/B test data should note that the abstract does not establish such performance.",
+        "takeaways": [
+          "The method aims to estimate the true distribution of effects using estimated average treatment effects and known variances as inputs.",
+          "The reported evidence is limited to a synthetic example with normally distributed true effects and measurement error, leaving real-world applicability unverified in the listing.",
+          "No code repository or dataset is declared in the supplied metadata, so the artifact status is not established."
+        ]
+      },
+      "actions": [
+        "Verify the synthetic example setup and comparison baseline details in the full PDF to confirm the scope of the reported performance.",
+        "Check the full paper for any additional experiments on real-world data or quantitative metrics not included in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-08-26",
+        "publishedOn": "2026-08-26",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.23612"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "qwen3.8-27b-q4_k_m",
+        "generatedAt": "2026-08-26T16:33:30.986Z"
+      }
+    },
+    {
+      "id": "2608.23669",
+      "arxivId": "2608.23669",
+      "url": "https://arxiv.org/abs/2608.23669",
+      "topic": "Physics",
+      "reported": "The authors report that exact quantum agents can solve all tasks in the family with bounded memory while any exact classical agent requires memory that grows without bound.",
+      "metrics": [],
+      "title": "Single-shot online sequence classification with unbounded quantum memory advantage",
+      "authors": "Keith K. Ng, Haochen Jay Li, Mile Gu, Jayne Thompson",
+      "takeaway": "The paper claims to establish an unbounded separation between classical and quantum memory cost for online multi-class classification.",
+      "brief": "The authors introduce families of online multi-class classification games where the input arrives sequentially and the full history is never available at once. They claim that any exact classical agent requires memory that grows without bound, whereas exact quantum agents can solve all tasks in the family with bounded memory.\n\nThe authors state that this separation is sharp, noting that any classical agent using less than the required memory performs arbitrarily close to random guessing under suitable input distributions. They also claim their quantum constructions are provably memory minimal, allowing them to derive the exact classical and quantum memory complexities. The listing does not specify the exact input distributions or the specific bounds on the quantum memory size.\n\nResearchers working on quantum information theory, online learning, or memory complexity in sequential decision-making may find the theoretical separation relevant. Those focused on practical quantum hardware implementations or specific real-world anomaly detection datasets may find the abstract lacks details on experimental validation or specific benchmark datasets.",
+      "abstract": "An agent monitors a complex environment, receiving one observation at each time step and eventually deciding how to label the resulting sequence. Does the sequence indicate an anomaly, and if so, of what type? Does it signal market instability, and to what degree? This is the setting of online multi-class classification: the input arrives sequentially, the full history is never available at once, and the agent must retain any past information relevant to the eventual decision. As the environment becomes more complex, the memory needed to track this information can grow rapidly without bound. Here, we introduce families of such multi-class classification games and show that any exact classical agent requires memory that grows without bound, whereas exact quantum agents can solve all tasks in the family with bounded memory. This separation is sharp: any classical agent using less than the required memory, under suitable input distributions, performs arbitrarily close to random guessing. Moreover, our quantum constructions are provably memory minimal, allowing us to derive the exact classical and quantum memory complexities to perform such tasks. In doing so, we establish an unbounded separation between classical and quantum memory cost for online multi-class classification.",
+      "takeaways": [
+        "The object is a theoretical family of online multi-class classification games designed to isolate memory requirements.",
+        "A visible limit is that the abstract does not specify the exact quantum memory bound or the specific input distributions used for the sharpness claim.",
+        "The artifact status is theoretical; no code or experimental dataset is mentioned in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that quantum computers can handle these specific sequence-labeling tasks using a fixed, small amount of memory, while classical computers need more and more memory as the task gets longer.",
+        "brief": "The authors describe a theoretical test where a computer watches a stream of data one piece at a time and must label the whole sequence at the end. It cannot see the whole history at once, so it must remember what it has seen. They claim that for certain types of these tests, a classical computer needs an ever-growing amount of memory to do the job perfectly, but a quantum computer can do it with a fixed, limited amount of memory.\n\nThey say this difference is significant because if a classical computer tries to use less memory than it needs, it will perform almost as badly as if it were just guessing randomly. They also claim their quantum solution uses the absolute minimum amount of memory possible, which lets them calculate the exact memory needs for both types of computers. The abstract does not say how much memory the quantum computer specifically needs or exactly what kind of data streams make the classical computer fail.\n\nPeople studying the theory of quantum computing or how computers learn from streams of data might find this useful. People looking for real-world applications or code to run on actual quantum hardware might find the abstract too theoretical, as it does not mention any experiments or specific datasets.",
+        "takeaways": [
+          "The paper focuses on a theoretical puzzle about how much memory a computer needs to label a stream of data.",
+          "The abstract does not give the specific number for the quantum memory limit or the exact data conditions that cause the classical failure.",
+          "This is a theoretical result; the listing does not mention any code or real-world experiments."
+        ]
+      },
+      "actions": [
+        "Verify the exact quantum memory bound and the definition of the 'suitable input distributions' in the full PDF.",
+        "Check the PDF for the specific mathematical formulation of the 'memory minimal' quantum constructions."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-08-26",
+        "publishedOn": "2026-08-26",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.23669"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "qwen3.8-27b-q4_k_m",
+        "generatedAt": "2026-08-26T16:33:30.986Z"
+      }
+    },
+    {
+      "id": "2608.23731",
+      "arxivId": "2608.23731",
+      "url": "https://arxiv.org/abs/2608.23731",
+      "topic": "Security",
+      "reported": "The authors report that Stitch shows 31% gains in accuracy over state-of-the-art pivoting defenses and a maximum false positive rate of 0.006% over two separate real-world deployments.",
+      "metrics": [
+        "31% gains in accuracy",
+        "maximum false positive rate of 0.006%"
+      ],
+      "title": "Effective Pivot Attack Detection via System and Network Information",
+      "authors": "Ava Powelson, Carson Kuzniar, Hyojoon Kim, Israat Haque",
+      "takeaway": "The paper presents Stitch, a host-based system using the programmable kernel to detect pivoting in real time by combining system and network-level information.",
+      "brief": "The authors claim to present Stitch, a host-based system that uses the programmable kernel to detect pivoting in real time. It combines system and network-level information to identify pivoting characteristics between incoming and outgoing communications.\n\nThe authors report 31% gains in accuracy over state-of-the-art pivoting defenses and a maximum false positive rate of 0.006% over two separate real-world deployments. The listing does not specify the exact datasets, attack types, or baseline systems used for these comparisons, nor does it detail the specific kernel mechanisms employed.\n\nResearchers working on host-based intrusion detection or kernel-level security monitoring may find this relevant. Those focused solely on perimeter-based network appliances or non-host-based detection methods may find the scope limited.",
+      "abstract": "Perimeter-based security appliances, such as firewalls or Intrusion Detection Systems, are ineffective against modern attacks that use pivoting, wherein attackers \"pivot\" traffic through compromised hosts to gain access to additional targets that would otherwise be inaccessible. Due to the legitimate appearance of the relayed traffic, pivoting is extremely difficult to detect. Although the consequences of these attacks are known to be severe, existing defenses suffer from drawbacks such as high processing delays, low accuracy, or reliance on network-wide participation, making them inconvenient or even ineffective. This work presents Stitch, a host-based system that uses the programmable kernel to detect pivoting in real time. By observing host-traversing flows, Stitch uses process tracing to effectively combine system and network-level information, connecting incoming and outgoing communications and identifying pivoting characteristics between them. Showing 31% gains in accuracy over state-of-the-art pivoting defenses and a maximum false positive rate of 0.006% over two separate real-world deployments, Stitch covers the gap in current pivot detection solutions by providing accurate, lightweight, and independent coverage for vulnerable hosts in a network.",
+      "takeaways": [
+        "The object is a host-based detection system named Stitch that operates within the programmable kernel.",
+        "A visible limit is the lack of detail in the listing regarding the specific real-world deployment environments or the exact state-of-the-art baselines compared against.",
+        "The artifact status is not established in the listing, as no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their system, Stitch, is 31% more accurate than existing top-tier pivot detection methods and has a maximum error rate of 0.006% when tested in two real-world settings.",
+        "brief": "The authors claim to have built a system called Stitch that runs on individual computers to catch 'pivoting' attacks in real time. Pivoting is when hackers use a compromised computer to jump to other targets. Stitch looks at both system processes and network traffic to spot these jumps.\n\nThe authors say their system is 31% more accurate than current best methods and has a very low error rate of 0.006% in two real-world tests. However, the summary does not explain exactly what those real-world tests looked like or which specific older systems they compared it against. It also does not explain how the system works inside the computer's core software.\n\nPeople who study computer security on individual machines might find this useful. People who only study network firewalls or other external security tools might not find it directly applicable.",
+        "takeaways": [
+          "The thing being described is a security tool called Stitch that runs on individual computers.",
+          "A clear limitation is that we do not know exactly what the two real-world tests involved or which specific older tools were used for comparison.",
+          "It is not stated whether the code for this tool is available for public use or download."
+        ]
+      },
+      "actions": [
+        "Verify the specific definitions of 'state-of-the-art pivoting defenses' and the composition of the 'two separate real-world deployments' in the full PDF.",
+        "Check the full PDF for details on the kernel tracing mechanisms and any potential performance overhead not mentioned in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.NI"
+      ],
+      "listing": {
+        "listedOn": "2026-08-26",
+        "publishedOn": "2026-08-26",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.23731"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "qwen3.8-27b-q4_k_m",
+        "generatedAt": "2026-08-26T16:33:30.986Z"
+      }
+    },
+    {
+      "id": "2608.23950",
+      "arxivId": "2608.23950",
+      "url": "https://arxiv.org/abs/2608.23950",
+      "topic": "Engineering",
+      "reported": "The authors report that measured 65 GHz indoor non-line-of-sight results quantify the trade-off between spatial resources and observation length.",
+      "metrics": [
+        "65 GHz"
+      ],
+      "title": "Receive Diversity for Differential Binary Noise Modulation",
+      "authors": "Paulo V. B. Tom\\'e, Andr\\'e A. dos Anjos, Hugerles S. Silva, Daniel C. Ara\\'ujo, Robson D. Vieira, Ertugrul Basar",
+      "takeaway": "The paper proposes single-input multiple-output reception for differential binary noise modulation using post-correlation decision-statistic combining and derives an exact conditional bit error probability without Gaussian approximation.",
+      "brief": "The authors propose a SIMO reception scheme for DBN modulation that combines decision statistics after correlation and applies a single zero-threshold decision. They derive an exact conditional bit error probability as a Hermitian quadratic form in complex Gaussian vectors, avoiding Gaussian approximations.\n\nThe authors report that averaging over kappa-mu fading and reused energy yields an exact BEP for arbitrary weights. They state that the observation length caps the diversity order at min(Mmu, N) because the shared energy's deep fades are common to every branch. Measured 65 GHz indoor NLoS results quantify the trade-off between spatial resources and observation length.\n\nResearchers working on noise-based modulation or SIMO detection may find the closed-form deflection-optimal weights relevant. Those requiring channel state information or carrier-phase recovery may ignore this work, as the method dispenses with both.",
+      "abstract": "Differential binary noise (DBN) modulation encodes information in the polarity transition of a reused noise realization, dispensing channel state information and carrier-phase recovery. This letter proposes single-input multiple-output (SIMO) reception for DBN via post-correlation decision-statistic combining, followed by one zero-threshold decision. The combined statistic is a Hermitian quadratic form in complex Gaussian vectors, yielding an exact conditional bit error probability (BEP) with no Gaussian approximation. Averaging it over $\\kappa$-$\\mu$ fading and the reused energy gives the exact BEP for arbitrary weights. Because that energy is shared, its deep fades are common to every branch, and the observation length caps the diversity order at $\\min(M\\mu,N)$. The deflection-optimal weights follow in closed form and interpolate soft combining and power weighting. Measured 65 GHz indoor non-line-of-sight (NLoS) results quantify the trade-off between spatial resources and observation length.",
+      "takeaways": [
+        "The object is a SIMO detection scheme for DBN modulation that uses post-correlation combining and a zero-threshold decision.",
+        "A visible limit is that the observation length caps the diversity order at min(Mmu, N) due to shared energy fades across branches.",
+        "The artifact status is not established in the listing; no code or dataset is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that measured 65 GHz indoor non-line-of-sight results quantify the trade-off between spatial resources and observation length.",
+        "brief": "The authors propose a way to receive signals using multiple antennas for a modulation type that encodes data in noise polarity changes. They combine the signals after a correlation step and make a single decision based on whether the result is positive or negative. They derive an exact formula for the probability of bit errors without using simplifying approximations.\n\nThe authors report that averaging the error probability over specific fading conditions and shared energy gives an exact result for any weighting scheme. They state that the length of the observation window limits the diversity order because the shared energy fades affect all antenna branches in the same way. Measured results at 65 GHz in indoor non-line-of-sight conditions quantify the trade-off between the number of spatial resources and the observation length.\n\nResearchers working on noise-based modulation or multi-antenna detection may find the closed-form weights useful. Those who need channel state information or carrier-phase recovery may ignore this work, as the method does not require them.",
+        "takeaways": [
+          "The object is a multi-antenna detection scheme for noise-based modulation that uses post-correlation combining and a zero-threshold decision.",
+          "A visible limit is that the observation length caps the diversity order because shared energy fades affect all branches equally.",
+          "The artifact status is not established in the listing; no code or dataset is declared."
+        ]
+      },
+      "actions": [
+        "Verify the exact BEP derivation and the closed-form deflection-optimal weights by reading the full PDF.",
+        "Check the 65 GHz indoor NLoS measurement setup and sample size in the PDF to assess the robustness of the reported trade-off."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-08-26",
+        "publishedOn": "2026-08-26",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.23950"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "qwen3.8-27b-q4_k_m",
+        "generatedAt": "2026-08-26T16:33:30.986Z"
+      }
+    }
+  ]
+}
