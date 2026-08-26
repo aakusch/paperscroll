@@ -77,7 +77,6 @@ li,
 code,
 pre,
 .sheet-meta,
-.paper-rank,
 .digest-url input,
 .token-once input {
   overflow-wrap: anywhere;
@@ -1261,12 +1260,6 @@ html[data-route-motion="routine-next"]::view-transition-new(routine-foot) {
   text-transform: uppercase;
 }
 
-.paper-rank {
-  flex: 0 0 auto;
-  color: var(--accent);
-  font-variant-numeric: tabular-nums;
-}
-
 .byline {
   order: 3;
   margin: 0 0 6px;
@@ -1341,53 +1334,6 @@ html[data-route-motion="board-newer"]::view-transition-new(board-edition) {
 
 @keyframes board-in-left {
   from { opacity: 0; transform: translateX(-8px); }
-}
-
-/* Reported figures. On a card at most two, on one line; in a packet, all of
-   them. Each is the authors' own number, so it reads as data, not as a claim
-   PaperScroll is making. */
-.metric-row {
-  order: 5;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 6px;
-  overflow: hidden;
-  max-height: 22px;
-}
-
-.metric {
-  padding: 2px 7px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: #f7f6f2;
-  font-family: var(--sans);
-  font-size: 11px;
-  line-height: 1.4;
-  color: #4a4a44;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 20rem;
-}
-
-.metric-list {
-  margin: 10px 0 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.metric-list li {
-  padding: 3px 9px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: #f7f6f2;
-  font-family: var(--sans);
-  font-size: 12px;
-  color: #4a4a44;
 }
 
 .host-verdict {

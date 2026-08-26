@@ -147,7 +147,6 @@ function PaperCard({
   saved?: boolean;
   priority?: boolean;
 }) {
-  const rank = paper.automation?.rank;
   const authors = compactCardAuthors(paper.authors);
   const lead = packetLead(paper, true);
   const appeared = paper.listing
@@ -160,7 +159,6 @@ function PaperCard({
       <span className="paper-copy">
         <span className="paper-kicker">
           <span>{paper.topic}</span>
-          {rank ? <span className="paper-rank">Board {String(rank).padStart(2, "0")}</span> : null}
         </span>
         <h3>{paper.title}</h3>
         <span className="byline">
@@ -178,15 +176,6 @@ function PaperCard({
             ) : (
               lead.text
             )}
-          </span>
-        ) : null}
-        {lead?.kind === "reported" && lead.metrics.length ? (
-          <span className="metric-row">
-            {lead.metrics.slice(0, 2).map((metric) => (
-              <span key={metric} className="metric">
-                {metric}
-              </span>
-            ))}
           </span>
         ) : null}
       </span>

@@ -97,13 +97,6 @@ export function HostBrief({ paper, showBasis = true }: { paper: Paper; showBasis
             </p>
           ) : null}
           {host.lead ? <p className="why-lede">{host.lead.text}</p> : null}
-          {host.lead?.kind === "reported" && host.lead.metrics.length ? (
-            <ul className="metric-list">
-              {host.lead.metrics.map((metric) => (
-                <li key={metric}>{metric}</li>
-              ))}
-            </ul>
-          ) : null}
           {host.brief.split(/\n\n/).map((graf) => (
             <p key={graf.slice(0, 40)} className="brief-p">
               {graf}
