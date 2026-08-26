@@ -1,14 +1,16 @@
 import { useState } from "react";
 import type { Paper } from "./data";
+import { packetLead } from "./lead";
 
 export type HostVoice = "technical" | "plain";
 
 const KEY = "ps_host_voice";
 
 export function hostCopy(paper: Paper, voice: HostVoice) {
-  if (voice === "plain" && paper.plain?.brief?.trim()) {
+  const plain = voice === "plain" && Boolean(paper.plain?.brief?.trim());
+  if (plain && paper.plain) {
     return {
-      verdictWhy: paper.plain.verdictWhy || paper.verdictWhy,
+      lead: packetLead(paper, true),
       brief: paper.plain.brief,
       takeaways: paper.plain.takeaways.length
         ? paper.plain.takeaways
@@ -16,7 +18,7 @@ export function hostCopy(paper: Paper, voice: HostVoice) {
     };
   }
   return {
-    verdictWhy: paper.verdictWhy,
+    lead: packetLead(paper),
     brief: paper.brief,
     takeaways: paper.takeaways,
   };

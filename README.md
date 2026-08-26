@@ -14,11 +14,20 @@ In five to ten minutes, a reader should finish the morning routine and know:
 - the artifact or next step worth opening; and
 - which papers belong on their saved shelf.
 
-The board packet is the product. It contains the verdict, brief, object / limit /
-artifact takeaways, actions, and safe links. Automated packets are constrained
-to the supplied title and authors' abstract; they are not represented as a full
-PDF read. The raw abstract is supporting context, collapsed by default.
+The board packet is the product. It contains the reported result and the figures
+the authors state, a brief, object / limit / artifact takeaways, actions, and
+safe links. It carries no verdict. A board is one shared cut that does not know
+what a reader works on, and an automatic packet is built from a title and an
+abstract rather than a full read, so telling a reader whether a paper is worth
+their morning was never a call it could support. It reports; the reader decides.
+Automated packets are constrained to the supplied title and authors' abstract;
+they are not represented as a full PDF read. Every figure on a card is the
+authors' own, and publication rejects a number that does not appear in the
+source text. The raw abstract is supporting context, collapsed by default.
 Comments and agent forwarding are secondary.
+
+Boards published before 2026-08-26 carry a Try / Watch / Skip line. A published
+day is immutable, so those are read as they were written, not rewritten.
 
 Everyone sees the same board. Signed-in readers can put their fields first, but
 fields never hide papers or create a private slate. "Today" is the day this
@@ -32,8 +41,9 @@ only when every selected packet validates; partial boards fail closed.
 
 The live product is deliberately narrow:
 
-- The board leads with PaperScroll's decision line. Its image is a derived first-page
-  preview of the source PDF, never an invented illustration or abstract substitute.
+- The board leads with what the authors report, not with advice. Its image is a
+  derived first-page preview of the source PDF, never an invented illustration or
+  abstract substitute.
 - Routine is the primary completion path: board → board packets → caught up.
 - Save means "read later." It never downranks a paper or changes tomorrow.
 - Continuous days appends complete dated boards. It never merges rankings across
@@ -163,8 +173,25 @@ complete PaperScroll deployment because those flows would lose state.
    independent-source count, publication date, and arXiv ID. The strongest
    nomination from each represented field is guaranteed a seat before remaining
    seats are filled. One structured model request creates all ten packets from
-   title and abstract. Exact IDs, packet shape, and verbatim evidence spans are
-   validated before anything is written. There is no partial-board fallback.
+   title and abstract. Exact IDs, packet shape, verbatim evidence spans, and
+   every number in a reported figure are validated before anything is written.
+   There is no partial-board fallback.
+
+   Any OpenAI-compatible chat-completions endpoint can generate the batch
+   instead of the OpenAI Responses API:
+
+   ```bash
+   PAPERSCROLL_API_BASE=https://host/v1 PAPERSCROLL_MODEL=... \
+     PAPERSCROLL_BATCH_SIZE=1 PAPERSCROLL_CONCURRENCY=4 \
+     OPENAI_API_KEY=... npm run publish -- YYYY-MM-DD
+   ```
+
+   `PAPERSCROLL_BATCH_SIZE=1` asks for one packet per request, which a small
+   self-hosted model validates far more reliably than a batch of ten;
+   `PAPERSCROLL_CONCURRENCY` should not exceed the server's slot count. Reasoning
+   traces are disabled on this path because the schema already specifies the
+   task; `PAPERSCROLL_THINKING=on` restores them. The board stays all-or-nothing
+   either way.
    A deliberately repaired board may instead use `full-paper` packets after all
    ten sources have been read and the complete batch has been reviewed again;
    that evidence basis is carried through the UI and digest contract.

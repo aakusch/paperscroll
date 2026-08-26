@@ -55,7 +55,7 @@ desk context, safe links, and structured host packets:
 ```json
 {
   "schema": "paperscroll.digest",
-  "schemaVersion": "1.1",
+  "schemaVersion": "1.2",
   "board": {
     "id": "2026-08-24",
     "version": "sha256-…",
@@ -70,7 +70,9 @@ desk context, safe links, and structured host packets:
     {
       "title": "…",
       "packet": {
-        "verdict": "Try",
+        "verdict": null,
+        "reported": "The authors report …",
+        "metrics": ["…"],
         "brief": "…",
         "takeaways": ["…"],
         "actions": ["…"],
@@ -80,6 +82,12 @@ desk context, safe links, and structured host packets:
   ]
 }
 ```
+
+`reported` is what the authors state, and every number in `metrics` is copied
+from the listing. PaperScroll does not rank a paper for a reader, so `verdict`
+and `verdictWhy` are `null` on every board cut on or after 2026-08-26; frozen
+earlier boards still carry them and leave `reported` null. Read exactly one of
+the two and do not treat a missing verdict as a downgrade.
 
 Raw authors' abstracts are never part of this payload. Read
 `board.packetBasis` and each packet's `automation.basis`: unattended packets

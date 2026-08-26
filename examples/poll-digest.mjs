@@ -52,7 +52,8 @@ if (digest.delivery.key === state.lastDeliveryKey) {
 // system's idempotency key when it supports one.
 console.log(`New PaperScroll board: ${digest.board.label}`);
 for (const [index, paper] of digest.papers.entries()) {
-  console.log(`${index + 1}. [${paper.topic}] ${paper.title} — ${paper.packet.verdict}`);
+  const lead = paper.packet.reported || paper.packet.verdictWhy || "no lead line";
+  console.log(`${index + 1}. [${paper.topic}] ${paper.title} — ${lead}`);
 }
 
 // Checkpoint only after every destination write above succeeds.
@@ -81,7 +82,7 @@ async function writeState(path, value) {
 function assertDigest(value) {
   if (
     value?.schema !== "paperscroll.digest" ||
-    value?.schemaVersion !== "1.1" ||
+    value?.schemaVersion !== "1.2" ||
     value?.board?.complete !== true ||
     value?.board?.count !== 10 ||
     !Array.isArray(value?.papers) ||

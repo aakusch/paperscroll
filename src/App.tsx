@@ -25,6 +25,7 @@ import {
 } from "./pages";
 import { RoutinePage, RoutineStart } from "./RoutinePage";
 import { FIELDS, catalog, type Edition, type Paper, type Topic } from "./data";
+import { packetLead } from "./lead";
 import { listingLine, shortDate } from "./listing";
 import { beginRouteMotion } from "./motion";
 import { PaperPreview } from "./PaperPreview";
@@ -148,7 +149,7 @@ function PaperCard({
 }) {
   const rank = paper.automation?.rank;
   const authors = compactCardAuthors(paper.authors);
-  const boardHook = paper.plain?.verdictWhy || paper.verdictWhy;
+  const lead = packetLead(paper, true);
   const appeared = paper.listing
     ? shortDate(paper.listing.publishedOn)
     : listingLine(paper);
@@ -165,12 +166,29 @@ function PaperCard({
         <span className="byline">
           {appeared} · <span>{authors}</span>{saved ? " · Saved" : ""}
         </span>
-        <span className="host-line">
-          <span className={`host-verdict v-${paper.verdict.toLowerCase()}`}>
-            {paper.verdict}
-          </span>{" "}
-          {boardHook}
-        </span>
+        {lead ? (
+          <span className="host-line">
+            {lead.kind === "verdict" ? (
+              <>
+                <span className={`host-verdict v-${lead.verdict.toLowerCase()}`}>
+                  {lead.verdict}
+                </span>{" "}
+                {lead.text}
+              </>
+            ) : (
+              lead.text
+            )}
+          </span>
+        ) : null}
+        {lead?.kind === "reported" && lead.metrics.length ? (
+          <span className="metric-row">
+            {lead.metrics.slice(0, 2).map((metric) => (
+              <span key={metric} className="metric">
+                {metric}
+              </span>
+            ))}
+          </span>
+        ) : null}
       </span>
     </Link>
   );

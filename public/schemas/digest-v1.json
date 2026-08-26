@@ -17,7 +17,7 @@
   ],
   "properties": {
     "schema": { "const": "paperscroll.digest" },
-    "schemaVersion": { "const": "1.1" },
+    "schemaVersion": { "const": "1.2" },
     "schemaUrl": { "type": ["string", "null"], "format": "uri" },
     "source": { "const": "PaperScroll" },
     "board": {
@@ -105,10 +105,12 @@
     "packet": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["verdict", "verdictWhy", "brief", "takeaways", "actions", "links", "automation", "plain"],
+      "required": ["verdict", "verdictWhy", "reported", "metrics", "brief", "takeaways", "actions", "links", "automation", "plain"],
       "properties": {
-        "verdict": { "enum": ["Try", "Watch", "Skip"] },
-        "verdictWhy": { "type": "string", "minLength": 1 },
+        "verdict": { "enum": ["Try", "Watch", "Skip", null] },
+        "verdictWhy": { "type": ["string", "null"], "minLength": 1 },
+        "reported": { "type": ["string", "null"], "minLength": 1 },
+        "metrics": { "type": "array", "items": { "type": "string", "minLength": 1 } },
         "brief": { "type": "string", "minLength": 1 },
         "takeaways": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
         "actions": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
@@ -125,9 +127,10 @@
         },
         "plain": {
           "type": ["object", "null"],
-          "required": ["verdictWhy", "brief", "takeaways"],
+          "required": ["verdictWhy", "reported", "brief", "takeaways"],
           "properties": {
-            "verdictWhy": { "type": "string", "minLength": 1 },
+            "verdictWhy": { "type": ["string", "null"], "minLength": 1 },
+            "reported": { "type": ["string", "null"], "minLength": 1 },
             "brief": { "type": "string", "minLength": 1 },
             "takeaways": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
           }

@@ -56,7 +56,7 @@ export function HostBrief({ paper, showBasis = true }: { paper: Paper; showBasis
           ) : null}
           <div className="host-head">
             <h2>
-              Why this paper
+              {host.lead?.kind === "reported" ? "What the authors report" : "Why this paper"}
             </h2>
             {dual ? (
               <div className="voice-switch" role="group" aria-label="Brief language">
@@ -91,10 +91,19 @@ export function HostBrief({ paper, showBasis = true }: { paper: Paper; showBasis
               </div>
             ) : null}
           </div>
-          <p className={`host-decision v-${paper.verdict.toLowerCase()}`}>
-            {paper.verdict}
-          </p>
-          {host.verdictWhy ? <p className="why-lede">{host.verdictWhy}</p> : null}
+          {host.lead?.kind === "verdict" ? (
+            <p className={`host-decision v-${host.lead.verdict.toLowerCase()}`}>
+              {host.lead.verdict}
+            </p>
+          ) : null}
+          {host.lead ? <p className="why-lede">{host.lead.text}</p> : null}
+          {host.lead?.kind === "reported" && host.lead.metrics.length ? (
+            <ul className="metric-list">
+              {host.lead.metrics.map((metric) => (
+                <li key={metric}>{metric}</li>
+              ))}
+            </ul>
+          ) : null}
           {host.brief.split(/\n\n/).map((graf) => (
             <p key={graf.slice(0, 40)} className="brief-p">
               {graf}

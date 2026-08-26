@@ -13,6 +13,13 @@ export type Topic =
   | "Engineering"
   | "Physics"
   | "Security";
+/**
+ * Frozen boards published before 2026-08-26 carry a Try / Watch / Skip call.
+ * PaperScroll no longer produces one: the board is a single shared cut and
+ * cannot know what a reader works on, so it reports what the authors claim and
+ * leaves the decision to them. Published days are immutable, so both shapes
+ * render.
+ */
 export type Verdict = "Try" | "Watch" | "Skip";
 export type PacketBasis = "title-and-abstract" | "full-paper";
 export type Intake =
@@ -28,8 +35,14 @@ export type Paper = {
   arxivId: string;
   url: string;
   topic: Topic;
-  verdict: Verdict;
-  verdictWhy: string;
+  /** Legacy frozen boards only. New boards lead with `reported`. */
+  verdict?: Verdict;
+  /** Legacy frozen boards only. New boards lead with `reported`. */
+  verdictWhy?: string;
+  /** What the authors report, attributed to them. The lead line on new boards. */
+  reported?: string;
+  /** Quantitative claims copied from the listing, each number verbatim. */
+  metrics?: string[];
   title: string;
   authors: string;
   takeaway: string;
@@ -38,7 +51,8 @@ export type Paper = {
   takeaways: string[];
   /** Same packet facts, written for a smart reader outside the subfield. */
   plain?: {
-    verdictWhy: string;
+    verdictWhy?: string;
+    reported?: string;
     brief: string;
     takeaways: string[];
   };

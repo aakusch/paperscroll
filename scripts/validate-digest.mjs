@@ -22,19 +22,40 @@ try {
   assert.equal(first.kind, "json");
   assert.equal(first.body, repeat.body, "the same route must be byte-stable");
   assert.equal(payload.schema, "paperscroll.digest");
-  assert.equal(payload.schemaVersion, "1.1");
+  assert.equal(payload.schemaVersion, "1.2");
   assert.equal(payload.board.complete, true);
   assert.equal(payload.board.count, 10);
-  assert.equal(payload.board.packetBasis, "full-paper");
+  // Why: exactly one lead shape per packet. A board either reports the authors'
+  // result or carries a frozen verdict, never both and never neither.
+  for (const paper of payload.papers) {
+    const { verdict, verdictWhy, reported, metrics } = paper.packet;
+    assert.equal(
+      Boolean(reported) !== Boolean(verdict && verdictWhy),
+      true,
+      `packet for ${paper.arxivId} must carry either a reported line or a verdict`,
+    );
+    assert.ok(Array.isArray(metrics), `metrics missing for ${paper.arxivId}`);
+  }
+  // Why: the latest board is whichever morning published last, so the basis is
+  // read from it rather than pinned. What the contract requires is that one
+  // basis is carried consistently into every packet and into the instruction.
+  const basis = payload.board.packetBasis;
+  assert.ok(
+    ["title-and-abstract", "full-paper"].includes(basis),
+    `unknown packet basis ${basis}`,
+  );
   assert.equal(payload.papers.length, 10);
   assert.equal(new Set(payload.papers.map((paper) => paper.arxivId)).size, 10);
   assert.equal(typeof payload.papers[0].packet, "object", "structured packet was overwritten");
   assert.equal(
-    payload.papers.every((paper) => paper.packet.automation?.basis === "full-paper"),
+    payload.papers.every((paper) => paper.packet.automation?.basis === basis),
     true,
     "digest mixed packet evidence bases",
   );
-  assert.match(payload.instruction, /reviewed against the full papers/);
+  assert.match(
+    payload.instruction,
+    basis === "full-paper" ? /reviewed against the full papers/ : /title and abstract, not a full PDF read/,
+  );
   assert.equal(typeof payload.papers[0].markdown, "string");
   assert.equal(JSON.stringify(payload).includes('"abstract"'), false, "digest leaked an abstract key");
   assert.equal(payload.board.version, composed.board.version, "composition changed the frozen board version");

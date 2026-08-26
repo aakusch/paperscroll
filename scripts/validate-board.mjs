@@ -38,11 +38,32 @@ for (let index = 0; index < expected.length; index += 1) {
   );
   assert(paper.url === `https://arxiv.org/abs/${paper.arxivId}`, `unsafe paper URL for ${paper.arxivId}`);
   assert(String(paper.abstract || "").trim().length >= 80, `abstract missing for ${paper.arxivId}`);
-  assert(String(paper.verdictWhy || "").trim(), `verdict line missing for ${paper.arxivId}`);
+  // Why: frozen boards published before 2026-08-26 lead with a verdict line;
+  // every board cut since reports the authors' result instead.
+  const lead = String(paper.reported || paper.verdictWhy || "").trim();
+  assert(lead, `lead line missing for ${paper.arxivId}`);
+  if (paper.reported) {
+    assert(!paper.verdict, `${paper.arxivId} carries both a reported line and a verdict`);
+    assert(Array.isArray(paper.metrics), `metrics list missing for ${paper.arxivId}`);
+    const source = `${paper.title}\n${paper.abstract}`;
+    for (const metric of paper.metrics) {
+      assert(/\d/.test(String(metric)), `metric without a number stored for ${paper.arxivId}`);
+      for (const number of String(metric).match(/\d+(?:[.,]\d+)*/g) || []) {
+        assert(
+          source.includes(number),
+          `metric for ${paper.arxivId} reports ${number}, which its source text does not`,
+        );
+      }
+    }
+  }
   assert(String(paper.brief || "").trim(), `brief missing for ${paper.arxivId}`);
   assert(paper.takeaways?.length === 3, `takeaways incomplete for ${paper.arxivId}`);
   assert(paper.actions?.length === 2, `actions incomplete for ${paper.arxivId}`);
   assert(paper.plain?.brief?.trim() && paper.plain.takeaways?.length === 3, `Plain packet incomplete for ${paper.arxivId}`);
+  assert(
+    String(paper.plain.reported || paper.plain.verdictWhy || "").trim(),
+    `Plain lead line missing for ${paper.arxivId}`,
+  );
   if (board.selection.packetBasis === "full-paper") {
     assert(
       paper.brief.split(/\n\s*\n/).filter(Boolean).length === 3,

@@ -44,8 +44,8 @@ export async function buildDigest(query: DigestQuery) {
   const format = query.format === "json" ? "json" : "md";
   const origin = (query.origin || "").replace(/\/$/, "");
   const instruction = edition.selection?.packetBasis === "full-paper"
-    ? "This is a PaperScroll board digest, not the authors’ raw abstracts. Its packets were reviewed against the full papers and remain routing notes, not substitutes for source verification. If a paper maps to the current workspace, say how. Do not invent methods, numbers, or GitHub URLs."
-    : "This is a PaperScroll board digest, not the authors’ raw abstracts. Automated packets are based on title and abstract, not a full PDF read. Use them as morning context. If a paper maps to the current workspace, say how. If a packet is thin, say you need the PDF. Do not invent methods, numbers, or GitHub URLs.";
+    ? "This is a PaperScroll board digest, not the authors’ raw abstracts. Its packets were reviewed against the full papers and remain routing notes, not substitutes for source verification. PaperScroll reports what the authors claim and does not rank papers for a reader. If a paper maps to the current workspace, say how. Do not invent methods, numbers, or GitHub URLs."
+    : "This is a PaperScroll board digest, not the authors’ raw abstracts. Automated packets are based on title and abstract, not a full PDF read. Any reported figure is the authors’ own, copied from the listing. PaperScroll reports what the authors claim and does not rank papers for a reader. Use them as morning context. If a paper maps to the current workspace, say how. If a packet is thin, say you need the PDF. Do not invent methods, numbers, or GitHub URLs.";
 
   if (contract === "v1") {
     const sharedPackets = edition.papers.map((paper) => ({
@@ -63,7 +63,7 @@ export async function buildDigest(query: DigestQuery) {
     const deliveryKey = `paperscroll:${edition.date}:${boardVersion}`;
     const payload = {
       schema: "paperscroll.digest",
-      schemaVersion: "1.1",
+      schemaVersion: "1.2",
       schemaUrl: origin ? `${origin}/schemas/digest-v1.json` : null,
       source: "PaperScroll",
       board: {

@@ -51,9 +51,11 @@ export function AboutPage() {
         <section className="block">
           <h2>Host packet</h2>
           <p className="brief-p">
-            Every paper has a verdict, brief, takeaways, and next actions. Its
-            review basis is labelled title + abstract or full paper. A board
-            publishes only after every selected packet validates.
+            Every paper reports what its authors claim, with the figures they
+            state, a brief, takeaways, and next actions. It does not tell you
+            whether to read it: the board is one shared cut and does not know
+            your desk. Its review basis is labelled title + abstract or full
+            paper, and a board publishes only after every packet validates.
           </p>
         </section>
 

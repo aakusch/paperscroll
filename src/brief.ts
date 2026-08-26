@@ -1,8 +1,11 @@
 import type { Paper } from "./data.js";
+import { packetLead } from "./lead.js";
 import { safeGithubUrl, safePaperUrl } from "./links.js";
 
 /** Structured board packet shared by copy actions and the digest. Never add the raw abstract. */
 export function paperPacket(paper: Paper) {
+  const lead = packetLead(paper);
+  const plainLead = packetLead(paper, true);
   const paperUrl = safePaperUrl(paper.url) ?? null;
   const codeUrl = safeGithubUrl(paper.github) ?? null;
   return {
@@ -15,8 +18,12 @@ export function paperPacket(paper: Paper) {
     authors: paper.authors,
     topic: paper.topic,
     packet: {
-      verdict: paper.verdict,
-      verdictWhy: paper.verdictWhy,
+      // Why: a consumer pinned to the old shape keeps reading verdict, but only
+      // frozen boards still carry one. New boards answer with reported/metrics.
+      verdict: lead?.kind === "verdict" ? lead.verdict : null,
+      verdictWhy: lead?.kind === "verdict" ? lead.text : null,
+      reported: lead?.kind === "reported" ? lead.text : null,
+      metrics: lead?.kind === "reported" ? lead.metrics : [],
       brief: paper.brief?.trim() || null,
       takeaways: paper.takeaways,
       actions: paper.actions,
@@ -34,7 +41,8 @@ export function paperPacket(paper: Paper) {
         : null,
       plain: paper.plain
         ? {
-            verdictWhy: paper.plain.verdictWhy,
+            verdictWhy: plainLead?.kind === "verdict" ? plainLead.text : null,
+            reported: plainLead?.kind === "reported" ? plainLead.text : null,
             brief: paper.plain.brief.trim(),
             takeaways: paper.plain.takeaways,
           }
@@ -54,11 +62,15 @@ export function paperMarkdown(paper: Paper) {
     `PDF: ${pdf}`,
   ];
   if (code) lines.push(`Code: ${code}`);
-  lines.push(
-    "",
-    `PaperScroll verdict: ${paper.verdict}. ${paper.verdictWhy}`,
-    "",
-  );
+  const lead = packetLead(paper);
+  if (lead?.kind === "verdict") {
+    lines.push("", `PaperScroll verdict: ${lead.verdict}. ${lead.text}`, "");
+  } else if (lead) {
+    lines.push("", `Authors report: ${lead.text}`, "");
+    if (lead.metrics.length) {
+      lines.push("Reported figures:", ...lead.metrics.map((line) => `- ${line}`), "");
+    }
+  }
   if (paper.brief?.trim()) {
     lines.push("## Brief", paper.brief.trim(), "");
   } else {
@@ -89,7 +101,7 @@ export function paperAgentPrompt(paper: Paper, desk?: string) {
 ${who}
 
 ${paperMarkdown(paper)}
-Using only this packet: (1) state the claim in one sentence, (2) say what would weaken it, (3) Try / Watch / Skip for my desk — disagree with PaperScroll if the brief warrants it, (4) one next step this week, or ignore.`;
+Using only this packet: (1) state the claim in one sentence, (2) say what would weaken it, (3) say whether it touches my desk and how — PaperScroll does not judge that for me, (4) one next step this week, or ignore.`;
 }
 
 export function digestAgentPrompt(opts: {
