@@ -72,8 +72,16 @@ jobs:
       - name: Cut and generate the complete board
         if: steps.frozen.outputs.value != 'true'
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          PAPERSCROLL_MODEL: gpt-4o-mini
+          # Either key works. PAPERSCROLL_API_BASE decides which API is spoken:
+          # unset means OpenAI's Responses API, anything else is an
+          # OpenAI-compatible chat-completions server.
+          PAPERSCROLL_API_KEY: ${{ secrets.PAPERSCROLL_API_KEY || secrets.OPENAI_API_KEY }}
+          PAPERSCROLL_API_BASE: ${{ vars.PAPERSCROLL_API_BASE }}
+          PAPERSCROLL_MODEL: ${{ vars.PAPERSCROLL_MODEL || 'gpt-4o-mini' }}
+          # One packet per request, four at a time: what a self-hosted 27B needs
+          # to pass strict validation. Harmless against OpenAI.
+          PAPERSCROLL_BATCH_SIZE: ${{ vars.PAPERSCROLL_BATCH_SIZE || '1' }}
+          PAPERSCROLL_CONCURRENCY: ${{ vars.PAPERSCROLL_CONCURRENCY || '4' }}
         run: npm run publish -- "${{ steps.board.outputs.date }}"
 
       - name: Derive source-page previews

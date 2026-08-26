@@ -51,9 +51,11 @@ if (!repair && fileExists(boardPath)) {
   process.exit(0);
 }
 
-const apiKey = process.env.OPENAI_API_KEY;
+// Why: PAPERSCROLL_API_KEY is the name that fits a non-OpenAI endpoint. The old
+// name still works so an existing OpenAI setup needs no change.
+const apiKey = process.env.PAPERSCROLL_API_KEY || process.env.OPENAI_API_KEY;
 if (!apiKey) {
-  console.error("Set OPENAI_API_KEY; automatic publication is atomic and has no abstract-only fallback.");
+  console.error("Set PAPERSCROLL_API_KEY; automatic publication is atomic and has no abstract-only fallback.");
   process.exit(1);
 }
 
