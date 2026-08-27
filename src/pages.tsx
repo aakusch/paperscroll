@@ -539,9 +539,21 @@ export function AgentPage() {
   return (
     <div className="subpage agent-page">
       <article className="sheet agent-sheet">
-        <header className="sheet-head">
+        <header className="sheet-head agent-head">
           <p className="sheet-kicker">Agent routing</p>
-          <h1>Morning route</h1>
+          <div className="agent-head-grid">
+            <div>
+              <h1>Give your agent a clean morning brief.</h1>
+              <p className="agent-lede">
+                A stable endpoint for bringing the completed board into the work
+                your agent already has open.
+              </p>
+            </div>
+            <div className="agent-head-status" aria-label="Route behavior">
+              <span className="agent-status-dot" aria-hidden="true" />
+              <span>One complete board<br />per delivery key</span>
+            </div>
+          </div>
         </header>
         <AgentDigest />
       </article>
@@ -629,7 +641,7 @@ function AgentDigest() {
 
   return (
     <section className="digest-panel">
-      <p>
+      <p className="agent-overview-copy">
         Create a read-only token, then schedule one weekday GET. The endpoint
         returns the latest complete host packets in your field order, with your
         desk context; your runtime handles ingestion.

@@ -93,9 +93,13 @@ function Shell() {
       <nav className="nav" aria-label="Primary">
         <Link to="/" className="logo">
           <img src="/favicon.png" width="32" height="32" alt="" />
-          <span className="sr-only">PaperScroll</span>
+          <span className="logo-copy">
+            <strong>PaperScroll</strong>
+            <small>Research briefing</small>
+          </span>
         </Link>
         <div className="nav-links">
+          <p className="nav-label">Read</p>
           <NavLink
             to="/"
             end
@@ -107,11 +111,14 @@ function Shell() {
           >
             The board
           </NavLink>
+          <p className="nav-label nav-label-spaced">Workspace</p>
           <NavLink to="/saved">Saved{laterCount ? ` (${laterCount})` : ""}</NavLink>
-          <NavLink to="/agent">Agent</NavLink>
+          <NavLink to="/agent">Agent routing</NavLink>
+          <p className="nav-label nav-label-spaced">PaperScroll</p>
           <NavLink to="/about">About</NavLink>
         </div>
         <div className="nav-foot">
+          <span className="nav-foot-label">Your workspace</span>
           {account ? (
             <NavLink to="/account" className="nav-user">
               <span className="nav-user-mark" aria-hidden="true">
