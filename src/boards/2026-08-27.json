@@ -1,0 +1,668 @@
+{
+  "date": "2026-08-27",
+  "label": "Thu, Aug 27",
+  "minutes": 10,
+  "poolSize": 116,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-08-27T17:33:22.638Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2608.26005",
+      "arxivId": "2608.26005",
+      "url": "https://arxiv.org/abs/2608.26005",
+      "topic": "AI",
+      "reported": "The authors report that VoiceMem completes retrieval in 134 ms, which they state is well within standard VAD latency.",
+      "metrics": [
+        "134 ms",
+        "4.29 points",
+        "30 points"
+      ],
+      "title": "VoiceMem: Streaming Dual-Brain Memory for Real-Time Interaction",
+      "authors": "Zhifei Xie, Jiaqi Lang, Ze An, Yifan Zhao, Dongchao Yang, Kai Li, Ziyang Ma, Mingbao Lin, Chunyan Miao, Shuicheng Yan",
+      "takeaway": "The authors claim VoiceMem is a streaming dual-brain memory architecture that enables accurate, empathetic, and real-time interaction for speech language models.",
+      "brief": "The authors propose VoiceMem, a memory architecture with parallel informational and emotional components, and a pipeline for training and deploying memory-aware speech language models. They report that the system achieves high accuracy in retrieval, state-of-the-art performance on persona benchmarks, and low retrieval latency in their experiments and deployment. The listing does not specify the exact datasets, baseline configurations, or statistical significance of the reported improvements.\n\nThe strongest reported result is a 134 ms retrieval latency, which the authors state fits within standard voice activity detection limits. They also report a 30-point accuracy advantage over Mem0 under specific retrieval conditions and a 4.29-point aggregate score improvement on persona benchmarks. The abstract does not detail the specific metrics used for the 30-point comparison or the exact composition of the three persona benchmarks.\n\nResearchers working on streaming speech interfaces, memory-augmented language models, or real-time conversational AI may find the architecture and pipeline relevant. Those requiring detailed ablation studies, specific dataset breakdowns, or code-level implementation details should verify the full paper and repository before relying on the reported figures.",
+      "abstract": "Conversational systems, such as duplex speech language models (SLMs), still lack a streaming, accurate, and empathetic memory system as their soul. We introduce VoiceMem, a simple memory architecture with a parallel informational left brain, an emotional right brain, and streaming memory I/O mechanisms. We further build a complete pipeline for memory-aware SLM training, long-horizon evaluation, and decoupled deployment with interchangeable memory backends. Experiments and real-world deployment show three advantages: i) Accuracy: under top-5 retrieval, the left brain outperforms classical systems such as Mem0 at top-200 by nearly 30 points; ii) Emotional & Personal: the right brain, with short- and long-horizon affective attribution and dual-node persona modeling, achieves state-of-the-art performance across three persona benchmarks and improves the aggregate score by 4.29 points over the previous best system; and iii) Real-Time & Cheap: VoiceMem completes retrieval in 134 ms, well within standard VAD latency, adding no extra conversational delay while maintaining high accuracy and low cost. These results show that VoiceMem provides a practical memory foundation for real-time, personalized, and emotionally aware speech interaction.",
+      "takeaways": [
+        "The object is a dual-brain memory architecture designed for streaming speech language models, separating informational and emotional processing.",
+        "A visible limit is the lack of specified dataset names, baseline versions, or statistical error margins for the reported accuracy and persona score improvements.",
+        "The artifact status is indicated by a declared GitHub repository URL, but the listing does not confirm code completeness, license, or reproducibility of the reported 134 ms latency."
+      ],
+      "plain": {
+        "reported": "The authors report that their system finds relevant information in 134 milliseconds, which they say is fast enough to not slow down normal speech processing.",
+        "brief": "The authors created a system called VoiceMem that helps speech-based AI remember conversations. It has two parts: one for facts and one for emotions. They say it works well in tests and real-world use. They claim it is accurate, emotionally aware, and fast. The summary does not say exactly which tests were used or how the comparisons were made.\n\nThe main result they highlight is that the system finds information in 134 milliseconds. They also say it is 30 points better than another system called Mem0 in some tests, and 4.29 points better on emotion-related tests. The summary does not explain what these points mean or which specific tests were used.\n\nPeople who build voice assistants or AI that remembers conversations might find this useful. People who need to know exactly how the tests were set up or want to see the code should check the full paper and the online code repository first.",
+        "takeaways": [
+          "The system is a memory tool for voice AI that separates facts from feelings.",
+          "The summary does not list the specific tests or data used to prove the system is better.",
+          "The authors provide a link to their code, but the summary does not say if the code is complete or easy to use."
+        ]
+      },
+      "actions": [
+        "Verify the specific retrieval metrics and baseline configurations for the 30-point accuracy claim by examining the full paper and the provided GitHub repository.",
+        "Check the repository for implementation details and benchmarks to confirm the 134 ms retrieval latency and the 4.29-point persona score improvement in a reproducible environment."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/xzf-thu/VoiceMem",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-08-27",
+        "publishedOn": "2026-08-26",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.26005",
+            "upvotes": 142
+          }
+        ]
+      },
+      "trend": {
+        "votes": 142,
+        "rank": 1,
+        "of": 29,
+        "perDay": 142
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 142,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-08-27T17:33:22.638Z"
+      }
+    },
+    {
+      "id": "2608.19583",
+      "arxivId": "2608.19583",
+      "url": "https://arxiv.org/abs/2608.19583",
+      "topic": "AI",
+      "reported": "The authors report that the strongest model, Seedance 2.0, achieved only 51.0% under their evaluation criteria.",
+      "metrics": [
+        "27 tasks",
+        "810 instances",
+        "51.0%"
+      ],
+      "title": "VGI-BENCH: Probing Visual Intelligence in Video Generation Models",
+      "authors": "Xuan He, Cong Wei, Yuhao Cheng, Linrui Ma, Yuxuan Zhang, Zuojun Li, Yuhao Wen, Zeyi Liu, Yuren Hao, Songcheng Cai, Keming Wu, Penghui Du, Kai Zou, Rui Yang, Chenkai Sun, Ke Yang, Ping Nie, Kelsey R Allen, Chenglong Wang, Michel Galley, Jianfeng Gao, ChengXiang Zhai",
+      "takeaway": "The paper introduces VGI-bench, a benchmark with 27 tasks and 810 instances for fine-grained evaluation of visual reasoning in video generation models.",
+      "brief": "The authors propose VGI-bench to evaluate visual reasoning in video generation models using a two-level taxonomy of task domains and skill tags. They state that benchmarks must align with visual priors and require valid evolving processes rather than just plausible final states.\n\nThe authors report that current systems remain far from reliable, with the strongest model, Seedance 2.0, achieving only 51.0% under their criteria. They analyze failure modes, input sensitivity, and internal denoising perspectives, noting limited self-correction where later steps refine early hypotheses rather than correct errors. The listing does not establish specific limitations of the benchmark itself beyond the reported model performance.\n\nResearchers evaluating video generation models for visual reasoning capabilities may find this benchmark relevant. Those not working on video generation model evaluation or visual reasoning benchmarks may ignore it.",
+      "abstract": "Recent studies suggest that video generation models can exhibit certain forms of zero-shot visual reasoning through generated frames. Yet reliable evaluation remains challenging: benchmarks should adopt inputs aligned with the visual priors of current video models, require valid evolving processes rather than only plausible final states, and calibrate task difficulty to remain challenging yet partly feasible. To this end, we introduce VGI-bench, containing 27 tasks and 810 instances, organized by a two-level taxonomy of task domains and skill tags for fine-grained evaluation of visual reasoning capabilities of video generation models. Our evaluations show that current generative systems can solve a subset of visually grounded reasoning tasks, but remain far from reliable, with even the strongest model, Seedance~2.0, achieving only 51.0% under our evaluation criteria. Our analysis further explore the output failure modes, input condition sensitivity, performance transfer boundary from synthetic fine-tuning, and internal denoising perspective revealing limited self-correction, where later steps mainly refine early hypotheses rather than correct reasoning errors. We hope VGI-bench will help stimulate the development of next-generation video generation models. We will release our code and data.",
+      "takeaways": [
+        "The object is a benchmark named VGI-bench containing 27 tasks and 810 instances for evaluating visual reasoning in video generation models.",
+        "A visible limit is that even the strongest model, Seedance 2.0, achieves only 51.0% under the authors' evaluation criteria, indicating current systems are far from reliable.",
+        "The artifact status is that the authors state they will release code and data, with a provided GitHub repository URL."
+      ],
+      "plain": {
+        "reported": "The authors report that the best-performing model, Seedance 2.0, scored 51.0% on their specific test set.",
+        "brief": "The authors created a test set called VGI-bench to check if video creation AI can reason about what it sees. They argue that tests need to match how these AIs are trained and check the process, not just the final image.\n\nThey found that current AI systems are not reliable at this. The best model, Seedance 2.0, only got 51.0% correct. They also looked at why the AI fails, noting that it often sticks to its first wrong guess instead of fixing it later. The text does not say if the test set itself has flaws.\n\nPeople who test video AI for logic skills might use this. People who do not work on video AI testing might not need it.",
+        "takeaways": [
+          "The thing is a test set with 27 different tasks and 810 examples for checking video AI reasoning.",
+          "A clear limit is that the best AI only got 51.0% right, showing it is not good enough yet.",
+          "The authors say they will share the code and data online."
+        ]
+      },
+      "actions": [
+        "Verify the specific evaluation criteria and task definitions in the PDF to understand how the 51.0% score was calculated.",
+        "Check the GitHub repository to confirm the availability and structure of the released code and data."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/hexuan21/VGI-Bench",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-08-27",
+        "publishedOn": "2026-08-20",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.19583",
+            "upvotes": 127
+          }
+        ]
+      },
+      "trend": {
+        "votes": 127,
+        "rank": 2,
+        "of": 29,
+        "perDay": 18
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 127,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-20"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-08-27T17:33:22.638Z"
+      }
+    },
+    {
+      "id": "2608.24979",
+      "arxivId": "2608.24979",
+      "url": "https://arxiv.org/abs/2608.24979",
+      "topic": "AI",
+      "reported": "The authors report that the best-performing configurations completed only 20 of the 97 released tasks, yielding a Pass Rate of 20.6%.",
+      "metrics": [
+        "Pass Rate of 20.6%",
+        "Avg. Scores reached 87.6",
+        "75.5% still ended with language claiming completion"
+      ],
+      "title": "FrontierChallenge: Evaluating Scientific Workflow Completion",
+      "authors": "Liangcai Su, Zhaopeng Feng, Zhuo Chen, Zhen Zhang, Xiang Lin, Ruilin Li, Handuo Zhang, Ning Wang, Kailong Wen, Yueqi Guo, Feng Xing, Yiling Guo, Chenxiong Qian, Simon Shaolei Du, Lidong Bing, Xinyu Wang",
+      "takeaway": "The paper introduces FrontierChallenge, a cross-domain benchmark comprising 300 end-to-end scientific workflows to evaluate the completeness of scientific deliverables.",
+      "brief": "The authors propose a benchmark for evaluating scientific agents on end-to-end workflow completion rather than isolated answers. They report that top models achieved a Pass Rate of 20.6% on 97 released tasks, with high partial scores not translating to full delivery in some domains. The listing does not establish whether the remaining 203 tasks are available or if the code is public.\n\nThe strongest reported result is a 20.6% Pass Rate for the best configurations, measured on 97 tasks across six scientific domains. The authors note that 75.5% of non-passing trajectories claimed completion, indicating a gap between partial progress and full delivery. No specific limitations regarding model training data or scaffold biases are detailed in the abstract.\n\nResearchers evaluating scientific AI agents or building benchmarks for workflow completion should open this paper. Those focused solely on single-domain chemical calculations or isolated code generation may ignore it.",
+      "abstract": "Scientific agents increasingly analyze data, execute code, and produce research artifacts, yet most benchmarks emphasize final answers, isolated programs, or a single domain. We introduce FrontierChallenge, a cross-domain benchmark comprising 300 end-to-end scientific workflows. In this paper, we release and evaluate 97 of these tasks, spanning quantum chemistry, molecular dynamics, materials characterization, analytical chemistry, life science, and electrochemistry/environment. Each task provides fixed inputs and specifies a bundle of required scientific deliverables. We evaluate twelve frontier models with three agent scaffolds. Pass Rate measures the fraction of tasks satisfying the full-completion criterion, while Avg. Score captures partial progress. Each of the best-performing configurations completed only 20 of the 97 released tasks, yielding a Pass Rate of 20.6%. Partial progress translated especially poorly into complete delivery in analytical chemistry and electrochemistry/environment: Avg. Scores reached 87.6 and 94.9, but the highest Pass Rates were only 4% and 0%. Among non-passing Claude Code trajectories, 75.5% still ended with language claiming completion. These findings show that neither high partial scores nor confident claims of completion reliably indicate that a scientific task has been fully delivered, highlighting the need to evaluate end-to-end workflow execution and the completeness of scientific deliverables together.",
+      "takeaways": [
+        "The object is a cross-domain benchmark for end-to-end scientific workflow completion.",
+        "A visible limit is the gap between high partial scores and low full-completion rates in specific domains.",
+        "The artifact status is unclear as no code repository is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that the best-performing configurations completed only 20 of the 97 released tasks, yielding a Pass Rate of 20.6%.",
+        "brief": "The authors propose a test set for checking if AI tools can finish entire scientific projects, not just answer single questions. They found that the best AI models only fully finished 20.6% of the 97 tests they released, even when they made good progress on parts of the work. The text does not say if the rest of the tests or the software are available to the public.\n\nThe main result is that the best setups finished only 20.6% of the tasks, tested on 97 problems in six science areas. The authors point out that 75.5% of the failed attempts said they were done, showing that making progress does not mean the job is finished. The abstract does not explain any specific weaknesses in the AI training or the testing tools.\n\nPeople who test AI tools for science or create tests for complete workflows should look at this paper. People who only care about single chemistry calculations or writing small pieces of code might not need it.",
+        "takeaways": [
+          "The thing being tested is a set of problems for checking if AI can finish whole science projects.",
+          "A clear weakness is that making good progress on parts of a problem does not mean the whole problem is solved.",
+          "It is not clear if the software or full test set is available because no link is given in the listing."
+        ]
+      },
+      "actions": [
+        "Verify the availability of the full 300-task dataset and the 97-task evaluation code in the PDF.",
+        "Check the PDF for details on the specific agent scaffolds used and their impact on the reported Pass Rates."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-08-27",
+        "publishedOn": "2026-08-25",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.24979",
+            "upvotes": 125
+          }
+        ]
+      },
+      "trend": {
+        "votes": 125,
+        "rank": 3,
+        "of": 29,
+        "perDay": 63
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 125,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-08-27T17:33:22.638Z"
+      }
+    },
+    {
+      "id": "2608.24479",
+      "arxivId": "2608.24479",
+      "url": "https://arxiv.org/abs/2608.24479",
+      "topic": "AI",
+      "reported": "The authors report that WarpSAC improves normalized score--step AUC over FlashSAC by 4.5% across nine CPU-scale environments and 23.1% across fourteen GPU-parallel environments.",
+      "metrics": [
+        "4.5% across nine CPU-scale environments",
+        "23.1% across fourteen GPU-parallel environments",
+        "19.8% to 96.4%"
+      ],
+      "title": "WarpSAC: Towards the Pinnacle of Scalable Off-policy RL by Rethinking Exploration and Exploitation",
+      "authors": "Zihao Wu, Hongyao Tang, Yi Ma, Huizhong Song, Pengyi Li, Yifu Yuan, Fei Ni, Jinyi Liu, Wei Wei, Jianrong Wang, Yan Zheng, Jianye Hao",
+      "takeaway": "The paper claims to propose WarpSAC, a regime-aware family of off-policy RL algorithms that adapt stabilizers to the available data regime.",
+      "brief": "The authors propose WarpSAC, a family of off-policy RL algorithms designed to adapt stabilizers like parameter normalization and clipped double-Q to different data regimes. They argue that standard stabilizers are data-regime-dependent and that their approach improves learning efficiency across both CPU-scale and GPU-parallel settings.\n\nThe strongest reported result is a 23.1% improvement in normalized score--step AUC over FlashSAC across fourteen GPU-parallel environments. The authors also report a success rate increase from 19.8% to 96.4% on UnitreeG1TransportBox-v1 and a 36.4% faster sim-to-real deployment. The listing does not establish whether these results generalize beyond the specific benchmark families or hardware configurations tested.\n\nResearchers working on scalable off-policy RL who need to tune stabilizers for high-throughput simulation may find the regime-aware variants useful. Those focused on data-limited settings without access to massive parallel simulation may find the WarpSAC-A variant less relevant, as it is specifically designed for data-abundant GPU-parallel training.",
+      "abstract": "Massively parallel simulation changes the data regime in which off-policy reinforcement learning (RL) is trained, challenging stabilizers designed for data-limited replay. Through controlled experiments across eight benchmark families, we show that these stabilizers are data-regime-dependent: parameter normalization helps with narrow replay coverage but restricts value fitting when data are abundant, while clipped double-Q can be relaxed in high-throughput manipulation. Age-biased replay weighting improves learning efficiency across regimes, especially with limited network capacity. Based on these findings, we propose WarpSAC, a regime-aware family of off-policy RL algorithms. WarpSAC uses Sample Weight Decay for efficient exploitation and provides two variants: WarpSAC-L (Norm ON, clipped double-Q) for data-limited CPU-scale training, and WarpSAC-A (Norm OFF, single-Q) for data-abundant GPU-parallel training. WarpSAC improves normalized score--step AUC over FlashSAC by 4.5% across nine CPU-scale environments and 23.1% across fourteen GPU-parallel environments. It increases UnitreeG1TransportBox-v1 success rate from 19.8% to 96.4%, improves mean normalized wall-time AUC on MuJoCo Playground by 19.1%, and achieves 36.4% faster sim-to-real deployment on Unitree G1 than FlashSAC. These results show that scalable off-policy RL should adapt its stabilizers to the available data regime.",
+      "takeaways": [
+        "The object is a family of off-policy RL algorithms that adjust stabilizers based on data regime.",
+        "A visible limit is that the reported gains are tied to specific benchmark families and hardware scales, with no stated generalization to other environments.",
+        "The artifact status is established by the provided GitHub repository URL, though the listing does not confirm code completeness or reproducibility."
+      ],
+      "plain": {
+        "reported": "The authors report that their method, WarpSAC, scores 23.1% higher than a baseline method called FlashSAC on a measure of learning efficiency across fourteen computer-simulated robot tasks running on graphics processing units.",
+        "brief": "The authors suggest that standard techniques used to stabilize robot learning algorithms work differently depending on how much data is available. They propose a new set of algorithms called WarpSAC that automatically adjust these techniques based on whether the training is done on smaller, slower computers or larger, faster graphics processing units.\n\nThe best result they report is a 23.1% improvement in a learning efficiency score compared to a previous method. They also show that their method allows a simulated robot to successfully transport a box 96.4% of the time, up from 19.8%, and that it deploys to a real robot 36.4% faster. The listing does not say if these results hold for other types of robots or tasks not included in their tests.\n\nPeople who train robot learning algorithms on large clusters of graphics processing units might find the high-data version of their method useful. People who train on smaller, slower computers might find the low-data version more relevant, but the listing does not detail how well it performs in those specific scenarios beyond the general claim.",
+        "takeaways": [
+          "The main contribution is a set of robot learning algorithms that change their internal settings based on how much training data is available.",
+          "A clear limitation is that the reported improvements are only shown for specific simulated tasks and specific computer hardware, with no evidence provided for other setups.",
+          "The authors provide a link to a code repository, but the listing does not confirm if the code is complete or easy to use."
+        ]
+      },
+      "actions": [
+        "Verify the reported AUC improvements and success rates by running the provided code on the specified CPU and GPU environments.",
+        "Check the GitHub repository for documentation on the Sample Weight Decay mechanism and the specific configurations for WarpSAC-L and WarpSAC-A."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/wzhhasadream/warprl",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-08-27",
+        "publishedOn": "2026-08-25",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.24479",
+            "upvotes": 107
+          }
+        ]
+      },
+      "trend": {
+        "votes": 107,
+        "rank": 4,
+        "of": 29,
+        "perDay": 54
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 107,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-08-27T17:33:22.638Z"
+      }
+    },
+    {
+      "id": "2608.24894",
+      "arxivId": "2608.24894",
+      "url": "https://arxiv.org/abs/2608.24894",
+      "topic": "Econ",
+      "reported": "The authors report that catalogue-specific modelling outperformed unified approaches, with LightGBM emerging as the superior model for three out of four catalogues.",
+      "metrics": [
+        "105 weekly broker reports",
+        "p<0.05",
+        "1-3-week lags"
+      ],
+      "title": "Forecasting Weather-Driven Price Dynamics Across Sri Lankan Tea Market Catalogues",
+      "authors": "Hesandi Mallawarachchi, Senilka Madurapperumage, Nadil Kulathunge, Thilokya Angeesa, Nethsith Gunaweera, Sandeepa Weerasekara, Patalee Narasinghe, Nisansa de Silva, Sandareka Wickramanayake",
+      "takeaway": "The paper claims to develop a structured dataset from broker reports and weather data to forecast weather-driven price dynamics across Sri Lankan tea market catalogues.",
+      "brief": "The authors construct a dataset from 105 weekly broker reports and region-specific weather data to analyze four Sri Lankan tea catalogues. They apply Granger causality and tree-based machine learning models to identify price drivers.\n\nThe authors report that Low Grown tea shows strong sensitivity to precipitation and sunshine duration with p<0.05 across 1-3-week lags. They state that catalogue-specific modelling outperformed unified approaches, with LightGBM superior for three of four catalogues. The listing does not specify the exact performance metric used to determine model superiority.\n\nResearchers studying agricultural commodity pricing, weather-econometric interactions, or Sri Lankan tea markets may find the dataset construction and catalogue-level analysis relevant. Those requiring generalizable global tea price models or specific predictive accuracy benchmarks may find the scope limited.",
+      "abstract": "The Colombo Tea Auction (CTA) plays a vital role in determining global tea prices, yet the relationship between local weather conditions and price behavior across different tea catalogues has not been thoroughly explored. In this study, we develop a novel, structured dataset by extracting information from 105 weekly broker reports spanning late 2023 to 2026, and combined with region-specific weather data. Our analysis focuses on four main tea catalogues of Sri Lankan tea: High Grown, Low Grown, Off-Grade, and Dust. To better understand the factors influencing tea prices, we apply Granger causality analysis alongside tree-based machine learning models: Random Forest, XGBoost, LightGBM, and Gradient Boosting. Our results show that while market dynamics are primary drivers, weather conditions also have significant effects. Notably, Low Grown tea shows strong sensitivity to precipitation and sunshine duration (p<0.05) across 1-3-week lags. Off-Grade and Dust catalogues also exhibit significant responses to temperature variations. Catalogue-specific modelling outperformed unified approaches, with LightGBM emerging as the superior model for three out of four catalogues. Overall, this study highlights the importance of considering both localized weather patterns and catalogue-level differences when forecasting tea prices, offering a more precise and practical framework for the tea industry.",
+      "takeaways": [
+        "The object is a structured dataset of 105 weekly broker reports combined with region-specific weather data for four Sri Lankan tea catalogues.",
+        "A visible limit is that the listing does not define the specific quantitative metric used to declare LightGBM as the superior model for three catalogues.",
+        "The artifact status is not established in the listing, as no code repository or data availability statement is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that building separate models for each tea type worked better than one model for all types, with the LightGBM algorithm performing best for three of the four tea categories.",
+        "brief": "The researchers created a database using 105 weekly reports from tea brokers and local weather records to study four types of Sri Lankan tea. They used statistical tests and machine learning algorithms to see how weather affects tea prices.\n\nThe authors found that one tea type, Low Grown, reacted strongly to rain and sunlight levels, with a statistical significance level below 0.05 over one to three weeks. They state that separate models for each tea type beat a single combined model, with LightGBM being the best algorithm for three categories. The summary does not say exactly how they measured which model was better.\n\nPeople who study how weather affects farm product prices or who focus on the Sri Lankan tea industry might find this useful. People who need a model that works for tea markets worldwide or who need specific accuracy scores might find this too narrow.",
+        "takeaways": [
+          "The main item is a new dataset combining 105 weekly broker reports with local weather data for four specific tea types.",
+          "A clear limitation is that the summary does not explain the exact score or test used to say one model was better than others.",
+          "It is not stated in the summary whether the code or data is available for download or use."
+        ]
+      },
+      "actions": [
+        "Verify the specific performance metric and baseline comparisons in the full PDF to confirm the claim of LightGBM superiority.",
+        "Check the full text for details on the weather data sources and the exact temporal alignment between broker reports and weather variables."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "cs.LG",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-08-27",
+        "publishedOn": "2026-08-27",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.24894"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-27"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-08-27T17:33:22.638Z"
+      }
+    },
+    {
+      "id": "2608.24923",
+      "arxivId": "2608.24923",
+      "url": "https://arxiv.org/abs/2608.24923",
+      "topic": "Physics",
+      "reported": "The authors report identifying small errors in the proof of Theorem 1 in the cited paper, noting these do not affect the theorem's validity but matter for explicitly computing Fourier coefficients of a quantum kernel.",
+      "metrics": [],
+      "title": "Comment on 'Supervised quantum machine learning models are kernel methods'",
+      "authors": "Rajiv Krishnakumar",
+      "takeaway": "The paper identifies small errors in the proof of Theorem 1 in a prior work and provides a corrected derivation, while also showing that a worked cosine-kernel example contains a second, unrelated error that cancels the first.",
+      "brief": "The author identifies small errors in the proof of Theorem 1 in a prior paper on supervised quantum machine learning models as kernel methods. These errors do not affect the theorem's validity but matter for explicitly computing Fourier coefficients of a quantum kernel.\n\nThe author provides a corrected derivation and shows that the prior paper's worked cosine-kernel example contains a second, unrelated error that cancels the first, coincidentally yielding the correct result. No new experimental results or benchmarks are reported in the listing.\n\nResearchers verifying the mathematical derivations of quantum kernel methods or those relying on the specific appendix for Fourier coefficient computations should open this paper. Those not using the specific appendix for explicit calculations may ignore it.",
+      "abstract": "We identify a few small errors in the proof of Theorem 1 in M. Schuld, 'Supervised quantum machine learning models are kernel methods' (arXiv:2101.11020v2), Appendix A. These do not affect the validity of the theorem, but do matter if one wants to use the appendix to explicitly compute the Fourier coefficients of a quantum kernel. We give the corrected derivation, and additionally show that the paper's worked cosine-kernel example contains a second, unrelated error that happens to cancel the first, thereby coincidentally yielding the correct result.",
+      "takeaways": [
+        "The object is a mathematical correction to a proof in a prior quantum machine learning paper.",
+        "The visible limit is that the errors do not affect the main theorem's validity, only the explicit computation steps in the appendix.",
+        "The artifact status is a theoretical correction with no new code or datasets provided in the listing."
+      ],
+      "plain": {
+        "reported": "The author says they found small mistakes in the mathematical proof of a theorem in a previous paper. They say these mistakes do not change the main result of that theorem, but they do matter if someone wants to use the appendix to calculate specific numbers for a quantum kernel.",
+        "brief": "The author points out small mistakes in the proof of a theorem in a previous paper about quantum machine learning. These mistakes do not change the main result, but they do matter if you want to use the appendix to calculate specific numbers for a quantum kernel.\n\nThe author gives the corrected math and shows that the previous paper's example calculation had a second, separate mistake that accidentally canceled out the first mistake, giving the right answer by chance. The listing does not report any new experiments or test results.\n\nPeople who are checking the math in quantum kernel methods or using that specific appendix to calculate numbers should read this paper. People who are not using that specific appendix for calculations can skip it.",
+        "takeaways": [
+          "The paper is about fixing math in a previous paper's proof.",
+          "The limit is that the main theorem is still correct, only the detailed calculation steps in the appendix were wrong.",
+          "There is no new code or data provided in the listing, just a math correction."
+        ]
+      },
+      "actions": [
+        "Verify the corrected derivation against the original Appendix A of arXiv:2101.11020v2.",
+        "Check the worked cosine-kernel example to confirm the cancellation of the two unrelated errors."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-08-27",
+        "publishedOn": "2026-08-27",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.24923"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-27"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-08-27T17:33:22.638Z"
+      }
+    },
+    {
+      "id": "2608.24953",
+      "arxivId": "2608.24953",
+      "url": "https://arxiv.org/abs/2608.24953",
+      "topic": "Health",
+      "reported": "The authors report that RIT significantly increased pairwise accessibility at the token stage relative to both independent-token controls, measured on the experimentally measured GB1 fitness landscape under the FLIP 2-vs-rest setting.",
+      "metrics": [
+        "Delta A_tok,2 = 0.2468",
+        "d_z = 1.67",
+        "Holm-adjusted p = 1.14 x 10^-5"
+      ],
+      "title": "Beyond Tokens: Probing Higher-Order Epistasis in Learned Protein Representations",
+      "authors": "Maryam Rahimimovassagh, Ivan Garibay, Niloofar Yousefi",
+      "takeaway": "The paper introduces ORBIT, a framework that separates interaction presence, representation accessibility, and functional recovery to probe higher-order epistasis in learned protein representations.",
+      "brief": "The authors propose ORBIT to distinguish interaction presence, representation accessibility, and functional recovery in protein representation learning. They validate the framework on synthetic landscapes and apply it to the GB1 fitness landscape under the FLIP 2-vs-rest setting.\n\nThe authors report that RIT significantly increased pairwise accessibility at the token stage relative to independent-token controls, but found no significant architecture differences in FLIP test R^2 or higher-order functional recovery across 20 paired training seeds. They note that deeper MLPs improved FLIP prediction and third-order functional recovery, while fourth-order accessibility remained below zero in absolute held-out R^2.\n\nResearchers studying protein fitness landscapes or representation learning may find the framework useful for analyzing interaction accessibility. Those focused solely on predictive accuracy may find the lack of downstream higher-order advantage in RIT relevant to their model selection.",
+      "abstract": "Protein fitness landscapes contain nonlinear interactions in which mutation effects depend on other residues. We introduce ORBIT, an Order-Resolved Benchmarking of Interaction Transformations framework that separates interaction presence, representation accessibility, and functional recovery. ORBIT first validates Walsh-based diagnostics on synthetic landscapes with known interaction order, then analyzes the experimentally measured GB1 fitness landscape under the FLIP 2-vs-rest setting. We compare ridge regression, a standard MLP, independent tokens, nonlinear independent tokens, and Residual Interaction Tokenization (RIT). Across 20 paired training seeds, the primary two-hidden-layer comparison found no significant architecture differences in FLIP test R^2, third- or fourth-order functional recovery, or final-layer third- or fourth-order accessibility. However, RIT significantly increased pairwise accessibility at the token stage relative to both independent-token controls (Delta A_tok,2 = 0.2468, d_z = 1.67, Holm-adjusted p = 1.14 x 10^-5), without a detectable downstream higher-order advantage. A pre-specified depth/capacity analysis showed that deeper MLPs improved FLIP prediction, third-order functional recovery, and final-layer third-order accessibility; fourth-order accessibility also improved relative to the shallow MLP but remained below zero in absolute held-out R^2. ORBIT therefore reveals representation-level changes hidden by conventional prediction metrics and distinguishes early interaction-aware encoding from higher-order structure constructed by downstream nonlinear capacity.",
+      "takeaways": [
+        "The object is a benchmarking framework (ORBIT) that separates interaction presence, representation accessibility, and functional recovery in protein representations.",
+        "A visible limit is that RIT showed increased pairwise accessibility at the token stage without a detectable downstream higher-order advantage in functional recovery.",
+        "The artifact status is not established in the listing, as no code repository or release is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that their RIT method significantly increased the measure of pairwise interaction accessibility at the token stage compared to control methods, measured on the experimentally measured GB1 protein fitness landscape using the FLIP 2-vs-rest experimental setup.",
+        "brief": "The authors propose a new tool called ORBIT to help researchers understand how protein models capture interactions between different parts of the protein. They test this tool on computer-generated protein landscapes and then on a real protein called GB1.\n\nThe authors found that their RIT method made it easier for the model to see pairwise interactions at an early stage, but this did not lead to better performance in predicting higher-order interactions or overall fitness. They also found that making the neural network deeper improved its ability to predict fitness and capture third-order interactions, but it still struggled with fourth-order interactions.\n\nScientists who study how proteins evolve or how machine learning models represent protein structures might find this tool helpful. Researchers who are only interested in how accurately a model can predict protein fitness might note that the new method did not improve overall prediction accuracy.",
+        "takeaways": [
+          "The main contribution is a new benchmarking tool called ORBIT that helps separate different aspects of how protein models capture interactions.",
+          "A limitation is that the new RIT method improved early-stage interaction detection but did not improve the model's ability to predict complex, higher-order interactions or overall fitness.",
+          "The listing does not state whether the code for this tool is publicly available or how to access it."
+        ]
+      },
+      "actions": [
+        "Verify the specific implementation details of the Walsh-based diagnostics and the FLIP 2-vs-rest setting in the full PDF.",
+        "Check the supplementary materials for the complete statistical results across all 20 paired training seeds and the depth/capacity analysis."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-08-27",
+        "publishedOn": "2026-08-27",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.24953"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-27"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-08-27T17:33:22.638Z"
+      }
+    },
+    {
+      "id": "2608.24957",
+      "arxivId": "2608.24957",
+      "url": "https://arxiv.org/abs/2608.24957",
+      "topic": "Security",
+      "reported": "The authors report that their middleware reduces privacy cost by 81.2--92.0% on 307 tool calls across three LLMs while maintaining 100% argument-level task validity.",
+      "metrics": [
+        "81--88\\% of tool calls include unnecessary PSD",
+        "reduces privacy cost by 81.2--92.0\\%",
+        "Median latency is 1.77\\,ms"
+      ],
+      "title": "ToolMinimize: Auditing and Rewriting LLM Agent Tool Calls to Minimize Privacy Exposure",
+      "authors": "Wenbiao Li, Yuqiao Xu",
+      "takeaway": "The paper presents a middleware that intercepts LLM agent tool calls and rewrites their arguments to minimize privacy exposure while preserving task functionality.",
+      "brief": "The authors propose ToolMinimize, a middleware that rewrites LLM agent tool call arguments to remove unnecessary privacy-sensitive data. It combines schema-aware necessity analysis with operations like removal, generalization, and substitution to enforce minimum necessary data.\n\nThe authors report that their system reduces privacy cost by 81.2--92.0% on 307 tool calls across three LLMs while maintaining 100% argument-level task validity. They also report a median latency of 1.77 ms. The listing does not specify the exact definition of \"privacy cost\" or the specific task validity metric beyond the TOST equivalence test.\n\nResearchers working on LLM agent security, privacy-preserving middleware, or tool call optimization may find this relevant. Those focused solely on model training or non-agent applications may find it less applicable.",
+      "abstract": "LLM agents routinely include privacy-sensitive data (PSD) in tool call arguments beyond what the invoked tools require, crossing trust boundaries to third-party services on every invocation. A controlled measurement on three production LLMs (GPT-4o, Claude 3.5 Sonnet, Llama-3.3-70B) shows that 81--88\\% of tool calls include unnecessary PSD under default prompts; explicit privacy instructions still leave 36--76\\% over-sharing. Existing defenses gate calls (allow/block) or label flows (information-flow control) but cannot \\emph{rewrite} argument values, and PII detection tools miss implicit PSD like ``Memorial Sloan Kettering'' (a hospital name that implies a diagnosis). We present \\system{}, a middleware that intercepts tool calls and rewrites their arguments to the minimum data necessary for tool functionality, combining schema-aware necessity analysis with four operations: removal, generalization, substitution, and truncation. Live validation on 307 tool calls across the three LLMs above reduces privacy cost by 81.2--92.0\\% at 100\\% argument-level task validity (TOST equivalence $p{<}0.001$ at $\\Delta{=}1.0$); on 25 unannotated Model Context Protocol (MCP) schemas, by 79.0\\% with no \\texttt{minimum\\_necessary} metadata. An optional LLM content-necessity layer strips task-irrelevant PSD from otherwise-necessary free-text fields, raising live-LLM reduction to 85.1--95.6\\% and author-schema reduction from 71.1\\% to 90.9\\%. Median latency is 1.77\\,ms.",
+      "takeaways": [
+        "The object is a middleware that rewrites tool call arguments to minimize privacy-sensitive data.",
+        "A visible limit is that the evaluation is limited to three specific LLMs and a specific set of tool calls and MCP schemas.",
+        "The artifact status is not established in the listing, as no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their software reduces the amount of private data sent by 81.2--92.0% on 307 tool calls across three AI models while keeping the tasks working perfectly.",
+        "brief": "The authors propose a software tool that changes the data sent by AI agents to third-party services to remove unnecessary private information. It uses analysis of what data is needed for the task and operations like removing or generalizing data to keep only the minimum necessary.\n\nThe authors report that their tool reduces the amount of private data sent by 81.2--92.0% on 307 tool calls across three AI models while keeping the tasks working perfectly. They also report that the tool adds only 1.77 milliseconds of delay. The listing does not explain exactly how \"privacy cost\" is measured or what specific task validity metric is used beyond a statistical test.\n\nPeople who work on making AI agents more secure or private, or who optimize how AI agents use tools, might find this useful. People who only work on training AI models or on applications that do not use AI agents might find it less relevant.",
+        "takeaways": [
+          "The thing being studied is a software tool that changes the data sent by AI agents to reduce private information.",
+          "A limit is that the tests were only done on three specific AI models and a specific set of tool calls and schemas.",
+          "It is not clear from the listing whether the code is available or how the tool is implemented."
+        ]
+      },
+      "actions": [
+        "Verify the definition of \"privacy cost\" and the specific task validity metric in the full PDF.",
+        "Check the full PDF for details on the four operations (removal, generalization, substitution, truncation) and their implementation."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.SE"
+      ],
+      "listing": {
+        "listedOn": "2026-08-27",
+        "publishedOn": "2026-08-27",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.24957"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-27"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-08-27T17:33:22.638Z"
+      }
+    },
+    {
+      "id": "2608.25083",
+      "arxivId": "2608.25083",
+      "url": "https://arxiv.org/abs/2608.25083",
+      "topic": "Stats",
+      "reported": "The authors report that performance is assessed through numerical studies under varying levels of contamination and missingness patterns, and a real data application.",
+      "metrics": [],
+      "title": "A Unified Framework for Heterogeneity, Contamination, and Missing Data in Multivariate Regression",
+      "authors": "Hung Tong, Cristina Tortora, Antonio Punzo",
+      "takeaway": "The paper claims to extend the contaminated Gaussian cluster-weighted model to handle missing-at-random values in both response and covariate spaces for multivariate regression.",
+      "brief": "The authors propose a unified framework that extends the contaminated Gaussian cluster-weighted model to handle missing-at-random values in both response and covariate spaces. This extension allows the model to perform clustering in regression analysis while distinguishing typical observations, outliers, and good and bad leverage points.\n\nThe authors state that maximum likelihood estimation is performed through an expectation-conditional maximization algorithm accounting for four sources of incomplete information. They report that performance is assessed through numerical studies under varying levels of contamination and missingness patterns, and a real data application. The listing does not specify quantitative performance improvements or specific benchmark results.\n\nResearchers working on robust regression with missing data or model-based clustering may find this framework relevant. Those requiring specific quantitative benchmarks or code availability should verify the full paper, as the listing provides no numerical results or repository links.",
+      "abstract": "Missing values, atypical observations, and heterogeneity across latent groups are common sources of complexity in regression data. The contaminated Gaussian cluster-weighted model (CG-CWM) provides a natural framework for handling atypical observations, including outliers and leverage points, in model-based clustering. We extend the CG-CWM to data with missing-at-random (MAR) values in both the response and covariate spaces. The proposed model provides clustering in regression analysis while distinguishing typical observations, outliers, and good and bad leverage points. By treating covariates as random, the model preserves assignment dependence, allowing them to contribute directly to cluster formation. Maximum likelihood estimation is performed through an expectation-conditional maximization (ECM) algorithm that accounts for four sources of incomplete information: missing responses and covariates, unknown component memberships, and latent contamination indicators. Conditional on these indicators, the joint distribution of responses and covariates is multivariate Gaussian, yielding closed-form conditional distributions for missing values and incorporating missingness uncertainty directly into parameter updates. Thus, missing values are handled within model fitting rather than by preliminary imputation. The framework provides clustering, clusterwise regression, model-based treatment of MAR values, and detection of atypical observations. Performance is assessed through numerical studies under varying levels of contamination and missingness patterns, and a real data application.",
+      "takeaways": [
+        "The object is a statistical model extension for multivariate regression that integrates missing data handling with outlier detection.",
+        "A visible limit is the absence of quantitative performance metrics or specific benchmark comparisons in the provided listing.",
+        "The artifact status is unclear because no code repository or supplementary material is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors say they tested their method using computer simulations with different amounts of bad data and missing information, and they also applied it to a real-world dataset.",
+        "brief": "The authors created a new statistical method that combines handling of missing data with the detection of unusual data points in regression analysis. This method treats missing values as part of the main calculation process rather than filling them in first.\n\nThey explain that they used a specific algorithm to estimate the model parameters, accounting for missing responses, missing covariates, unknown group memberships, and unknown contamination indicators. They state that they evaluated the method using simulations and a real data example, but they do not list specific numbers showing how well it performed compared to other methods.\n\nPeople who study statistics, specifically regression analysis with messy data, might find this useful. People who need specific performance numbers or code to run the method should look at the full paper, because this summary does not include those details.",
+        "takeaways": [
+          "The main thing being presented is a statistical model that handles missing data and outliers together in regression.",
+          "A clear limitation is that this summary does not show any specific numbers proving the method works better than existing ones.",
+          "It is not known if the authors have shared their code or data, as this information is not in the summary."
+        ]
+      },
+      "actions": [
+        "Verify the full PDF to confirm the specific numerical results from the numerical studies and the details of the real data application.",
+        "Check the paper for any mention of code availability or supplementary materials to assess reproducibility."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-08-27",
+        "publishedOn": "2026-08-27",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.25083"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-27"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-08-27T17:33:22.638Z"
+      }
+    },
+    {
+      "id": "2608.25301",
+      "arxivId": "2608.25301",
+      "url": "https://arxiv.org/abs/2608.25301",
+      "topic": "Engineering",
+      "reported": "The authors report developing two learning-based controllers, HSPPO and MRHA-DPO, to solve the joint optimization problem for information beamforming, artificial noise, and pinching-antenna positions.",
+      "metrics": [],
+      "title": "Security-Aware Pinching-Antenna Systems (PASS): Physical-Layer Security Transmission",
+      "authors": "Zhaoming Hu, Xiaochen Nie, Ruikang Zhong, Haochen Li, Dengao Li, Xidong Mu",
+      "takeaway": "The paper claims to establish a unified role-dependent transmission framework for pinching-antenna systems that supports heterogeneous security requirements through joint optimization of beamforming, noise, and antenna positions.",
+      "brief": "The authors propose a framework for pinching-antenna systems that uses dynamically adjustable antennas to reshape wave propagation for secure multi-user transmission. They define three security modes that change the logical role of receivers for different information streams.\n\nThe authors report formulating the joint optimization of beamforming, artificial noise, and antenna positions as a long-horizon continuous-control problem. They develop two learning-based controllers, HSPPO and MRHA-DPO, to provide complementary complexity-performance tradeoffs. The listing does not provide quantitative performance results or specific benchmark comparisons.\n\nResearchers working on physical-layer security, antenna array optimization, or reinforcement learning for communication systems may find the framework relevant. Those seeking immediate quantitative performance benchmarks or code availability should note the listing lacks these details.",
+      "abstract": "This paper investigates heterogeneous secure multi-user transmission in pinching-antenna systems (PASS), where dynamically adjustable pinching antennas reshape both guided-wave and free-space propagation to improve communication and confidentiality performance. Unlike conventional physical-layer security designs that represent different security requirements merely through weights or thresholds, heterogeneous services may change the logical role of each receiver for each information stream. To address this issue, we establish a unified role-dependent PASS transmission framework comprising low-, medium-, and high-security modes. These modes respectively maximize the minimum legitimate-user rate, protect confidential streams against external eavesdroppers, and further prevent non-target legitimate users from intercepting unauthorized information. The resulting joint optimization of information beamforming, artificial noise, and pinching-antenna positions is formulated as a long-horizon continuous-control problem. Two learning-based controllers are then developed to provide complementary complexity-performance tradeoffs. First, heterogeneous security-aware proximal policy optimization (HSPPO) directly transforms mode-specific rate and secrecy violations into normalized smooth feedback embedded in the proximal-policy-optimization advantage, enabling lightweight and violation-sensitive control. Second, multi-relational hierarchy-aware diffusion policy optimization (MRHA-DPO) combines a PASS-aware multi-relational graph encoder, a graph-conditioned hierarchical velocity network, and exact-inversion DPO training to achieve topology-aware and expressive control. The proposed framework enables a common PASS platform to flexibly support service-dependent confidentiality requirements while balancing online efficiency and control capability.",
+      "takeaways": [
+        "The object is a unified transmission framework for pinching-antenna systems that handles heterogeneous security modes via joint optimization of beamforming, noise, and antenna positions.",
+        "A visible limit is the absence of quantitative performance metrics or benchmark comparisons in the provided abstract, making it difficult to assess the actual security or rate improvements.",
+        "The artifact status is unclear as no code repository or implementation details are declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors state they created two computer-controlled algorithms, called HSPPO and MRHA-DPO, to manage how signals are sent and how antennas are positioned to keep communications secure.",
+        "brief": "The paper describes a system where antennas can be physically adjusted to change how radio waves travel, aiming to keep different types of user data secure. The authors set up three different levels of security that change how the system treats each user's data.\n\nThe authors explain that they turned the problem of adjusting signals and antenna positions into a complex control task for computer algorithms. They created two different algorithms to solve this task, one focused on efficiency and the other on detailed control. The summary does not include any numbers showing how well the system actually works or how it compares to other methods.\n\nPeople studying how to keep wireless communications secure or how to use computer algorithms to control antennas might find this useful. People looking for specific performance numbers or ready-to-use software should know this summary does not provide them.",
+        "takeaways": [
+          "The main idea is a system that adjusts antennas and signals together to handle different security needs for different users.",
+          "A clear limitation is that the summary does not show any actual performance numbers or comparisons to prove the system works well.",
+          "It is not known if the authors have shared the software code, as the listing does not mention a code repository."
+        ]
+      },
+      "actions": [
+        "Verify the quantitative performance claims and specific benchmark results by reading the full PDF, as the abstract only describes the methodological framework.",
+        "Check the paper's supplementary materials or author communications for code availability, since the listing declares no code repository."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-08-27",
+        "publishedOn": "2026-08-27",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.25301"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-27"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-08-27T17:33:22.638Z"
+      }
+    }
+  ]
+}
