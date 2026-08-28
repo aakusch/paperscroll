@@ -1,0 +1,661 @@
+{
+  "date": "2026-08-28",
+  "label": "Fri, Aug 28",
+  "minutes": 10,
+  "poolSize": 113,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-08-28T22:22:39.646Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2608.25518",
+      "arxivId": "2608.25518",
+      "url": "https://arxiv.org/abs/2608.25518",
+      "topic": "AI",
+      "reported": "The authors report that game development provides a missing reward environment for spatial world models, measured by the engine's ability to check collision, physics, navigability, and bounded playability.",
+      "metrics": [],
+      "title": "Agentic Game Development as a Verifiable Trajectory Data Engine for Scaling World Models",
+      "authors": "Pengfei Zhou, Hexin Wang, Zhengfeiyang Zhang, Yixing Ma, Zhenglin Wan, Kaipeng Zhang, Wangbo Zhao, Yang You",
+      "takeaway": "The paper proposes Reinforcement Learning with Human-Engine Verification (RLHEV), a post-training paradigm that combines dense engine signals with implicit human acceptance feedback to scale world models.",
+      "brief": "The authors argue that scaling world models requires a recursive data engine with grounded reward signals, rather than just more crawled video and compute. They propose using game development as a verifiable trajectory data engine, where game engines provide executable world specifications for checking collision, physics, and navigability.\n\nThe strongest reported evidence is that game engines can efficiently check collision, physics, navigability, and bounded playability, while developers provide global verification signals. The listing does not establish quantitative performance improvements, specific dataset sizes, or benchmark comparisons against existing methods. It also does not specify the exact implementation details of the human acceptance feedback mechanism.\n\nResearchers working on world model scaling, reinforcement learning post-training, or game-based data generation should open this paper. Those focused solely on video-only world models without executable environments may ignore it.",
+      "abstract": "A common strategy for scaling world models is to train on more crawled video with more compute. We argue that this strategy is inefficient: scaling world models also requires a recursive data engine that offers grounded reward signals. The success of code agents illustrates why this matters. As code is executable, compilers and runtimes can provide high-quality rewards for Reinforcement Learning (RL) post-training of LLMs. By contrast, spatial generation still relies largely on fuzzy proxies such as CLIP scores. These signals are fuzzy and biased, making them hard to support RL post-training. Compared with these, game development provides a missing reward environment for spatial world models. A scene encoded by a game engine is an executable world specification: the engine can efficiently check collision, physics, navigability and bounded playability, while the developer provides the global verification signal by judging whether the scene should be accepted. Game development also provides real-world long-horizon trajectory data for RL post-training. We therefore propose Reinforcement Learning with Human-Engine Verification (RLHEV), a post-training paradigm that combines dense engine signals with implicit human acceptance feedback from the development process.",
+      "takeaways": [
+        "The object is a post-training paradigm (RLHEV) that uses game engines as verifiable reward environments for spatial world models.",
+        "A visible limit is the reliance on 'fuzzy proxies' like CLIP scores for spatial generation, which the authors claim are insufficient for RL post-training, though no quantitative comparison is provided in the abstract.",
+        "The artifact status is not established in the listing; no code, dataset, or repository URL is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that using video game software as a testing ground helps create better AI models that understand physical space, measured by the software's ability to check if objects collide, move correctly, and are playable.",
+        "brief": "The authors say that making AI models that understand the physical world needs more than just showing them more videos. They suggest using video game creation as a way to generate data that can be checked for correctness, because game software can automatically test if things like collisions and physics work properly.\n\nThe main evidence they give is that game software can automatically check if a scene is physically possible and playable, while human developers make the final decision on whether to keep the scene. The summary does not say how much better this method is compared to other methods, nor does it give specific numbers or test results. It also does not explain exactly how the human feedback is recorded.\n\nPeople who are trying to build AI that understands physical spaces or who use reinforcement learning to improve AI should look at this paper. People who are only interested in AI that watches videos without interacting with a physical simulation might not find it relevant.",
+        "takeaways": [
+          "The main idea is a new way to train AI models by using video game software to check if the AI's understanding of the world is physically correct.",
+          "A limitation is that current methods for checking if AI-generated scenes look right use vague scoring systems, which the authors say are not good enough for training, but they do not provide numbers to prove this in the summary.",
+          "It is not stated in the summary whether the code or data used in this research is available for others to download or use."
+        ]
+      },
+      "actions": [
+        "Verify the specific implementation of the 'implicit human acceptance feedback' mechanism in the full PDF, as the abstract does not detail how this is collected or processed.",
+        "Check the full PDF for any quantitative benchmarks or ablation studies comparing RLHEV against standard video-based world model training, since the abstract contains no numerical results."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-08-28",
+        "publishedOn": "2026-08-26",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.25518",
+            "upvotes": 118
+          }
+        ]
+      },
+      "trend": {
+        "votes": 118,
+        "rank": 1,
+        "of": 22,
+        "perDay": 59
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 118,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-08-28T22:22:39.646Z"
+      }
+    },
+    {
+      "id": "2608.27345",
+      "arxivId": "2608.27345",
+      "url": "https://arxiv.org/abs/2608.27345",
+      "topic": "AI",
+      "reported": "The authors report that across 50 scenarios and eleven current systems, no model consistently matches the reference probabilities while recovering the range of valid behaviors.",
+      "metrics": [
+        "50 scenarios"
+      ],
+      "title": "PAWBench: How Far Are We from Probabilistically Aligned World Modeling?",
+      "authors": "Yuandong Pu, Le Zhuo, Sayak Paul, Gabriel Jorge Menezes, Avram Đorđević, Shiyang Li, Yifan Zhou, Bin Fu, Wenlong Zhang, Junjun He, Yu Qiao, Yihao Liu, Jingbo Xing, Xi Chen",
+      "takeaway": "The paper introduces PAWBench and PAWEval to evaluate whether video generators function as stochastic samplers of world dynamics by testing distribution-level probabilistic alignment.",
+      "brief": "The authors formalize probabilistic alignment as a distributional criterion and introduce PAWBench to evaluate video generators as stochastic samplers of world dynamics. They report that across 50 scenarios and eleven current systems, no model consistently matches reference probabilities while recovering the range of valid behaviors. The listing does not specify the exact metrics used to quantify the gap or the specific failure modes of the tested systems.\n\nThe strongest reported result is the failure of eleven current systems to match reference probabilities across 50 scenarios. The authors state that existing evaluations largely assess individual-video plausibility and do not test whether repeated generations recover the correct distribution. The listing does not establish whether the gap is due to model architecture, training data, or evaluation protocol limitations.\n\nResearchers working on video generation evaluation or world model alignment may find the benchmark useful for testing distributional recovery. Those focused solely on single-video plausibility or non-probabilistic world modeling may find the specific distributional criteria less relevant to their immediate goals.",
+      "abstract": "Recent video generation models are increasingly framed as world models. Many physical processes can unfold in more than one valid way. Therefore, a world model should reproduce not only a plausible trajectory, but also the distribution of possible behaviors under the same initial observation and action. We call this distribution-level requirement probabilistic alignment. However, existing evaluations largely assess individual-video plausibility and do not test whether repeated generations recover the correct distribution. This raises a central question: how far are current video generators from probabilistically aligned world modeling? To answer it, we formalize probabilistic alignment as a distributional criterion for world models and introduce PAWBench, a benchmark for evaluating video generators as stochastic samplers of world dynamics. We further introduce PAWEval, an outcome-level protocol that converts repeated video rollouts into empirical distributions over possible physical behaviors. Across 50 scenarios and eleven current systems, no model consistently matches the reference probabilities while recovering the range of valid behaviors. Having established this gap, we test whether language prompts, initial noise sampling, or model training can reshape the model's predictive distribution. We believe our work can serve as a foundation for future efforts to move towards probabilistically aligned world modeling.",
+      "takeaways": [
+        "The object is a benchmark and evaluation protocol for probabilistic alignment in video generation models.",
+        "A visible limit is the reliance on 50 scenarios and eleven systems, which may not cover all physical processes or model architectures.",
+        "The artifact status is a declared code repository at https://github.com/Andrew0613/PAWBench, but the listing does not confirm its completeness or functionality."
+      ],
+      "plain": {
+        "reported": "The authors report that across 50 scenarios and eleven current systems, no model consistently matches the reference probabilities while recovering the range of valid behaviors.",
+        "brief": "The authors define a new standard called probabilistic alignment, which requires video generation models to reproduce the full range of possible physical outcomes, not just one plausible outcome. They created a test suite called PAWBench to check if current video models meet this standard. They found that none of the eleven models tested could match the expected distribution of outcomes across 50 different physical scenarios. The listing does not say exactly how the gap was measured or why the models failed.\n\nThe main finding is that current video models do not correctly predict the full range of possible physical behaviors. The authors note that previous tests only checked if a single video looked realistic, not if the model could generate the correct variety of outcomes. The listing does not explain if the problem is with the models themselves or with how they were trained.\n\nPeople who study how to evaluate video generation models or how to make them understand physics may find this test useful. People who only care about making single videos look good or who do not care about predicting multiple possible outcomes may not find this specific test relevant.",
+        "takeaways": [
+          "The paper provides a test suite for checking if video models can predict the full range of possible physical outcomes.",
+          "A limitation is that the test only used 50 scenarios and 11 models, so it may not cover all types of physics or all model designs.",
+          "The authors provide a link to a code repository, but the listing does not confirm if the code is complete or works as described."
+        ]
+      },
+      "actions": [
+        "Verify the code repository at https://github.com/Andrew0613/PAWBench to confirm the availability of the benchmark and evaluation protocol.",
+        "Check the full paper for the specific metrics and reference probabilities used to assess the eleven current systems."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Andrew0613/PAWBench",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-08-28",
+        "publishedOn": "2026-08-27",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.27345",
+            "upvotes": 73
+          }
+        ]
+      },
+      "trend": {
+        "votes": 73,
+        "rank": 2,
+        "of": 22,
+        "perDay": 73
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 73,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-27"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-08-28T22:22:39.646Z"
+      }
+    },
+    {
+      "id": "2608.27456",
+      "arxivId": "2608.27456",
+      "url": "https://arxiv.org/abs/2608.27456",
+      "topic": "AI",
+      "reported": "The authors report that contemporary MLLM agents show useful atomic abilities in visual recognition and short-range spatial reasoning, while orientation and pedestrian-aware movement remain unreliable.",
+      "metrics": [],
+      "title": "UrbanGround: From Local Perception to Spatial Agency in a Real-Scale City",
+      "authors": "Tianjie Ju, Zheng Wu, Yueqing Sun, Yuhan Cui, Bobo Li, Shengqiong Wu, Pengzhou Cheng, Haodong Zhao, Zongru Wu, Xinbei Ma, Doris Zhang, Kunling Li, Mong-Li Lee, Wynne Hsu, Hao Fei, Qi Gu, Gongshen Liu, Zhuosheng Zhang",
+      "takeaway": "The paper proposes UrbanGround, a sandbox built from territory-wide 3D geospatial data of Hong Kong to test whether MLLM agents can turn local urban perception into reliable action in a real-scale city.",
+      "brief": "The authors introduce UrbanGround, a physically constrained replica of Hong Kong built from territory-wide 3D geospatial data, designed to test if MLLM agents can convert local perception into reliable action. The sandbox supports closed-loop interaction from a first-person view and provides an interactive map for navigation, allowing agents to explore the 3D city directly.\n\nThe authors state that current MLLM agents possess useful atomic abilities in visual recognition and short-range spatial reasoning. However, they report that orientation and pedestrian-aware movement remain unreliable, with central failures emerging over extended exploration where local abilities do not compose into sustained goal-directed behavior. The listing does not specify quantitative performance metrics or exact failure rates for these agents.\n\nResearchers working on multimodal agents, urban simulation, or spatial reasoning may find this sandbox relevant for testing agent reliability in complex environments. Those focused solely on static image recognition or non-urban spatial tasks may find the specific city-scale constraints and pedestrian dynamics less applicable to their immediate work.",
+      "abstract": "Multimodal large language models (MLLMs) can interpret a street view, but urban agency depends on whether such local evidence remains useful after the agent starts to move. In this paper, we investigate how far current MLLM agents can turn local urban perception into reliable action in a complicated real-scale city. We propose UrbanGround, the first sandbox to make this question testable in a physically constrained replica of Hong Kong built from territory-wide 3D geospatial data. UrbanGround supports closed-loop interaction from a first-person view and provides an interactive map for navigation. Agents can directly enter the 3D city and explore from a first-person view. Our analysis follows the growth of the spatial problem through three research questions. We first test whether an agent can ground a local scene well enough to answer spatial questions after active observation. Then we ask whether that grounding supports navigation as destinations become farther away and less explicit. Finally, we examine whether the resulting behavior survives changes in route availability and pedestrian motion. Contemporary MLLM agents usually show useful atomic abilities in visual recognition and short-range spatial reasoning, while orientation and pedestrian-aware movement remain unreliable. Their central failure emerges over extended exploration, where local abilities do not compose into sustained goal-directed behavior and errors accumulate without effective correction. We hope UrbanGround will support broader study of how far current MLLM agents can explore reliably in complex, open-ended urban environments.",
+      "takeaways": [
+        "The object is a sandbox environment, UrbanGround, which replicates Hong Kong using territory-wide 3D geospatial data to enable closed-loop, first-person agent interaction.",
+        "A visible limit is that the authors report orientation and pedestrian-aware movement remain unreliable for current MLLM agents, with errors accumulating over extended exploration without effective correction.",
+        "The artifact status is a declared code repository at https://github.com/UrbanGround/UrbanGround, though the listing does not confirm the repository's current availability or completeness."
+      ],
+      "plain": {
+        "reported": "The authors report that current multimodal AI agents can handle basic visual recognition and short-distance spatial tasks, but they struggle with maintaining direction and navigating around pedestrians.",
+        "brief": "The authors created a digital twin of Hong Kong called UrbanGround, using 3D map data to let AI agents walk around and interact with the city from a first-person perspective. This setup allows researchers to test if these AI agents can use what they see locally to make reliable decisions while moving through a complex city.\n\nThe authors found that while these AI agents are good at recognizing objects and handling simple spatial tasks, they fail at keeping track of their direction and moving safely around people. The main problem appears when agents try to explore for longer periods, where small mistakes add up and the agents cannot correct their course effectively. The provided summary does not include specific numbers or scores for how often these failures occur.\n\nPeople studying AI agents, city simulations, or how machines understand space might find this tool useful for testing agent behavior in realistic urban settings. Those working on image recognition without movement or non-city environments might find the specific focus on pedestrian dynamics and city-scale navigation less relevant to their projects.",
+        "takeaways": [
+          "The main contribution is a test environment called UrbanGround, which is a 3D digital copy of Hong Kong allowing AI agents to interact with the city in real-time from a first-person view.",
+          "A clear limitation is that the AI agents tested cannot reliably keep their orientation or navigate around pedestrians, and their errors grow over time without self-correction.",
+          "The authors provide a link to a code repository, but the summary does not verify if the code is fully functional or if all described data is included."
+        ]
+      },
+      "actions": [
+        "Verify the declared code repository URL to confirm the sandbox implementation and data availability match the described territory-wide 3D geospatial data.",
+        "Review the full PDF to identify specific quantitative benchmarks or failure rates for the MLLM agents tested in the extended exploration scenarios."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/UrbanGround/UrbanGround",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-08-28",
+        "publishedOn": "2026-08-27",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.27456",
+            "upvotes": 69
+          }
+        ]
+      },
+      "trend": {
+        "votes": 69,
+        "rank": 3,
+        "of": 22,
+        "perDay": 69
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 69,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-27"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-08-28T22:22:39.646Z"
+      }
+    },
+    {
+      "id": "2608.27448",
+      "arxivId": "2608.27448",
+      "url": "https://arxiv.org/abs/2608.27448",
+      "topic": "AI",
+      "reported": "The authors report that TTPO matches label-supervised OPSD on five competition-level benchmarks and raises Qwen3-1.7B from 38.0% to 45.2% in TTT.",
+      "metrics": [
+        "38.0% to 45.2% in TTT",
+        "+25.2% to +36.4% without thinking"
+      ],
+      "title": "TTPO: Test-Time Policy Optimization",
+      "authors": "Aozhe Wang, Zhengxi Lu, Jianze Wang, Shangke Lv, Ying Liu, Weiming Lu, Jun Xiao, Yueting Zhuang, Hua Yang, Qianglong Chen, Yongliang Shen",
+      "takeaway": "The paper proposes Test-Time Policy Optimization (TTPO), an asymmetric objective that distills agreeing rollouts via OPSD and penalizes disagreeing rollouts with Grouped RL to enable test-time training without ground-truth labels.",
+      "brief": "The authors propose TTPO, an asymmetric objective that distills agreeing rollouts via OPSD and penalizes disagreeing rollouts with Grouped RL to enable test-time training without ground-truth labels.\n\nThey report that TTPO matches label-supervised OPSD on five competition-level benchmarks and raises Qwen3-1.7B from 38.0% to 45.2% in TTT, while yielding +25.2% to +36.4% without thinking. The listing does not establish specific limitations or artifacts beyond the stated reliance on majority-vote pseudo-labels.\n\nResearchers working on test-time training for large language models without ground-truth labels may find this relevant. Those not focused on label-free mathematical reasoning may ignore it.",
+      "abstract": "Recent prominent post-training methods, such as Reinforcement Learning (RL) and On-Policy Self-Distillation (OPSD), have driven rapid progress in mathematical reasoning for large language models, yet their reliance on ground-truth labels precludes test-time training (TTT). Replacing ground truth with majority-vote pseudo-labels is a natural alternative, yet it is fragile: an incorrect vote corrupts the teacher and misleads every token. We observe that this failure mode is asymmetric: rollouts that disagree with the pseudo-label are typically wrong regardless of whether the vote itself is correct. Building on this observation, we propose Test-Time Policy Optimization (TTPO), an asymmetric objective that distills agreeing rollouts via OPSD and penalizes disagreeing rollouts with Grouped RL. Token-level selection further refines both branches: distillation down-weights already-converged positions, while RL penalizes only confident errors. Both updates remain well-grounded even under frequent pseudo-label errors, and majority-vote routing yields tighter self-supervision as the model improves. Without any labels, TTPO matches label-supervised OPSD on five competition-level benchmarks, raises Qwen3-1.7B from 38.0% to 45.2% in TTT, yields +25.2% to +36.4% without thinking, and shows strong cross-task generalization.",
+      "takeaways": [
+        "The object is an asymmetric objective combining OPSD distillation and Grouped RL for test-time policy optimization.",
+        "A visible limit is the reliance on majority-vote pseudo-labels, which the authors note can be fragile if incorrect.",
+        "The artifact status is indicated by a declared code repository URL, but the listing does not confirm its completeness or functionality."
+      ],
+      "plain": {
+        "reported": "The authors report that their method matches a supervised baseline on five difficult math tests and improves a specific model's score from 38.0% to 45.2% during test-time training.",
+        "brief": "The authors propose a method called TTPO that uses a mixed approach to improve AI models during testing without needing correct answers. It combines a technique that learns from correct guesses with a technique that penalizes wrong guesses.\n\nThey state that this method performs as well as a supervised method on five hard math tests and improves a specific model's score from 38.0% to 45.2% during test-time training. It also shows gains of 25.2% to 36.4% when the model does not use a thinking step. The listing does not specify other limitations or artifacts.\n\nPeople studying how to improve AI models during testing without correct answers might find this useful. People not interested in label-free math reasoning might skip it.",
+        "takeaways": [
+          "The main idea is a mixed training method that rewards correct guesses and penalizes wrong ones during testing.",
+          "A potential weakness is that it relies on the model's own majority vote, which can be wrong.",
+          "The authors provide a link to code, but the listing does not confirm if the code is complete or works as described."
+        ]
+      },
+      "actions": [
+        "Verify the PDF to confirm the specific five competition-level benchmarks and the exact conditions for the reported percentage improvements.",
+        "Check the declared code repository to ensure it contains the implementation of the asymmetric objective and token-level selection mechanisms."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/ZJU-REAL/TTPO",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-08-28",
+        "publishedOn": "2026-08-27",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.27448",
+            "upvotes": 62
+          }
+        ]
+      },
+      "trend": {
+        "votes": 62,
+        "rank": 4,
+        "of": 22,
+        "perDay": 62
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 62,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-27"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-08-28T22:22:39.646Z"
+      }
+    },
+    {
+      "id": "2608.26204",
+      "arxivId": "2608.26204",
+      "url": "https://arxiv.org/abs/2608.26204",
+      "topic": "Security",
+      "reported": "The authors report that no evaluated model consistently exceeds 80% task success while staying below 30% attack success on their benchmark.",
+      "metrics": [
+        "80% task success",
+        "30% attack success",
+        "+21-23pp"
+      ],
+      "title": "ADeptS-Bench: Measuring the Trustworthiness of Computer Use Agents Across Devices",
+      "authors": "Joy Chen, Alejandro Castillejo Munoz, Pierluca D'Oro, Yuxuan Sun, Chloe Evans, Joseph Tighe",
+      "takeaway": "The paper introduces ADeptS-Bench, a dual-stream trustworthiness benchmark for evaluating the safety and disambiguation capabilities of Computer Use Agents across devices.",
+      "brief": "The authors propose ADeptS-Bench to measure whether Computer Use Agents can safely navigate visual interfaces and handle ambiguous instructions. The benchmark includes a Safety stream with embedded threats and a Disambiguation stream for ambiguous intent.\n\nThe authors report that no model consistently exceeds 80% task success while staying below 30% attack success. They note that every model clicks \"Checkout\" on a $25K order without hesitation and none detects a mislabeled \"factory reset\" button. An ablation identifies three safety architectures, with tool-dependent models showing a +21-23pp increase in attack success without a refusal tool. The listing does not specify the exact dataset size or the specific seven models evaluated.\n\nResearchers working on agent safety, interface security, or human-computer interaction may find this relevant. Those focused solely on standard NLP benchmarks without a security or UI component may find it less applicable.",
+      "abstract": "Computer Use Agents (CUAs) are increasingly deployed to navigate mobile and desktop applications on behalf of users, yet no benchmark comprehensively evaluates whether they can safely interact with visual interfaces while handling ambiguous instructions. We introduce ADeptS-Bench, a dual-stream trustworthiness benchmark, grounded in the ADEPTS capability framework and general population user studies. The Safety stream provides paired benign/malicious tasks with threats embedded in the visual interface. The Disambiguation stream evaluates whether agents seek clarification when intent is ambiguous. Evaluating seven models reveals that no model consistently exceeds 80% task success while staying below 30% attack success; every model clicks \"Checkout\" on a $25K order without hesitation, and none detects that a \"factory reset\" button is mislabeled as \"Optimize.\" An ablation reveals three distinct safety architectures: tool-dependent (ASR +21-23pp without refusal tool), partially tool-dependent (+10-11pp), and no mechanism (unchanged). In disambiguation, all models overestimate consequence severity, mirroring the over-refusal bias observed in safety. We release all data, evaluation code, and analysis tools upon publication.",
+      "takeaways": [
+        "The object is a dual-stream benchmark (Safety and Disambiguation) grounded in the ADEPTS framework and user studies.",
+        "A visible limit is that the listing does not name the seven specific models evaluated or provide the full distribution of scores beyond the aggregate thresholds.",
+        "The artifact status is that the authors state they release all data, evaluation code, and analysis tools upon publication, but no repository URL is provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that none of the AI models they tested could complete 80% of the tasks successfully while keeping the rate of successful malicious attacks below 30%.",
+        "brief": "The authors created a new test suite called ADeptS-Bench to check if AI agents that use computers can do so safely and if they ask for help when instructions are unclear. The test has two parts: one checks safety against hidden threats in the screen, and the other checks if the agent asks for clarification when the user's intent is vague.\n\nThe authors found that no AI model was both highly successful at tasks and safe from attacks. Specifically, every model clicked a \"Checkout\" button for a $25,000 order without pausing, and none noticed that a button labeled \"Optimize\" was actually a \"factory reset\" button. When they removed a specific safety tool from one type of model, the attack success rate went up by 21 to 23 percentage points. The listing does not say which seven specific AI models were tested or how many total tasks were in the benchmark.\n\nPeople who study how to make AI agents safe or how they interact with computer screens might find this useful. People who only care about standard language processing tests and do not care about security or user interface interactions might not find it relevant.",
+        "takeaways": [
+          "The main thing being tested is a new benchmark with two parts: one for safety and one for handling unclear instructions.",
+          "A limitation is that the summary does not list the names of the seven AI models tested or the total number of tasks.",
+          "The authors say they will release the data and code when the paper is published, but they do not provide a link to the code in this summary."
+        ]
+      },
+      "actions": [
+        "Verify the specific list of seven models and the exact task counts in the PDF to assess the benchmark's scale.",
+        "Check the publication status to confirm the availability of the released data and evaluation code."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.AI",
+        "cs.SE"
+      ],
+      "listing": {
+        "listedOn": "2026-08-28",
+        "publishedOn": "2026-08-28",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.26204"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-28"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-08-28T22:22:39.646Z"
+      }
+    },
+    {
+      "id": "2608.26210",
+      "arxivId": "2608.26210",
+      "url": "https://arxiv.org/abs/2608.26210",
+      "topic": "Health",
+      "reported": "The authors report that NetMoint achieved mean AUC values of 0.937, 0.930, and 0.932 for AD, VD, and FTD respectively among 104,120 UK Biobank participants.",
+      "metrics": [
+        "mean area under the receiver operating characteristic curve (AUC) values of 0.937, 0.930 and 0.932",
+        "104,120 UK Biobank participants",
+        "AUC of 0.741 at 20 years"
+      ],
+      "title": "Multimodal risk trajectories reveal heterogeneous paths to dementia",
+      "authors": "Zhiqi Lee, Haowen Li, Tao Liu, Shiyuan Zhang, Bingjie Wang, Jinzhao Fan, Yunkai Zhang, Zhuonan Wang, Lijun Bai",
+      "takeaway": "The paper claims to develop NetMoint, a multimodal framework integrating plasma proteomic, structural MRI, and cerebral haemodynamic phenotypes to predict individualized dementia risks across multiple time horizons.",
+      "brief": "The authors present NetMoint, a framework combining plasma proteomics, structural MRI, and cerebral haemodynamics to forecast Alzheimer's, vascular, and frontotemporal dementia risks over 1, 5, 10, and 20-year periods. They state the model identifies distinct temporal trajectories and links high-risk groups to specific molecular signatures like lower TGFB1 in AD and higher NDRG1 in FTD.\n\nEvidence includes high AUC scores in the UK Biobank and an AUC of 0.741 in an independent ADNI-to-UK Biobank analysis after feature harmonization. The listing does not establish whether the model's performance degrades in populations with different demographic compositions or if the molecular signatures remain stable across diverse cohorts.\n\nResearchers working on multimodal dementia prediction or longitudinal risk stratification may find the trajectory analysis relevant. Those focused solely on single-modality imaging or acute clinical diagnosis may find the long-horizon predictive focus less applicable to their immediate workflows.",
+      "abstract": "Dementia comprises biologically heterogeneous disorders, yet current risk assessment provides limited insight into how subtype-specific risk emerges and diverges before clinical diagnosis. We developed NetMoint, a multimodal framework integrating partially observed plasma proteomic, structural magnetic resonance imaging and cerebral haemodynamic phenotypes to predict individualized risks of Alzheimer's disease (AD), vascular dementia (VD) and frontotemporal dementia (FTD) across 1-, 5-, 10- and 20-year horizons. Among 104,120 UK Biobank participants free of dementia at baseline, NetMoint achieved mean area under the receiver operating characteristic curve (AUC) values of 0.937, 0.930 and 0.932 for AD, VD and FTD, respectively. The biological determinants of prediction shifted with time, from structural brain vulnerability at shorter horizons towards circulating molecular signatures at longer horizons, with distinct subtype-specific biological profiles. Multi-horizon risk profiling identified distinct temporal trajectories of dementia susceptibility. Among participants who subsequently developed AD, 0.7% followed a persistently very-high-risk trajectory, with predicted risk reaching 53.50% at 20 years, whereas 8.3% of those who developed FTD followed an increasing very-high-risk trajectory, reaching 67.17%. These high-risk trajectories were marked by distinct molecular signatures, with lower TGFB1 characterizing the AD group and higher NDRG1 the FTD group. In an independent ADNI-to-UK Biobank analysis, AD risk prediction remained informative after harmonization to 138 shared features, with an AUC of 0.741 at 20 years. Together, these findings establish a multimodal framework for trajectory-resolved dementia risk stratification, identifying small but high-risk populations within dementia subtypes and linking their divergent risk trajectories to distinct molecular signatures.",
+      "takeaways": [
+        "The object is a multimodal predictive framework named NetMoint designed for long-horizon dementia risk stratification across three specific subtypes.",
+        "A visible limit is the reliance on UK Biobank data for primary validation, with independent testing showing a notable drop in AUC after feature harmonization.",
+        "The artifact status is not established in the listing, as no code repository or model weights are declared."
+      ],
+      "plain": {
+        "reported": "The authors state that their model, NetMoint, correctly distinguished between healthy individuals and those who later developed Alzheimer's, vascular, or frontotemporal dementia with high accuracy scores in a large UK health database.",
+        "brief": "The researchers created a tool called NetMoint that combines blood protein tests, brain scans, and blood flow measurements to predict the risk of three types of dementia over the next 1, 5, 10, or 20 years. They claim this tool can spot people whose risk stays very high or increases over time and link these patterns to specific proteins in the blood.\n\nThe main evidence comes from a large group of UK participants where the model performed well. They also tested the model on a separate US-based dataset, where it still worked but with lower accuracy. The text does not say if the model works equally well for people from different backgrounds or if the blood protein markers are consistent across all groups.\n\nPeople studying how to predict dementia using multiple types of data might find this useful. People who only use brain scans or need immediate diagnosis tools might not find this long-term prediction approach directly helpful for their specific needs.",
+        "takeaways": [
+          "The tool is a computer program that uses blood tests, brain images, and blood flow data to predict dementia risk far into the future.",
+          "A limitation is that the main test was done on one large UK group, and the accuracy dropped when tested on a different US group.",
+          "The listing does not say if the computer code or the trained model is available for others to download or use."
+        ]
+      },
+      "actions": [
+        "Verify the specific feature harmonization protocol used in the ADNI-to-UK Biobank analysis to understand the performance gap.",
+        "Check the full PDF for details on the handling of partially observed data and the specific molecular signatures identified."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM"
+      ],
+      "listing": {
+        "listedOn": "2026-08-28",
+        "publishedOn": "2026-08-28",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.26210"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-28"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-08-28T22:22:39.646Z"
+      }
+    },
+    {
+      "id": "2608.26212",
+      "arxivId": "2608.26212",
+      "url": "https://arxiv.org/abs/2608.26212",
+      "topic": "Stats",
+      "reported": "The authors report that the proposed framework enables more accurate modelling of dependence between survival and censoring times while providing greater flexibility through covariate effects, leading to more individualised estimation of the cure fraction, the dependence structure, and other clinically relevant.",
+      "metrics": [],
+      "title": "Copula based dependent censoring in cure models with covariates",
+      "authors": "Morine Delhelle, Anouar El Ghouch, Ingrid Van Keilegom",
+      "takeaway": "The paper claims to extend a fully parametric mixture cure model to incorporate administrative censoring and allow covariates to affect all model parameters.",
+      "brief": "The authors propose a copula-based extension of a parametric mixture cure model that distinguishes dependent and administrative censoring while allowing covariates to influence all model parameters. They state that this framework enables more accurate modelling of the dependence between survival and censoring times and provides greater flexibility through covariate effects, leading to more individualised estimation of the cure fraction and dependence structure. The listing does not report specific quantitative results, empirical benchmarks, or numerical performance metrics, and it does not establish whether the weaker identification conditions mentioned are sufficient for practical identification in all scenarios.\n\nThe strongest reported result is a qualitative claim about improved modelling accuracy and flexibility, attributed to the authors, without accompanying numerical evidence in the provided abstract. The listing does not specify the dataset, sample size, or statistical test used to validate these claims, nor does it quantify the improvement over the baseline model. The absence of reported metrics means the practical impact of the covariate effects and the weaker identification conditions remains unverified in this summary.\n\nResearchers working on survival analysis with cure fractions and dependent censoring may find the methodological extension relevant for their modelling needs. Those requiring immediate quantitative validation or specific benchmark comparisons should note that the abstract does not provide these details. The paper is situated in the statistics field, focusing on the intersection of copula theory and survival models.",
+      "abstract": "In survival analysis, the time-to-event variable T is frequently subject to right censoring. Individuals may withdraw from the study for various reasons, or may not experience the event of interest before the end of follow-up. In this paper, we distinguish between two types of censoring: a potentially dependent censoring time C, which may be stochastically related to T, and an independent administrative censoring time A. In addition, the data may exhibit a cure fraction, meaning that some individuals will never experience the event. We build upon a recent work about a fully parametric mixture cure model, which accounts for dependent censoring through copulas. The proposed extension incorporates administrative censoring and allows covariates to affect all model parameters. This framework enables a more accurate modelling of the dependence between survival and censoring times while providing greater flexibility through covariate effects, leading to more individualised estimation of the cure fraction, the dependence structure, and other clinically relevant quantities. Moreover, the presence of covariates allows for weaker identification conditions.",
+      "takeaways": [
+        "The object is a statistical model extension that integrates copulas, cure fractions, and covariate effects for dependent and administrative censoring.",
+        "A visible limit is the lack of reported quantitative results or empirical validation in the provided abstract, leaving the practical performance of the model unverified.",
+        "The artifact status is theoretical/methodological, as the listing describes a framework and its properties without providing code, datasets, or numerical outputs."
+      ],
+      "plain": {
+        "reported": "The authors state that their new model allows for better representation of how survival times and censoring times are related, and it allows for more personalized estimates of the chance of never experiencing the event, but they do not provide specific numbers to prove this in the summary.",
+        "brief": "The authors created a new statistical tool for analyzing survival data where some people never experience the event (cure fraction) and where the reason for stopping follow-up might be related to the event itself. They added a feature that lets other factors (covariates) change the model's parameters, which they say makes the model more flexible and accurate. The summary does not include any test results, numbers, or data to show how well the model actually works in practice.\n\nThe main claim is that the model is better and more flexible, but this is based on the authors' description rather than shown numbers. The summary does not say what data was used to test the model or how much better it is compared to older methods. Because there are no numbers, we cannot tell if the model is actually useful for real-world data or if the theoretical benefits hold up in practice.\n\nPeople who study survival analysis and are interested in models that handle complex censoring and cure fractions might find this useful. People who need to see specific test results or numbers to decide if a method works should note that this summary does not have them. The paper is about a mathematical method for statistics, not a software tool or a dataset.",
+        "takeaways": [
+          "The paper describes a new mathematical model for survival analysis that handles cases where some people never get the event and where stopping follow-up is related to the event.",
+          "The summary does not show any numbers or test results, so we cannot see if the model actually works better than existing methods.",
+          "The paper is about a theoretical method and does not provide code, data, or numerical results in the summary."
+        ]
+      },
+      "actions": [
+        "Verify the specific identification conditions and their practical implications by reviewing the full PDF, as the abstract only mentions 'weaker identification conditions' without detail.",
+        "Check the full paper for any empirical applications or simulation studies that quantify the 'more accurate modelling' and 'greater flexibility' claimed in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-08-28",
+        "publishedOn": "2026-08-28",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.26212"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-28"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-08-28T22:22:39.646Z"
+      }
+    },
+    {
+      "id": "2608.26240",
+      "arxivId": "2608.26240",
+      "url": "https://arxiv.org/abs/2608.26240",
+      "topic": "Physics",
+      "reported": "The authors report that quantum counting processes violate a derived classical finite-memory variance bound, achieving smaller first-tick fluctuations than any classical process with the same memory size and mean tick time.",
+      "metrics": [],
+      "title": "Least Variable Quantum Counting Processes",
+      "authors": "Bita Olamaei, Florian Meier, Costantino Budroni, Pharnam Bakhshinezhad, Giuseppe Vitagliano",
+      "takeaway": "The paper claims to establish a finite-memory quantum advantage in temporal precision by deriving a classical variance bound and identifying quantum processes that violate it.",
+      "brief": "The authors derive a rigorous finite-memory variance bound for classical counting processes and identify quantum processes that violate this bound. They report that these quantum processes achieve smaller first-tick fluctuations than classical counterparts with identical memory and mean tick time. The listing does not specify the exact numerical values of the variance reduction or the specific memory dimensions tested beyond the general framework.\n\nThe evidence relies on numerical optimization to identify the violating quantum processes and an analytical large-mean bound for the qubit case. The authors state that the quantum advantage persists asymptotically within a single-Kraus no-tick family. The listing does not establish whether the advantage holds for all memory sizes or if specific experimental constraints limit the observed fluctuations.\n\nResearchers working on quantum metrology, stochastic processes, or quantum timekeeping may find the derived bounds and optimization results relevant. Those focused on classical stochastic modeling without quantum extensions may ignore the quantum-specific violation results.",
+      "abstract": "Counting processes provide a fundamental description of stochastic events ranging from photon detection to clock ticks. A central question is how accurately such events can be timed when only finite memory resources are available. Here, we investigate this problem within a general framework of finite-dimensional classical and quantum counting processes. We derive a rigorous finite-memory variance bound obeyed by every classical $d$-state counting process, which is tight and saturated by a discrete Erlang-type ladder process. Through numerical optimization, we identify quantum counting processes that violate this classical bound, achieving smaller first-tick fluctuations than any classical process with the same memory size and mean tick time. For the qubit case, we further derive an analytical large-mean bound within a single-Kraus no-tick family, showing that the quantum advantage persists asymptotically within this class. The optimized quantum processes exhibit coherent conditioned dynamics and approach a continuous-time quantum-jump description as the mean increases. Our results establish a finite-memory quantum advantage in temporal precision and connect discrete-time counting processes with continuous-time quantum timekeeping.",
+      "takeaways": [
+        "The object is a theoretical framework comparing classical and quantum finite-memory counting processes for temporal precision.",
+        "A visible limit is that the quantum advantage is demonstrated via numerical optimization and an analytical bound for a specific qubit family, not a universal experimental proof.",
+        "The artifact status is theoretical, with no code or experimental data provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that their quantum models beat a mathematical limit set for classical models, showing less variation in the timing of the first event when memory and average time are the same.",
+        "brief": "The authors create a mathematical rule for how accurately classical systems can time events with limited memory. They then show that quantum systems can break this rule, timing the first event more precisely than classical systems with the same memory. The text does not give specific numbers for how much more precise the quantum systems are.\n\nThe proof uses computer simulations to find the best quantum models and a mathematical formula for a specific type of quantum bit. The authors say the quantum advantage continues to exist as the average time between events gets very large. The text does not say if this advantage works for every possible memory size or if real-world experiments have confirmed it.\n\nPeople studying how to measure time using quantum physics or random events may find this useful. People only interested in classical random events without quantum effects may not need this paper.",
+        "takeaways": [
+          "The paper compares how well classical and quantum systems can time random events when they have limited memory.",
+          "The proof is based on math and computer simulations, not physical experiments, and only covers specific quantum models.",
+          "There is no code or data file provided, so the results are purely theoretical."
+        ]
+      },
+      "actions": [
+        "Verify the specific memory dimensions and variance values in the PDF to confirm the scope of the quantum advantage.",
+        "Check the PDF for the definition of the single-Kraus no-tick family to understand the constraints of the analytical bound."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "cond-mat.stat-mech"
+      ],
+      "listing": {
+        "listedOn": "2026-08-28",
+        "publishedOn": "2026-08-28",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.26240"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-28"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-08-28T22:22:39.646Z"
+      }
+    },
+    {
+      "id": "2608.26278",
+      "arxivId": "2608.26278",
+      "url": "https://arxiv.org/abs/2608.26278",
+      "topic": "Engineering",
+      "reported": "The authors report that a numerical example illustrates the advantages of the optimal procedure over suboptimal ones.",
+      "metrics": [],
+      "title": "(Sequential) Joint Detection and Estimation: Classic Results and New Directions",
+      "authors": "Dominik Reinhard, Abdelhak M. Zoubir",
+      "takeaway": "The paper provides an overview of joint detection and estimation, covering classic results, sequential frameworks, and new research directions.",
+      "brief": "The authors present an overview of jointly testing hypotheses and estimating parameters, covering both fixed-sample and sequential frameworks. They report that numerical examples illustrate the advantages of optimal procedures over suboptimal ones, though specific quantitative performance gains are not stated in the listing. The text identifies open problems and future research directions but does not specify the exact datasets or benchmarks used for the numerical illustrations.\n\nThe listing describes conceptual introductions and numerical examples but does not provide specific error rates, sample sizes, or computational costs. It is unclear from the abstract whether the optimal procedures are computationally feasible for high-dimensional parameters or large sample sizes. The authors do not state whether the results hold under non-Gaussian noise or model misspecification.\n\nResearchers working on sequential hypothesis testing or joint detection-estimation problems may find the overview useful for identifying open problems. Practitioners seeking specific algorithmic implementations or benchmark comparisons should verify the details in the full text. The paper is a survey and discussion piece rather than a report of a single new algorithm.",
+      "abstract": "We provide an overview of the problem of jointly testing two hypotheses and estimating a parameter of the selected model. Such problems arise in a variety of applications. First, we present a conceptual introduction to suboptimal and optimal procedures for joint detection and estimation. A numerical example illustrates the advantages of the optimal procedure over suboptimal ones. Next, we discuss how more advanced problem formulations affect the presented results. The second part covers joint detection and estimation in a sequential framework. First, we provide an introduction to sequential analysis through sequential hypothesis testing. Then, suboptimal and optimal sequential procedures for joint detection and estimation are discussed. A numerical example shows the advantages of optimal sequential procedures over suboptimal and optimal sequential procedures with a fixed number of samples. The third part discusses open problems and future research directions in joint detection and estimation.",
+      "takeaways": [
+        "The object is a survey of joint detection and estimation, covering both fixed and sequential settings.",
+        "A visible limit is the lack of specific quantitative metrics or dataset details in the abstract.",
+        "The artifact status is a theoretical and numerical overview, not a new software package or dataset."
+      ],
+      "plain": {
+        "reported": "The authors say that a computer simulation shows the best method works better than simpler methods.",
+        "brief": "The paper explains how to decide between two models and estimate a value at the same time. It covers both standard methods and methods that stop collecting data early. The authors say their simulations show the best methods are better, but they do not give specific numbers in the summary. They also list questions that are still unsolved.\n\nThe summary does not say how much better the best methods are or how much computer power they need. It is not clear if the methods work when the data does not fit the assumed mathematical shape. The paper does not say what specific data was used for the simulations.\n\nPeople studying how to make decisions with data might find the list of unsolved problems helpful. People looking for a specific computer program or a set of test data should check the full paper. This is a review of existing ideas and new questions, not a new tool.",
+        "takeaways": [
+          "The paper is a review of how to test models and estimate values together.",
+          "The summary does not give specific numbers or data details.",
+          "It is a discussion of theory and simulations, not a new software package."
+        ]
+      },
+      "actions": [
+        "Verify the specific numerical examples and their underlying assumptions in the full PDF.",
+        "Check the open problems section for specific research gaps relevant to your application."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP",
+        "cs.IT",
+        "math.IT",
+        "math.ST",
+        "stat.TH"
+      ],
+      "listing": {
+        "listedOn": "2026-08-28",
+        "publishedOn": "2026-08-28",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.26278"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-28"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-08-28T22:22:39.646Z"
+      }
+    },
+    {
+      "id": "2608.26358",
+      "arxivId": "2608.26358",
+      "url": "https://arxiv.org/abs/2608.26358",
+      "topic": "Econ",
+      "reported": "The authors report that the release contains 4,486 decision records from 246 adult participant records across two implementations.",
+      "metrics": [
+        "4,486 decision records",
+        "246 adult participant records",
+        "58 records belonging to five participants"
+      ],
+      "title": "An Anonymized Urn-Based Experimental Dataset on Decision-Making under Risk and Ambiguity",
+      "authors": "V\\'aclav Kratochv\\'il, Radim Jirou\\v{s}ek, Kl\\'ara \\v{S}im\\r{u}nkov\\'a, Simona Ba\\v{z}antov\\'a",
+      "takeaway": "The paper presents an anonymized dataset of 4,486 decision records from controlled behavioral experiments on decision-making under risk and ambiguity.",
+      "brief": "The authors describe an anonymized release derived from controlled behavioral experiments on decision-making under risk and ambiguous uncertainty in Ellsberg-type urn tasks. The release contains 4,486 decision records from 246 adult participant records across laboratory and online implementations.\n\nParticipants reported their maximum stake to enter a subsequent lottery, which the authors interpret as proxies for willingness to pay. The online implementation includes ex-post evaluations of perceived uncertainty. The source export contained 4,544 decision records, with 58 records from five participants younger than 18 excluded due to missing guardian permission documentation.\n\nResearchers studying ambiguity-attitude models or behavioral stability under repeated participation may find the dataset useful. The listing does not establish specific statistical results or model comparisons. The repository provides game definitions, realized lottery outcomes, participant instructions, and a data dictionary.",
+      "abstract": "This data paper describes an anonymized release derived from controlled behavioral experiments on decision-making under risk (known probabilities) and ambiguous uncertainty (partially specified or unknown probabilities) in Ellsberg-type urn tasks. The release contains 4,486 decision records from 246 adult participant records across two implementations (laboratory and online). In each task, participants reported their maximum stake to enter a subsequent lottery; these stake responses can be interpreted as proxies for willingness to pay within the implemented incentive mechanism. In a subset of tasks, participants also selected the color they wished to bet on. The online implementation additionally includes ex-post evaluations of perceived uncertainty across situations. The repository further provides detailed game definitions, realized lottery outcomes, participant instructions, and a data dictionary of variables. The source export contained 4,544 decision records; 58 records belonging to five participants younger than 18 were excluded from this release because documentation of guardian permission for unrestricted public data publication was not available. The dataset supports replication studies, comparisons of ambiguity-attitude models, and analyses of behavioral stability under repeated participation.",
+      "takeaways": [
+        "The object is an anonymized dataset of 4,486 decision records from 246 adult participants in Ellsberg-type urn tasks.",
+        "A visible limit is the exclusion of 58 records from five participants younger than 18 due to missing guardian permission documentation.",
+        "The artifact status is a data release with repository components including game definitions, lottery outcomes, instructions, and a data dictionary."
+      ],
+      "plain": {
+        "reported": "The authors report that the release contains 4,486 decision records from 246 adult participant records across two implementations.",
+        "brief": "The authors describe an anonymized dataset from controlled experiments where people made choices under known probabilities (risk) and unknown probabilities (ambiguity) using urn-based tasks. The dataset includes 4,486 decision records from 246 adult participants, collected in both laboratory and online settings.\n\nIn each task, participants stated the maximum amount they were willing to pay to enter a lottery. The online version also included questions about how uncertain participants felt. The original data had 4,544 records, but 58 records from five participants under 18 were removed because guardian consent for public release was not documented.\n\nResearchers studying how people handle uncertainty or how behavior changes with repeated participation may find this dataset useful. The listing does not report specific statistical findings or model comparisons. The repository includes task definitions, actual lottery results, participant instructions, and a variable dictionary.",
+        "takeaways": [
+          "The object is an anonymized dataset of 4,486 decision records from 246 adult participants in urn-based uncertainty tasks.",
+          "A visible limit is the exclusion of 58 records from five participants under 18 due to missing guardian consent documentation.",
+          "The artifact is a data release with supporting materials including task definitions, lottery outcomes, instructions, and a variable dictionary."
+        ]
+      },
+      "actions": [
+        "Verify the repository contents and data dictionary against the abstract's description of game definitions and realized lottery outcomes.",
+        "Check the exclusion criteria documentation to confirm the handling of the 58 excluded records from participants younger than 18."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-08-28",
+        "publishedOn": "2026-08-28",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.26358"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-28"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-08-28T22:22:39.646Z"
+      }
+    }
+  ]
+}
