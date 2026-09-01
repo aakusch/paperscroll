@@ -1,0 +1,664 @@
+{
+  "date": "2026-09-01",
+  "label": "Tue, Sep 1",
+  "minutes": 10,
+  "poolSize": 133,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-09-01T16:43:29.048Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2608.31046",
+      "arxivId": "2608.31046",
+      "url": "https://arxiv.org/abs/2608.31046",
+      "topic": "AI",
+      "reported": "The authors report that their proposed method, OPSA, improves the average score at 32 samples by 35.41 points on the AIME24 benchmark compared to the base Qwen3-1.7B model.",
+      "metrics": [
+        "35.41 points on AIME24",
+        "263% relative gain",
+        "16.77 points in Avg@32 on AIME24"
+      ],
+      "title": "Does On-Policy Distillation Really Distill? From Noisy Teacher to Self-Improvement",
+      "authors": "Yi Ding, Ruqi Zhang",
+      "takeaway": "The paper claims that on-policy distillation primarily works by suppressing low-probability tokens without needing a teacher, and introduces a supervision-free method called OPSA that improves performance on math benchmarks.",
+      "brief": "The authors argue that on-policy distillation does not truly distill knowledge from a teacher because the student is insensitive to the noise in teacher supervision. They propose On-Policy Self-Adaptation (OPSA), a method that uses entropy-adaptive negative advantages to suppress low-probability tokens without any teacher model.\n\nThe authors report that OPSA improves the average score at 32 samples by 35.41 points on AIME24 compared to the base Qwen3-1.7B model. They also state that OPSA outperforms on-policy distillation by 16.77 points on the same benchmark. The listing does not specify the exact limitations of the OPSA method or the specific tasks where it might fail.\n\nResearchers working on reinforcement learning for large language models or token-level supervision might find this relevant. Those not interested in the specific mechanics of on-policy distillation or self-adaptation methods might ignore it.",
+      "abstract": "On-policy distillation (OPD) offers dense token-level supervision as an alternative to the sparse outcome-level advantages of reinforcement learning with verifiable rewards (RLVR). However, the teacher scores student-generated trajectories that are inherently off-policy for it, so the reliability of its supervision, and hence the source of the student's improvement, remains unclear. We quantitatively analyze teacher supervision during OPD training and find substantial noise whose prevalence increases with teacher scale. Surprisingly, the student policy is insensitive to such noise, converging to comparable performance regardless of whether noisy supervision is retained or removed. Does OPD distill at all? By analyzing what drives its gains, we find that learning concentrates on low log-probability tokens, and using a single fixed negative advantage matches the performance of teacher-provided ones. This suggests that OPD works largely by suppressing low log-probability tokens, which requires no teacher. These findings motivate On-Policy Self-Adaptation (OPSA), a supervision-free method using entropy-adaptive negative advantages. It assigns stronger learning signals to high-entropy positions, suppressing tail tokens, and evenly redistributing probability mass among head tokens. Compared with the base Qwen3-1.7B, OPSA improves Avg@32 by 35.41 points on AIME24, corresponding to a 263\\% relative gain, and more than doubles Pass@32 across all three benchmarks. It also outperforms OPD by 16.77 points in Avg@32 on AIME24. Extensive experiments and analyses across model families and tasks further demonstrate its effectiveness and generalizability.",
+      "takeaways": [
+        "The paper focuses on the mechanism of on-policy distillation and proposes a teacher-free alternative called OPSA.",
+        "The listing does not establish specific limitations of the OPSA method or the conditions under which it fails.",
+        "The authors provide a GitHub repository URL, but the listing does not confirm the availability or completeness of the code."
+      ],
+      "plain": {
+        "reported": "The authors report that their new method, OPSA, gets a score that is 35.41 points higher than the base model on a math test called AIME24 when the model tries the problem 32 times.",
+        "brief": "The authors say that a common way to train AI models, called on-policy distillation, doesn't really learn from a teacher model because the teacher's feedback is too noisy. They suggest a new way to train the model called OPSA that doesn't use a teacher at all.\n\nThe authors say their new method gets a score that is 35.41 points higher than the base model on a math test. They also say it is 16.77 points better than the old method on the same test. The summary doesn't say what the new method can't do or when it might not work well.\n\nPeople who study how to train AI models using rewards might find this useful. People who don't care about the details of how these training methods work might not need to look at it.",
+        "takeaways": [
+          "The paper is about how a specific training method works and a new way to do it without a teacher.",
+          "The summary doesn't say what the new method can't do or when it might fail.",
+          "The authors give a link to their code, but the summary doesn't say if the code is complete or works."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark results and the comparison with on-policy distillation by reading the full PDF.",
+        "Check the GitHub repository to confirm the availability and functionality of the OPSA implementation."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/DripNowhy/On-Policy-Self-Adaptation",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-01",
+        "publishedOn": "2026-08-31",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.31046",
+            "upvotes": 87
+          }
+        ]
+      },
+      "trend": {
+        "votes": 87,
+        "rank": 1,
+        "of": 35,
+        "perDay": 87
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 87,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-31"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-01T16:43:29.048Z"
+      }
+    },
+    {
+      "id": "2608.31106",
+      "arxivId": "2608.31106",
+      "url": "https://arxiv.org/abs/2608.31106",
+      "topic": "AI",
+      "reported": "The authors report that DreamX-Creator 1.0 achieves native, synchronized audio-video generation with performance competitive with state-of-the-art open-source systems.",
+      "metrics": [
+        "7B generator",
+        "2K Resolution"
+      ],
+      "title": "DreamX-Creator: Democratizing Native Audio-Video Generation at 2K Resolution",
+      "authors": "Jiashu Zhu, Yanhao Zheng, Ruitian Tian, Rujing Dang, Shen Zhang, Bingze Song, Jiachen Lei, Ruimin Lin, Jiahong Wu, Xiangxiang Chu",
+      "takeaway": "DreamX-Creator 1.0 is a compact native joint audio-video generation system that produces synchronized audio and video from a first frame and text prompt.",
+      "brief": "The authors present a 7B parameter model that jointly denoises audio and video streams using Gated Cross-Modal Attention. They describe a training pipeline involving progressive joint training and reinforcement learning, followed by an autoregressive refinement stage for high-resolution output.\n\nThe listing states the system is competitive with state-of-the-art open-source systems but does not provide specific benchmark scores or quantitative comparisons. The authors claim the 2K refinement pipeline requires only one denoising evaluation per temporal chunk, though the specific latency or quality metrics for this claim are not detailed in the abstract.\n\nResearchers interested in unified audio-video generation architectures or efficient high-resolution video refinement pipelines may find the described method relevant. Those requiring specific quantitative benchmarks or code availability verification should consult the full paper and repository.",
+      "abstract": "Recent video generators often omit audio or synthesize it in a separate stage, limiting reciprocal modeling of visual dynamics and acoustic events. We present DreamX-Creator 1.0, a compact native joint audio-video generation system centered on a 7B generator. Conditioned on a first frame and a text prompt, the generator jointly denoises modality-specialized audio and video streams. The streams are processed independently in the first half of the network and coupled in the latter half through Gated Cross-Modal Attention, whose token- and head-wise output gates modulate each active cross-modal attention-head output. A unified Audio-Video Data System constructs and filters temporally coherent clips, produces structured multimodal annotations, and organizes clips into capability-oriented data pools. Progressive Joint Training comprises two audio-video pre-training stages followed by High-Quality Finetuning. Audio-Video Reinforcement Learning further post-trains the generator with Modality-Aware Multimodal Feedback that routes video-, audio-, and cross-modal feedback to the corresponding streams. For high-resolution output, our Autoregressive 1-Step 2K Refinement pipeline adapts a bidirectional multi-step teacher into an autoregressive multi-step refiner and distills it into a student requiring one denoising evaluation per temporal chunk. Overall, DreamX-Creator 1.0 achieves native, synchronized audio-video generation with performance competitive with state-of-the-art open-source systems. By releasing our compact 7B generator and 2K Refiner, we seek to democratize native audio-video generation and provide an accessible foundation for future research in unified audio-video generative modeling.",
+      "takeaways": [
+        "The core object is a 7B parameter joint audio-video generator with a separate 2K refinement module.",
+        "The abstract lacks specific quantitative performance metrics, making it difficult to assess the magnitude of improvement over baselines.",
+        "The authors declare a public GitHub repository, but the listing does not confirm the availability of weights or training code."
+      ],
+      "plain": {
+        "reported": "The authors report that their system creates synchronized sound and video together, claiming it performs similarly to other leading free systems.",
+        "brief": "The authors describe a computer model with 7 billion parameters that creates both sound and video at the same time. It uses a special attention mechanism to link the two types of data and a training process that includes reinforcement learning. A final step improves the video resolution to 2K.\n\nThe text says the system is competitive with other top free systems but does not list specific scores or numbers to prove this. The authors claim the high-resolution step is fast, requiring only one calculation step per video segment, but they do not explain how fast or high quality this is in the summary.\n\nPeople studying how to make AI create sound and video together might find this useful. People who need exact performance numbers or want to check if the code is actually available should look at the full document and the website link.",
+        "takeaways": [
+          "The main thing is a 7 billion parameter AI model that makes sound and video together, plus a tool to make the video sharper.",
+          "The summary does not give specific numbers showing how well the model works compared to others.",
+          "The authors say they put the code on a website, but the summary does not say if the actual model files are there."
+        ]
+      },
+      "actions": [
+        "Verify the existence and completeness of the code and weights at the declared GitHub URL.",
+        "Read the full PDF to identify the specific benchmarks and quantitative results used to support the 'competitive' performance claim."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/AMAP-ML/DreamX-Creator",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-01",
+        "publishedOn": "2026-08-31",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.31106",
+            "upvotes": 84
+          }
+        ]
+      },
+      "trend": {
+        "votes": 84,
+        "rank": 2,
+        "of": 35,
+        "perDay": 84
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 84,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-31"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-01T16:43:29.048Z"
+      }
+    },
+    {
+      "id": "2608.30821",
+      "arxivId": "2608.30821",
+      "url": "https://arxiv.org/abs/2608.30821",
+      "topic": "AI",
+      "reported": "The authors report that Lucida improves mAP over Boxer by 69% on R2S-Scene, raises ADD-SB@0.05 from 57.8% to 83.4% on CA-1M, and increases scene F-Score from 0.794 for SAM3D to 0.924.",
+      "metrics": [
+        "mAP over Boxer by 69% on R2S-Scene",
+        "ADD-SB@0.05 from 57.8% to 83.4% on CA-1M",
+        "scene F-Score from 0.794 for SAM3D to 0.924"
+      ],
+      "title": "Lucida: Parse, Generate, and Place for Composable Real-to-Sim Scene Modeling",
+      "authors": "Minghan Qin, Yuang Wang, Xiuyu Yang, Yushi Long, Yujian Zhang, Ruihuan Wang, Kai Ye, Yangang Zhang, Hang Li",
+      "takeaway": "Lucida is a composable real-to-sim scene modeling pipeline that parses video into a scene graph, generates assets per instance, and places them using a VLM policy for GUI interaction.",
+      "brief": "The authors propose Lucida to model real indoor scenes as editable assets for simulation, arguing that existing pipelines fail because they demand precise inputs that cluttered captures rarely provide. The method redistributes requirements so each step uses only reliable capture data, reaching precision at the pipeline's end rather than its start.\n\nThe authors report quantitative gains in 3D object detection, pose estimation, and scene reconstruction on R2S-Scene, CA-1M, and SAM3D comparisons. The listing does not establish specific limitations, failure modes, or computational costs, leaving the practical robustness of the VLM-based placement loop unverified in this summary.\n\nResearchers working on real-to-sim scene reconstruction, embodied AI simulation, or VLM-driven manipulation policies may find the specific architectural choices relevant. Those focused solely on static 2D image segmentation or non-interactive scene generation may find the multi-turn GUI interaction component less applicable to their immediate needs.",
+      "abstract": "Composable scene modeling aims to recover a real indoor scene as complete, editable object assets arranged as observed, giving robot simulation and embodied AI a simulation-ready replica of the real environment whose objects can be manipulated individually. Existing pipelines decompose the task into three steps---parse the observations into instances, generate an asset for each, and place each asset back---but every step presumes an input that a cluttered capture rarely provides: accurate instance geometry, unoccluded views, and assets that accurately match the observations. We propose Lucida, which keeps this order but redistributes the requirements, so each step consumes only what a real capture reliably provides and precision is reached at the end of the pipeline rather than demanded at its start. Lucida parses the video into a scene graph whose nodes carry per-instance multi-view evidence, generates a complete asset for each instance from its evidence, and places assets with GizmoAct, a VLM policy that casts placement as multi-turn GUI interaction, manipulating the object's gizmo in a closed loop and deciding itself when alignment is reached. Across scene-level 3D object detection, object pose estimation, and scene reconstruction, Lucida improves mAP over Boxer by 69% on R2S-Scene, raises ADD-SB@0.05 from 57.8% to 83.4% on CA-1M, and increases scene F-Score from 0.794 for SAM3D to 0.924.",
+      "takeaways": [
+        "The object is a three-stage pipeline (parse, generate, place) that uses a VLM policy to manipulate object gizmos in a closed loop for alignment.",
+        "The visible limit is that the abstract claims precision is reached at the end of the pipeline, but does not quantify the error accumulation or latency introduced by the multi-turn GUI interaction process.",
+        "The artifact status is not established in the listing, as no code repository or dataset link is provided in the supplied metadata."
+      ],
+      "plain": {
+        "reported": "The authors state that their system, Lucida, performs better than previous methods on three specific tests: it detects objects more accurately on the R2S-Scene dataset, estimates object positions more accurately on the CA-1M dataset, and reconstructs scenes more completely compared to a method called SAM3D.",
+        "brief": "The authors created a system called Lucida to turn videos of real rooms into digital models that robots can use for practice. They argue that older methods fail because they need perfect input data, which is rare in messy real-world videos. Lucida changes the order of operations so that it only uses data that is reliably available from the video, and it fixes small errors at the very end of the process.\n\nThe authors provide numbers showing their system beats older systems on three types of tasks: finding objects, figuring out where objects are, and building the whole scene. However, the short summary does not say how slow the system is, how often it fails, or what specific problems it still has, so we cannot judge its real-world reliability from this text alone.\n\nPeople who build simulations for robots or work on making computers understand 3D spaces from video might find this useful. People who only care about simple 2D pictures or who do not need interactive control of objects might not find this directly helpful for their work.",
+        "takeaways": [
+          "The system works in three steps: it identifies objects in the video, creates a 3D model for each object, and then places those models in a virtual room using a computer vision AI that acts like a user clicking and dragging.",
+          "The summary does not explain how long the process takes or how often the AI gets stuck trying to place an object, which are important practical limits.",
+          "The listing does not say if the code or data is available for download, so it is unclear if others can easily test or use the system."
+        ]
+      },
+      "actions": [
+        "Verify the specific implementation details of the 'GizmoAct' VLM policy and its convergence criteria by reviewing the full PDF.",
+        "Check the supplementary materials or repository for the R2S-Scene and CA-1M evaluation protocols to confirm the baseline comparisons are fair."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-01",
+        "publishedOn": "2026-08-31",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.30821",
+            "upvotes": 60
+          }
+        ]
+      },
+      "trend": {
+        "votes": 60,
+        "rank": 3,
+        "of": 35,
+        "perDay": 60
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 60,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-31"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-01T16:43:29.048Z"
+      }
+    },
+    {
+      "id": "2608.29335",
+      "arxivId": "2608.29335",
+      "url": "https://arxiv.org/abs/2608.29335",
+      "topic": "AI",
+      "reported": "The authors report that SiT achieves a gFID of 0.97 with CFG and 1.45 without CFG on ImageNet-256, and MMDiT reaches a GenEval score of 0.90 on text-to-image generation.",
+      "metrics": [
+        "gFID of 0.97 with CFG",
+        "gFID of 1.45 without CFG",
+        "GenEval score of 0.90"
+      ],
+      "title": "GenFirst: Generation Before Reconstruction for Stable End-to-End Latent Generative Modeling",
+      "authors": "Guangting Zheng, Yiyuan Zhang, Tao Yang, Yunpeng Chen, Rui Zhu, Jiajun Deng, Yanyong Zhang",
+      "takeaway": "The paper claims to achieve the first direct end-to-end training without latent collapse by proposing GenFirst, a generation-before-reconstruction strategy for stable latent generative modeling.",
+      "brief": "The authors propose GenFirst, a strategy where the generative objective shapes the latent space before reconstruction is strengthened, aiming to resolve generation-reconstruction conflicts in end-to-end training.\n\nThey report specific performance metrics on ImageNet-256 and text-to-image tasks, attributing stability to the entropy term in the KL divergence and asymmetric learning dynamics. The listing does not establish specific computational costs or failure modes beyond the stated prevention of latent collapse.\n\nResearchers working on latent generative models, specifically those interested in end-to-end training stability and autoregressive priors, should open this paper. Those focused solely on two-stage pipeline optimization without end-to-end constraints may ignore it.",
+      "abstract": "Latent generative models typically follow a two-stage pipeline, training a variational autoencoder for reconstruction and then a generative model on the frozen latent space. Since reconstruction-optimized latents are not necessarily generation-friendly, jointly training both models is an appealing alternative. However, direct end-to-end training remains challenging, as it is prone to latent collapse and faces a generation-reconstruction conflict. We revisit this problem by analyzing how different objectives shape the latent space and identify two key insights. First, the entropy term in the Kullback-Leibler divergence objective is essential for preventing collapse: reconstruction and prior fitting tend to shrink the posterior, while entropy preserves non-degenerate latent uncertainty. Second, reconstruction and generation exhibit asymmetric learning dynamics: reconstruction is fast and strongly supervised, whereas generation is slower and harder to optimize. Based on these insights, we achieve the first direct end-to-end training without latent collapse and propose GenFirst, a simple generation-before-reconstruction strategy. The generative objective first shapes the latent space under weak reconstruction pressure, after which reconstruction is progressively strengthened to recover visual details. We validate GenFirst with continuous autoregressive priors with exact likelihoods and SiT priors with implicit likelihoods. With our end-to-end objective and GenFirst, SiT achieves a gFID of 0.97 with CFG and 1.45 without CFG on ImageNet-256, while MMDiT reaches a GenEval score of 0.90 on text-to-image generation. Beyond image generation, we extend the framework to shared visual latents for generation and representation learning, and to continuous unified text-image generation. These results demonstrate the generality of stable end-to-end latent learning across generative priors and modalities.",
+      "takeaways": [
+        "The object is a training strategy, GenFirst, that reorders optimization objectives to prevent latent collapse in end-to-end latent generative models.",
+        "A visible limit is that the reported stability relies on specific priors (continuous autoregressive and SiT) and does not confirm generalizability to all latent spaces or architectures.",
+        "The artifact status is not established in the listing, as no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors state that their model SiT scored 0.97 on the gFID benchmark with classifier-free guidance and 1.45 without it on the ImageNet-256 dataset, and their MMDiT model scored 0.90 on the GenEval benchmark for text-to-image tasks.",
+        "brief": "The authors suggest a new way to train AI image generators by teaching the system to create images before teaching it to copy them accurately. This order is meant to stop the internal data representation from breaking down during training.\n\nThey show specific scores on standard image datasets to prove the method works. The summary does not say how much computer power this takes or if it fails in other specific situations.\n\nPeople who build AI systems that create images from scratch should look at this. People who only use existing, separate steps for training might not need to.",
+        "takeaways": [
+          "The main idea is a new training order that helps AI models learn to generate images without their internal data structures collapsing.",
+          "The summary only proves this works for specific types of AI models and does not show if it works for all possible models.",
+          "The summary does not say if the code is available for download or use."
+        ]
+      },
+      "actions": [
+        "Verify the exact implementation of the 'generation-before-reconstruction' schedule and the specific KL divergence formulation in the full PDF.",
+        "Check the full paper for ablation studies comparing GenFirst against standard end-to-end baselines to confirm the attribution of stability to the proposed strategy."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-01",
+        "publishedOn": "2026-08-29",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.29335",
+            "upvotes": 56
+          }
+        ]
+      },
+      "trend": {
+        "votes": 56,
+        "rank": 4,
+        "of": 35,
+        "perDay": 19
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 56,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-29"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-01T16:43:29.048Z"
+      }
+    },
+    {
+      "id": "2608.28650",
+      "arxivId": "2608.28650",
+      "url": "https://arxiv.org/abs/2608.28650",
+      "topic": "Physics",
+      "reported": "The authors report deriving three alphabet-dependent upper bounds for pure $(r,\\rho)$-qLRCs obtained through the Hermitian CSS construction.",
+      "metrics": [],
+      "title": "Alphabet-Dependent Bounds for Pure Quantum $(r,\\rho)$-Locally Recoverable Codes",
+      "authors": "Vijay Kumar, Ramakrishna Bandi",
+      "takeaway": "The paper claims to derive three alphabet-dependent upper bounds for pure $(r,\\rho)$-qLRCs and establish their asymptotic hierarchy.",
+      "brief": "The authors claim to derive three alphabet-dependent upper bounds for pure $(r,\\rho)$-qLRCs obtained through the Hermitian CSS construction. They report establishing the asymptotic hierarchy among these bounds and identifying relative-distance regions where each yields the tightest rate constraint. The listing does not state specific numerical results or experimental measurements.\n\nThe reported evidence consists of the derivation of Griesmer-like, Plotkin-like, and sphere-packing-like bounds. The authors state these are alphabet-dependent, unlike existing Singleton-like bounds. No specific performance metrics or comparative numerical data are provided in the abstract.\n\nResearchers working on quantum locally recoverable codes may find the theoretical bounds relevant. Those seeking empirical validation or specific code constructions should note the abstract describes theoretical derivations only.",
+      "abstract": "A quantum $(r,\\rho)$-locally recoverable code ($(r,\\rho)$-qLRC) is a quantum code in which every qudit can be recovered from at most $r+\\rho-1$ other qudits, even after $\\rho-1$ additional erasures inside the recovery set. The bounds currently known for this class, namely the Singleton-like and the GG Singleton-like bounds, are alphabet independent and are therefore loose for small-to-moderate qudit dimensions. In this letter, we derive three alphabet-dependent upper bounds for pure $(r,\\rho)$-qLRCs obtained through the Hermitian CSS construction: a Griesmer-like, a Plotkin-like, and a sphere-packing-like bound. We further establish the asymptotic hierarchy among these bounds and identify the relative-distance regions in which each of them yields the tightest rate constraint.",
+      "takeaways": [
+        "The object is a set of three theoretical upper bounds for pure quantum locally recoverable codes.",
+        "The visible limit is the absence of numerical results or experimental data in the provided listing.",
+        "The artifact status is theoretical, with no code or dataset declared in the metadata."
+      ],
+      "plain": {
+        "reported": "The authors report creating three new mathematical limits for a specific type of quantum error-correcting code.",
+        "brief": "The authors claim to create three new mathematical limits for a specific type of quantum error-correcting code. They report figuring out how these limits compare to each other and when each one is most useful. The summary does not include specific numbers or test results.\n\nThe evidence is the creation of three types of limits: Griesmer-like, Plotkin-like, and sphere-packing-like. The authors say these limits depend on the size of the quantum units, unlike older limits. The summary does not show any actual numbers or comparisons.\n\nPeople studying quantum error correction might find these new limits useful. People looking for real-world tests or specific code examples should note this is a theory paper.",
+        "takeaways": [
+          "The main item is a set of three theoretical limits for quantum codes.",
+          "The clear limit is that no numbers or tests are shown in the summary.",
+          "The item is theoretical, with no code or data files mentioned."
+        ]
+      },
+      "actions": [
+        "Verify the specific mathematical derivations and asymptotic hierarchy claims in the full PDF.",
+        "Check if the paper provides explicit examples or numerical comparisons for the derived bounds."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "cs.IT",
+        "math.IT"
+      ],
+      "listing": {
+        "listedOn": "2026-09-01",
+        "publishedOn": "2026-09-01",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.28650"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-01"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-01T16:43:29.048Z"
+      }
+    },
+    {
+      "id": "2608.28788",
+      "arxivId": "2608.28788",
+      "url": "https://arxiv.org/abs/2608.28788",
+      "topic": "Health",
+      "reported": "The authors report that FoldKit reduces storage requirements by approximately 5-15-fold compared to native AF3 outputs, measured on three types of AF3 co-folding datasets.",
+      "metrics": [
+        "5-15-fold"
+      ],
+      "title": "FoldKit: A Python library for efficient storage and retrieval of co-folding predictions",
+      "authors": "Jonathan A. Levine, Melissa Pathil, Samuel Nitz, Olga Lyudovyk, Benjamin D. Greenbaum",
+      "takeaway": "FoldKit is a Python library that provides efficient storage and retrieval of AlphaFold 3 co-folding predictions by converting raw outputs into a compact, structured representation.",
+      "brief": "The authors present FoldKit, a Python package designed to store and analyze large-scale AlphaFold 3 co-folding results by converting raw outputs into a compact, structured format. They report that the library reduces storage requirements by approximately 5-15-fold compared to native outputs while maintaining programmatic access to confidence metrics like pLDDT and pTM. The listing does not establish specific limitations regarding data fidelity or computational overhead beyond the stated storage reduction.\n\nThe strongest reported result is a 5-15-fold reduction in storage requirements, measured across three dataset types: a protein design campaign, a TCR-pMHC dataset, and a pooled protein-protein interaction dataset. The authors state that FoldKit preserves metadata needed for downstream analysis and provides access to global, single chain, and interface confidence metrics. No specific accuracy degradation or performance penalty is quantified in the supplied abstract.\n\nResearchers working with large-scale AlphaFold 3 co-folding outputs who need compact storage and programmatic access to confidence metrics may find this tool relevant. Those not generating or analyzing large volumes of AF3 co-folding data may not require this specific library.",
+      "abstract": "AlphaFold 3 (AF3) enables structure prediction of biomolecular complexes through co-folding multiple interacting molecules, making it increasingly useful for de novo protein design and for large-scale studies of protein-protein, protein-peptide, and other biomolecular interactions. However, systematic co-folding experiments can produce large volumes of output data, particularly when multiple random seeds and samples are generated for each input complex. We introduce FoldKit, a Python package for efficient storage and analysis of large-scale AF3 co-folding results. FoldKit converts raw AF3 outputs into a compact, structured representation while preserving the metadata needed for downstream analysis. The FoldKit Python library provides convenient programmatic access to global, single chain, and interface confidence metrics such as pLDDT, pTM, ipTM, ipAE, and ipSAE, as well as an ensemble-level interface for accessing and aggregating these metrics for a single input across multiple seeds and samples. We benchmark FoldKit on three types of AF3 co-folding datasets: (i) a protein design campaign with 2 chains per input, (ii) a TCR-pMHC dataset with 4 chains per input, and (iii) a pooled-AF3 protein-protein interaction dataset with up to 22 chains per input. We find that FoldKit reduces storage requirements by approximately 5-15-fold compared to native AF3 outputs, depending on dataset composition, while maintaining direct programmatic access to individual predictions, ensembles, and confidence metrics. By reducing storage requirements and facilitating programmatic access to relevant outputs, FoldKit facilitates large-scale computational studies of biomolecular interactions. FoldKit is available from PyPI and can be installed using pip.",
+      "takeaways": [
+        "The object is a Python library for storing and retrieving AlphaFold 3 co-folding predictions.",
+        "The visible limit is that the abstract does not specify whether the compact representation loses any information beyond the stated metadata preservation.",
+        "The artifact is available from PyPI and can be installed using pip, but no repository URL is provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that their software tool saves about 5 to 15 times less disk space than the original AlphaFold 3 output files, tested on three different sets of protein interaction data.",
+        "brief": "The authors created a Python tool called FoldKit that helps save and analyze results from AlphaFold 3, a program that predicts how molecules fit together. They say this tool makes the data files much smaller, saving about 5 to 15 times the space, while still letting users check the confidence scores of the predictions. The text does not say if any data quality is lost or if the tool is slower to use.\n\nThe main result they report is that the tool saves 5 to 15 times less space, tested on three types of data: protein design, TCR-pMHC interactions, and protein-protein interactions. They say the tool keeps the important metadata and lets users access confidence scores like pLDDT and pTM. The abstract does not mention any drop in accuracy or speed issues.\n\nPeople who use AlphaFold 3 to study many protein interactions and need to save a lot of data might find this tool useful. People who do not work with large amounts of AlphaFold 3 data probably do not need this specific tool.",
+        "takeaways": [
+          "The tool is a Python library for saving and retrieving AlphaFold 3 prediction results.",
+          "The abstract does not say if the smaller files lose any data or if the tool is slower.",
+          "The tool is available on PyPI, a Python package repository, but no direct link is given in the text."
+        ]
+      },
+      "actions": [
+        "Verify the specific storage reduction percentages and data fidelity claims by reading the full PDF.",
+        "Check the PyPI package documentation for installation instructions and API details not included in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "cs.SE"
+      ],
+      "listing": {
+        "listedOn": "2026-09-01",
+        "publishedOn": "2026-09-01",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.28788"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-01"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-01T16:43:29.048Z"
+      }
+    },
+    {
+      "id": "2608.28794",
+      "arxivId": "2608.28794",
+      "url": "https://arxiv.org/abs/2608.28794",
+      "topic": "Security",
+      "reported": "The authors report that their hybrid system achieves success rates above 90% across all evaluated CAPTCHA types.",
+      "metrics": [
+        "success rates above 90%"
+      ],
+      "title": "Breaking Darknet CAPTCHAs with general purpose LLM",
+      "authors": "Benjamin Fehrensen, Jens Hubler",
+      "takeaway": "The paper proposes a hybrid framework using an MLLM and deterministic algorithms to solve darknet CAPTCHAs.",
+      "brief": "The authors propose a hybrid framework where a multimodal large language model handles high-level reasoning while deterministic algorithms handle geometric computations via the Model Context Protocol. This design addresses limitations in spatial localization and geometric transformations found in contemporary MLLMs.\n\nThe authors report success rates above 90% across three CAPTCHA types: open-circle localization, rotation-based alignment, and object-selection. The abstract notes that MLLMs frequently struggle with precise spatial localization and geometric transformations, which the hybrid approach mitigates. No specific dataset size, latency, or failure mode analysis is provided in the listing.\n\nResearchers working on CAPTCHA security, multimodal model limitations, or hybrid AI systems may find this relevant. Those focused solely on standard JavaScript-based CAPTCHAs or pure deep learning approaches without classical CV integration may find the scope limited.",
+      "abstract": "Our work evaluates the effectiveness of automated methods for solving CAPTCHA challenges commonly encountered in darknet environments. These CAPTCHAs are typically designed to operate without JavaScript, resulting in distinct characteristics compared to mainstream CAPTCHA systems. Our study considers three representative challenge types: open-circle localization, rotation-based alignment, and object-selection CAPTCHAs. The experiments reveal a systematic limitation of contemporary MLLMs: while they are generally capable of identifying relevant visual structures, they frequently struggle with precise spatial localization and geometric transformations. These deficiencies can be mitigated either through task reformulation or by augmenting the models with specialized image processing tools. These deficiencies can be mitigated by task reformulation or by equipping the model with specialized image-processing tools. We therefore propose a hybrid framework in which an MLLM serves as a high-level reasoning and orchestration layer while delegating geometric computations to deterministic algorithms via the Model Context Protocol (MCP). The resulting system achieves success rates above 90% across all evaluated CAPTCHA types and demonstrates that combining the complementary strengths of MLLMs and classical computer vision yields a more accurate and efficient solver than either approach alone.",
+      "takeaways": [
+        "The object is a hybrid solver combining MLLM reasoning with deterministic image processing for darknet CAPTCHAs.",
+        "A visible limit is the reliance on task reformulation or specialized tools to overcome MLLM spatial and geometric deficiencies.",
+        "The artifact status is not established in the listing, as no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors state that their system solved more than 90% of the test challenges across three types of visual puzzles.",
+        "brief": "The authors built a system that combines a smart AI model with standard math tools to solve visual puzzles used on hidden internet networks. The AI handles the general understanding, while the math tools handle precise measurements and angles. This fixes problems where the AI alone cannot accurately locate objects or rotate them correctly.\n\nThe authors say their system worked on over 90% of the tests for three puzzle types: finding a circle, aligning a rotated image, and selecting an object. They note that current AI models often fail at exact positioning and shape changes. The listing does not say how many puzzles were tested or how long the system took to solve them.\n\nPeople studying internet security, AI weaknesses, or mixed AI systems might find this useful. People only interested in standard web puzzles or pure AI methods without traditional math tools might not find it relevant.",
+        "takeaways": [
+          "The system mixes a smart AI with standard math tools to solve hidden internet visual puzzles.",
+          "The AI alone often fails at exact positioning and shape changes, so the math tools are needed.",
+          "The listing does not say if the code is available or how the system was built."
+        ]
+      },
+      "actions": [
+        "Verify the specific CAPTCHA datasets and baseline comparisons in the PDF to confirm the 90% success rate context.",
+        "Check the PDF for details on the Model Context Protocol implementation and the specific deterministic algorithms used."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.CV"
+      ],
+      "listing": {
+        "listedOn": "2026-09-01",
+        "publishedOn": "2026-09-01",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.28794"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-01"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-01T16:43:29.048Z"
+      }
+    },
+    {
+      "id": "2608.28797",
+      "arxivId": "2608.28797",
+      "url": "https://arxiv.org/abs/2608.28797",
+      "topic": "Stats",
+      "reported": "The authors report developing nonparametric efficiency theory and a sequentially doubly robust estimator for cumulative incidence under dynamic treatment regimes with competing risks and right-censoring.",
+      "metrics": [],
+      "title": "Nonparametric Efficient Estimation of Dynamic Treatment Regimes with Competing Risks",
+      "authors": "Nitya Shah, Laura D. Carbone, Howard A. Fink, John T. Schousboe, Jared D. Huling",
+      "takeaway": "The paper claims to derive the efficient influence function for cumulative incidence under dynamic treatment regimes with competing risks and proposes a sequentially doubly robust estimator using flexible machine learning.",
+      "brief": "The authors claim to develop nonparametric efficiency theory and a sequentially doubly robust estimator for evaluating dynamic treatment regimes when a competing risk precludes the primary outcome. They report deriving the efficient influence function for cumulative incidence under a dynamic treatment regime with competing risk and right-censoring, and proposing an estimator that retains root-n consistency and asymptotic normality. The listing does not establish specific numerical performance metrics, dataset sizes, or empirical error bounds for the proposed estimator.\n\nThe reported evidence is theoretical, centered on the derivation of the efficient influence function and the statistical properties of the proposed estimator. The authors illustrate the framework by estimating long-term cumulative incidence of clinical fractures under different bisphosphonate drug holiday regimes for osteoporosis. No quantitative results, such as bias, variance, or coverage probabilities, are provided in the supplied abstract.\n\nResearchers working on causal inference with time-varying treatments and competing risks may find the theoretical framework relevant. Those requiring immediate empirical benchmarks or code for specific datasets may find the listing insufficient for direct application without further verification.",
+      "abstract": "Many observational studies evaluate the risks and benefits of time-varying interventions. In these longitudinal settings, the primary outcome of interest is often a clinical event that is precluded by mortality, which acts as a competing risk. Evaluating dynamic treatment regimes (DTRs) is complicated by time-varying confounding, right-censoring, and progressive sample size reduction over time, for which traditional methods such as the g-formula or inverse probability weighting may be misspecified or highly unstable. In this work, we develop the nonparametric efficiency theory and derive the efficient influence function for the cumulative incidence of an event under a DTR in the presence of a competing risk and right-censoring. Building on this result, we propose a sequentially doubly robust estimator that accommodates flexible machine learning for nuisance estimation while retaining root-n consistency and asymptotic normality. We illustrate the utility of our framework by estimating long-term cumulative incidence of clinical fractures under different bisphosphonate \"drug holiday\" regimes for osteoporosis.",
+      "takeaways": [
+        "The object is a theoretical framework and estimator for cumulative incidence under dynamic treatment regimes with competing risks.",
+        "A visible limit is the absence of reported numerical performance metrics or empirical validation results in the supplied abstract.",
+        "The artifact status is not established in the listing, as no code or dataset is declared."
+      ],
+      "plain": {
+        "reported": "The authors report creating a mathematical theory and a statistical method to estimate the chance of a health event happening over time when other events, like death, can prevent it from being observed.",
+        "brief": "The authors claim to have created a new mathematical theory and a statistical tool to measure the long-term effects of changing treatments over time, especially when a patient might die before the main health event happens. They say they derived the specific mathematical formula needed for this measurement and created a method that stays accurate even with large datasets. The provided summary does not include any specific numbers showing how well this method works in practice.\n\nThe evidence they provide is based on mathematical proofs rather than real-world data results. They show how their method can be used to estimate the risk of bone fractures in osteoporosis patients taking certain medications. The summary does not list any specific error rates or success percentages for their method.\n\nPeople studying how to measure the effects of medical treatments over time might find this useful. People who need ready-to-use software or specific data results might need to look at the full paper to see if it meets their needs.",
+        "takeaways": [
+          "The main thing being studied is a mathematical method for measuring health risks when treatments change over time and other risks exist.",
+          "A clear limitation is that the summary does not show any actual numbers proving the method works well in real data.",
+          "It is not stated whether the authors have shared their code or data with the public."
+        ]
+      },
+      "actions": [
+        "Verify the theoretical derivations and estimator properties by reading the full PDF.",
+        "Check for supplementary materials or repository links for code and data used in the osteoporosis illustration."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-09-01",
+        "publishedOn": "2026-09-01",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.28797"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-01"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-01T16:43:29.048Z"
+      }
+    },
+    {
+      "id": "2608.28864",
+      "arxivId": "2608.28864",
+      "url": "https://arxiv.org/abs/2608.28864",
+      "topic": "Engineering",
+      "reported": "The authors report that the proposed all-optical regenerative relay framework provides a design benchmark for low-latency, pointing-aware all-optical regenerative relaying, verified by Monte Carlo simulations and numerical integration.",
+      "metrics": [],
+      "title": "OHL-Assisted All-Optical Regenerative Relaying for Pointing-Impaired M-PAM Inter-Satellite Links",
+      "authors": "Meysam Ghanbari, Mohammad Taghi Dabiri, Zain Ali, Rula Ammuri, Mazen Hasna, Iman Tavakkolnia, Khalid Qaraqe",
+      "takeaway": "The paper proposes an all-optical regenerative relay for M-ary pulse amplitude modulation multi-hop links under pointing errors that avoids both AF noise accumulation and DF O/E/O processing overhead.",
+      "brief": "The authors propose an all-optical regenerative relay for M-PAM multi-hop links under pointing errors, using a parallel optical hard-limiter bank to regenerate signal levels directly in the optical domain. They report deriving closed-form per-hop symbol error rate expressions and extending them to end-to-end performance using a Markov transition-matrix model, verified by Monte Carlo simulations and numerical integration. The listing does not establish specific quantitative performance limits or artifact availability, leaving the practical threshold-stable region and implementation-dependent decision noise characteristics to be confirmed by the full text.\n\nThis work is relevant to researchers and engineers working on optical inter-satellite links, specifically those addressing pointing errors and spectral efficiency in LEO constellations. It may be of interest to those seeking alternatives to traditional amplify-and-forward or decode-and-forward relaying that reduce latency and complexity. However, without access to the full PDF, the specific numerical gains or limitations of the proposed OHL bank compared to existing baselines remain unverified.\n\nThe packet reflects only the supplied abstract and title. No code or dataset is declared in the listing. The reader should verify the closed-form expressions and simulation parameters directly from the source document to assess the practical applicability of the proposed design benchmark.",
+      "abstract": "Rapid inter-satellite traffic growth in LEO constellations demands spectrally efficient, low-latency optical relaying. While amplify and forward (AF) relays are latency-efficient, they propagate noise; conversely, decode and forward (DF) relays suppress noise but incur significant complexity via O/E/O conversion. This paper proposes an all-optical regenerative relay for M-ary pulse amplitude modulation (M-PAM) multi-hop links under pointing errors. A parallel optical hard-limiter (OHL) bank performs symbol-level discrimination, regenerating signal levels directly in the optical domain. A variable gain EDFA is employed to stabilize power and define the threshold-stable region. By incorporating pointing-induced fading, various noise sources including ASE-ASE and signal-ASE beat noise and implementation-dependent decision noise, we derive closed-form per-hop symbol error rate (SER) expressions. These are extended to end-to-end performance using a Markov transition-matrix model for arbitrary modulation order and hop count. Analysis of beamwidth, pointing accuracy, and threshold scaling demonstrates reliable multi-hop operation, avoiding both AF noise accumulation and DF O/E/O processing overhead. Verified by Monte Carlo simulations and numerical integration, this framework provides a design benchmark for low-latency, pointing-aware all-optical regenerative relaying.",
+      "takeaways": [
+        "The object is an all-optical regenerative relay architecture for M-PAM inter-satellite links that uses optical hard-limiters for symbol-level discrimination.",
+        "The visible limit is that the listing provides no specific quantitative performance metrics, such as exact SER values or latency reductions, to gauge the magnitude of the improvement.",
+        "The artifact status is unestablished, as no code, dataset, or repository URL is provided in the supplied metadata."
+      ],
+      "plain": {
+        "reported": "The authors state that their proposed system design serves as a reference standard for low-latency, pointing-aware all-optical relaying, and they confirmed this using computer simulations and mathematical calculations.",
+        "brief": "The authors suggest a new way to relay optical signals between satellites without converting them to electrical signals first. They use a bank of optical components to clean up the signal levels directly in the light domain. They claim to have derived mathematical formulas for error rates and tested them with simulations, but the listing does not show specific numbers for how well it works.\n\nThis is useful for people designing communication links between low Earth orbit satellites who want to reduce delay and complexity. It offers an alternative to standard methods that either add noise or require complex electronic processing. However, without the full paper, it is unclear exactly how much better this method is than existing solutions.\n\nThis summary is based only on the provided title and abstract. No software or data files are mentioned. You should check the full document to see the actual math and simulation details to decide if it fits your needs.",
+        "takeaways": [
+          "The subject is a new optical relay design for satellite links that cleans up signals using light-based components.",
+          "The limitation is that the summary lacks specific performance numbers, so the exact benefit is not quantified here.",
+          "The status of any available code or data is unknown because none are listed."
+        ]
+      },
+      "actions": [
+        "Retrieve the full PDF to verify the closed-form per-hop symbol error rate expressions and the specific parameters used in the Monte Carlo simulations.",
+        "Check the numerical integration results to confirm the stability of the threshold region under the specified pointing-induced fading conditions."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-09-01",
+        "publishedOn": "2026-09-01",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.28864"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-01"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-01T16:43:29.048Z"
+      }
+    },
+    {
+      "id": "2608.29843",
+      "arxivId": "2608.29843",
+      "url": "https://arxiv.org/abs/2608.29843",
+      "topic": "Econ",
+      "reported": "The authors report that the quality-adjusted index fell at 0.73 log points a year, measured on a panel of 21,024 posted-price observations.",
+      "metrics": [
+        "0.73 log points a year",
+        "21,024 posted-price observations",
+        "87% of the decline"
+      ],
+      "title": "The Price of Intelligence: A Quality-Adjusted Price Index for AI Services",
+      "authors": "Louis Yiven Zhu",
+      "takeaway": "The paper constructs quality-adjusted price indices for the AI inference market using a latent quality index derived from benchmark scores.",
+      "brief": "The author claims to construct quality-adjusted price indices for AI inference by linking posted prices to a latent quality index estimated from benchmark response patterns. The reported evidence indicates that the quality-adjusted index fell at 0.73 log points a year, while matched-model methods showed a fall of only 0.10 log points a year. The listing does not establish specific limitations regarding the generalizability of the benchmark-based quality measure beyond the stated audit results.\n\nThe strongest reported result is that 87% of the price decline is invisible to current measurement methods, based on the comparison between the quality-adjusted index and matched-model methods. The authors state that excluding contamination-flagged benchmarks moves the index by 0.49 log points a year, suggesting sensitivity to data quality. The listing does not specify whether the benchmark scores fully capture the relevant dimensions of AI service quality for all economic applications.\n\nResearchers studying AI market economics, productivity measurement, or software price indices may find the methodology relevant. Those relying solely on standard matched-model software price indices for AI inference may need to consider the reported divergence between measured and quality-adjusted price trends.",
+      "abstract": "Posted prices for AI inference have fallen steadily since 2024, yet the measured speed of that fall depends almost entirely on the method of measurement. This paper constructs quality-adjusted price indices for the AI inference market from public data. The panel assembles 21,024 posted-price observations across 3,208 models and 86 providers and joins them to 4,605 benchmark scores through a latent quality index estimated from benchmark response patterns, so the quality ladder of the hedonic tradition is built here from evaluations in place of product characteristics. Measured by the matched-model methods that statistical agencies apply to software, inference prices fell at 0.10 log points a year. The quality-adjusted index fell at 0.73, so 87% of the decline is invisible to current methods, with direct consequences for measured competition, concentration and productivity in this market. Counted per completed task, moreover, the buyer's price stopped falling. Reasoning models raised token consumption faster than token prices fell, and the seller's and buyer's prices accordingly diverged. A pre-registered validity audit disciplines the quality measure and yields the sharpest result. Excluding contamination-flagged benchmarks leaves model rankings intact at 0.998 yet moves the index by 0.49 log points a year, so the leaderboard-stability arguments standard in AI evaluation offer no defence of economic statistics built on benchmarks. Prices, quality and the audit are fully reproducible from public sources at zero cost.",
+      "takeaways": [
+        "The object is a quality-adjusted price index for AI inference services, constructed from public posted-price and benchmark data.",
+        "A visible limit is the sensitivity of the index to benchmark contamination, as excluding flagged benchmarks shifts the index by 0.49 log points a year.",
+        "The artifact status is fully reproducible from public sources at zero cost, with no code repository URL provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that the quality-adjusted price index dropped by 0.73 log points per year, based on data from 21,024 price listings.",
+        "brief": "The author claims to create a price index for AI services that accounts for differences in quality, using scores from standard tests to estimate that quality. The reported evidence shows that this quality-adjusted index dropped by 0.73 log points per year, while a standard method that only compares identical models showed a drop of just 0.10 log points per year. The listing does not state whether this method works for all types of AI services or if the test scores fully represent real-world performance.\n\nThe main reported finding is that 87% of the price drop is not visible using standard measurement methods. The authors note that removing tests flagged for data contamination changes the index by 0.49 log points per year, showing the result depends on the quality of the test data. The listing does not say if the test scores capture all important aspects of AI service quality for economic analysis.\n\nPeople studying the economics of AI markets, how to measure productivity, or how to price software might find this useful. People who use standard price comparison methods for AI services should note the reported difference between standard and quality-adjusted price trends.",
+        "takeaways": [
+          "The thing being measured is a price index for AI services that adjusts for quality differences, built from public price and test score data.",
+          "A clear limitation is that the index changes by 0.49 log points per year if contaminated test scores are removed, showing it is sensitive to data quality.",
+          "The data and methods are fully reproducible from public sources at no cost, but no code link is given in the listing."
+        ]
+      },
+      "actions": [
+        "Verify the construction of the latent quality index and the hedonic regression methodology in the full PDF.",
+        "Check the pre-registered validity audit protocol and the specific benchmarks used to estimate the quality index."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "cs.LG",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-09-01",
+        "publishedOn": "2026-09-01",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2608.29843"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-01"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-01T16:43:29.048Z"
+      }
+    }
+  ]
+}
