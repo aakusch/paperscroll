@@ -1,0 +1,654 @@
+{
+  "date": "2026-09-02",
+  "label": "Wed, Sep 2",
+  "minutes": 10,
+  "poolSize": 102,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-09-02T16:38:30.761Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2609.01591",
+      "arxivId": "2609.01591",
+      "url": "https://arxiv.org/abs/2609.01591",
+      "topic": "AI",
+      "reported": "The authors report that StudentSim outperforms GPT-5.4 on behavioral fidelity and guidance responsiveness across chess, second-language English writing, and mathematics.",
+      "metrics": [
+        "F=0.51",
+        "R=0.91",
+        "60 students"
+      ],
+      "title": "StudentSim: Training LLM-based Student Simulators",
+      "authors": "Ke Yang, Chenglong Wang, Michel Galley, Chandan Singh, Jeevana Priya Inala, ChengXiang Zhai, Jianfeng Gao",
+      "takeaway": "StudentSim is a training framework that converts sparse per-student data into individualized simulators through pooled training and per-student specialization.",
+      "brief": "The authors propose StudentSim to create individualized student simulators from sparse data, addressing limitations in state-tracking and LLM role-play models. They introduce StudentSimEval, a protocol using 60 students across chess, English writing, and mathematics to measure behavioral fidelity and guidance responsiveness.\n\nThe authors state that StudentSim outperforms GPT-5.4 on both metrics in all three domains. In chess, they report F=0.51 and R=0.91 for StudentSim versus 0.23 and 0.72 for GPT-5.4. They also report that a chess tutor trained with StudentSim as a reward model is rated more accurate and personalized by expert humans.\n\nResearchers developing AI tutors or student simulators may find the framework and evaluation protocol relevant. Those not working on adaptive tutoring or simulator training may find the specific domain applications less directly applicable.",
+      "abstract": "AI tutors are most useful when they adapt to each student's strengths, weaknesses, and preferred guidance, but evidence about which guidance works for which student is sparse, slow, and costly to collect from real learners. Student simulators can provide this signal as a proxy, yet existing approaches are limited: state-tracking models fit student behavior but struggle to process explanations or corrections, while LLM role-play follows guidance fluently but does not reliably match the competence of the student being imitated. We present StudentSim, a training framework that turns sparse per-student data into individualized simulators through pooled training followed by per-student specialization. The resulting simulators both mirror a student's own responses and update them under tutor guidance. We also introduce StudentSimEval, a standardized protocol covering 60 students across chess, second-language English writing, and mathematics, using public learner datasets with de-identified records shared for research. StudentSimEval measures behavioral fidelity (F), or how well a simulator matches a student's responses, and guidance responsiveness (R), or how readily it updates under tutor guidance, with all methods fit and evaluated on the same records. Across all three domains, StudentSim outperforms GPT-5.4 on both metrics. In chess, StudentSim reaches F=0.51 and R=0.91, compared with 0.23 and 0.72 for GPT-5.4 and 0.45 and 0.27 for Maia2. As a proof of concept, using StudentSim as a reward model for tutor reinforcement learning produces a chess tutor that expert humans rate as more accurate, better-guided, and more personalized than a no-RL baseline and a tutor trained against a GPT-5.4 simulator reward. Code is available at https://github.com/microsoft/StudentSim.",
+      "takeaways": [
+        "The object is a training framework for individualized LLM-based student simulators and a standardized evaluation protocol.",
+        "The visible limit is that the evidence relies on a specific set of 60 students and three domains, with generalizability to other subjects or populations not established in the listing.",
+        "The artifact status is that code is declared available at a specific GitHub repository, but the listing does not confirm the repository's current accessibility or completeness."
+      ],
+      "plain": {
+        "reported": "The authors report that their system, StudentSim, performs better than GPT-5.4 in two specific areas: how well it mimics a student's behavior and how well it reacts to teacher guidance, tested in chess, English writing, and math.",
+        "brief": "The authors created a system called StudentSim to build digital models of individual students. This is meant to help AI teachers adapt to different students, as real data on what works for whom is hard to get. They also made a standard way to test these models, called StudentSimEval, using data from 60 students in three subjects.\n\nThe authors say their system beats GPT-5.4 in both testing areas across all three subjects. In chess, their system scored 0.51 on mimicking behavior and 0.91 on reacting to guidance, while GPT-5.4 scored 0.23 and 0.72. They also say an AI chess teacher trained using their system was rated better by human experts than one trained without it.\n\nPeople building AI teachers or student models might find this useful. People not working in this specific area might not find it directly relevant to their work.",
+        "takeaways": [
+          "The main thing is a method for creating personalized digital student models and a standard test for them.",
+          "A clear limit is that the test only used 60 students and three subjects, so it is not known if it works for other subjects or groups.",
+          "The code is said to be available online, but the listing does not prove the link works or that all the code is there."
+        ]
+      },
+      "actions": [
+        "Verify the declared code repository URL to confirm the availability and completeness of the implementation.",
+        "Review the full PDF to examine the specific datasets used and the detailed methodology for the per-student specialization process."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/microsoft/StudentSim",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-02",
+        "publishedOn": "2026-09-01",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.01591",
+            "upvotes": 348
+          }
+        ]
+      },
+      "trend": {
+        "votes": 348,
+        "rank": 1,
+        "of": 23,
+        "perDay": 348
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 348,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-01"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-02T16:38:30.761Z"
+      }
+    },
+    {
+      "id": "2609.00111",
+      "arxivId": "2609.00111",
+      "url": "https://arxiv.org/abs/2609.00111",
+      "topic": "AI",
+      "reported": "The authors report that Qwen-Drive-1.0 demonstrates strong 3D perception and driving scene understanding while largely preserving general vision-language capability, measured across open-loop, pseudo-closed-loop, and closed-loop settings.",
+      "metrics": [],
+      "title": "Qwen-Drive-1.0: An Initial Step towards a Vision-Language Foundation Model for Autonomous Driving",
+      "authors": "Xin Zhou, Zongchuang Zhao, Zhibo Yang, Mingsheng Li, Humen Zhong, Shuai Bai, Du Chu, Ruizhe Chen, Zhaohai Li, Jun Tang, Qiuyue Wang, Mingkun Yang, Jiazhao Zhang, Dayiheng Liu, Dingkang Liang, Xiang Bai",
+      "takeaway": "The paper presents Qwen-Drive-1.0 as an initial step towards a vision-language foundation model for autonomous driving that integrates 3D perception, visual question answering, and motion planning within a unified framework.",
+      "brief": "The authors propose Qwen-Drive-1.0, a model that retains a pretrained vision-language architecture while adding a bird's-eye-view perception head and a planning expert to handle 3D detection, occupancy, and trajectory generation. They state that a staged training recipe combines driving supervision with general-purpose data to acquire driving competence while preserving broad visual understanding and instruction-following capabilities.\n\nThe authors report strong 3D perception and driving scene understanding while largely preserving general vision-language capability. They note that comprehensive evaluations across open-loop, pseudo-closed-loop, and closed-loop settings show highly competitive motion-planning performance. The listing does not specify quantitative metrics, failure modes, or specific benchmark scores, leaving the magnitude of performance gains and specific limitations unestablished.\n\nResearchers working on unified autonomous driving models or vision-language integration may find the architectural approach relevant. Those seeking specific quantitative benchmarks or code implementations should note that the listing provides no numerical results or repository links.",
+      "abstract": "We present Qwen-Drive-1.0, an initial step towards a vision-language foundation model for autonomous driving. Qwen-Drive-1.0 retains the architecture of the pretrained vision-language model (VLM) and integrates 3D perception, visual question answering, and motion planning within a unified framework. An external bird's-eye-view (BEV) perception head jointly performs 3D object detection, semantic occupancy prediction, and BEV map segmentation. It serves as a probe of the 3D information accessible from the shared representations and provides an explicit, inspectable interface to 3D scene structure. A Planning Expert conditions on shared VLM representations to generate future ego trajectories. A staged training recipe combines driving supervision with general-purpose vision-language data to acquire driving-specific competence while helping preserve broad visual understanding and instruction-following capabilities. Experiments demonstrate strong 3D perception and driving scene understanding while largely preserving general vision-language capability. Comprehensive evaluations across open-loop, pseudo-closed-loop, and closed-loop settings further show highly competitive motion-planning performance.",
+      "takeaways": [
+        "The object is a unified vision-language foundation model for autonomous driving that integrates 3D perception, visual question answering, and motion planning.",
+        "A visible limit is the absence of quantitative metrics in the listing, making it impossible to verify the specific magnitude of the reported 'strong' perception and 'highly competitive' planning performance.",
+        "The artifact status is unclear because the listing does not declare code availability or provide a repository URL."
+      ],
+      "plain": {
+        "reported": "The authors state that their model performs well at detecting 3D objects and understanding driving scenes, while still being able to answer general visual questions, and they tested this in three different simulation environments.",
+        "brief": "The authors created a computer model called Qwen-Drive-1.0 that combines the ability to understand images and text with the ability to drive a car. It uses a special component to see the road in 3D and another component to plan the car's path. They trained it using both driving data and general image-text data to ensure it does not forget how to understand general images.\n\nThe authors say the model is good at seeing 3D objects and understanding the driving scene, and it still works well for general image questions. They tested the driving ability in three types of computer simulations and say the results are very competitive. However, the summary does not give specific numbers or scores, so we do not know exactly how much better it is than other models or where it might fail.\n\nPeople who are building systems that combine vision and language for self-driving cars might be interested in this design. People who need specific numbers or want to download the code should know that this summary does not provide either.",
+        "takeaways": [
+          "The thing being described is a computer model that tries to do three things at once: see 3D objects, answer questions about images, and plan how to drive.",
+          "A clear limitation is that the summary uses words like 'strong' and 'competitive' but does not give any actual numbers or scores to prove how good it is.",
+          "It is not stated whether the computer code for this model is available for download or use."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative results and benchmark scores by reading the full PDF, as the abstract only provides qualitative descriptions of performance.",
+        "Check the paper's supplementary materials or associated project page for code availability, since the listing does not declare a code repository."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-02",
+        "publishedOn": "2026-08-31",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.00111",
+            "upvotes": 334
+          }
+        ]
+      },
+      "trend": {
+        "votes": 334,
+        "rank": 2,
+        "of": 23,
+        "perDay": 167
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 334,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-31"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-02T16:38:30.761Z"
+      }
+    },
+    {
+      "id": "2609.01343",
+      "arxivId": "2609.01343",
+      "url": "https://arxiv.org/abs/2609.01343",
+      "topic": "AI",
+      "reported": "The authors report that SMELT saves 6.8--18.0\\% of training FLOPs on the compute-optimal frontier, measured against an unlooped baseline across four model sizes up to 54B non-embedding parameters.",
+      "metrics": [
+        "54B non-embedding parameters",
+        "6.8--18.0\\% of training FLOPs"
+      ],
+      "title": "SMELT: Scaling Laws for Compute-Matched MoE Looped Transformers",
+      "authors": "Shaowen Wang, Ge Zhang, Kairong Luo, Yuhao Wu, Shaofan Liu, Jiaheng Liu, Wenhao Huang, Shen Yan, Jian Li",
+      "takeaway": "The paper claims that looping the middle half of layers in a Mixture-of-Experts Transformer while matching per-token FLOPs, non-embedding parameters, and KV cache yields measurable performance gains over an unlooped baseline.",
+      "brief": "The authors propose SMELT, a recipe that loops the middle half of layers twice in a Sparse MoE Transformer while matching the unlooped baseline on per-token FLOPs, total non-embedding parameters, and KV cache. They report that SMELT's loss drops faster with compute, saving 6.8--18.0\\% of training FLOPs on the compute-optimal frontier, with advantages transferring to downstream benchmarks beyond validation loss predictions. The listing does not specify the exact downstream benchmarks used, the dataset composition, or the specific hardware environment for the training runs.\n\nThe strongest reported result is the 6.8--18.0\\% training FLOP savings on the compute-optimal frontier, measured across four model sizes up to 54B non-embedding parameters. The authors state that the advantage is largest on Code and grows with sample length and the number of in-context examples. Mechanistic analysis suggests the second visit reduces the attention sink and redirects mass toward content-relevant tokens. The listing does not establish whether the reported FLOP savings hold across all model sizes uniformly or if the 54B parameter scale is the only point where the upper bound of the range is achieved.\n\nResearchers investigating architectural efficiency in Mixture-of-Experts Transformers or scaling laws for looped architectures may find the specific budget-matching methodology and the Chinchilla-style scaling law fits relevant. Those focused solely on standard dense Transformer training or non-MoE architectures may find the specific MoE and looping constraints less applicable to their immediate work.",
+      "abstract": "Looped Transformers increase effective depth by iterating a shared block of layers, but most evaluations compare at fixed model size, conflating architectural advantage with extra FLOPs. We study looping on Mixture-of-Experts Transformers while closely matching per-token FLOPs, total non-embedding parameters, and KV cache. Through a series of ablations, we arrive at a recipe we call SMELT (Sparse MoE Transformer, middle layers Loop Twice), which loops the middle half of layers twice while matching the unlooped Baseline on all three budgets. We scale SMELT across four sizes up to 54B non-embedding parameters and fit a separate Chinchilla-style scaling law for each architecture. SMELT's loss drops faster with compute, saving 6.8--18.0\\% of training FLOPs on the compute-optimal frontier. The advantage transfers to downstream benchmarks beyond what validation loss predicts, is largest on Code, and grows with sample length and the number of in-context examples. Mechanistic analysis shows that the second visit reduces the attention sink and redirects mass toward content-relevant tokens, an inductive bias that may underlie the observed performance gains. These results show that looping can improve Transformers even under budget matching, offering a practical recipe that turns depth reuse into measurable gains.",
+      "takeaways": [
+        "The object is a specific architectural recipe, SMELT, that loops the middle half of layers in a Sparse MoE Transformer while strictly matching three resource budgets against an unlooped baseline.",
+        "A visible limit is that the reported FLOP savings range from 6.8% to 18.0%, and the listing does not specify which model size or compute point corresponds to the lower or upper bound of this range.",
+        "The artifact status is not established in the listing, as no code repository, dataset link, or model checkpoint is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their method, SMELT, uses 6.8 to 18.0 percent fewer computational operations for training compared to a standard model, measured on models with up to 54 billion parameters.",
+        "brief": "The authors suggest a way to make a type of AI model more efficient by repeating a middle section of its processing layers twice. They ensure this repeated version uses the same amount of computation, memory, and parameters as a standard version that does not repeat layers. They report that this repeated version learns faster, saving 6.8 to 18.0 percent of the training computation. They also say this improvement shows up in real-world tasks, especially coding tasks, and gets better with longer text inputs. The listing does not say exactly which real-world tasks were tested or what computer hardware was used.\n\nThe main result is the 6.8 to 18.0 percent savings in training computation, tested on four different model sizes up to 54 billion parameters. The authors say the benefit is biggest for coding tasks and increases with longer text and more examples provided to the model. They analyze the model's internal behavior and suggest that the second pass through the layers helps the model focus on important words rather than just the beginning of the text. The listing does not say if the 6.8 percent or the 18.0 percent savings applies to the smallest or largest model.\n\nPeople studying how to make AI models more efficient or how to scale them up might find the method of matching resource budgets useful. People who only work with standard AI models that do not use the specific mixture-of-experts or layer-repeating techniques described here might find the details less relevant to their current projects.",
+        "takeaways": [
+          "The paper describes a specific design for an AI model that repeats a middle section of its layers while keeping the total cost of computation, memory, and parameters the same as a standard model.",
+          "A limitation is that the reported savings range from 6.8 to 18.0 percent, but the text does not say which model size achieves the lowest or highest saving.",
+          "The listing does not provide a link to the code, data, or model files, so it is not known if these artifacts are available."
+        ]
+      },
+      "actions": [
+        "Verify the specific downstream benchmarks and dataset splits used to measure the transfer of advantages beyond validation loss by consulting the full PDF.",
+        "Check the full PDF for the exact Chinchilla-style scaling law equations and the specific compute-optimal frontier definitions used to calculate the 6.8--18.0\\% FLOP savings."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-02",
+        "publishedOn": "2026-09-01",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.01343",
+            "upvotes": 67
+          }
+        ]
+      },
+      "trend": {
+        "votes": 67,
+        "rank": 3,
+        "of": 23,
+        "perDay": 67
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 67,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-01"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-02T16:38:30.761Z"
+      }
+    },
+    {
+      "id": "2609.00028",
+      "arxivId": "2609.00028",
+      "url": "https://arxiv.org/abs/2609.00028",
+      "topic": "AI",
+      "reported": "The authors report that UI-Venus-2 expands environment coverage to more than 170 multilingual mobile apps and native desktop operating systems.",
+      "metrics": [
+        "more than 170 multilingual mobile apps"
+      ],
+      "title": "UI-Venus-2 Technical Report",
+      "authors": "Venus Team, Zhuohan Cai, Haoxing Chen, Jiaxuan Chen, Weizhi Chen, Changlong Gao, Zhangxuan Gu, Yuan Guo, Yusong Hu, Jianrong Jiang, Jianguo Li, Runze Li, Jinzhen Lin, Zhenyu Ma, Changhua Meng, Han Peng, Xinyu Qiu, Shuheng Shen, Zhongyi Shui, Weiqiang Wang, Ming Wen, Zhuoer Xu, Hang Yan, Kaiwen Yang, Ruilin Yao, Nanjun Yu, Zhengwen Zeng, Lianrui Zhang, Yunzhu Zhang, Zhe Zhao, Beitong Zhou",
+      "takeaway": "The paper presents UI-Venus-2, a general-purpose foundation GUI agent designed to operate across mobile, web, and desktop environments through a unified closed-loop reasoning-action framework.",
+      "brief": "The authors claim to present UI-Venus-2, a general-purpose foundation GUI agent designed to operate across mobile, web, and desktop environments through a unified closed-loop reasoning-action framework.\n\nThey report scaling environment coverage to more than 170 multilingual mobile apps and native desktop operating systems, using a deep-research pipeline for task generation and trace-level evaluators for verification. The listing does not establish specific performance benchmarks or unresolved limits beyond the stated challenges of limited environment coverage and unreliable reward verification.\n\nResearchers working on multimodal GUI agents, digital task automation, or reinforcement learning for user interface interaction may find the technical report relevant. Those not focused on cross-platform GUI automation or foundation agent architectures may find the specific implementation details less applicable to their immediate work.",
+      "abstract": "Multimodal GUI agents have emerged as a promising paradigm for digital task automation, yet transitioning from benchmark-oriented models to dependable real-world applications remains challenging due to limited environment coverage, brittle task construction, and unreliable reward verification. In this work, we present UI-Venus-2, a general-purpose foundation GUI agent designed to operate across mobile, web, and desktop environments through a unified closed-loop reasoning-action framework. To bridge the gap toward practical deployment, we jointly scale three critical dimensions: (1) Environments, expanding coverage to more than 170 multilingual mobile apps and native desktop operating systems; (2) Tasks, employing a deep-research pipeline for function-grounded instruction generation; and (3) Verification, adopting trace-level and sample-level evaluators with visual keypoints and multi-model voting to ensure reliable RL signals for training. Furthermore, we integrate safety-aware mechanisms to ensure controlled execution of consequential actions. By offering a capable, efficient, and open-source foundation, UI-Venus-2 advances the field toward more generalizable, verifiable, and self-reflective agents for real-world applications.",
+      "takeaways": [
+        "The object is a general-purpose foundation GUI agent intended for mobile, web, and desktop environments.",
+        "A visible limit is the reliance on trace-level and sample-level evaluators to ensure reliable reinforcement learning signals, which the authors identify as a challenge in real-world applications.",
+        "The artifact status is described as an open-source foundation, though the listing does not provide a repository URL or specific code availability details."
+      ],
+      "plain": {
+        "reported": "The authors report that their system, UI-Venus-2, works with over 170 different mobile applications in various languages and standard computer operating systems.",
+        "brief": "The authors say they built a computer program called UI-Venus-2 that can use mobile phones, websites, and desktop computers by thinking and acting in a continuous loop.\n\nThey say they made the system work with over 170 mobile apps and computer systems. They used a research process to create tasks and used visual checks to verify the system's actions. The summary does not say how well the system performs on specific tests or what specific problems remain unsolved.\n\nPeople who study how computers can use user interfaces or automate digital tasks might find this useful. People who do not work on computer interface automation might not find the details directly useful for their own projects.",
+        "takeaways": [
+          "The thing being described is a computer program that can use phones, websites, and computers.",
+          "A visible limit is that the system needs special checks to make sure its learning signals are correct, which the authors say is hard to do in real life.",
+          "The status of the software is described as open-source, but the summary does not give a link to the code or say exactly how to get it."
+        ]
+      },
+      "actions": [
+        "Verify the specific performance metrics and benchmark results by consulting the full PDF, as the abstract only mentions environment coverage scale.",
+        "Check the official repository or documentation for the open-source code release to confirm the availability of the unified closed-loop reasoning-action framework."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-02",
+        "publishedOn": "2026-08-27",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.00028",
+            "upvotes": 53
+          }
+        ]
+      },
+      "trend": {
+        "votes": 53,
+        "rank": 4,
+        "of": 23,
+        "perDay": 9
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 53,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-27"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-02T16:38:30.761Z"
+      }
+    },
+    {
+      "id": "2609.00052",
+      "arxivId": "2609.00052",
+      "url": "https://arxiv.org/abs/2609.00052",
+      "topic": "Security",
+      "reported": "The authors report that AgentProv catches every substituted model (100% on 630 evaluated checkpoint pairs) while holding the false-positive rate under system-prompt injection at 7%.",
+      "metrics": [
+        "100% on 630 evaluated checkpoint pairs",
+        "7% (vs. 67% for MET and 53% for RUT)"
+      ],
+      "title": "AgentProv: Auditing Agentic LLM API Providers via Tool-use Policy Probes",
+      "authors": "Xun Wang, Bihe Zhao, Michael Backes, Franziska Boenisch, Adam Dziedzic",
+      "takeaway": "AgentProv is the first action-based identity audit for agentic LLM APIs that fingerprints deployed models through their categorical tool-call distribution.",
+      "brief": "The authors propose AgentProv to audit agentic LLM APIs by analyzing tool-call distributions rather than text outputs, which they argue is structurally fragile for modern serving stacks.\n\nThey report 100% detection of substituted models across 630 checkpoint pairs and a 7% false-positive rate under system-prompt injection, outperforming text-based baselines. The listing does not establish whether these results generalize to non-agentic APIs or specific commercial endpoints beyond the stated third-party tests.\n\nResearchers auditing LLM API provenance or studying agentic model behavior may find this relevant. Those focused solely on text-generation quality or non-agentic deployments may find the specific tool-call channel less applicable.",
+      "abstract": "Commercial LLM APIs advertise a specific foundation model, but the served backbone may be silently substituted, quantized, or wrapped, for example to save deployment costs. All existing audits decide backbone identity from the text-output channel, which is structurally fragile for agentic APIs because modern serving stacks (OpenAI, Anthropic, Gemini, Cloudflare Workers AI, LangGraph) discard text and expose only structured actions when the model calls a tool, and provider-injected system prompts can distort text distributions enough that text-channel tests falsely accuse honest providers of substituting the claimed model. We observe that recent agentic post-training internalizes tool-use directly into the weights, opening a new audit channel that the serving stack still exposes and that is largely invariant to deployment context. We introduce Agentic Provenance (AgentProv), the first action-based identity audit for agentic LLM APIs: AgentProv fingerprints a deployed model through its categorical tool-call distribution and decides identity via an MMD permutation test. AgentProv catches every substituted model (100% on 630 evaluated checkpoint pairs), while holding the false-positive rate under system-prompt injection at 7% (vs. 67% for MET and 53% for RUT). On third-party API endpoints, AgentProv's disagreements with MET are consistent with an independent token-count side-channel that detects provider-injected system prompts.",
+      "takeaways": [
+        "The method targets the categorical tool-call distribution as a fingerprint for model identity in agentic settings.",
+        "The reported false-positive rate of 7% is measured specifically under system-prompt injection conditions, not general deployment noise.",
+        "No code repository is declared in the listing, so the implementation details and exact probe construction are not directly verifiable from the metadata."
+      ],
+      "plain": {
+        "reported": "The authors state that their tool, AgentProv, correctly identified every fake model in a test of 630 model pairs, and it wrongly flagged only 7% of honest models when extra instructions were added by the provider.",
+        "brief": "The authors created a tool called AgentProv to check if a cloud AI service is actually using the model it claims to use. They argue that checking the text output is unreliable because modern AI systems often hide the text and only show structured actions when using tools. Instead, AgentProv looks at the pattern of which tools the AI chooses to use, which they say is harder to fake.\n\nThey say their tool found 100% of the fake models in their tests and made fewer mistakes than older methods when providers added hidden instructions. However, the summary does not say if this works for all types of AI services or if the results hold up in real-world scenarios beyond their specific tests.\n\nPeople who check if AI services are honest about which model they use might find this useful. People who only care about the quality of the text the AI writes, or who do not use AI systems that use tools, might not find this directly relevant.",
+        "takeaways": [
+          "The tool checks which tools an AI picks to use, rather than what words it says, to identify the model.",
+          "The low error rate of 7% was measured only when providers added hidden instructions, not in all possible situations.",
+          "The authors did not provide a link to their code, so you cannot check exactly how they built the tool from the summary alone."
+        ]
+      },
+      "actions": [
+        "Verify the specific checkpoint pairs and system-prompt injection protocols used in the 630-pair evaluation by reading the full PDF.",
+        "Check the paper for details on how the MMD permutation test is configured and whether the 7% false-positive rate holds across different provider-injected prompt styles."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-02",
+        "publishedOn": "2026-09-02",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.00052"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-02T16:38:30.761Z"
+      }
+    },
+    {
+      "id": "2609.00056",
+      "arxivId": "2609.00056",
+      "url": "https://arxiv.org/abs/2609.00056",
+      "topic": "Physics",
+      "reported": "The authors report that the number of surviving bound states is fixed by available system parameters rather than the usual quantization rule, measured on isospectral constructions of the Harmonic oscillator and Rosen-Morse potential.",
+      "metrics": [],
+      "title": "Isospectral potentials with Dirac delta interaction: Constrained Spectra",
+      "authors": "Kumar Abhinav, Biswanath Rath, Prasanta K. Panigrahi",
+      "takeaway": "The paper claims that quantum potentials containing a Dirac delta function within a supersymmetric construction impose independent algebraic constraints that restrict and truncate the spectrum.",
+      "brief": "The authors propose a supersymmetric construction where a Dirac delta function is integrated via a discontinuous superpotential, imposing boundary conditions that truncate the spectrum. They report that for the Harmonic oscillator and Rosen-Morse potential, the number of surviving parity-even bound states is fixed by system parameters rather than standard quantization rules. They note that combining the delta function with a Calogero-type singularity is largely incompatible because the regularization breaks down.\n\nThe listing provides no numerical benchmarks, error bars, or experimental measurements. The authors state that the Calogero-type combination fails due to regularization breakdown, but the specific mathematical conditions for this failure are not detailed in the abstract. The claim that localized singularities can engineer discrete spectra is presented as a theoretical consequence of the construction, not as an empirically verified physical effect.\n\nResearchers working on supersymmetric quantum mechanics or singular potentials may find the construction relevant. Those seeking numerical simulations or experimental validation of these truncated spectra should note the absence of such data in the listing. The paper is theoretical and does not provide code or datasets.",
+      "abstract": "We study quantum potentials containing Dirac delta function (DDF) within its supersymmetric (isospectral) construction via a discontinuous superpotential, instead of being simply an added part. This construction comprises of two independently solvable sectors joined at the singular point by matching conditions imposed by the corresponding self-adjoint extension. Needing careful regularization, these boundary conditions impose independent algebraic constraints on each of the eigenstates, that restrict and truncate the spectrum. The number of surviving bound states, which are required to be parity-even, is thus fixed by the available system parameters rather than by the usual quantization rule. The specific cases of the Harmonic oscillator and the Rosen-Morse potential isospectrally infused with the DDF demonstrate such highly restrictive spectra, while the similar combination of the DDF with a Calogero-type singularity turns out to be largely incompatible as the regularization breaks down. Therefore, localized singularities are capable of controlling and engineering the discrete spectrum of quantum systems, with possible use in myriads of physical systems with very localized interactions.",
+      "takeaways": [
+        "The object is a theoretical supersymmetric construction for quantum potentials with Dirac delta interactions.",
+        "A visible limit is the stated incompatibility with Calogero-type singularities due to regularization breakdown.",
+        "The artifact status is not established; no code, datasets, or numerical results are mentioned in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that the number of stable quantum states is determined by the system's settings rather than standard counting rules, observed in mathematical models of the Harmonic oscillator and Rosen-Morse potential.",
+        "brief": "The authors describe a mathematical method for adding a sharp, point-like interaction to quantum systems using a specific symmetry technique. They state that this method limits the number of possible stable states to a specific number determined by the system's parameters, rather than the usual infinite or standard set. They also note that this method does not work when combined with a specific type of multi-particle interaction because the mathematical smoothing process fails.\n\nThe listing does not include any numerical data, experimental results, or computer code. The authors mention that the method fails for a specific type of interaction, but the abstract does not explain exactly why or under what conditions. The idea that point-like interactions can control quantum states is presented as a theoretical result, not as something tested in a lab.\n\nScientists studying the mathematical structure of quantum mechanics might find this useful. People looking for computer programs or experimental data should note that none are provided. This is a theoretical paper without attached code or datasets.",
+        "takeaways": [
+          "The subject is a theoretical mathematical method for quantum systems with point-like interactions.",
+          "A clear limitation is that the method does not work with a specific type of multi-particle interaction.",
+          "It is not stated whether any code or data files are available for this work."
+        ]
+      },
+      "actions": [
+        "Verify the mathematical derivation of the boundary conditions and the specific parameter constraints for the Harmonic oscillator case in the full PDF.",
+        "Check the full text for the precise definition of the 'regularization breakdown' in the Calogero-type singularity case to assess the scope of the incompatibility."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "math-ph",
+        "math.MP"
+      ],
+      "listing": {
+        "listedOn": "2026-09-02",
+        "publishedOn": "2026-09-02",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.00056"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-02T16:38:30.761Z"
+      }
+    },
+    {
+      "id": "2609.00288",
+      "arxivId": "2609.00288",
+      "url": "https://arxiv.org/abs/2609.00288",
+      "topic": "Stats",
+      "reported": "The authors report that the proposed decomposition explains why penalties on the precision matrix perform poorly at selecting hub variables and motivates the necessity of data standardisation.",
+      "metrics": [],
+      "title": "Parameterising Gaussian Graphical Models",
+      "authors": "Jack Storror Carter",
+      "takeaway": "The paper claims to decompose the precision matrix of Gaussian graphical models into marginal variances and interpretable scale-invariant parameters to improve model selection insights.",
+      "brief": "The paper proposes decomposing the precision matrix into marginal variances and scale-invariant parameters, specifically partial correlations and variance inflation factors. This aims to address scale dependence in standard model selection methods for Gaussian graphical models.\n\nThe authors state that this decomposition explains why precision matrix penalties struggle with hub variable selection and why data standardisation is necessary. They also note that partial correlation methods show better hub detection properties. No quantitative performance benchmarks or specific dataset results are provided in the abstract.\n\nResearchers working on Gaussian graphical models, precision matrix estimation, or scale-invariant statistical parameters may find this theoretical decomposition relevant. Those seeking empirical benchmark comparisons or ready-to-use software implementations should note the abstract lacks these details.",
+      "abstract": "Gaussian graphical models (GGMs) describe the dependence structure among jointly Gaussian random variables. However, the most common parameterisation of GGMs, the precision matrix, describes both the dependence and scale of the variables. This has been shown to lead to model selection methods that depend on the scale of the variables, despite graphical models being scale invariant. Even after standardising data to have unit sample variances, entries of the precision matrix can be on different scales leading to poor model selection. This paper decomposes the precision matrix into marginal variances and interpretable scale-invariant parameters - the partial correlations and variance inflation factors. This decomposition gives new insights into the precision matrix entries and the dynamics of model selection methods such as penalised likelihoods. In particular, it explains the observed phenomenon that penalties on the precision matrix perform poorly at selecting hub variables and motivates the necessity of data standardisation. It also shows why methods based on partial correlations have better hub detection properties. The effect of penalisation of different quantities on the estimation of marginal variances is then investigated and an interesting simplification of the log-likelihood is shown when using maximum likelihood estimation of the marginal variances.",
+      "takeaways": [
+        "The core object is a mathematical decomposition of the precision matrix into marginal variances, partial correlations, and variance inflation factors.",
+        "A visible limit is the absence of reported quantitative metrics or specific experimental datasets in the provided abstract.",
+        "The artifact status is theoretical; no code repository or software implementation is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that their mathematical breakdown explains why common statistical penalties fail to identify central variables in networks and why data must be normalised first.",
+        "brief": "The paper suggests splitting a complex statistical matrix into simpler parts: individual variable scales, partial correlations, and variance inflation factors. This is meant to fix issues where standard methods give different results depending on the units of measurement.\n\nThe authors explain that this split shows why current methods struggle to find key variables in a network and why normalising data is important. They also claim that methods using partial correlations are better at finding these key variables. The abstract does not list any specific numbers, test datasets, or performance scores.\n\nPeople studying statistical networks or how to measure relationships between variables might find this useful. People looking for a specific software tool or a comparison of how well different methods work on real data should note that this information is not in the summary.",
+        "takeaways": [
+          "The main idea is a mathematical way to break down a statistical matrix into easier-to-understand pieces.",
+          "A clear limitation is that the summary does not show any actual numbers or test results from real data.",
+          "The work appears to be theoretical; the listing does not mention any computer code or software package."
+        ]
+      },
+      "actions": [
+        "Verify the full PDF to confirm whether the 'interesting simplification of the log-likelihood' includes specific mathematical proofs or numerical examples.",
+        "Check the paper's supplementary materials or author website for any code implementations of the proposed decomposition, as none are declared in the metadata."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME",
+        "math.ST",
+        "stat.TH"
+      ],
+      "listing": {
+        "listedOn": "2026-09-02",
+        "publishedOn": "2026-09-02",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.00288"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-02T16:38:30.761Z"
+      }
+    },
+    {
+      "id": "2609.00350",
+      "arxivId": "2609.00350",
+      "url": "https://arxiv.org/abs/2609.00350",
+      "topic": "Econ",
+      "reported": "The authors report that they evaluate finite-sample performance through Monte Carlo simulations and illustrate the test in three empirical applications.",
+      "metrics": [],
+      "title": "Manipulation Testing in Boundary Discontinuity Designs",
+      "authors": "Federico A. Bugni, Federico Crippa, Daniel Restrepo",
+      "takeaway": "The paper proposes the first manipulation test designed for boundary discontinuity designs with general boundary shapes.",
+      "brief": "The authors propose a manipulation test for boundary discontinuity designs that avoids multivariate density estimation. They build on the observation that observations near the boundary should be approximately evenly split between treatment and control within arbitrary groups defined by their projections onto the boundary.\n\nThey establish the asymptotic validity of the test under suitable regularity conditions. They evaluate finite-sample performance through Monte Carlo simulations and illustrate the test in three empirical applications. The listing does not specify the exact quantitative outcomes of these simulations or applications.\n\nResearchers working with multidimensional running variables and boundary-based treatment assignment may find this test relevant. Those using standard univariate regression discontinuity designs without boundary complications may not need this specific tool.",
+      "abstract": "We propose the first manipulation test designed for boundary discontinuity designs (BDDs) with general boundary shapes. A BDD is a multidimensional extension of the regression discontinuity design (RDD) in which treatment assignment is determined by whether the multidimensional running variable crosses a lower-dimensional boundary set. The test avoids multivariate density estimation and builds on the observation that, in the absence of manipulation, observations near the boundary should be approximately evenly split between treatment and control within arbitrary groups defined by their projections onto the boundary. We test this implication using a collection of binomial balance tests on observations near the boundary, with groups formed by k-means clustering. We establish the asymptotic validity of the test under suitable regularity conditions. We also evaluate finite-sample performance through Monte Carlo simulations and illustrate the test in three empirical applications.",
+      "takeaways": [
+        "The object is a manipulation test for boundary discontinuity designs with general boundary shapes.",
+        "The visible limit is that the listing does not provide specific numerical results from the Monte Carlo simulations or empirical applications.",
+        "The artifact status is not established in the listing, as no code repository or supplementary material is mentioned."
+      ],
+      "plain": {
+        "reported": "The authors say they checked how well their test works with small amounts of data using computer simulations and showed it working in three real-world examples.",
+        "brief": "The authors created a new way to check if researchers are unfairly sorting data near a dividing line in complex, multi-dimensional studies. They do this by checking if data points near the line are split evenly between the two groups, without needing to estimate complex probability shapes.\n\nThey prove their method works mathematically under certain standard assumptions. They also tested it with fake data to see how it performs and applied it to three real studies. The summary does not say exactly how well it performed in those tests or studies.\n\nPeople analyzing studies where treatment is assigned based on crossing a complex boundary in multiple dimensions might find this useful. People using simple one-dimensional cutoffs likely do not need this specific test.",
+        "takeaways": [
+          "The tool is a statistical test for checking data manipulation in studies with complex, multi-dimensional dividing lines.",
+          "The summary does not show the actual numbers from the simulations or real-world examples, so the performance level is unknown from this text.",
+          "It is not stated whether the authors have shared their code or data, so this status is unknown."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative results of the Monte Carlo simulations and the three empirical applications by reading the full PDF.",
+        "Check the full PDF for any mention of code availability or supplementary data, as the listing does not declare code."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.EM"
+      ],
+      "listing": {
+        "listedOn": "2026-09-02",
+        "publishedOn": "2026-09-02",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.00350"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-02T16:38:30.761Z"
+      }
+    },
+    {
+      "id": "2609.00435",
+      "arxivId": "2609.00435",
+      "url": "https://arxiv.org/abs/2609.00435",
+      "topic": "Engineering",
+      "reported": "The authors report that PIR-LinUCB demonstrates a promising low-energy operating point while maintaining medical latency constraints and competitive physiological estimation performance relative to fixed and heuristic policies.",
+      "metrics": [],
+      "title": "Physiological Information Reliability: Cross-Layer Adaptive Resource Allocation for Cardiovascular Sensing",
+      "authors": "Navaneeth Krishnan Kamalakannan, Janakiraman Kamalakannan, Harinisri Velmurugan",
+      "takeaway": "The paper introduces Physiological Information Reliability (PIR), a cross-layer framework that uses a contextual bandit to adapt sensing and communication decisions for cardiovascular sensing.",
+      "brief": "The authors propose a cross-layer framework named Physiological Information Reliability (PIR) that jointly represents physiological information value with wireless, energy, and computation states. It uses a contextual bandit to adapt sensing and communication decisions for cardiovascular sensing systems.\n\nThe authors report that PIR-LinUCB demonstrates a promising low-energy operating point while maintaining medical latency constraints and competitive physiological estimation performance relative to fixed and heuristic policies. They identify limitations of proxy PIV estimation and simulated communication dynamics, noting that the results provide an initial computational demonstration rather than clinical validation.\n\nResearchers working on edge computing for medical sensors or adaptive resource allocation in wireless networks may find the framework relevant. Those requiring validated clinical performance or real-channel data should note the reliance on simulated dynamics and proxy estimation.",
+      "abstract": "Cardiovascular sensing systems must preserve clinically useful information despite signal degradation, wireless losses, energy constraints, and edge-computation latency. We introduce Physiological Information Reliability (PIR), a cross-layer framework that represents physiological information value jointly with wireless, energy, and computation states and uses a contextual bandit to adapt sensing and communication decisions. We integrate multimodal ECG/PPG signal-quality estimation with physiological information value and an adaptive network-coding layer under burst-erasure conditions. Across controlled multiseed experiments, PIR-LinUCB demonstrates a promising low-energy operating point while maintaining medical latency constraints and competitive physiological estimation performance relative to fixed and heuristic policies. We analyze the resulting accuracy-energy-latency trade-offs and identify limitations of proxy PIV estimation and simulated communication dynamics. These results provide an initial computational demonstration of physiological-information-aware resource allocation and motivate future clinical and real-channel validation.",
+      "takeaways": [
+        "The object is a cross-layer resource allocation framework for cardiovascular sensing that integrates signal-quality estimation with network coding.",
+        "A visible limit is the reliance on proxy physiological information value estimation and simulated communication dynamics rather than real-world channel data.",
+        "The artifact status is an initial computational demonstration, with the authors explicitly motivating future clinical and real-channel validation."
+      ],
+      "plain": {
+        "reported": "The authors report that their system, PIR-LinUCB, shows a promising low-energy operating point while keeping medical latency constraints and competitive physiological estimation performance compared to fixed and heuristic policies.",
+        "brief": "The authors propose a system called Physiological Information Reliability (PIR) that looks at how much useful medical data is being sent, along with the state of the wireless connection, battery energy, and processing speed. It uses a type of machine learning algorithm called a contextual bandit to decide how to adjust the sensing and communication settings for heart monitoring devices.\n\nThe authors say their version, PIR-LinUCB, works well by using less energy while still meeting the timing requirements for medical data and performing as well as other simpler methods. They admit that their method for estimating the value of the medical data is an approximation and that their network tests were simulated, not done on real devices. They call this an early computer-based proof of concept, not a clinical trial.\n\nPeople who build software for medical sensors on small devices or manage data flow in wireless networks might find this useful. People who need proof that this works in real hospitals or with real radio signals should note that the tests were only simulations and used estimated data values.",
+        "takeaways": [
+          "The thing being described is a software framework that manages how heart monitoring devices send data, balancing data quality, battery life, and network speed.",
+          "A clear weakness is that the system guesses the value of the medical data instead of measuring it directly, and the network tests were computer simulations, not real-world radio tests.",
+          "The status of the work is an early computer model, and the authors say it needs real hospital tests and real network tests to be proven."
+        ]
+      },
+      "actions": [
+        "Verify the specific experimental setup and seed counts in the PDF to confirm the controlled multiseed experiments described.",
+        "Check the PDF for details on the proxy PIV estimation method to assess its fidelity to actual physiological information value."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP",
+        "cs.LG",
+        "cs.NI"
+      ],
+      "listing": {
+        "listedOn": "2026-09-02",
+        "publishedOn": "2026-09-02",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.00435"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-02T16:38:30.761Z"
+      }
+    },
+    {
+      "id": "2609.00681",
+      "arxivId": "2609.00681",
+      "url": "https://arxiv.org/abs/2609.00681",
+      "topic": "Health",
+      "reported": "The authors report that PROSPECTor-nominated hypotheses were examined in independent biological settings, specifically noting that fibroblast extracellular-matrix programmes demonstrated transferability to an independent mouse cohort with an intervention context, while a patient-resolved gastric-cancer T-cell programme",
+      "metrics": [],
+      "title": "Operationalizing open-ended biological discovery across single-cell representations",
+      "authors": "Ningxuan Zhang, Ziwei Wang, Ning Xie, Na Liu",
+      "takeaway": "The paper claims to formalize open-ended discovery as an analytical paradigm and develop PROSPECTor, an end-to-end framework that searches for reproducible biological structures across conventional expression representations and diverse foundation-model embeddings, translating robust signals into quantitatively test",
+      "brief": "The authors present PROSPECTor, a framework designed to identify data-derived signals before biological context is interrogated, aiming to turn retrospective single-cell collections into prospective resources for biological discovery.\n\nThe strongest reported evidence involves fibroblast extracellular-matrix programmes demonstrating transferability to an independent mouse cohort with an intervention context, and a patient-resolved gastric-cancer T-cell programme recurring across single-cell, bulk and spatial cohorts. The listing does not specify quantitative performance metrics, statistical significance values, or the specific size of the independent cohorts used for validation.\n\nResearchers working with single-cell data who seek to generate new hypotheses from existing datasets may find this framework relevant. Those requiring strict quantitative benchmarks or specific statistical validation metrics for their own data may need to verify the underlying details in the full text.",
+      "abstract": "Single-cell studies are typically initiated from predefined research questions, leaving much of the biological information encoded within existing data unexplored. We formalize open-ended discovery as an analytical paradigm, in which data-derived signals are identified before biological context is interrogated and subsequently evaluated according to their potential to justify prospective experimental investment. Here we develop PROSPECTor, an end-to-end framework that searches for reproducible biological structures across conventional expression representations and diverse foundation-model embeddings, translating robust signals into quantitatively testable candidate hypotheses. Projection into unseen datasets then evaluates their generalizability and phenotype association, providing a scalable screen for candidates that warrant prospective validation. Supported signals emerged from different representation spaces and search strategies. PROSPECTor-nominated hypotheses were then examined in independent biological settings: fibroblast extracellular-matrix programmes demonstrated transferability to an independent mouse cohort with an intervention context, while a patient-resolved gastric-cancer T-cell programme recurred across single-cell, bulk and spatial cohorts. PROSPECTor establishes an auditable framework for systematically revisiting single-cell datasets across expanding representation spaces, turning retrospective collections into prospective resources for biological discovery that can motivate new research questions.",
+      "takeaways": [
+        "The object is an end-to-end analytical framework named PROSPECTor that searches for reproducible biological structures across different data representations.",
+        "A visible limit is the absence of specific quantitative metrics or statistical values in the abstract, leaving the magnitude of the reported transferability and recurrence unquantified in this listing.",
+        "The artifact status is not established in the listing, as no code repository or specific software implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their tool, PROSPECTor, found biological patterns that held up when tested on separate groups of data, specifically showing that patterns in skin cells moved to a separate group of mouse cells, and patterns in stomach cancer T-cells appeared in three different types of data sets.",
+        "brief": "The authors created a tool called PROSPECTor that looks for patterns in cell data before researchers decide what to look for. This is meant to help find new biological questions from old data.\n\nThe main evidence they give is that patterns found in skin cells worked in a separate group of mouse cells, and patterns in stomach cancer cells appeared in three different kinds of data sets. The summary does not give specific numbers or statistical scores to show how strong these patterns are.\n\nPeople who work with cell data and want to find new ideas from old data might find this useful. People who need specific numbers or statistical proof to trust the results should check the full paper for more details.",
+        "takeaways": [
+          "The tool is called PROSPECTor and it looks for patterns in different types of cell data.",
+          "The summary does not give specific numbers or statistical scores, so we do not know exactly how strong the patterns are.",
+          "The summary does not say if the code is available for download or use."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative metrics and statistical tests used to evaluate the transferability of the fibroblast and gastric-cancer programmes in the full PDF.",
+        "Check the full text for details on the independent mouse cohort and the specific intervention context to assess the robustness of the reported biological findings."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM"
+      ],
+      "listing": {
+        "listedOn": "2026-09-02",
+        "publishedOn": "2026-09-02",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.00681"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-02T16:38:30.761Z"
+      }
+    }
+  ]
+}
