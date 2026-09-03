@@ -13,6 +13,7 @@ import {
   useSearchParams,
 } from "react-router-dom";
 import PaperPage from "./PaperPage";
+import BriefingStudio from "./BriefingStudio";
 import { compactAuthors } from "./authorFormat";
 import {
   AccountPage,
@@ -72,6 +73,7 @@ function boardPath(date: string) {
 function Shell() {
   const location = useLocation();
   const onRoutine = location.pathname.startsWith("/routine");
+  const onStudio = location.pathname === "/briefing-studio";
   const onFeed =
     location.pathname === "/" || location.pathname.startsWith("/d/");
   const { account, saves, error } = useSession();
@@ -89,7 +91,7 @@ function Shell() {
   }
 
   return (
-    <div className={onFeed || onWelcome ? "app" : "app reading"}>
+    <div className={onFeed || onWelcome || onStudio ? "app" : "app reading"}>
       <nav className="nav" aria-label="Primary">
         <Link to="/" className="logo">
           <img src="/favicon.png" width="32" height="32" alt="" />
@@ -114,6 +116,7 @@ function Shell() {
           <p className="nav-label nav-label-spaced">Workspace</p>
           <NavLink to="/saved">Saved{laterCount ? ` (${laterCount})` : ""}</NavLink>
           <NavLink to="/agent">Agent routing</NavLink>
+          <NavLink to="/briefing-studio">Briefing studio</NavLink>
           <p className="nav-label nav-label-spaced">PaperScroll</p>
           <NavLink to="/about">About</NavLink>
         </div>
@@ -649,6 +652,7 @@ export default function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/account" element={<AccountPage />} />
           <Route path="/agent" element={<AgentPage />} />
+          <Route path="/briefing-studio" element={<BriefingStudio />} />
           <Route path="/u/:name" element={<PublicProfilePage />} />
           <Route path="/newsletter" element={<Navigate to="/agent" replace />} />
           <Route path="/saved" element={<SavedPage />} />

@@ -8,6 +8,10 @@ gets caught up; finally an agent on another platform fetches the same board
 packets with an Agent routing bearer token. The digest never contains authors’
 abstracts.
 
+The current product also includes a `/briefing-studio` prototype for configuring
+one cached research endpoint per account. Read the Briefing Studio section in
+the root `CLAUDE.md` before incorporating that feature into the video.
+
 ```sh
 npm ci
 ```
