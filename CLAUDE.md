@@ -57,6 +57,19 @@ Changing packet shape means changing all four together, or agents break:
 `packetBasis`, not a hardcoded one — pinning it to a repaired board's value
 breaks every normal morning after it.
 
+## Briefing Studio prototype
+
+`/briefing-studio` is the settled UI direction for a future configurable agent
+endpoint. Keep it as one settings-card flow: fields, a 1–50 paper limit, and a
+verbatim instruction for the consuming agent. All six packet sections remain
+included. Do not add watch/mute terms, ranking modes, delivery format, or a
+ready-by time. Saving moves to endpoint management, and the UI communicates one
+endpoint per account. Persistence, billing, and fulfillment are intentionally
+not wired yet.
+
+The prototype must not imply per-user model inference. PaperScroll analyzes the
+shared research once; the endpoint only composes cached packets for the agent.
+
 ## Checks before a board is pushed
 
 ```bash
