@@ -1,0 +1,666 @@
+{
+  "date": "2026-09-03",
+  "label": "Thu, Sep 3",
+  "minutes": 10,
+  "poolSize": 107,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-09-03T16:35:09.996Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2609.02749",
+      "arxivId": "2609.02749",
+      "url": "https://arxiv.org/abs/2609.02749",
+      "topic": "AI",
+      "reported": "The authors report that their skill-equipped research agent scores 134.3% higher on MLE-bench than the same agent without skills.",
+      "metrics": [
+        "134.3% higher on MLE-bench",
+        "34.4% higher on PaperBench",
+        "5,000+ verified skills"
+      ],
+      "title": "Repo-To-Skill: Distilling GitHub Repositories Into AI4AI Skills",
+      "authors": "Jianlyu Chen, Yuyang Hu, Hongjin Qian, Jiawei Liu, Wenqing Wei, Xiaolong Chen, Defu Lian, Zhicheng Dou, Chaozhuo Li, Qiwei Ye, Zheng Liu",
+      "takeaway": "The paper presents DisCo, a skill-powered research agent that distills GitHub repositories into compact, verified operational knowledge to improve autonomous ML research performance.",
+      "brief": "The authors propose DisCo, an agent that distills domain-specific operational knowledge from repositories into reusable skills to bridge the gap between knowing a method and making it work.\n\nThey report that with a fixed GPT-5.5 backbone and harness, the skill-equipped agent outperforms the skill-less version by 134.3% on MLE-bench and 34.4% on PaperBench. The listing does not specify the exact composition of the 1,000 repositories or the verification criteria for the 5,000+ skills.\n\nResearchers building autonomous ML agents may find the skill distillation framework relevant, while those focused solely on model architecture may find the operational knowledge layer less central.",
+      "abstract": "Autonomous agents are beginning to carry out machine-learning (ML) research end to end. These agents combine a model backbone with a harness for planning, execution, memory, and verification, but this architecture still leaves domain-specific know-how outside the agent. We call this missing layer operational knowledge, the know-how that separates knowing a method from making it work. That knowledge is not absent from the field. It appears in repositories and papers, but in forms written for human readers and too large to load during a task. Once distilled into compact, verified skills, this knowledge can be reused across tasks rather than rediscovered during each run. We present DisCo, a skill-powered research agent that creates skills and uses them during research. Its distillation runs in two complementary forms: task-agnostic, condensing the field's widely used repositories into reusable skills, and task-oriented, producing the skills a concrete task calls for. The former, applied across the open ecosystem, yields the AREX-Skill Library, with 5,000+ verified skills distilled from 1,000 widely used ML repositories and organized into 20 areas and 178 capability families. With the GPT-5.5 backbone, research harness, and downstream execution budget held fixed, the skill-equipped research agent scores 134.3% higher on MLE-bench, 34.4% higher on PaperBench, 9.2% higher on FrontierCS, and 14.0% higher on PassNet than the same agent without skills. These gains come from adding distilled operating context under that fixed setup.",
+      "takeaways": [
+        "The core object is a skill distillation pipeline that converts repository code into compact, verified operational knowledge for agents.",
+        "A visible limit is that the performance gains are measured under a fixed backbone and harness, leaving the generalizability of the skills across different model architectures unestablished in the listing.",
+        "The artifact status is indicated by a declared GitHub repository URL, but the listing does not confirm whether the code includes the full distillation pipeline or the AREX-Skill Library."
+      ],
+      "plain": {
+        "reported": "The authors report that their agent, when equipped with distilled skills, performs 134.3% better on the MLE-bench test than the same agent without those skills.",
+        "brief": "The authors suggest that AI agents doing machine learning research lack specific practical know-how that humans get from reading code repositories. They created a system called DisCo that extracts this practical know-how from code repositories and turns it into small, reusable instructions for the agent.\n\nThey state that when they used a specific AI model (GPT-5.5) and kept all other settings the same, the agent with these instructions scored 134.3% higher on one benchmark and 34.4% higher on another. The text does not explain exactly how they checked if the extracted instructions were correct or which specific repositories were used.\n\nPeople who build AI systems that perform research tasks might find this useful. People who are only interested in the basic design of AI models might find this less relevant.",
+        "takeaways": [
+          "The main thing they built is a process that turns code from GitHub into simple, checked instructions for AI agents.",
+          "A limitation is that they only tested this with one specific AI model, so we do not know if it works well with other models.",
+          "They provided a link to a code repository, but the text does not say if the full set of instructions and the extraction tool are actually included in that link."
+        ]
+      },
+      "actions": [
+        "Verify the GitHub repository to confirm the availability of the AREX-Skill Library and the distillation code.",
+        "Check the paper's methodology section to understand the specific verification criteria used to label the 5,000+ skills as verified."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/VectorSpaceLab/AREX-Skill",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-03",
+        "publishedOn": "2026-09-02",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.02749",
+            "upvotes": 355
+          }
+        ]
+      },
+      "trend": {
+        "votes": 355,
+        "rank": 1,
+        "of": 27,
+        "perDay": 355
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 355,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-03T16:35:09.996Z"
+      }
+    },
+    {
+      "id": "2609.02886",
+      "arxivId": "2609.02886",
+      "url": "https://arxiv.org/abs/2609.02886",
+      "topic": "AI",
+      "reported": "The authors report that their causal models enable real-time interaction over rollouts ranging from minutes to hours after being trained on only 5s sequences.",
+      "metrics": [
+        "1.43 million canonical clips",
+        "four 5B--33B models",
+        "trained on only 5s sequences"
+      ],
+      "title": "SolarWM: Open Data and Scalable Training for Long-Horizon Video World Models",
+      "authors": "Junchao Huang, Guian Fang, Shengju Qian, Xianghao Kong, Zhuoran Zhao, Wei Huang, Yihua Du, Zixin Zhang, Justin Cui, Yuchao Gu, Yukang Chen, Xinting Hu, Tianyu He, Shaoshuai Shi, Zhuotao Tian, Xin Wang, Mike Zheng Shou, Li Jiang",
+      "takeaway": "SolarWM is a fully open foundation for building interactive video world models that unifies heterogeneous data sources and video backbones through a reconfigurable data engine and backbone-native adaptation framework.",
+      "brief": "The authors claim to provide a reproducible and extensible foundation for interactive world-model research by releasing data, pipeline, recipes, weights, and framework. They report that the resulting causal models enable real-time interaction over rollouts ranging from minutes to hours after being trained on only 5s sequences. The listing does not establish specific quantitative benchmarks for interaction quality or fidelity, nor does it detail the computational costs of the three-stage training recipe.\n\nThe strongest reported result is the extension of rollout duration from 5-second training sequences to minutes or hours of real-time interaction. The authors attribute this to a unified three-stage recipe combining bidirectional adaptation, teacher-forced autoregressive initialization, and distribution matching distillation. The listing does not specify the evaluation metrics used to validate the quality of these long-horizon rollouts or the specific hardware requirements for real-time inference.\n\nResearchers working on video generation, world models, or multi-source data integration may find the open data and framework useful for reproducible experiments. Those requiring specific downstream task performance metrics or closed-source model comparisons may need to verify the released artifacts directly.",
+      "abstract": "We introduce SolarWM, a fully open foundation for building interactive video world models from data preparation through long-horizon inference. Training across heterogeneous data sources and video backbones is challenging: datasets differ in temporal scale, camera geometry, visual quality, motion, and captioning styles, while video generators use distinct representations and architectures. Naive data mixing and model-specific implementations therefore produce inconsistent supervision and make results difficult to reproduce and compare. SolarWM addresses this coupling with a reconfigurable multi-source data engine and a backbone-native adaptation framework. The engine converts 1.43 million canonical clips from 10 datasets into a unified, frame-aligned contract covering visual observations, metric camera geometry, captions, quality metadata, selection decisions, and provenance, while decoupling source processing from mixture construction. Under shared camera-conditioning, training, and inference interfaces, we instantiate four 5B--33B models based on Wan2.2, LTX-2.5, and MiniMax-H3 while preserving their native representations and objectives. A unified three-stage recipe combines bidirectional adaptation, teacher-forced autoregressive initialization, and distribution matching distillation. The resulting causal models enable real-time interaction over rollouts ranging from minutes to hours after being trained on only 5s sequences. By releasing the resulting data, pipeline, recipes, weights, and framework, SolarWM provides a reproducible and extensible foundation for interactive world-model research.",
+      "takeaways": [
+        "The object is a fully open foundation including data, pipeline, recipes, weights, and framework for interactive video world models.",
+        "The visible limit is the lack of specified quantitative benchmarks for interaction quality or fidelity in the listing, with results described only in terms of rollout duration.",
+        "The artifact status is declared as open with a provided GitHub repository URL, though the listing does not confirm the completeness or stability of the released code and weights."
+      ],
+      "plain": {
+        "reported": "The authors report that their video prediction models can generate continuous video in real-time for durations ranging from minutes to hours, even though the models were only trained on short 5-second video clips.",
+        "brief": "The authors claim to have created a completely open set of tools and data for building AI systems that predict how video scenes will evolve over time. They state that their system allows these AI models to generate video in real-time for long periods, such as minutes or hours, despite being trained on very short 5-second clips. The provided summary does not include specific scores measuring how accurate or realistic these long video predictions are, nor does it list the computer hardware needed to run them.\n\nThe main result reported is that the AI models can extend short training clips into long, continuous video streams. The authors say this is achieved by a three-step training process that helps the models learn to predict future frames consistently. The summary does not explain how the authors measured the quality of these long videos or what specific tests were used to verify the real-time performance.\n\nPeople who study how AI creates video or how to combine different types of video data might find the open tools and data helpful for their own experiments. People who need specific performance scores for particular tasks or comparisons with other closed AI systems should check the actual software and data files directly.",
+        "takeaways": [
+          "The item is a complete open package of data, software, and AI models for creating interactive video predictions.",
+          "A clear limitation is that the summary does not provide specific scores for how good or realistic the long video predictions are, only stating how long they can run.",
+          "The software and data are stated to be open source with a link provided, but the summary does not confirm if all files are fully available or stable."
+        ]
+      },
+      "actions": [
+        "Verify the GitHub repository to confirm the availability and completeness of the 1.43 million canonical clips and the four model weights.",
+        "Review the full PDF to identify the specific evaluation metrics and hardware specifications used to measure real-time interaction over long-horizon rollouts."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Junchao-cs/SolarWM",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-03",
+        "publishedOn": "2026-09-02",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.02886",
+            "upvotes": 123
+          }
+        ]
+      },
+      "trend": {
+        "votes": 123,
+        "rank": 2,
+        "of": 27,
+        "perDay": 123
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 123,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-03T16:35:09.996Z"
+      }
+    },
+    {
+      "id": "2609.02783",
+      "arxivId": "2609.02783",
+      "url": "https://arxiv.org/abs/2609.02783",
+      "topic": "AI",
+      "reported": "The authors report that EarlyEval eliminates 13%-26% of agent steps and up to 44.1% input tokens and 29.4% output tokens at 89%-97% prediction accuracy across three benchmarks.",
+      "metrics": [
+        "13%-26% of agent steps",
+        "44.1% input tokens",
+        "29.4% output tokens"
+      ],
+      "title": "EarlyEval: Cheaper Agent Evaluation via Early Outcome Prediction",
+      "authors": "Yuling Shi, Zhensu Sun, Junsen Dong, Chengcheng Wan, David Lo, Xiaodong Gu",
+      "takeaway": "The paper claims to introduce early outcome prediction, a framework that reduces evaluation costs by halting agent runs when a classifier predicts the final outcome with high confidence.",
+      "brief": "The authors propose EarlyEval, a lightweight framework that uses LightGBM classifiers to predict agent success or failure from intermediate behavior, aiming to cut evaluation costs without reducing the number of tasks.\n\nThey report eliminating 13%-26% of agent steps and up to 44.1% input tokens and 29.4% output tokens at 89%-97% prediction accuracy on SWE-bench Verified, TerminalBench, and Toolathlon, while perturbing resolve rates by only one to two percentage points. The listing does not establish whether the confidence threshold calibration remains stable across different agent models or task distributions.\n\nResearchers evaluating LLM agents who face high computational costs may find this approach relevant. Those focused solely on benchmark distillation or who require zero perturbation to agent behavior may find the reported trade-offs insufficient.",
+      "abstract": "Evaluating LLM agents is essential for guiding their development, yet it has grown prohibitively expensive: a single pass of a frontier model over an agentic benchmark can cost hundreds to thousands of dollars, a price paid repeatedly across iterative development cycles. Prior efforts, centered on benchmark distillation, reduce the number of evaluation tasks but leave the cost of executing each retained task untouched. In this work, we introduce early outcome prediction, a complementary axis of efficiency that instead cuts cost within each task. Our key insight is that an agent's final outcome is often evident from its intermediate behavior well before execution completes. We instantiate this idea in EarlyEval, a lightweight framework that trains a pair of LightGBM success and failure classifiers over behavioral, textual, and reference-solution features, and halts an agent run the moment either classifier crosses a calibrated confidence threshold, adding negligible per-step overhead. Across three benchmarks, SWE-bench Verified, TerminalBench, and Toolathlon, EarlyEval can eliminate 13%-26% of agent steps and up to 44.1% input tokens and 29.4% output tokens at 89%-97% prediction accuracy, while perturbing per-agent resolve rates by only one to two percentage points on average.",
+      "takeaways": [
+        "The object is a cost-reduction framework for LLM agent evaluation that operates within individual task executions rather than reducing the total task count.",
+        "A visible limit is the reported perturbation of per-agent resolve rates by one to two percentage points, which may be unacceptable for strict benchmarking protocols.",
+        "The artifact status is established by the declared GitHub repository URL, though the listing does not confirm the code's completeness or reproducibility."
+      ],
+      "plain": {
+        "reported": "The authors state that their system saves 13% to 26% of the steps an AI agent takes and up to 44.1% of the input text and 29.4% of the output text, while being 89% to 97% accurate in its predictions on three specific test sets.",
+        "brief": "The authors suggest a way to save money when testing AI agents by stopping the test early if the AI's behavior clearly shows it will succeed or fail. This avoids running the full test, which is expensive.\n\nThey say this method saves a significant amount of computing resources on three standard tests, while only slightly changing the final success rate of the agents. It is not clear from the summary if this method works equally well for all types of AI agents or if the early stopping might accidentally change the results too much for some tasks.\n\nPeople who test AI agents and want to lower their costs might find this useful. People who need the absolute most accurate test results without any changes to the agent's behavior might find this method not suitable.",
+        "takeaways": [
+          "The tool is designed to make testing AI agents cheaper by stopping tests early when the result is obvious.",
+          "A potential downside is that stopping early might slightly change the final success rate of the agents, which could be a problem for strict testing.",
+          "The authors have provided a link to their code, but it is not confirmed if the code is complete or easy to use."
+        ]
+      },
+      "actions": [
+        "Verify the declared GitHub repository to confirm the availability of the LightGBM classifier training code and the specific feature extraction pipeline.",
+        "Check the full PDF to determine if the reported token savings and accuracy metrics are consistent across all three benchmarks or if they vary significantly by task type."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/inphotoo/earlyeval",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-03",
+        "publishedOn": "2026-09-02",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.02783",
+            "upvotes": 109
+          }
+        ]
+      },
+      "trend": {
+        "votes": 109,
+        "rank": 3,
+        "of": 27,
+        "perDay": 109
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 109,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-03T16:35:09.996Z"
+      }
+    },
+    {
+      "id": "2609.01437",
+      "arxivId": "2609.01437",
+      "url": "https://arxiv.org/abs/2609.01437",
+      "topic": "AI",
+      "reported": "The authors report that generated harnesses remain substantially behind mature human-engineered references on code and on search and research, while matching or exceeding the selected references on writing and machine-learning experimentation.",
+      "metrics": [
+        "2,207 unique downstream instances"
+      ],
+      "title": "HarnessDev: Can LLMs Create and Evolve Their Own Agent Harness?",
+      "authors": "Yuhao Wu, Jingyuan Zhang, Jiajun Shi, Xinping Lei, Qingshui Gu, Yuxuan Zhang, Zexuan Wang, Chen He, Chen Huang, Maojia Song, Zhiyuan Zeng, Shaowen Wang, Jinkai Liu, Yunfeng Shi, Jiaheng Liu, Shen Yan, Wenhao Huang, Ge Zhang, Wenxuan Zhang",
+      "takeaway": "The paper introduces HarnessDev, a benchmark that shifts the unit of evaluation from task outputs to runnable infrastructure for creating and evolving agent harnesses.",
+      "brief": "The authors propose HarnessDev to evaluate an LLM's ability to build and revise the execution infrastructure, or harness, that surrounds a fixed model. This shifts the focus from final task outputs to the quality of the generated system itself.\n\nThe reported Creation results cover six creator LLMs, four domains, and five downstream benchmarks totaling 2,207 unique downstream instances. The authors find that generated harnesses remain substantially behind mature human-engineered references on code and on search and research, while matching or exceeding the selected references on writing and machine-learning experimentation. Evolution produces some performance gains, but they are unstable and transfer only partially to held-out tasks, with gains depending strongly on the model executing the harness.\n\nResearchers working on agent infrastructure, automated software engineering, or LLM evaluation frameworks may find the benchmark structure relevant. Those focused solely on static model capability without external tooling may find the specific harness-evolution focus less applicable.",
+      "abstract": "As agents move from research prototypes to deployed tools, their capability increasingly depends on model-external execution infrastructure, commonly termed the agent harness. Changing this harness while holding model weights fixed can substantially alter task performance. Current agent evaluations typically report downstream performance under a chosen harness, leaving a model's ability to develop the harness itself comparatively underexplored. We introduce HarnessDev, a benchmark that shifts the unit of evaluation from task outputs to runnable infrastructure. HarnessDev covers two stages. In Creation, the agent starts from a minimal seed and a small number of cases, then builds a complete execution system. In Evolution, it starts from its own created harness and iteratively revises it using downstream execution feedback, with the goal of improving benchmark performance. We then evaluate each constructed harness on capability (task success on held-out benchmarks) and efficiency (execution-token cost). The reported Creation results cover six creator LLMs, four domains, and five downstream benchmarks totaling 2,207 unique downstream instances, with hidden evaluation tasks withheld from development. We find that generated harnesses remain substantially behind mature human-engineered references on code and on search and research, while matching or exceeding the selected references on writing and machine-learning experimentation, with large variation in execution cost. Evolution produces some performance gains, but they are unstable and transfer only partially to held-out tasks. Experiments with a fixed runtime model further show that the gains depend strongly on the model executing the harness, indicating limited transfer across models.",
+      "takeaways": [
+        "The object is a benchmark for evaluating the creation and evolution of agent harnesses rather than the underlying model weights.",
+        "A visible limit is that performance gains from the Evolution stage are unstable and transfer only partially to held-out tasks.",
+        "The artifact status is not established in the listing, as no code repository or release link is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that the systems built by the AI models are much worse than systems built by human experts for coding and searching, but are as good or better for writing and machine learning experiments.",
+        "brief": "The paper introduces a test called HarnessDev. It checks if an AI can build the tools and code structure it needs to do a job, rather than just checking if the AI can answer questions. The AI is asked to build this structure from scratch and then improve it based on how well it works.\n\nThe tests used 2,207 different tasks across four different types of work. The AI-built tools were much worse than human-made tools for coding and research. However, they were as good or better for writing and machine learning. When the AI tried to improve its own tools, it sometimes got better, but the improvements were not consistent and did not always work on new tasks. The success also depended heavily on which specific AI model was running the tools.\n\nPeople who build AI systems that use external tools or code might find this useful. People who only care about how smart the AI is without any extra tools might not find this relevant.",
+        "takeaways": [
+          "The main thing being tested is the AI's ability to build its own supporting software tools, not just its raw intelligence.",
+          "A clear weakness is that the improvements the AI makes to its tools are not reliable and do not always work on new problems.",
+          "The listing does not say if the code or test data is available for download."
+        ]
+      },
+      "actions": [
+        "Verify the specific definitions of 'capability' and 'efficiency' metrics in the full PDF to understand how execution-token cost is calculated.",
+        "Check the full paper for the specific identities of the 'mature human-engineered references' used as baselines in the four domains."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-03",
+        "publishedOn": "2026-09-01",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.01437",
+            "upvotes": 106
+          }
+        ]
+      },
+      "trend": {
+        "votes": 106,
+        "rank": 4,
+        "of": 27,
+        "perDay": 53
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 106,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-01"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-03T16:35:09.996Z"
+      }
+    },
+    {
+      "id": "2609.01638",
+      "arxivId": "2609.01638",
+      "url": "https://arxiv.org/abs/2609.01638",
+      "topic": "Stats",
+      "reported": "The authors report that their construction improves asymptotic efficiency relative to unadjusted estimation, measured on any estimand that is a Hadamard differentiable functional of the arm-specific distributions.",
+      "metrics": [],
+      "title": "Simple Covariate Adjustment for Many Estimands Using Stable Balancing Weights",
+      "authors": "Kayla Irish, Jos\\'e Zubizarreta, Alex Luedtke",
+      "takeaway": "The paper introduces a simplified covariate adjustment approach using stable balancing weights that applies directly across many clinical trial estimands.",
+      "brief": "The authors propose a method using stable balancing weights to adjust for covariates across multiple clinical trial estimands, including average treatment effect and relative risk. They state this approach applies to any estimand that is a Hadamard differentiable functional of arm-specific distributions.\n\nThe authors report improved asymptotic efficiency relative to unadjusted estimation and preservation of the plug-in relationship between arm-specific marginal and subgroup-specific summaries. The listing does not establish specific empirical performance limits or computational artifacts.\n\nResearchers in biostatistics or clinical trial design may find this relevant for standardizing covariate adjustment. Those requiring specific empirical benchmarks or code implementations should verify the full text.",
+      "abstract": "Covariate adjustment can improve precision in estimating treatment effects in clinical trials, and regulatory guidance increasingly encourages its implementation. Despite its benefits, covariate adjustment can require advanced statistical techniques or tailored approaches for different estimands, which can deter its use in practice. To address this issue, we introduce a simplified approach to covariate adjustment using stable balancing weights that applies directly across many clinical trial estimands, including the average treatment effect, relative risk, Mann-Whitney estimand, and survival ratio. More precisely, our results cover any estimand that is a Hadamard differentiable functional of the arm-specific distributions. Once the weights are obtained, our adjusted estimator can be implemented with the same software used for an unadjusted analysis, provided that software can take observation weights. This construction improves asymptotic efficiency relative to unadjusted estimation and preserves the plug-in relationship between arm-specific marginal and subgroup-specific summaries.",
+      "takeaways": [
+        "The object is a statistical weighting method for covariate adjustment in clinical trials.",
+        "The visible limit is the reliance on asymptotic efficiency claims without supplied empirical benchmarks in the listing.",
+        "No code or repository is declared in the supplied metadata."
+      ],
+      "plain": {
+        "reported": "The authors state that their method is more efficient in large samples compared to not adjusting for patient characteristics, measured on statistical measures that can be mathematically derived from the distribution of patients in each treatment group.",
+        "brief": "The authors suggest a simpler way to account for patient differences in clinical trials using a specific type of statistical weighting. They claim this works for many different types of outcome measures, such as average treatment effect and relative risk.\n\nThey report that this method is more efficient in large samples than ignoring patient differences and maintains a specific mathematical relationship between overall and subgroup results. The provided summary does not include specific test results or data limitations.\n\nStatisticians or clinical trial designers might find this useful for standardizing how patient differences are handled. People needing specific test results or software code should check the full document.",
+        "takeaways": [
+          "The subject is a statistical method for adjusting for patient differences in clinical trials.",
+          "The visible limit is that the summary only mentions theoretical efficiency, not specific test results.",
+          "No software code or data repository is mentioned in the provided information."
+        ]
+      },
+      "actions": [
+        "Verify the full PDF to confirm the specific estimands covered and any empirical validation details.",
+        "Check the paper for any supplementary materials or code availability not listed in the metadata."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-09-03",
+        "publishedOn": "2026-09-03",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.01638"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-03T16:35:09.996Z"
+      }
+    },
+    {
+      "id": "2609.01663",
+      "arxivId": "2609.01663",
+      "url": "https://arxiv.org/abs/2609.01663",
+      "topic": "Security",
+      "reported": "The authors report that a single attack reaches $100\\%$ ASR on small candidate sets and $63\\%$ at $1024$ candidates against a known context, measured across three settings with decreasing attacker knowledge.",
+      "metrics": [
+        "$100\\%$ ASR on small candidate sets",
+        "$63\\%$ at $1024$ candidates",
+        "$78.9$ AUROC when the template and surrounding records are unknown"
+      ],
+      "title": "Context Inference Attacks Without Jailbreaks",
+      "authors": "Prince Jha, Samuele Poppi, Nils Lukas",
+      "takeaway": "The paper introduces and formalizes context-inference attacks through a security game, demonstrating that agentic AI systems remain vulnerable to hidden-context leakage despite controls such as instruction not to disclose, logit suppression, and context dilution.",
+      "brief": "The authors claim to formalize context-inference attacks, showing that agentic systems leak hidden context even when standard privacy controls are applied. They report a single attack achieving $100\\%$ ASR on small candidate sets and $63\\%$ at $1024$ candidates against a known context, with AUROC scores ranging from $78.9$ to $92.5$ across different attacker knowledge levels. The listing does not specify the exact models, datasets, or baseline comparisons used to establish these figures, nor does it detail the specific tool calls or context assembly mechanisms tested beyond general descriptions.\n\nResearchers evaluating the security of agentic AI systems or developing privacy-preserving inference methods should open this paper to assess the attack formalization and reported leakage rates. Practitioners implementing agentic workflows with sensitive data should ignore it only if their threat model explicitly excludes indirect context inference via tool calls or if they have already deployed and verified the specific controls mentioned (logit suppression, context dilution) against similar attack vectors.\n\nThe packet is based solely on the provided abstract and title. No PDF was read, so the specific implementation details of the 'security game' and the exact configuration of the '14B surrogate' and '32B target' models are not verified here.",
+      "abstract": "Agentic AI systems are increasingly deployed to process sensitive data at inference time, such as healthcare records or financial documents assembled into a hidden \\emph{context} before the system answers. Prior work has studied privacy risks primarily through \\emph{jailbreaking} attacks that induce models to directly disclose sensitive content, but has largely overlooked the agentic setting where the context is assembled by the agent's own tool calls. We show that the agents we evaluate remain vulnerable to hidden-context leakage despite the controls we test against them, namely an instruction not to disclose the context, logit suppression, and context dilution. For instance, a web-browsing agent answering benign user queries still carries exploitable signals about records silently loaded into its context. We introduce and formalize \\emph{context-inference attacks} through a security game and evaluate three settings under decreasing attacker knowledge and increasingly indirect delivery of the context: a known context, an unknown context, and a context the agent retrieves through its own tool calls. We distinguish a grey-box setting, in which the target model is used to score observations, from black-box settings in which the attacker scores with a surrogate it controls. We further characterize how leakage varies with query budget, context size, and target-model size. A single attack carries through all three settings without modification, reaching $100\\%$ ASR on small candidate sets and $63\\%$ at $1024$ candidates against a known context, $78.9$ AUROC when the template and surrounding records are unknown, $92.5$ AUROC when a 14B surrogate scores a 32B target, and $81.8$ AUROC when the records arrive as an agent's retrieval returns, against chance rates of $1/|\\mathcal{Z}|$ and $50$ respectively.",
+      "takeaways": [
+        "The object is a formalized attack framework for hidden-context leakage in agentic AI, distinct from direct jailbreaking.",
+        "A visible limit is that the reported results rely on specific controls (instruction, logit suppression, dilution) whose real-world robustness against adaptive attackers is not established in the listing.",
+        "The artifact status is unclear; no code repository or dataset link is provided in the metadata, so reproducibility cannot be confirmed from the listing alone."
+      ],
+      "plain": {
+        "reported": "The authors state that their attack method achieves a 100% success rate on small sets of possible answers and a 63% success rate when there are 1024 possible answers, specifically when the attacker knows the context structure.",
+        "brief": "The paper claims to define a new type of security attack where AI agents accidentally reveal private information they loaded in the background, even when told not to. The authors report that their attack works well, achieving 100% success on small tests and 63% on larger ones, with other performance scores between 78.9 and 92.5 depending on how much the attacker knows. The summary does not list which specific AI models were used or what data was tested, so the general applicability of these numbers is not clear from this text alone.\n\nPeople who build or secure AI systems that handle private data should look at this paper to understand this new risk. People who do not use AI agents that load hidden background data, or who have already tested these specific defenses, might find this less relevant. This summary is based only on the provided text and does not include details from the full document.\n\nThe term 'ASR' means Attack Success Rate, which is the percentage of times the attack worked. 'AUROC' is a statistical measure of how well the attack can distinguish between correct and incorrect guesses. 'Surrogate' refers to a model the attacker uses to help make guesses. The listing does not provide a link to the code or data used, so it is not possible to check the results independently from this information.",
+        "takeaways": [
+          "The paper describes a new way AI agents can leak private background information without being directly asked to.",
+          "The results depend on specific defenses being in place, and it is not known if these defenses work against smarter attackers.",
+          "There is no link to the code or data, so it is hard to check if the results are correct without reading the full paper."
+        ]
+      },
+      "actions": [
+        "Verify the specific model architectures and context assembly mechanisms by reading the full PDF, as the abstract only mentions '14B surrogate' and '32B target' without naming them.",
+        "Check if the authors have released the security game implementation or evaluation scripts, as no code link is declared in the metadata."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-03",
+        "publishedOn": "2026-09-03",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.01663"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-03T16:35:09.996Z"
+      }
+    },
+    {
+      "id": "2609.01684",
+      "arxivId": "2609.01684",
+      "url": "https://arxiv.org/abs/2609.01684",
+      "topic": "Health",
+      "reported": "The authors report that low dose ACTH testing more reliably reflects partial adrenal adaptation, measured via simulations of the HPA axis over 180 days.",
+      "metrics": [
+        "180 days",
+        "1 \\mu g",
+        "250 \\mu g"
+      ],
+      "title": "A mechanistic modeling framework to interpret ACTH stimulation tests across HPA axis adaptation states and glucocorticoid feedback dynamics",
+      "authors": "Mamta Yadav, Phool Singh",
+      "takeaway": "The paper presents a mechanistic modeling framework to interpret ACTH stimulation tests across HPA axis adaptation states and glucocorticoid feedback dynamics.",
+      "brief": "The authors propose a mechanistic model integrating hormonal kinetics, feedback inhibition, and functional mass adaptation to interpret ACTH stimulation tests. They simulate the HPA axis over 180 days, including baseline, chronic stress, and recovery phases, while introducing a time-varying glucocorticoid receptor resistance function. The model evaluates both low-dose and high-dose ACTH stimulation tests across these physiological phases.\n\nThe authors state that cortisol responses are highly sensitive to the magnitude and timing of stress exposure. They report that ACTH responsiveness is phase-dependent and often blunted during recovery due to persistent feedback resistance. The listing does not establish whether the model was validated against clinical patient data or specific experimental measurements.\n\nResearchers modeling endocrine feedback loops or interpreting adrenal function tests in stress contexts may find the framework relevant. Clinicians relying solely on static testing paradigms without considering glandular plasticity may ignore it.",
+      "abstract": "The hypothalamic pituitary adrenal (HPA) axis is a key regulatory system coordinating endocrine responses to physiological and psychological stress. While the ACTH stimulation test remains a cornerstone of adrenal function assessment, its interpretation is complicated by the dynamic and adaptive nature of the HPA axis under chronic stress exposure. In particular, prolonged stress induces glandular remodeling, glucocorticoid receptor (GR) resistance and delayed feedback recovery, all of which may alter test outcomes without indicating primary adrenal failure. In this study, we present a mechanistic modeling framework that integrates hormonal kinetics, feedback inhibition and functional mass adaptation of the corticotroph and adrenal compartments. We simulate the HPA axis over $180$ days encompassing three phases - baseline, chronic stress and recovery, while introducing a time varying GR resistance function to mimic feedback desensitization and its resolution. Using this framework, we evaluate both low dose ($1 \\mu g)$ and high dose ($250 \\mu g)$ ACTH stimulation tests across physiological phases. Our simulations show that cortisol responses are highly sensitive to both the magnitude and timing of stress exposure and that ACTH responsiveness is phase dependent and often blunted during recovery due to persistent feedback resistance. Low dose ACTH testing more reliably reflects partial adrenal adaptation, while high dose tests risks masking dysfunction due to supraphysiological drive. These results highlight the limitations of static testing paradigms and suggest that accounting for glandular plasticity and GR feedback dynamics is essential for effective endocrine diagnosis particularly in stress related or treatment induced adrenal disorders.",
+      "takeaways": [
+        "The object is a computational mechanistic model of the HPA axis, not a clinical trial or new diagnostic assay.",
+        "The visible limit is the reliance on simulated data with a defined time-varying resistance function, without stated validation against real-world patient cohorts.",
+        "The artifact status is unspecified; no code, dataset, or repository is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that a low-dose ACTH test better shows partial adaptation of the adrenal glands, based on computer simulations of the body's stress hormone system over 180 days.",
+        "brief": "The authors created a computer model to help doctors understand ACTH stimulation tests. This test checks how well the adrenal glands work. The model tracks the body's stress hormone system over 180 days, covering normal times, long-term stress, and recovery. It includes a changing factor for how the body's receptors respond to stress hormones.\n\nThe authors say that cortisol levels change a lot depending on how much and when stress happens. They found that the body's response to ACTH depends on the phase of stress and is often weaker during recovery. The listing does not say if this model was tested on real patients or just computer simulations.\n\nScientists studying how hormones regulate stress or doctors interpreting adrenal tests in stressed patients might find this useful. Doctors who only use standard tests without considering how the body adapts to stress might not need it.",
+        "takeaways": [
+          "This is a computer simulation model of the body's stress hormone system, not a new medical test or a study of real patients.",
+          "The main limitation is that it uses simulated data with a specific rule for how receptors change, and it is not clear if it matches real patient results.",
+          "It is not stated whether the computer code or data used in the study is available for others to use."
+        ]
+      },
+      "actions": [
+        "Verify the model's parameterization and validation methods by reading the full PDF to determine if clinical data was used.",
+        "Check the paper's supplementary materials for the specific mathematical formulation of the time-varying glucocorticoid receptor resistance function."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "math.DS"
+      ],
+      "listing": {
+        "listedOn": "2026-09-03",
+        "publishedOn": "2026-09-03",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.01684"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-03T16:35:09.996Z"
+      }
+    },
+    {
+      "id": "2609.01686",
+      "arxivId": "2609.01686",
+      "url": "https://arxiv.org/abs/2609.01686",
+      "topic": "Physics",
+      "reported": "The authors report that the interpretation of the hyperon--antihyperon pair as an open quantum system undergoing correlated environmental decoherence is not physically established.",
+      "metrics": [],
+      "title": "Comment on \"Environmental memory effects and quantum resource hierarchies in polarized hyperon--antihyperon systems\"",
+      "authors": "Saeed Haddadi",
+      "takeaway": "The paper argues that the claimed non-Markovianity and memory-assisted protection of quantum resources in the cited work are properties of a phenomenological channel rather than established physical effects.",
+      "brief": "The author argues that the cited work's interpretation of hyperon--antihyperon pairs as open quantum systems undergoing correlated environmental decoherence is not physically established. The author states that no physical environment or system--environment interaction responsible for the assumed correlated dephasing channel is identified, and that hadronization cannot simply be interpreted as such an environmental dephasing process.\n\nThe author identifies several technical and conceptual issues concerning the dephasing dynamics, entanglement quantification, basis dependence of coherence, and the claimed hierarchy of quantum resources. The author concludes that the claimed non-Markovianity, information backflow, and memory-assisted protection of quantum resources should be regarded as properties of a phenomenological channel rather than established physical effects in hyperon--antihyperon production.\n\nResearchers working on quantum resource theories in high-energy particle systems or open quantum system modeling may find this comment relevant for distinguishing phenomenological channel modeling from physically established dynamical mechanisms. Those not concerned with the specific physical interpretation of correlated dephasing channels in hyperon production may ignore it.",
+      "abstract": "We comment on the recent work [Eur. Phys. J. C 86, 988 (2026)], which investigates quantum resources in polarized hyperon--antihyperon systems using correlated dephasing channels with memory. Although the use of experimentally reconstructed spin-density matrices to characterize quantum correlations in hyperon production may be a good motivation, we argue that the interpretation of the hyperon--antihyperon pair as an open quantum system undergoing correlated environmental decoherence is not physically established. In particular, no physical environment or system--environment interaction responsible for the assumed correlated dephasing channel is identified, and hadronization cannot simply be interpreted as such an environmental dephasing process. Consequently, the claimed non-Markovianity, information backflow, and memory-assisted protection of quantum resources should be regarded as properties of a phenomenological channel rather than established physical effects in hyperon--antihyperon production. We also identify several technical and conceptual issues concerning the dephasing dynamics, entanglement quantification, basis dependence of coherence, and the claimed hierarchy of quantum resources. These issues call for a substantial revision of the physical interpretation and quantitative conclusions of the work. We hope that the present Comment will help clarify the distinction between phenomenological quantum-channel modeling and physically established dynamical mechanisms in high-energy particle systems, and thereby provide useful guidance for future studies and help avoid similar conceptual and technical issues.",
+      "takeaways": [
+        "The object is a comment on a specific paper about quantum resources in polarized hyperon--antihyperon systems using correlated dephasing channels with memory.",
+        "The visible limit is that the author does not provide a new physical model or experimental data, but rather critiques the physical interpretation and technical issues of the cited work.",
+        "The artifact status is a theoretical comment; no code, datasets, or experimental results are provided in the listing."
+      ],
+      "plain": {
+        "reported": "The author states that the idea that the particle pair acts like a system losing information to its surroundings in a specific, correlated way is not supported by physical evidence.",
+        "brief": "The author argues that the previous paper's idea that these particle pairs lose quantum information to their environment in a specific, correlated way is not physically supported. The author says that no specific physical environment or interaction causing this loss is identified, and that the process of particles forming from energy (hadronization) cannot simply be treated as this kind of environmental loss.\n\nThe author points out several technical and conceptual problems with how the previous paper describes the loss of quantum information, measures entanglement, handles the basis of coherence, and claims a hierarchy of quantum resources. The author concludes that the claimed non-Markovian behavior (where information flows back), information backflow, and protection of quantum resources due to memory should be seen as features of a mathematical model rather than real physical effects in the production of these particles.\n\nScientists studying quantum resources in high-energy particle systems or modeling open quantum systems might find this comment useful for distinguishing between mathematical models and real physical mechanisms. People not interested in the specific physical interpretation of correlated dephasing channels in hyperon production might ignore it.",
+        "takeaways": [
+          "The object is a comment on a specific paper about quantum resources in polarized hyperon--antihyperon systems using correlated dephasing channels with memory.",
+          "The visible limit is that the author does not provide a new physical model or experimental data, but rather critiques the physical interpretation and technical issues of the cited work.",
+          "The artifact status is a theoretical comment; no code, datasets, or experimental results are provided in the listing."
+        ]
+      },
+      "actions": [
+        "Verify the specific technical and conceptual issues identified by the author by reading the full text of the comment and the cited paper.",
+        "Check the cited paper (Eur. Phys. J. C 86, 988 (2026)) to assess the validity of the author's critique regarding the physical establishment of the correlated dephasing channel."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "hep-ex",
+        "hep-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-09-03",
+        "publishedOn": "2026-09-03",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.01686"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-03T16:35:09.996Z"
+      }
+    },
+    {
+      "id": "2609.01804",
+      "arxivId": "2609.01804",
+      "url": "https://arxiv.org/abs/2609.01804",
+      "topic": "Econ",
+      "reported": "The authors report that their proposed estimator restores near-nominal coverage in simulations under projection spillovers, where conventional methods show substantial undercoverage.",
+      "metrics": [],
+      "title": "Robust Variance Estimation in Linear Regression: A Projection-Geometry Perspective",
+      "authors": "Yanping Chen",
+      "takeaway": "The paper claims to develop a projection-geometry framework for robust variance estimation that reduces the problem to a linear inverse problem.",
+      "brief": "The author proposes a Riesz variance estimator that combines within- and cross-cluster residual moments, arguing that conventional HC and CRVE estimators may understate uncertainty when regression projections are nonlocal.\n\nSimulations indicate the proposed estimator restores near-nominal coverage under projection spillovers, while an application to colonial governor promotions changes the significance of four of five reported coefficients. The listing does not specify the exact simulation parameters or the full statistical details of the empirical application.\n\nResearchers working on robust inference in linear regression with complex error dependence structures may find the framework relevant. Those relying exclusively on standard HC or CRVE estimators in settings with negligible projection spillovers may not need to adjust their current methods.",
+      "abstract": "Inference in linear regression commonly treats OLS residuals as proxies for unobserved errors. This approximation can fail when the regression projection is nonlocal relative to the error-dependence structure. Residualization then shifts covariance information across observations and clusters, while conventional heteroskedasticity-consistent (HC) and cluster-robust variance estimators (CRVE) retain only diagonal or within-cluster residual moments and may therefore understate sampling uncertainty. This paper develops a projection-geometry framework for robust variance estimation. The variance of the OLS estimator is represented exactly as a Riesz functional of latent covariance blocks, and observable residual moments are linked to the target through a linear operator determined by the full regression projection. This formulation reduces variance estimation to a linear inverse problem. I propose a Riesz variance estimator that combines within- and cross-cluster residual moments. Conventional HC and CRVE emerge as restricted approximations whose validity depends on negligible projection spillovers. The estimator remains well defined when cluster-specific leverage matrices are singular and is computed by an iterative algorithm that avoids explicit matrix inversion. Simulations show substantial undercoverage by conventional methods under projection spillovers, whereas the proposed estimator restores near-nominal coverage. In an application to colonial governor promotions, the correction changes the significance of four of five reported coefficients.",
+      "takeaways": [
+        "The object is a new variance estimator derived from a Riesz functional representation of OLS variance.",
+        "A visible limit is that the validity of conventional estimators depends on negligible projection spillovers, a condition not always met in practice.",
+        "The artifact status is not established in the listing, as no code or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors state that their new calculation method gives accurate error estimates in computer tests where standard methods fail, and that it changes the statistical significance of four out of five results in a historical study.",
+        "brief": "The author suggests a new way to calculate uncertainty in regression models that accounts for how data points influence each other across groups. Standard methods often ignore these cross-group influences, leading to overly confident results.\n\nComputer tests show the new method works well when these influences are present. In a real-world example about colonial governors, the new method changed the statistical significance of four out of five findings. The provided text does not give the specific numbers for the simulation accuracy or the full details of the historical data.\n\nPeople who analyze data where groups are not independent might benefit from this method. People using standard methods in situations where groups are truly independent might not need to change their approach.",
+        "takeaways": [
+          "The main contribution is a new mathematical formula for calculating error bars in regression analysis.",
+          "A limitation is that the method assumes certain mathematical conditions about how data points relate to each other.",
+          "It is not stated whether the code for this method is available for download."
+        ]
+      },
+      "actions": [
+        "Verify the simulation design and coverage results by reading the full PDF.",
+        "Check the empirical application details to confirm the specific coefficients whose significance changed."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.EM"
+      ],
+      "listing": {
+        "listedOn": "2026-09-03",
+        "publishedOn": "2026-09-03",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.01804"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-03T16:35:09.996Z"
+      }
+    },
+    {
+      "id": "2609.01916",
+      "arxivId": "2609.01916",
+      "url": "https://arxiv.org/abs/2609.01916",
+      "topic": "Engineering",
+      "reported": "The authors report that their proposed scheme achieves gains of up to 3.6%, 15.7%, and 56% over respective baseline schemes in a representative setup.",
+      "metrics": [
+        "3.6%",
+        "15.7%",
+        "56%"
+      ],
+      "title": "Toward Security-Resilient Cell-Free Massive MIMO: A Multi-Stage Framework",
+      "authors": "Junbin Yu, Tianyu Lu, Mohammadali Mohammadi, Michail Matthaiou",
+      "takeaway": "The paper claims to develop a robust security-resilient transmission framework for cell-free massive MIMO systems under active pilot spoofing attacks using a multi-stage optimization approach.",
+      "brief": "The authors propose a multi-stage framework that adapts power allocation and uses partial zero-forcing to counter pilot spoofing in cell-free massive MIMO systems. They report numerical gains of up to 3.6%, 15.7%, and 56% over baseline schemes in a representative setup, measuring recovered secrecy spectral efficiency. The listing does not specify the exact hardware, channel model parameters, or computational complexity limits of the proposed successive convex approximation solver.\n\nThe reported evidence relies on numerical simulations in a representative setup, with improvements measured against unspecified baseline schemes. The abstract mentions worst-case eavesdropping scenarios and large-scale fading uncertainty but does not detail the specific attack intensities or channel conditions used to generate the percentage gains. No code or dataset is declared in the listing, leaving the reproducibility of the specific numerical results unverified.\n\nResearchers working on physical layer security in cell-free massive MIMO or robust optimization under channel uncertainty may find the multi-stage absorption and restoration methodology relevant. Those focused on experimental hardware validation or specific pilot spoofing attack implementations without a theoretical optimization framework may find the listing insufficient for their immediate needs.",
+      "abstract": "This paper develops a robust security-resilient transmission framework for cell-free massive multiple-input multiple-output (CF-mMIMO) systems under active pilot spoofing attacks. As a baseline, system performance is characterized under attack-free conditions to establish the target user's pre-attack service level. Upon attack detection, the system enters an absorption phase, during which, power allocation is adaptively adjusted across a limited subset of access points (APs) using contaminated channel state information (CSI). This phase quickly compensates for performance degradation while maintaining low operational overhead. Once the secrecy spectral efficiency (SSE) recovers to a prescribed loss level, the resulting power allocation initializes the restoration phase. Here, the transmit powers of all APs are jointly optimized, and a protective partial zero-forcing (PPZF) strategy further improves secrecy. In parallel, artificial noise (AN) is incorporated under a worst-case eavesdropping scenario accounting for large-scale fading uncertainty. The resulting stage-dependent non-convex problems are formulated within a unified framework and solved using successive convex approximation (SCA). Numerical results demonstrate that the proposed scheme achieves an effective time-quality tradeoff while maintaining the highest recovered secrecy; in a representative setup, it achieves gains of up to 3.6%, 15.7%, and 56% over the respective baseline schemes, with similar improvements under eavesdropper's channel uncertainty.",
+      "takeaways": [
+        "The object is a theoretical transmission framework for cell-free massive MIMO that addresses active pilot spoofing through adaptive power allocation and artificial noise.",
+        "A visible limit is the reliance on a representative numerical setup without detailed disclosure of the specific baseline schemes or channel uncertainty parameters used to calculate the reported percentage gains.",
+        "The artifact status is unverified as no code, dataset, or repository URL is declared in the supplied listing."
+      ],
+      "plain": {
+        "reported": "The authors state that their method improves security performance by up to 3.6%, 15.7%, and 56% compared to standard methods in a specific test scenario.",
+        "brief": "The authors suggest a new way to secure wireless networks where many antennas are spread out, protecting against hackers who fake signals. They show that their method improves security by up to 3.6%, 15.7%, and 56% in a computer simulation. The text does not explain the specific computer settings or how much processing power the method requires.\n\nThe results come from computer simulations, not real-world tests. The authors compare their method to other methods but do not name them in the summary. The summary mentions handling uncertain channel conditions but does not list the specific numbers used for those uncertainties. There is no link to code or data to check the results.\n\nPeople studying how to secure wireless networks with many distributed antennas might find this useful. People who need real-world hardware tests or specific hacker attack code might not find enough detail in this summary.",
+        "takeaways": [
+          "The paper describes a mathematical method to secure distributed wireless antenna systems against fake signal attacks.",
+          "The summary does not list the specific computer simulation settings or the names of the comparison methods used to calculate the percentage improvements.",
+          "There is no provided code or data file to independently check the reported results."
+        ]
+      },
+      "actions": [
+        "Verify the specific definitions of the baseline schemes and the exact channel uncertainty parameters used in the numerical simulations by reading the full PDF.",
+        "Check the full paper for details on the computational complexity of the successive convex approximation solver and the specific pilot spoofing attack models employed."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-09-03",
+        "publishedOn": "2026-09-03",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.01916"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-03T16:35:09.996Z"
+      }
+    }
+  ]
+}
