@@ -1,0 +1,666 @@
+{
+  "date": "2026-09-04",
+  "label": "Fri, Sep 4",
+  "minutes": 10,
+  "poolSize": 105,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-09-04T16:26:16.181Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2609.04148",
+      "arxivId": "2609.04148",
+      "url": "https://arxiv.org/abs/2609.04148",
+      "topic": "AI",
+      "reported": "The authors report that supervised fine-tuning of Qwen3.5-27B on their corpus improves single-round performance on Terminal-Bench 2.1 by 11.9 points and multi-round performance on EvoCode-Bench v2 MT@4 by 13.8 points.",
+      "metrics": [
+        "37.3k task-sufficient environments",
+        "11.9 points",
+        "13.8 points"
+      ],
+      "title": "Terminal-Universe: Turning Agent Trajectories into Scalable Terminal Environments",
+      "authors": "Jie Wu, Zhenru Zhang, Beichen Zhang, Xuwu Wang, Yuhui Su, Mouxiang Chen, Peng Wang, Zhihai Wang, Que Shen, Hao Zhou, An Yang, Fei Huang, Yujiu Yang, Dayiheng Liu",
+      "takeaway": "The paper introduces Terminal-Universe, a framework that reconstructs reusable terminal environments from existing agent trajectories to synthesize new tasks for agent post-training.",
+      "brief": "The authors propose a method to recover executable terminal environments from the tool-execution history of existing agent trajectories, rather than generating environments from scratch. They state that this allows the creation of reusable environments that can be re-queried for verifiable tasks and execution feedback.\n\nThe reported evidence includes the production of 37.3k task-sufficient environments from public trajectories and specific performance gains for a fine-tuned model on two benchmarks. The listing does not establish the specific limitations of the reconstruction process or the generalizability of the synthesized tasks beyond the reported benchmarks.\n\nResearchers working on agent post-training, environment synthesis, or terminal-based code agents may find the reconstruction methodology and resulting corpus relevant. Those focused solely on static trajectory analysis without interest in executable environment generation may find the specific framework less applicable.",
+      "abstract": "As terminal-based code agents become prevalent, agent trajectories have accumulated at scale, while realistic, executable environments remain scarce. However, environments are what agent post-training actually requires: each can be re-queried into many verifiable tasks and provides execution feedback, whereas a trajectory is a single frozen demonstration. Rather than generating environments from scratch, we observe that the tool-execution history in existing trajectories exposes the structure and contents of the environments in which they ran, making it possible to reconstruct those environments from the trajectories themselves. Thus, we introduce Terminal-Universe, a framework which turns each trajectory into a reusable environment and explores it for synthesizing new tasks and continued interactions. Specifically, Terminal-Universe replays the file operations recorded in a trajectory to restore each file before the agent modified it, yielding a partial workspace; a completion agent then supplies the missing files and dependencies. On this recovered workspace, we both reconstruct the original intent task and synthesize entirely new ones. Besides, we also scale the tasks along two complementary axes: breadth and depth. For breadth, we mine directional dependency relations between related environments and synthesize cross-workspace queries spanning multiple codebases, as developers routinely do in real-world development. For depth, we extend the initial single-turn query into a multi-round session that captures iterative user feedback and requirement refinement via a user agent. Applied to public terminal agent trajectories, Terminal-Universe produces 37.3k task-sufficient environments. Supervised fine-tuning of Qwen3.5-27B on this corpus improves single-round performance on Terminal-Bench 2.1 by 11.9 points and multi-round performance on EvoCode-Bench v2 MT@4 by 13.8 points.",
+      "takeaways": [
+        "The core object is a framework for reconstructing partial workspaces from trajectory file operations and completing them with a separate agent.",
+        "The listing does not specify the failure rate of the environment reconstruction or the quality of the synthesized tasks relative to human-created ones.",
+        "No code repository URL is provided in the listing, so the artifact status is unverified."
+      ],
+      "plain": {
+        "reported": "The authors report that training a specific AI model (Qwen3.5-27B) on their generated data improved its scores on two specific tests: Terminal-Bench 2.1 by 11.9 points and EvoCode-Bench v2 MT@4 by 13.8 points.",
+        "brief": "The authors suggest a way to rebuild the computer environments where AI agents previously worked, using the logs of what those agents did. Instead of building new environments from zero, they use the history of file changes to restore the original state and fill in missing parts. This creates a library of environments that can be used to create new training tasks.\n\nThe authors state they created 37.3k of these environments and that using them to train an AI model improved its test scores. The provided summary does not explain how often the environment rebuilding fails or how well the new tasks match real-world complexity.\n\nPeople who build AI agents that use command-line tools or who need large amounts of training data for such agents might find this useful. People who only care about analyzing past agent behavior without needing to run new code might not find this directly useful.",
+        "takeaways": [
+          "The main tool is a system that rebuilds computer workspaces from logs of previous AI actions and then adds missing files to make them complete.",
+          "The summary does not say how often the rebuilding process makes mistakes or how accurate the restored environments are.",
+          "The summary does not provide a link to the code or data, so it is not confirmed if the tools are publicly available."
+        ]
+      },
+      "actions": [
+        "Verify the availability of the 37.3k environment dataset and the specific fine-tuning configuration for Qwen3.5-27B in the full PDF.",
+        "Check the full paper for details on the 'completion agent' used to supply missing files and dependencies, as this is a critical component of the reconstruction pipeline."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-04",
+        "publishedOn": "2026-09-03",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.04148",
+            "upvotes": 176
+          }
+        ]
+      },
+      "trend": {
+        "votes": 176,
+        "rank": 1,
+        "of": 27,
+        "perDay": 176
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 176,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-04T16:26:16.181Z"
+      }
+    },
+    {
+      "id": "2609.04199",
+      "arxivId": "2609.04199",
+      "url": "https://arxiv.org/abs/2609.04199",
+      "topic": "AI",
+      "reported": "The authors report that their method reaches 83.6% semantic accuracy on FuzzyBench-Hard, a subset where a competing fast compiler produced no exact matches.",
+      "metrics": [
+        "83.6% semantic accuracy"
+      ],
+      "title": "Compile by Training: Turning Natural-Language Specifications into Local Neural Functions",
+      "authors": "Yuntian Deng, Pengyu Nie, Stuart Shieber",
+      "takeaway": "The paper presents a method called compile by training that converts natural-language specifications into reusable, local neural functions without requiring remote model calls at inference time.",
+      "brief": "The authors propose a compilation process where teacher models generate examples to train a small adapter for a compact interpreter. This creates a standalone function that can be stored and composed like standard software.\n\nThe strongest reported result is 83.6% semantic accuracy on FuzzyBench-Hard, a benchmark subset where a fast compiler alternative failed to produce exact matches. The authors note this higher accuracy incurs a compile-time cost of roughly a minute, compared to seconds for the faster alternative. They demonstrate the system in a public interactive service and specific application scenarios.\n\nResearchers working on efficient local inference or natural-language-to-code translation may find the trade-off between compile-time cost and accuracy relevant. Those requiring sub-second compilation or strict latency guarantees for every input may need to evaluate the reported minute-level compile time against their specific constraints.",
+      "abstract": "Many recurring text functions are easy to describe but difficult to implement with rules, while calling a large remote model for every input introduces repeated cost, latency, and dependency on a provider. We present compile by training, which turns a natural-language specification into a reusable neural function. At compile time, teacher models generate task-specific examples that are used to train a small adapter for a compact interpreter. The resulting function runs without the teachers and can be stored, versioned, and composed like ordinary software. On FuzzyBench-Hard, a subset on which the Program-as-Weights fast compiler produced no exact matches, compile by training reaches 83.6% semantic accuracy. This higher accuracy comes with a higher compile-time cost: roughly a minute rather than seconds for the fast compiler. We deploy the compiler in a public interactive service and demonstrate compiled functions in a multi-site website helper, a language-controlled 3D avatar, and a bidirectional English-Claudish translator.",
+      "takeaways": [
+        "The core object is a reusable neural adapter trained from generated examples, designed to replace remote model calls for specific text functions.",
+        "A visible limit is the increased compile-time cost, reported as roughly a minute, which contrasts with the seconds-level cost of the faster compiler they compare against.",
+        "The artifact status is a public interactive service, with the authors demonstrating compiled functions in specific applications like a website helper and a translator."
+      ],
+      "plain": {
+        "reported": "The authors state that their system achieved a score of 83.6% on a specific test set called FuzzyBench-Hard, where a different, faster system failed to get any perfect matches.",
+        "brief": "The researchers created a system that takes a description of a text task in plain English and turns it into a small, self-contained computer program. This program can run locally on a computer without needing to connect to a large, remote AI service every time it is used.\n\nThey tested this system on a difficult set of tasks and found it got the right answer 83.6% of the time. This was better than a faster system they compared it to, which got zero perfect answers on that same difficult set. However, creating these local programs takes about one minute, whereas the faster system only takes a few seconds.\n\nPeople who want to run AI text tools on their own devices without internet delays might find this useful. People who need the system to be ready almost instantly might find the one-minute setup time too slow.",
+        "takeaways": [
+          "The main thing they built is a small, local AI tool that is created from a text description and can be saved and reused.",
+          "A clear downside is that it takes about one minute to create these tools, which is slower than the alternative they tested against.",
+          "They have made a public website where you can try this system, and they showed it working in a few specific examples like a website helper and a translator."
+        ]
+      },
+      "actions": [
+        "Verify the specific definition of 'semantic accuracy' and the exact composition of the FuzzyBench-Hard subset in the full PDF to understand the evaluation criteria.",
+        "Check the full paper for details on the 'compact interpreter' architecture and the specific teacher models used to generate the training examples."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-04",
+        "publishedOn": "2026-09-03",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.04199",
+            "upvotes": 147
+          }
+        ]
+      },
+      "trend": {
+        "votes": 147,
+        "rank": 2,
+        "of": 27,
+        "perDay": 147
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 147,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-04T16:26:16.181Z"
+      }
+    },
+    {
+      "id": "2608.26730",
+      "arxivId": "2608.26730",
+      "url": "https://arxiv.org/abs/2608.26730",
+      "topic": "AI",
+      "reported": "The authors report that BCIT authorizes fewer harmful updates and attains higher equal-budget final-model quality than evaluated alternatives on one 4B model adapted across finance reasoning, text-to-SQL, and function calling.",
+      "metrics": [
+        "one 4B model"
+      ],
+      "title": "Knowing When Not to Reuse: Conditional Experience Transfer in Autonomous LLM Post-Training",
+      "authors": "Tingyun Li, Wenfeng Feng, Weiqing Li, Abudukelimu Wuerkaixi, Guohua Liu, Yuewei Zhang",
+      "takeaway": "The paper introduces Boundary-Calibrated Intervention Transfer (BCIT) to authorize experience reuse before weight-changing training in autonomous LLM post-training.",
+      "brief": "The authors propose BCIT to manage conditional experience transfer by binding observed effects to their source context and checking applicability before allowing reuse in autonomous post-training.\n\nThey report that BCIT authorizes fewer harmful updates and achieves higher equal-budget final-model quality than alternatives on a 4B model across finance reasoning, text-to-SQL, and function calling. The listing does not specify the exact quantitative magnitude of these improvements or the specific evaluation metrics used for final-model quality.\n\nResearchers working on autonomous post-training pipelines or experience reuse in LLM adaptation may find this relevant. Those not focused on the specific mechanics of update authorization in multi-stage training may find the scope narrow.",
+      "abstract": "Large language models offer broad capabilities, but adapting them to evolving domains, tools, and requirements often entails repeated post-training. Autonomous systems automate parts of this process by proposing updates, training candidates, and using evaluation feedback to select subsequent proposals. As evidence accumulates, a central problem emerges: which past update evidence remains actionable after subsequent training has changed the parent model? An update's effect depends on its parent, data, and training stage. Treating past success as context-free permission can waste compute. If the resulting child is promoted, it can also degrade the subsequent training trajectory. We formulate this problem as conditional experience transfer and introduce Boundary-Calibrated Intervention Transfer (BCIT), a method that authorizes experience reuse before weight-changing training. BCIT binds an observed effect to its source context, checks applicability conditions, vetoes candidates with named hard conflicts, and obtains current-state evidence through a bounded training trial when needed. Fully trained candidates still face a shared adoption rule, and only observed events extend memory. On one 4B model adapted across finance reasoning, text-to-SQL, and function calling, candidate updates exhibit heterogeneous target and retention effects across the evaluated contexts. Under matched candidates, evidence, and compute, BCIT authorizes fewer harmful updates and attains higher equal-budget final-model quality than the evaluated alternatives. These results support treating experience authorization as a distinct problem in autonomous post-training.",
+      "takeaways": [
+        "The object is a method for authorizing past update evidence in autonomous LLM post-training.",
+        "A visible limit is that the reported results are from a single 4B model across three specific domains.",
+        "The artifact status is not established in the listing, as no code or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors state that their method, BCIT, leads to fewer bad updates and better final model performance compared to other methods, tested on a 4-billion parameter model in finance, database queries, and function calling.",
+        "brief": "The authors suggest a way to decide when to reuse past training lessons in AI model updates. They call this method BCIT, which checks if old lessons still apply before using them.\n\nThey say BCIT works better than other methods on a specific 4-billion parameter model in three areas: finance, database queries, and function calling. The text does not say exactly how much better it is or what specific scores were used to measure quality.\n\nPeople who build systems that automatically update AI models might find this useful. People who do not work on this specific type of model update process might not need this paper.",
+        "takeaways": [
+          "The paper is about a method for deciding when to reuse past training data in AI model updates.",
+          "The results are only shown for one specific size of model and three specific tasks.",
+          "It is not stated in the listing whether the code or tools are available for download."
+        ]
+      },
+      "actions": [
+        "Verify the specific evaluation metrics and quantitative gains by reading the full PDF.",
+        "Check if the authors provide code or detailed implementation specifications for BCIT in the paper."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-04",
+        "publishedOn": "2026-08-27",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.26730",
+            "upvotes": 139
+          }
+        ]
+      },
+      "trend": {
+        "votes": 139,
+        "rank": 3,
+        "of": 27,
+        "perDay": 17
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 139,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-27"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-04T16:26:16.181Z"
+      }
+    },
+    {
+      "id": "2609.03796",
+      "arxivId": "2609.03796",
+      "url": "https://arxiv.org/abs/2609.03796",
+      "topic": "AI",
+      "reported": "The authors report that LLaDA-Image achieves overall scores of 53.53 and 53.38 on the English and Chinese tracks of Qwen-Image-Bench, respectively.",
+      "metrics": [
+        "6B Diffusion Transformer",
+        "220M samples",
+        "53.53"
+      ],
+      "title": "LLaDA-Image: Building Strong Image Generators with Fully Open Training Recipes",
+      "authors": "Chuyan Chen, Haoxing Chen, Kun Chen, Zhenglin Cheng, Long Cui, Ruishan Fang, Zhangxuan Gu, Zhicheng Huang, Zhenzhong Lan, Yuanting Lei, Haoquan Li, Jianguo Li, Rongchuan Li, Sidu Li, Tao Lin, Deyuan Liu, Jiacheng Liu, Lin Liu, Yuxuan Lou, Zhisheng Lu, Yuxin Ma, Shuheng Shen, Peng Sun, Chaoyang Wang, Hongjun Wang, Xiaomei Wang, Yongxin Wang, Chengzhang Wu, Hongru Wu, Jun Xie",
+      "takeaway": "The paper introduces LLaDA-Image, a unified framework pairing a 6B Diffusion Transformer with a frozen vision-language module to generate photorealistic images and follow editing instructions.",
+      "brief": "The authors present LLaDA-Image, a unified framework combining a 6B Diffusion Transformer trained from scratch with a frozen vision-language understanding module. They state the model produces highly photorealistic images while accurately following fine-grained editing instructions.\n\nThe authors report overall scores of 53.53 and 53.38 on the English and Chinese tracks of Qwen-Image-Bench, claiming a new state-of-the-art among open-source models. They also describe distilling the model into LLaDA-Image-Turbo for fast inference in 2-4 sampling steps. The listing does not establish specific limitations or artifacts beyond the reported benchmark scores.\n\nResearchers interested in open-source image generation frameworks, diffusion transformer architectures, or efficient inference distillation may find this relevant. Those seeking closed-source proprietary models or non-diffusion-based generation methods may look elsewhere.",
+      "abstract": "We introduce LLaDA-Image, a unified framework that pairs a 6B Diffusion Transformer (DiT) trained from scratch with a frozen vision-language understanding module built on the LLaDA2.0-Mini diffusion language model backbone. Instead of relying heavily on paired image-text data from the beginning, we first build a strong visual generative prior through image-only pre-training and mid-training. The generation pipeline comprises 220M samples, 98 of which are real images. For efficient and scalable optimization, we use parameter-free RMSNorm throughout the DiT together with the Muon optimizer. The resulting unified model produces highly photorealistic images while accurately following fine-grained editing instructions. We further distill LLaDA-Image into LLaDA-Image-Turbo, enabling fast inference in 2-4 sampling steps. On Qwen-Image-Bench, LLaDA-Image achieves overall scores of 53.53 and 53.38 on the English and Chinese tracks, respectively, setting a new state-of-the-art among open-source models on both tracks. To support further research on capable and efficient generative models, we release our model weights, training code, and detailed recipes.",
+      "takeaways": [
+        "The object is a unified image generation framework combining a 6B DiT with a frozen vision-language module.",
+        "A visible limit is the reliance on a specific benchmark (Qwen-Image-Bench) for the reported state-of-the-art claim, with no other evaluation metrics provided in the listing.",
+        "The artifact status is that the authors state they release model weights, training code, and detailed recipes, though no repository URL is provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that their model scores 53.53 and 53.38 on the English and Chinese versions of the Qwen-Image-Bench test, respectively.",
+        "brief": "The authors present a new system called LLaDA-Image that combines a large image-creation model with a frozen text-and-image understanding module. They state the system creates very realistic images and follows detailed editing commands well.\n\nThe authors say their model scores 53.53 and 53.38 on the English and Chinese parts of the Qwen-Image-Bench test, which they claim is the best among open-source models. They also mention a faster version that works in 2 to 4 steps. The summary does not list specific weaknesses or problems with the model.\n\nPeople working on open-source image creation tools or fast image generation might find this useful. People looking for private, non-open-source tools or different types of image creation might not need this.",
+        "takeaways": [
+          "The main thing is a system that combines an image-creation model with a text-and-image understanding module.",
+          "A clear limitation is that the best-in-class claim is based only on one specific test, with no other test results shown in the summary.",
+          "The authors say they are sharing the model files and code, but the summary does not give a link to where to find them."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark scores and state-of-the-art claims by checking the full PDF against the Qwen-Image-Bench leaderboard.",
+        "Confirm the availability and license of the released model weights and training code by checking the authors' official repository or project page."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-04",
+        "publishedOn": "2026-09-03",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.03796",
+            "upvotes": 137
+          }
+        ]
+      },
+      "trend": {
+        "votes": 137,
+        "rank": 4,
+        "of": 27,
+        "perDay": 137
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 137,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-04T16:26:16.181Z"
+      }
+    },
+    {
+      "id": "2609.01507",
+      "arxivId": "2609.01507",
+      "url": "https://arxiv.org/abs/2609.01507",
+      "topic": "AI",
+      "reported": "The authors report that LatentPress reaches 0.504 accuracy at 7.70times compression on LongMemEval, outperforming uncompressed evidence (0.490), text summaries (0.184), and OCR-based compression (0.426 to 0.312).",
+      "metrics": [
+        "0.504 accuracy",
+        "7.70times compression",
+        "43ms per conversation"
+      ],
+      "title": "LatentPress: Context Compression Beyond Text and Vision",
+      "authors": "Zhengze Zhou, Hejian Sang",
+      "takeaway": "The paper introduces LatentPress, a method that compresses conversational histories and long documents into continuous memory tokens for direct consumption by a frozen decoder without text reconstruction.",
+      "brief": "The authors propose a third representation for context compression: continuous memory tokens read directly by a frozen decoder's input-embedding interface, bypassing text or image decoding. This approach uses a small reader-matched writer to compress data while training only an adapter.\n\nOn LongMemEval, the method achieves 0.504 accuracy at 7.70times compression, surpassing uncompressed evidence and other compression baselines. Writing takes 43ms per conversation, and reading is 5-9times faster than raw context. The authors validate the interface under zero-shot transfer settings between different QA domains.\n\nResearchers working on efficient context management for large language models may find this relevant. Those focused solely on human-readable summarization or visual rendering may find the machine-facing token approach less applicable to their specific workflows.",
+      "abstract": "Compressed context is usually carried as human-readable text or as rendered images that must be decoded, even when its consumer is a language model. We introduce LatentPress, which writes conversational histories and long documents into a third representation: continuous memory tokens that a frozen decoder reads directly through its input-embedding interface, with no text reconstruction at inference. A small reader-matched writer compresses 4-16times while training only an adapter (4.2M-26.2M parameters, sim!0.1% of the decoder). On LongMemEval, LatentPress reaches 0.504 accuracy at 7.70times compression versus 0.490 for uncompressed evidence, outperforming text summaries (0.184) and OCR-based compression (0.426 to 0.312). On LongBench-QA, in-domain writers match or exceed raw-context reading at 4-8times compression, while 16times trails raw. Writing takes 43ms per conversation, roughly an order of magnitude faster than text summarization or OCR reconstruction, and reading is 5-9times faster than raw context or cached OCR. We validate the interface under two transfer settings, zero-shot from UltraChat to LongMemEval memory QA and from LongMemEval-derived QA to unseen LongBench document domains, establishing direct soft tokens as a practical machine-facing context interface beyond text and vision. The implementation of the experiments could be found at: https://github.com/xuyd16ai/context_softtoken_compress .",
+      "takeaways": [
+        "The object is a compression pipeline producing continuous memory tokens for frozen decoders.",
+        "A visible limit is that 16times compression trails raw-context reading on LongBench-QA.",
+        "The artifact status is established by a provided GitHub repository URL for the experiments."
+      ],
+      "plain": {
+        "reported": "The authors state that their system achieves a score of 0.504 on the LongMemEval test when compressing data by a factor of 7.70, which is higher than the score of 0.490 for uncompressed data and higher than scores for text summaries and OCR methods.",
+        "brief": "The authors suggest a new way to store information for AI models. Instead of storing text or images, they store a special type of digital token that the AI can read directly without converting it back into words or pictures. This uses a small program to compress the data while keeping the main AI model unchanged.\n\nIn tests on a specific memory benchmark, their method scored 0.504 when compressing data by 7.70 times. This was better than using the original uncompressed data or other compression methods. The process of creating these tokens takes 43 milliseconds per conversation, which is much faster than creating text summaries. The authors also tested if the method works when applied to new types of questions it had not seen before.\n\nPeople who build AI systems that need to remember long conversations or read long documents might find this useful. People who only care about creating human-readable summaries or visual representations of text might not find this method suitable for their needs.",
+        "takeaways": [
+          "The main thing being described is a system that turns text into special digital tokens for AI to read.",
+          "One limitation shown is that when compressing data by 16 times, the performance is worse than reading the original uncompressed text.",
+          "The authors provide a link to a code repository where the experiments can be found."
+        ]
+      },
+      "actions": [
+        "Verify the reported accuracy and compression ratios by running the provided code on the LongMemEval benchmark.",
+        "Inspect the adapter parameter counts and training procedures to confirm the claimed low training overhead."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-04",
+        "publishedOn": "2026-09-01",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.01507",
+            "upvotes": 78
+          }
+        ]
+      },
+      "trend": {
+        "votes": 78,
+        "rank": 5,
+        "of": 27,
+        "perDay": 26
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 78,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-01"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-04T16:26:16.181Z"
+      }
+    },
+    {
+      "id": "2609.02915",
+      "arxivId": "2609.02915",
+      "url": "https://arxiv.org/abs/2609.02915",
+      "topic": "Engineering",
+      "reported": "The authors report that their Deep Convolutional Neural Network approach significantly outperforms the most accurate technique found in the literature when applied to the same experimental data.",
+      "metrics": [],
+      "title": "Improving BLE-Based Passive Human Sensing with Deep Learning",
+      "authors": "Giancarlo Iannizzotto, Lucia Lo Bello, Andrea Nucita",
+      "takeaway": "The paper claims to improve BLE-based passive human sensing by applying a Deep Convolutional Neural Network to classify signal deformations for detecting human presence.",
+      "brief": "The authors propose using a Deep Convolutional Neural Network to analyze Bluetooth Low Energy signal deformations for passive human sensing, aiming to overcome WiFi limitations like power consumption and interference.\n\nThey report that the approach reliably detects human presence in a large room using few transmitters and receivers, even without direct line-of-sight occlusion, and claims it significantly outperforms the most accurate literature technique on the same experimental data. No specific quantitative accuracy figures or dataset sizes are provided in the abstract.\n\nResearchers working on wireless sensing or low-power IoT applications may find the BLE-specific methodology relevant, while those requiring immediate quantitative benchmarks or code access should note the absence of these details in the listing.",
+      "abstract": "Passive Human Sensing (PHS) is an approach to collecting data on human presence, motion or activities that does not require the sensed human to carry devices or participate actively in the sensing process. In the literature, PHS is generally performed by exploiting the Channel State Information variations of dedicated WiFi, affected by human bodies obstructing the WiFi signal propagation path. However, the adoption of WiFi for PHS has some drawbacks, related to power consumption, large-scale deployment costs and interference with other networks in nearby areas. Bluetooth technology and, in particular, its low-energy version Bluetooth Low Energy (BLE), represents a valid candidate solution to the drawbacks of WiFi, thanks to its Adaptive Frequency Hopping (AFH) mechanism. This work proposes the application of a Deep Convolutional Neural Network (DNN) to improve the analysis and classification of the BLE signal deformations for PHS using commercial standard BLE devices. The proposed approach was applied to reliably detect the presence of human occupants in a large and articulated room with only a few transmitters and receivers and in conditions where the occupants do not directly occlude the Line of Sight between transmitters and receivers. This paper shows that the proposed approach significantly outperforms the most accurate technique found in the literature when applied to the same experimental data.",
+      "takeaways": [
+        "The core object is a Deep Convolutional Neural Network applied to BLE signal deformations for passive human presence detection.",
+        "A visible limit is the lack of specific quantitative performance metrics or dataset details in the abstract, making independent verification of the 'significant outperformance' claim difficult without the full text.",
+        "The artifact status is unclear as no code repository or dataset link is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors state that their method using a type of artificial intelligence model works better than the best existing method they found in previous research papers when tested on the same set of experimental data.",
+        "brief": "The authors suggest using a specific type of computer program to analyze changes in Bluetooth signals to detect if people are in a room, without needing people to wear any devices. This is meant to be a cheaper and less power-hungry alternative to using WiFi signals for the same task.\n\nThey say their method can detect people in a large room using only a few Bluetooth devices, even if the people are not blocking the direct path between the devices. They claim it is much better than the best method previously published, but they do not give specific numbers like percentage accuracy in this summary.\n\nPeople who study how to use wireless signals to track people or who build low-power electronic systems might find this interesting. However, if you need exact numbers to compare with your own work or want to download the code immediately, this summary does not provide that information.",
+        "takeaways": [
+          "The main thing they built is a computer program that looks at Bluetooth signal changes to guess if a person is in a room.",
+          "A clear limitation is that the summary does not show the exact numbers proving it is better, so you cannot check the strength of the claim without reading the full document.",
+          "It is not stated whether the computer code or the data used in the experiment is available for download."
+        ]
+      },
+      "actions": [
+        "Verify the specific accuracy metrics and experimental setup details by reading the full PDF, as the abstract only provides qualitative comparisons.",
+        "Check the paper's supplementary materials or author websites for any code or dataset availability, since no repository URL is provided in the metadata."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-09-04",
+        "publishedOn": "2026-09-04",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.02915"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-04"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-04T16:26:16.181Z"
+      }
+    },
+    {
+      "id": "2609.02943",
+      "arxivId": "2609.02943",
+      "url": "https://arxiv.org/abs/2609.02943",
+      "topic": "Security",
+      "reported": "The authors report that for binary alphabets, the current rigorous bound on the normalized longest-common-subsequence length rules out every constant deletion rate greater than 0.207334008.",
+      "metrics": [
+        "0.792665992",
+        "0.207334008"
+      ],
+      "title": "A Public-Key-Dependent Adversarial-Deletion Ceiling for Fixed-Alphabet Multi-Bit Pseudorandom Codes",
+      "authors": "Frederick Dehmel, Shilun Li",
+      "takeaway": "The paper claims to establish a public-key-dependent adversarial-deletion ceiling for fixed-alphabet multi-bit pseudorandom codes.",
+      "brief": "The authors claim a deletion ceiling for public-key pseudorandom codes where the channel depends on the public key and codeword. They report that for binary alphabets, the rigorous bound on normalized longest-common-subsequence length rules out constant deletion rates above 0.207334008. The bounds are specific to public-key-dependent adversarial channels and do not apply to oblivious edit channels.\n\nThe strongest reported result is the exclusion of constant deletion rates greater than 0.207334008 for binary codes, derived from the bound gamma_2 >= 0.792665992. The authors state the proof uses pseudorandomness only to transfer an LCS event from uniform strings to independently sampled codewords. The listing does not establish whether the bound is tight or if the ceiling is achievable by other code constructions.\n\nResearchers working on public-key error-correcting codes against adversarial deletion channels may find the specific threshold relevant. Those studying oblivious edit channels or private-key pseudorandom codes should note the stated inapplicability of these bounds to those settings.",
+      "abstract": "A pseudorandom code (PRC) is a keyed error-correcting code whose codewords are computationally indistinguishable from uniform strings. We study public-key PRCs over fixed alphabets against adversarial deletions, where the deletion channel may both depend on the public encoding key and the transmitted codeword. Let $\\gamma_q^{\\mathrm{LCS}}$ denote the asymptotic normalised longest-common-subsequence length of two independent uniform $q$-ary strings. We prove that for every fixed $q\\ge2$ no multi-message public-key PRC with a single-output decoder is robust against all such $\\delta$-deletion channels for any $\\delta>1-\\gamma_q^{\\mathrm{LCS}}$. For $q=2$, the current rigorous bound $\\gamma_2\\ge0.792665992$ rules out every constant $\\delta>0.207334008$. The proof uses pseudorandomness only to transfer an LCS event from uniform strings to independently sampled codewords and therefore also the resulting collision argument is information-theoretic and requires no secret key. We also extend the argument to list decoding: for every fixed constant $L$, provided the message space contains at least $L+1$ messages, no such PRC with output lists of size at most $L$ is robust for $\\delta>1-\\gamma_2^{(L+1)}$. Since $\\gamma_2^{(m)}=1/2+\\Theta(1/\\sqrt m)$, these thresholds approach $1/2$. Our bounds are specific to public-key-dependent adversarial channels and do not apply to oblivious edit channels.",
+      "takeaways": [
+        "The object is a theoretical ceiling on deletion robustness for public-key pseudorandom codes with single-output decoders.",
+        "The visible limit is that the bounds do not apply to oblivious edit channels or private-key settings.",
+        "The artifact status is not established in the listing, as no code or dataset is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that for binary alphabets, the current rigorous bound on the normalized longest-common-subsequence length rules out every constant deletion rate greater than 0.207334008.",
+        "brief": "The authors claim a limit on how many bits can be deleted from a message encoded with a public-key pseudorandom code, where the deletion pattern can depend on the public key and the message itself. They report that for binary codes, a known mathematical bound on the similarity of random strings rules out deletion rates above 0.207334008. The authors state these limits only apply when the deletion channel depends on the public key and do not apply to channels that delete bits without knowing the key.\n\nThe strongest reported result is that deletion rates above 0.207334008 are impossible for binary codes under this specific adversarial model. This comes from a known lower bound of 0.792665992 on the normalized longest-common-subsequence length of random binary strings. The listing does not say if this limit is the absolute best possible or if other code designs could handle higher deletion rates in different settings.\n\nPeople studying how to protect data from targeted bit deletions using public-key cryptography may find this threshold useful. People studying deletion channels that do not depend on the public key, or private-key systems, should note that these specific results do not apply to their settings.",
+        "takeaways": [
+          "The object is a mathematical limit on how many bits an adversary can delete from a public-key encoded message.",
+          "The visible limit is that this result only applies when the adversary knows the public key and can tailor deletions to it.",
+          "The listing does not mention any code or data files, so the artifact status is unknown."
+        ]
+      },
+      "actions": [
+        "Verify the exact definition of the adversarial deletion channel model in the PDF to confirm the public-key dependency scope.",
+        "Check the PDF for the derivation of the gamma_2 bound to confirm the source of the 0.792665992 constant."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.IT",
+        "math.IT"
+      ],
+      "listing": {
+        "listedOn": "2026-09-04",
+        "publishedOn": "2026-09-04",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.02943"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-04"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-04T16:26:16.181Z"
+      }
+    },
+    {
+      "id": "2609.02963",
+      "arxivId": "2609.02963",
+      "url": "https://arxiv.org/abs/2609.02963",
+      "topic": "Health",
+      "reported": "SurfSpec reduces geometric mismatch and outperforms evaluated off-target-agnostic lead optimization baselines in empirical specificity, while maintaining competitive target-affinity improvement.",
+      "metrics": [],
+      "title": "SurfSpec: Enhancing Off-Target-Agnostic Specificity by Bounding Pocket-Ligand Geometric Mismatch",
+      "authors": "Minyeong Hwang, Yoorim Gang, Ziseok Lee, Wooyeol Lee, Young Bin Park, Jae-Mun Choi, Kyungsu Kim, Eunho Yang",
+      "takeaway": "The authors claim SurfSpec is an off-target-agnostic lead optimization framework that improves specificity by bounding pocket-ligand geometric mismatch without requiring off-target structures.",
+      "brief": "The paper proposes SurfSpec, a method for lead optimization that aims to improve target binding while controlling specificity without needing prior knowledge of off-target structures. It uses a geometric mismatch analysis to derive a conservative specificity lower bound for off-targets that are geometrically separated from the target.\n\nThe authors report that on the CrossDocked2020 test set, SurfSpec reduces geometric mismatch and outperforms evaluated baselines in empirical specificity while maintaining competitive target-affinity improvement. The listing does not specify the magnitude of these improvements or the exact baselines compared, nor does it provide quantitative values for the specificity or affinity metrics.\n\nResearchers working on structure-based drug design who need specificity-aware lead optimization without off-target structural data may find this relevant. Those requiring explicit quantitative performance benchmarks or access to off-target structures for their specific workflow may find the listing insufficient for immediate decision-making.",
+      "abstract": "Lead optimization in structure-based drug design aims to improve target binding while avoiding unintended interactions with off-target pockets. However, existing affinity-driven methods do not explicitly control specificity, whereas current specificity-aware approaches commonly require prior knowledge of off-target structures. We address off-target-agnostic specificity-aware lead optimization by analyzing the geometric mismatch between a ligand and the target pocket. We provide a conservative specificity lower bound for geometrically separated off-targets without requiring access to off-target structures. By metricizing pocket--ligand mismatch, the triangle inequality shows that reducing target--ligand mismatch improves a conservative lower bound on mismatch to a separated off-target class, which can be translated into a specificity lower bound through an empirical geometry--affinity calibration. Motivated by this analysis, we introduce SurfSpec, an off-target-agnostic lead optimization framework that iteratively grows ligands toward under-occupied regions of the target pocket surface. SurfSpec alternates between linker generation toward selected target-surface patches, which provides geometric pseudo-labels, and refinement under a pocket-conditioned ligand prior, which restores these pseudo-labels into valid ligands. On the CrossDocked2020 test set, SurfSpec reduces geometric mismatch and outperforms evaluated off-target-agnostic lead optimization baselines in empirical specificity, while maintaining competitive target-affinity improvement.",
+      "takeaways": [
+        "The object is a lead optimization framework that uses geometric mismatch to bound specificity without off-target structures.",
+        "A visible limit is the reliance on an empirical geometry-affinity calibration to translate geometric mismatch into a specificity lower bound, which may not hold universally.",
+        "The artifact status is not established in the listing; no code or dataset links are provided."
+      ],
+      "plain": {
+        "reported": "The authors state that their method, SurfSpec, lowers the geometric mismatch and beats other methods that do not use off-target structure information in terms of measured specificity, while keeping target binding improvement competitive.",
+        "brief": "The paper introduces SurfSpec, a tool for designing drug candidates that tries to make them bind better to a target protein while avoiding binding to other proteins, without needing to know the structure of those other proteins. It does this by measuring how well the drug fits into the target's binding pocket and using that to estimate how poorly it fits into other pockets.\n\nThe authors say that in tests on a standard dataset called CrossDocked2020, SurfSpec made the drug fit the target better and was more specific than other methods that also didn't use off-target structures. However, the summary does not say by how much it was better or list the specific numbers for how well it bound or how specific it was.\n\nScientists who design drugs and need to ensure they don't accidentally bind to the wrong proteins, but don't have the 3D structures of those wrong proteins, might find this useful. People who need exact numbers to compare performance or who already have the structures of the other proteins might need more information from the full paper.",
+        "takeaways": [
+          "The tool is a method for designing drugs that uses the shape of the target protein's binding site to guess how well the drug will avoid other proteins, without needing to see those other proteins.",
+          "A limitation is that it relies on a measured relationship between shape fit and binding strength to estimate specificity, which might not be accurate for all proteins.",
+          "It is not stated in the summary whether the code or data used in the study are available for download."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative improvements in specificity and affinity reported on the CrossDocked2020 test set by reading the full PDF.",
+        "Check the paper for details on the empirical geometry-affinity calibration method and its validation to assess the robustness of the specificity lower bound."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-04",
+        "publishedOn": "2026-09-04",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.02963"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-04"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-04T16:26:16.181Z"
+      }
+    },
+    {
+      "id": "2609.02999",
+      "arxivId": "2609.02999",
+      "url": "https://arxiv.org/abs/2609.02999",
+      "topic": "Physics",
+      "reported": "The authors report discovering constant-depth unitary implementations of the full logical Clifford group on any number of blocks of the 2D toric code, including within a single block, and addressable logical CCZ gates on any triple of logical qubits on any number of blocks of the 3D toric code.",
+      "metrics": [],
+      "title": "Computing with qLDPC Codes by Climbing the Chain Map Hierarchy",
+      "authors": "Rahul Sahay, David M. Long, Vedika Khemani",
+      "takeaway": "The paper develops a framework for logical computation with qLDPC codes that places logical Pauli, Clifford, and non-Clifford operations on the same footing via a chain map hierarchy.",
+      "brief": "The authors propose a chain map hierarchy to unify the description of logical Pauli, Clifford, and non-Clifford operations on qLDPC codes. This framework aims to extend the homological description of Pauli logicals to more complex logical gates.\n\nThe authors state that this strategy allows them to discover constant-depth unitary implementations of the full logical Clifford group on the 2D toric code and addressable logical CCZ gates on the 3D toric code. They also claim to find addressable non-Clifford gates on codes with many encoded qubits beyond manifold codes. The listing does not specify experimental benchmarks or numerical error rates for these implementations.\n\nResearchers working on quantum error correction and topological codes may find the unified framework useful. Those not interested in qLDPC code construction or logical gate synthesis may ignore it.",
+      "abstract": "We develop a framework for logical computation with qLDPC codes that places logical Pauli, Clifford, and non-Clifford operations on the same footing. This brings the simple homological description of Pauli logicals to the patchwork landscape of logical Clifford and non-Clifford operations, providing a tool for the discovery of new logical gates. In particular, we define the chain map hierarchy: a family of chain complexes whose homology classes encode logical unitary and code surgery operations at any level of the Clifford hierarchy, precisely analogous to the chain complex description of Pauli logicals. Consequently, intuition for Pauli logicals can be leveraged to discover new logical operations on qLDPC codes. For instance, the familiar ability to deform Pauli logicals with stabilizers---i.e. boundaries of the chain complex---becomes a way to search for constant-depth unitary implementations of (non-)Clifford logical gates. Using this strategy, we discover constant-depth unitary implementations of the full logical Clifford group on any number of blocks of the 2D toric code, including within a single block, and addressable logical CCZ gates on any triple of logical qubits on any number of blocks of the 3D toric code. Beyond manifold codes, we find addressable non-Clifford gates on codes with many encoded qubits. The chain map hierarchy naturally encompasses and extends other constructions of logical gadgets, for instance providing a universal parameterization of cup products. As such, our work provides a unified, useful, and intuitive language for computing with qLDPC codes.",
+      "takeaways": [
+        "The object is a theoretical framework called the chain map hierarchy for describing logical operations on qLDPC codes.",
+        "The visible limit is that the listing describes theoretical discoveries of gate implementations but does not provide quantitative performance metrics or experimental validation.",
+        "The artifact status is unclear as no code repository or specific dataset is mentioned in the supplied metadata."
+      ],
+      "plain": {
+        "reported": "The authors report finding ways to perform specific quantum logic operations, called Clifford and CCZ gates, using a constant number of steps on specific types of quantum error-correcting codes known as 2D and 3D toric codes.",
+        "brief": "The authors created a new mathematical tool to describe different types of quantum logic operations in a consistent way. This tool is meant to help find new ways to perform these operations on quantum error-correcting codes.\n\nThe authors say this tool helped them find efficient ways to perform Clifford operations on 2D toric codes and CCZ operations on 3D toric codes. They also claim to have found non-Clifford operations on other codes. The provided text does not include specific numbers measuring how well these operations work or how many errors they correct.\n\nPeople studying quantum computing error correction might find this useful. People not working on quantum codes might not need this information.",
+        "takeaways": [
+          "The main contribution is a mathematical framework for describing quantum logic gates on error-correcting codes.",
+          "The limitation is that the text only claims theoretical discoveries without providing numerical performance data.",
+          "It is not stated whether computer code or data files are available to reproduce the results."
+        ]
+      },
+      "actions": [
+        "Verify the specific definitions of the chain map hierarchy and the construction of the CCZ gates in the full PDF.",
+        "Check the PDF for any supplementary material or code links that demonstrate the constant-depth implementations."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "cond-mat.str-el"
+      ],
+      "listing": {
+        "listedOn": "2026-09-04",
+        "publishedOn": "2026-09-04",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.02999"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-04"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-04T16:26:16.181Z"
+      }
+    },
+    {
+      "id": "2609.03042",
+      "arxivId": "2609.03042",
+      "url": "https://arxiv.org/abs/2609.03042",
+      "topic": "Stats",
+      "reported": "The authors report that exact commutation holds universally if and only if the reparametrisation is affine, measured on local-linear covariance estimation from sparsely observed functional data.",
+      "metrics": [
+        "O_P{κ_ψ (h^2+h n_loc^{-1/2} +h_0^2+h_0 n_{loc,1}^{-1/2})}"
+      ],
+      "title": "Equivariance, Curvature and Symmetry in Functional Covariance Estimation",
+      "authors": "Jocelyn Nembe",
+      "takeaway": "The paper characterizes equivariance for local-linear covariance estimation from sparsely observed functional data, showing that exact commutation holds universally if and only if the reparametrisation is affine.",
+      "brief": "The authors characterize equivariance for local-linear covariance estimation from sparsely observed functional data. They show that exact commutation holds universally if and only if the reparametrisation is affine. For a general C^{2,1} diffeomorphism, departure from equivariance is controlled by the normalized curvature κ_ψ=||ψ''/ψ'||_∞.\n\nThe authors report a local-linear defect of O_P{κ_ψ (h^2+h n_loc^{-1/2} +h_0^2+h_0 n_{loc,1}^{-1/2})}. They state that zero curvature is exactly the boundary of statistical equivariance. The listing does not establish empirical performance on specific datasets or finite-sample behavior beyond the stated asymptotic order.\n\nResearchers working on functional data analysis, covariance estimation, or geometric statistics may find the theoretical characterization relevant. Those seeking applied benchmarks or code implementations should note that no code is declared and no empirical results are reported in the listing.",
+      "abstract": "Statistical procedures for functional data are routinely applied after changes of time scale, registration, or other reparametrisations, although it is generally unclear when the resulting inference is independent of the chosen coordinates. We characterize this equivariance for local-linear covariance estimation from sparsely observed functional data. At the population level, covariance operators are unitarily conjugate under every diffeomorphic reparametrisation. At the estimation level, exact commutation holds universally if and only if the reparametrisation is affine. For a general \\(C^{2,1}\\) diffeomorphism, departure from equivariance is controlled by the normalized curvature \\(\\kappa_\\psi=\\|\\psi''/\\psi'\\|_\\infty\\), with local-linear defect \\[ O_P\\!\\left\\{\\kappa_\\psi \\left(h^2+h n_{\\mathrm{loc}}^{-1/2} +h_0^2+h_0 n_{\\mathrm{loc},1}^{-1/2}\\right)\\right\\}. \\] Thus zero curvature is exactly the boundary of statistical equivariance. We then show that finite-group symmetry acts as an orthogonal-projection regularizer: its risk gain is exactly the anti-invariant estimation error minus the squared symmetry misspecification. An orbit-covariance identity quantifies the attainable variance reduction and shows why group size alone does not determine the gain. These principles propagate to eigenvalues, eigenspaces and truncated PACE prediction. The results separate coordinate invariance at the population level from the geometric obstructions introduced by statistical smoothing.",
+      "takeaways": [
+        "The object is a theoretical characterization of equivariance in local-linear covariance estimation for functional data, distinguishing population-level invariance from estimation-level geometric obstructions.",
+        "A visible limit is that the listing provides only asymptotic order bounds and theoretical identities, with no empirical validation, dataset benchmarks, or finite-sample error rates reported.",
+        "The artifact status is theoretical only; no code, datasets, or repository URLs are declared or mentioned in the supplied metadata."
+      ],
+      "plain": {
+        "reported": "The authors state that their estimation method only matches perfectly when the time scale change is a straight-line transformation, and they measured this using a specific smoothing technique on data with few observations per function.",
+        "brief": "The authors explain when statistical results for functional data stay the same after changing the time scale or reparametrization. They prove that perfect matching only happens for straight-line transformations. For other smooth transformations, the error depends on how curved the transformation is.\n\nThey give a formula for the error size that includes the curvature of the transformation and the smoothing parameters. They say that no curvature means perfect statistical matching. The listing does not say whether they tested this on real data or how well it works in practice with limited samples.\n\nPeople studying functional data, covariance estimation, or geometric statistics might find the theory useful. People looking for software or real-world test results should note that no code or data results are mentioned in the listing.",
+        "takeaways": [
+          "The paper is a theoretical study of when statistical estimates for functional data remain unchanged after reparametrization, separating population-level invariance from estimation-level geometric effects.",
+          "A visible limit is that the listing only provides theoretical error bounds and identities, with no real-data tests, benchmarks, or finite-sample performance numbers.",
+          "The artifact status is purely theoretical; no code, datasets, or repository links are provided or mentioned."
+        ]
+      },
+      "actions": [
+        "Verify the asymptotic order bound O_P{κ_ψ (h^2+h n_loc^{-1/2} +h_0^2+h_0 n_{loc,1}^{-1/2})} and the affine-only exact commutation claim by reading the full PDF.",
+        "Check whether the paper includes any simulation studies or real-data applications that test the curvature-controlled defect bound, as the abstract does not mention them."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "math.ST",
+        "stat.TH"
+      ],
+      "listing": {
+        "listedOn": "2026-09-04",
+        "publishedOn": "2026-09-04",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.03042"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-04"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-04T16:26:16.181Z"
+      }
+    }
+  ]
+}
