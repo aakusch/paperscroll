@@ -1,0 +1,702 @@
+{
+  "date": "2026-09-08",
+  "label": "Tue, Sep 8",
+  "minutes": 10,
+  "poolSize": 10,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-09-08T16:41:37.372Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2609.04010",
+      "arxivId": "2609.04010",
+      "url": "https://arxiv.org/abs/2609.04010",
+      "topic": "AI",
+      "reported": "The authors report that their 8B Uno model outperforms the 26B DiffusionGemma and Mercury 2 across all evaluated benchmarks in agentic tool use, coding, and long-context reasoning.",
+      "metrics": [
+        "up to 3times speedups over the base AR model",
+        "8B Uno model",
+        "26B DiffusionGemma"
+      ],
+      "title": "Unlocking Lossless Speedups in LLMs via Discrete Diffusion",
+      "authors": "Subham Sekhar Sahoo, Lingjie Chen, Khiem Pham, Jonathan Geuter, Chaitanya Dwivedi, Varad Pimpalkhute, Yash Akhauri, Alexander Moreno, Mikhail Yurochkin, Zhenting Wang, Mostafa Elhoushi, Nolan Dey, Shane Bergsma, Joel Hestness, John Thickstun, Eric Xing, Zhengzhong Liu",
+      "takeaway": "The paper introduces diffusion-augmented LLMs that use diffusion to draw multiple tokens in parallel from an autoregressive model distribution to achieve lossless acceleration.",
+      "brief": "The authors propose a new class of models that decouples autoregressive weights from lightweight diffusion weights, trained via a Diffusion Distillation phase to generate multiple tokens simultaneously without a separate draft model.\n\nThey report that the resulting Uno models achieve higher throughput than leading speculative-decoding methods at every evaluated batch size and deliver up to 3times speedups over the base AR model. The listing states that the 8B Uno model outperforms the 26B DiffusionGemma and Mercury 2 across all evaluated benchmarks in agentic tool use, coding, and long-context reasoning, but does not specify the exact benchmark names or numerical scores for these comparisons.\n\nResearchers working on LLM inference acceleration or discrete diffusion architectures may find the method relevant. Those requiring specific benchmark scores or code verification should consult the full paper and repository.",
+      "abstract": "Large Language Models (LLMs) owe much of their success to next-token prediction (NTP), but their autoregressive (AR) structure requires slow, sequential token generation. To overcome this bottleneck, we introduce diffusion-augmented LLMs, a new class of models that defines an AR model distribution while using diffusion to draw multiple tokens in parallel from that distribution. We decouple the parameters of these models into two sets: AR weights, trained using the standard NTP objective, and lightweight diffusion weights, trained to generate multiple tokens simultaneously. The diffusion weights are learned through a simple Diffusion Distillation phase that adds negligible overhead to existing LLM training pipelines. We also introduce Ψ-Spec, a family of samplers that enables lossless acceleration and inference-time scaling at a fixed context length. Unlike speculative decoding, our method requires no separate draft model. Unlike diffusion LLMs (d-LLMs), it accelerates generation without sacrificing the quality of the underlying AR model. The resulting models, called Uno, can be trained from scratch or built by augmenting existing open-weight AR LLMs. Uno achieves higher throughput than leading speculative-decoding methods at every evaluated batch size and delivers up to 3times speedups over the base AR model, including at the largest batch size supported by the device. Notably, our 8B Uno model outperforms the leading open d-LLM, the 26B DiffusionGemma, and the proprietary Mercury 2 across all evaluated benchmarks in agentic tool use, coding, and long-context reasoning. We release code and checkpoints at: https://s-sahoo.github.io/uno/",
+      "takeaways": [
+        "The core object is a hybrid model architecture that combines standard autoregressive training with a lightweight diffusion module for parallel token generation.",
+        "The listing does not establish the specific benchmarks used for the quality comparison against DiffusionGemma and Mercury 2, nor does it provide the exact numerical scores for those comparisons.",
+        "The authors state that code and checkpoints are released, but the listing does not verify the functionality, completeness, or current status of the provided repository."
+      ],
+      "plain": {
+        "reported": "The authors report that their 8B Uno model performs better than the 26B DiffusionGemma and Mercury 2 on all tested tasks involving tool use, coding, and long-context reasoning.",
+        "brief": "The authors propose a new type of language model that splits its parameters into two groups: standard autoregressive weights and lightweight diffusion weights. The diffusion weights are trained to generate multiple words at once, which speeds up the process without needing a separate smaller model to draft the text.\n\nThey report that their Uno models run faster than leading speculative-decoding methods at every tested batch size and achieve up to 3 times the speed of the base model. The listing states that the 8B Uno model beats the 26B DiffusionGemma and Mercury 2 on all tested tasks in tool use, coding, and long-context reasoning, but it does not list the specific test names or the exact scores for these comparisons.\n\nPeople working on speeding up language model inference or studying discrete diffusion methods may find this useful. Those who need specific test scores or want to check the code should look at the full paper and the code repository.",
+        "takeaways": [
+          "The main idea is a model that mixes standard word-by-word prediction with a diffusion method that predicts several words at the same time.",
+          "The text does not say which specific tests were used to compare quality against DiffusionGemma and Mercury 2, nor does it give the exact scores for those tests.",
+          "The authors say they have released code and model files, but the text does not confirm if the code works or if the files are complete."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark names and numerical scores for the quality comparisons against DiffusionGemma and Mercury 2 in the full paper.",
+        "Check the provided repository URL to confirm the availability and functionality of the code and checkpoints."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/ifm-ai/uno",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-08",
+        "publishedOn": "2026-09-03",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.04010",
+            "upvotes": 52
+          }
+        ]
+      },
+      "trend": {
+        "votes": 52,
+        "rank": 1,
+        "of": 10,
+        "perDay": 10
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 52,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-08T16:41:37.372Z"
+      }
+    },
+    {
+      "id": "2609.03241",
+      "arxivId": "2609.03241",
+      "url": "https://arxiv.org/abs/2609.03241",
+      "topic": "AI",
+      "reported": "The authors report that FlowBalance improves average performance over FlowRL on both Qwen3-4B and Qwen3-8B.",
+      "metrics": [
+        "Qwen3-4B",
+        "Qwen3-8B"
+      ],
+      "title": "FlowBalance: Verifier-Grounded Self-Improvement from On-Policy Reasoning Experience",
+      "authors": "Zixun Huang, Kishan Panaganti, Haitao Mi, Leowei Liang",
+      "takeaway": "FlowBalance is a verifier-grounded self-improvement method that learns a normalized distribution over complete responses using calibrated self-guidance scores.",
+      "brief": "The paper introduces FlowBalance, a method for verifier-grounded self-improvement that learns a normalized distribution over complete responses. It calibrates self-guidance scores with verifier-derived group advantages to avoid false confidence or overconcentration on narrow solution modes.\n\nThe authors report improved average performance over FlowRL on Qwen3-4B and Qwen3-8B models, along with improved training speed and stability. They also note that the method avoids response-length collapse and exhibits higher correct-strategy diversity in a controlled AIME24 diagnostic. The listing does not specify the magnitude of performance gains or the exact benchmark scores achieved.\n\nResearchers working on reinforcement learning for large language models or self-improvement techniques may find this relevant. Those not focused on on-policy reasoning experience or verifier-grounded optimization may ignore it.",
+      "abstract": "A reasoning model can improve from its own on-policy experience, but this inner loop is fragile: terminal verifiers provide reliable yet sparse supervision, while dense same-model guidance can reinforce false confidence or overconcentrate learning on a narrow solution mode. We introduce FlowBalance, a verifier-grounded self-improvement method that learns a normalized distribution over complete responses. For each on-policy trajectory, a frozen training-time view of the same policy uses privileged context to produce token-level log-probability gains, which are aggregated into a trajectory-level self-guidance score. FlowBalance calibrates this score with the verifier-derived group advantage: guidance is retained on positive-advantage trajectories, reversed on negative-advantage trajectories, and disabled when the rollout group provides no outcome preference. The resulting energy exponentially reweights a reference policy, and profiled trajectory balance fits the normalized target with one log-partition estimate per rollout group. This realizes outcome-calibrated self-guidance via trajectory balance, without a separate token-level imitation loss. Our analysis establishes within-group contrast preservation, a minimum-change reverse-KL characterization, monotonic verifier control of target reward, and an exact correction against false-positive self-guidance on rejected responses. On mathematical reasoning, FlowBalance improves average performance over FlowRL on both Qwen3-4B and Qwen3-8B, while also improving training speed and stability, avoiding direct OPSD's response-length collapse, and exhibiting higher correct-strategy diversity in a controlled AIME24 diagnostic.",
+      "takeaways": [
+        "The object is a self-improvement method that calibrates token-level log-probability gains with verifier-derived group advantages.",
+        "A visible limit is that the listing does not provide specific quantitative performance improvements or benchmark scores beyond model names.",
+        "The artifact status is indicated by a declared code repository URL, but the listing does not confirm the repository's completeness or functionality."
+      ],
+      "plain": {
+        "reported": "The authors report that their method, FlowBalance, performs better on average than a method called FlowRL when tested on two specific AI models named Qwen3-4B and Qwen3-8B.",
+        "brief": "The paper presents a new way to help AI models improve by learning from their own attempts. It uses a scoring system that checks if the model's answers are correct to guide the learning process, preventing the model from becoming overconfident or stuck in one way of solving problems.\n\nThe authors say their method works better than a previous method called FlowRL on two AI models. They also say it trains faster and more steadily, and it doesn't cause the model's answers to become too short. In a specific test called AIME24, their method showed more variety in correct ways of solving problems. The summary does not say exactly how much better the performance was or what the specific scores were.\n\nPeople who study how AI models learn from their own mistakes or use reinforcement learning might find this useful. People who do not work on these specific AI training techniques might not need to look at this paper.",
+        "takeaways": [
+          "The main thing being studied is a method that helps AI models learn from their own attempts by using a scoring system that checks for correctness.",
+          "A limitation is that the summary does not give specific numbers showing how much better the new method is compared to the old one.",
+          "The authors provide a link to a website where the code for this method is supposedly available, but the summary does not say if the code is complete or works as described."
+        ]
+      },
+      "actions": [
+        "Verify the specific performance improvements and benchmark scores by reading the full PDF.",
+        "Check the declared code repository to confirm the availability and completeness of the implementation."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/alexhuang13/FlowBalance",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-08",
+        "publishedOn": "2026-09-03",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.03241",
+            "upvotes": 37
+          }
+        ]
+      },
+      "trend": {
+        "votes": 37,
+        "rank": 2,
+        "of": 10,
+        "perDay": 7
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 37,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-08T16:41:37.372Z"
+      }
+    },
+    {
+      "id": "2609.03756",
+      "arxivId": "2609.03756",
+      "url": "https://arxiv.org/abs/2609.03756",
+      "topic": "AI",
+      "reported": "The authors report that ENEAS enables precise tracking and high-quality segmentation of a unique instance, and open-concept discovery of every instance a text query names, resolved by a semantic verification layer.",
+      "metrics": [],
+      "title": "ENEAS: Embedding-guided Neural Ensemble for Adaptive Segmentation",
+      "authors": "Javier del Pino, Salvador Rodríguez, Alejandro Garabito, Javier Álvarez, Chema Garabito",
+      "takeaway": "The paper presents ENEAS, a unified, text-promptable method for instance tracking and semantic discovery that addresses temporal hallucinations, spatial fragmentation, and semantic misclassification in existing models.",
+      "brief": "The authors propose ENEAS as a unified method for instance tracking and semantic discovery, claiming it resolves temporal hallucinations, spatial fragmentation, and semantic misclassification in text-promptable segmentation models. The reported evidence is qualitative, describing how the method holds targets through disappearance and filters ontological errors using a semantic verification layer, but the listing provides no quantitative benchmarks or numerical performance metrics. The code and models are stated to be available at a specific GitHub repository, though the listing does not confirm the repository's current status or completeness.\n\nThe strongest reported result is the method's ability to perform precise tracking and high-quality segmentation of a unique instance, as well as open-concept discovery of every instance a text query names. The authors attribute this to extending the SeC architecture with a text-prompting adapter and leveraging temporal memory, combined with a verification layer that uses visual embedding matching and conditional VLM refinement. No specific dataset, benchmark, or numerical metric is cited in the abstract to quantify this performance.\n\nResearchers working on video segmentation, instance tracking, or 3D reconstruction from video may find the method relevant for handling temporal consistency and semantic ambiguity. Those requiring quantitative comparisons against specific benchmarks or needing verified code availability should verify the repository and seek additional evaluation details before relying on the method.",
+      "abstract": "We present ENEAS, a unified, text-promptable method for instance tracking and semantic discovery. Text-promptable segmentation models, including the latest foundation models such as SAM 3, still suffer from temporal hallucinations, spatial fragmentation, and semantic misclassification: they fail to report target absence when an object leaves the field of view, segment local textures instead of the complete object during extreme close-ups, and prioritize visual features over ontological reality, so that visually similar artifacts such as statues, paintings, or reflections are segmented as target entities. ENEAS works two ways from a single method: precise tracking and high-quality segmentation of a unique instance, and open-concept discovery of every instance a text query names, resolved by a semantic verification layer. For tracking, we extend the geometrically robust SeC architecture, previously limited to point interactions, with a text-prompting adapter and leverage its temporal memory, so that the target is held through disappearance without drifting to distractors and kept whole even when it fills the entire view. For discovery, the verification layer combines high-speed visual embedding matching with conditional VLM refinement, invoking semantic reasoning only for ambiguous candidates, which filters out the ontological errors that visual-only models cannot distinguish while keeping latency low. Designed with 3D reconstruction in mind, where a single misclassified distractor corrupts the asset, ENEAS unlocks high-quality semantic tracking and segmentation of video, of broad libraries, and of collections of temporally or spatially unordered data, together with the discrimination to tell true instances from their doppelgangers: things that look alike but are not the same. The code and models are available at https://github.com/speridlabs/eneas",
+      "takeaways": [
+        "The object is a unified neural ensemble method for adaptive segmentation that combines tracking and discovery capabilities.",
+        "The visible limit is the absence of quantitative metrics or specific benchmark results in the provided listing, making performance assessment difficult.",
+        "The artifact status is declared as available at a GitHub URL, but the listing does not verify the repository's content, accessibility, or completeness."
+      ],
+      "plain": {
+        "reported": "The authors report that their system, ENEAS, can track specific objects and find all objects matching a text description, using a check layer to confirm the objects are correct.",
+        "brief": "The authors introduce ENEAS, a system that uses text commands to track objects and find new ones in videos. They claim it fixes common errors where models lose track of objects, break objects into pieces, or mistake similar-looking items for the target. The evidence provided is descriptive rather than numerical, explaining how the system keeps track of objects even when they disappear or when the view is very close. No specific numbers or test results are given in the summary. The authors state that the code and models are available on a specific website, but the summary does not confirm if the website is currently working or complete.\n\nThe main result reported is that the system can accurately track one specific object and find all objects that match a text description. The authors say this is achieved by adding a text command feature to an existing tracking architecture and using a check layer that uses visual matching and a language model to verify ambiguous cases. No specific test data or numerical scores are mentioned in the abstract to show how well it works.\n\nPeople working on video analysis, object tracking, or creating 3D models from video might find this useful for handling consistent tracking and confusing visual similarities. People who need specific performance numbers or need to confirm the code is available should check the website and read the full paper for more details.",
+        "takeaways": [
+          "The system is a combined tool for tracking objects and finding new ones using text commands.",
+          "The main limitation is that the summary does not include any numbers or test results to show how well it works.",
+          "The code is said to be available on a website, but the summary does not confirm if the website is working or has all the files."
+        ]
+      },
+      "actions": [
+        "Verify the code and models at the provided GitHub URL to confirm availability and completeness.",
+        "Review the full PDF to identify any quantitative benchmarks or evaluation metrics not included in the abstract."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/speridlabs/eneas",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-08",
+        "publishedOn": "2026-09-03",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.03756",
+            "upvotes": 16
+          }
+        ]
+      },
+      "trend": {
+        "votes": 16,
+        "rank": 3,
+        "of": 10,
+        "perDay": 3
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 16,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-08T16:41:37.372Z"
+      }
+    },
+    {
+      "id": "2608.25936",
+      "arxivId": "2608.25936",
+      "url": "https://arxiv.org/abs/2608.25936",
+      "topic": "AI",
+      "reported": "The authors report that On-Policy Self-Distillation achieves accuracy comparable to reinforcement learning at a fraction of the generated tokens.",
+      "metrics": [],
+      "title": "One Symptom, Three Levers: A Critical Review of On-Policy Self-Distillation",
+      "authors": "Justin Robert, Raheel Qader",
+      "takeaway": "The paper provides a structural review of On-Policy Self-Distillation collapse, organizing the phenomenon around three specific levers: signal application, privileged information, and signal timing.",
+      "brief": "The authors present a critical review of On-Policy Self-Distillation, arguing that the dominant failure mode, collapse, is governed by three distinct levers. They define these levers as where the signal is applied, what the teacher is shown, and when the signal changes.\n\nThe review restricts its scope to mathematical reasoning, where the method originated and failure modes are best documented. The authors explicitly state they report no new experiments, positioning the contribution as a shared vocabulary for phenomena named differently across papers.\n\nResearchers working on language model distillation or reinforcement learning may find the structural framework useful for categorizing existing literature. Those seeking new empirical results or methods outside mathematical reasoning should note the stated scope limitations.",
+      "abstract": "On-policy distillation trains a language model on its own generations while a teacher scores them token by token. It combines the dense supervision of imitation learning with the on-policy sampling of reinforcement learning. But it requires a second, larger model to act as teacher. On-Policy Self-Distillation (OPSD) removes that cost. The teacher is the model itself, conditioned on privileged information the student will not have at test time, such as a reference solution, a plan, or environment feedback. The teacher is no stronger than the student, only better informed. Early results were promising, with accuracy comparable to reinforcement learning at a fraction of the generated tokens. But the same asymmetry that produces the signal also biases it. One failure mode now dominates the field: collapse, the progressive narrowing of the set of reasoning paths the model can produce. Collapse is not specific to OPSD, though privileged information aggravates it. This review treats collapse as a symptom governed by three levers: (i) where the signal is applied, that is, how tokens are weighted; (ii) what the teacher is shown, that is, the nature of the privileged information; and (iii) when the signal changes, that is, the teacher's dynamics and the decay of guidance. We restrict our scope to mathematical reasoning, where the method originated and where its failure modes are best documented. We report no new experiments. The contribution is structural: a shared vocabulary for phenomena named differently across papers, and a clear line between what is settled and what is still disputed.",
+      "takeaways": [
+        "The object is a structural review of On-Policy Self-Distillation collapse, not a new algorithm or dataset.",
+        "A visible limit is the restriction to mathematical reasoning, where failure modes are best documented.",
+        "The artifact status is a text-only review; the authors state they report no new experiments."
+      ],
+      "plain": {
+        "reported": "The authors report that On-Policy Self-Distillation achieves accuracy comparable to reinforcement learning at a fraction of the generated tokens.",
+        "brief": "The authors present a critical review of On-Policy Self-Distillation, arguing that the dominant failure mode, collapse, is governed by three distinct levers. They define these levers as where the signal is applied, what the teacher is shown, and when the signal changes.\n\nThe review restricts its scope to mathematical reasoning, where the method originated and failure modes are best documented. The authors explicitly state they report no new experiments, positioning the contribution as a shared vocabulary for phenomena named differently across papers.\n\nResearchers working on language model distillation or reinforcement learning may find the structural framework useful for categorizing existing literature. Those seeking new empirical results or methods outside mathematical reasoning should note the stated scope limitations.",
+        "takeaways": [
+          "The object is a structural review of On-Policy Self-Distillation collapse, not a new algorithm or dataset.",
+          "A visible limit is the restriction to mathematical reasoning, where failure modes are best documented.",
+          "The artifact status is a text-only review; the authors state they report no new experiments."
+        ]
+      },
+      "actions": [
+        "Verify the specific claims about collapse mechanisms by reading the full PDF to see which papers are cited for each lever.",
+        "Check the bibliography to confirm which prior works are classified under each of the three levers."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-08",
+        "publishedOn": "2026-08-26",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2608.25936",
+            "upvotes": 10
+          }
+        ]
+      },
+      "trend": {
+        "votes": 10,
+        "rank": 4,
+        "of": 10,
+        "perDay": 1
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 10,
+          "sourceCount": 1,
+          "publishedOn": "2026-08-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-08T16:41:37.372Z"
+      }
+    },
+    {
+      "id": "2609.01281",
+      "arxivId": "2609.01281",
+      "url": "https://arxiv.org/abs/2609.01281",
+      "topic": "AI",
+      "reported": "The authors report that task-adapted low-level VLA policies achieve an average success rate of 86.20% across 50 RoboTwin 2.0 tasks and 97.40% across the four LIBERO suites.",
+      "metrics": [
+        "86.20% across 50 RoboTwin 2.0 tasks",
+        "97.40% across the four LIBERO suites",
+        "12.5% average success"
+      ],
+      "title": "EmbodiedSkills: A Unified Framework for Orchestrating, Training, and Deploying VLA Agents",
+      "authors": "Wei Wang, Wenqiao Zhang, Yutong Lin, Yuqian Yuan, Tianwei Lin, Jinhao Mao, Zhenxuan Fan, Mingjian Gao, Yang Dai, Wentong Li, Zheqi Lv, Zheng Dong, Yingjie Niu, Jiaqi Zhu, Jun Xiao, Chao Li, Yueting Zhuang",
+      "takeaway": "The paper proposes EmbodiedSkills, a unified framework that treats each skill decision as an execution proposal with prerequisite checks and post-action verification within a single agent loop.",
+      "brief": "The authors present a framework that structures robot skill execution by checking prerequisites before action and verifying outcomes afterward. This design allows low-level vision-language-action policies to be swapped without altering the core agent loop.\n\nThe authors report high success rates on RoboTwin 2.0 and LIBERO benchmarks, but note a significantly lower average success rate on memory-dependent RMBench tasks. The listing does not specify whether the framework itself, rather than the underlying policies, drives these performance differences.\n\nResearchers working on robot agent architectures or vision-language-action integration may find the structured execution interface relevant. Those focused solely on raw action prediction without closed-loop verification may find the added complexity unnecessary for their specific use cases.",
+      "abstract": "Vision-language-action (VLA) models map visual observations and language instructions directly to robot actions, but long-horizon tasks require more than action prediction. An agent must coordinate perception, planning, execution, progress verification, and recovery as the physical state evolves. An action prediction or a model-generated skill decision does not, by itself, guarantee that the proposed operation is valid in the current state or that its outcome will be verified. We propose EmbodiedSkills, a unified framework that treats each skill decision as an execution proposal: the runtime checks its prerequisites before execution and verifies the outcome afterward. A shared executable-skill interface connects high-level skill selection, bounded low-level VLA execution, and post-action verification within a single agent loop. Because this interface remains fixed, low-level VLA policies can be replaced or adapted without changing the agent loop. The interface also records planning, execution, verification, and recovery events as structured trajectories, which provide supervision for individual components and can support optional online adaptation when interactive feedback is available. We instantiate EmbodiedSkills with Qwen3-VL and OpenPI/pi0.5 on RoboTwin 2.0 and LIBERO. Task-adapted low-level VLA policies achieve an average success rate of 86.20% across 50 RoboTwin 2.0 tasks and 97.40% across the four LIBERO suites. These results establish the execution performance of the task-adapted low-level VLA policies used in EmbodiedSkills. On four memory-dependent RMBench tasks, the same task-adapted execution approach achieves 12.5% average success. The framework provides a trainable and inspectable agent layer for turning these policies into closed-loop embodied systems.",
+      "takeaways": [
+        "The core object is a unified agent framework that standardizes skill execution, verification, and recovery events.",
+        "A visible limit is the reported 12.5% average success on memory-dependent RMBench tasks, which contrasts sharply with the higher benchmark scores.",
+        "The artifact status is established by the provided GitHub repository link, though the listing does not confirm code completeness or reproducibility."
+      ],
+      "plain": {
+        "reported": "The authors state that their adapted robot control models reached an 86.20% success rate on 50 tasks in the RoboTwin 2.0 test set and a 97.40% success rate on the four LIBERO test suites.",
+        "brief": "The authors describe a system that manages robot actions by checking if a task is possible before doing it and checking if it worked after doing it. This system keeps the main control loop stable even if the specific robot control models are changed.\n\nThe authors show high success rates on two standard robot test sets, but report a much lower 12.5% success rate on a different test set that requires the robot to remember past information. The provided summary does not clarify if the management system or the underlying control models are the main cause of these results.\n\nPeople building robot control systems that need to verify actions might find this useful. People who only need simple robot movements without complex verification steps might find this system too complex for their needs.",
+        "takeaways": [
+          "The main contribution is a management layer for robot actions that checks conditions before and after each move.",
+          "A clear limitation is the low 12.5% success rate on tasks requiring memory, which is much lower than the other reported scores.",
+          "The authors provide a link to a code repository, but the summary does not confirm if the code is complete or ready to use."
+        ]
+      },
+      "actions": [
+        "Verify the reported success rates and the specific role of the framework versus the underlying VLA policies by reviewing the full PDF.",
+        "Inspect the linked GitHub repository to confirm the availability of the executable-skill interface and the structured trajectory recording mechanisms."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/DCDmllm/EmbodiedSkills",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-08",
+        "publishedOn": "2026-09-01",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.01281",
+            "upvotes": 9
+          }
+        ]
+      },
+      "trend": {
+        "votes": 9,
+        "rank": 5,
+        "of": 10,
+        "perDay": 1
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 9,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-01"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-08T16:41:37.372Z"
+      }
+    },
+    {
+      "id": "2609.02998",
+      "arxivId": "2609.02998",
+      "url": "https://arxiv.org/abs/2609.02998",
+      "topic": "AI",
+      "reported": "The authors report that TGOPD outperforms Vanilla OPD in all six single-domain settings and achieves higher seven-benchmark averages at both scales under multi-domain training.",
+      "metrics": [
+        "increasing teacher-node GPU utilization from 9.8% to 78.9%"
+      ],
+      "title": "Verify Before You Distill: Prompt-Level Teacher Gating for On-Policy Distillation",
+      "authors": "Zhiwei Zhang, Zechen Sun, Fei Zhao, Kang Peng, Bin Liang, Huayu Deng, Yao Hu, Kam-Fai Wong, Mu Chuan",
+      "takeaway": "The paper introduces Teacher-Gated On-Policy Distillation (TGOPD), which verifies teacher reliability at the prompt level before admitting dense supervision to prevent misleading updates from confidently wrong teachers.",
+      "brief": "The authors propose a gating mechanism that routes prompts to either dense on-policy distillation or verifier-grounded GRPO based on estimated teacher reliability. This addresses the risk that mode-seeking reverse KL can amplify errors from unreliable teachers.\n\nThe strongest reported result is that TGOPD outperforms Vanilla OPD in all six single-domain settings and achieves higher seven-benchmark averages at both 4B and 35B scales. The listing does not establish specific limitations regarding generalization to other model families or domains beyond those tested.\n\nResearchers working on on-policy distillation or post-training efficiency may find the prompt-level gating strategy relevant. Those not focused on teacher-student reliability verification may ignore it.",
+      "abstract": "On-policy distillation (OPD) accelerates post-training by providing dense token-level supervision from a frozen teacher on the student's own rollouts. Vanilla OPD applies this supervision uniformly across prompts, without checking whether the teacher is reliable for each prompt. Because reverse KL is mode-seeking, a confidently wrong teacher can induce a strong yet misleading update. Distributional proxies, such as entropy or teacher-student likelihood agreement, measure uncertainty or agreement but do not directly verify outcome correctness. We introduce Teacher-Gated On-Policy Distillation (TGOPD), built on the principle that teacher reliability should be verified at the prompt level before dense supervision is admitted. TGOPD estimates reliability from a small set of verifier-scored teacher probes and routes each prompt exclusively to dense OPD when the reliability check passes or to verifier-grounded GRPO otherwise. Across 4B and 35B students in mathematics, code, and instruction following, TGOPD outperforms Vanilla OPD in all six single-domain settings and achieves higher seven-benchmark averages at both scales under multi-domain training. By using otherwise-idle teacher capacity for reliability estimation, TGOPD also reduces teacher-side compute waste in asynchronous OPD, increasing teacher-node GPU utilization from 9.8% to 78.9% in the measured 4B single-domain run.",
+      "takeaways": [
+        "The object is a prompt-level gating method that uses verifier-scored teacher probes to decide between dense OPD and GRPO.",
+        "A visible limit is that the reliability estimation relies on a small set of verifier-scored probes, which may not capture all failure modes of the teacher.",
+        "The artifact status is not established in the listing, as no code repository or dataset link is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their method performs better than the standard approach in all six single-domain tests and gets higher average scores across seven benchmarks for both small and large model sizes.",
+        "brief": "The authors suggest a way to check if a teacher model is reliable for each specific task before using its feedback. This prevents the student model from learning wrong answers that the teacher is confident about.\n\nThe main result is that their method beats the standard approach in all six single-domain tests and gets better average scores on seven benchmarks for both 4B and 35B model sizes. The listing does not say if this works for other types of models or tasks not tested.\n\nPeople working on training AI models using teacher feedback might find this useful. People not interested in improving how teacher feedback is used can skip it.",
+        "takeaways": [
+          "The method checks if the teacher is reliable for each task before using its feedback.",
+          "A limit is that the reliability check uses a small number of test questions, which might miss some errors.",
+          "It is not known if the code or data is available because the listing does not provide a link."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmarks and baselines used in the six single-domain settings by reading the full PDF.",
+        "Check the methodology for estimating teacher reliability from verifier-scored probes to assess its computational overhead."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-08",
+        "publishedOn": "2026-09-02",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.02998",
+            "upvotes": 8
+          }
+        ]
+      },
+      "trend": {
+        "votes": 8,
+        "rank": 6,
+        "of": 10,
+        "perDay": 1
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 8,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-08T16:41:37.372Z"
+      }
+    },
+    {
+      "id": "2609.03254",
+      "arxivId": "2609.03254",
+      "url": "https://arxiv.org/abs/2609.03254",
+      "topic": "AI",
+      "reported": "The authors report that the most cost-effective method improves accuracy by 2.2--9.7% on their new benchmark.",
+      "metrics": [
+        "accuracies of 68.3--93%",
+        "improves accuracy by 2.2--9.7%"
+      ],
+      "title": "What Else Needs Fixing? Exploring Cost-Effective Test-Time Compute for Revision Propagation in Artifacts Generated Through Conversation",
+      "authors": "Daisuke Kikuta",
+      "takeaway": "The paper introduces a benchmark for revision propagation in conversationally generated artifacts and evaluates cost-effective test-time compute methods.",
+      "brief": "The authors introduce a benchmark for revision propagation in conversationally generated artifacts and evaluate nine revision methods using various LLMs. They report that baselines achieve accuracies of 68.3--93%, and the most cost-effective method improves accuracy by 2.2--9.7%. The listing does not establish specific unresolved limits or failure modes beyond the reported accuracy ranges.\n\nThe strongest reported result is a 2.2--9.7% accuracy improvement using parallel sampling with LLM-based or medoid selection. The authors state that code and dataset are available at the provided GitHub URL. The listing does not specify the exact benchmark name or detailed evaluation metrics beyond the accuracy percentages.\n\nResearchers working on LLM-based artifact generation and revision propagation may find the benchmark and methods relevant. Those not focused on conversational artifact revision or test-time compute optimization may find the specific setting too narrow for their immediate needs.",
+      "abstract": "Large Language Models (LLMs) often help users generate artifacts through iterative cycles of generation and revision in conversation. A challenge here is that, when users specify only a local change during revision, LLMs must instead identify the relevant dependencies and propagate the revision to all affected parts of the artifact. This paper studies this ability of LLMs on conversationally generated artifacts, where the artifact context and its dependencies may be embedded in the conversation history. Toward practical use, we also explore cost-effective test-time compute for this new setting. Specifically, we introduce a new benchmark for this setting, and evaluate nine revision methods, including sequential reflection and parallel sampling variants, using gpt-oss-20b/120b, gpt-5.4-mini, and qwen3.5-9b/27b/122b on the benchmark. The results show that baselines achieve accuracies of 68.3--93%, and the most cost-effective method is selecting from three parallel samples using either LLM-based or medoid selection, which improves accuracy by 2.2--9.7%. Our code and dataset are available at https://github.com/ntt-dkiku/llm-revision-propagation.",
+      "takeaways": [
+        "The paper focuses on revision propagation in conversationally generated artifacts, a specific subset of LLM application tasks.",
+        "The listing reports accuracy improvements but does not detail the specific failure modes or limitations of the evaluated methods.",
+        "The authors provide a code and dataset repository, but the listing does not confirm the repository's current status or completeness."
+      ],
+      "plain": {
+        "reported": "The authors report that the most cost-effective method improves accuracy by 2.2--9.7% on their new benchmark.",
+        "brief": "The authors create a test set for checking if AI models can correctly update parts of a document or code when a user asks for a small change. They test nine different ways of making these updates using several AI models. They say the basic methods get 68.3 to 93 percent correct, and the best cheap method gets 2.2 to 9.7 percent more correct. The summary does not say what specific problems the methods still have.\n\nThe best result they report is a 2.2 to 9.7 percent improvement in correctness when using a method that picks the best answer from three parallel attempts. They say the code and test data are on a GitHub website. The summary does not name the test set or give more details about how they measured correctness.\n\nPeople who work on making AI models better at updating documents or code in conversations might find this useful. People who do not work on this specific type of AI task might find it too specialized for their current work.",
+        "takeaways": [
+          "The paper is about a specific task: updating parts of a document or code when a user asks for a small change in a conversation.",
+          "The summary says the methods get better at being correct, but it does not say what kinds of mistakes they still make.",
+          "The authors say they put their code and test data on a website, but the summary does not say if the website is still working or if everything is there."
+        ]
+      },
+      "actions": [
+        "Verify the GitHub repository to confirm the availability and completeness of the code and dataset.",
+        "Check the full paper for detailed evaluation metrics and specific failure cases not mentioned in the abstract."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/ntt-dkiku/llm-revision-propagation",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-08",
+        "publishedOn": "2026-09-03",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.03254",
+            "upvotes": 3
+          }
+        ]
+      },
+      "trend": {
+        "votes": 3,
+        "rank": 8,
+        "of": 10,
+        "perDay": 1
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 3,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-08T16:41:37.372Z"
+      }
+    },
+    {
+      "id": "2609.04482",
+      "arxivId": "2609.04482",
+      "url": "https://arxiv.org/abs/2609.04482",
+      "topic": "AI",
+      "reported": "The authors report that training on refusal data completed through Escalate increases target-domain refusal from 9.47% to 84.75% on political persuasion with Qwen3-8B.",
+      "metrics": [
+        "increases target-domain refusal from 9.47% to 84.75%",
+        "reduces the mean unsafe-response rate across three broader harmfulness benchmarks from 26.26% to 0.14%",
+        "increases XSTest over-refusal from 2.00% to 74.00%"
+      ],
+      "title": "Safety for Whom? Boundary-Aware Self-Distillation for Controlled LLM Safety Refusal",
+      "authors": "Alejo López-Ávila, Iker García-Ferrero, Jezabel Garcia, Antonio Tiene, Román Orús",
+      "takeaway": "The paper introduces an offline self-generated framework for narrow-boundary safety that controls the trade-off between safety and usability in LLMs.",
+      "brief": "The authors propose a framework for narrow-boundary safety, arguing that deployments require specific refusal boundaries within shared topics rather than broad topic-level safety. They introduce an offline self-generated method using controlled topic generation, coverage repair, and harmful-benign pairs to train and evaluate models on these specific boundaries.\n\nThe strongest reported result is that training on refusal data completed through Escalate increases target-domain refusal from 9.47% to 84.75% on political persuasion with Qwen3-8B. This improvement in target refusal comes with a significant increase in XSTest over-refusal from 2.00% to 74.00%, indicating a sharp trade-off. The authors state that data composition controls this safety and usability trade-off, but the listing does not establish whether the framework generalizes beyond the specific Qwen3-8B model or the political persuasion domain.\n\nResearchers working on fine-grained safety alignment or refusal boundary control may find the specific data composition strategies relevant. Those focused on broad, topic-level safety alignment or models outside the tested scope may find the results less applicable without further verification.",
+      "abstract": "Safety alignment is usually posed as a topic-level question: is this subject harmful? Deployments ask a narrower one. A civics tutor and a public-sector assistant may share a base model yet need different boundaries inside the same topic, refusing targeted political manipulation while still answering factual questions about the same election. We formulate this as narrow-boundary safety and introduce an offline self-generated framework combining controlled topic generation, coverage repair, in-distribution compensation data, and harmful-benign pairs for training and evaluation. Single-shot generation leaves 19.88% of prompts without accepted refusal traces, whereas escalating retries leave 0.20%. On political persuasion with Qwen3-8B, training on refusal data completed through Escalate increases target-domain refusal from 9.47% to 84.75% and reduces the mean unsafe-response rate across three broader harmfulness benchmarks from 26.26% to 0.14%, but increases XSTest over-refusal from 2.00% to 74.00%. In a separate matched comparison, replacing external responses with verified target-model responses reduces over-refusal from 15.20% to 5.20%. Boundary-pair data reduces comply-side over-refusal on held-out pairs from 32.94% to 4.16%, while harmful-side refusal decreases only from 91.88% to 87.72%. These results show that data composition controls the safety and usability trade-off, and that safety alignment should be evaluated on both sides of the intended refusal boundary.",
+      "takeaways": [
+        "The object is an offline self-generated framework for narrow-boundary safety that uses controlled topic generation and harmful-benign pairs to train LLMs on specific refusal boundaries.",
+        "A visible limit is the substantial increase in over-refusal on XSTest from 2.00% to 74.00% when improving target-domain refusal, suggesting a significant usability cost for the reported safety gains.",
+        "The artifact status is not established in the listing, as no code repository or dataset link is provided, and the results are reported only for Qwen3-8B on specific benchmarks."
+      ],
+      "plain": {
+        "reported": "The authors report that training the model on specific refusal examples generated by a retry process improved its ability to refuse targeted political manipulation from 9.47% to 84.75% on the Qwen3-8B model.",
+        "brief": "The authors suggest that safety in AI assistants should be defined by specific boundaries within a topic, not just by the topic itself. For example, a tutor might need to refuse political manipulation while still answering factual questions about an election. They created a method to generate training data that teaches the model these specific boundaries.\n\nThe main result is that this method made the Qwen3-8B model much better at refusing targeted political manipulation, raising the refusal rate from 9.47% to 84.75%. However, this came at a cost: the model started refusing harmless questions much more often, with over-refusal on the XSTest benchmark jumping from 2.00% to 74.00%. The authors note that how the data is mixed determines this balance between safety and usefulness, but it is not clear if this works for other models or topics.\n\nPeople who are trying to make AI models refuse specific types of harmful requests while keeping them helpful might find this useful. People who are interested in general safety or using different AI models might need to check if these results apply to their specific situation.",
+        "takeaways": [
+          "The paper presents a method to teach AI models to refuse specific harmful requests within a topic, rather than refusing the entire topic.",
+          "A clear downside is that making the model better at refusing the targeted harmful request caused it to refuse many harmless questions, significantly reducing its usefulness.",
+          "It is not known if the code or data is available, and the results are only shown for one specific model (Qwen3-8B) and one specific topic (political persuasion)."
+        ]
+      },
+      "actions": [
+        "Verify the specific data composition methods and the exact prompts used for the political persuasion and XSTest benchmarks in the full PDF.",
+        "Check the full PDF for details on the 'coverage repair' and 'in-distribution compensation data' components to assess their reproducibility and generalizability."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-08",
+        "publishedOn": "2026-09-03",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.04482",
+            "upvotes": 3
+          }
+        ]
+      },
+      "trend": {
+        "votes": 3,
+        "rank": 9,
+        "of": 10,
+        "perDay": 1
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 3,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-08T16:41:37.372Z"
+      }
+    },
+    {
+      "id": "2609.03003",
+      "arxivId": "2609.03003",
+      "url": "https://arxiv.org/abs/2609.03003",
+      "topic": "AI",
+      "reported": "The authors report that causal foundation models estimate causal quantities on entirely new datasets using in-context learning without requiring model updates.",
+      "metrics": [],
+      "title": "Causal Foundation Models",
+      "authors": "Christopher Stith, Hossein Rahmani, Jesse C. Cresswell",
+      "takeaway": "The paper provides a practical introduction to causal foundation models, which are pretrained neural networks that estimate causal quantities on new datasets via in-context learning.",
+      "brief": "The authors introduce causal foundation models as pretrained networks that estimate causal effects on new data without fine-tuning. They state that these models use in-context learning to handle entirely new datasets without model updates. The listing does not establish specific quantitative performance limits or benchmark results for these models.\n\nThe authors summarize background in causal inference and machine learning before discussing the new paradigm. They include example code and Jupyter notebooks to support the introduction. No specific numerical metrics or comparative benchmarks are provided in the supplied abstract.\n\nResearchers interested in the intersection of causal inference and foundation models may find this introductory resource useful. Practitioners seeking specific performance guarantees or benchmark comparisons should note the absence of quantitative results in this listing.",
+      "abstract": "Causal inference is the practice of estimating the effect of a treatment or intervention from data. It traditionally requires a bespoke pipeline for every new problem: first proposing a causal mechanism, selecting a compatible estimator, and finally training it. Meanwhile, across diverse settings and modalities, much of machine learning has shifted to the paradigm of foundation models: networks pretrained once at scale and applied to new tasks without fine-tuning. Causal foundation models (CFMs) bring this paradigm to causal inference. CFMs are pretrained neural networks that estimate causal quantities, such as the average treatment effect, on entirely new datasets using in-context learning without requiring model updates. This work provides a practical introduction to this emerging area. We summarize the necessary background in causal inference and machine learning before discussing CFMs. Throughout, we include example code and Jupyter notebooks.",
+      "takeaways": [
+        "The object is a practical introduction to causal foundation models, focusing on their ability to estimate causal quantities via in-context learning.",
+        "A visible limit is the lack of reported quantitative metrics or benchmark comparisons in the supplied abstract.",
+        "The artifact status includes example code and Jupyter notebooks, with a declared repository link provided."
+      ],
+      "plain": {
+        "reported": "The authors report that these new types of AI models can guess the effect of a change on a new set of data without needing to be retrained.",
+        "brief": "The authors explain a new type of AI model called a causal foundation model. These models are trained once on a lot of data and can then answer questions about cause and effect on new data without needing extra training. The text does not say how well these models perform compared to older methods.\n\nThe paper explains the basic ideas of cause and effect and how these new models work. It includes computer code and interactive notebooks to help readers understand. There are no specific scores or test results mentioned in the short summary.\n\nPeople who study how to find causes in data might find this helpful. People who need to know exactly how accurate these models are should look for more detailed test results elsewhere.",
+        "takeaways": [
+          "The paper is a guide to a new AI method for finding causes in data.",
+          "The summary does not show how well the method works in tests.",
+          "The authors provide computer code and interactive notebooks for readers to use."
+        ]
+      },
+      "actions": [
+        "Verify the specific capabilities and limitations of the causal foundation models by reviewing the full PDF and associated notebooks.",
+        "Check the declared GitHub repository for the availability and functionality of the provided example code."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/layer6ai-labs/cfms",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-08",
+        "publishedOn": "2026-09-02",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.03003",
+            "upvotes": 3
+          }
+        ]
+      },
+      "trend": {
+        "votes": 3,
+        "rank": 7,
+        "of": 10,
+        "perDay": 1
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 3,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-08T16:41:37.372Z"
+      }
+    },
+    {
+      "id": "2609.03005",
+      "arxivId": "2609.03005",
+      "url": "https://arxiv.org/abs/2609.03005",
+      "topic": "AI",
+      "reported": "The authors report that their framework maintains coverage while improving conciseness on seven NLP tasks.",
+      "metrics": [],
+      "title": "Unifying Conformal Language Tasks with In-Context Ensembles",
+      "authors": "Xiao Shi Huang, Chen-Yuan Lin, Bruce Kuwahara, Kin Kwan Leung, Jesse C. Cresswell",
+      "takeaway": "The paper claims to introduce a Conformal Relevance framework that uses in-context learning example curation and ensembling to create a score function maintaining coverage while improving conciseness with minimal manual input.",
+      "brief": "The authors propose a framework that replaces hand-engineered LLM prompts with in-context learning example curation and ensembling to score content relevance for conformal prediction.\n\nThey report that the framework maintains coverage while improving conciseness on seven NLP tasks. They also provide a theoretical study on ensemble diversity, including a complementarity condition and a saturation bound. The listing does not specify the exact quantitative improvement in conciseness or the specific datasets used for the seven tasks.\n\nResearchers working on conformal prediction for NLP tasks like summarization or question answering may find the framework relevant. Those not interested in conformal guarantees or LLM-based scoring functions may ignore it.",
+      "abstract": "Many NLP tasks, such as summarization and extractive question answering, reduce to retrieving relevant content from documents under two constraints: coverage, retaining enough pertinent information to achieve some goal, and conciseness, removing as much irrelevant information as possible. Conformal prediction methods have been used to guarantee coverage, and must be optimized for conciseness through design of a score function. State-of-the-art scoring functions use hand-engineered LLM prompts asking the model to rate the importance of content, but manual prompt engineering is labor-intensive and task-specific. We introduce the Conformal Relevance framework which uses in-context learning example curation and ensembling to create a score function which maintains coverage while improving conciseness with minimal manual input. We demonstrate this framework's application on seven NLP tasks, and also theoretically study the impact of diversity for ensembled conformal scores, giving a complementarity condition that characterizes when ensembling improves worst-case sentence scores, and a saturation bound on ensemble improvement.",
+      "takeaways": [
+        "The object is a scoring framework for conformal prediction that uses in-context ensembling to reduce manual prompt engineering.",
+        "A visible limit is the reliance on in-context learning example curation, which may still require task-specific tuning despite the claim of minimal manual input.",
+        "The artifact status is established by the provided GitHub repository URL, though the listing does not confirm the code's completeness or reproducibility."
+      ],
+      "plain": {
+        "reported": "The authors report that their method keeps the required amount of relevant information while making the output shorter on seven natural language processing tasks.",
+        "brief": "The authors suggest a new way to score how important parts of a text are, using examples shown to the AI model instead of manually writing instructions. This helps ensure the AI keeps enough relevant information while removing unnecessary parts.\n\nThey say this method works on seven different text tasks. They also provide mathematical rules for when using multiple AI models together helps. The summary does not say exactly how much shorter the outputs became or which specific texts were tested.\n\nPeople who build AI systems that need to guarantee they keep important information from texts might find this useful. People who do not care about these specific guarantees or AI scoring methods might not need to look at it.",
+        "takeaways": [
+          "The main thing is a system for scoring text importance that uses AI examples instead of manual instructions.",
+          "A possible drawback is that choosing the right examples for the AI might still require some work for each specific task.",
+          "The authors provide a link to their code, but the summary does not say if the code is complete or easy to use."
+        ]
+      },
+      "actions": [
+        "Verify the specific datasets and quantitative conciseness improvements by reading the full PDF, as the abstract only mentions 'seven NLP tasks' without naming them.",
+        "Check the provided GitHub repository to confirm if the code implements the theoretical complementarity condition and saturation bound described in the abstract."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/layer6ai-labs/conformal-relevance",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-08",
+        "publishedOn": "2026-09-02",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.03005",
+            "upvotes": 2
+          }
+        ]
+      },
+      "trend": {
+        "votes": 2,
+        "rank": 10,
+        "of": 10,
+        "perDay": 0
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 2,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-08T16:41:37.372Z"
+      }
+    }
+  ]
+}
