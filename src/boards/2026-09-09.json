@@ -1,0 +1,652 @@
+{
+  "date": "2026-09-09",
+  "label": "Wed, Sep 9",
+  "minutes": 10,
+  "poolSize": 164,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-09-09T16:42:54.642Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2609.08183",
+      "arxivId": "2609.08183",
+      "url": "https://arxiv.org/abs/2609.08183",
+      "topic": "AI",
+      "reported": "The authors report that post-training raises the macro-average from 58.94 to 64.87 at 4B and from 65.60 to 69.04 at 9B across eleven benchmarks.",
+      "metrics": [
+        "macro-average from 58.94 to 64.87 at 4B",
+        "macro-average from 65.60 to 69.04 at 9B"
+      ],
+      "title": "NeoHorse-1: Towards Recursive Self-Improvement via Agentic Post-Training with Routing Harness",
+      "authors": "NeoHorse Team, Guoliang Cao, Guohao Dai, Tianyu Guo, Kai Han, Hailin Hu, Zihan Jiang, Xiang Kuang, Boxun Li, Yulong Li, Zehua Pei, Yuchuan Tian, Jiamin Wang, Yu Wang, Yunhe Wang, Yihong Wu, Haiyang Xu, Shuo Zhang, Hang Zhou, Siyang Cheng, Jiayu Fan, Wei He, Qingrui Jiao, Hongguang Li, Zhiyuan Li, Runke Liu, Xi Liu, Xinchen Liu, Sinno Jialin Pan, Yi Ren, Liuyang Song, Chenyu Wang, Bei Yu, Quanlu Zhang, Xiangyu Zhang, Mengyu Zheng, Yingjie Zong",
+      "takeaway": "NeoHorse-1 is a family of agent-native models that uses agentic post-training with a routing harness to explore recursive self-improvement.",
+      "brief": "The authors present NeoHorse-1, a system combining a heterogeneous model pool with intelligent routing to record capability demands and interaction data for training. They describe a process where these records are converted into training examples and used for supervised fine-tuning and on-policy distillation, creating a feedback loop between evaluation and training mixture.\n\nThe authors report that this post-training process raises the macro-average score from 58.94 to 64.87 for the 4B model and from 65.60 to 69.04 for the 9B model across eleven benchmarks. They state this substantially narrows the aggregate gap between the post-trained 4B model and the 9B base model, though the listing does not specify the baseline models or detailed benchmark breakdowns.\n\nResearchers interested in agentic post-training, routing mechanisms, or recursive self-improvement loops may find the described architecture and curriculum relevant. Those seeking specific benchmark comparisons against external state-of-the-art models or detailed ablation studies should verify these details in the full paper.",
+      "abstract": "Recursive self-improvement (RSI) requires a concrete mechanism through which an AI system observes its capabilities and converts that evidence into the next round of learning. We present NeoHorse-1, a family of agent-native models developed to explore this path through agentic post-training. Our system combines a heterogeneous model pool with intelligent routing, recording the predicted capability demand, selected service tier, and subsequent interaction for each user turn. These records are converted into training examples that preserve interleaved reasoning, tool calls, and harness context, and are admitted through structural validation, six-dimensional semantic evaluation, and subscene-level labeling. Routing signals organize supervised fine-tuning into a three-stage curriculum and extend to routing-guided on-policy distillation, where a teacher supervises student-generated responses under the same progression. Capability-guided allocation then converts evaluation feedback into the next training mixture, closing an evaluation-selection-update loop in which what the system learns to do shapes what it learns from next. Across eleven benchmarks covering harness-based agents, tool use, coding, and instruction following, post-training raises the macro-average from 58.94 to 64.87 at 4B and from 65.60 to 69.04 at 9B, substantially narrowing the aggregate gap between the post-trained 4B model and the 9B base model. NeoHorse-1 provides an initial prototype of this feedback-driven process and a path toward harness-mediated RSI across successive iterations.",
+      "takeaways": [
+        "The object is a family of agent-native models using a routing harness to generate training data from interaction records.",
+        "A visible limit is that the reported results are macro-averages across eleven benchmarks without specifying the individual benchmark names or external baselines.",
+        "The artifact status is indicated by a declared code repository URL, but the listing does not confirm the availability of model weights or specific training scripts."
+      ],
+      "plain": {
+        "reported": "The authors state that their training method improved the average score across eleven tests from 58.94 to 64.87 for the smaller model and from 65.60 to 69.04 for the larger model.",
+        "brief": "The authors describe a system called NeoHorse-1 that uses a group of different AI models and a routing system to decide which model handles each user request. The system records these decisions and interactions, then uses them to create new training data to improve the models further.\n\nThey report that this training process improved the average performance scores for both the smaller and larger versions of their model across a set of eleven different tests. They claim this makes the smaller, improved model perform much closer to the larger, unimproved model, but they do not list which specific tests were used or compare against other leading models from other companies.\n\nPeople working on how AI systems can improve themselves through their own usage data or how to manage multiple AI models together might find this useful. People looking for detailed comparisons with other specific AI models or exact test results should check the full document for more details.",
+        "takeaways": [
+          "The main subject is a set of AI models that use a routing system to log their own interactions and use that log to train themselves.",
+          "A clear limitation is that the reported scores are averages across eleven tests, but the specific names of those tests and the models they were compared against are not listed in the summary.",
+          "The status of the software is that a code link is provided, but it is not confirmed in the summary whether the actual AI model files or specific training instructions are included."
+        ]
+      },
+      "actions": [
+        "Verify the specific eleven benchmarks and baseline models used for the macro-average calculations in the full PDF.",
+        "Check the declared GitHub repository for the availability of the NeoHorse-1 model weights and the routing harness implementation."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/TokenRhythm/NeoHorse",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-09",
+        "publishedOn": "2026-09-08",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.08183",
+            "upvotes": 279
+          }
+        ]
+      },
+      "trend": {
+        "votes": 279,
+        "rank": 1,
+        "of": 40,
+        "perDay": 279
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 279,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-08"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-09T16:42:54.642Z"
+      }
+    },
+    {
+      "id": "2609.08936",
+      "arxivId": "2609.08936",
+      "url": "https://arxiv.org/abs/2609.08936",
+      "topic": "AI",
+      "reported": "The authors report that AuK-Flash achieves a 4.5 wall-clock speedup over the full model under matched conditions.",
+      "metrics": [
+        "4.5 wall-clock speedup"
+      ],
+      "title": "AuK Technical Report: An Open-Source Foundational Model for Speech Generation and Editing",
+      "authors": "Ziyang Ma, Zhikang Niu, Wenming Tu, Tianrui Wang, Ruiqi Yan, Junxi Liu, Yanru Huo, Nickk Huang, Yang Liu, Qicong Xie, Zeyu Xie, Hui Wang, Haitao Li, Zixuan Jiang, Yalin Li, Jie Fang, Yifan Duan, Zeyue Tian, Guangzheng Li, Haina Zhu, Shuyi Wang, Jinwen Wang, Mingyu Cui, Tian Tan, Auden, Sen Liang, Steve Yves, Shan Yang, Liefeng Bo, Zilong Zheng, Kai Yu, Eng-Siong Chng, Xie Chen",
+      "takeaway": "The paper introduces AuK, an open-source foundational model that unifies speech generation and editing through a common interface of natural-language instructions and audio context.",
+      "brief": "The authors present AuK as an open-source foundational model designed to unify speech generation and editing using natural-language instructions and audio context. They state the model combines a multimodal large language model, a VAE trained on speech, general audio, and music, and a hybrid rectified-flow Transformer for generation.\n\nThe authors report that AuK-Flash performs 4-step inference without classifier-free guidance and achieves a 4.5 wall-clock speedup over the full model under matched conditions. They claim leading performance on zero-shot and instruction-controlled speech generation and general instruction-guided editing, while remaining competitive on signal-level restoration tasks. The listing does not specify the exact benchmarks or datasets used for these performance claims.\n\nResearchers working on speech generation, audio editing, or multimodal audio models may find the unified interface and open-source release relevant. Those requiring specific signal-level restoration metrics or non-open-source alternatives may look elsewhere. The listing does not provide detailed error rates or subjective evaluation scores.",
+      "abstract": "We introduce AuK, an open-source foundational model that unifies speech generation and editing through a common interface of natural-language instructions and audio context. To support this broad capability set, we construct approximately 3.03 billion instruction--audio instances and 1.95 million hours of effective supervision across five task families: speech generation, content editing, enhancement and separation, paralinguistic editing, and acoustic editing. AuK combines a multimodal large language model for semantic conditioning, an VAE jointly trained on speech, general audio, and music for acoustic conditioning, and a hybrid rectified-flow Transformer that performs dual-stream MMDiT blocks followed by unified single-stream DiT blocks for generation. Training begins with generation-only warm-up and proceeds to joint generation--editing pre-training. We then apply complementary post-training strategies: human-feedback preference optimization for open-ended editing and reward-based reinforcement learning for speech generation. To reduce inference cost, we further distill the model with consistency initialization and task-routed Decoupled DMD. The resulting AuK-Flash performs 4-step inference without classifier-free guidance and achieves a 4.5 wall-clock speedup over the full model under matched conditions. Experiments demonstrate leading performance on zero-shot and instruction-controlled speech generation and general instruction-guided editing, while remaining competitive on signal-level restoration tasks. We release both the source code and model weights to support reproducibility and further research.",
+      "takeaways": [
+        "The object is an open-source foundational model for speech generation and editing that uses a common interface of natural-language instructions and audio context.",
+        "A visible limit is that the listing claims leading performance on generation and editing but does not specify the exact benchmarks or datasets used to measure this.",
+        "The artifact status is that the authors release both source code and model weights to support reproducibility and further research."
+      ],
+      "plain": {
+        "reported": "The authors report that the faster version of their model, AuK-Flash, runs 4.5 times faster than the full model when tested under the same conditions.",
+        "brief": "The authors present AuK as a free, open-source AI model designed to handle both creating new speech and editing existing audio using simple text commands and audio context. They state the model uses a large language model for understanding meaning, a component trained on speech, general audio, and music for sound quality, and a specific type of neural network for generating the final audio.\n\nThe authors report that the faster version, AuK-Flash, can generate audio in just 4 steps without needing a specific guidance technique and runs 4.5 times faster than the full model. They claim it performs at a leading level for creating new speech and editing audio based on instructions, and is competitive for restoring audio signal quality. The summary does not list the specific tests or datasets used to prove these performance claims.\n\nPeople working on creating or editing speech with AI might find this useful because it combines these tasks and is freely available. Those who need specific numbers on how well it restores audio quality or who prefer non-free models might look at other options. The summary does not give detailed scores on how often the model makes errors or how humans rated the output.",
+        "takeaways": [
+          "The main thing is a free AI model that can both create new speech and edit existing audio using text commands and audio context.",
+          "A clear limitation is that the summary says it performs well but does not say which specific tests or datasets were used to measure that performance.",
+          "The status of the tools is that the authors have made both the code and the model files available for others to use and study."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmarks and datasets used for the claimed leading performance on zero-shot and instruction-controlled speech generation by reading the full PDF.",
+        "Check the GitHub repository for the released source code and model weights to confirm the availability of the AuK-Flash variant and its inference setup."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Tencent-Hunyuan/AuK",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-09",
+        "publishedOn": "2026-09-08",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.08936",
+            "upvotes": 146
+          }
+        ]
+      },
+      "trend": {
+        "votes": 146,
+        "rank": 2,
+        "of": 40,
+        "perDay": 146
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 146,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-08"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-09T16:42:54.642Z"
+      }
+    },
+    {
+      "id": "2609.08977",
+      "arxivId": "2609.08977",
+      "url": "https://arxiv.org/abs/2609.08977",
+      "topic": "AI",
+      "reported": "The authors report that Gander maintains natural spoken dialogue capabilities of SOTA open source models while achieving competitive performance in omni interaction, measured via internal human evaluations.",
+      "metrics": [],
+      "title": "Omni Interaction Agent Technical Report",
+      "authors": "Orantqing, Shengpeng Ji, Junlong Tong, Jialong Zuo, Dongjie Fu, Di Cao, Yangzhuo Li, Shangda Wu, Franz, Evan, Theron Veyra, Changhao Pan, Jingyu Lu, Dongchao Yang, Zhifei Xie, Yang Tan, Xiaoyu Shen, Xiaoda Yang, Wenfu Wang, Teddysun, Steveyves, Zhou Zhao, Bryanytian",
+      "takeaway": "The paper presents Gander, an end-to-end model unifying omni perception, realtime interaction, and agentic capabilities within a single framework.",
+      "brief": "The authors present Gander, an end-to-end model unifying omni perception, realtime interaction, and agentic capabilities within a single framework. They report that internal human evaluations show Gander maintains natural spoken dialogue capabilities of SOTA open source models while achieving competitive performance in omni interaction. The listing does not specify quantitative benchmarks, dataset sizes, or failure rates for the reported robustness in challenging real-world scenarios.\n\nThe strongest reported evidence is qualitative, relying on internal human evaluations for conversational ability, omni understanding, interactive capability, and agentic intelligence. The authors state the model handles background noise, multi-party interactions, and backchannel communication, but the listing provides no numerical metrics, error rates, or comparative baselines to verify these claims. The architectural details, such as the Cerebellum-Brain collaborative framework and streaming Thinker-Talker architecture, are described but not linked to specific performance numbers in the abstract.\n\nResearchers working on full-duplex multimodal agents or real-time interaction systems may find the architectural design and reported robustness relevant. Those requiring quantitative benchmark comparisons or specific dataset evaluations for agentic tasks may find the listing insufficient without accessing the full report or code.",
+      "abstract": "In this work, we present Gander, an end-to-end model that unifies omni perception, realtime interaction, and agentic capabilities within a single framework. In contrast to turn-based conventional paradigms, Gander continuously receives streaming inputs across multiple modalities, including video, speech, and text, enabling natural full-duplex interaction in both everyday conversations and complex workflow-oriented agent scenarios. Users can interrupt the model at any time, while the model can also proactively provide intermediate feedback or ask follow up questions. To natively support these capabilities, Gander adopts two key architectural designs: 1) It employs a Cerebellum-Brain collaborative framework, in which the Cerebellum is responsible for realtime interaction and omni conversational capabilities, while the Brain handles complex reasoning and higher-level agentic tasks. The two components interact continuously through tool calling and the agent orchestration runtime. 2) The Cerebellum is built upon a streaming Thinker-Talker architecture, user inputs and model outputs are further flattened into an ordered token stream at the chunk level, providing a unified representation for low latency, continuous interaction. We conduct comprehensive evaluations of Gander across four dimensions: conversational ability, omni understanding, interactive capability, and agentic intelligence. Internal human evaluations demonstrate that Gander maintains the natural and expressive spoken dialogue capabilities of SOTA open source models while achieving competitive performance in omni interaction. Gander also demonstrates robustness in challenging real-world scenarios, including background noise interference, multi-party interactions, and backchannel communication. We release Gander together with its models, code, and data to facilitate further research and development in the community.",
+      "takeaways": [
+        "The object is an end-to-end model named Gander that unifies omni perception, realtime interaction, and agentic capabilities.",
+        "The visible limit is the absence of quantitative metrics in the listing, with evidence relying solely on internal human evaluations and qualitative descriptions of robustness.",
+        "The artifact status is that the authors state they release Gander together with its models, code, and data, with a provided GitHub repository URL."
+      ],
+      "plain": {
+        "reported": "The authors report that Gander maintains natural spoken dialogue capabilities of SOTA open source models while achieving competitive performance in omni interaction, measured via internal human evaluations.",
+        "brief": "The authors present Gander, a single model that combines seeing, hearing, and reading with real-time conversation and task-doing abilities. They say that internal human tests show Gander talks naturally like the best open-source models and performs well in mixed-media interactions. The summary does not give specific scores, test sizes, or error rates for the claimed robustness in noisy or complex situations.\n\nThe main proof given is based on human judges rather than numbers, covering conversation, understanding, interaction, and task handling. The authors claim the model works well with background noise, multiple speakers, and quick acknowledgments, but the summary lacks specific numbers or comparisons to other models to prove these points. The design details, like the Cerebellum-Brain split and streaming token processing, are explained but not tied to specific performance figures in the text.\n\nPeople building systems that talk and act in real time with multiple senses might find the design and robustness claims useful. People needing specific test scores or dataset details for task performance might find the summary too vague without checking the full document or code.",
+        "takeaways": [
+          "The thing being described is a single model called Gander that combines seeing, hearing, reading, real-time talking, and doing tasks.",
+          "The clear limitation is that the summary has no numbers, relying only on human judges and general descriptions of how well it handles difficult situations.",
+          "The status of the tools is that the authors say they are releasing the model, code, and data, with a link to a GitHub page provided."
+        ]
+      },
+      "actions": [
+        "Verify the quantitative performance claims and specific benchmark results by reviewing the full PDF of the technical report.",
+        "Inspect the released code and data at the provided GitHub repository to assess the reproducibility of the Cerebellum-Brain collaborative framework and streaming Thinker-Talker architecture."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Omni-Interaction-Gander/Omni-Interaction-Agent",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-09",
+        "publishedOn": "2026-09-08",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.08977",
+            "upvotes": 94
+          }
+        ]
+      },
+      "trend": {
+        "votes": 94,
+        "rank": 3,
+        "of": 40,
+        "perDay": 94
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 94,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-08"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-09T16:42:54.642Z"
+      }
+    },
+    {
+      "id": "2609.08798",
+      "arxivId": "2609.08798",
+      "url": "https://arxiv.org/abs/2609.08798",
+      "topic": "AI",
+      "reported": "The authors report that OPRD achieves higher performance with fewer student updates than existing RL and distillation approaches in both successive model transfer and multi-teacher distillation.",
+      "metrics": [],
+      "title": "Eliciting Weak-to-Strong Generalization with On-Policy Reverse Distillation",
+      "authors": "Youngrok Park, Sangmin Bae, Hojung Jung, Jongwoo Ko, Yunseon Choi, Young Jin Kim, Pashmina Cameron, Aaron Courville, Se-Young Yun",
+      "takeaway": "The paper introduces On-Policy Reverse Distillation (OPRD) to enable stronger models to learn from weaker supervisors and surpass them by amplifying verifier-driven policy gradients along the teacher's policy shift direction.",
+      "brief": "The authors propose On-Policy Reverse Distillation (OPRD), a method that evaluates the teacher's policy shift relative to its reference policy on student rollouts. It amplifies the component of the student's verifier-driven policy gradient along that direction to accelerate learning beyond the teacher's capacity ceiling.\n\nThe authors report that OPRD achieves higher performance with fewer student updates than existing RL and distillation approaches in successive model transfer and multi-teacher distillation. Response-style analysis suggests OPRD students remain closer to models trained with verifier-based RL alone than to their weak teachers. The listing does not specify the exact benchmarks, model scales, or quantitative performance gaps used to measure these results.\n\nResearchers working on model distillation, reinforcement learning from verifiers, or successive model generation may find this relevant. Those not focused on weak-to-strong generalization or policy optimization may ignore it.",
+      "abstract": "Weak-to-strong generalization asks whether stronger models can learn from weaker supervisors and surpass them. This question is particularly important for successive model generations and multi-domain consolidation, where repeating frontier-scale post-training from scratch can be prohibitively expensive. Yet conventional distillation treats the weak teacher as an optimization target, potentially imposing its capacity ceiling on the student. We introduce On-Policy Reverse Distillation (OPRD), which evaluates the teacher's policy shift relative to its reference policy on student rollouts and amplifies the component of the student's verifier-driven policy gradient along that direction. By rescaling only verifier-supported updates, OPRD preserves the stationary points of policy optimization while accelerating learning beyond the teacher. In both successive model transfer and multi-teacher distillation, OPRD achieves higher performance with fewer student updates than existing RL and distillation approaches. Response-style analysis shows that OPRD students remain closer to models trained with verifier-based RL alone than to their weak teachers, suggesting that teacher guidance accelerates rather than redirects the student's own optimization. Results in conventional strong-to-weak distillation further demonstrate that OPRD effectively combines verifier-driven policy optimization with teacher guidance regardless of capacity ordering.",
+      "takeaways": [
+        "The object is a distillation method that uses teacher policy shifts to guide student policy gradients without imposing the teacher's capacity ceiling.",
+        "The visible limit is that the listing does not specify the exact benchmarks, model sizes, or quantitative performance metrics used to demonstrate the claimed improvements.",
+        "The artifact status is that a code repository is declared at https://github.com/raymin0223/on_policy_reverse_distillation, but its functionality and completeness are not verified in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that their method, OPRD, gets better results using fewer training steps than other reinforcement learning and distillation methods when transferring knowledge between model generations or combining multiple teachers.",
+        "brief": "The authors propose a new method called On-Policy Reverse Distillation (OPRD). It looks at how a weaker teacher model's behavior changes compared to its original state when looking at the student model's outputs. It then boosts the parts of the student's learning signal that align with this change, helping the student learn faster without being limited by the teacher's abilities.\n\nThe authors say OPRD performs better and needs fewer training steps than other methods in two scenarios: passing knowledge from one model generation to the next, and combining knowledge from multiple teachers. Analysis of the student's responses suggests the student stays closer to a model trained only with its own verifier than to the weak teacher. The listing does not say which specific tests, model sizes, or exact performance numbers were used to prove these claims.\n\nPeople working on making AI models learn from smaller models, using reinforcement learning with checkers, or updating models over time might find this useful. People not working on these specific topics might not need to read it.",
+        "takeaways": [
+          "The method is a way to teach a stronger AI model from a weaker one by using the weaker model's changes in behavior to guide the stronger model's learning, without limiting the stronger model's potential.",
+          "The main gap is that the summary does not list the specific tests, model sizes, or exact numbers showing how much better the method is.",
+          "The authors provide a link to a code repository, but the summary does not confirm if the code works or is complete."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmarks, model scales, and quantitative performance gaps by reading the full PDF.",
+        "Check the declared code repository to confirm it contains the implementation of On-Policy Reverse Distillation (OPRD) and matches the described method."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/raymin0223/on_policy_reverse_distillation",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-09",
+        "publishedOn": "2026-09-08",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.08798",
+            "upvotes": 77
+          }
+        ]
+      },
+      "trend": {
+        "votes": 77,
+        "rank": 4,
+        "of": 40,
+        "perDay": 77
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 77,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-08"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-09T16:42:54.642Z"
+      }
+    },
+    {
+      "id": "2609.06140",
+      "arxivId": "2609.06140",
+      "url": "https://arxiv.org/abs/2609.06140",
+      "topic": "Security",
+      "reported": "The authors report that a checksum-verified reconstruction of the public wiki export separates the decline in retained writes from later administrative cleanup.",
+      "metrics": [],
+      "title": "Counter-Swarm Doctrine: Containing Coordinated Agent Intrusions",
+      "authors": "Gregory N Frank",
+      "takeaway": "The paper proposes a revisable coordination episode as the operational unit of defence for containing coordinated agent intrusions.",
+      "brief": "The authors argue that security assessments require evidence from multiple executions and artifacts, defining unsanctioned coordination relative to collaboration and delegated-authority policy.\n\nThey describe a proposed evaluation comparing isolated actions, rolling windows, known groups, and prospectively discovered episodes at matched review cost and false-alert workload, measuring harmful outcomes across all assigned population runs. The listing states the contribution is an incident-grounded position, descriptive analysis, and evaluation design, without claiming a new detector or measured containment benefit.\n\nResearchers studying multi-agent security architectures or incident response workflows may find the episode definition relevant. Those seeking implemented detection tools or quantitative containment results should note the listing describes a design rather than a deployed system.",
+      "abstract": "Agents can turn shared infrastructure into a channel for coordinated intrusion. The Hugging Face incident and a separate public-wiki investigation show why a security assessment may need evidence from several executions and the artifacts they leave behind. We argue that the operational unit of defence should be a revisable coordination episode linking observed transfers, task authority, and response history. The central research problem is prospective episode discovery: finding which actions belong together before an evaluator supplies their membership. We define unsanctioned coordination relative to collaboration and delegated-authority policy, connect storage-mediated coordination to stigmergy, and specify the evidence needed to distinguish influence from common causes. First-contact signals are one possible input to discovery; the design also follows inherited state and later use. A proposed evaluation compares isolated actions, rolling windows, known groups, and prospectively discovered episodes at matched review cost and false-alert workload. It measures harmful outcomes across all assigned population runs and tests recurrence after channel closure and state quarantine. A checksum-verified reconstruction of the public wiki export separates the decline in retained writes from later administrative cleanup. The contribution is an incident-grounded position, descriptive analysis, and evaluation design. It makes the recommendation to monitor across executions testable without claiming a new detector or a measured containment benefit.",
+      "takeaways": [
+        "The object is a conceptual framework for episode discovery and an evaluation design, not a software artifact.",
+        "The visible limit is the absence of reported quantitative results or a deployed detector in the supplied abstract.",
+        "The artifact status is undefined; no code repository or implementation is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that they used a checksum-verified reconstruction of a public wiki export to distinguish a drop in saved writes from later administrative cleanup.",
+        "brief": "The authors argue that security checks need evidence from multiple runs and leftover files, defining unauthorized coordination based on collaboration and authority rules.\n\nThey describe a planned test comparing single actions, time windows, known groups, and newly found episodes at the same review cost and false alarm rate, measuring harmful outcomes across all assigned population runs. The listing states the contribution is an incident-based position, descriptive analysis, and evaluation design, without claiming a new detector or measured containment benefit.\n\nPeople studying security for groups of automated agents or incident response processes may find the episode definition useful. People looking for working detection tools or numbers showing containment should note the listing describes a plan rather than a finished system.",
+        "takeaways": [
+          "The item is a conceptual framework for finding episodes and a test plan, not a software product.",
+          "The visible limit is the lack of reported numbers or a working detector in the provided abstract.",
+          "The artifact status is unknown; no code link or build is listed in the metadata."
+        ]
+      },
+      "actions": [
+        "Verify the full PDF to confirm whether the proposed evaluation design includes executable code or only theoretical specifications.",
+        "Check the Hugging Face incident and public-wiki investigation references cited in the abstract to assess the empirical grounding of the claims."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.CR",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "listing": {
+        "listedOn": "2026-09-09",
+        "publishedOn": "2026-09-05",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.06140",
+            "upvotes": 0
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-05"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-09T16:42:54.642Z"
+      }
+    },
+    {
+      "id": "2609.05438",
+      "arxivId": "2609.05438",
+      "url": "https://arxiv.org/abs/2609.05438",
+      "topic": "Health",
+      "reported": "The authors report that Champollion consistently outperforms neuroimaging and general-purpose foundation models in a comprehensive benchmark.",
+      "metrics": [],
+      "title": "Representation learning of human cortical folding to reveal long lasting neurodevelopmental signatures",
+      "authors": "Julien Laval, Robin Guiavarch, Antoine Dufournet, Racim Menasria, Barth\\'el\\'emy Drabczuk, Cristobal Mendoza, Saeb Tounsi, Chikh Abdelghani Baroud, Merieme Bourenane, Vanessa Troiani, William Snyder, Marisa A Patti, Myl\\`ene Moyal, Marion Plaze, Arnaud Cachia, Federica Santacroce, Giorgia Committeri, Claire Cury, Kevin De Matos, Olivier Colliot, Zhong Yi Sun, Clara Fischer, Vincent Frouin, Pietro Gori, Denis Rivi\\`ere, Jo\\\"el Chavas, Jean-Fran\\c{c}ois Mangin",
+      "takeaway": "The paper introduces Champollion, a self-supervised learning framework that learns interpretable local representations of cortical folding from structural MRI.",
+      "brief": "The authors propose Champollion, a self-supervised framework for learning local cortical folding representations from structural MRI, optimized on folding-related tasks.\n\nThey report that the model captures known folding patterns across regions and external datasets, outperforms other foundation models in a benchmark, and identifies folding signatures linked to incomplete hippocampal inversion, prematurity, and maternal smoking. The listing does not specify the exact benchmark metrics, dataset sizes, or statistical thresholds used for these comparisons.\n\nResearchers studying neurodevelopmental markers, cortical morphometry, or self-supervised neuroimaging may find the framework relevant. Those requiring specific quantitative performance figures or access to the code may need to consult the full text, as no repository is declared.",
+      "abstract": "The human brain folds in utero, primarily during late gestation. Shortly after birth, cortical folding patterns are established and remain stable thereafter, making them promising early neurodevelopmental markers. Yet it is unclear whether representations given by current neuroimaging foundation models capture cortical folding variability. Here, we introduce Champollion, a self-supervised learning framework that learns interpretable local representations of cortical folding from structural MRI. Optimized on representative folding-related tasks, Champollion accurately captures known folding patterns across cortical regions and external datasets. In a comprehensive benchmark, it consistently outperforms neuroimaging and general-purpose foundation models. Furthermore, Champollion reveals richer genetic associations than conventional morphometric descriptors and identifies localized folding signatures associated with incomplete hippocampal inversion, prematurity, and maternal smoking. These results establish cortical folding as a rich and largely untapped source of neurodevelopmental information and illustrate how pre-processing and architectural inductive biases can recover biologically meaningful signals overlooked by current generalist foundation models.",
+      "takeaways": [
+        "The object is a self-supervised representation learning model for cortical folding, not a new imaging acquisition protocol.",
+        "The listing claims superior performance over generalist models but does not provide the specific quantitative metrics or benchmark names used for that comparison.",
+        "No code repository is declared in the metadata, so the artifact status is unverified and reproducibility cannot be confirmed from this listing alone."
+      ],
+      "plain": {
+        "reported": "The authors state that their model performs better than other existing AI models for brain scans in a test they describe as comprehensive.",
+        "brief": "The researchers created a computer program called Champollion that learns to understand the wrinkles on the surface of the brain from standard MRI scans. They say it does this better than other general AI models and can find patterns linked to specific developmental conditions like being born too early or a mother smoking during pregnancy. However, the summary does not list the exact scores or the specific tests used to prove it is better.\n\nThis is useful for scientists who study how the brain develops or who use AI to analyze brain images. It is less useful for people who need to run the code immediately, because the summary does not say where to download it.\n\nThe main caution is that while the authors claim their model is better, they do not provide the specific numbers in this summary. You would need to read the full paper to see the actual performance data.",
+        "takeaways": [
+          "This is a new AI tool for analyzing brain wrinkles, not a new medical test or scanner.",
+          "The summary says the tool is better than others but does not show the specific scores or test names to prove it.",
+          "There is no link to the computer code in the summary, so you cannot verify if it works without finding the full paper."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark names, dataset splits, and statistical significance values by reading the full PDF.",
+        "Check the paper’s supplementary materials or author correspondence for code availability, as no repository URL is provided in the listing."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-09",
+        "publishedOn": "2026-09-09",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.05438"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-09"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-09T16:42:54.642Z"
+      }
+    },
+    {
+      "id": "2609.05469",
+      "arxivId": "2609.05469",
+      "url": "https://arxiv.org/abs/2609.05469",
+      "topic": "Physics",
+      "reported": "The authors report that Lee-Yang zeros in these spin chains exhibit distinct topological evolutions as the Dzyaloshinskii-Moriya coupling strength increases, measured across uniform, periodic, and quasiperiodic chain configurations.",
+      "metrics": [
+        "lengths 5 and 8"
+      ],
+      "title": "Lee-Yang zeros of modulated XY spin chains with Dzyaloshinskii-Moriya interaction: zero-contour topology and quantum phase-diagram reconstruction",
+      "authors": "Hong Jiang, Xiang-Ping Jiang, Yan-Chao Li",
+      "takeaway": "The paper claims to establish a direct correspondence between Lee-Yang zero topology and band deformation for reconstructing quantum phase diagrams in modulated XY spin chains.",
+      "brief": "The authors investigate Lee-Yang zeros in inhomogeneous anisotropic XY spin chains with Dzyaloshinskii-Moriya interactions, focusing on their connection to quantum phase transitions.\n\nThey report distinct topological evolutions of zeros as DM coupling increases, including collapse toward the real axis for uniform chains and bifurcation for periodic chains. Analytical derivations attribute this behavior to DM-induced shifts of folded bands and anisotropic pairing at particle-hole band crossings.\n\nResearchers studying quantum phase transitions in spin chains or topological properties of Lee-Yang zeros may find this relevant. Those not working on complex-plane zero contours or DM interactions may ignore it.",
+      "abstract": "We investigate the Lee--Yang zeros (LYZ) of inhomogeneous anisotropic XY spin chains with Dzyaloshinskii--Moriya (DM) interactions in the complex transverse-field plane, focusing on their fundamental connection to quantum phase transitions. We systematically study uniform chains, period-2 and period-3 modulated chains, and Fibonacci quasiperiodic chains of lengths 5 and 8. As the DM coupling strength $D$ increases, the LYZ exhibit qualitatively distinct topological evolutions on the complex plane: the complex zeros of the uniform chain collapse toward the real axis; periodic chains feature either bifurcation of closed zero contours before all zeros become real or a single re-emergence of complex zeros; quasiperiodic chains exhibit repeated annihilation and revival of complex zeros. Analytical derivations demonstrate that this diverse behavior originates from DM-induced shifts of folded bands and the modulation of zero positions by anisotropic pairing at particle--hole band crossings. Our results establish a direct correspondence between LYZ topology and band deformation: isolated contact points of zeros with the real axis correspond to discrete quantum critical fields, while continuous real-zero intervals directly identify gapless chiral phases. Accordingly, beyond locating phase boundaries, LYZ can distinguish characteristic phases and serve as an intuitive probe for band folding and phase diagram restructuring.",
+      "takeaways": [
+        "The object is the topological evolution of Lee-Yang zeros in complex transverse-field planes for specific spin chain geometries.",
+        "The listing does not establish a specific numerical limit or artifact for the reported topological transitions.",
+        "No code or data repository is declared in the supplied metadata."
+      ],
+      "plain": {
+        "reported": "The authors report that special mathematical points called Lee-Yang zeros change shape in predictable ways as a specific magnetic interaction gets stronger, observed in different types of atom chains.",
+        "brief": "The authors look at mathematical points called Lee-Yang zeros in chains of magnetic atoms that have a specific type of spin interaction. They want to see how these points relate to changes in the material's quantum state.\n\nThey found that as the strength of the spin interaction increases, the points move in different ways depending on the chain structure. For simple chains, they move toward a line. For repeating patterns, they split or reappear. For irregular patterns, they disappear and reappear repeatedly. The authors explain this using mathematical formulas about how energy bands shift.\n\nPeople who study how magnetic materials change state or who study these specific mathematical points might find this useful. People who do not work with magnetic atom chains or complex mathematical geometry might not need this paper.",
+        "takeaways": [
+          "The subject is how specific mathematical points move in a complex number space for magnetic atom chains.",
+          "The provided text does not state a specific numerical limit or error for these movements.",
+          "The authors did not provide a link to their computer code or data files."
+        ]
+      },
+      "actions": [
+        "Verify the analytical derivations regarding DM-induced shifts of folded bands in the full PDF.",
+        "Check the specific chain lengths and modulation patterns used for the quasiperiodic Fibonacci chains."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "cond-mat.stat-mech"
+      ],
+      "listing": {
+        "listedOn": "2026-09-09",
+        "publishedOn": "2026-09-09",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.05469"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-09"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-09T16:42:54.642Z"
+      }
+    },
+    {
+      "id": "2609.05567",
+      "arxivId": "2609.05567",
+      "url": "https://arxiv.org/abs/2609.05567",
+      "topic": "Stats",
+      "reported": "The authors report deriving the bias, variance, mean integrated squared error, and pointwise asymptotic normality of a Bernstein-polynomial estimator under a sequential asymptotic framework.",
+      "metrics": [],
+      "title": "Random Jump Intensities and Bernstein Density Estimation in Ergodic Basic Affine Jump-Diffusion Processes",
+      "authors": "Hamdi Fathallah",
+      "takeaway": "The paper develops a random-effects extension of the ergodic basic affine jump-diffusion model for estimating individual unobserved jump intensities and their common density.",
+      "brief": "The authors extend the ergodic basic affine jump-diffusion model to handle individual unobserved jump intensities within a population of independent trajectories. They propose a Bernstein-polynomial estimator for the common density of these intensities, using empirical jump frequencies as pseudo-observations.\n\nTheoretical results include strong consistency and stable mixed-normal limits for intensity estimators, along with bias and variance derivations for the density estimator. The listing does not establish specific numerical performance metrics or computational limits for the proposed methods.\n\nResearchers working on stochastic differential equations with jumps or nonparametric density estimation for latent variables may find the theoretical framework relevant. Those requiring empirical benchmarks or code implementations should note the absence of declared code in the listing.",
+      "abstract": "This paper develops a random-effects extension of the ergodic basic affine jump-diffusion (BAJD) model for a population of independent trajectories with individual unobserved jump intensities and common structural parameters. Under continuous-time observation, each intensity is estimated by the empirical jump frequency. We establish the strong consistency and stable mixed-normal limit of this estimator as the observation horizon tends to infinity. The estimated intensities are then used as pseudo-observations to construct a Bernstein-polynomial estimator of their common density. Its bias, variance, mean integrated squared error, and pointwise asymptotic normality are derived under a sequential asymptotic framework. The theory is developed for general positive jump-size distributions with finite activity and specialized to the Gamma$(k,\\lambda)$ family, including the exponential and Erlang cases. For this family, we derive a pooled estimator of the common rate parameter and establish its consistency, asymptotic normality, and first-order conditional asymptotic independence from the individual intensity estimators. We also propose a consistent plug-in estimator of the population stationary mean. The methodology is illustrated through simulations and an empirical application to financial realized-volatility data.",
+      "takeaways": [
+        "The object is a statistical estimator for jump intensities and their density in a specific class of jump-diffusion processes.",
+        "The visible limit is the reliance on continuous-time observation and a sequential asymptotic framework, which may not apply to discrete or finite-horizon data.",
+        "The artifact status is theoretical, with no declared code repository or downloadable implementation provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report deriving the bias, variance, mean integrated squared error, and pointwise asymptotic normality of a Bernstein-polynomial estimator under a sequential asymptotic framework.",
+        "brief": "The authors extend a mathematical model for financial or physical processes that move smoothly but also make sudden jumps. They create a method to estimate how often these jumps happen for each individual case in a group, and then estimate the overall pattern of these jump rates.\n\nThey prove that their estimation method becomes more accurate as the observation time gets longer. They also calculate how much error to expect in their estimates. The listing does not provide specific numbers showing how well the method works in practice or how long it takes to compute.\n\nPeople who study mathematical models of random processes with sudden changes or who estimate hidden patterns in data might find this useful. People who need ready-to-use software or specific performance scores should note that no code is provided in the listing.",
+        "takeaways": [
+          "The object is a mathematical tool for estimating jump rates and their distribution in a specific type of random process.",
+          "The visible limit is that the method assumes continuous observation and relies on long-term behavior, which may not fit real-world data collected at specific times.",
+          "The artifact status is theoretical, meaning it provides mathematical proofs but no downloadable software or code."
+        ]
+      },
+      "actions": [
+        "Verify the theoretical assumptions regarding continuous-time observation and finite activity by reading the full PDF.",
+        "Check the simulation and empirical application sections in the PDF to assess the practical performance of the proposed estimators."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-09-09",
+        "publishedOn": "2026-09-09",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.05567"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-09"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-09T16:42:54.642Z"
+      }
+    },
+    {
+      "id": "2609.05623",
+      "arxivId": "2609.05623",
+      "url": "https://arxiv.org/abs/2609.05623",
+      "topic": "Engineering",
+      "reported": "The authors report that remote direct memory access removes the problem rather than relocating it, measured on the transport path for gigasample software-defined radio front ends.",
+      "metrics": [],
+      "title": "Beyond UDP: RDMA as the Missing Link for Gigasample Software-Defined Radio",
+      "authors": "Carsten Andrich, Sebastian Giehl, Michael Schubert",
+      "takeaway": "The paper claims that using remote direct memory access instead of standard Ethernet transport solves the host processor and memory bandwidth bottlenecks in gigasample software-defined radio systems.",
+      "brief": "The authors propose replacing standard Ethernet datagram transport with remote direct memory access for high-speed software-defined radio front ends. They argue that current methods exhaust host time and memory bandwidth, forcing users to manage operating system details unrelated to radio engineering.\n\nThe reported evidence is architectural: the SDR places samples directly into registered host memory, and the processor is removed from the data path in both directions. Each sample byte crosses the memory bus once, and the transmit path loses hard real-time pacing constraints. No quantitative benchmarks, latency figures, or throughput measurements are provided in the abstract.\n\nThis packet is relevant to engineers working on high-speed data acquisition or network transport for radio systems. It may be less relevant to researchers focused on signal processing algorithms or low-level hardware design who do not interface with host transport layers.",
+      "abstract": "Software-defined radio (SDR) front ends have gained an order of magnitude in sample rate within a single product generation, while the transport that carries their output has not changed: samples are packed into Ethernet datagrams and reassembled by the host processor. At gigasample rates this fails on two counts at once, exhausting the time the host has per packet and the memory bandwidth it has for copying, and no amount of tuning or kernel bypass recovers both. The burden has instead been passed to the user, who must supply operating system expertise that has nothing to do with radio. We show that remote direct memory access removes the problem rather than relocating it. The SDR places received samples directly into memory the host has registered, and fetches samples for transmission from that memory when its converters require them. The processor leaves the data path in both directions, each sample byte crosses the memory bus once, and the transmit path loses the hard real-time pacing problem that has always accompanied it. What remains for the user application is the signal processing itself, which should be all an SDR requires, even at gigasample rates.",
+      "takeaways": [
+        "The object is a transport layer architecture change for software-defined radio, specifically replacing Ethernet datagrams with RDMA for sample transfer.",
+        "A visible limit is the absence of quantitative performance data; the abstract describes architectural benefits but provides no measured latency, throughput, or error rates.",
+        "The artifact status is not established in the listing; no code, dataset, or implementation details are mentioned."
+      ],
+      "plain": {
+        "reported": "The authors report that using a direct memory access technique removes the bottleneck, measured on the data transfer path for very fast radio equipment.",
+        "brief": "The authors suggest using a direct memory access method instead of standard network packets for very fast radio equipment. They say current methods use up too much computer time and memory, forcing users to deal with complex operating system tasks that have nothing to do with radio work.\n\nThe evidence they give is about how the system is built: the radio puts data directly into computer memory, and the main processor is not involved in moving the data. Each piece of data moves across the memory bus only once, and the sending path no longer has strict timing problems. The abstract does not include any numbers for speed, delay, or error rates.\n\nThis is useful for engineers who build systems that collect and send very fast radio data. It may not be useful for people who only work on the math of signal processing or the physical hardware of the radio itself.",
+        "takeaways": [
+          "The subject is changing how data is moved from radio equipment to a computer, using direct memory access instead of standard network packets.",
+          "A clear limitation is that there are no numbers showing how fast or reliable the new method is; the abstract only describes the design.",
+          "It is not stated whether there is any code or test data available to try out the method."
+        ]
+      },
+      "actions": [
+        "Verify the specific RDMA implementation details and hardware requirements by reading the full PDF.",
+        "Check for any supplementary benchmarks or testbed descriptions in the paper that are not summarized in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-09-09",
+        "publishedOn": "2026-09-09",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.05623"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-09"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-09T16:42:54.642Z"
+      }
+    },
+    {
+      "id": "2609.05792",
+      "arxivId": "2609.05792",
+      "url": "https://arxiv.org/abs/2609.05792",
+      "topic": "Econ",
+      "reported": "The authors report that placing controls in a dedicated first cluster substantially reduces paired first-versus-last ordering sensitivity across all seven bank clusters, measured on seventy-one global banks grouped into seven regional clusters over 2003--2024.",
+      "metrics": [
+        "2003--2024"
+      ],
+      "title": "Scalable Clustered Network Connectedness with Control Variables: Theory and Application to Global Banking",
+      "authors": "Bastien Buchwalter, Francis X. Diebold, Kamil Yilmaz",
+      "takeaway": "The paper claims to extend the clustered connectedness framework by adding a diagnostic for residual ordering sensitivity and a dedicated cluster of control variables to absorb common macro-financial factors while preserving computational scalability.",
+      "brief": "The authors state they extend the clustered connectedness framework by adding a diagnostic for residual ordering sensitivity and a dedicated cluster of control variables to absorb common macro-financial factors while preserving computational scalability.\n\nThey report that the treatment of common macro-financial factors materially affects system-wide cross-group connectedness and cluster-level net positions, and that placing controls in a dedicated first cluster substantially reduces paired first-versus-last ordering sensitivity across all seven bank clusters. The listing does not establish whether the maintained recursive assumption that control-cluster innovations are contemporaneously exogenous to bank-cluster innovations holds in practice.\n\nResearchers working on cross-cluster connectedness or global banking networks may find the diagnostic and control-cluster method relevant. Those not interested in clustered connectedness or macro-financial factor absorption may ignore it.",
+      "abstract": "We extend the clustered connectedness framework of Buchwalter, Diebold and Yilmaz (2026) in two complementary directions that improve the robustness and interpretability of cross-cluster connectedness. First, we develop a diagnostic for residual ordering sensitivity by characterizing the distribution of cluster-level net connectedness across all admissible identification orderings and, in particular, by pairing first- and last-position orderings while holding fixed the relative ordering of all other clusters. Second, we introduce a dedicated cluster of control variables to absorb variation associated with observed common macro-financial factors while preserving the computational scalability of the clustered framework. The control cluster is fixed first, and bank innovations are residualized with respect to it before the remaining bank clusters are permuted and orthogonalized as usual, leaving the number of admissible bank-cluster identification strategies unchanged. Under the maintained recursive assumption that control-cluster innovations are contemporaneously exogenous to bank-cluster innovations, the remaining cross-cluster connectedness among the bank clusters can be interpreted as bank-to-bank transmission net of those observed common-factor shocks. We apply the methodology to seventy-one global banks grouped into seven regional clusters over 2003--2024. The treatment of common macro-financial factors materially affects both system-wide cross-group connectedness and cluster-level net positions. Placing the controls in a dedicated first cluster also substantially reduces paired first-versus-last ordering sensitivity across all seven bank clusters, with especially large reductions for the United States and the European clusters.",
+      "takeaways": [
+        "The object is a methodological extension of the clustered connectedness framework that adds a diagnostic for residual ordering sensitivity and a dedicated cluster of control variables.",
+        "A visible limit is the maintained recursive assumption that control-cluster innovations are contemporaneously exogenous to bank-cluster innovations, which the listing does not test or relax.",
+        "The artifact status is not established in the listing; no code, dataset, or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that putting control variables in a separate first group substantially lowers the difference in results when you compare the first and last possible orderings of the bank groups, measured on seventy-one global banks grouped into seven regional clusters over 2003--2024.",
+        "brief": "The authors say they improve a method for measuring how connected different groups of banks are by adding a check for how sensitive the results are to the order in which you analyze the groups, and by adding a separate group of control variables to account for common economic and financial factors while keeping the method fast to compute.\n\nThey say that how you handle common economic and financial factors changes the overall connectedness between groups and the net position of each group, and that putting the controls in a separate first group substantially lowers the difference in results when you compare the first and last possible orderings of the bank groups. The listing does not say whether the assumption that the control variables are not affected at the same time as the bank groups is actually true in real data.\n\nPeople who study how connected different groups of banks are or who work on global banking networks may find the new check and control-variable method useful. People who do not care about measuring connectedness between groups or about accounting for common economic factors may ignore it.",
+        "takeaways": [
+          "The thing being studied is a new version of a method for measuring how connected different groups of banks are, which adds a check for how sensitive the results are to the order of analysis and adds a separate group of control variables.",
+          "A clear limitation is the assumption that the control variables are not affected at the same time as the bank groups, which the listing does not test or change.",
+          "It is not stated in the listing whether the authors share code or data; no code, dataset, or repository is mentioned."
+        ]
+      },
+      "actions": [
+        "Verify the maintained recursive assumption and the diagnostic’s behavior under alternative orderings by reading the full PDF.",
+        "Check whether the authors provide code or data for the seventy-one global banks and seven regional clusters to reproduce the ordering-sensitivity reductions."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.EM"
+      ],
+      "listing": {
+        "listedOn": "2026-09-09",
+        "publishedOn": "2026-09-09",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.05792"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-09"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-09T16:42:54.642Z"
+      }
+    }
+  ]
+}
