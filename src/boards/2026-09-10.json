@@ -1,0 +1,660 @@
+{
+  "date": "2026-09-10",
+  "label": "Thu, Sep 10",
+  "minutes": 10,
+  "poolSize": 121,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-09-10T16:27:39.591Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2609.10522",
+      "arxivId": "2609.10522",
+      "url": "https://arxiv.org/abs/2609.10522",
+      "topic": "AI",
+      "reported": "The authors report that Show-Harness-equipped VLM agents generalize robustly across tasks, embodiments, and environments, outperforming representative agentic and VLA paradigms.",
+      "metrics": [],
+      "title": "Show-Harness: Just a VLM Agent Can Play Robots",
+      "authors": "Yanzhe Chen, Zechen Bai, Zhijun Cao, Wenzheng Zeng, Kevin Qinghong Lin, Yiqi Lin, Guoqiang Liang, Kevin Yuchen Ma, Qiming Huang, Mike Zheng Shou",
+      "takeaway": "Show-Harness is an Embodied Harness that enables VLMs to play robots through a compact semantic interface linking intent to action.",
+      "brief": "The authors propose Show-Harness, an interface that exposes discrete semantic action units for VLMs to reason over, while embodiment-specific interpreters ground these into local robot actions. This design keeps the VLM responsible for fine-grained physical decisions without requiring additional model capacity or costly embodiment-specific pretraining.\n\nThe authors state that the system unlocks closed-source frontier VLMs for zero-shot robot control and adapts small-scale open-source VLMs for low-cost deployment with just a few GPU-hours of fine-tuning. They also introduce GUMI, a GUI-based demonstration collection tool that allows humans and agents to play robots across embodiments without specialized teleoperation hardware. The listing does not specify the exact quantitative benchmarks or numerical performance gaps used to support the claim of outperforming representative paradigms.\n\nResearchers working on vision-language model integration for robotics may find the semantic interface approach relevant. Those seeking specific numerical comparisons against state-of-the-art VLA models should verify the detailed experimental results in the full paper, as the abstract lacks specific metric values.",
+      "abstract": "Foundation vision-language models (VLMs) exhibit broad intelligence about the world, yet translating this intelligence into robot control remains challenging. We present Show-Harness, an Embodied Harness that enables VLMs to \"play\" robots through a compact semantic interface linking intent to action. Show-Harness exposes discrete semantic action units that VLMs can naturally reason over, while embodiment-specific interpreters deterministically ground them into local robot actions, keeping the VLM directly responsible for fine-grained physical decisions. Through the same interface, Show-Harness demonstrates the feasibility of (1) directly unlocking closed-source frontier VLMs for zero-shot robot control, and (2) adapting small-scale open-source VLMs for low-cost deployment with just a few GPU-hours of fine-tuning. We further develop GUMI (GUI Manipulation Interface), which extends the same semantic action space to GUI-based demonstration collection, allowing humans and agents to \"play\" robots across embodiments without specialized teleoperation hardware. Extensive experiments show that Show-Harness-equipped VLM agents generalize robustly across tasks, embodiments, and environments, outperforming representative agentic and VLA paradigms. These results suggest that the right interface can unlock substantial embodied capability from foundation VLMs, without requiring additional model capacity or costly embodiment-specific pretraining.",
+      "takeaways": [
+        "The core object is a semantic interface that decouples high-level VLM reasoning from low-level robot action grounding.",
+        "The abstract claims robust generalization and outperformance but does not list specific quantitative metrics or benchmark names in the supplied text.",
+        "The artifact status is indicated by a declared GitHub repository URL, but the availability and completeness of the code are not verified in this listing."
+      ],
+      "plain": {
+        "reported": "The authors report that their system, Show-Harness, allows vision-language models to control robots effectively across different tasks and robot types, performing better than other similar AI agent systems.",
+        "brief": "The authors created a system called Show-Harness that acts as a bridge between large AI models that understand images and text, and physical robots. This bridge uses simple, defined commands that the AI can understand, which are then translated into specific robot movements. This allows the AI to make detailed physical decisions without needing to be retrained extensively for each specific robot.\n\nThe authors say this system works with large, private AI models without any extra training, and it can be adapted for smaller, open-source AI models with very little computing time. They also built a tool called GUMI that lets people or AI agents control robots using a computer screen interface, removing the need for expensive physical control devices. However, the summary does not provide specific numbers showing how much better this system is compared to others.\n\nPeople interested in connecting AI models to physical robots might find this useful. Those looking for specific performance numbers should check the full paper, as the summary does not include detailed statistical results.",
+        "takeaways": [
+          "The main contribution is a communication interface that separates the AI's thinking from the robot's physical movements.",
+          "The summary claims the system is better than others but does not provide specific numbers or test names in the text provided.",
+          "A link to a code repository is provided, but it is not confirmed here that the code is complete or working."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative results and benchmark names in the full PDF to confirm the claimed outperformance over representative agentic and VLA paradigms.",
+        "Check the declared GitHub repository to confirm the availability of the Show-Harness code and GUMI interface for reproduction."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/showlab/Show-Harness",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-10",
+        "publishedOn": "2026-09-09",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.10522",
+            "upvotes": 72
+          }
+        ]
+      },
+      "trend": {
+        "votes": 72,
+        "rank": 1,
+        "of": 27,
+        "perDay": 72
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 72,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-09"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-10T16:27:39.591Z"
+      }
+    },
+    {
+      "id": "2609.10540",
+      "arxivId": "2609.10540",
+      "url": "https://arxiv.org/abs/2609.10540",
+      "topic": "AI",
+      "reported": "The authors report that their method achieves 94% Count Accuracy and 98% State Accuracy on CombatStateBench, substantially outperforming existing interactive video world models.",
+      "metrics": [
+        "94% Count Accuracy",
+        "98% State Accuracy"
+      ],
+      "title": "Programmable World Model",
+      "authors": "Zheng-Hui Huang, Guixu Lin, Jiacheng Lin, Yi-Chuan Huang, Ruihan Yu, Muyao Niu, Siqi Yang, Yu-Lun Liu, Yung-Yu Chuang, Kaipeng Zhang, Zhixiang Wang",
+      "takeaway": "The paper introduces a framework that decouples world-state evolution from visual observation generation to enable programmable rules and persistent state in video world models.",
+      "brief": "The authors propose a framework where an agent translates natural-language instructions into executable programs that specify entity states and state-transition rules. A lightweight engine executes these programs to maintain an explicit, persistent global world state, including off-screen entities and non-visual attributes. This design allows users to create playable games with predefined mechanics and direct control over individual entities.\n\nThe authors report 94% Count Accuracy and 98% State Accuracy on their introduced CombatStateBench, claiming substantial outperformance of existing interactive video world models. The listing does not establish specific limitations regarding generalization to non-combat scenarios or the computational cost of the state-augmented 3D oriented bounding boxes. The provided code repository URL is listed but not verified for completeness or current functionality.\n\nResearchers working on interactive video generation, stateful simulation, or game AI may find the decoupled architecture relevant. Those focused solely on raw visual fidelity without state persistence or programmatic control may find the specific application domain narrow.",
+      "abstract": "Recent video world models generate increasingly realistic and interactive visual experiences, yet lack reliable mechanisms for maintaining persistent world state and enforcing programmable rules over extended interactions. We introduce Programmable World Model, a framework that decouples world-state evolution from visual observation generation. An agent translates natural-language instructions into executable programs that specify entity states and state-transition rules, enabling direct control over individual entities and their interactions. A lightweight engine executes these programs to update and maintain an explicit, persistent global world state, including off-screen entities and non-visual attributes. To connect world state with visual generation, we introduce state-augmented 3D oriented bounding boxes (OBBs) as an intermediate representation. This representation, together with the target camera trajectory, is deterministically compiled into pixel-aligned spatiotemporal conditioning signals for a pretrained video model serving as the generative renderer. This design allows users to create playable games with predefined mechanics, direct control over individual entities, and persistent world state throughout gameplay. We further introduce CombatStateBench, a benchmark for evaluating programmable world models. On CombatStateBench, our method achieves 94% Count Accuracy and 98% State Accuracy, substantially outperforming existing interactive video world models while supporting coherent long-horizon generation. These results demonstrate the effectiveness of separating explicit state evolution from generative rendering for building persistent, programmable worlds.",
+      "takeaways": [
+        "The core object is a framework decoupling state evolution from rendering using executable programs and state-augmented 3D OBBs.",
+        "The listing does not specify limits on the complexity of supported rules or the diversity of visual domains beyond the combat benchmark.",
+        "The artifact status is indicated by a declared GitHub repository, but its contents and stability are not verified in the listing."
+      ],
+      "plain": {
+        "reported": "The authors state that their system scored 94% on counting accuracy and 98% on state accuracy in a test called CombatStateBench, which they say is much better than other current video world models.",
+        "brief": "The creators built a system that separates the tracking of game rules and object states from the creation of the video images. A computer program handles the rules, like where objects are and how they move, even when they are not on screen. This allows users to make games with specific rules and control individual objects directly.\n\nThe team says their system got 94% correct on counting objects and 98% correct on tracking their states in a specific test. They claim this is much better than other similar systems. The summary does not say if the system works well for types of games other than combat, or how much computer power it needs to run.\n\nPeople who build interactive videos or game AI might find this useful. People who only care about making pretty videos without needing to track specific game rules might not find it useful.",
+        "takeaways": [
+          "The main idea is a system that separates game rule tracking from video image creation using computer programs.",
+          "The summary does not say if the system works for games other than combat or how complex the rules can be.",
+          "The authors say they have a code repository, but the summary does not confirm if the code works or is complete."
+        ]
+      },
+      "actions": [
+        "Verify the declared code repository to confirm the availability of the CombatStateBench evaluation scripts and model weights.",
+        "Review the full PDF to assess the generalizability of the state-transition rules beyond the specific combat scenarios tested."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/AlayaLab/pwm",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-10",
+        "publishedOn": "2026-09-09",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.10540",
+            "upvotes": 52
+          }
+        ]
+      },
+      "trend": {
+        "votes": 52,
+        "rank": 2,
+        "of": 27,
+        "perDay": 52
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 52,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-09"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-10T16:27:39.591Z"
+      }
+    },
+    {
+      "id": "2609.08572",
+      "arxivId": "2609.08572",
+      "url": "https://arxiv.org/abs/2609.08572",
+      "topic": "AI",
+      "reported": "The authors report that AgentGrad achieves state-of-the-art performance across five MAS benchmarks and reduces wall-clock optimization time by 2.5times on average compared to the next-fastest baseline.",
+      "metrics": [
+        "2.5times on average"
+      ],
+      "title": "AgentGrad: Intervention-guided Prompt Optimization for Multi Agent Systems",
+      "authors": "Jaewon Chu, Jinwoo Seo, Jaewon Cho, Jeehye Na, Yunyang Xiong, Youngdae Kim, Hyunwoo J. Kim",
+      "takeaway": "AgentGrad is a prompt optimization framework for multi-agent systems that uses sequential intervention and semantic textual gradient abstraction to improve prompt generalization and reduce optimization time.",
+      "brief": "The authors propose AgentGrad to address limitations in gradient extraction and aggregation for multi-agent system prompt optimization. They claim the method identifies specific target agents via sequential intervention and abstracts gradients to prevent mixing unrelated failure modes.\n\nThe authors report state-of-the-art performance across five MAS benchmarks and a 2.5times reduction in wall-clock optimization time compared to the next-fastest baseline. The listing does not specify the exact benchmark names, the baseline model used for comparison, or the specific metrics used to define state-of-the-art performance.\n\nResearchers working on multi-agent system prompt optimization or textual gradient methods may find this relevant. Those not focused on LLM-based multi-agent architectures or prompt engineering may find the specific technical contributions less applicable to their work.",
+      "abstract": "Large language model (LLM)-based multi-agent systems (MAS) achieve strong performance by employing specialized multiple agents, yet their performance depends on the prompt design of each agent. For MAS prompt optimization, textual gradient methods that guide prompt updates using natural-language feedback have emerged as a leading paradigm. In this paper, we identify limitations in two stages of existing textual gradient approaches: gradient extraction and gradient aggregation. In gradient extraction, previous works select a target prompt without verifying whether modifying it resolves the failure, and derive gradients without agent-level supervision over the corresponding agent's intermediate output. In gradient aggregation, individual gradients are randomly grouped and concatenated, often mixing unrelated failure modes and producing prompts that fail to generalize. To address these limitations, we propose AgentGrad, a prompt optimization framework for multi-agent systems based on sequential intervention and semantic textual gradient abstraction. For each failure, sequential intervention modifies the behavior of one agent at a time to identify the target agent whose modification resolves the failure. The modified output of the target agent then serves as agent-level supervision for extracting a fine-grained gradient. Semantic textual gradient abstraction clusters semantically similar gradients to prevent mixing unrelated failure modes, and abstracts each cluster into a generalized gradient that captures the shared corrective pattern. Experimental results show that AgentGrad achieves state-of-the-art performance across five MAS benchmarks and reduces wall-clock optimization time by 2.5times on average compared to the next-fastest baseline.",
+      "takeaways": [
+        "The object is a prompt optimization framework for multi-agent systems that modifies agent behavior sequentially to identify failure sources.",
+        "A visible limit is the lack of specific benchmark names or baseline details in the abstract, making it difficult to assess the scope of the state-of-the-art claim.",
+        "The artifact status is unknown as no code repository or implementation details are provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that their method works better than current best methods on five different multi-agent system tests and takes 2.5 times less time to optimize than the second-fastest method.",
+        "brief": "The authors created a new way to improve the instructions given to groups of AI agents. They say their method finds which specific agent is causing a problem and fixes the instruction for that agent, rather than changing all instructions at once.\n\nThey claim their method is the best on five tests and is much faster than other methods. The summary does not say which specific tests were used or what the other methods were, so it is hard to know exactly how good the method is.\n\nPeople who build systems with multiple AI agents working together might find this useful. People who do not work with AI agents or instruction tuning might not need this paper.",
+        "takeaways": [
+          "The tool is a system for improving instructions for groups of AI agents by fixing one agent at a time.",
+          "A limit is that the summary does not list the specific tests or comparison methods, so the strength of the results is unclear.",
+          "It is not known if the code is available because the listing does not mention a code link."
+        ]
+      },
+      "actions": [
+        "Verify the specific MAS benchmarks and baseline models used in the experiments by reading the full PDF.",
+        "Check the paper for details on the semantic textual gradient abstraction method and how it handles edge cases in agent interaction."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-10",
+        "publishedOn": "2026-09-08",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.08572",
+            "upvotes": 48
+          }
+        ]
+      },
+      "trend": {
+        "votes": 48,
+        "rank": 3,
+        "of": 27,
+        "perDay": 24
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 48,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-08"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-10T16:27:39.591Z"
+      }
+    },
+    {
+      "id": "2609.05405",
+      "arxivId": "2609.05405",
+      "url": "https://arxiv.org/abs/2609.05405",
+      "topic": "AI",
+      "reported": "The authors report that 14 proprietary and open-source LLMs achieved accuracies ranging from 19.6% to 72.9% on the WearableQA benchmark.",
+      "metrics": [
+        "4,084 10-option multiple-choice questions",
+        "200 real users",
+        "19.6% to 72.9%"
+      ],
+      "title": "WearableQA: A Benchmark for Health Reasoning over Real-World Wearable Data",
+      "authors": "Ji Soo Lee, Xilun Chen, Pierce Chuang, Ashish Shenoy, Jason Wei, Dohwan Ko, Hyunwoo J. Kim, Benoit Corda",
+      "takeaway": "The paper introduces WearableQA, a benchmark of 4,084 multiple-choice questions designed to evaluate AI reasoning over longitudinal real-world wearable data.",
+      "brief": "The authors propose WearableQA, a benchmark comprising 4,084 multiple-choice questions derived from the wearable time series, blood biomarkers, and demographics of 200 real users. The dataset preserves authentic wearable distributions, including device noise and inter-individual variability, to test reasoning over longitudinal records.\n\nThe authors report that 14 proprietary and open-source LLMs achieved accuracies ranging from 19.6% to 72.9% against a 10% chance baseline. They state that most models achieve accuracies below 60%, indicating the benchmark remains far from solved. The listing does not specify which specific model achieved the highest or lowest score.\n\nResearchers evaluating large language models on longitudinal health data or wearable sensor integration may find this resource relevant. Those working on non-wearable medical imaging or static clinical records may find the specific data modality less applicable.",
+      "abstract": "Recent advances in wearable sensing enable continuous monitoring of physiological and behavioral signals, yet existing benchmarks rarely evaluate whether AI systems can reason over a real user's longitudinal wearable record. We introduce WearableQA, a benchmark comprising 4,084 10-option multiple-choice questions constructed from the wearable time series, blood biomarkers, and demographics of 200 real users, each with up to 500 days of daily measurements. WearableQA preserves authentic wearable distributions that include device noise and inter-individual variability. To evaluate distinct reasoning capabilities, we introduce 16 question types organized along two complementary axes: data versus health reasoning, which distinguishes computation over longitudinal measurements from physiological interpretation; and single- versus cross-signal reasoning, which separates reasoning about individual signals from the integration of multiple signals. To construct reliable questions at scale, we adopt a dual-grounding framework that combines literature-grounded physiological findings with statistically validated population-grounded physiological patterns. This enables the capture of meaningful relationships observed in real-world wearable data. Evaluation of 14 proprietary and open-source LLMs demonstrates that WearableQA effectively differentiates model capabilities, with performance ranging from 19.6% to 72.9% against a 10% chance baseline. Moreover, WearableQA remains far from solved: most models achieve accuracies below 60%. Overall, WearableQA provides a realistic and diagnostic benchmark for evaluating LLM reasoning over real-world wearable data.",
+      "takeaways": [
+        "The object is a multiple-choice benchmark constructed from real user wearable time series, blood biomarkers, and demographics.",
+        "The visible limit is that the listing reports aggregate accuracy ranges for 14 models but does not identify the specific top-performing model or detailed per-question-type breakdowns.",
+        "The artifact status is established by the provided GitHub repository URL, though the listing does not confirm the repository's current availability or completeness."
+      ],
+      "plain": {
+        "reported": "The authors report that 14 proprietary and open-source LLMs achieved accuracies ranging from 19.6% to 72.9% on the WearableQA benchmark.",
+        "brief": "The authors propose WearableQA, a benchmark comprising 4,084 multiple-choice questions derived from the wearable time series, blood biomarkers, and demographics of 200 real users. The dataset preserves authentic wearable distributions, including device noise and inter-individual variability, to test reasoning over longitudinal records.\n\nThe authors report that 14 proprietary and open-source LLMs achieved accuracies ranging from 19.6% to 72.9% against a 10% chance baseline. They state that most models achieve accuracies below 60%, indicating the benchmark remains far from solved. The listing does not specify which specific model achieved the highest or lowest score.\n\nResearchers evaluating large language models on longitudinal health data or wearable sensor integration may find this resource relevant. Those working on non-wearable medical imaging or static clinical records may find the specific data modality less applicable.",
+        "takeaways": [
+          "The object is a multiple-choice benchmark constructed from real user wearable time series, blood biomarkers, and demographics.",
+          "The visible limit is that the listing reports aggregate accuracy ranges for 14 models but does not identify the specific top-performing model or detailed per-question-type breakdowns.",
+          "The artifact status is established by the provided GitHub repository URL, though the listing does not confirm the repository's current availability or completeness."
+        ]
+      },
+      "actions": [
+        "Verify the repository at https://github.com/facebookresearch/WearableQA to confirm the availability of the dataset and evaluation scripts.",
+        "Review the full PDF to identify which specific LLM achieved the 72.9% accuracy and to examine the breakdown of performance across the 16 question types."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/facebookresearch/WearableQA",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-10",
+        "publishedOn": "2026-09-04",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.05405",
+            "upvotes": 27
+          }
+        ]
+      },
+      "trend": {
+        "votes": 27,
+        "rank": 4,
+        "of": 27,
+        "perDay": 5
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 27,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-04"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-10T16:27:39.591Z"
+      }
+    },
+    {
+      "id": "2609.09190",
+      "arxivId": "2609.09190",
+      "url": "https://arxiv.org/abs/2609.09190",
+      "topic": "Stats",
+      "reported": "The authors report demonstrating the method using three simulations and a dedicated software package.",
+      "metrics": [],
+      "title": "Metatheoretical multiverse analysis: Improving the reliability of research with theories-as-data",
+      "authors": "Nate Breznau, Hung H. V. Nguyen",
+      "takeaway": "The paper presents metatheoretical multiverse analysis (MMA), a method for measuring, analyzing, and reducing theoretical uncertainty by encoding theories as propositional logic and meta-analyzing the resulting multiverse of plausible models.",
+      "brief": "The authors propose metatheoretical multiverse analysis (MMA) to reduce theoretical uncertainty by encoding theories as propositional logic between variables and their relationships. They treat these logic models as causal path models to generate a multiverse of alternatively plausible theoretical models, which are then meta-analyzed using techniques from statistical multiverse analysis.\n\nThe authors state they use three simulations and a dedicated software package to demonstrate the method. They introduce metrics for studying theoretical multiverses to identify causes of metatheoretical uncertainty. The abstract does not specify the quantitative outcomes of these simulations or the specific benchmarks used to measure the reduction in uncertainty.\n\nResearchers working on theoretical uncertainty, causal inference, or statistical multiverse analysis may find the encoding framework relevant. Those seeking empirical validation on real-world datasets or specific quantitative performance metrics may need to consult the full text, as the abstract only cites simulations.",
+      "abstract": "Here we present a method for measuring, analyzing and reducing theoretical uncertainty. We call it metatheoretical multiverse analysis (MMA). The method is important because the reliability and replicability of scientific observation and testing of a phenomenon are a function of theoretical uncertainty thus reducing it is a method for improving theory. The MMA method requires encoding theory as propositional logic between variables (nodes) and their relationships with one another (edges). Propositional logic models are treated as causal path models in our method, which enable mathematical properties of testing and identification underlying their causal propositions. By encoding theories-as-data including their unknown components, it is possible to generate a multiverse of alternatively plausible theoretical models which can then be meta-analyzed using techniques borrowed from (statistical) multiverse analysis. We introduce metrics for studying theoretical multiverses that enable measuring and identifying the causes of metatheoretical uncertainty. This guides researchers to where it is best to invest theoretical development to reduce uncertainty. We use three simulations and a dedicated software package to demonstrate this method.",
+      "takeaways": [
+        "The core object is a method for encoding theories as propositional logic and treating them as causal path models for multiverse analysis.",
+        "The visible limit is that the demonstration relies on three simulations and a software package, with no real-world empirical results or specific quantitative metrics provided in the abstract.",
+        "The artifact status is a dedicated software package mentioned in the abstract, but no repository URL or code link is supplied in the listing."
+      ],
+      "plain": {
+        "reported": "The authors say they showed how their method works by running three computer simulations and using a specific piece of software they created.",
+        "brief": "The authors suggest a new way to handle uncertainty in scientific theories. They turn theories into a specific type of logical map that shows how different variables connect to each other. They then create many possible versions of these maps and analyze them together to see which parts of the theory are most uncertain.\n\nThey say they proved this works by running three computer simulations and using a software tool they built. They also created new ways to measure this uncertainty. However, the summary does not say how well the method actually reduced uncertainty or what specific numbers came out of the simulations.\n\nPeople who study how to make scientific theories more reliable or who work with complex statistical models might find this useful. People who want to see if this works on real-world data, not just simulations, should look at the full paper to see if that information is there.",
+        "takeaways": [
+          "The main idea is a method for turning theories into logical maps and analyzing many versions of them to find uncertainty.",
+          "The main limitation shown in the summary is that it only uses computer simulations, not real-world data, and does not list specific performance numbers.",
+          "The summary mentions a software package exists, but does not provide a link or details on how to access it."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative results and limitations of the three simulations by reading the full PDF.",
+        "Check the paper for the location and documentation of the dedicated software package mentioned in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-09-10",
+        "publishedOn": "2026-09-10",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.09190"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-10"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-10T16:27:39.591Z"
+      }
+    },
+    {
+      "id": "2609.09212",
+      "arxivId": "2609.09212",
+      "url": "https://arxiv.org/abs/2609.09212",
+      "topic": "Security",
+      "reported": "The authors report that T-ASR, TAPR, and E2E-ASR reached 84.5%, 47.0%, and 20.3% respectively across 600 instance-level online cases.",
+      "metrics": [
+        "T-ASR, TAPR, and E2E-ASR reaching 84.5%, 47.0%, and 20.3%",
+        "aggregates 600 instance-level online cases"
+      ],
+      "title": "AgentHijack: Visual Patch Attacks on Multimodal Computer-Use Agents",
+      "authors": "Zhihao Liu, Hongyu Sun, Zhiyuan Fu, Xiaonan Duan, Jice Wang, Shangru Zhao, Weizhi Meng, Wuxin Yang, Yangfan Zhou, Yuqing Zhang",
+      "takeaway": "The paper presents an end-to-end evaluation framework for image-triggered command injection against computer-use agents.",
+      "brief": "The authors propose a framework to test if local visual patches can induce command injection in computer-use agents. They evaluate this across five open-source or publicly available GUI-agent or VLM backends in real environments.\n\nThe strongest reported result is that T-ASR, TAPR, and E2E-ASR reached 84.5%, 47.0%, and 20.3% respectively. The listing does not establish specific limitations regarding the generalizability of these patches to other agent architectures or environments.\n\nResearchers studying multimodal agent security or visual adversarial attacks may find this relevant. Those focused on non-visual agent vulnerabilities or closed-source systems may find it less applicable.",
+      "abstract": "This paper presents an end-to-end evaluation framework for image-triggered command injection against computer-use agents (CUAs). The goal is to test whether a local visual patch can induce verifiable environmental consequences along the full chain of screenshot input, VLM generation, action parsing, and environment execution. We train and deploy patches on author-controlled GitHub Pages pages and a locally deployed CSDN clone, and evaluate them in real environments across five open-source or publicly available GUI-agent or vision-language-model (VLM) backends. Our experiment aggregates 600 instance-level online cases, with T-ASR, TAPR, and E2E-ASR reaching 84.5%, 47.0%, and 20.3%, respectively. Trajectory analysis further shows that in some successful cases the agent first executes a malicious terminal command and then continues the original benign task. These results indicate that optimized local visual signals can affect not only VLM outputs but also propagate through the execution pipeline of open CUAs and create real environmental risk.",
+      "takeaways": [
+        "The object is an end-to-end evaluation framework for visual patch attacks on computer-use agents.",
+        "The listing does not state whether the visual patches remain effective against newer or closed-source agent backends.",
+        "No code repository or artifact is declared in the supplied metadata."
+      ],
+      "plain": {
+        "reported": "The authors report that their attack succeeded in 84.5% of cases for one metric, 47.0% for another, and 20.3% for a third, based on 600 test runs.",
+        "brief": "The authors built a test system to see if hidden images can trick AI agents that use computers into running bad commands. They tested this on five different AI models in real-world settings.\n\nThe best result they report is that their hidden images caused the AI to run bad commands in 84.5% of attempts for one specific measure. The text does not say if this trick works on AI systems that are not open-source or are newer.\n\nPeople who study how to keep AI agents safe from visual tricks might find this useful. People who only care about text-based AI security might not find it relevant.",
+        "takeaways": [
+          "The paper is about a test system for visual attacks on AI computer agents.",
+          "It is not stated if these visual attacks work on private or newer AI systems.",
+          "The authors did not provide a link to their code or tools in the listing."
+        ]
+      },
+      "actions": [
+        "Verify the specific definitions of T-ASR, TAPR, and E2E-ASR in the full PDF to understand the measurement criteria.",
+        "Check the PDF for details on the specific GitHub Pages and CSDN clone configurations used for deployment."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.AI",
+        "cs.CY"
+      ],
+      "listing": {
+        "listedOn": "2026-09-10",
+        "publishedOn": "2026-09-10",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.09212"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-10"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-10T16:27:39.591Z"
+      }
+    },
+    {
+      "id": "2609.09227",
+      "arxivId": "2609.09227",
+      "url": "https://arxiv.org/abs/2609.09227",
+      "topic": "Physics",
+      "reported": "The authors report that a finite-energy GKP state with a sufficiently broad envelope outperforms squeezed vacuum injection in phase sensitivity, measured in SU(2) and SU(1,1) interferometers.",
+      "metrics": [
+        "SU(2) and SU(1,1) interferometers"
+      ],
+      "title": "Finite-energy Gottesman-Kitaev-Preskill state-enhanced optical interferometry",
+      "authors": "Ashmita Roy, R. Srikanth, Deepak Pandey",
+      "takeaway": "The paper claims to demonstrate direct application of finite-energy GKP states in optical interferometry and presents a methodology for estimating quantum Fisher information.",
+      "brief": "The authors propose a GKP state-enhanced optical interferometry setup and analyze phase sensitivity for SU(2) and SU(1,1) interferometers. They compare a conventional configuration using coherent and squeezed light against a modified configuration using coherent light and a GKP state.\n\nThe authors state that a finite-energy GKP state with a sufficiently broad envelope outperforms squeezed vacuum injection, irrespective of optical losses. They attribute this to enhanced robustness from multiple squeezed peaks. However, they note that squeezed vacuum performs better when compared with a GKP state of equal or lower mean photon number, and that optical losses diminish the relative advantage of either input state.\n\nResearchers working on non-Gaussian quantum resources or optical interferometry may find the comparison between GKP and squeezed states relevant. Those focused strictly on Gaussian quantum optics or experimental implementations without GKP state generation may find the theoretical comparison less directly applicable.",
+      "abstract": "We present the case of a Gottesman-Kitaev-Preskill (GKP) state-enhanced optical interferometry with detailed analysis of the phase sensitivity for both the SU(2) and SU(1,1) interferometers. The conventional quantum-enhanced SU(2) interferometer, employing coherent light at one input port and squeezed light at the other, is compared with a modified configuration using coherent light and a GKP state. While it is known that the squeezed vacuum state is the optimal Gaussian resource input mode when paired with the coherent state, we show that the finite-energy GKP state with sufficiently broad envelope outperforms the squeezed vacuum injection, irrespective of the presence of optical losses. This can be attributed to the enhanced robustness coming from the availability of multiple squeezed peaks in the GKP case. However, because lowering the mean photon number reduces the GKP envelope width, the squeezed vacuum input performs better when compared with a GKP state of equal or lower mean photon number. We also observe that optical losses tend to diminish the relative advantage of either input state, since both states approach the (unsqueezed) vacuum state asymptotically. Our work demonstrates the direct application of finite-energy GKP states in optical interferometry along with a methodology for estimating the quantum Fisher information (QFI) and presents a phase estimation procedure using non-Gaussian resources in comparison with conventional Gaussian states.",
+      "takeaways": [
+        "The object is a theoretical comparison of phase sensitivity between GKP and squeezed vacuum inputs in two types of interferometers.",
+        "A visible limit is that the GKP state advantage depends on envelope width, which is reduced by lowering the mean photon number, making squeezed vacuum superior at equal or lower photon numbers.",
+        "The artifact status is not established in the listing; no code or experimental data is mentioned."
+      ],
+      "plain": {
+        "reported": "The authors report that a specific type of quantum light state (GKP) with a wide spread of energy levels works better than a standard squeezed light state for measuring phase shifts, tested in two kinds of optical measurement devices.",
+        "brief": "The authors suggest using a special quantum state called a GKP state to improve the precision of optical interferometers, which are devices that measure tiny phase shifts in light. They compare this new approach with the standard method that uses squeezed light, a common quantum resource.\n\nThe authors say that if the GKP state has a wide enough energy spread, it beats the squeezed light state, even when some light is lost during the process. This is because the GKP state has multiple peaks that make it more robust. However, if you reduce the total energy of the GKP state, its spread gets narrower, and the standard squeezed light state becomes better. Also, as light loss increases, both states become less effective and start to look like ordinary empty space.\n\nScientists who work with advanced quantum states or high-precision optical measurements might find this useful. People who only work with standard quantum light sources or who do not have the technology to create GKP states might not find this directly helpful for their current work.",
+        "takeaways": [
+          "The paper compares two types of quantum light states for improving the precision of optical phase measurements.",
+          "The advantage of the new state depends on its energy spread; if you lower the energy, the old standard state becomes better.",
+          "The listing does not say if the authors provided code or experimental data to reproduce their results."
+        ]
+      },
+      "actions": [
+        "Verify the specific conditions for 'sufficiently broad envelope' and the quantitative phase sensitivity values by reading the full PDF.",
+        "Check the methodology for estimating quantum Fisher information to assess its applicability to specific experimental setups."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-09-10",
+        "publishedOn": "2026-09-10",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.09227"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-10"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-10T16:27:39.591Z"
+      }
+    },
+    {
+      "id": "2609.09323",
+      "arxivId": "2609.09323",
+      "url": "https://arxiv.org/abs/2609.09323",
+      "topic": "Econ",
+      "reported": "The authors report that they summarize insights from the economics, finance, and marketing academic literature on Buy Now, Pay Later products.",
+      "metrics": [],
+      "title": "Buy Now, Pay Later: Academic Insights and Open Policy Questions",
+      "authors": "Benedict Guttman-Kenney, Walter W. Zhang",
+      "takeaway": "The paper claims to summarize insights from the economics, finance, and marketing academic literature on Buy Now, Pay Later products and discuss remaining open questions impacting policy decisions.",
+      "brief": "The authors state they summarize insights from the economics, finance, and marketing academic literature on Buy Now, Pay Later products and discuss remaining open questions impacting policy decisions.\n\nThe listing reports a synthesis of existing research on consumer effects and credit reporting implications, but it does not establish specific quantitative results or identify unresolved empirical limits beyond the general mention of open questions.\n\nResearchers studying consumer finance policy or payment innovation may find the synthesis relevant, while those seeking primary empirical data on BNPL effects may find the listing insufficient for their specific needs.",
+      "abstract": "Buy Now, Pay Later (BNPL) has moved from a novelty product to mainstream consumer finance in the space of a few years. Before 2020, BNPL was a niche offering at the checkouts of online fashion merchants. BNPL then experienced substantial growth (Consumer Financial Protection Bureau, 2022; Salem & Udis, 2025), coinciding with increased online shopping since the onset of the COVID-19 pandemic in 2020. BNPL is now a pervasive payment option. In 2026, you can use BNPL to delay and split up payments for anything ranging from a pizza to your rent, and many items in between. As the market has grown, so has the academic literature. There is now sufficient research into BNPL to take stock and review what we have learned. In this article, we summarize insights from the economics, finance, and marketing academic literature. While we have learned a great deal about BNPL in the last few years, we also discuss many remaining open questions and current concerns impacting policy decisions. We start by explaining what BNPL products are and the business models of BNPL lenders. Then, we summarize the economics and psychology behind why some consumers use these products. Next, we describe the customer base that uses BNPL. We show the effects of BNPL on consumers, an area of research with substantial policy interest. Another area of policy interest is whether BNPL loans should be reported in a consumer's credit report. We explain why BNPL is typically not on credit reports and its implications. Finally, we offer some concluding thoughts.",
+      "takeaways": [
+        "The object is a review of academic literature on Buy Now, Pay Later products, covering business models, consumer behavior, and policy implications.",
+        "The visible limit is that the listing describes a summary of existing research rather than presenting new primary data or specific quantitative findings.",
+        "The artifact status is not established in the listing, as no code, dataset, or repository is mentioned."
+      ],
+      "plain": {
+        "reported": "The authors report that they summarize insights from the economics, finance, and marketing academic literature on Buy Now, Pay Later products.",
+        "brief": "The authors state they summarize insights from the economics, finance, and marketing academic literature on Buy Now, Pay Later products and discuss remaining open questions impacting policy decisions.\n\nThe listing reports a synthesis of existing research on consumer effects and credit reporting implications, but it does not establish specific quantitative results or identify unresolved empirical limits beyond the general mention of open questions.\n\nResearchers studying consumer finance policy or payment innovation may find the synthesis relevant, while those seeking primary empirical data on BNPL effects may find the listing insufficient for their specific needs.",
+        "takeaways": [
+          "The object is a review of academic literature on Buy Now, Pay Later products, covering business models, consumer behavior, and policy implications.",
+          "The visible limit is that the listing describes a summary of existing research rather than presenting new primary data or specific quantitative findings.",
+          "The artifact status is not established in the listing, as no code, dataset, or repository is mentioned."
+        ]
+      },
+      "actions": [
+        "Verify the specific policy questions and consumer effect findings by reading the full PDF to assess the depth of the literature review.",
+        "Check the references section in the PDF to identify the primary empirical studies cited for claims about BNPL growth and consumer behavior."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-09-10",
+        "publishedOn": "2026-09-10",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.09323"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-10"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-10T16:27:39.591Z"
+      }
+    },
+    {
+      "id": "2609.09330",
+      "arxivId": "2609.09330",
+      "url": "https://arxiv.org/abs/2609.09330",
+      "topic": "Engineering",
+      "reported": "The authors report that their method reduces mean network-diameter-normalized RMSE by 16.0% relative to MDS-MAP(P) in a simulated multi-height warehouse.",
+      "metrics": [
+        "16.0% relative to MDS-MAP(P)",
+        "23.9% and 34.0% relative to CATL-reproduction"
+      ],
+      "title": "3D Protraction Technique for Anchor-Free, Range-Free Wireless Localization in Industrial Warehouses via Multi-Level Binary Reachability",
+      "authors": "Peyman Moeini, Mark Coates",
+      "takeaway": "The paper presents the 3D Protraction Technique, an anchor-free, range-free method that converts reciprocal packet detections at ordered transmit-power levels into reliability-weighted ordinal distance relations to estimate a relative 3D configuration.",
+      "brief": "The authors propose a method that estimates relative 3D positions using binary reachability data from multiple transmit-power levels, avoiding the need for surveyed anchors or signal strength magnitudes. They report that using four power levels reduces mean network-diameter-normalized RMSE by 16.0% compared to MDS-MAP(P) in a simulated multi-height warehouse, with larger improvements over a CATL-reproduction baseline. The listing states that accuracy largely saturates beyond four power levels, but it does not establish whether these results hold in physical industrial environments or with real hardware constraints.\n\nThe strongest reported result is a 16.0% reduction in mean network-diameter-normalized RMSE relative to MDS-MAP(P) in a simulated multi-height warehouse. The authors also report reductions of 23.9% and 34.0% relative to a CATL-reproduction in small- and medium-network regimes, respectively. The listing does not provide details on the specific simulation parameters, node counts, or the exact definition of the network-diameter normalization used in these benchmarks.\n\nThis packet is relevant to researchers working on wireless localization in constrained industrial settings who are interested in anchor-free, range-free approaches. It may be less relevant to those requiring absolute coordinate estimation or those relying on RSSI-based ranging techniques. The method’s reliance on ordered transmit-power levels and binary reachability may limit its applicability in environments where such control is not feasible.",
+      "abstract": "Three-dimensional (3D) localization is difficult in industrial facilities because fixed-node placement is constrained by hardware, power, networking, installation, and maintenance costs. This paper presents the 3D Protraction Technique (3D-PT), an anchor-free, range-free method that converts reciprocal packet detections at ordered transmit-power levels into reliability-weighted ordinal distance relations. It estimates a relative 3D configuration without Received Signal Strength Indicator (RSSI) magnitudes, estimated ranges, surveyed anchors, or prior coordinates. In a simulated multi-height warehouse, four transmit-power levels reduce mean network-diameter-normalized RMSE by 16.0\\% relative to MDS-MAP(P) in both small- and medium-network regimes, and by 23.9\\% and 34.0\\% relative to CATL-reproduction, respectively. Accuracy largely saturates beyond four power levels. The results show that multi-level binary reachability provides useful geometric information beyond a single maximum-power connectivity graph.",
+      "takeaways": [
+        "The method estimates relative 3D configuration using binary reachability at multiple transmit-power levels, without RSSI magnitudes or surveyed anchors.",
+        "The listing reports simulation results but does not establish performance in physical industrial warehouses or with real hardware.",
+        "No code or dataset is declared in the listing, and the simulation setup details are not provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their method reduces the average error in estimated positions, measured relative to the network's diameter, by 16.0% compared to a standard method called MDS-MAP(P) in a computer model of a multi-level warehouse.",
+        "brief": "The authors propose a way to figure out where things are in 3D space using only whether devices can hear each other at different signal strengths, without needing to know exact distances or have fixed reference points. They say that using four different signal strength levels makes their estimates 16.0% more accurate than a common method in a computer simulation of a warehouse with multiple floors. They also say it is much more accurate than another method, but the listing does not say if this works in real warehouses or with real equipment.\n\nThe best result they report is a 16.0% reduction in average error compared to MDS-MAP(P) in a simulated warehouse. They also report 23.9% and 34.0% reductions compared to another method in small and medium-sized networks. The listing does not explain how the simulation was set up, how many devices were used, or exactly how the error was measured relative to the network's size.\n\nThis is useful for people trying to locate items in factories or warehouses where it is hard to install fixed reference points. It may not be useful for people who need exact map coordinates or who rely on measuring signal strength directly. The method needs control over signal strength levels, which might not be possible in all real-world settings.",
+        "takeaways": [
+          "The method figures out relative 3D positions using only whether devices can hear each other at different signal levels, without needing exact distances or fixed reference points.",
+          "The listing only shows results from a computer simulation and does not say if it works in real warehouses or with real hardware.",
+          "The listing does not mention any code or data, and does not explain the details of the simulation."
+        ]
+      },
+      "actions": [
+        "Verify the simulation setup, node counts, and network-diameter normalization definition by reading the full PDF.",
+        "Check whether the authors provide any physical validation or hardware implementation details in the full paper."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-09-10",
+        "publishedOn": "2026-09-10",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.09330"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-10"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-10T16:27:39.591Z"
+      }
+    },
+    {
+      "id": "2609.09818",
+      "arxivId": "2609.09818",
+      "url": "https://arxiv.org/abs/2609.09818",
+      "topic": "Health",
+      "reported": "The authors report that their YOLOv8 model achieved a classification accuracy of 98.13% and a counting accuracy of 98.27% on the AGAR dataset.",
+      "metrics": [
+        "classification accuracy of 98.13%",
+        "counting accuracy of 98.27%",
+        "MAE ~2.20"
+      ],
+      "title": "Multi-Task Bacterial Colony Detection and Classification Using YOLOv8 with Edge Optimization for Resource-Constrained Deployment",
+      "authors": "Belaguppa Manjunath Ashwin Desai, Rohan Rajesh, Shreyas Murthy, Pronama Biswas, Revathi Vaithiyanathan",
+      "takeaway": "The paper claims to propose a multi-task deep learning framework using YOLOv8 with edge optimization for automated bacterial colony detection and classification on resource-constrained devices.",
+      "brief": "The authors propose a YOLOv8-based framework for bacterial colony detection and classification, trained on the AGAR dataset. They report high accuracy metrics and evaluate edge deployment strategies on a Raspberry Pi 4B.\n\nThe strongest reported result is a classification accuracy of 98.13% and counting accuracy of 98.27% on the AGAR test set. The authors note that structured pruning caused significant accuracy degradation, while unstructured pruning preserved accuracy without runtime gains. The listing does not establish whether the model generalizes to datasets outside the AGAR benchmark.\n\nResearchers working on microbiology automation or edge AI deployment may find the optimization trade-offs relevant. Those not focused on bacterial colony counting or resource-constrained inference may ignore it.",
+      "abstract": "Manual counting and classification of bacterial colonies are critical yet labor-intensive tasks in microbiology, prone to human error particularly on densely populated plates. This work proposes a multi-task deep learning framework trained on the Annotated Germs for Automated Recognition (AGAR) dataset (18,000 images; 9,202 training / 3,067 testing) to automate Colony Forming Unit (CFU) enumeration and species classification. A custom multi-task CNN employing global regression served as the baseline, but demonstrated limited performance in clustered colony environments due to the absence of spatial localization. To address this, a YOLOv8 object detection architecture was adopted with high-resolution 1024x1024 inputs, enabling instance-level colony detection and label assignment. The model achieved a classification accuracy of 98.13% and a counting accuracy of 98.27% (within a 10-colony margin), demonstrating strong predictive capability. To bridge the gap between model performance and practical deployability, the trained model was optimized through unstructured and structured pruning, ONNX conversion, and reduced-precision inference (FP32, FP16, INT8). On a Raspberry Pi 4B, ONNX FP32 and FP16 variants offered the best balance between inference speed (~6.4s) and accuracy (MAE ~2.20). Unstructured pruning preserved predictive accuracy (MAE ~2.01) without runtime gains, while structured pruning resulted in significant accuracy degradation (MAE ~6.3), revealing the sensitivity of instance-level colony detection to architectural compression. These findings provide practical guidance for selecting optimization strategies in resource-constrained laboratory deployments.",
+      "takeaways": [
+        "The object is a YOLOv8 model optimized for bacterial colony detection and classification on edge devices.",
+        "A visible limit is the significant accuracy degradation observed with structured pruning, indicating sensitivity to architectural compression.",
+        "The artifact status is not established in the listing, as no code or repository URL is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their computer vision model achieved a classification accuracy of 98.13% and a counting accuracy of 98.27% on a specific dataset of bacterial images.",
+        "brief": "The authors propose a computer vision system to automatically count and identify types of bacterial colonies in lab images. They tested this system on a dataset called AGAR and reported high accuracy scores. They also tested how to make the system run faster on a small computer called a Raspberry Pi.\n\nThe best result they reported was a 98.13% accuracy in identifying bacteria types and 98.27% accuracy in counting them. They found that one method of shrinking the model (structured pruning) made it much less accurate, while another method (unstructured pruning) kept the accuracy but did not make it faster. The listing does not say if the system works well on images from other labs or datasets.\n\nPeople who work on automating lab tasks or running AI on small computers might find this useful. People who do not work in these areas might not need to look at it.",
+        "takeaways": [
+          "The thing being described is a computer vision model designed to count and identify bacterial colonies on small computers.",
+          "A clear limitation is that shrinking the model in a specific way (structured pruning) caused a big drop in accuracy.",
+          "It is not stated in the listing whether the code or model files are available for download."
+        ]
+      },
+      "actions": [
+        "Verify the reported accuracy and MAE values by checking the full PDF for experimental setup details.",
+        "Confirm the availability of the AGAR dataset and model weights to assess reproducibility."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM"
+      ],
+      "listing": {
+        "listedOn": "2026-09-10",
+        "publishedOn": "2026-09-10",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.09818"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-10"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-10T16:27:39.591Z"
+      }
+    }
+  ]
+}
