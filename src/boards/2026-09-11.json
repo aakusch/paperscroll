@@ -1,0 +1,660 @@
+{
+  "date": "2026-09-11",
+  "label": "Fri, Sep 11",
+  "minutes": 10,
+  "poolSize": 111,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-09-11T16:32:42.450Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2609.10715",
+      "arxivId": "2609.10715",
+      "url": "https://arxiv.org/abs/2609.10715",
+      "topic": "AI",
+      "reported": "The authors report that NCP-ArchPreview outperforms OLMo-3-7B by 2.45 points on the downstream macro-average, including a 5.99-point gain on GSM8K.",
+      "metrics": [
+        "8.9B parameters",
+        "5.73T tokens",
+        "51.3% of the total training tokens"
+      ],
+      "title": "NCP-ArchPreview Technical Report: Moving towards Latent Space Language Models through Next Concept Prediction",
+      "authors": "NCP Team, Jiaqi Cao, Chiyu Chen, Shuang Cheng, Xu Cheng, Beiya Dai, Yufan Feng, Kewen Ge, Ruijun Ge, Jiayi Huang, Yang Jiao, Dahua Lin, Zhouhan Lin, Yifan Liu, Yuliang Liu, Biqing Qi, Mowen Ruan, Junzhe Shen, Yunchong Song, Hao Sun, Zhongbo Tian, Yixuan Wang, Rubin Wei, Jiaxin Xiong, Kangyu Yang, Qian Yao, Qi Zhang, Bowen Zhou",
+      "takeaway": "The paper introduces NCP-ArchPreview, a latent-space language model that extends autoregressive pretraining with Next Concept Prediction to predict discrete multi-token concepts alongside standard next-token prediction.",
+      "brief": "The authors present a model that learns to predict discrete concepts spanning multiple tokens while maintaining standard token-level generation. They report that the model reaches the final pretraining loss of OLMo-3-7B after consuming only 51.3% of the total training tokens.\n\nThe authors state that the model outperforms OLMo-3-7B by 2.45 points on the downstream macro-average, with a 5.99-point gain on GSM8K. They also report that updating just the 17M-parameter VQ module yields a lightweight interface for domain adaptation. The listing does not specify the full set of downstream benchmarks used for the macro-average calculation.\n\nResearchers working on latent-space language models or efficient pretraining objectives may find the reported token efficiency and concept-level gains relevant. Those focused solely on standard next-token prediction architectures without latent components may find the specific NCP objective less directly applicable.",
+      "abstract": "We introduce NCP-ArchPreview, a latent-space language model that pushes autoregressive pretraining beyond standard next-token prediction (NTP). Alongside NTP, the model learns through Next Concept Prediction (NCP) to predict discrete concepts that span multiple tokens, introducing an explicit and more challenging concept-level objective while preserving standard token-level autoregressive generation. NCP-ArchPreview builds a latent space by constructing a product-quantized concept vocabulary directly from its hidden states, and subsequently learns to predict future concepts via a dedicated Concept Module. These predicted concepts are then fed back to the token level to guide subsequent generation, with NTP and NCP trained jointly end-to-end. We scale this architecture to 8.9B parameters and train it on 5.73T tokens from the Dolma-3 dataset, marking the largest demonstration of a latent-space language model to date. Remarkably, by consuming only 51.3% of the total training tokens, NCP-ArchPreview achieves the final pretraining loss of OLMo-3-7B. Following full pretraining, it outperforms OLMo-3-7B by 2.45 points on the downstream macro-average, including a notable 5.99-point gain on GSM8K. Controlled experiments isolate a clear progression of performance gains stemming from both the latent architecture and the NCP objective. Furthermore, utilizing only 85% of the standard computation, NCP-ArchPreview approaches the training loss of a strictly parameter-aligned 8.9B baseline. The learned latent space remains highly valuable after the pretraining stage: updating just the 17M-parameter VQ module yields a novel, lightweight interface for domain adaptation, while a simple injection of concept representations into a DFlash2 drafter improves the mean accepted length by 4.17% with negligible overhead.",
+      "takeaways": [
+        "The object is a latent-space language model that jointly trains next-token and next-concept prediction objectives.",
+        "A visible limit is that the downstream macro-average benchmark composition is not fully detailed in the abstract.",
+        "The artifact status is a technical report with no declared code repository provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that their model scores 2.45 points higher than the OLMo-3-7B model on an average of several downstream tasks, including a 5.99-point improvement on the GSM8K math benchmark.",
+        "brief": "The authors describe a language model that learns to predict groups of words (concepts) instead of just single words, while still learning to predict individual words. They claim this model reaches the same final training error as the OLMo-3-7B model but uses only 51.3% of the training data.\n\nThe authors state that their model beats OLMo-3-7B by 2.45 points on an average of several tasks, with a 5.99-point win on the GSM8K math test. They also say that updating a small part of the model (17 million parameters) allows for easy adaptation to new domains. The abstract does not list all the specific tasks used to calculate the average score.\n\nPeople studying how to make language models more efficient or how to use latent spaces might find these results useful. People who only care about standard word-by-word prediction models might not find the concept-prediction part directly useful for their work.",
+        "takeaways": [
+          "The subject is a language model that predicts both single words and groups of words (concepts) during training.",
+          "A limitation is that the abstract does not list every specific task used to calculate the average performance score.",
+          "The status is a technical report with no link to the code provided in the listing."
+        ]
+      },
+      "actions": [
+        "Verify the specific downstream benchmarks included in the macro-average by reading the full PDF.",
+        "Check the full report for details on the product-quantized concept vocabulary construction and the DFlash2 drafter integration."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-11",
+        "publishedOn": "2026-09-09",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.10715",
+            "upvotes": 132
+          }
+        ]
+      },
+      "trend": {
+        "votes": 132,
+        "rank": 1,
+        "of": 19,
+        "perDay": 66
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 132,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-09"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-11T16:32:42.450Z"
+      }
+    },
+    {
+      "id": "2609.11929",
+      "arxivId": "2609.11929",
+      "url": "https://arxiv.org/abs/2609.11929",
+      "topic": "AI",
+      "reported": "The authors report that SenseNova-U1.5 largely advances image fidelity, text rendering, complex composition, multi-reference editing, and interleaved generation across extensive evaluations.",
+      "metrics": [
+        "8B-MoT",
+        "4K"
+      ],
+      "title": "SenseNova-U1.5: Towards Native Unified Visual Intelligence",
+      "authors": "Haiwen Diao, Jiahao Wang, Chenjing Ding, Hanming Deng, Jiangnan Chen, Ruixi Zhang, Ruohui Wang, Wenwen Tong, Xiangyu Fan, Yubo Wang, Yue Zhu, Yuwei Niu, Zhengqi Bai, Zhiqian Lin, Zhitao Yang, Zhongang Cai, Bo Yang, Chen Feng, Chengguang Lv, Guangjia Liu, Guanlin Wang, Hanyu Zhang, Haojia Yu, Hongcan Xiao, Hongli Wang, Huan Wu, Huaping Zhong, Jian Fang, Jianan Fan, Jiaqi Li, Jiefan Lu, Jing Zuo, Jingcheng Ni, Junxiang Xu, Linjun Dai, Mutian Xu, Peishen Yan, Penghao Wu, Ruijie Mao, Ruisi Wang, Shihao Bai, Shuang Yang, Shuya Yang, Shuyan Zheng, Silei Wu, Siying Li, Tao Chu, Tianbo Zhong, Tongxi Zhou, Weichao Luo, Weichen Fan, Wenhao Jia, Wenjie Gao, Xiangli Kong, Yan Li, Yang Yong, Zimo Wen, Zixuan Qian, Wenxiu Sun, Ruihao Gong, Quan Wang, Lewei Lu, Lei Yang, Ziwei Liu, Dahua Lin",
+      "takeaway": "The paper claims to launch SenseNova-U1.5, an 8B-MoT native unified multimodal model that understands, reasons about, and generates visual content within an encoder-free and VAE-free architecture.",
+      "brief": "The authors present SenseNova-U1.5 as a native unified multimodal model using an encoder-free and VAE-free architecture. They state it understands, reasons about, and generates visual content.\n\nThe authors report improvements in image fidelity, text rendering, and complex composition across extensive evaluations. They note the model generalizes to long, complex, and structured visual instructions despite limited exposure to structured formats in its generation data. The listing does not specify the exact benchmarks or quantitative scores used for these evaluations.\n\nResearchers working on unified multimodal architectures or visual generation may find the architectural details relevant. Those requiring specific benchmark comparisons or quantitative performance metrics should verify the full paper.",
+      "abstract": "We launch SenseNova-U1.5, an 8B-MoT native unified multimodal model that understands, reasons about, and generates visual content within an encoder-free and VAE-free architecture. We strengthen its visual interface through spatially coherent patch reconstruction and scale its training with carefully curated generation and editing data, improved task formulation, structural prompt enhancement, and native resolutions of up to 4K. For post-training, we optimize specialized experts for visual aesthetics, bilingual text rendering, infographic generation, and image editing, and consolidate their capabilities through multi-expert on-policy distillation. Across extensive evaluations, SenseNova-U1.5 largely advances image fidelity, text rendering, complex composition, multi-reference editing, and interleaved generation, while improving instruction following and preserving subject identity, geometry, and unmodified regions. Despite limited exposure to structured formats in its generation data, SenseNova-U1.5 generalizes effectively to long, complex, and structured visual instructions, further proving that multimodal understanding can transfer to visual planning and creation. Together, these findings position native unified modelling as a promising path towards systems that perceive, reason and create within a fully end-to-end framework. We will open-source training code, including supervised fine-tuning, reinforcement learning, and on-policy distillation.",
+      "takeaways": [
+        "The object is an 8B-MoT native unified multimodal model with an encoder-free and VAE-free architecture.",
+        "A visible limit is the limited exposure to structured formats in its generation data, though the authors claim effective generalization.",
+        "The artifact status is that the authors state they will open-source training code, including supervised fine-tuning, reinforcement learning, and on-policy distillation."
+      ],
+      "plain": {
+        "reported": "The authors report that their model performs better in image quality, text display, complex image creation, editing multiple references, and mixed generation across many tests.",
+        "brief": "The authors introduce a new AI model that can understand, think about, and create images without using separate encoding or decoding parts. They say it can handle high-resolution images up to 4K.\n\nThey claim the model is better at making clear images and text, and at following complex instructions. They note it works well even though it was not trained on many structured formats. The summary does not list the specific tests or scores used to prove these improvements.\n\nPeople studying how to combine understanding and creation in AI might find this useful. People who need exact test scores or comparisons with other models should check the full document.",
+        "takeaways": [
+          "The model is a large AI system that combines understanding and creation without separate processing blocks.",
+          "A limitation is that it was not trained on many structured formats, though the authors say it still works well.",
+          "The authors say they will release the code used to train the model, including specific learning methods."
+        ]
+      },
+      "actions": [
+        "Verify the specific evaluation benchmarks and quantitative scores in the full PDF, as the abstract only mentions 'extensive evaluations' without listing specific metrics.",
+        "Check the open-source repository for the training code once released to confirm the availability of the supervised fine-tuning, reinforcement learning, and on-policy distillation components."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-11",
+        "publishedOn": "2026-09-10",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.11929",
+            "upvotes": 110
+          }
+        ]
+      },
+      "trend": {
+        "votes": 110,
+        "rank": 2,
+        "of": 19,
+        "perDay": 110
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 110,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-10"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-11T16:32:42.450Z"
+      }
+    },
+    {
+      "id": "2609.07064",
+      "arxivId": "2609.07064",
+      "url": "https://arxiv.org/abs/2609.07064",
+      "topic": "AI",
+      "reported": "The authors report that LVLMs trained on their dataset significantly outperform baselines and generalize to real-world spatial tasks.",
+      "metrics": [
+        "15,000 block-stacking problems"
+      ],
+      "title": "SpatialBlock: Enhancing Spatial Intelligence in LVLMs via Synthetic Block-Stacking Problem",
+      "authors": "Soohyun Ryu, Sohee Kim, Eunho Yang",
+      "takeaway": "The paper proposes a synthetic block-stacking dataset and training paradigm to enhance spatial intelligence in Large Vision-Language Models.",
+      "brief": "The authors introduce SpatialBlock-15k, a synthetic dataset of 15,000 block-stacking problems designed to teach foundational spatial skills through structured manipulation tasks. They claim this approach addresses the high cost and noise associated with real-scene geometric annotations.\n\nExperiments show that models trained on this data outperform baselines and generalize to real-world tasks. The listing does not specify the exact quantitative margins of improvement or the specific real-world benchmarks used for evaluation.\n\nResearchers working on vision-language model spatial reasoning or synthetic data generation may find the methodology relevant. Those requiring real-world geometric ground truth without synthetic proxies may need to verify the generalization claims independently.",
+      "abstract": "Large Vision-Language Models (LVLMs) have achieved strong performance on diverse visual tasks, yet their ability to reconstruct and reason about the 3D structure of the scene depicted in 2D images -- referred to as spatial intelligence -- remains limited. Existing approaches attempt to address this gap by using real-scene spatial question answering datasets that require dense geometric annotations. However, constructing such labels is costly, time-consuming, and often noisy due to reliance on external perception modules. In this work, we propose a novel paradigm inspired by human cognitive development: learning foundational spatial skills through structured block-manipulation tasks. We introduce SpatialBlock-15k, a synthetic dataset of 15,000 block-stacking problems covering 3D-to-2D projection, viewpoint transformation, and structural combination. The dataset further incorporates controlled color modulation as visual cues to encourage anchor-based reasoning in visually complex conditions. Experiments demonstrate that LVLMs trained on our dataset through either direct answering or reasoning-based prediction significantly outperform baselines and generalize to real-world spatial tasks, despite the dataset's synthetic and compact nature. Code and data are available at https://github.com/rsoohyun/SpatialBlock.",
+      "takeaways": [
+        "The core object is a synthetic dataset of 15,000 block-stacking problems covering 3D-to-2D projection and viewpoint transformation.",
+        "A visible limit is the reliance on synthetic data, which the authors acknowledge may differ from real-world complexity despite reported generalization.",
+        "The artifact status is established as code and data are available at the provided GitHub repository URL."
+      ],
+      "plain": {
+        "reported": "The authors state that computer vision models trained on their new data perform better than standard models and work on real-world images.",
+        "brief": "The creators made a set of 15,000 computer-generated puzzles involving stacking blocks. They believe this helps AI models understand 3D space better than using expensive real-world data. The goal is to teach basic spatial skills in a controlled way.\n\nTests show the models do better than others and handle real images well. However, the text does not say exactly how much better they are or which specific real-world tests were used.\n\nPeople studying how AI sees 3D space might find this useful. People who need exact measurements from real objects should check the full paper to see if the synthetic training is enough.",
+        "takeaways": [
+          "The main thing they made is a set of 15,000 computer-generated block puzzles.",
+          "A limitation is that the data is computer-generated, which might not perfectly match the messy real world.",
+          "The code and data are available for download at the linked website."
+        ]
+      },
+      "actions": [
+        "Verify the specific real-world spatial tasks and baseline comparisons in the full PDF to assess the strength of the generalization claim.",
+        "Inspect the GitHub repository to confirm the availability and structure of the SpatialBlock-15k dataset and training code."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/rsoohyun/SpatialBlock",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-11",
+        "publishedOn": "2026-09-07",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.07064",
+            "upvotes": 49
+          }
+        ]
+      },
+      "trend": {
+        "votes": 49,
+        "rank": 3,
+        "of": 19,
+        "perDay": 12
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 49,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-07"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-11T16:32:42.450Z"
+      }
+    },
+    {
+      "id": "2609.05903",
+      "arxivId": "2609.05903",
+      "url": "https://arxiv.org/abs/2609.05903",
+      "topic": "AI",
+      "reported": "The authors report that EvoSafeHarness reduces the average attack success rate from 45.6% to 10.0% on the DecodingTrust-Agent benchmark.",
+      "metrics": [
+        "45.6% to 10.0%",
+        "3.3-point utility cost",
+        "82.8% utility at 0.0% ASR"
+      ],
+      "title": "EvoSafeHarness: Evolving Model- and Domain-Specific Harnesses for Securing Agents",
+      "authors": "Nanxi Li, Yingzi Ma, Yulong Cao, Edward Suh, Bo Li, Dawn Song, Chaowei Xiao",
+      "takeaway": "The paper presents EvoSafeHarness, a framework that synthesizes deployable safety harnesses for frozen LLM agents by jointly optimizing natural-language policies and executable code logic.",
+      "brief": "The authors propose a safety-specific optimization framework that generates model- and domain-specific harnesses for frozen LLM agents. It jointly searches natural-language policies and executable code logic, guided by model behavior and adversarial review to avoid benchmark-specific rules.\n\nThe authors report stronger safety-utility frontiers than fixed expert-designed defenses across four agent benchmark families. On DecodingTrust-Agent, they state the average attack success rate drops from 45.6% to 10.0% with a 3.3-point utility cost. They also report 82.8% utility at 0.0% ASR on AgentDojo and claim transfer to unseen AgentDyn suites.\n\nResearchers evaluating agent safety harnesses or optimizing policy-code co-design may find the reported benchmark comparisons relevant. Those requiring verification of the optimization process or code implementation should inspect the provided repository and PDF.",
+      "abstract": "Large Language Model (LLM) agents are turning language into real-world effects, making safety necessary against both indirect prompt injections and direct harmful requests. System-level safety harnesses add an enforcement layer beyond model-level defenses, but existing harnesses are usually designed once by experts and applied across heterogeneous models and domains. Effective protection is deployment-dependent: models differ in how much enforcement they need before utility declines, while domains differ in the effects, state, and action sequences that must be governed. A harness that is strict enough for one model may over-block another, and a policy that transfers across domains may miss application-specific safety relations. We present EvoSafeHarness, a safety-specific optimization framework that synthesizes a deployable harness for a frozen model in a target domain. It jointly searches a natural-language policy and executable code logic, guided by model behavior, domain specifications, and fresh-context adversarial review to reject benchmark-specific rules. Across four agent benchmark families, EvoSafeHarness achieves a stronger safety-utility frontier than fixed expert-designed defenses. On DecodingTrust-Agent, it reduces average attack success rate from 45.6% to 10.0% at a 3.3-point utility cost and achieves the best score in 14 of 15 cells. On AgentDojo, it reaches 82.8% utility at 0.0% ASR, twice CaMeL's utility at the same operating point, and transfers unchanged to unseen AgentDyn suites. It also achieves the best score on Agent-SafetyBench for every victim and keeps mean ASR below 20% under adaptive PAIR attacks with a refinement budget of 16. Analysis shows that domain semantics determine which safety relations and trajectory state are needed, while model and runtime behavior determine how and where those relations should be enforced.",
+      "takeaways": [
+        "The object is a synthesis framework for safety harnesses targeting frozen LLM agents in specific domains.",
+        "The listing does not establish whether the reported transfer to unseen AgentDyn suites was measured under identical adaptive attack conditions as the primary benchmarks.",
+        "The artifact status is indicated by a declared GitHub repository URL, but the listing does not confirm the code matches the reported results."
+      ],
+      "plain": {
+        "reported": "The authors report that their system lowers the rate of successful security attacks from 45.6% to 10.0% on a specific test suite called DecodingTrust-Agent.",
+        "brief": "The authors propose a tool that automatically creates safety rules for AI agents. It combines written instructions with computer code, adjusting them to fit specific AI models and tasks.\n\nThe authors say their tool performs better than standard safety rules on four different test suites. On one test, they claim the attack success rate drops from 45.6% to 10.0% while losing only 3.3 points of usefulness. On another test, they claim 82.8% usefulness with zero successful attacks.\n\nPeople studying AI safety or building safety tools for AI agents might find these test results useful. Those who need to check how the tool works should look at the code and full paper.",
+        "takeaways": [
+          "The tool creates custom safety rules for specific AI agents and tasks.",
+          "The text does not say if the tool works the same way on new, unseen tasks as it does on the tested ones.",
+          "A code link is provided, but the text does not prove the code produces the exact results claimed."
+        ]
+      },
+      "actions": [
+        "Verify the reported DecodingTrust-Agent and AgentDojo numbers by checking the PDF against the declared GitHub repository code.",
+        "Inspect the repository to confirm the implementation of the joint policy and code logic search described in the abstract."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/SaFo-Lab/EvoSafeHarness",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-11",
+        "publishedOn": "2026-09-05",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.05903",
+            "upvotes": 35
+          }
+        ]
+      },
+      "trend": {
+        "votes": 35,
+        "rank": 4,
+        "of": 19,
+        "perDay": 6
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 35,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-05"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-11T16:32:42.450Z"
+      }
+    },
+    {
+      "id": "2609.10544",
+      "arxivId": "2609.10544",
+      "url": "https://arxiv.org/abs/2609.10544",
+      "topic": "Econ",
+      "reported": "The authors report that exports, gold flow, and industrial share prices carry the clearest joint forecasting content for changes in Bank Rate in the confirmatory specification.",
+      "metrics": [
+        "1870-1913"
+      ],
+      "title": "Revisiting the Rules-versus-Discretion Debate: Forecasting Evidence from the Bank of England, 1870-1913",
+      "authors": "Xi Chen",
+      "takeaway": "The paper claims to revisit the rules-versus-discretion debate by jointly testing ten domestic and external indicators in a London-specific monthly panel to determine what guided Bank of England rate adjustments.",
+      "brief": "The paper claims to revisit the rules-versus-discretion debate by jointly testing ten domestic and external indicators in a London-specific monthly panel to determine what guided Bank of England rate adjustments.\n\nThe authors report that exports, gold flow, and industrial share prices carry the clearest joint forecasting content for changes in Bank Rate in the confirmatory specification. They state that gold flow forecasts rate changes even when reserve stock does not, separating bullion settlement from balance-sheet position. The listing does not establish specific statistical significance levels or out-of-sample performance metrics beyond the qualitative description of forecasting content.\n\nResearchers studying historical monetary policy under the gold standard may find the multivariate information set analysis relevant. Those seeking a definitive mechanical rule or a single dominant indicator may find the state-dependent weights and lack of a single frozen channel less aligned with their expectations.",
+      "abstract": "Under the classical gold standard, historians have long debated what guided the Bank of England's adjustments to Bank Rate: whether policy followed a mechanical gold-standard rule or discretion when City or exchange conditions required it, and whether domestic money-market stability or external convertibility carried greater weight. This paper revisits those questions with a London-specific monthly panel, 1870-1913, jointly testing ten domestic and external indicators the Court watched when setting the published minimum rate. The findings fit neither a single frozen channel nor unstructured ad hoc policy. Instead, the Bank appears to have drawn repeatedly on a multivariate information set-trade settlement, gold movements, City asset prices, bill-market conditions, and episodic convertibility pressure-with state-dependent weights across subperiods. In the confirmatory specification, exports, gold flow, and industrial share prices carry the clearest joint forecasting content for changes in Bank Rate. Gold flow forecasts rate changes even when reserve stock does not, separating bullion settlement from balance-sheet position. Bill-market and convertibility pressures also carry incremental forecasting content in the multivariate specification, though their prominence depends on how domestic and external indicators are modeled together. The overall pattern is most consistent with systematic discretion under the classical gold standard.",
+      "takeaways": [
+        "The object is a London-specific monthly panel from 1870-1913 testing ten domestic and external indicators for Bank Rate forecasting.",
+        "A visible limit is that the findings fit neither a single frozen channel nor unstructured ad hoc policy, relying instead on state-dependent weights across subperiods.",
+        "The artifact status is not established in the listing, as no code or data repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that exports, gold flow, and industrial share prices carry the clearest joint forecasting content for changes in Bank Rate in the confirmatory specification.",
+        "brief": "The paper claims to revisit the rules-versus-discretion debate by jointly testing ten domestic and external indicators in a London-specific monthly panel to determine what guided Bank of England rate adjustments.\n\nThe authors report that exports, gold flow, and industrial share prices carry the clearest joint forecasting content for changes in Bank Rate in the confirmatory specification. They state that gold flow forecasts rate changes even when reserve stock does not, separating bullion settlement from balance-sheet position. The listing does not establish specific statistical significance levels or out-of-sample performance metrics beyond the qualitative description of forecasting content.\n\nResearchers studying historical monetary policy under the gold standard may find the multivariate information set analysis relevant. Those seeking a definitive mechanical rule or a single dominant indicator may find the state-dependent weights and lack of a single frozen channel less aligned with their expectations.",
+        "takeaways": [
+          "The object is a London-specific monthly panel from 1870-1913 testing ten domestic and external indicators for Bank Rate forecasting.",
+          "A visible limit is that the findings fit neither a single frozen channel nor unstructured ad hoc policy, relying instead on state-dependent weights across subperiods.",
+          "The artifact status is not established in the listing, as no code or data repository is declared."
+        ]
+      },
+      "actions": [
+        "Verify the specific statistical tests and significance levels used in the confirmatory specification by reading the full PDF.",
+        "Check the data sources for the London-specific monthly panel to confirm the availability and construction of the ten indicators."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.EM"
+      ],
+      "listing": {
+        "listedOn": "2026-09-11",
+        "publishedOn": "2026-09-11",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.10544"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-11"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-11T16:32:42.450Z"
+      }
+    },
+    {
+      "id": "2609.10594",
+      "arxivId": "2609.10594",
+      "url": "https://arxiv.org/abs/2609.10594",
+      "topic": "Security",
+      "reported": "The authors report that JADES exhibits the best overall performance when evaluated on JailbreakQR and JailMeter-Eva using human judgments as the reference.",
+      "metrics": [],
+      "title": "An Empirical Measurement of Jailbreaking Evaluators",
+      "authors": "Yujie Mu",
+      "takeaway": "The paper claims to systematically compare six recurring jailbreak evaluators on the same human-labeled data under a controlled setup to assess their agreement with humans and consistency.",
+      "brief": "The authors state that they systematically compare six evaluators that recur in recent jailbreak attack and defense research. They evaluate them on JailbreakQR and JailMeter-Eva, using human judgments as the reference, and measure agreement with humans, error types, and consistency across attack families.\n\nThe authors report that JADES exhibits the best overall performance, while HarmBench and StrongReject also demonstrate good performance. They note that different evaluators encode different definitions of jailbreak success, meaning that reported attack strength and apparent progress can depend substantially on which evaluator is used.\n\nResearchers comparing jailbreak attack results across different studies should open this paper to understand evaluator variability. Those not concerned with cross-study comparability of jailbreak metrics may ignore it.",
+      "abstract": "Expert evaluation of jailbreak responses is costly and difficult to scale, so the community increasingly relies on automated evaluators to determine whether an attack succeeds. However, jailbreak studies typically validate their chosen evaluator independently, repeatedly spending resources on similar evaluation efforts while making results across papers difficult to compare. Different evaluators also encode different definitions of jailbreak success, meaning that reported attack strength and apparent progress can depend substantially on which evaluator is used. We systematically compare six evaluators that recur in recent jailbreak attack and defense research: HarmBench, JailbreakBench, JailbreakRadar, StrongReject, JADES, and JailMeter. To our knowledge, no prior study has evaluated all six on the same human-labeled data under a controlled setup. We evaluate them on JailbreakQR and JailMeter-Eva, using human judgments as the reference, and measure agreement with humans, error types, and consistency across attack families. For evaluators that require a general-purpose LLM judge, we use a shared backbone to control for model-specific variation. We found that JADES exhibits the best overall performance, while HarmBench and StrongReject also demonstrate good performance.",
+      "takeaways": [
+        "The object is a controlled comparison of six specific automated jailbreak evaluators against human judgments.",
+        "A visible limit is that the comparison relies on two specific datasets, JailbreakQR and JailMeter-Eva, which may not cover all attack families.",
+        "The artifact status is not established in the listing, as no code or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that the JADES tool showed the best overall results when tested on two specific datasets, using human opinions as the standard for comparison.",
+        "brief": "The authors say they compared six different automated tools used to check if AI jailbreaks work. They tested these tools on two datasets, using human opinions as the correct answer, and measured how well the tools agreed with humans and how consistent they were.\n\nThe authors found that the JADES tool worked best overall, while two other tools, HarmBench and StrongReject, also worked well. They point out that different tools define a successful jailbreak differently, so results can change a lot depending on which tool is used.\n\nPeople who compare jailbreak results from different research papers should look at this paper to understand how much the choice of tool matters. People who do not care about comparing results across different studies can skip it.",
+        "takeaways": [
+          "The paper is about comparing six specific automated tools that check if AI jailbreaks are successful.",
+          "A limit is that the comparison only used two specific datasets, which might not represent every type of jailbreak attack.",
+          "The listing does not say if the code or data are available for download."
+        ]
+      },
+      "actions": [
+        "Verify the specific human-labeled datasets and the shared LLM backbone used for evaluation in the full PDF.",
+        "Check the full paper for the detailed error type breakdowns and consistency metrics across attack families."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-11",
+        "publishedOn": "2026-09-11",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.10594"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-11"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-11T16:32:42.450Z"
+      }
+    },
+    {
+      "id": "2609.10596",
+      "arxivId": "2609.10596",
+      "url": "https://arxiv.org/abs/2609.10596",
+      "topic": "Physics",
+      "reported": "The authors report that unit inversion is polynomial-time, classically and quantumly, when an efficient generalized Fourier transform exists, the group ring is semisimple, and the largest matrix block has polynomial size.",
+      "metrics": [
+        "dimension at most 2"
+      ],
+      "title": "Quantum Inversion of Units in Group Rings: Block Dimension, Not Commutativity, Governs Hardness",
+      "authors": "Bhanwar Gupta",
+      "takeaway": "The paper claims that block dimension, not commutativity, governs the hardness of quantum unit inversion in group rings, demonstrating that the problem is solvable in polynomial time under specific structural conditions.",
+      "brief": "The authors argue that inverting units in group rings is distinct from the hidden subgroup problem and can be solved via a change of basis that splits the ring into small matrix blocks. They prove polynomial-time solvability when an efficient generalized Fourier transform exists, the ring is semisimple, and the largest matrix block has polynomial size.\n\nThe strongest reported result is the proof of polynomial-time solvability for dihedral group rings, supported by an explicit reversible quantum circuit validated in a register-level simulator. The authors identify a structural boundary where the method stops and propose a candidate construction in the surviving regime under a new security assumption. The listing does not specify the exact computational complexity bounds or the specific parameters of the register-level simulator used for validation.\n\nResearchers working on post-quantum cryptography based on group rings or non-abelian groups should examine the structural conditions for polynomial-time solvability. Those focused on the hardness of the dihedral hidden subgroup problem specifically should note that the authors distinguish unit inversion from HSP solvability.",
+      "abstract": "Several public-key schemes base their security on the belief that inverting a unit of a group ring is hard. A recent result showed that this belief is false on a quantum computer when the group is abelian. To restore security, designers moved to non-abelian groups, especially dihedral groups, believing that the hardness of the dihedral hidden subgroup problem (HSP) would protect the scheme. This paper shows that unit inversion is a different problem and does not require an HSP solver. Instead, it can be solved by a change of basis that splits the group ring into small matrix blocks. We prove that unit inversion is polynomial-time, classically and quantumly, when an efficient generalized Fourier transform exists, the group ring is semisimple, and the largest matrix block has polynomial size. Dihedral group rings satisfy these conditions because their irreducible representations have dimension at most 2 and an efficient Fourier transform exists. We give an explicit reversible quantum circuit for the block-inversion step and validate it in a register-level simulator. We also identify the exact structural boundary where the method stops and propose a candidate construction in the surviving regime under a new, clearly stated security assumption. The constructive results are supported by reproducible software artifacts and experiments.",
+      "takeaways": [
+        "The object is the computational complexity of inverting units in group rings, specifically addressing the security of public-key schemes based on this operation.",
+        "A visible limit is that the polynomial-time result depends on the existence of an efficient generalized Fourier transform and the semisimplicity of the group ring, which may not hold for all groups.",
+        "The artifact status is that the authors state the constructive results are supported by reproducible software artifacts and experiments, but no specific repository URL or code link is provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that the mathematical task of reversing a specific type of number in a group ring can be done quickly (in polynomial time) by both classical and quantum computers, provided the group ring has certain structural properties like being semisimple and having small matrix blocks.",
+        "brief": "The authors state that breaking a type of encryption based on group rings is not as hard as previously thought because it is a different problem than the hidden subgroup problem. They show that if the group ring can be broken into small pieces (matrix blocks) and has a fast way to transform data (Fourier transform), the problem can be solved quickly.\n\nThe main result is that this quick solution works for dihedral groups, which are a common choice for this type of encryption. The authors built a quantum circuit to perform the solution and tested it in a computer simulation. They also identified where their method fails and suggested a new way to build secure systems in those cases. The abstract does not say how fast the solution is in terms of specific time or space limits, nor does it detail the simulator's specifications.\n\nPeople designing encryption systems using group rings should check if their specific group meets the conditions for this quick solution. People studying the hidden subgroup problem should note that the authors say this is a separate issue from the one they solved.",
+        "takeaways": [
+          "The subject is the difficulty of reversing a mathematical operation in group rings, which is used in some encryption schemes.",
+          "A limitation is that the quick solution only works if the group ring has specific properties, such as being semisimple and having a fast Fourier transform, which may not apply to all groups.",
+          "The authors say they have software to reproduce their results, but the listing does not provide a link to download or view this software."
+        ]
+      },
+      "actions": [
+        "Verify the specific conditions for the 'efficient generalized Fourier transform' and the 'semisimple' group ring requirement in the full PDF to determine which groups are excluded from the polynomial-time result.",
+        "Locate the 'reproducible software artifacts' mentioned in the abstract to inspect the register-level simulator implementation and the explicit reversible quantum circuit for the block-inversion step."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "cs.CR"
+      ],
+      "listing": {
+        "listedOn": "2026-09-11",
+        "publishedOn": "2026-09-11",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.10596"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-11"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-11T16:32:42.450Z"
+      }
+    },
+    {
+      "id": "2609.10646",
+      "arxivId": "2609.10646",
+      "url": "https://arxiv.org/abs/2609.10646",
+      "topic": "Stats",
+      "reported": "The authors report that they evaluate the proposed methods through simulations and apply them to estimate the FSW population sizes at the sub-national level in SSA.",
+      "metrics": [],
+      "title": "Mixture-based Nonparametric Estimation of Spatial Covariance Functions with Applications to HIV Key Population Size Estimation across Sub-Saharan Africa",
+      "authors": "Manushi Siriwardana, Hyebin Song, Le Bao, Stephen Berg",
+      "takeaway": "The paper claims to develop a robust non-parametric approach for estimating the covariance function of a stationary isotropic process in $\\mathbb{R}^d$ using infinite mixtures of scaled Gaussian kernels.",
+      "brief": "The authors propose two estimation methods, weighted least squares and nonparametric maximum likelihood, to estimate the mixing measure of scaled Gaussian kernels for spatial covariance functions. This approach aims to avoid model mis-specification issues associated with parametric covariance functions in spatial models.\n\nThe authors state they evaluate the methods through simulations and apply them to estimate female sex worker population sizes in Sub-Saharan Africa. The abstract does not provide specific quantitative results, error rates, or comparative performance metrics from these evaluations or applications.\n\nResearchers working on spatial statistics, nonparametric estimation, or HIV epidemiology in Sub-Saharan Africa may find the methodological framework relevant. Those requiring immediate quantitative validation results or specific code implementations should note the absence of these details in the listing.",
+      "abstract": "Consistent data on the sizes of key populations, such as female sex workers (FSWs), are often scarce, particularly at the sub-national level. Accurate size estimates are critical to effectively allocate resources and achieve HIV targets. Since FSW population sizes may be spatially correlated across areas, models that account for spatial dependence can improve estimation. An important component of such models is the covariance function, which characterizes the spatial dependence structure of the underlying process. In this work, we study spatial covariance functions to estimate FSW population sizes in Sub-Saharan Africa (SSA). Many spatial models rely on parametric covariance functions. However, parametric estimation can suffer from model mis-specification, potentially leading to inefficient or biased predictions. We therefore develop a robust non-parametric approach for estimating the covariance function of a stationary isotropic process in $\\mathbb{R}^d$. We focus on a class of covariance functions that are valid in all dimensions, which includes popular kernels such as the exponential and Mat\\'{e}rn kernels. Leveraging the fact that such covariance functions can be represented as infinite mixtures of scaled Gaussian kernels, we propose two estimation methods: weighted least squares and nonparametric maximum likelihood estimation to estimate the mixing measure of scaled Gaussian kernels. We also develop computationally efficient methods to solve these optimization problems using non-negative least squares and second-order descent updates. We evaluate the proposed methods through simulations and apply them to estimate the FSW population sizes at the sub-national level in SSA.",
+      "takeaways": [
+        "The object is a nonparametric estimator for spatial covariance functions based on mixtures of scaled Gaussian kernels.",
+        "A visible limit is the lack of reported quantitative performance metrics or specific simulation results in the provided abstract.",
+        "The artifact status is unclear as no code repository or supplementary material is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors say they tested their methods using computer simulations and used them to estimate the number of female sex workers in smaller regions of Sub-Saharan Africa.",
+        "brief": "The authors created a new way to estimate how data points are related across space, without assuming a specific mathematical shape for that relationship. They used two mathematical techniques to find the best fit for a flexible model that can handle various spatial patterns.\n\nThey say they tested this method using simulated data and real-world data to estimate population sizes in Africa. However, the summary does not say how well the method worked compared to other methods, nor does it give specific numbers showing its accuracy.\n\nPeople who study how to model spatial data or who work on HIV statistics in Africa might find this useful. People who need to see specific proof of accuracy or want to download the code immediately should know that this information is not in the short summary.",
+        "takeaways": [
+          "The main thing being studied is a flexible mathematical tool for mapping how things change across space.",
+          "A clear limitation is that the summary does not show any numbers proving the tool works well.",
+          "It is not known if the computer code for this tool is available to the public because the listing does not say."
+        ]
+      },
+      "actions": [
+        "Verify the specific simulation settings and application results by reading the full PDF to assess the method's practical performance.",
+        "Check the paper's supplementary materials or author websites for code availability, as the listing does not declare a code repository."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME",
+        "stat.AP"
+      ],
+      "listing": {
+        "listedOn": "2026-09-11",
+        "publishedOn": "2026-09-11",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.10646"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-11"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-11T16:32:42.450Z"
+      }
+    },
+    {
+      "id": "2609.10714",
+      "arxivId": "2609.10714",
+      "url": "https://arxiv.org/abs/2609.10714",
+      "topic": "Engineering",
+      "reported": "The authors report that this survey traces the evolution from LM-driven SemCom to TokenCom and reviews three major directions of LM-driven SemCom.",
+      "metrics": [],
+      "title": "From Semantic to Token Communication: The Next Paradigm for Large-Model-Driven 6G Intelligent Connectivity",
+      "authors": "Yu Ma, Zhen Gao, Li Qiao, Xiaoyuan Zhang, Mahdi Boloursaz Mashhadi, Yin Xu, Wenjun Xu, Xiaodong Xu, Kaibin Huang, Jiangzhou Wang, Rahim Tafazolli, Sheng Chen, Tony Q. S. Quek, Ping Zhang",
+      "takeaway": "The paper argues that tokens provide a natural candidate for a missing abstraction in semantic communication, unifying multimodal large model processing and distributed inference trends.",
+      "brief": "The authors propose token communication as a new abstraction above the bit level for 6G networks, arguing that large models' native token processing can unify fragmented semantic communication approaches.\n\nThe listing describes a survey of three semantic communication directions and two emerging token communication paradigms. It identifies open challenges for unified, scalable, and AI-native systems but does not report quantitative experimental results, specific benchmarks, or measured performance gains.\n\nResearchers working on 6G network architectures, large model inference optimization, or semantic communication protocols may find the conceptual framework relevant. Those seeking empirical validation of token-level transmission techniques or specific performance metrics should look elsewhere.",
+      "abstract": "The ambitious requirements of sixth-generation (6G) networks are driving communication systems from reliable bit delivery toward meaning-aware and task-oriented connectivity. Large models (LMs), with strong multimodal understanding and generation capabilities, have accelerated this shift and made semantic communication (SemCom) increasingly practical. Yet current LM-driven SemCom remains fragmented: semantic representations are typically tied to specific modalities, models, or tasks. While the bit provides a universal unit for digital transport, there is still no analogous unit for representing and processing semantics, which limits interoperability, theoretical unification, and scalable system design. We argue that tokens provide a natural candidate for this missing abstraction. Two trends support this: unified multimodal LMs now encode text, images, audio, video, and robot actions in one token space, while distributed LM inference already generates substantial token-level traffic through expert routing, cache transfer, and speculative decoding. Token communication (TokenCom) emerges by unifying these trends, using the LM's native processing unit as a communication abstraction above the bit level and enabling importance assignment, error handling, and resource allocation directly at token granularity. This survey traces the evolution from LM-driven SemCom to TokenCom. We review three major directions of LM-driven SemCom: source-centric semantic coding, channel semantics for physical-layer tasks, and collaborative edge-device intelligence. We then examine the token abstraction, the transmission techniques it requires, and two emerging paradigms, namely TokenCom for LM services and for embodied and agentic intelligence. Finally, we identify open challenges toward unified, scalable, and AI-native 6G communication systems.",
+      "takeaways": [
+        "The object is a conceptual survey proposing token communication as a unifying abstraction for 6G semantic networks.",
+        "A visible limit is the absence of quantitative results or experimental validation in the provided listing.",
+        "The artifact status is a survey paper without declared code or repository links."
+      ],
+      "plain": {
+        "reported": "The authors state that this paper is a survey that maps the development from large-model-based semantic communication to token communication and reviews three main areas of large-model semantic communication.",
+        "brief": "The authors suggest that using 'tokens' (the basic units of data that large AI models process) could be a new way to organize data transmission in future 6G networks. They argue this could fix current problems where different AI models and data types do not work well together.\n\nThe listing says the paper reviews existing work in three areas of AI-based communication and looks at how tokens could be used for AI services and robot-like intelligence. It lists future challenges but does not provide any numbers, test results, or measurements showing how well this new approach works.\n\nPeople studying how to build future mobile networks or how to make AI models work efficiently over networks might find the ideas useful. People looking for proof that this method works better than current methods, or specific performance numbers, will not find them in this listing.",
+        "takeaways": [
+          "The paper is a review of ideas, proposing a new way to think about data transmission using AI model units.",
+          "The listing does not show any test results or numbers proving the idea works.",
+          "There is no link to code or software provided in the listing."
+        ]
+      },
+      "actions": [
+        "Verify the full PDF to confirm whether the survey includes any quantitative case studies or simulation results not mentioned in the abstract.",
+        "Check the references section for specific implementations of token-level transmission techniques to assess the practical maturity of the proposed paradigms."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-09-11",
+        "publishedOn": "2026-09-11",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.10714"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-11"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-11T16:32:42.450Z"
+      }
+    },
+    {
+      "id": "2609.10831",
+      "arxivId": "2609.10831",
+      "url": "https://arxiv.org/abs/2609.10831",
+      "topic": "Health",
+      "reported": "The authors report that scDEFT predicts state change at 45% of the baseline to reproducibility ceiling headroom and stratifies responders before treatment at AUROC 0.70 on a harmonized inflammatory bowel disease atlas.",
+      "metrics": [
+        "1.16 million cells",
+        "45% of the baseline to reproducibility ceiling headroom",
+        "AUROC 0.70"
+      ],
+      "title": "scDEFT: A deep learning framework for drug-effect prediction and counterfactual reasoning",
+      "authors": "Murthy Devarakonda",
+      "takeaway": "The paper introduces scDEFT, a deep learning framework that treats a drug as a conditioning operator on cell representations to predict drug-induced state change and responder status.",
+      "brief": "The authors propose scDEFT, a framework using feature-wise linear modulation to generate drug-conditioned cell latents. Two independent heads aggregate these latents to predict state change and responder status, while a backward stage maps latent dimensions to genes.\n\nThe authors report that on a harmonized inflammatory bowel disease atlas of 1.16 million cells, the model predicts state change at 45% of the baseline to reproducibility ceiling headroom. They also state that it stratifies responders before treatment at AUROC 0.70, where standard predictors remain at chance. The listing does not specify the exact baseline model or the definition of the reproducibility ceiling.\n\nResearchers working on single-cell drug response prediction or counterfactual reasoning in longitudinal atlases may find this relevant. Those not focused on mechanistic explanation of drug divergence in matched pre- and post-treatment states may ignore it.",
+      "abstract": "Longitudinal single cell atlases now capture matched pre treatment and post treatment states from responders and non responders, presenting an opportunity to mechanistically explain why two patients on the same drug diverge. We introduce scDEFT (single cell Drug EFfect Transducer), which treats a drug as a conditioning operator on cell representations, enabling prediction and explanation. In scDEFT, feature wise linear modulation produces drug conditioned cell latents, learned under abundant per cell supervision and then frozen. Two independent heads aggregate those latents over shared transcriptional neighborhoods to predict drug induced state change and responder status. A backward stage ranks the latent dimensions by how strongly they separate responders from non responders and maps them to genes under a cell composition control. On a harmonized inflammatory bowel disease atlas of 1.16 million cells, three cohorts and two drug classes, scDEFT predicts state change at 45% of the baseline to reproducibility ceiling headroom and stratifies responders before treatment at AUROC 0.70, where standard predictors remain at chance. These predictions and the drivers behind them support target and co target nomination, patient stratification, and counterfactual prediction of unseen drug cohort effects.",
+      "takeaways": [
+        "The object is a deep learning framework for drug-effect prediction and counterfactual reasoning using single-cell data.",
+        "A visible limit is that the listing does not define the specific baseline predictors or the exact composition of the reproducibility ceiling used for the 45% metric.",
+        "The artifact status is not established in the listing, as no code repository or supplementary material is mentioned."
+      ],
+      "plain": {
+        "reported": "The authors report that their model predicts how cells change after drug treatment at 45% of the possible improvement range and identifies which patients will respond to the drug with a score of 0.70 on a standard accuracy scale, using a dataset of 1.16 million cells from inflammatory bowel disease patients.",
+        "brief": "The authors created a computer program called scDEFT that uses artificial intelligence to predict how cells react to specific drugs. It looks at cell data before and after treatment to see why some patients improve while others do not.\n\nThey tested this on a large collection of cell data from patients with inflammatory bowel disease. The program predicted cell changes at 45% of the maximum possible accuracy and identified likely responders with a score of 0.70, while other standard methods performed no better than random guessing. The text does not explain exactly what the 'maximum possible accuracy' means or which other methods were compared.\n\nScientists studying how drugs affect individual cells or how to predict patient responses to medication might find this useful. People not interested in detailed cell-level drug analysis or patient grouping for treatment might not need to look at this.",
+        "takeaways": [
+          "The main subject is a computer tool for predicting drug effects on individual cells and reasoning about hypothetical treatment outcomes.",
+          "A clear limitation is that the text does not define the specific comparison methods or the exact standard used to calculate the 45% performance metric.",
+          "It is not stated in the provided text whether the code or data for this tool is publicly available."
+        ]
+      },
+      "actions": [
+        "Verify the definition of the 'reproducibility ceiling' and the identity of the 'standard predictors' by reading the full PDF.",
+        "Check the supplementary materials or repository for the specific gene mapping controls and cohort details not fully described in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-11",
+        "publishedOn": "2026-09-11",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.10831"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-11"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-11T16:32:42.450Z"
+      }
+    }
+  ]
+}
