@@ -1,0 +1,666 @@
+{
+  "date": "2026-09-14",
+  "label": "Mon, Sep 14",
+  "minutes": 10,
+  "poolSize": 99,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-09-14T18:13:10.155Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2609.06107",
+      "arxivId": "2609.06107",
+      "url": "https://arxiv.org/abs/2609.06107",
+      "topic": "AI",
+      "reported": "The authors report that none of the eight rollout-selection or reweighting methods achieves a paired 95% confidence interval that excludes zero relative to uniform sampling.",
+      "metrics": [
+        "7.76 percentage points",
+        "13 configurations",
+        "12 matched seeds"
+      ],
+      "title": "DataFlex-RL: An Evaluation Platform for RLVR Data Policies",
+      "authors": "Hao Liang, Mingrui Chen, Hengyi Feng, Meiyi Qiang, Wentao Zhang",
+      "takeaway": "DataFlex-RL is an evaluation platform for comparing RLVR data policies under a common GRPO recipe.",
+      "brief": "The authors introduce DataFlex-RL to evaluate data policies for reinforcement learning with verifiable rewards. They compare thirteen configurations across twelve matched seeds using Qwen2.5-7B-Base and twelve benchmarks. The platform standardizes the GRPO recipe to isolate the effect of data selection and weighting choices.\n\nThe authors state that uniform GRPO improves domain-balanced average accuracy by 7.76 percentage points over the untrained checkpoint. They report that no tested rollout-selection or reweighting method achieves a paired 95% confidence interval excluding zero relative to uniform sampling. They also note that changing the data policy measurably changes the training process but does not produce a reproducible improvement over uniform training.\n\nResearchers evaluating RLVR data policies or GRPO training recipes may find the platform useful. Those seeking a definitive superior data policy for these specific models and benchmarks may find the negative results relevant. The listing does not establish whether the platform supports other model families or reward types beyond the tested configurations.",
+      "abstract": "Data policies for reinforcement learning with verifiable rewards (RLVR) determine which rollouts are used, how strongly they are weighted, and which domains contribute to subsequent training batches. We introduce DataFlex-RL, an evaluation platform for comparing these choices under a common GRPO recipe. Our primary experiment evaluates 13 configurations across 12 matched seeds using Qwen2.5-7B-Base and 12 mathematics, logic, and science benchmarks. Uniform GRPO improves the domain-balanced average accuracy by 7.76 percentage points over the untrained checkpoint. None of the eight rollout-selection or reweighting methods achieves a paired 95% confidence interval that excludes zero relative to uniform sampling, and none of the three adaptive mixtures outperforms a fixed equal mixture at the same level of precision. A corrected 12-seed extension on Llama-3.1-8B-Base places the additional methods on the same score scale as the original controls, but does not reveal a consistent winner in terms of observed mean performance. We also quantify evaluation sensitivity by rescoring nine Qwen2.5-7B-Instruct runs using a math-heavy six-benchmark summary, consisting of five mathematics benchmarks and GPQA-Diamond but no logic benchmark, and comparing it with the domain-balanced 12-benchmark summary. The resulting rankings are negatively correlated, with a correlation coefficient of -0.33, whereas summaries that retain all 12 benchmarks largely agree. Across the controlled settings studied here, changing the data policy measurably changes the training process but does not produce a reproducible improvement over uniform training.",
+      "takeaways": [
+        "The object is an evaluation platform for comparing RLVR data policies under a fixed GRPO recipe.",
+        "A visible limit is that the reported results do not show a reproducible improvement over uniform training for the tested methods.",
+        "The artifact status is not established in the listing, as no code repository or download link is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that none of the eight rollout-selection or reweighting methods achieves a paired 95% confidence interval that excludes zero relative to uniform sampling.",
+        "brief": "The authors introduce DataFlex-RL to evaluate data policies for reinforcement learning with verifiable rewards. They compare thirteen configurations across twelve matched seeds using Qwen2.5-7B-Base and twelve benchmarks. The platform standardizes the GRPO recipe to isolate the effect of data selection and weighting choices.\n\nThe authors state that uniform GRPO improves domain-balanced average accuracy by 7.76 percentage points over the untrained checkpoint. They report that no tested rollout-selection or reweighting method achieves a paired 95% confidence interval excluding zero relative to uniform sampling. They also note that changing the data policy measurably changes the training process but does not produce a reproducible improvement over uniform training.\n\nResearchers evaluating RLVR data policies or GRPO training recipes may find the platform useful. Those seeking a definitive superior data policy for these specific models and benchmarks may find the negative results relevant. The listing does not establish whether the platform supports other model families or reward types beyond the tested configurations.",
+        "takeaways": [
+          "The object is an evaluation platform for comparing RLVR data policies under a fixed GRPO recipe.",
+          "A visible limit is that the reported results do not show a reproducible improvement over uniform training for the tested methods.",
+          "The artifact status is not established in the listing, as no code repository or download link is provided."
+        ]
+      },
+      "actions": [
+        "Verify the existence and accessibility of the DataFlex-RL code repository by checking the paper's supplementary materials or linked resources.",
+        "Confirm the specific benchmark definitions and scoring protocols used in the twelve-benchmark summary by reviewing the full paper."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-14",
+        "publishedOn": "2026-09-05",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.06107",
+            "upvotes": 95
+          }
+        ]
+      },
+      "trend": {
+        "votes": 95,
+        "rank": 1,
+        "of": 18,
+        "perDay": 11
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 95,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-05"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-14T18:13:10.155Z"
+      }
+    },
+    {
+      "id": "2609.08418",
+      "arxivId": "2609.08418",
+      "url": "https://arxiv.org/abs/2609.08418",
+      "topic": "AI",
+      "reported": "The authors report that their three checkpoints improve over starting models by an average of 23.76% on the full CyberGym suite and 10.49% across pooled CTF suites, with Feyospace-s1 achieving a 63.24% verified success rate and ranking 10th on the official CyberGym leaderboard.",
+      "metrics": [
+        "164,269 trajectories",
+        "23.76% on the full CyberGym suite",
+        "63.24% verified success rate"
+      ],
+      "title": "Feyospace-v1: How the Cyber Mercury Seven Trained Frontier Cyber Models",
+      "authors": "Zongjie Li, Alan Z. W, John Nicolas J, Walter H. F, Scott Donald L, Gordon Y. P, Deke X Jr",
+      "takeaway": "The paper presents a data-centric framework with five complementary systems to train open-weight cyber models, claiming it is the first end-to-end demonstration by a seven-person independent team.",
+      "brief": "The authors propose a data-centric framework addressing bottlenecks in executable environments, multi-turn supervision, and teacher access through five specific systems. They report that their checkpoints improve over starting models by an average of 23.76% on the full CyberGym suite and 10.49% across pooled CTF suites, with Feyospace-s1 achieving a 63.24% verified success rate and ranking 10th on the official CyberGym leaderboard. The listing does not specify the parameter scale of the starting models or the exact composition of the pooled CTF suites, nor does it provide details on the specific vulnerabilities or kernel histories used in the environments.\n\nThe strongest reported evidence is the 63.24% verified success rate on the official CyberGym leaderboard and the 10th place ranking, which the authors attribute to their data engine and training process. The authors state that candidate trajectories are retained only after execution verification and evidence auditing, yielding 164,269 trajectories for long-context supervised fine-tuning. However, the listing does not establish whether the 23.76% improvement is statistically significant or if the 10th place ranking is maintained against other non-open-weight models.\n\nResearchers working on agentic cyber capabilities, open-weight model training, or data-centric AI frameworks may find the specific systems and data engine construction relevant. Those focused solely on model architecture or large-scale proprietary training may find the seven-person team aspect and open-weight focus less applicable. The listing does not provide code or repository URLs, so verification of the five systems and data engine requires accessing the full paper.",
+      "abstract": "Training capable cyber agents is often treated primarily as a problem of model scale, yet open-weight post-training is constrained more directly by the cost of executable environments, reliable multi-turn supervision, and access to strong teachers. We present a data-centric framework that addresses these bottlenecks through five complementary systems: Choulea analyzes hidden reasoning signatures, SkyReal reduces teacher-sampling cost, Hongzwang bypasses API restrictions on teacher execution, PSBreakup restores capabilities weakened by model merging, and Kreator converts expert interventions into trainable reasoning. Our data engine constructs resettable coding, vulnerability, CTF, kernel-history, full-exploit, firmware, and device-backed environments. Candidate trajectories are retained only after execution verification and evidence auditing, yielding 164,269 trajectories for long-context supervised fine-tuning. The three checkpoints improve over their starting models by an average of 23.76% on the full CyberGym suite and 10.49% across the pooled CTF suites. As of September 1, 2026, Feyospace-s1 achieves a verified success rate of 63.24% and ranks 10th on the official CyberGym leaderboard, while all three checkpoints rank 1st among models at comparable parameter scales. To our knowledge, this is the first end-to-end demonstration that a seven-person independent team can train open-weight models with leading agentic cyber capability.",
+      "takeaways": [
+        "The object is a data-centric framework with five systems for training open-weight cyber models, emphasizing executable environments and teacher access over model scale.",
+        "A visible limit is the lack of specification for the parameter scale of the starting models and the exact composition of the pooled CTF suites used for the 10.49% improvement claim.",
+        "The artifact status is unclear as no code or repository URLs are provided in the listing, and the five systems are described only by name and function."
+      ],
+      "plain": {
+        "reported": "The authors say their three model versions get better than the models they started from by an average of 23.76% on the full CyberGym test set and 10.49% on a combined set of CTF tests. They also say their Feyospace-s1 model gets a 63.24% success rate on tests that are checked to be correct, and it is 10th on the mainCy",
+        "brief": "The authors suggest a way to make cyber AI models by focusing on data and tools rather than just making the model bigger. They list five tools they made to help with this, and they say their models get better scores on tests than the models they started with. They say their best model gets a 63.24% success rate on a public test list and is 10th on that list. The text does not say how big the starting models were or exactly what tests were in the combined CTF set, and it does not say if the score improvements are statistically sure.\n\nThe best proof they give is the 63.24% success rate and 10th place on the public test list. They say they only keep data that has been checked to work and has evidence, and they have 164,269 pieces of data for training. But the text does not say if the 23.76% improvement is a real difference or if the 10th place is still true when compared to other models that are not open-source.\n\nPeople who work on making AI that can do cyber tasks, or who make open-source AI models, or who focus on data for AI might find this useful. People who only care about the structure of the model or who use big private AI systems might not find this as useful. The text does not give a link to the code, so you need the full paper to see how the five tools and data system work.",
+        "takeaways": [
+          "The thing they made is a system for making open-source cyber AI models that focuses on data and tools, not just making the model bigger.",
+          "A limit you can see is that they do not say how big the starting models were or exactly what tests were in the combined CTF set for the 10.49% score.",
+          "It is not clear if you can get the code because there is no link in the text, and the five tools are only named and described briefly."
+        ]
+      },
+      "actions": [
+        "Verify the 63.24% verified success rate and 10th place ranking on the official CyberGym leaderboard as of September 1, 2026, to confirm the reported standing.",
+        "Access the full PDF to examine the details of the five systems (Choulea, SkyReal, Hongzwang, PSBreakup, Kreator) and the data engine construction for the 164,269 trajectories."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-14",
+        "publishedOn": "2026-09-08",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.08418",
+            "upvotes": 74
+          }
+        ]
+      },
+      "trend": {
+        "votes": 74,
+        "rank": 2,
+        "of": 18,
+        "perDay": 12
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 74,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-08"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-14T18:13:10.155Z"
+      }
+    },
+    {
+      "id": "2609.11115",
+      "arxivId": "2609.11115",
+      "url": "https://arxiv.org/abs/2609.11115",
+      "topic": "AI",
+      "reported": "The authors report that the catalog contains 1,283 source records drawn from 4 benchmark catalogs and 12,916 numeric observations on 790 records.",
+      "metrics": [
+        "1,283 source records",
+        "12,916 numeric observations",
+        "790 records"
+      ],
+      "title": "Benchmark Radar: A Living Database and Search Engine for AI Benchmarks and Evaluation",
+      "authors": "Koutian Wu, Junjie Zhou, Ergan Shang, Jiayu Wang, Pengqian Han, Junkai Wang, Wanghan Xu",
+      "takeaway": "The paper presents Benchmark Radar, a living database and search engine for retrieval and discovery of AI benchmarks.",
+      "brief": "The authors introduce a system for discovering AI benchmarks, combining daily paper discovery with a searchable catalog of datasets and scores. They report the catalog holds 1,283 source records and 12,916 numeric observations, while noting limits in score comparisons. The listing does not establish whether the system outperforms existing tools or if the data is fully verified.\n\nThe strongest reported result is the catalog size, measured as 1,283 source records and 12,916 numeric observations. The authors state they audit the full catalog and examine benchmark saturation. The listing does not specify the accuracy of the retrieval or the completeness of the daily feeds.\n\nResearchers needing to locate benchmark datasets and code may find this useful. Developers building evaluation pipelines might inspect the provided CLI and dashboard. Those seeking a single definitive benchmark ranking should note the authors discuss the limits of score comparisons.",
+      "abstract": "Benchmark researchers and developers of large language models (LLMs) and other AI systems need to find relevant evaluations, locate their benchmark datasets and code, and understand the settings behind reported scores. We present Benchmark Radar, a living database and search engine for retrieval and discovery of AI benchmarks, covering LLM evaluation, agentic and tool-use benchmarks, coding, reasoning, safety, and domain-specific evaluations. The system combines daily discovery of benchmark papers, repositories, datasets, and releases with a searchable benchmark catalog, mentions in model cards and technical reports, and score histories. It retains source identities and citations so readers can inspect candidate benchmarks and their evaluation evidence. Daily discovery draws on 37 sources: 13 direct connectors and 24 first-party research and engineering feeds. The catalog contains 1,283 source records drawn from 4 benchmark catalogs and 12,916 numeric observations on 790 records. We describe collection and retrieval, audit the full catalog, and examine benchmark saturation, adoption trends, and the limits of score comparisons. A worked example walks through a complete prior-art search, showing how to query the catalog and inspect benchmark evidence when designing a new evaluation. We release the web dashboard with a benchmark leaderboard, a Pareto frontier view of score against measured use, saturation and trend views, daily feeds, downloadable evidence, a command-line interface (CLI) for offline queries, and reproducible analysis.",
+      "takeaways": [
+        "The object is a database and search engine for AI benchmark discovery and retrieval.",
+        "A visible limit is the acknowledged difficulty in comparing scores across different benchmarks.",
+        "The artifact status is a released web dashboard, CLI, and reproducible analysis code."
+      ],
+      "plain": {
+        "reported": "The authors state their database holds 1,283 entries from four other lists and 12,916 numerical data points across 790 items.",
+        "brief": "The authors built a tool to help people find tests for AI systems. It collects new papers and organizes existing tests into a searchable list. They say the list has 1,283 entries and 12,916 data points, but they warn that comparing scores is hard.\n\nThe main fact they share is the size of their list: 1,283 entries and 12,916 data points. They also say they checked the whole list and looked at how tests are used. The text does not say if their tool is better than other tools.\n\nPeople who need to find AI tests might use this. Builders of AI systems might look at the command-line tool. People wanting a simple ranking should remember the authors say score comparison is limited.",
+        "takeaways": [
+          "The thing is a database and search tool for finding AI tests.",
+          "A clear limit is that comparing scores between different tests is difficult.",
+          "The product is a website, a command-line tool, and code that can be run again."
+        ]
+      },
+      "actions": [
+        "Verify the catalog size and observation counts by inspecting the provided GitHub repository.",
+        "Check the web dashboard to confirm the availability of the Pareto frontier and saturation views."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/ktwu01/benchmark-radar",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-14",
+        "publishedOn": "2026-09-10",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.11115",
+            "upvotes": 72
+          }
+        ]
+      },
+      "trend": {
+        "votes": 72,
+        "rank": 3,
+        "of": 18,
+        "perDay": 18
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 72,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-10"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-14T18:13:10.155Z"
+      }
+    },
+    {
+      "id": "2609.12641",
+      "arxivId": "2609.12641",
+      "url": "https://arxiv.org/abs/2609.12641",
+      "topic": "AI",
+      "reported": "The authors report that their method improves overall LIBERO-Plus success by 3.87-10.70 percentage points across four architectures.",
+      "metrics": [
+        "3.87-10.70 percentage points",
+        "13.30-16.70 percentage-point gains"
+      ],
+      "title": "Breaking the Vision-Action Shortcut: Latent Interface Training for Generalizable Robotics Foundation Models",
+      "authors": "Jianman Lin, Shailesh Shailesh, Zhongyi Luo, Jiafei Duan",
+      "takeaway": "The paper proposes Latent Interface Training (LIT), a two-stage strategy to mitigate vision-action shortcuts in robot foundation models by constraining visual conditioning through a pose-supervised latent interface.",
+      "brief": "The authors propose Latent Interface Training (LIT) to address vision-action shortcuts that undermine generalization under visual distribution shifts. The method uses a two-stage process: first training an action expert on spatial goals without images, then constraining visual inputs through a latent interface supervised to reconstruct terminal poses.\n\nThe authors report improvements in LIBERO-Plus success by 3.87-10.70 percentage points across four architectures, while preserving or improving average LIBERO success. Real-world evaluations show 13.30-16.70 percentage-point gains in success across three tasks under unseen camera configurations, lighting variations, and distractors. The listing does not specify the exact baseline comparisons or the specific failure modes remaining after applying LIT.\n\nResearchers working on robot foundation models, visual distribution shifts, or action generation from visual representations may find this relevant. Those not focused on mitigating shortcut learning in robotic control or evaluating vision-language-action architectures may ignore it.",
+      "abstract": "Robot foundation models achieve strong in-distribution performance but often degrade under visual distribution shifts. When learning to generate actions from pretrained visual representations, models may exploit task-irrelevant visual cues that correlate with demonstrated actions within the training distribution. Such vision-action shortcuts can undermine generalization when these correlations change under distribution shifts. Mitigating these shortcuts requires constraining how visual information is used for action generation while preserving task-relevant spatial information. We propose Latent Interface Training (LIT), a framework-agnostic two-stage strategy that first establishes a spatial-goal-conditioned action prior without images, then constrains visual conditioning through a pose-supervised latent interface. Stage 1 trains the action expert to generate action chunks conditioned on language, robot state, and each demonstrated chunk's terminal SE(3) end-effector pose, learning goal-directed action generation independently of visual cues. Stage 2 introduces a latent interface that aggregates visual and semantic representations and serves as the pretrained action expert's only visual conditioning pathway. The interface is supervised to reconstruct the terminal pose previously used to condition Stage 1, encouraging it to retain the goal-relevant spatial information needed for action generation. Across four vision-language-action and world-action architectures (Pi0.5, MolmoAct2, FAST-WAM, and ImageWAM), LIT improves overall LIBERO-Plus success by 3.87-10.70 percentage points while preserving or improving average LIBERO success. Real-world evaluations show 13.30-16.70 percentage-point gains in success aggregated across three tasks under unseen camera configurations, lighting variations, and distractors.",
+      "takeaways": [
+        "The object is a framework-agnostic training strategy for robot foundation models that separates spatial goal learning from visual conditioning.",
+        "A visible limit is that the reported gains are measured on specific benchmarks (LIBERO-Plus, LIBERO) and three real-world tasks, leaving generalization to other environments or task types unverified in the listing.",
+        "The artifact status is indicated by a declared code repository URL, but the listing does not confirm whether the code is fully functional, complete, or matches the reported results."
+      ],
+      "plain": {
+        "reported": "The authors state that their method increases the success rate on the LIBERO-Plus test by 3.87 to 10.70 percentage points when tested on four different robot AI systems.",
+        "brief": "The authors suggest a training method called Latent Interface Training (LIT) to stop robot AI models from relying on irrelevant visual clues that only work in training conditions. The method has two steps: first, it teaches the robot to plan actions based on the final position of its arm without looking at images; second, it limits how the robot uses visual data by forcing a hidden layer to reconstruct that final position.\n\nThe authors say this method improves performance on the LIBERO-Plus benchmark by 3.87 to 10.70 percentage points across four AI architectures. In real-world tests, they report success rate gains of 13.30 to 16.70 percentage points across three tasks when the camera angle, lighting, or background objects change. The provided text does not say which specific baseline models were compared against or what problems still remain after using this method.\n\nPeople who study how robot AI models learn to act from visual data, or who deal with models failing when visual conditions change, might find this useful. People who do not work on robot control or visual shortcut learning might not need this paper.",
+        "takeaways": [
+          "The paper describes a training technique for robot AI that separates learning the goal position from learning how to use visual data.",
+          "The results are only shown for specific test suites (LIBERO-Plus, LIBERO) and three real-world tasks, so it is not known if it works in other settings.",
+          "A code link is provided, but the text does not confirm if the code works correctly or produces the exact results claimed."
+        ]
+      },
+      "actions": [
+        "Verify the declared code repository to confirm if the implementation matches the described two-stage LIT process and if the reported metrics are reproducible.",
+        "Check the full paper for details on the specific baselines used for comparison and the exact composition of the 'unseen camera configurations, lighting variations, and distractors' in the real-world evaluation."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/MAGICLAB-NUS/LIT",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-14",
+        "publishedOn": "2026-09-11",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.12641",
+            "upvotes": 62
+          }
+        ]
+      },
+      "trend": {
+        "votes": 62,
+        "rank": 4,
+        "of": 18,
+        "perDay": 21
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 62,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-11"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-14T18:13:10.155Z"
+      }
+    },
+    {
+      "id": "2609.11952",
+      "arxivId": "2609.11952",
+      "url": "https://arxiv.org/abs/2609.11952",
+      "topic": "Security",
+      "reported": "The authors report that in a four-model main experiment with a fixed attacker, agents release complete hazardous synthesis or preparation procedures in 25.6% of runs.",
+      "metrics": [
+        "25.6% of runs",
+        "18.4% to 26.5%",
+        "9.2% and 22.5%"
+      ],
+      "title": "ChemMat-AgentSafetyBench: Evaluating Long-Horizon Attacks and Defenses in Chemistry and Materials Agents",
+      "authors": "Zhan'ao Yao, Zhihao Gao, Liang Yin, Boxuan Zhang, Xiaoyu Wu, Linjing Li, Rongyan Wang, Tingwei Chen, Youwei Wang, Xiaolin Zhao, Jiahui Shi, Jianjun Liu",
+      "takeaway": "The paper introduces a benchmark for evaluating whether chemistry and materials agents can be steered toward hazardous endpoints through user input, tool observations, or persistent memory.",
+      "brief": "The authors propose a benchmark containing 432 fixed harmful case specifications to test if scientific agents release hazardous protocols via tool-mediated workflows. They argue the safety question has shifted from answering hazardous questions to releasing hazardous protocols through continuous discovery pipelines.\n\nIn a four-model main experiment with a fixed attacker, agents released complete hazardous procedures in 25.6% of runs. Replacing the attacker model yielded mean success rates from 18.4% to 26.5%, while various defenses reduced failures but left complete-path release rates between 9.2% and 22.5%. The listing does not establish specific limitations beyond the stated gap in defense coverage.\n\nResearchers working on scientific agent safety, chemistry or materials informatics, and LLM security should open this paper. Those not involved in agent-based scientific workflows or safety evaluation may ignore it.",
+      "abstract": "Chemistry and materials agents integrate literature retrieval, candidate generation, property prediction, and protocol planning into continuous discovery workflows. Consequently, the relevant safety question is shifting from whether a model answers a hazardous question to whether an agent releases a hazardous protocol through a tool-mediated workflow. We introduce \\bench, a benchmark that evaluates whether chemistry and materials agents can be steered toward hazardous endpoints through user input, tool observations, or persistent memory. The benchmark contains 432 fixed harmful case specifications spanning eight hazard classes, three scenario shells, four tool-and-memory environments, a single-turn direct-attack baseline, and five online long-horizon attacks: intent hijacking, tool chaining, objective drifting, task injection, and memory poisoning. The concrete language of each online attack is generated from the evolving trajectory at runtime and is therefore not counted in the static benchmark size. In the four-model main experiment with a fixed attacker, agents release complete hazardous synthesis or preparation procedures in 25.6\\% of runs. Replacing the attacker model yields mean success rates from 18.4\\% to 26.5\\%, indicating that the risk is not an artifact of a single attacker. Input- and state-level defenses adapted from general-purpose agent safety, as well as candidate checks designed for chemistry and materials, reduce some failures but still leave complete-path release rates between 9.2\\% and 22.5\\%. Existing defenses therefore do not simultaneously cover multi-entry contamination, tool state, and the final artifact boundary. These results highlight a widening gap between the rapid development of scientific agents and the safety evaluation and defenses available to the chemistry and materials community.",
+      "takeaways": [
+        "The object is a benchmark of 432 fixed harmful case specifications spanning eight hazard classes and five online long-horizon attacks.",
+        "A visible limit is that existing defenses do not simultaneously cover multi-entry contamination, tool state, and the final artifact boundary.",
+        "The artifact status is not established in the listing, as no code repository or dataset URL is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that in a test with four different AI models and one fixed attacking model, the AI agents produced full dangerous chemical or material preparation steps in 25.6% of the test runs.",
+        "brief": "The authors created a test set with 432 specific dangerous scenarios to check if AI systems used for chemistry and materials science can be tricked into giving out dangerous instructions. They say the main safety worry is no longer just if an AI answers a dangerous question, but if it gives out a dangerous step-by-step plan through its tools.\n\nIn their main test with four AI models and one fixed attacker, the AI agents gave out full dangerous procedures in 25.6% of the runs. When they changed the attacker model, the success rates for the attacker ranged from 18.4% to 26.5%. They tried several safety fixes, but these still left the rate of full dangerous procedures being given out between 9.2% and 22.5%. The provided text does not list other specific limits besides the fact that current fixes do not cover all attack paths.\n\nPeople who study the safety of AI systems used for science, or who work in chemistry or materials science with AI, should look at this paper. People who do not work with AI agents in scientific fields or safety testing can skip it.",
+        "takeaways": [
+          "The main thing they made is a test set with 432 fixed dangerous scenarios, covering eight types of hazards and five different ways an attacker can try to trick the AI over time.",
+          "A clear weakness they found is that current safety fixes do not handle all the ways an AI can be tricked, such as through user input, tool data, or the final output, all at the same time.",
+          "The listing does not say if the code or data for this test is available for download, so its status as a usable tool is not confirmed."
+        ]
+      },
+      "actions": [
+        "Verify the exact composition of the 432 fixed harmful case specifications and the specific tool-and-memory environments used in the main experiment by reading the PDF.",
+        "Check the PDF for the specific implementation details of the five online long-horizon attacks, as the concrete language is generated at runtime and not counted in the static benchmark size."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR"
+      ],
+      "listing": {
+        "listedOn": "2026-09-14",
+        "publishedOn": "2026-09-14",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.11952"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-14"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-14T18:13:10.155Z"
+      }
+    },
+    {
+      "id": "2609.11981",
+      "arxivId": "2609.11981",
+      "url": "https://arxiv.org/abs/2609.11981",
+      "topic": "Stats",
+      "reported": "The authors report that simulations show SSMD maximization coincides with Fisher's linear discriminant and logistic regression under equal covariance but diverges under unequal covariance and class imbalance.",
+      "metrics": [],
+      "title": "Maximizing the magnitude of Strictly Standardized Mean Difference of a Linear Combination",
+      "authors": "Xiaohua Douglas Zhang",
+      "takeaway": "The paper claims to extend the strictly standardized mean difference to a linear combination of multiple variables and determine the coefficients that maximize the resulting SSMD.",
+      "brief": "The authors extend the strictly standardized mean difference to a linear combination of multiple variables and determine the coefficients that maximize the resulting SSMD. They formulate this optimization as a generalized Rayleigh quotient with a closed-form solution and identify conditions under which the optimal direction coincides with Fisher's linear discriminant.\n\nThe authors report that simulations show SSMD maximization coincides with Fisher's linear discriminant and logistic regression under equal covariance but diverges under unequal covariance and class imbalance. They derive method-of-moments, bias-corrected, and maximum-likelihood estimators of the maximized SSMD and construct confidence intervals based on Hotelling's T-squared statistic and the noncentral F distribution. The listing does not specify the sample sizes, datasets, or specific numerical performance values used in these simulations.\n\nResearchers working on multivariable effect size assessment, high-throughput screening, or biomarker construction may find the theoretical framework and estimator derivations relevant. Those requiring specific empirical validation on real-world datasets or code implementations should note that the listing provides no repository or detailed experimental results.",
+      "abstract": "The strictly standardized mean difference (SSMD) is an interpretable, unit-free effect size originally developed for quality control and hit selection in high-throughput screening and subsequently extended to effect-size assessment and error-rate control. Existing SSMD theory considers one variable at a time. Here, we extend SSMD to a linear combination of multiple variables and determine the coefficients that maximize the resulting SSMD. We show that this optimization can be formulated as a generalized Rayleigh quotient with a closed-form solution and identify conditions under which the optimal direction coincides with Fisher's linear discriminant. We derive method-of-moments, bias-corrected, and maximum-likelihood estimators of the maximized SSMD and construct confidence intervals based on Hotelling's T-squared statistic and the noncentral F distribution under different correlation and variance structures. We also characterize classification cutoffs for the resulting linear score and establish its relationship with the area under the receiver operating characteristic curve (AUROC). Simulations show that SSMD maximization coincides with Fisher's linear discriminant and logistic regression under equal covariance but diverges under unequal covariance and class imbalance. In paired designs, SSMD maximization uniquely incorporates cross-covariance information. Linear support vector machines are also evaluated as a modern comparator. This framework provides an interpretable approach to constructing multivariable biomarkers and signatures for high-throughput screening, cytokine profiling, metabolomics, salivary diagnostics, and continuous-monitoring applications.",
+      "takeaways": [
+        "The object is a theoretical extension of SSMD to multivariable linear combinations with derived estimators and confidence intervals.",
+        "A visible limit is that the reported evidence relies on simulations with unspecified conditions, and no real-world dataset performance is stated in the listing.",
+        "The artifact status is not established; the listing does not mention code availability or specific software implementations."
+      ],
+      "plain": {
+        "reported": "The authors report that computer simulations show their new method matches Fisher's linear discriminant and logistic regression when data groups have similar spread, but differs when the spread is unequal or group sizes are unbalanced.",
+        "brief": "The authors take a statistical measure called the strictly standardized mean difference (SSMD), which is usually used for single variables, and extend it to work with multiple variables combined in a specific way. They find the best way to combine these variables to make the difference between groups as large as possible, using a mathematical method with a direct formula.\n\nThey tested this in simulated data and found it works like other standard methods when the data is balanced, but behaves differently when the data is skewed or uneven. They also created ways to estimate this new measure and calculate its uncertainty. The summary does not say how large the simulated datasets were or give specific numbers for how well the method performed.\n\nPeople who build statistical tests for medical or biological data with many variables might find the math useful. People who need to see if this works on real patient or lab data should note that the summary does not provide those results or any computer code to try it.",
+        "takeaways": [
+          "The main contribution is a new mathematical way to combine multiple variables to maximize a specific statistical difference measure.",
+          "The main limitation visible in the summary is that the proof of concept uses simulated data without detailed descriptions of the data conditions or specific performance scores.",
+          "It is not stated whether the authors have released any computer code or software for this method."
+        ]
+      },
+      "actions": [
+        "Verify the simulation setup, sample sizes, and specific divergence metrics by reading the full PDF.",
+        "Check the paper's supplementary materials or author correspondence for code availability or detailed experimental protocols."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-09-14",
+        "publishedOn": "2026-09-14",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.11981"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-14"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-14T18:13:10.155Z"
+      }
+    },
+    {
+      "id": "2609.11994",
+      "arxivId": "2609.11994",
+      "url": "https://arxiv.org/abs/2609.11994",
+      "topic": "Health",
+      "reported": "The authors report that PyFLI imports measurements from acquisition systems, simulates labeled data under configurable acquisition and noise conditions, and provides complementary approaches for parameter estimation.",
+      "metrics": [],
+      "title": "PyFLI: A unified Python framework for fluorescence lifetime imaging data generation, parameter estimation, and benchmarking",
+      "authors": "Vikas Pandey, Ismail Erbas, Margarida Barroso, Xavier Intes, Stefan Radev",
+      "takeaway": "PyFLI is an open-source framework for fluorescence lifetime imaging processing and standardized data simulation that integrates multiple acquisition formats and parameter estimation methods.",
+      "brief": "The authors present PyFLI as a unified Python framework for fluorescence lifetime imaging data generation, parameter estimation, and benchmarking. It is designed to handle measurements from different instruments and simulate labeled data for method evaluation.\n\nThe listing describes the framework's capabilities, including support for nonlinear least-squares fitting, maximum-likelihood estimation, phasor analysis, and deep-learning inference. It does not report specific quantitative performance results, benchmark scores, or comparisons against other tools in the provided abstract.\n\nResearchers working with fluorescence lifetime imaging data who need a standardized simulation and analysis pipeline may find this relevant. Those seeking specific benchmark results or a comparison of estimation method accuracy should look for additional evidence.",
+      "abstract": "Fluorescence lifetime imaging (FLI) measures the temporal decay of fluorescence after excitation and provides quantitative information about a fluorophore's local environment and molecular interactions. Depending on the fluorophore and experimental design, lifetime can report changes associated with pH, oxygenation, cellular metabolism, and Forster resonance energy transfer. These properties make FLI useful across microscopy, biophysics, biomedical optics, and preclinical imaging, where the same type of molecular contrast can be studied across different biological scales. FLI measurements, however, are acquired with instruments that record fluorescence in different ways. Intensified charge-coupled device (ICCD) cameras, single-photon avalanche diode (SPAD) arrays, and time-correlated single-photon counting (TCSPC) systems differ in temporal sampling, data organization, detector noise, instrument response, and file format. Lifetime-estimation methods also make different assumptions about the recorded decay, while learning-based approaches require realistic training and validation data for which the underlying parameters are known. PyFLI is an open-source framework for FLI processing and standardized data simulation. It imports measurements from acquisition systems, simulates labeled data under configurable acquisition and noise conditions, and provides complementary approaches for parameter estimation. These include nonlinear least-squares fitting (NLSF), maximum-likelihood estimation (MLE), phasor analysis, rapid lifetime determination (RLD), Laguerre-based estimation, and optional Bayesian and deep-learning inference. CPU and GPU processing support image-scale analysis, while reconstruction, visualization, statistical analysis, and cross-software comparison provide tools for evaluating results. PyFLI includes compressed-sensing reconstruction for single-pixel hyperspectral FLI.",
+      "takeaways": [
+        "The object is an open-source Python framework for fluorescence lifetime imaging data processing and simulation.",
+        "The visible limit is the absence of reported quantitative performance metrics or benchmark results in the provided abstract.",
+        "The artifact status is an open-source framework, but no specific repository URL or code availability details are provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors state that their tool, PyFLI, can take data from different microscope cameras, create fake data with known answers for testing, and use several different math methods to calculate the fluorescence lifetime.",
+        "brief": "The authors built a Python program called PyFLI to help scientists analyze fluorescence lifetime imaging data. This type of imaging measures how long a molecule glows after being excited by light, which can reveal information about its environment, such as pH or oxygen levels. The program is meant to handle data from various types of cameras and create simulated data for testing different analysis methods.\n\nThe abstract lists the different math methods the program can use, such as nonlinear least-squares fitting and maximum-likelihood estimation. It also mentions that the program can run on both CPU and GPU for faster processing. However, the abstract does not provide any specific numbers showing how well the program performs or how it compares to other tools.\n\nScientists who work with fluorescence lifetime imaging and need a flexible tool for data analysis and simulation might find this useful. If you are looking for specific performance benchmarks or a detailed comparison of the different analysis methods, you will need to look at the full paper or other sources.",
+        "takeaways": [
+          "The main thing being described is a free Python program for analyzing fluorescence lifetime imaging data.",
+          "A clear limitation is that the abstract does not include any specific performance numbers or benchmark results.",
+          "The program is described as open-source, but the abstract does not give a link to the code or details on how to get it."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative performance and benchmarking results by reading the full PDF.",
+        "Check the official repository or documentation for code availability and installation instructions."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "cs.MS",
+        "physics.med-ph",
+        "physics.optics"
+      ],
+      "listing": {
+        "listedOn": "2026-09-14",
+        "publishedOn": "2026-09-14",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.11994"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-14"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-14T18:13:10.155Z"
+      }
+    },
+    {
+      "id": "2609.12043",
+      "arxivId": "2609.12043",
+      "url": "https://arxiv.org/abs/2609.12043",
+      "topic": "Physics",
+      "reported": "The authors prove that random hypercube linear optical networks on n modes generate ensemble-averaged subsystem entanglement within a constant factor of its maximum in all subsystems at circuit depth Θ(log n).",
+      "metrics": [
+        "depth log_2n"
+      ],
+      "title": "Log-depth entanglement transition in hypercube Gaussian boson sampling",
+      "authors": "Laura Shou, Alexey V. Gorshkov",
+      "takeaway": "The paper claims to prove an entanglement transition at logarithmic depth in random hypercube linear optical networks.",
+      "brief": "The authors prove that random hypercube linear optical networks on n modes generate ensemble-averaged subsystem entanglement within a constant factor of its maximum in all subsystems at circuit depth Θ(log n). They report that below depth log_2n, there is an extensive subsystem with no entanglement. The listing does not establish experimental validation or specific hardware constraints for this theoretical result.\n\nThe strongest reported result is the proof of entanglement generation within a constant factor of maximum at depth Θ(log n). The authors compare this to recent progress towards O(log n) depth average-case sampling hardness. No specific numerical benchmark or experimental measurement is provided in the abstract.\n\nResearchers studying quantum optics, entanglement theory, or boson sampling hardness may find this relevant. Those not working on linear optical networks or Gaussian states may ignore it.",
+      "abstract": "We study an entanglement transition at logarithmic depth in random hypercube linear optical networks. Starting from an initial Gaussian state with all modes squeezed, we prove that random hypercube linear optical networks on $n$ modes generate ensemble-averaged subsystem entanglement within a constant factor of its maximum in all subsystems at circuit depth $\\Theta(\\log n)$. Below depth $\\log_2n$, there is an extensive subsystem with no entanglement. The entanglement generation in logarithmic depth can be compared to recent progress towards $O(\\log n)$ depth average-case sampling hardness for Gaussian boson sampling in a hypercube network.",
+      "takeaways": [
+        "The object is a theoretical proof regarding entanglement generation in random hypercube linear optical networks.",
+        "A visible limit is the restriction to random hypercube networks and Gaussian states with all modes squeezed.",
+        "The artifact status is theoretical; no code or experimental data is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors prove that random hypercube linear optical networks on n modes generate ensemble-averaged subsystem entanglement within a constant factor of its maximum in all subsystems at circuit depth Θ(log n).",
+        "brief": "The authors prove that random hypercube linear optical networks on n modes generate ensemble-averaged subsystem entanglement within a constant factor of its maximum in all subsystems at circuit depth Θ(log n). They report that below depth log_2n, there is an extensive subsystem with no entanglement. The listing does not establish experimental validation or specific hardware constraints for this theoretical result.\n\nThe strongest reported result is the proof of entanglement generation within a constant factor of maximum at depth Θ(log n). The authors compare this to recent progress towards O(log n) depth average-case sampling hardness. No specific numerical benchmark or experimental measurement is provided in the abstract.\n\nResearchers studying quantum optics, entanglement theory, or boson sampling hardness may find this relevant. Those not working on linear optical networks or Gaussian states may ignore it.",
+        "takeaways": [
+          "The object is a theoretical proof regarding entanglement generation in random hypercube linear optical networks.",
+          "A visible limit is the restriction to random hypercube networks and Gaussian states with all modes squeezed.",
+          "The artifact status is theoretical; no code or experimental data is declared in the listing."
+        ]
+      },
+      "actions": [
+        "Verify the proof details and assumptions in the full PDF.",
+        "Check for related experimental implementations of hypercube Gaussian boson sampling."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "math-ph",
+        "math.MP",
+        "math.PR"
+      ],
+      "listing": {
+        "listedOn": "2026-09-14",
+        "publishedOn": "2026-09-14",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.12043"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-14"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-14T18:13:10.155Z"
+      }
+    },
+    {
+      "id": "2609.12195",
+      "arxivId": "2609.12195",
+      "url": "https://arxiv.org/abs/2609.12195",
+      "topic": "Engineering",
+      "reported": "The authors report that CORDIS-ADMM approaches the centralized performance bound and degrades gracefully under CSI estimation error, measured in simulations.",
+      "metrics": [],
+      "title": "CORDIS: A Scalable Coordinated Resource Allocation Framework for Distributed Cell-Free ISAC",
+      "authors": "Mehdi Zafari, Bj\\\"orn Ottersten, A. Lee Swindlehurst",
+      "takeaway": "The paper introduces CORDIS, a framework for coordinated resource allocation in distributed cell-free ISAC systems that optimizes sensing while suppressing clutter and maintaining communication constraints.",
+      "brief": "The authors propose CORDIS to coordinate beamforming and power across distributed access points in cell-free ISAC, aiming to mitigate communication-sensing interference without relying on centralized full network knowledge. They report that simulations show CORDIS-ADMM approaches the centralized performance bound and remains effective under CSI estimation error and locally rank-deficient channels, while CORDIS-Split offers a minimal-overhead alternative. The listing does not specify the simulation parameters, channel models, or quantitative performance gaps, leaving the practical scalability limits and hardware assumptions unresolved.\n\nResearchers working on distributed cell-free networks, ISAC resource allocation, or consensus-based optimization may find the framework relevant. Those focused on centralized architectures or non-6G wireless standards may find the specific distributed cell-free context less applicable. The absence of quantitative metrics in the abstract means the magnitude of performance gains or overhead reductions is not immediately verifiable from the listing alone.\n\nThe object is a resource allocation framework for distributed ISAC. A visible limit is the reliance on simulations to demonstrate scalability, with no field trials or hardware-in-the-loop results mentioned. The artifact status is not established in the listing, as no code repository or implementation details are provided.",
+      "abstract": "Integrated Sensing and Communication (ISAC) is envisioned as a key technology for 6G wireless networks, enabling the joint use of spectrum and hardware for sensing and communication. In multi-static cell-free architectures, coordinating beamforming and power resources across distributed access points (APs) is critical in order to mitigate severe communication-sensing interference. Most existing ISAC resource allocation solutions rely on centralized architectures with full network knowledge, which limits their scalability and practicality in distributed cell-free deployments with imperfect channel state information (CSI). In this paper, we introduce a framework for COordinated Resource allocation for Distributed ISAC Systems (CORDIS) that optimizes network sensing while suppressing clutter and maintaining per-user communication performance constraints. Two algorithms are developed: CORDIS-Split, a low-overhead scheme that pairs fixed local beamformers with centralized power allocation, and CORDIS-ADMM, which jointly optimizes beamforming and power through the consensus Alternating Direction Method of Multipliers (ADMM). By localizing high-dimensional matrix operations, both algorithms ensure fronthaul overhead and per-AP computation remain independent of antenna and AP counts. Simulations demonstrate that CORDIS-ADMM approaches the centralized performance bound and degrades gracefully under CSI estimation error, remaining effective even with locally rank-deficient channels, while CORDIS-Split offers a minimal-overhead alternative. These results confirm that CORDIS is a scalable and communication-efficient foundation for robust ISAC in decentralized wireless networks.",
+      "takeaways": [
+        "The object is a coordinated resource allocation framework for distributed cell-free ISAC systems.",
+        "A visible limit is that performance claims are based on simulations, with no quantitative metrics or field validation provided in the listing.",
+        "The artifact status is not established in the listing, as no code or implementation details are mentioned."
+      ],
+      "plain": {
+        "reported": "The authors report that their CORDIS-ADMM algorithm performs close to the best possible centralized system and handles imperfect channel information well, based on computer simulations.",
+        "brief": "The authors propose a system called CORDIS to manage how signals are sent and received in a network of many small antennas spread out over an area. This is designed for future 6G networks that do both communication and sensing (like radar) at the same time. They report that their simulations show the system works well even when the information about the wireless channel is imperfect, and it scales well as the network grows. However, the abstract does not give specific numbers on how much better it is or how much data it can handle, so the real-world performance is not clear from this summary.\n\nEngineers or researchers working on future wireless networks, especially those using distributed antennas or combining communication with sensing, might find this useful. People working on older or centralized network designs might not find it directly applicable. Since there are no specific numbers in the summary, it is hard to judge the exact performance benefits without reading the full paper.\n\nThe thing being described is a method for managing resources in a distributed wireless network. A clear limitation is that the results are only from simulations, not real-world tests. It is not stated whether the code or software for this system is available for others to use.",
+        "takeaways": [
+          "The object is a method for managing resources in a distributed wireless network that does both communication and sensing.",
+          "A visible limit is that the results are only from computer simulations, with no real-world tests or specific performance numbers given.",
+          "It is not stated whether the code or software for this system is available for others to use."
+        ]
+      },
+      "actions": [
+        "Verify the simulation setup, channel models, and quantitative performance metrics by reading the full PDF.",
+        "Check for any available code repositories or implementation details not mentioned in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP",
+        "cs.SY",
+        "eess.SY"
+      ],
+      "listing": {
+        "listedOn": "2026-09-14",
+        "publishedOn": "2026-09-14",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.12195"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-14"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-14T18:13:10.155Z"
+      }
+    },
+    {
+      "id": "2609.12280",
+      "arxivId": "2609.12280",
+      "url": "https://arxiv.org/abs/2609.12280",
+      "topic": "Econ",
+      "reported": "The authors report that the associated identification matrix is the unique global maximizer, measured in correlation space.",
+      "metrics": [],
+      "title": "Simultaneous Clustered Orthogonalization",
+      "authors": "Bastien Buchwalter, Francis X. Diebold, Kamil Yilmaz",
+      "takeaway": "The paper develops simultaneous clustered orthogonalization (SCO) to fill the remaining case in vector autoregression identification by preserving contemporaneous dependence within clusters while imposing orthogonality across clusters jointly.",
+      "brief": "The authors introduce simultaneous clustered orthogonalization (SCO) as a method for identifying structural shocks in vector autoregressions. It addresses the gap between sequential and simultaneous orthogonalization approaches by allowing partial orthogonality within defined economic clusters.\n\nThe authors state that the method reduces to a quadratic matrix equation in correlation space, yielding a closed-form solution. They prove the identification matrix is the unique global maximizer. The listing does not report empirical results, specific datasets, or numerical performance metrics.\n\nResearchers working on structural vector autoregressions who require flexible shock identification may find this relevant. Those relying solely on standard sequential Cholesky or full simultaneous methods without cluster considerations may find it less applicable.",
+      "abstract": "Identification in vector autoregressions involves two distinct choices: how extensively to orthogonalize shocks and whether orthogonality is imposed sequentially or simultaneously. Generalized identification imposes no orthogonality; Sims (1980} imposes full orthogonality sequentially; Francis et al. (2026) impose full orthogonality simultaneously; and Buchwalter et al. (2026a) provide clustered partial orthogonalization sequentially. We fill the remaining case by developing simultaneous clustered orthogonalization (SCO). SCO preserves contemporaneous dependence within economically meaningful clusters while imposing orthogonality across clusters jointly, thereby eliminating dependence on cluster ordering. We formulate the associated correlation-maximizing identification problem and show that, in correlation space, it reduces to a quadratic matrix equation. This yields a closed-form solution, and we prove that the associated identification matrix is the unique global maximizer. SCO is order- and scale-invariant and nests generalized identification and full simultaneous orthogonalization as special cases, yielding a flexible family of structural decompositions indexed by the number and composition of clusters.",
+      "takeaways": [
+        "The object is a theoretical identification method for VARs that nests generalized and full simultaneous orthogonalization as special cases.",
+        "The visible limit is the absence of reported empirical validation or quantitative performance comparisons in the supplied abstract.",
+        "The artifact status is not established in the listing, as no code or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that their mathematical solution is the only best possible answer, measured in a specific statistical space.",
+        "brief": "The authors create a new way to separate economic shocks in statistical models. This method groups related economic variables together and treats them differently from unrelated groups.\n\nThe authors say their method has a clear mathematical answer that is the best possible one. They prove this mathematically. The summary does not show any real-world data tests or specific numbers showing how well it works.\n\nPeople who study how economic variables affect each other using statistical models might find this useful. People who use simpler standard methods might not need this specific approach.",
+        "takeaways": [
+          "The main idea is a new mathematical rule for separating economic causes in data models.",
+          "The clear limit is that the summary does not show any real-world test results or numbers.",
+          "It is not stated whether the authors provide computer code or data files."
+        ]
+      },
+      "actions": [
+        "Verify the closed-form solution and uniqueness proof by reading the full PDF.",
+        "Check the paper's empirical section for any omitted quantitative results or dataset specifications."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.EM",
+        "stat.AP",
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-09-14",
+        "publishedOn": "2026-09-14",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.12280"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-14"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-14T18:13:10.155Z"
+      }
+    }
+  ]
+}
