@@ -1,0 +1,663 @@
+{
+  "date": "2026-09-15",
+  "label": "Tue, Sep 15",
+  "minutes": 10,
+  "poolSize": 147,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-09-15T17:02:03.837Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2609.11638",
+      "arxivId": "2609.11638",
+      "url": "https://arxiv.org/abs/2609.11638",
+      "topic": "AI",
+      "reported": "The authors report that Vidu S2 outperforms all baselines, though the specific metrics or benchmarks used for this comparison are not detailed in the abstract.",
+      "metrics": [],
+      "title": "Vidu S2: Real-Time Interactive, Editable, and Spatial Video Generation",
+      "authors": "Jintao Zhang, Kai Jiang, Jintao Chen, Xu Wang, Deyuan Liu, Jungang Li, Dechuang Chen, Ming Lin, Jingjiang Zhou, Haopeng Jin, Qi Jia, Xiaohang Wang, Yaole Wang, Zhanqiang Zhang, Ran Li, Zhengkun Huang, Shuyue Xiong, Yuji Wang, Zikun Dai, Hui He, Yang Luo, Mang Ning, Weiqi Feng, Chengyang Ye, Xinyue Lin, Min Zhao, Hongzhou Zhu, Hengkai Tan, Zeyuan Wang, Chendong Xiang, Kaiwen Zheng, Zhijie Deng, Fan Bao, Jianfei Chen, Jun Zhu",
+      "takeaway": "The paper presents Vidu S2, a system comprising real-time interactive digital-character and video editing models with spatial video generation capabilities.",
+      "brief": "The authors introduce Vidu S2, which includes a real-time interactive digital-character model and a real-time video editing model. They also explore the feasibility of real-time spatial video generation for both components.\n\nThe authors state that Vidu S2 outperforms all baselines, but the abstract does not specify the quantitative metrics, datasets, or evaluation protocols used to establish this claim. The listing mentions support for 720p video generation and dynamic references, but does not provide latency figures or quality scores.\n\nResearchers working on real-time video generation, interactive avatars, or video editing pipelines may find the architectural claims relevant. Those requiring specific benchmark comparisons or open-source code verification should note that the abstract lacks detailed performance data.",
+      "abstract": "We present Vidu S2, which comprises Vidu S2-Avatar, a real-time interactive digital-character model, and Vidu S2-Editing, a real-time video editing model. Moreover, we explore the feasibility of real-time spatial video generation for both Vidu S2-Avatar and Vidu S2-Editing. Compared with Vidu S1, Vidu S2-Avatar supports real-time 720p video generation, generation with dynamic references that can be updated at any moment, and stronger instruction following, such as dancing. Vidu S2-Editing supports editing a video stream in real time, including style rendering, clothing replacement, character replacement, and background replacement. Experiments show that Vidu S2 outperforms all baselines. A playable online demo is available at https://vidu.com/vidu-stream.",
+      "takeaways": [
+        "The object is a dual-model system for real-time avatar interaction and video editing, with spatial video generation as an explored feature.",
+        "A visible limit is the absence of quantitative performance metrics or specific baseline names in the provided abstract, making the 'outperforms all baselines' claim unverifiable from this text alone.",
+        "The artifact status is partially established: a GitHub repository URL is declared, and an online demo is mentioned, but the abstract does not confirm if the code is fully open-source or if the demo matches the paper's specific model versions."
+      ],
+      "plain": {
+        "reported": "The authors say their new system works better than other existing systems, but they do not list the specific numbers or tests they used to prove this in the summary text.",
+        "brief": "The creators describe a new software tool called Vidu S2. It has two main parts: one that creates moving digital characters in real-time, and another that edits videos as they are being played. They also tested if it could handle 3D spatial video.\n\nThey claim their tool is better than all the others they tested against. However, the short summary does not show the actual scores, speed measurements, or the names of the other tools they compared it to. It mentions the video quality is 720p, but does not say how fast the processing is.\n\nPeople who build real-time video tools or digital avatars might be interested in the design ideas. People who need to check if the tool is actually fast or high-quality should look for more detailed data, which is not in this summary.",
+        "takeaways": [
+          "The main thing being described is a software system that makes digital characters and edits videos instantly.",
+          "A clear gap is that the summary says it is 'better' but does not show the numbers or the specific competitors it beat.",
+          "The status of the actual software files is mixed: a website link is given, and a demo exists, but it is not clear if the full code is free to download and use."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative metrics and baseline comparisons by reading the full PDF, as the abstract only provides a qualitative superiority claim.",
+        "Check the declared GitHub repository to confirm if the code for Vidu S2-Avatar and Vidu S2-Editing is available and matches the described real-time capabilities."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/shengshu-ai/Vidu-S",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-15",
+        "publishedOn": "2026-09-10",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.11638",
+            "upvotes": 386
+          }
+        ]
+      },
+      "trend": {
+        "votes": 386,
+        "rank": 1,
+        "of": 30,
+        "perDay": 77
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 386,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-10"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-15T17:02:03.837Z"
+      }
+    },
+    {
+      "id": "2609.15818",
+      "arxivId": "2609.15818",
+      "url": "https://arxiv.org/abs/2609.15818",
+      "topic": "AI",
+      "reported": "The authors report that Atria Dawn Preview achieves the highest reported score on five of 16 benchmarks spanning real-world research, engineering, and digital work.",
+      "metrics": [
+        "16 benchmarks",
+        "769 task records"
+      ],
+      "title": "Atria Dawn: The Dawn of Agentic Superintelligence",
+      "authors": "Honglin Guo, Tao Gui, Yicheng Chen, Guanting Dong, Qiming Ge, Yuyang Hu, Zixian Huang, Jiajie Jin, Alexander Lam, Yining Li, Jiahang Lin, Yanjiang Liu, Xinyu Lu, Haijun Lv, Junlin Shang, Qisheng Su, Guoqiang Wang, Rui Wang, Zhecan Wang, Hao Xiang, Xinchen Xie, Shuhao Xing, Xiaoyu Xing, Wanghan Xu, Xinyu Yang, Yajie Yang, Chengfeng Zhao, Haoran Zhao, Ruojun Zhou, Yunhua Zhou, Yicheng Zou, Kun Cai, Qiye Cai, Xinmeng Che, Haodong Chen, Jiabei Chen, Jiahao Chen, Jiayi Chen, Yujia Chen, Lizhi Cui, Youheng Dai, Xin Deng, Yi Dong, Shihan Dou, Chenya Gu, Xu Guo, Ding Han, Feiyang Hao, Haotan He, Jie Hou, Binze Hu, Zijian Hu, Junhao Huang, Huicheng Jiang, Jiazhen Jiang, Shufan Jiang, Jiahao Kuang, Bowen Lai, Bo Li, Jiaqiang Li, Peng Li, Qilong Li, Zhuoqun Li, Jiaxiang Liu, Shuainan Liu, Tong Liu, Yi Liu, Zhonghang Lu, Jianwen Luo, Yanyi Luo, Huijie Lv, Ningsheng Ma, Zerun Ma, Houcheng Min, Chengjun Pan, Qiyuan Peng, Xiaoxuan Peng, Jianmin Qian, Jiantao Qiu, Wanying Ren, Huayu Sha, Jifei Shan, Zixin Shang, Bing Shao, Zhuohui Sheng, Jiayang Shi, Yang Shu, Aierpanjiang Simayi, Sirui Song, Yuxiao Song, Zhe Sun, Zhichao Sun, Wenzhe Tan, Wenhui Tian, Zhongbo Tian, Hanchen Wang, Pengbo Wang, Rui Wang, Yiding Wang, Yuhui Wang, Zhiheng Xi, Caijun Xu, Chao Xu, Yongfeng Xu, Xiaolei Yang, Zhixiong Yang, Qian Yao, Shihong Yi, Yuankai Ying, Jia Yu, Dingbo Yuan, Hao Yuan, Junjie Yuan, Bo Zhang, Caixian Zhang, Qiuyinzhe Zhang, Jiyuan Zhao, Penghao Zhao, Ying Zhao, Pujun Zheng, Xiaoxue Zhong, Xiaohao Zhou, Xinyu Zhou, Dongsheng Zhu, Guanru Zhu, Yulun Zhu, Yaojie Lu, Tao Ji, Hongyu Lin, Yutao Zhu, Pengfei Cao, Guoxiu He, Xianpei Han, Ben He, Zhicheng Dou, Kang Liu, Qi Zhang, Le Sun, Jun Zhao, Ji-Rong Wen, Xuanjing Huang, Yu-Gang Jiang, Bowen Zhou",
+      "takeaway": "The paper introduces Atria Dawn Preview, a foundation agentic language model trained via a Verifiable Experience Pipeline for scientific research and engineering workflows.",
+      "brief": "The authors present Atria Dawn Preview as a foundation agentic language model designed for scientific research and engineering workflows. They state it is trained via a Verifiable Experience Pipeline that connects tool-mediated interactions to executable environments and externally verified outcomes.\n\nThe authors report the model is competitive with frontier agents and achieves the highest reported score on five of 16 benchmarks. They also analyze 769 task records from 56 participants, noting participants rated about one-third of completed AI-assisted tasks as infeasible without AI. The listing does not specify the exact benchmark names or the specific scores achieved.\n\nResearchers working on agentic AI systems, human-AI collaboration, or scientific automation may find the case study and benchmark comparisons relevant. Those seeking specific technical implementation details or exact numerical scores for individual benchmarks may need to consult the full paper.",
+      "abstract": "As AI agents become participants in the development of their successors, they reshape both the production of intelligence and the role of human researchers. We introduce Atria Dawn Preview, a foundation agentic language model designed for scientific research and engineering workflows, with the goal of expanding the frontier of agent productivity in the real world. This model is trained via a Verifiable Experience Pipeline that connects tool-mediated interactions to executable environments and externally verified outcomes. Across 16 benchmarks spanning real-world research, engineering, and digital work, Atria Dawn Preview is competitive with frontier agents and achieves the highest reported score on five of them. Beyond standalone performance, we examine the real research-and-development process behind this model as a case study of human--AI collaboration, analyzing 769 task records from 56 participants together with agent logs. When asked to evaluate completed tasks under comparable conditions, participants rated about one-third of completed AI-assisted tasks as infeasible without AI. More strikingly, agents frequently propose methods and implement revisions, while humans retain most final decisions and guide exploration through judgment and feedback. These observations indicate a shift from task-level execution to project-level partnership, with human effort concentrating on what is worth pursuing and how evidence should guide research. Progress toward more autonomous AI research must therefore advance both the capacity for discovery and the capacity for meaningful human oversight, preserving accountable human authority over the risks and direction of continued development.",
+      "takeaways": [
+        "The object is a foundation agentic language model named Atria Dawn Preview, intended for scientific research and engineering workflows.",
+        "A visible limit is that the listing does not name the specific 16 benchmarks or provide the exact scores for the five where it claims the highest reported score.",
+        "The artifact status is indicated by a declared code repository URL, but the listing does not confirm the availability or completeness of the code or model weights."
+      ],
+      "plain": {
+        "reported": "The authors say their AI model, Atria Dawn Preview, got the best score on five out of 16 tests covering real-world research, engineering, and digital work tasks.",
+        "brief": "The authors introduce Atria Dawn Preview, an AI model built to help with scientific research and engineering tasks. They say it is trained using a process called a Verifiable Experience Pipeline, which links the AI's use of tools to real-world environments and checks the results externally.\n\nThe authors say the model performs as well as top AI agents and gets the best score on five out of 16 tests. They also looked at 769 task records from 56 people, finding that about one-third of tasks done with AI help were rated as impossible to do without AI. The summary does not list the names of the 16 tests or the exact scores.\n\nPeople working on AI agents, human-AI teamwork, or automated science might find the case study and test comparisons useful. People looking for specific technical details or exact scores for each test should read the full paper.",
+        "takeaways": [
+          "The thing being described is an AI model called Atria Dawn Preview, meant for scientific research and engineering work.",
+          "A clear limitation is that the summary does not name the 16 tests or give the exact scores for the five where it claims the best result.",
+          "The status of the software artifact is shown by a GitHub link, but the summary does not confirm if the code or model files are actually available and complete."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark names and exact scores by reading the full PDF, as the abstract only states 'five of them' without naming them.",
+        "Check the declared GitHub repository to confirm whether the model weights, training code, or evaluation scripts are actually available and functional."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/atria-asi/Atria-Dawn-Preview",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-15",
+        "publishedOn": "2026-09-14",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.15818",
+            "upvotes": 364
+          }
+        ]
+      },
+      "trend": {
+        "votes": 364,
+        "rank": 2,
+        "of": 30,
+        "perDay": 364
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 364,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-14"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-15T17:02:03.837Z"
+      }
+    },
+    {
+      "id": "2609.13356",
+      "arxivId": "2609.13356",
+      "url": "https://arxiv.org/abs/2609.13356",
+      "topic": "AI",
+      "reported": "The authors report that ZGCM-1-7B is competitive with frontier models orders of magnitude larger on challenging mathematical reasoning and agentic search suites.",
+      "metrics": [
+        "~4.2x efficiency improvement in 16K pre-training time-to-loss"
+      ],
+      "title": "ZGCM-1: A Fully Open and Extremely Efficient Foundation Model for Math and Agentic Search",
+      "authors": "Jiyan He, Guang Liang, Hao Liu, Haoxiang Guan, Jinbo Sun, Junyi Guo, Wenjun Feng, Yantai Xie, Yifei Shen, Bin Shao, Chuyang Wei, Kai Chen, Kexin Zhou, Minghang Zhu, Shuxin Zheng, Tie-Yan Liu, Taine Zhao, Wenhui Zhu, Xueyin Xu, Xiaoqing Zhang, Yatao Li, Yuxuan Ren",
+      "takeaway": "The paper presents ZGCM-1, a fully open 7B dense foundation model trained from scratch with extreme data, system, and algorithmic efficiency.",
+      "brief": "The authors introduce ZGCM-1, a 7B dense model trained from scratch using an end-to-end high-efficiency open training recipe. They claim it overcomes parametric capacity limits by coupling deliberate internal thinking with active external tool use across a 256K context.\n\nThe authors report that the model is competitive with frontier models orders of magnitude larger on mathematical reasoning and agentic search suites. They also state a ~4.2x efficiency improvement in 16K pre-training time-to-loss. The listing does not specify the exact benchmark scores or the specific limits of the model's performance on general tasks.\n\nResearchers interested in open-source foundation models, efficient training recipes, or agentic search systems may find the open-sourced weights and code relevant. Those requiring closed-source proprietary models or specific non-mathematical domain expertise may find the listing less directly applicable.",
+      "abstract": "In this work, we present ZGCM-1, a fully open 7B dense foundation model trained from scratch with extreme data, system, and algorithmic efficiency. ZGCM-1 is founded on a core premise: compact models cannot passively memorize the open web, but can overcome parametric capacity limits by coupling deliberate internal thinking with active external tool use. To support this paradigm across a 256K context, we develop an end-to-end, high-efficiency open training recipe: Architecture & System Co-design: interleaved gated sliding-window and full attention, and a stable FP8 Muon optimizer; Progressive Curriculum & MDP Mid-Training: context scaling across 16K, 64K, and 256K, and the reformulation of interaction traces into Markov Decision Processes. Furthermore, we establish an AI-native R&D workflow where agent swarms autonomously manage cluster operations, data curation, and rapid diagnostic evaluation. Extensive evaluations show that ZGCM-1-7B is competitive across 7B model family on general benchmarks. On several challenging mathematical reasoning and agentic search suites, it remains competitive with frontier models orders of magnitude larger, such as Qwen3-235B-A22B and GLM-5.1. We also show that our pre-training design offers a ~4.2x efficiency improvement in 16K pre-training time-to-loss. Across the full development lifecycle, we distill eight actionable empirical findings-spanning architectural scaling, SFT quality pruning, long-context generalization, and agentic co-training dynamics. To facilitate community research, we open-source model weights from the pre-training, mid-training, and post-training stages, intermediate checkpoints, training code, per-stage data and data recipes, and W&B logs.",
+      "takeaways": [
+        "The object is a fully open 7B dense foundation model trained from scratch with a focus on extreme efficiency.",
+        "A visible limit is that the model relies on coupling internal thinking with external tool use to overcome parametric capacity limits, which may not apply to all task types.",
+        "The artifact status is open-source, with model weights, intermediate checkpoints, training code, data recipes, and W&B logs provided."
+      ],
+      "plain": {
+        "reported": "The authors state that their 7-billion-parameter model performs similarly to much larger, state-of-the-art models on difficult math problems and tasks that require using external tools to find information.",
+        "brief": "The authors created a new, fully public 7-billion-parameter AI model built from the ground up. They designed it to be very efficient in how it uses data and computing power. The model is designed to think through problems internally and also use external tools to help it solve tasks, especially within a very long context window of 256,000 words.\n\nThe authors say their model performs as well as much larger, top-tier models on specific hard math and tool-use tasks. They also claim their training method is about 4.2 times more efficient in a specific early training phase. The provided summary does not give the exact scores or explain where the model might fail on other types of tasks.\n\nPeople who want to use or study fully public AI models, efficient training methods, or systems that use external tools might find this useful. People who need private, proprietary AI models or are focused on very specific non-math fields might not find this directly helpful.",
+        "takeaways": [
+          "The main item is a fully public 7-billion-parameter AI model built from scratch with a focus on being very efficient.",
+          "A clear limitation is that the model needs to combine its own internal thinking with external tools to work well, which might not help with all kinds of tasks.",
+          "The model and its training materials are made public, including the model files, training code, and data instructions."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark scores and comparisons against Qwen3-235B-A22B and GLM-5.1 in the full PDF.",
+        "Inspect the open-source repository to confirm the availability and completeness of the pre-training, mid-training, and post-training stages."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/zgcagi/ZGCM-1",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-15",
+        "publishedOn": "2026-09-11",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.13356",
+            "upvotes": 289
+          }
+        ]
+      },
+      "trend": {
+        "votes": 289,
+        "rank": 3,
+        "of": 30,
+        "perDay": 72
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 289,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-11"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-15T17:02:03.837Z"
+      }
+    },
+    {
+      "id": "2609.14858",
+      "arxivId": "2609.14858",
+      "url": "https://arxiv.org/abs/2609.14858",
+      "topic": "AI",
+      "reported": "The authors report that Dream-RSI achieves competitive or improved discovery quality while substantially reducing discovery cost in several settings across algorithm engineering, mathematical optimization, and GPU kernel engineering.",
+      "metrics": [],
+      "title": "Dream-RSI: Recursive Self-Improvement through Evolving Worlds",
+      "authors": "Tong Zheng, Xidong Wu, Zheng Zhang, Zhankui He, Chaoyi Zhang, Benjamin Coleman, Ruoqiao Wei, Di Bai, Haolin Liu, Rui Liu, Xue Wang, Yue Zhuan, Wang-Cheng Kang, Renkai Xiang, Heng Huang, Xinwu Cheng, Yunsong Guo",
+      "takeaway": "Dream-RSI is a framework for scalable and recursively self-improving exploration that uses accumulated discovery history as a replay simulator to evaluate and refine exploration policies without expensive online evaluations.",
+      "brief": "The authors propose Dream-RSI, a framework that makes exploration explicit and programmable via a lightweight orchestration layer while leaving the underlying coding agent unchanged. The core mechanism treats accumulated discovery history as a replay simulator, allowing the system to perform \"dreaming\" to secure immediate, low-cost off-policy feedback for refining exploration policies before redeploying them online.\n\nThe authors state that the system achieves competitive or improved discovery quality while substantially reducing discovery cost in several settings across algorithm engineering, mathematical optimization, and GPU kernel engineering. The listing does not provide specific quantitative metrics, baseline comparisons, or details on the magnitude of cost reduction, leaving the precise performance gains unresolved.\n\nResearchers working on autonomous AI agents, algorithm engineering, or optimization frameworks may find the replay-simulator approach relevant for managing exploration bottlenecks. Those requiring specific quantitative benchmarks or code-level implementation details for their own domain should verify the provided repository and full paper before relying on the reported qualitative improvements.",
+      "abstract": "Recursive self-improvement is becoming increasingly vital for autonomous AI agents, where progress hinges on discovering high-value solutions across complex domains. The driver of this process is effective exploration, however, managing and improving exploration strategies remains a major bottleneck. Current systems face a fundamental dilemma: fixed strategies fail to adapt as search spaces scale, while online policy optimization requires navigating vast meta-search spaces under delayed and expensive feedback over long-horizon rollouts. We introduce Dream-RSI, a framework for scalable and recursively self-improving exploration. A lightweight orchestration layer makes exploration explicit and programmable while leaving the underlying coding agent unchanged. Our key insight is that accumulated discovery history can serve as a replay simulator over the realized search space. By performing dreaming in the replay simulator constructed from historical discovery trees, Dream-RSI secures immediate, low-cost off-policy feedback to evaluate and refine exploration policies without invoking repetitive, expensive online evaluations. The improved policy is subsequently redeployed online to drive further discovery, continuously expanding the simulator pool in a self-improving loop. Across algorithm engineering, mathematical optimization, and GPU kernel engineering, Dream-RSI achieves competitive or improved discovery quality while substantially reducing discovery cost in several settings.",
+      "takeaways": [
+        "The object is a framework for recursively self-improving exploration that uses a replay simulator built from historical discovery trees to refine policies.",
+        "A visible limit is the lack of specific quantitative metrics in the abstract, making it difficult to assess the exact scale of cost reduction or quality improvement without reading the full paper.",
+        "The artifact status is indicated by a declared GitHub repository URL, but the listing does not confirm the availability of specific datasets, code completeness, or reproducibility instructions."
+      ],
+      "plain": {
+        "reported": "The authors report that their system, Dream-RSI, performs as well as or better than existing methods in finding solutions while significantly lowering the cost of finding them in several areas, including algorithm design, math optimization, and computer graphics programming.",
+        "brief": "The authors introduce Dream-RSI, a system designed to help AI agents improve their own search strategies. It uses a lightweight control layer to manage how the AI searches for solutions, without changing the core AI program itself. The key idea is to use past successful searches as a practice environment, or \"replay simulator,\" to test and improve search strategies cheaply before using them in real, expensive searches.\n\nThe authors claim that this method leads to good or better results while significantly cutting the cost of finding solutions in several fields, such as creating algorithms, solving math problems, and optimizing computer graphics code. However, the summary does not include specific numbers showing how much better or cheaper the system is, so the exact scale of these improvements is not clear from the listing alone.\n\nPeople who build AI systems that need to find solutions on their own, or who work on optimizing algorithms and code, might find this approach useful for handling the difficulty of searching large spaces. Those who need specific data points or want to see the actual code should check the provided website link and read the full document to see if it meets their specific needs.",
+        "takeaways": [
+          "The main thing being described is a system that helps AI agents get better at searching for solutions by practicing on past successes before trying new, expensive searches.",
+          "A clear limitation is that the summary does not give specific numbers for how much better or cheaper the system is, so you cannot judge the exact performance gain without more details.",
+          "The status of the actual software is that a website link is provided, but the summary does not say if the code is complete, if data is included, or if it is easy to run."
+        ]
+      },
+      "actions": [
+        "Verify the contents and functionality of the declared GitHub repository at https://github.com/zhengkid/Dream-RSI to confirm code availability and alignment with the described framework.",
+        "Read the full PDF to identify specific quantitative benchmarks, baseline comparisons, and detailed experimental setups for the algorithm engineering, mathematical optimization, and GPU kernel engineering domains."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/zhengkid/Dream-RSI",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-15",
+        "publishedOn": "2026-09-14",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.14858",
+            "upvotes": 253
+          }
+        ]
+      },
+      "trend": {
+        "votes": 253,
+        "rank": 4,
+        "of": 30,
+        "perDay": 253
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 253,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-14"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-15T17:02:03.837Z"
+      }
+    },
+    {
+      "id": "2609.13212",
+      "arxivId": "2609.13212",
+      "url": "https://arxiv.org/abs/2609.13212",
+      "topic": "Engineering",
+      "reported": "The authors report that their NMI-IGNNK framework reduced testing-subset normalized joint RMSE from 0.212 at 0.5% coverage to 0.043 at 30% coverage on Chicago network simulation data.",
+      "metrics": [
+        "0.212 at 0.5%",
+        "0.043 at 30%",
+        "4,805 directed links"
+      ],
+      "title": "A Joint Information-Theoretic and Graph Learning Framework for Sensor Placement and Macroscopic Traffic State Reconstruction",
+      "authors": "Ying Zhang, Fatemeh Fakhrmoosavi, Arash E. Zaghi",
+      "takeaway": "The paper claims to develop a joint information-theoretic and graph learning framework for sensor placement and macroscopic traffic state reconstruction in large urban networks.",
+      "brief": "The authors propose a framework combining normalized mutual information with Inductive Graph Neural Network Kriging to select sensors and reconstruct unobserved traffic states. They report that their method reduced normalized joint RMSE from 0.212 at 0.5% coverage to 0.043 at 30% coverage on simulated Chicago network data. The listing does not establish whether these results generalize to real-world sensor data or different network topologies.\n\nThe strongest reported result is a reduction in normalized joint RMSE from 0.212 to 0.043 as sensor coverage increased from 0.5% to 30%. This was measured on seven hours of dynamic traffic assignment simulation data for the Chicago network. The listing does not specify computational costs or real-world deployment constraints.\n\nResearchers working on traffic sensor optimization or graph-based state estimation may find the methodological combination of information theory and graph neural networks relevant. Those requiring real-world validation or specific hardware integration details should note the simulation-only evaluation described in the abstract.",
+      "abstract": "Traffic sensor placement in large urban networks must balance traffic monitoring needs with limited installation, maintenance, and data-management budgets. This study develops a framework for preserving network-wide traffic information while reconstructing flow and density at unobserved links and the macroscopic fundamental diagram (MFD). The framework combines normalized mutual information (NMI) with Inductive Graph Neural Network Kriging (IGNNK). NMI quantifies lag-aware dependence between joint flow-density states, while a greedy algorithm selects sensors by balancing weighted information coverage against redundancy. An IGNNK-based bidirectional graph-diffusion model reconstructs unobserved link states and generates the MFD. The framework was evaluated against a principal component analysis (PCA) benchmark using seven hours of dynamic traffic assignment simulation data for the Chicago network, with 4,805 directed links and 420 one-minute intervals split into training, validation, and independent testing subsets. Reconstruction performance for both PCA and NMI-IGNNK varied substantially over the sensor ratios of 0.5% to 30%. PCA generally yielded lower root mean squared error (RMSE) over the 0.5%-3% range, but its errors were nonmonotonic and reached their minimum at 2%. At 3%, normalized joint RMSE was similar for PCA and NMI-IGNNK (0.100 and 0.105, respectively). NMI-IGNNK remained applicable up to 30% coverage and generally improved as coverage increased, reducing testing-subset normalized joint RMSE from 0.212 at 0.5% to 0.043 at 30%, with consistent trends over the complete analysis period. The framework integrates lag-aware, information-theoretic sensor placement based on joint flow-density states with directed graph-based reconstruction, enabling a broad range of sensor budgets in large-scale networks without strict limits on the number of sensors.",
+      "takeaways": [
+        "The object is a joint framework for sensor placement and traffic state reconstruction using NMI and IGNNK.",
+        "A visible limit is that evaluation relied on simulation data for a single network (Chicago) over seven hours.",
+        "The artifact status is not established in the listing; no code or dataset is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that their method lowered the error rate for predicting traffic flow and density from 0.212 when using very few sensors to 0.043 when using many sensors, based on computer simulations of Chicago traffic.",
+        "brief": "The researchers created a system that uses mathematical measures of information and graph-based machine learning to decide where to place traffic sensors and predict traffic conditions where no sensors exist. They state that their system improved prediction accuracy as more sensors were added, reducing the error score from 0.212 to 0.043 in their simulations. It is not known from this summary if the system works with real traffic data or in cities other than Chicago.\n\nThe best result they show is a drop in prediction error from 0.212 to 0.043 as the number of sensors increased from 0.5% to 30% of the network. This was tested on simulated traffic data for Chicago covering seven hours. The summary does not say how much computer power the system needs or how it would work in a real city.\n\nPeople who study how to place traffic sensors or use machine learning to predict traffic might find this useful. People who need to know if this works with real data or specific hardware should note that the tests were only done in a computer simulation.",
+        "takeaways": [
+          "The main idea is a system that picks sensor locations and predicts traffic using information theory and graph machine learning.",
+          "A clear limitation is that the tests were only done on simulated data for one city.",
+          "It is not stated whether the code or data are available for others to use."
+        ]
+      },
+      "actions": [
+        "Verify the simulation setup and data generation process in the PDF to assess generalizability.",
+        "Check the PDF for details on computational complexity and real-world applicability constraints."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP",
+        "cs.IT",
+        "math.IT"
+      ],
+      "listing": {
+        "listedOn": "2026-09-15",
+        "publishedOn": "2026-09-15",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.13212"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-15"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-15T17:02:03.837Z"
+      }
+    },
+    {
+      "id": "2609.13312",
+      "arxivId": "2609.13312",
+      "url": "https://arxiv.org/abs/2609.13312",
+      "topic": "Physics",
+      "reported": "The authors report constructing physical quantum states with positive Wigner functions whose Shannon entropy is below the vacuum value, measured on finite-Fock-support families.",
+      "metrics": [
+        "1+\\ln\\pi",
+        "n\\ge3",
+        "\\gamma\\simeq0.7412033679"
+      ],
+      "title": "Physical Counterexamples to the Wigner Shannon Entropy Conjecture",
+      "authors": "Zixuan He",
+      "takeaway": "The paper claims to construct physical quantum states with everywhere positive Wigner functions whose Shannon entropy lies below the vacuum value, thereby providing counterexamples to the Wigner Shannon Entropy Conjecture.",
+      "brief": "The authors claim to construct physical quantum states with everywhere positive Wigner functions whose Shannon entropy lies below the vacuum value $1+\\ln\\pi$.\n\nThey report an explicit finite-energy counterexample and rank-two finite-Fock-support families with analytic positivity and entropy bounds. The listing does not establish experimental validation or specific numerical simulation results beyond the analytic bounds provided.\n\nResearchers working on quantum information theory, specifically Wigner function properties and entropy bounds, should open this paper. Those not interested in continuous-variable quantum state entropy may ignore it.",
+      "abstract": "We construct physical quantum states with everywhere positive Wigner functions whose Shannon entropy lies below the vacuum value $1+\\ln\\pi$. Besides an explicit finite-energy counterexample, we obtain rank-two finite-Fock-support families with analytic positivity and entropy bounds. For fixed Fock level $n$ and coherence fraction $0\\le\\lambda<1$, the entropy difference satisfies $h(W)-(1+\\ln\\pi)=(2n-2^n\\lambda^2)t^2+O_{n,\\lambda}(t^4)$, yielding finite-support counterexamples for every $n\\ge3$ above an explicit coherence threshold. We also show that the absence of a negative quadratic term does not preclude entropy descent: a fully coherent vacuum--one-photon core with a vanishing positive thermal repair gives $h(W)-(1+\\ln\\pi)=-4t^6/3+o(t^6)$. For the vacuum--three-photon construction, we determine the logarithmic asymptotic of the minimum fixed-thermal mixing weight required for Wigner nonnegativity. Finally, optimizing over all one-mode Wigner-nonnegative states with mean photon number at most $E$, we prove that the maximal entropy deficit has the sharp scale $E^\\gamma/[\\ln(1/E)]^\\beta$, where $\\gamma\\simeq0.7412033679$ and $\\beta\\simeq0.5861054961$. Thus the vacuum entropy is recovered as $E\\to0$, but the optimal deficit decays much more slowly than any universal linear correction in the mean energy.",
+      "takeaways": [
+        "The object is a set of analytic counterexamples to a specific entropy conjecture in quantum optics.",
+        "The visible limit is that the results are analytic constructions for finite Fock levels and specific coherence fractions, not general experimental observations.",
+        "The artifact status is not established in the listing; no code or data repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report creating mathematical models of quantum states that have a specific type of positive probability distribution, but whose information content is lower than the standard minimum, measured on specific mathematical families of states.",
+        "brief": "The authors claim to create quantum states that have a positive probability distribution but lower information content than the standard minimum, which contradicts a previous theory.\n\nThey provide mathematical proofs for these states using specific types of quantum energy levels. The listing does not say if these states were physically created in a lab or tested with real data.\n\nPeople studying the math of quantum information and probability distributions should look at this paper. People not studying these specific mathematical properties of quantum states can skip it.",
+        "takeaways": [
+          "The paper is about mathematical examples that break a specific rule about quantum information.",
+          "The limit is that these are mathematical proofs for specific cases, not real-world experiments.",
+          "It is not stated if the authors shared their code or data files."
+        ]
+      },
+      "actions": [
+        "Verify the analytic derivations for the rank-two finite-Fock-support families in the full PDF.",
+        "Check the full PDF for the explicit coherence threshold values for $n\\ge3$ to assess practical applicability."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-09-15",
+        "publishedOn": "2026-09-15",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.13312"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-15"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-15T17:02:03.837Z"
+      }
+    },
+    {
+      "id": "2609.13316",
+      "arxivId": "2609.13316",
+      "url": "https://arxiv.org/abs/2609.13316",
+      "topic": "Stats",
+      "reported": "The author reports deriving the PDF, CDF, and quantile functions for the new distribution.",
+      "metrics": [],
+      "title": "A new six parameters generalized Weibull-Kumaraswamy-{Lomax) Distribution with a Novel Linear Series Expansion of Its Probability Density",
+      "authors": "Iman Mohamed Attia",
+      "takeaway": "The paper introduces a six-parameter generalized Weibull-Kumaraswamy-Lomax distribution using a T-X{Y} family approach and a novel linear series expansion of its probability density.",
+      "brief": "The author constructs a new six-parameter distribution by linking the Kumaraswamy baseline with the Lomax generator via the Weibull distribution. The derivation includes the PDF, CDF, and quantile functions, along with a linear series expansion for the PDF.\n\nThe author states that the expansion is simple and does not require special functions, making raw moment computation easier. The paper includes figures for the PDF, CDF, and quantile functions, and discusses Shannon entropy. No empirical benchmark or numerical validation against real data is described in the abstract.\n\nResearchers working on flexible parametric distributions or series expansions for statistical modeling may find the construction relevant. Those requiring empirical performance comparisons or software implementations should note the abstract does not mention these.",
+      "abstract": "One method of generalizing a distribution is to add new parameter to the baseline distribution. In this paper the author discusses this methodology to create a new six parameters generalized Weibull-Kumaraswamy-{Lomax) Distribution. The author utilizes the approach of the T-X{Y} family to add new parameters the baseline distribution Kumaraswamy distribution defined on the unit interval with two shape parameters a & b>0. The author used the Lomax distribution with two parameters {\\alpha} & {\\lambda}>0 , scale and shape parameters respectively, to link the baseline distribution with the generator distribution. The generator distribution is the Weibull distribution with the two parameters, c & {\\gamma}>0 , shape and scale parameters respectively as will be explained in the paper. The result is a new distribution with six parameters. The author derived the PDF, CDF, and quantile functions. The author used a new technique to expand the pdf in a linear series expansion that is simple and does not require special function. This makes the computational statistics for the raw moments easier and simpler. The author discusses the Shannon entropy and the paper contains figures for the PDF, CDF and the quantile functions.",
+      "takeaways": [
+        "The object is a six-parameter distribution formed by combining Weibull, Kumaraswamy, and Lomax components.",
+        "The abstract does not establish whether the new distribution offers empirical advantages over existing flexible distributions.",
+        "No code, dataset, or numerical benchmark is mentioned in the listing."
+      ],
+      "plain": {
+        "reported": "The author reports deriving the mathematical formulas for the probability density, cumulative distribution, and quantile functions of the new distribution.",
+        "brief": "The author builds a new statistical model with six adjustable settings by combining three existing models: Weibull, Kumaraswamy, and Lomax. The author provides the core mathematical formulas for this model and a new way to break down its probability density into a simple sum.\n\nThe author says this new breakdown is easy to use and does not need complex mathematical tools, which makes calculating basic statistics like averages simpler. The paper includes graphs of the model's key functions and discusses a measure of uncertainty called Shannon entropy. The abstract does not say whether the author tested this model on real-world data or compared it to other models.\n\nPeople who design flexible statistical models or work with mathematical series expansions might find this useful. People who need to see how the model performs on actual data or want to use ready-made software should note that the abstract does not mention these things.",
+        "takeaways": [
+          "The new model has six adjustable settings and is built from three well-known statistical models.",
+          "It is not clear from the abstract whether this new model works better than existing flexible models on real data.",
+          "The abstract does not mention any computer code, datasets, or numerical tests."
+        ]
+      },
+      "actions": [
+        "Verify the derivation of the linear series expansion and the resulting moment formulas in the full PDF.",
+        "Check whether the paper provides numerical examples or simulations demonstrating the claimed computational simplicity."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "math.ST",
+        "math.PR",
+        "stat.TH"
+      ],
+      "listing": {
+        "listedOn": "2026-09-15",
+        "publishedOn": "2026-09-15",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.13316"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-15"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-15T17:02:03.837Z"
+      }
+    },
+    {
+      "id": "2609.13353",
+      "arxivId": "2609.13353",
+      "url": "https://arxiv.org/abs/2609.13353",
+      "topic": "Security",
+      "reported": "The authors report that trajectory-grounded labels improve pre-execution guard accuracy to 0.770.",
+      "metrics": [
+        "3,014 cases",
+        "0.770"
+      ],
+      "title": "SkillAtlas: An Attack Trace Library for Agent Skills",
+      "authors": "Yuxin Tian, Zenghao Duan, Liang Pang, Zhiyi Yin, Xueqi Cheng",
+      "takeaway": "The paper presents SkillAtlas, a hosted attack trace library that converts private agent-skill security report bundles into reviewed, redacted, and searchable public cases.",
+      "brief": "The authors introduce SkillAtlas, a library designed to make agent-skill security incidents inspectable and reusable by converting private reports into public cases. They report that the library contains 3,014 cases and that using trajectory-grounded labels improves pre-execution guard accuracy to 0.770. The listing does not specify the baseline guard model or the dataset used to measure this accuracy, leaving the comparative context unresolved.\n\nResearchers working on agent security or LLM agent evaluation may find the structured trace data useful for analysis. Those focused on static code analysis or non-agent systems may find the specific focus on dynamic agent execution less relevant. The library’s utility depends on the availability and quality of the redacted public cases.\n\nThe artifact is described as a hosted library, but the listing does not provide a direct URL or repository link. Verification of the library’s accessibility and the specific guard model used for the 0.770 accuracy claim requires consulting the full PDF.",
+      "abstract": "Agent skills are reusable units for language-model agents, but their risks emerge through model decisions, user context, tool calls, and execution feedback rather than through stable signatures or a single sandbox run. Existing static, dynamic, and benchmark-style evaluations rarely preserve public evidence that can be inspected, searched, and reused. We present SkillAtlas, a hosted attack trace library that converts private agent-skill security report bundles into reviewed, redacted, and searchable public cases. The library contains 3,014 cases, 6,589 traces, 151,131 steps, 233 affected skills, and 8 risk categories; 42.5% of successful cases first become successful after a non-success initial round, and trajectory-grounded labels improve pre-execution guard accuracy to 0.770.",
+      "takeaways": [
+        "The object is a hosted library of 3,014 redacted agent-skill attack cases.",
+        "The listing does not establish the baseline or dataset for the reported 0.770 guard accuracy.",
+        "The artifact is a hosted library, but no direct access URL is provided in the metadata."
+      ],
+      "plain": {
+        "reported": "The authors report that using labels based on the full sequence of agent actions improves the accuracy of a safety check before code runs to 0.770.",
+        "brief": "The authors introduce SkillAtlas, a database designed to make security incidents involving AI agents inspectable and reusable by turning private reports into public cases. They report that the database contains 3,014 cases and that using labels based on the full sequence of agent actions improves the accuracy of a safety check before code runs to 0.770. The listing does not specify the previous safety check model or the data used to measure this accuracy, leaving the comparison unclear.\n\nResearchers working on AI agent security or evaluation may find the structured action data useful for analysis. Those focused on checking code without running it or on systems that do not use AI agents may find the specific focus on dynamic agent execution less relevant. The database’s usefulness depends on the availability and quality of the redacted public cases.\n\nThe artifact is described as a hosted database, but the listing does not provide a direct web address or repository link. Verification of the database’s accessibility and the specific safety check model used for the 0.770 accuracy claim requires consulting the full PDF.",
+        "takeaways": [
+          "The object is a hosted database of 3,014 redacted AI agent attack cases.",
+          "The listing does not establish the baseline or dataset for the reported 0.770 safety check accuracy.",
+          "The artifact is a hosted database, but no direct access URL is provided in the metadata."
+        ]
+      },
+      "actions": [
+        "Verify the accessibility of the SkillAtlas hosted library and the specific guard model used for the accuracy measurement in the full PDF.",
+        "Check the full PDF for the definition of 'trajectory-grounded labels' and the baseline comparison for the 0.770 accuracy figure."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "listing": {
+        "listedOn": "2026-09-15",
+        "publishedOn": "2026-09-15",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.13353"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-15"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-15T17:02:03.837Z"
+      }
+    },
+    {
+      "id": "2609.13508",
+      "arxivId": "2609.13508",
+      "url": "https://arxiv.org/abs/2609.13508",
+      "topic": "Health",
+      "reported": "The authors report that their algorithm achieved a lesion-level detection F1 score of 97.1% on averaged volumes in a test dataset of 20 healthy and 20 diabetic retinopathy eyes.",
+      "metrics": [
+        "F1 scores of 79.2% on single volumes",
+        "F1 score of 96.0% (single)",
+        "scan-level diagnostic accuracy for MA presence was 97.5%"
+      ],
+      "title": "Automated Volumetric Segmentation of Microaneurysms on OCT Using Artificial Intelligence",
+      "authors": "Min Gao, Yukun Guo, Tristan T. Hormel, Jinyi Hao, Azaz Khan, Steven T. Bailey, Thomas S. Hwang, Yali Jia",
+      "takeaway": "The paper claims to develop and validate a deep learning-based method for the automated identification and volumetric segmentation of microaneurysms in diabetic retinopathy using OCT.",
+      "brief": "The authors propose a 3D deep learning network to segment microaneurysms volumetrically in OCT scans, using inputs that combine original and reflectance-inverted volumes. They report high voxel-level and lesion-level F1 scores on a test set of 40 eyes, with lesion-level detection reaching 97.1% on averaged volumes. The listing does not specify external validation, generalizability across different OCT hardware, or the impact of the specific averaging technique on clinical decision-making.\n\nThe strongest reported result is a 97.1% F1 score for lesion-level detection on averaged volumes, measured on a test dataset comprising 20 healthy and 20 diabetic retinopathy eyes. The authors state that expert graders manually delineated microaneurysms to generate the annotations used for evaluation. The listing does not establish whether the model was tested on data from different institutions or different OCT manufacturers beyond the single commercial system mentioned.\n\nResearchers working on retinal image segmentation or diabetic retinopathy monitoring may find the specific volumetric approach and the use of reflectance-inverted inputs relevant. Clinicians or engineers focused on other ophthalmic conditions or non-OCT imaging modalities may find the scope limited to the specific microaneurysm segmentation task described.",
+      "abstract": "Purpose: To develop and validate a deep learning-based method for the automated identification and volumetric segmentation of microaneurysms (MAs) in diabetic retinopathy (DR) using OCT. Participants: A total of 125 participants were enrolled, including 20 healthy eyes, 27 with mild NPDR, 30 with moderate NPDR, 30 with severe NPDR, and 18 with PDR. Methods: We obtained multiple repeated 3x3-mm scans from each participant using a commercial 120-kHz spectral-domain OCT system (Solix; Visionix/Optovue, Inc., California, USA), which were registered and averaged to generate high-definition volumes. We developed a 3D deep learning network to segment MAs volumetrically. The input to the network consists of the original OCT volume concatenated with its reflectance-inverted counterpart. Expert graders manually delineated MAs to generate annotations. We evaluated model performance at multiple levels, including voxel-level segmentation, lesion-level detection, and eye-level diagnosis. Results: In the test dataset (20 healthy, 20 DR eyes), the algorithm demonstrated high voxel-level accuracy, with F1 scores of 79.2% on single volumes and 86.1% on averaged volumes. Lesion-level detection reached an F1 score of 96.0% (single) and 97.1% (averaged), while scan-level diagnostic accuracy for MA presence was 97.5% (single and averaged). Conclusions: A deep learning-based method can accurately identify and segment MAs volumetrically on OCT, enabling quantification and characterization, and potentially aiding in the diagnosis, monitoring, and management of DR.",
+      "takeaways": [
+        "The object is a 3D deep learning network designed for volumetric segmentation of microaneurysms in OCT data.",
+        "A visible limit is that the reported performance is based on a test set of 40 eyes from a single enrollment cohort, with no mention of external multi-center validation.",
+        "The artifact status is not established in the listing, as no code repository or dataset link is provided."
+      ],
+      "plain": {
+        "reported": "The authors state that their computer program correctly identified and measured the size of tiny blood vessel bulges in 97.1% of cases when using averaged scan data, tested on 40 eye scans.",
+        "brief": "The researchers created a computer program that looks at 3D eye scans to find and measure tiny bulges in blood vessels, a sign of diabetes-related eye damage. They say the program is very accurate, correctly finding these bulges in 97.1% of test cases when the scans were averaged together to improve quality. The summary does not say if the program works on scans from different hospitals or different brands of eye scanners.\n\nThe best result they report is that the program found the bulges correctly in 97.1% of cases when using averaged scans, tested on 20 healthy eyes and 20 eyes with diabetes damage. They used expert doctors to mark the bulges by hand to teach and test the program. It is not clear from the summary if the program was tested on data from other locations or different scanner types.\n\nPeople who study how to use computers to analyze eye images or monitor diabetes eye disease might find this useful. Doctors or engineers who work with other eye diseases or different types of eye images might find this too specific to their needs.",
+        "takeaways": [
+          "The tool is a computer program that finds and measures tiny blood vessel bulges in 3D eye scans.",
+          "A limitation is that the test group was small, with only 40 eyes, and it is not clear if it works on scans from other places.",
+          "It is not known if the computer code or the data used are available for others to download or use."
+        ]
+      },
+      "actions": [
+        "Verify the specific OCT hardware parameters and the exact preprocessing steps for volume averaging by consulting the full PDF.",
+        "Check the full text for details on the training data split and whether the 125 participants were used for both training and testing or if a separate external test set was employed."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM"
+      ],
+      "listing": {
+        "listedOn": "2026-09-15",
+        "publishedOn": "2026-09-15",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.13508"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-15"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-15T17:02:03.837Z"
+      }
+    },
+    {
+      "id": "2609.13713",
+      "arxivId": "2609.13713",
+      "url": "https://arxiv.org/abs/2609.13713",
+      "topic": "Econ",
+      "reported": "The authors report that strong correlations exist among certain landfill waste streams, particularly organic-based materials, and links between plastics and wood, measured using Life Cycle Assessment methodologies and the EXIOBASE database.",
+      "metrics": [],
+      "title": "Cross-sectoral emission interdependencies of waste management",
+      "authors": "Nikolaos Kalyviotis, Georgina Calypso Kalogerakis, Georgios Kolliopoulos",
+      "takeaway": "The paper claims to examine emission interdependencies within the waste sector and between waste and other economic domains using Life Cycle Assessment methodologies and the EXIOBASE database.",
+      "brief": "The authors state they examine emission interdependencies within the waste sector and between waste and other economic domains, energy, transport, water, and communications, using Life Cycle Assessment methodologies with emphasis on process-based and hybrid approaches.\n\nThe authors report strong correlations among certain landfill waste streams, particularly organic-based materials, as well as links between plastics and wood, suggesting shared decomposition or management pathways. They note that methodological challenges posed by high-dimensional datasets, including multicollinearity, limit the effectiveness of linear models.\n\nResearchers working on environmental accounting or emission modeling may find the use of the EXIOBASE database and statistical correlation analysis relevant to their work. Those not interested in waste sector interdependencies or input-output analysis may ignore this listing.",
+      "abstract": "This study examines emission interdependencies within the waste sector and between waste and other economic domains, energy, transport, water, and communications, using Life Cycle Assessment (LCA) methodologies with emphasis on process-based and hybrid approaches. The analysis employs the EXIOBASE multi-regional input-output database. Statistical correlation is applied to identify commonalities and divergences in emission drivers. Results indicate strong correlations among certain landfill waste streams, particularly organic-based materials, as well as links between plastics and wood, suggesting shared decomposition or management pathways. Moderate correlations appear in cross-sectoral interactions, especially between waste, energy, and transport, while weak correlations are observed in processes with distinct treatment mechanisms, such as landfill versus wastewater. Methodologically, the study highlights challenges posed by high-dimensional datasets, including multicollinearity, which limit the effectiveness of linear models. These findings underscore the complexity of sectoral interdependencies and the need for both integrated and material-specific strategies. By demonstrating how systemic tools like EXIOBASE can capture these linkages, the research provides a foundation for constructing more robust emission models and informing targeted mitigation policies. The results contribute to advancing environmental accounting frameworks while offering practical insights for emission reduction planning across interconnected sectors.",
+      "takeaways": [
+        "The object of study is emission interdependencies within the waste sector and between waste and other economic domains, analyzed using Life Cycle Assessment and the EXIOBASE database.",
+        "A visible limit is the challenge posed by high-dimensional datasets, including multicollinearity, which the authors state limits the effectiveness of linear models.",
+        "The artifact status is not established in the listing; no code or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that strong correlations exist among certain landfill waste streams, particularly organic-based materials, and links between plastics and wood, measured using Life Cycle Assessment methodologies and the EXIOBASE database.",
+        "brief": "The authors state they examine how emissions are connected within the waste sector and between waste and other economic areas like energy, transport, water, and communications. They use Life Cycle Assessment methods, focusing on process-based and hybrid approaches, and use the EXIOBASE database for their analysis.\n\nThe authors report that there are strong connections between certain types of landfill waste, especially organic materials, and between plastics and wood. This suggests these materials share similar decomposition or management processes. They also note that analyzing large, complex datasets creates problems like multicollinearity, which makes it harder for simple linear models to work effectively.\n\nPeople who study how to account for environmental impacts or model emissions might find the use of the EXIOBASE database and statistical methods useful. People who are not interested in how waste sectors connect to other economic sectors might not need to look at this paper.",
+        "takeaways": [
+          "The paper looks at how emissions are linked within the waste sector and between waste and other economic areas, using Life Cycle Assessment and the EXIOBASE database.",
+          "A limitation is that large, complex datasets cause problems like multicollinearity, which the authors say makes linear models less effective.",
+          "The listing does not say whether code or a repository is available."
+        ]
+      },
+      "actions": [
+        "Verify the specific Life Cycle Assessment methodologies and hybrid approaches used by consulting the full PDF.",
+        "Check the full PDF for details on how multicollinearity was handled in the statistical correlation analysis."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-09-15",
+        "publishedOn": "2026-09-15",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.13713"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-15"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-15T17:02:03.837Z"
+      }
+    }
+  ]
+}
