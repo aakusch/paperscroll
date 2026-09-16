@@ -1,0 +1,660 @@
+{
+  "date": "2026-09-16",
+  "label": "Wed, Sep 16",
+  "minutes": 10,
+  "poolSize": 114,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-09-16T16:58:57.136Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2609.06986",
+      "arxivId": "2609.06986",
+      "url": "https://arxiv.org/abs/2609.06986",
+      "topic": "AI",
+      "reported": "The authors report that their best method raises average final retention from 1.2% under naive sequential fine-tuning to 34.9%, a 28-fold improvement, measured on three distinct 100-task memorization datasets.",
+      "metrics": [
+        "100 query-answer tasks",
+        "1.2% under naive sequential fine-tuning",
+        "34.9% average final retention"
+      ],
+      "title": "Continual Learning Mechanisms Compose for Long-Horizon Memorization",
+      "authors": "Zheyuan Zhang, Alvin Zhang, Daniel Khashabi, Tianmin Shu",
+      "takeaway": "The paper claims that composing complementary continual learning mechanisms substantially improves long-horizon memorization beyond what any individual mechanism achieves.",
+      "brief": "The authors introduce long-horizon memorization, a setting where a model learns 100 query-answer tasks through continual supervised fine-tuning without retaining earlier training examples or receiving task identifiers at inference. They hypothesize that mechanisms addressing complementary sources of forgetting will be more effective when composed, organizing compositions along data, function, and weight anchors and low-rank allocation rules.\n\nThe strongest reported result is that their best method, combining all three anchors with merged LoRA, raises average final retention from 1.2% under naive sequential fine-tuning to 34.9%, a 28-fold improvement, across three distinct 100-task memorization datasets. The authors state that the data anchor and merged LoRA provide the largest average gains and interact super-additively on all three datasets, but the listing does not establish whether this performance holds on unseen domains or with different model architectures.\n\nResearchers working on continual learning for language models or long-horizon retention should open this paper to examine the composition framework and factorial experiment design. Those focused on single-task fine-tuning or non-sequential learning settings may ignore it, as the specific challenge of catastrophic forgetting over 100 sequential updates is not addressed.",
+      "abstract": "Language models may need to internalize information that arrives over time and retain it through many subsequent updates. To study this challenge, we introduce long-horizon memorization, a setting in which a model learns 100 query-answer tasks through continual supervised fine-tuning without retaining earlier training examples or receiving task identifiers at inference. Sequential updates cause catastrophic forgetting, and no single continual learning mechanism we evaluate maintains strong retention at this horizon. We hypothesize that mechanisms addressing complementary sources of forgetting will be more effective when composed. We organize these compositions along two design dimensions. Data, function, and weight anchors specify what prior information each update should preserve, while low-rank allocation rules determine where successive updates are retained. To test this hypothesis systematically, we construct three distinct 100-task memorization datasets. We introduce task-level successive halving to search the combinatorial design space and use a factorial experiment to measure individual and interaction effects. Our best method combines all three anchors with merged LoRA, ranks among the top 3 methods in all datasets, and raises average final retention from 1.2% under naive sequential fine-tuning to 34.9%, a 28-fold improvement. The data anchor and merged LoRA provide the largest average gains and interact super-additively on all three datasets. Together, these results show that composing complementary mechanisms substantially improves long-horizon memorization beyond what any individual mechanism achieves.",
+      "takeaways": [
+        "The object is a composition framework for continual learning mechanisms, specifically combining data, function, and weight anchors with low-rank allocation rules to address catastrophic forgetting in long-horizon memorization.",
+        "A visible limit is that the evaluation is restricted to three distinct 100-task memorization datasets constructed by the authors, and the listing does not state whether the method generalizes to other task distributions, model sizes, or inference conditions beyond the specified setup.",
+        "The artifact status is that the authors declare a code repository at https://github.com/cozheyuanzhangde/compose-cl, but the listing does not confirm whether the repository contains the full implementation, datasets, or experimental scripts needed to reproduce the reported 34.9% retention."
+      ],
+      "plain": {
+        "reported": "The authors report that their best method raises average final retention from 1.2% under naive sequential fine-tuning to 34.9%, a 28-fold improvement, measured on three distinct 100-task memorization datasets.",
+        "brief": "The authors introduce a test where a language model must learn 100 question-and-answer tasks one after another, without keeping the old training data or knowing which task it is answering. They guess that mixing different techniques that fix different types of memory loss will work better than using any one technique alone. They group these techniques into two types: what information to keep (data, function, or weight anchors) and where to put new updates (low-rank allocation rules).\n\nTheir best method, which uses all three types of anchors plus a technique called merged LoRA, improved the model's ability to remember old tasks from 1.2% to 34.9%, a 28-fold increase, across three different sets of 100 tasks. The authors say the data anchor and merged LoRA gave the biggest boosts and worked better together than expected, but the listing does not say if this works on other kinds of tasks or with different model sizes.\n\nPeople who study how language models keep learning new things without forgetting old ones should open this paper to see how the techniques are combined and tested. People who only care about training a model on one task at a time, or who do not deal with sequential learning, may ignore it because the specific problem of forgetting over 100 steps is not their focus.",
+        "takeaways": [
+          "The paper is about a way to combine different methods for helping language models remember old information while learning new tasks, specifically using three types of memory anchors and a rule for where to store new updates.",
+          "A clear limit is that the tests were only done on three specific sets of 100 tasks made by the authors, and the listing does not say if the method works on other tasks, bigger models, or different testing conditions.",
+          "The authors say they have code at a GitHub link, but the listing does not confirm if the code includes all the data, the search algorithm, or the experiment scripts needed to get the same 34.9% result."
+        ]
+      },
+      "actions": [
+        "Verify the declared code repository to confirm whether it includes the three 100-task memorization datasets, the task-level successive halving search algorithm, and the factorial experiment code used to measure individual and interaction effects.",
+        "Check the PDF to determine whether the 34.9% average final retention is reported per dataset or as an aggregate across all three datasets, and whether the 28-fold improvement is calculated relative to the same baseline across all conditions."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/cozheyuanzhangde/compose-cl",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-16",
+        "publishedOn": "2026-09-07",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.06986",
+            "upvotes": 284
+          }
+        ]
+      },
+      "trend": {
+        "votes": 284,
+        "rank": 1,
+        "of": 21,
+        "perDay": 32
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 284,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-07"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-16T16:58:57.136Z"
+      }
+    },
+    {
+      "id": "2609.16679",
+      "arxivId": "2609.16679",
+      "url": "https://arxiv.org/abs/2609.16679",
+      "topic": "AI",
+      "reported": "The authors report that evaluation is most standardized for bounded game playing and selected learned environments, while persistent state in learned worlds, repeated software revision, validated player modeling, sustained runtime adaptation, and representative automated testing remain less established.",
+      "metrics": [],
+      "title": "AI for Games in the Foundation Model Era",
+      "authors": "Meng Luo, Yanlin Li, Hao Li, Hongzhan Lin, Pengfei Zhou, Tianjie Ju, Ran Zhang, Yeying Jin, Mong-Li Lee, Wynne Hsu",
+      "takeaway": "The paper organizes the literature into six roles according to the immediate use of AI output to identify cross-role connections and transferable capabilities.",
+      "brief": "The authors propose a taxonomy of six roles for AI in games, ranging from playing and acting to testing and evaluating, to clarify which capabilities transfer across settings.\n\nThey report that evaluation is most standardized for bounded game playing and selected learned environments, while persistent state in learned worlds, repeated software revision, validated player modeling, sustained runtime adaptation, and representative automated testing remain less established. The listing does not establish specific quantitative benchmarks or experimental results for these claims.\n\nResearchers working on game AI, foundation models, or software engineering for games may find the taxonomy useful for structuring their work. Those seeking specific performance metrics or validated transfer results for particular engines or games should look elsewhere, as the listing does not provide them.",
+      "abstract": "Foundation models, alongside advances in learned game-world models, are reshaping AI across the game lifecycle. Beyond playing games, recent systems model players and game dynamics, support design and development, adapt player-facing experiences at runtime, and evaluate resulting artifacts. Yet these directions have evolved largely separately, obscuring which capabilities transfer across settings and which remain tied to particular games, engines, interfaces, or player populations. We organize the literature into six roles according to the immediate use of AI output: playing and acting; modeling players and games; designing games; building and maintaining games; generating and adapting at runtime; and testing and evaluating games. For each role, we examine what structure is supplied by the game or workflow, what AI learns or produces, which capabilities and artifacts transfer across settings and roles, and what evidence supports the claims. We identify cross-role connections: trajectories train world models, learned environments provide experience for agents, design specifications drive executable implementations, and play or testing feedback guides revision. However, control schemes, rules, engine interfaces, state representations, and player contexts often remain setting-specific, so downstream claims require validation in the target setting. Evaluation is most standardized for bounded game playing and selected learned environments, while persistent state in learned worlds, repeated software revision, validated player modeling, sustained runtime adaptation, and representative automated testing remain less established. The central challenge is to reuse or transfer outputs and capabilities across roles while re-establishing evidence for effectiveness in the game-specific contexts where they are used.",
+      "takeaways": [
+        "The object is a literature review and taxonomy, not a new model or algorithm.",
+        "A visible limit is that the authors state control schemes, rules, and engine interfaces often remain setting-specific, requiring validation in the target setting.",
+        "The artifact status is a survey with a declared code repository, but the listing does not confirm the repository contains executable code or datasets."
+      ],
+      "plain": {
+        "reported": "The authors say that testing is most consistent for limited game playing and some learned environments, while long-term state in learned worlds, repeated software updates, verified player modeling, continuous runtime adaptation, and representative automated testing are not well established.",
+        "brief": "The authors create a list of six ways AI is used in games, from playing the game to testing it, to help understand which skills can be moved from one game to another.\n\nThey say that testing is most consistent for limited game playing and some learned environments, while long-term state in learned worlds, repeated software updates, verified player modeling, continuous runtime adaptation, and representative automated testing are not well established. The summary does not give specific numbers or test results for these claims.\n\nPeople who study game AI, large AI models, or making games with software tools might find this list helpful for organizing their work. People who want specific performance numbers or proven results for specific game engines or games should look for other papers, because this summary does not have them.",
+        "takeaways": [
+          "This is a review of existing papers and a list of categories, not a new AI program or method.",
+          "A clear limit is that the authors say the controls, rules, and game engine connections are often specific to one game, so they need to be checked in the new game.",
+          "The item is a survey with a link to a code repository, but the summary does not say if the repository has working code or data."
+        ]
+      },
+      "actions": [
+        "Verify the contents of the declared GitHub repository to determine if it contains only a list of papers or also includes code, datasets, or evaluation scripts.",
+        "Check the full PDF to see if the authors provide specific case studies or quantitative evidence for the cross-role connections they identify."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Eurekaleo/awesome-ai-for-games",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-16",
+        "publishedOn": "2026-09-15",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.16679",
+            "upvotes": 104
+          }
+        ]
+      },
+      "trend": {
+        "votes": 104,
+        "rank": 2,
+        "of": 21,
+        "perDay": 104
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 104,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-15"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-16T16:58:57.136Z"
+      }
+    },
+    {
+      "id": "2609.14005",
+      "arxivId": "2609.14005",
+      "url": "https://arxiv.org/abs/2609.14005",
+      "topic": "AI",
+      "reported": "The authors report that StepAudio 3 Realtime achieves a 98.9 Overall score on the Artificial Analysis Full-Duplex Bench.",
+      "metrics": [
+        "90.6 on the MMSU benchmark",
+        "98.9 Overall on the Artificial Analysis Full-Duplex Bench",
+        "56.0% macro task-success rate on τ-Voice"
+      ],
+      "title": "StepAudio 3 Realtime Technical Report",
+      "authors": "Bin Lin, Bo Zhao, Boyang Zhang, Boyong Wu, Chao Yan, Chen Geng, Chen Wu, Cheng Yi, Chengli Feng, Chenglin Zhu, Chengting Feng, Chengyuan Yao, Daijiao Liu, DanNi Wan, Daxin Jiang, Dongjian Li, Dongqing Pang, Fei Tian, Feng Tian, Future Li, Gang Yu, Guanglong Yang, Haoyang Zhang, Hongyuan Wang, Jia Peng, Jiahao Song, Jialong Xue, Jiamin Fan, Jiangjie Zhen, Jianzheng Gao, Jincheng Wen, Jinghua Liang, Jinglan Gong, Jun Chen, Li Xie, Liang Zhao, Lifang Zhang, Lingli Ji, Lun Cai, Min Xu, Peilin Li, Peng Yang, Pengfei Tan, Qingjian Lin, Qinxin Du, Ruijie Xiong, Runze Li, Shenghua Hu, Shengqian Qin, Shi Qiu, Siqi Tu, Siyi Zhou, Tianjiao Deng, Wanying Lu, Weiming Niu, Wen Sun, WenWen Qu, Xiangyu Zhang, Xianwei Zhang, Xiaosu Su, Xing Chen, Xinyu Liu, Xuerui Yang, Yan Wu, Yang Li, Yang Yang, Yechang Huang, Yibo Zhu, Yifan Zhang, Yinuo Yan, Youjun Chen, Yu Fu, Yu Luo, Yu Zhou, Yujie Chen, Yumang Wang, Yunzhou Ju, Yuxiang Yang, Yuxin Li, Yuxin Zhang, Zekai Liu, Zengwei Yao, Zhaoxin Yuan, Zhenwei Mou, Zhiquan Zhang, Zhiyue Wu, Zichao Li, Zichao Zhou, Ziqi Ren, Zixuan Wang",
+      "takeaway": "StepAudio 3 Realtime is an audio-language foundation model that resolves the tension between deep deliberation and latency by executing private reasoning in parallel with spoken delivery.",
+      "brief": "The authors present StepAudio 3 Realtime, an audio-language foundation model organized around a continuous listen-converse-think-act loop. It uses Deep Perception to interpret intent and Seamless Duplex to handle pauses and interruptions naturally. The core contribution is Think-While-Speaking, which executes private reasoning in parallel with spoken delivery to resolve the tension between deep deliberation and latency.\n\nThe authors report that in reasoning mode, the model reaches a 73.0 macro average on StepAudioChat. They state it achieves dialogue and reasoning performance comparable to dedicated reasoning models while speaking in real time. They also report an integrated Voice Agent handles asynchronous tool execution without disrupting the dialogue flow. The listing does not establish specific unresolved limits or failure modes for the model.\n\nResearchers working on real-time spoken interaction, full-duplex audio models, or latency-reduction techniques for reasoning systems should open this paper. Those not focused on audio-language foundation models or real-time dialogue systems may ignore it.",
+      "abstract": "Realtime spoken interaction demands deep reasoning, prompt responses, and fluid turn-taking. We present StepAudio 3 Realtime, an audio-language foundation model organized around a continuous listen-converse-think-act loop. Deep Perception captures rich acoustic cues to interpret user intent, while Seamless Duplex models synchronized audio streams to handle pauses, backchannels, and interruptions naturally. Crucially, we resolve the tension between deep deliberation and latency via Think-While-Speaking, executing private reasoning in parallel with spoken delivery. In reasoning mode, StepAudio 3 reaches a 73.0 macro average on StepAudioChat. With Think-While-Speaking, it achieves dialogue and reasoning performance comparable to dedicated reasoning models while speaking in real time. Furthermore, an integrated Voice Agent handles asynchronous tool execution without disrupting the dialogue flow. StepAudio 3 Realtime achieves top-tier performance across key dimensions: an exceptional 90.6 on the MMSU benchmark, 98.9 Overall on the Artificial Analysis Full-Duplex Bench, and a 56.0% macro task-success rate on τ-Voice.",
+      "takeaways": [
+        "The object is an audio-language foundation model designed for realtime spoken interaction with a continuous listen-converse-think-act loop.",
+        "The listing does not establish specific unresolved limits, failure modes, or artifacts for the model.",
+        "The artifact status is not established in the listing; no code or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that their model, StepAudio 3 Realtime, gets a score of 98.9 out of 100 on a test called the Artificial Analysis Full-Duplex Bench.",
+        "brief": "The authors built a computer program that can listen to and talk to people in real time. It is designed to think deeply about what to say while it is already speaking, so it doesn't have to wait to finish thinking before it starts talking. It can also handle natural conversation habits like pausing, saying 'uh-huh,' or interrupting.\n\nThe authors say their model scores 73.0 on a test called StepAudioChat. They say it performs as well as other models that are only designed for thinking, even though it is also talking at the same time. They also say it can use other tools while talking without stopping the conversation. The short summary does not say what the model is bad at or where it fails.\n\nPeople who are building systems that talk to humans in real time, or who are trying to make computer thinking faster, should look at this paper. People who do not work on voice-based computer systems can probably skip it.",
+        "takeaways": [
+          "The thing they built is a computer program that listens and talks to people in real time.",
+          "The short summary does not say what the program is bad at or where it breaks down.",
+          "The short summary does not say if the code is available to download or use."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark scores and the 'comparable to dedicated reasoning models' claim by reading the full PDF.",
+        "Check the PDF for details on the 'Seamless Duplex' and 'Think-While-Speaking' mechanisms to understand their implementation."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-16",
+        "publishedOn": "2026-09-12",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.14005",
+            "upvotes": 88
+          }
+        ]
+      },
+      "trend": {
+        "votes": 88,
+        "rank": 3,
+        "of": 21,
+        "perDay": 22
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 88,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-12"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-16T16:58:57.136Z"
+      }
+    },
+    {
+      "id": "2609.16034",
+      "arxivId": "2609.16034",
+      "url": "https://arxiv.org/abs/2609.16034",
+      "topic": "AI",
+      "reported": "The authors report that their final model achieves the highest AudioBox Content Enjoyment, Content Usefulness, and Production Quality scores and the highest MuQ-MuLan similarity among the evaluated systems, with competitive SongBench results.",
+      "metrics": [
+        "Quality Elo of 1105",
+        "up to 5 minutes and 30 seconds",
+        "50-Hz stream"
+      ],
+      "title": "StepAudio 3 Music Technical Report",
+      "authors": "Chengli Feng, Zhiyue Wu, Jiahao Song, Zheqi Dai, Boyang Wang, Ruibin Yuan, Junming Gong, Wenxiao Zhao, Jing Guo, Gang Yu, Xiangyu Zhang, Xuerui Yang, Chao Yan",
+      "takeaway": "The paper introduces StepAudio 3 Music, a large-scale, long-form music generation model that supports explicit musical planning and open-domain text-controlled generation.",
+      "brief": "The authors present a music generation model using a 50-Hz single-codebook tokenizer and a flow-matching diffusion Transformer to predict continuous VAE latents. They introduce an intermediate arrangement plan using ABC notation to guide harmony, rhythm, and melodic structure before token prediction.\n\nThe authors report the highest AudioBox Content Enjoyment, Content Usefulness, and Production Quality scores and the highest MuQ-MuLan similarity among evaluated systems. They state the model supports generation for up to 5 minutes and 30 seconds and achieves a Quality Elo of 1105 on the preliminary Artificial Analysis Music Arena Vocals leaderboard. The listing does not specify the exact benchmark values for the AudioBox or MuQ-MuLan scores, nor does it detail the specific comparison set beyond naming Suno V5.5, Mureka, and Suno V5.\n\nResearchers working on long-form audio generation, discrete-continuous hybrid architectures, or explicit symbolic planning in music synthesis may find the technical details relevant. Those focused solely on short-form clip generation or non-music audio tasks may find the specific focus on song structure and ABC notation less applicable.",
+      "abstract": "We introduce StepAudio 3 Music, a large-scale, long-form music generation model that supports explicit musical planning and open-domain text-controlled generation. The StepAudio Music Tokenizer represents audio as a 50-Hz stream from a 65536-entry single codebook, using semantically informed self-supervised and multi-task training to preserve musical structure and reconstruction-relevant information. A flow-matching diffusion Transformer (DiT) predicts continuous StepAudio VAE latents, which our VAE decoder converts into 48-kHz audio. This discrete-continuous design is guided by comparisons of single-codebook VQ, Semantic and Acoustic RVQ, and different DiT configurations. For explicit planning, a Mixture-of-Experts autoregressive model uses ABC notation to produce an intermediate arrangement plan (ABC-CoT) before predicting music tokens, making harmony, rhythm, and melodic structure part of the generation context. A progressive training curriculum and supervised fine-tuning support song and instrumental generation, accompaniment generation from dry vocals, and cover-song synthesis for up to 5 minutes and 30 seconds. With reinforcement learning via direct preference optimization (DPO), the final model achieves the highest AudioBox Content Enjoyment, Content Usefulness, and Production Quality scores and the highest MuQ-MuLan similarity among the evaluated systems, with competitive SongBench results. On the preliminary Artificial Analysis Music Arena Vocals leaderboard, it obtains a Quality Elo of 1105, behind only Suno V5.5 and Mureka and ahead of Suno V5, MiniMax models, and other systems. Audio demonstrations are available at https://stepaudiollm.github.io/step-audio-3-music.",
+      "takeaways": [
+        "The core object is a hybrid discrete-continuous music generation model that uses ABC notation as an intermediate planning step before predicting audio tokens.",
+        "A visible limit is the reliance on a preliminary leaderboard for the Elo score and the lack of specific numerical values for the reported highest AudioBox and MuQ-MuLan scores in the abstract.",
+        "The artifact status is indicated by the availability of audio demonstrations at a provided URL, but no code repository or model weights are explicitly declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors state that their model scored higher than other tested systems on measures of listener enjoyment, usefulness, and production quality, and had the highest similarity score on a specific music benchmark, while also performing well on a song generation benchmark.",
+        "brief": "The authors describe a computer program that creates long pieces of music. It uses a specific method to turn sound into numbers and a separate method to turn those numbers back into sound. It also writes out a musical plan in a standard notation format before generating the actual audio.\n\nThe authors say their model got the best scores on several tests for how enjoyable and useful the music is, and how good it sounds. They also say it can make music that lasts up to five and a half minutes. On a public ranking list for vocal music, it got a score of 1105, which was second only to two other specific systems. The text does not give the exact scores for the enjoyment and quality tests, only that they were the highest among the systems tested.\n\nPeople who build software that makes long songs or who are interested in how computers plan music structure might find this useful. People who only care about making short sound effects or music for non-vocal instruments might not find the specific focus on song planning and vocal generation as relevant.",
+        "takeaways": [
+          "The main thing being described is a system that makes long music by first writing a plan in musical notation and then generating the sound.",
+          "One limitation is that the text says the model got the best scores on some tests but does not list the actual numbers for those scores. It also relies on a ranking list that is described as preliminary.",
+          "The authors provide a link to listen to examples of the music, but the text does not say if the code or the model itself is available for download."
+        ]
+      },
+      "actions": [
+        "Verify the specific numerical values for AudioBox Content Enjoyment, Content Usefulness, Production Quality, and MuQ-MuLan similarity by reviewing the full PDF or associated benchmark tables.",
+        "Check the provided URL for audio demonstrations to assess the qualitative output quality and verify the claimed support for 5-minute and 30-second generation lengths."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-16",
+        "publishedOn": "2026-09-11",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.16034",
+            "upvotes": 69
+          }
+        ]
+      },
+      "trend": {
+        "votes": 69,
+        "rank": 4,
+        "of": 21,
+        "perDay": 14
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 69,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-11"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-16T16:58:57.136Z"
+      }
+    },
+    {
+      "id": "2609.16050",
+      "arxivId": "2609.16050",
+      "url": "https://arxiv.org/abs/2609.16050",
+      "topic": "Stats",
+      "reported": "The authors report that simulation studies under Gaussian and Poisson mixture regression settings demonstrate reliable recovery of the true sparsity structure at both levels.",
+      "metrics": [],
+      "title": "Component-weighted sparse group LASSO for finite mixture regression models",
+      "authors": "Vinay Joshy, Zeny Feng, Grace Stelter, Lorna E Deeth, Alysha Cooper",
+      "takeaway": "The paper introduces a component-weighted sparse group LASSO regularization method that performs efficient variable selection at both group and individual levels simultaneously in finite mixture regression models belonging to the exponential family.",
+      "brief": "The authors propose a component-weighted sparse group LASSO regularization method to handle variable selection at both the group and individual levels within finite mixture regression models. They develop a novel optimization procedure using a Majorization-Minimization algorithm to support this method.\n\nThe authors state that simulation studies under Gaussian and Poisson mixture regression settings demonstrate reliable recovery of the true sparsity structure at both levels. They also illustrate the method by analyzing two real datasets. The listing does not specify quantitative performance metrics, specific dataset names, or computational runtime details.\n\nResearchers working on finite mixture regression models who require simultaneous group-level and individual-level variable selection may find this method relevant. Those not working with latent subpopulation models or exponential family mixture regressions may not need this specific regularization approach.",
+      "abstract": "When analyzing heterogeneous data with latent subpopulations, finite mixture regression (FMR) models are effective as they allow for variations in regression coefficients across mixture components. Variable selection is important at two levels: (1) at the group level by removing completely irrelevant covariates across all subpopulations and (2) at the individual level by removing irrelevant covariates within each subpopulation. However, existing variable selection methods for FMR focus solely on individual-level regression coefficient selection, providing no mechanism for group-level variable elimination. We introduce a component-weighted sparse group LASSO regularization method that performs efficient variable selection at both levels simultaneously in finite mixture regression models belonging to the exponential family. We develop a novel optimization procedure through a Majorization-Minimization algorithm. Simulation studies under Gaussian and Poisson mixture regression settings demonstrate reliable recovery of the true sparsity structure at both levels. The method is illustrated by analyzing two real datasets.",
+      "takeaways": [
+        "The object is a component-weighted sparse group LASSO regularization method for finite mixture regression models in the exponential family.",
+        "The visible limit is that the listing only reports qualitative 'reliable recovery' from simulations without providing specific quantitative metrics or benchmark comparisons.",
+        "The artifact status is not established in the listing, as no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that computer simulations using Gaussian and Poisson data settings show the method correctly identifies which variables are important and which are not, at both the overall and subgroup levels.",
+        "brief": "The authors propose a new statistical technique called component-weighted sparse group LASSO to help pick important variables in models that assume data comes from different hidden groups. They created a new way to solve the math behind this technique using a step-by-step optimization method.\n\nThe authors say that computer simulations show the method works well at finding the right variables to keep and remove, both for the whole dataset and for each hidden group. They also show how the method works on two real-world datasets. The summary does not give specific numbers showing how accurate the method is, or how long it takes to run.\n\nPeople who use statistical models for data with hidden subgroups and need to pick important variables might find this useful. People who do not work with these specific types of statistical models might not need this tool.",
+        "takeaways": [
+          "The tool is a new way to pick important variables in statistical models that assume data has hidden subgroups.",
+          "The summary only says the method works well in simulations, but does not give specific numbers or compare it to other methods.",
+          "The summary does not say if the code for this method is available to use."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative results and dataset details by reading the full PDF to assess the practical utility of the method.",
+        "Check for any available code implementation or supplementary materials to evaluate the reproducibility of the Majorization-Minimization optimization procedure."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME",
+        "stat.AP"
+      ],
+      "listing": {
+        "listedOn": "2026-09-16",
+        "publishedOn": "2026-09-16",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.16050"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-16T16:58:57.136Z"
+      }
+    },
+    {
+      "id": "2609.16086",
+      "arxivId": "2609.16086",
+      "url": "https://arxiv.org/abs/2609.16086",
+      "topic": "Econ",
+      "reported": "The authors report that their proposed estimators compute quickly and with negligible small-sample bias when applied to the scanner dataset analyzed by Echenique et al. (2011) and Smeulders et al., (2013).",
+      "metrics": [],
+      "title": "Tractable Estimation of the Money Pump Index: A Comment",
+      "authors": "Gavin Kader",
+      "takeaway": "The paper claims to provide computationally tractable estimators for the mean and median Money Pump Index that are asymptotically equivalent to the original MPI by projecting choice violations onto fundamental cycle bases.",
+      "brief": "The author proposes a method to estimate the Money Pump Index by treating revealed preferences as a directed graph and projecting violations onto fundamental cycle bases. This approach aims to solve the NP-hardness of computing exact MPI values over all revealed preference cycles.\n\nThe authors state that their estimators are asymptotically equivalent to the original MPI and exhibit negligible small-sample bias on a specific scanner dataset. The listing does not provide specific numerical values for the bias or computation time, nor does it detail the exact magnitude of the small-sample bias.\n\nResearchers working on revealed preference theory or computational economics may find this relevant for handling large-scale consumer data. Those not interested in the computational aspects of irrationality measures may ignore it.",
+      "abstract": "The Money Pump Index (MPI) of Echenique et al. (2011) measures the severity of consumer irrationality, but computing the exact mean and median MPI over all revealed preference cycles is NP-hard (Smeulders et al., 2013). Existing solutions rely on heuristic proxies, such as evaluating only shorter cycles or bounding the MPI. By framing revealed preferences as a directed graph, this paper projects choice violations onto fundamental cycle bases, which are minimal sets of linearly independent cycles that span the graph's entire cycle space. This yields computationally tractable estimators for the mean and median MPI that are asymptotically equivalent to the original MPI. Applying this methodology to the scanner dataset analyzed by Echenique et al. (2011) and Smeulders et al., (2013), the proposed estimators compute quickly and with negligible small-sample bias.",
+      "takeaways": [
+        "The object is a tractable estimator for the mean and median Money Pump Index based on fundamental cycle bases in a directed graph.",
+        "A visible limit is the reliance on asymptotic equivalence, with the listing not specifying the exact small-sample bias magnitude or computational speed metrics.",
+        "The artifact status is not established in the listing, as no code repository or specific implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their new calculation method runs fast and has very little error when tested on a specific set of shopping data previously used by other researchers.",
+        "brief": "The author suggests a new way to measure how irrational consumer choices are by looking at the underlying structure of their choices as a network. This makes the calculation much faster than previous methods that had to check every possible combination of choices.\n\nThe authors say their method gives results that get closer to the true value as the data gets larger, and that it has very little error even with small amounts of data. However, the summary does not give specific numbers for how fast it is or how small the error actually is.\n\nPeople who study how people make economic decisions or who need to process large amounts of consumer data might find this useful. People who are not interested in the math behind measuring irrationality might not need to look at it.",
+        "takeaways": [
+          "The main thing being offered is a faster way to calculate a specific measure of consumer irrationality.",
+          "A limitation is that we don't know the exact size of the error or the exact speed from the summary alone.",
+          "It is not clear from the summary if the code or tools for this method are available to the public."
+        ]
+      },
+      "actions": [
+        "Verify the specific numerical values for small-sample bias and computation time by reading the full PDF.",
+        "Check if the fundamental cycle basis projection method is applicable to other types of revealed preference data beyond the scanner dataset."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.EM",
+        "econ.TH"
+      ],
+      "listing": {
+        "listedOn": "2026-09-16",
+        "publishedOn": "2026-09-16",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.16086"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-16T16:58:57.136Z"
+      }
+    },
+    {
+      "id": "2609.16098",
+      "arxivId": "2609.16098",
+      "url": "https://arxiv.org/abs/2609.16098",
+      "topic": "Security",
+      "reported": "The authors report that their methods significantly reduce the Attack Success Rates (ASR), achieving 0% ASR in many settings, while preserving or even improving the original task success rate.",
+      "metrics": [
+        "0% ASR"
+      ],
+      "title": "Universal Defenses for Tool-Integrated LLM Agents Against Adversarial Attacks",
+      "authors": "Xiaoyan Li, Yunli Wang",
+      "takeaway": "The paper claims to introduce two universal tool-based defenses and incorporate prompt-based defenses to mitigate adversarial attacks on tool-integrated LLM agents.",
+      "brief": "The authors propose a unified framework for defending tool-integrated LLM agents against four specific attack types using tool-based and prompt-based strategies.\n\nThey report achieving 0% Attack Success Rate in many settings across seven different LLMs, though the specific conditions for these zero rates are not detailed in the abstract.\n\nResearchers working on LLM agent security or adversarial robustness may find the modular defense framework relevant for their own evaluations.",
+      "abstract": "Large Language Model (LLM) agents have demonstrated impressive capabilities across a variety of domains, particularly when integrated with external tools for multi-step task completion. However, they are increasingly vulnerable to adversarial attacks, including direct prompt injection, indirect prompt injection, memory poisoning, and backdoor attacks, which exploit the model's openness to prompt injection and tool manipulation. In this work, we explore practical and generalizable defense strategies within a unified framework across these four attack types. We introduce two universal tool-based defenses: Attacker Tool Filtering, which uses anomaly detection (e.g., Isolation Forest) to identify and remove suspicious tools, and Normal Tool Recalling, a white-box method that restores the agent's original toolset prior to planning. Additionally, we incorporate prompt-based defenses: Chain-of-Thought prompting and self-reflection techniques to enhance reasoning and task paraphrasing to mitigate attacks. Experimental results across both four open-source LLMs (Gemma2-9B, Qwen2-7B, LLaMA3-8B, and LLaMA3.1-8B) and three proprietary LLMs (GPT-3.5, GPT-4, and GPT-5) show that our methods significantly reduce the Attack Success Rates (ASR), achieving 0% ASR in many settings, while preserving or even improving the original task success rate. These findings highlight the promise of simple, modular, multi-layered defenses for strengthening the security and robustness of tool-integrated LLM agents. The code is available at https://github.com/Xiaoyan-Lisa/Defenses-for-Tool-Integrated-LLM-Agents-Against-Adversarial-Attacks.",
+      "takeaways": [
+        "The object is a set of defense strategies for tool-integrated LLM agents.",
+        "The abstract does not specify the exact attack scenarios or baselines where the 0% ASR was achieved.",
+        "The artifact status is indicated by a provided GitHub repository URL."
+      ],
+      "plain": {
+        "reported": "The authors state that their security methods lower the rate of successful attacks to zero in many test cases, while keeping the agents' ability to complete normal tasks the same or better.",
+        "brief": "The paper suggests a way to protect AI agents that use external tools from being hacked or manipulated by bad prompts.\n\nThe authors say their method stops attacks completely in many tests across seven different AI models, but the abstract does not say exactly which tests achieved this perfect score.\n\nPeople who study how to keep AI systems safe from malicious inputs might want to look at this framework for their own work.",
+        "takeaways": [
+          "The subject is a security framework for AI agents that use tools.",
+          "The abstract does not explain the specific conditions under which the attack success rate reached zero.",
+          "The authors provide a link to a code repository for the methods."
+        ]
+      },
+      "actions": [
+        "Verify the specific experimental settings and baselines in the PDF to confirm the 0% ASR claims.",
+        "Check the provided GitHub repository for code availability and reproducibility details."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "listing": {
+        "listedOn": "2026-09-16",
+        "publishedOn": "2026-09-16",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.16098"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-16T16:58:57.136Z"
+      }
+    },
+    {
+      "id": "2609.16101",
+      "arxivId": "2609.16101",
+      "url": "https://arxiv.org/abs/2609.16101",
+      "topic": "Health",
+      "reported": "The authors report that comparing recordings in beating cells with those after contraction inhibition separates action-potential-associated electrostatic transduction from contractility-driven membrane motion.",
+      "metrics": [],
+      "title": "Optical microelectrode arrays for differential readout of electrical and mechanical signals in cardiac cells",
+      "authors": "Alessandro Leronni, Rosalia Moreddu",
+      "takeaway": "The paper claims that optical microelectrode arrays enable differential readout of electrical and mechanical signals in cardiac cells by converting charge redistribution and membrane displacement into distinct optical components.",
+      "brief": "The authors propose a label-free optical microelectrode array that simultaneously captures electrical excitation and mechanical contraction in cardiac cells. They report that comparing recordings from beating cells with those after contraction inhibition allows separation of electrostatic transduction from membrane motion. No quantitative performance metrics, dataset sizes, or statistical benchmarks are provided in the supplied abstract.\n\nThe listing describes a physical mechanism for signal separation but does not establish specific accuracy, throughput rates, or validation against standard clinical assays. The abstract mentions support for high-throughput in vitro assays and cardiotoxicity screening, but no experimental results confirming these capabilities are included in the text.\n\nResearchers working on cardiac bioelectronics, optical sensing, or electromechanical coupling may find the mechanism relevant. Those requiring quantitative validation data or code for immediate assay implementation should note the absence of these details in the listing.",
+      "abstract": "Simultaneous assessment of electrical excitation and mechanical contraction is essential for understanding cardiac cell function, yet these two processes are commonly measured with separate techniques or invasively. Here, changes in cellular electrical activity modulate local charge redistribution in optical microelectrodes and are converted into fluorescence signals, while cell contraction induces membrane displacement that contributes an additional mechanical component to the optical readout. By comparing recordings obtained in beating cells with those acquired after inhibition of contraction, we separate action-potential-associated electrostatic transduction from contractility-driven membrane motion. The approach offers a label-free route to support high-throughput in vitro assays for cardiotoxicity screening and electromechanical sensing. Concurrently, it unfolds the physical mechanisms governing membrane-based optical devices deployed in cardiac cell bioelectronics and mechanics.",
+      "takeaways": [
+        "The object is an optical microelectrode array designed for simultaneous electrical and mechanical signal readout in cardiac cells.",
+        "A visible limit is the lack of quantitative metrics, such as signal-to-noise ratio or throughput, in the provided abstract.",
+        "The artifact status is unclear; no code, dataset, or repository is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors state that by comparing recordings from cells that are beating with recordings from cells where contraction has been stopped, they can distinguish the electrical signal from the mechanical movement signal.",
+        "brief": "The authors suggest a new type of sensor that uses light to measure both the electrical signals and the physical squeezing of heart cells at the same time. They say that by comparing data from active cells and inactive cells, they can tell the two types of signals apart. The text does not include any numbers showing how accurate or fast this method is.\n\nThe description explains how the physics works but does not show specific test results or prove that it works as well as current medical tests. The text mentions that this could help with testing drugs for heart safety, but it does not show any actual test results to prove this.\n\nScientists who study heart cells or light-based sensors might find this interesting. People who need specific numbers or computer code to build this sensor should know that the short summary does not provide them.",
+        "takeaways": [
+          "The thing being described is a sensor that uses light to measure electrical and physical signals in heart cells.",
+          "A clear limitation is that the short summary does not include any numbers about how well the sensor works.",
+          "It is not known if there is any computer code or data available because the listing does not say so."
+        ]
+      },
+      "actions": [
+        "Verify the full PDF to check for quantitative validation data, statistical significance, and comparison with existing invasive techniques.",
+        "Search for supplementary materials or associated repositories to confirm the availability of code or raw data for the optical readout method."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "q-bio.CB"
+      ],
+      "listing": {
+        "listedOn": "2026-09-16",
+        "publishedOn": "2026-09-16",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.16101"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-16T16:58:57.136Z"
+      }
+    },
+    {
+      "id": "2609.16105",
+      "arxivId": "2609.16105",
+      "url": "https://arxiv.org/abs/2609.16105",
+      "topic": "Physics",
+      "reported": "The authors report that their security proof yields positive key rates beyond 70km for experimentally relevant block sizes and parameters.",
+      "metrics": [
+        "beyond $70$km"
+      ],
+      "title": "Unconditional Security of Discrete-Modulated CV-QKD from Infinite-Dimensional MEAT",
+      "authors": "Lars Kamin, Ian George, John Burniston, Florian Kanitschar",
+      "takeaway": "The paper claims to establish the first complete composable finite-size security proof for Discrete-Modulated CV-QKD protocols against coherent attacks.",
+      "brief": "The authors claim to close a longstanding gap by providing a complete composable finite-size security proof for Discrete-Modulated CV-QKD against coherent attacks. They report that the resulting key rates recover known asymptotic rates and outperform established finite-size bounds based on collective attacks. The listing states that positive key rates are achieved beyond 70km for experimentally relevant block sizes and parameters.\n\nThe proof introduces an infinite-dimensional marginal-constrained entropy accumulation theorem and a dimension-reduction technique. The authors state that the proof incorporates imperfect detectors and both fixed- and variable-length protocol variants. The listing does not specify the exact numerical key rate values or the specific detector imperfection parameters used in the 70km calculation.\n\nResearchers working on continuous-variable quantum key distribution security proofs may find this relevant. Those focused on experimental implementation of DM CV-QKD may also be interested. Readers seeking a specific experimental demonstration of this protocol at 70km should note that this is a theoretical security proof.",
+      "abstract": "Discrete-Modulated (DM) Continuous-Variable (CV) Quantum Key Distribution (QKD) is an experimentally attractive approach to quantum cryptography, offering high key rates over metropolitan-scale distances while relying on state-of-the-art telecom infrastructure. However, a fundamental gap has remained between this experimental promise and rigorous security: for more than two decades, DM CV-QKD has lacked a complete composable finite-size security proof against coherent attacks. Existing works either restrict the adversary to collective attacks, impose additional finite-dimensional assumptions, apply only to specific modulation formats, or fail to recover the known asymptotic rates. Here, we resolve this longstanding problem by establishing the first complete composable finite-size security proof for DM CV-QKD protocols against coherent attacks, incorporating imperfect detectors and both fixed- and variable-length protocol variants. Our proof introduces two central results of broader interest: an infinite-dimensional marginal-constrained entropy accumulation theorem (iMEAT) and a rigorous dimension-reduction technique that makes the infinite-dimensional security bounds numerically tractable. The resulting key rates recover the known asymptotic rates and outperform established finite-size bounds based on collective attacks, while yielding positive key rates beyond $70$km for experimentally relevant block sizes and parameters. Thus, our work closes a longstanding gap and places an experimentally attractive class of CV-QKD protocols on a rigorous composable security footing and provides a pathway towards their practical deployment.",
+      "takeaways": [
+        "The object is a theoretical security proof for Discrete-Modulated CV-QKD, not an experimental implementation.",
+        "The listing does not provide the specific numerical key rate values or the exact detector imperfection parameters used to derive the 70km limit.",
+        "No code or repository is declared in the listing, so the numerical tractability of the dimension-reduction technique is not verifiable from the provided metadata."
+      ],
+      "plain": {
+        "reported": "The authors report that their mathematical security proof shows that secure keys can be generated over distances greater than 70 kilometers under specific experimental conditions.",
+        "brief": "The authors claim to solve a long-standing problem by providing a complete mathematical proof that a specific type of quantum key distribution system is secure against all possible attacks. They report that their proof shows the system can generate secure keys over distances greater than 70 kilometers. The listing states that the proof works for both fixed and variable length protocols and accounts for imperfect detectors.\n\nThe proof uses a new mathematical theorem and a technique to simplify the calculations. The authors state that the proof recovers the known long-distance performance rates and outperforms previous security bounds that only considered simpler attacks. The listing does not specify the exact numerical key generation rates or the specific detector imperfection parameters used in the 70 kilometer calculation.\n\nResearchers working on the security of continuous-variable quantum key distribution may find this relevant. Those focused on building experimental systems for this type of quantum key distribution may also be interested. Readers seeking a specific experimental demonstration of this protocol at 70 kilometers should note that this is a theoretical security proof, not an experimental result.",
+        "takeaways": [
+          "The paper is about a theoretical security proof for a specific type of quantum key distribution, not an experimental implementation.",
+          "The listing does not provide the specific numerical key generation rates or the exact detector imperfection parameters used to derive the 70 kilometer limit.",
+          "No code or repository is declared in the listing, so the numerical tractability of the simplification technique is not verifiable from the provided metadata."
+        ]
+      },
+      "actions": [
+        "Verify the specific numerical key rate values and detector imperfection parameters in the full PDF to confirm the 70km claim.",
+        "Check the full PDF for the definition of the infinite-dimensional marginal-constrained entropy accumulation theorem and the dimension-reduction technique."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-09-16",
+        "publishedOn": "2026-09-16",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.16105"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-16T16:58:57.136Z"
+      }
+    },
+    {
+      "id": "2609.16185",
+      "arxivId": "2609.16185",
+      "url": "https://arxiv.org/abs/2609.16185",
+      "topic": "Engineering",
+      "reported": "The authors report that their framework correctly triggered retraining in 3 of 31 monitoring cycles while maintaining harmonic accuracy above the 80% threshold.",
+      "metrics": [
+        "3 of 31 monitoring cycles",
+        "80% threshold",
+        "99.6% relative to continuous streaming"
+      ],
+      "title": "Distributed Edge-to-Cloud Architecture for Continual Harmonic Load Modeling",
+      "authors": "Bhaskar Mitra, Soumya Kundu",
+      "takeaway": "The paper proposes a distributed edge-to-cloud architecture for autonomous, continual FCM re-identification under real field conditions.",
+      "brief": "The authors propose a distributed edge-to-cloud architecture for autonomous, continual FCM re-identification under real field conditions. They describe a state-machine-driven pipeline and an edge-to-server architecture that confines waveform processing to a low-cost Raspberry Pi node.\n\nThe authors report that the framework correctly triggered retraining in 3 of 31 monitoring cycles while maintaining harmonic accuracy above the 80% threshold. They state that this reduced upstream data transmission by 99.6% relative to continuous streaming. The listing does not establish specific limits or artifacts beyond the reported field deployment validation.\n\nResearchers working on power quality assessment, transformer derating, or grid planning may find the distributed architecture relevant. Those not focused on harmonic load modeling or edge computing for power grids may ignore it.",
+      "abstract": "The rapid proliferation of power electronic loads at the distribution grid edge has made accurate harmonic load modeling critical for power quality assessment, transformer derating, and grid planning. Existing Frequency Coupling Matrix (FCM) identification methods produce static, one-time models that rapidly lose fidelity as load composition evolves. This paper proposes a distributed edge-to-cloud architecture for autonomous, continual FCM re-identification under real field conditions, with two contributions: (i) a state-machine-driven pipeline that monitors point-on-wave (PoW) measurements and triggers FCM re-identification only upon statistically significant load change; and (ii) an edge-to-server architecture confining waveform processing to a low-cost Raspberry Pi node, transmitting only compact JSON model updates upon confirmed change rather than streaming raw PoW data. Validated through a residential field deployment, the framework correctly triggered retraining in 3 of 31 monitoring cycles while maintaining harmonic accuracy above the 80% threshold, reducing upstream data transmission by 99.6% relative to continuous streaming.",
+      "takeaways": [
+        "The object is a distributed edge-to-cloud architecture for continual harmonic load modeling using FCM re-identification.",
+        "The visible limit is that the model is validated through a residential field deployment, and the listing does not specify broader generalizability or failure modes.",
+        "The artifact status is not established in the listing, as no code or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that their system correctly started a new model update in 3 out of 31 check-ins while keeping the accuracy of the electrical noise measurement above 80 percent.",
+        "brief": "The authors suggest a system that splits work between a small computer at the home and a cloud server to keep updating a model of electrical noise in the power grid. They describe a process that only updates the model when the electrical load changes significantly, and a setup that processes data locally to save bandwidth.\n\nThe authors say their system correctly identified when to update the model in 3 out of 31 times, and kept the measurement accuracy above 80 percent. They claim this cut the amount of data sent to the cloud by 99.6 percent compared to sending all data constantly. The summary does not say what happens when the system fails or if it works in other types of buildings.\n\nPeople who study how to keep the power grid clean and safe, or how to plan for electrical equipment, might find this useful. People who do not work on electrical grid noise or small computer systems for power monitoring might not need it.",
+        "takeaways": [
+          "The thing being built is a system that uses a small local computer and a cloud server to keep updating a model of electrical noise in the power grid.",
+          "The clear limit is that the test was done in one residential area, and the summary does not say if it works elsewhere or what goes wrong when it fails.",
+          "It is not known if the code is available because the summary does not list any code or website."
+        ]
+      },
+      "actions": [
+        "Verify the specific field deployment conditions and the definition of 'statistically significant load change' in the full PDF.",
+        "Check the full PDF for details on the Raspberry Pi node specifications and the JSON model update format."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-09-16",
+        "publishedOn": "2026-09-16",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.16185"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-16T16:58:57.136Z"
+      }
+    }
+  ]
+}
