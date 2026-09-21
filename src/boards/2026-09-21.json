@@ -1,0 +1,656 @@
+{
+  "date": "2026-09-21",
+  "label": "Mon, Sep 21",
+  "minutes": 10,
+  "poolSize": 107,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-09-21T18:18:05.002Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2609.22068",
+      "arxivId": "2609.22068",
+      "url": "https://arxiv.org/abs/2609.22068",
+      "topic": "AI",
+      "reported": "The authors report that training MiMo-V2.5 with GRPO on their generated tasks improves performance on all five diverse benchmarks, covering issue repair, whole-program construction, and terminal work.",
+      "metrics": [
+        "DeepSWE + 11.7%",
+        "ProgramBench +17%",
+        "Terminal-Bench v2.1 +8.5%"
+      ],
+      "title": "CodeMidas: Scaling Agentic Coding RL Environments from Code Itself",
+      "authors": "Bowen Ye, Lei Li, Shicheng Li, Zihao Yue, Linghao Zhang, Hanglong Lv, Yuanxin Liu, Wenhan Ma, Hao Tian, Rang Li, Jinhao Dong, Yikai Zhao, Xiangwei Deng, Hailin Zhang, Liang Zhao, Qi Liu, Lingpeng Kong, Tong Yang, Fuli Luo",
+      "takeaway": "The paper presents CodeMidas, an agentic pipeline that turns implemented functionality in existing codebases into executable RL environments using source code as its only task-specific input.",
+      "brief": "The authors propose CodeMidas, a pipeline that generates reinforcement learning environments from source code alone, bypassing reliance on development artifacts like issues or commits. The system uses agents to explore functionality, construct tests, and validate tasks through execution checks.\n\nThe authors report that training MiMo-V2.5 on 5,545 generated tasks improves performance on five benchmarks, including DeepSWE and Terminal-Bench. They attribute gains to increased high-quality task volume and better agent behaviors like diverse self-verification. The listing does not specify the baseline model version or the exact configuration of the five benchmarks beyond the three named.\n\nResearchers building coding agents or RL environments may find the pipeline useful for task generation. Those focused solely on static code analysis or non-agentic models may find the specific RL training setup less relevant.",
+      "abstract": "Training capable coding agents via reinforcement learning (RL) requires diverse tasks with reliable verifiers. Open-source codebases offer a rich source of such tasks, while existing methods typically rely on development artifacts such as issues and commits, limiting the range of tasks that can be extracted. To better scale RL environments, we present CodeMidas, an agentic pipeline that turns implemented functionality in existing codebases into executable RL environments using source code as its only task-specific input. CodeMidas allocates agentic compute to every stage of environment construction: agents explore implemented functionality to formulate behavioral specifications, construct tests grounded in execution of the original code, and validate and filter candidate tasks through execution checks and repeated solution rollouts. The resulting dataset has 5,545 training tasks from 3,185 open-source codebases spanning 23 programming languages and 15 technical domains. Training MiMo-V2.5 on these tasks with GRPO improves performance on all five diverse benchmarks, covering issue repair (DeepSWE + 11.7%), whole-program construction (ProgramBench +17%), and terminal work (Terminal-Bench v2.1 +8.5%). Ablations show that increasing the number of high-quality training tasks improves performance. Trajectory analysis shows the RL-trained agent demonstrates better behaviors like increasing codebase exploration and more diverse self-verification. These results establish source code as a scalable foundation for constructing RL environments that improve coding agents across diverse software tasks.",
+      "takeaways": [
+        "The core object is an agentic pipeline that converts source code into executable RL training tasks without using issues or commits.",
+        "A visible limit is the reliance on open-source codebases, which may not represent proprietary or closed-source software environments.",
+        "The artifact status is not established in the listing, as no code repository URL is provided."
+      ],
+      "plain": {
+        "reported": "The authors state that training a specific AI model (MiMo-V2.5) using a method called GRPO on their generated tasks leads to better scores on five different tests, including fixing bugs and building programs.",
+        "brief": "The authors created a system called CodeMidas that uses AI agents to look at existing computer code and create new practice problems for training other AI agents. Instead of using bug reports or change logs, it uses the code itself to figure out what the software does and how to test it.\n\nThey claim that using 5,545 of these generated problems to train their model made it better at fixing bugs, building whole programs, and working in a command-line interface. They say the model got better because it had more good practice problems and learned to check its own work more often. The text does not say exactly which version of the model was used for comparison or list all five tests by name.\n\nPeople who build AI that writes code might find this useful for creating training data. People who only care about analyzing code without training AI agents might not find this directly applicable.",
+        "takeaways": [
+          "The main thing they built is a system that turns existing code into practice problems for training AI agents.",
+          "A limitation is that it only works on open-source code, so it might not work well for private company code.",
+          "It is not clear from the text if the code for this system is publicly available."
+        ]
+      },
+      "actions": [
+        "Verify the specific baseline model version and the full list of five benchmarks in the PDF to confirm the scope of the reported improvements.",
+        "Check the PDF for details on the agent architecture and the specific execution checks used to filter candidate tasks."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-21",
+        "publishedOn": "2026-09-18",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.22068",
+            "upvotes": 79
+          }
+        ]
+      },
+      "trend": {
+        "votes": 79,
+        "rank": 1,
+        "of": 28,
+        "perDay": 26
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 79,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-18"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-21T18:18:05.002Z"
+      }
+    },
+    {
+      "id": "2609.15779",
+      "arxivId": "2609.15779",
+      "url": "https://arxiv.org/abs/2609.15779",
+      "topic": "AI",
+      "reported": "The authors report that EvoOntology consistently outperforms strong baselines and existing semantic-layer approaches on three well-adopted data-agent benchmarks with four LLM backbones.",
+      "metrics": [],
+      "title": "EvoOntology: A Self-Evolving Ontology Layer for Data Agents",
+      "authors": "Meiduo Chong, Shaolei Zhang, Ju Fan, Xiaoyong Du",
+      "takeaway": "The paper introduces EvoOntology, a self-evolving ontology layer for data agents that encapsulates ontology as an MCP server with schema, content, and tool layers.",
+      "brief": "The authors propose EvoOntology to bridge the agent-data gap by providing a self-evolving ontology layer that agents can query at runtime. This layer includes a builder agent for autonomous construction and a self-evolution loop using attribution-guided typed edits.\n\nExperiments on three data-agent benchmarks with four LLM backbones show consistent outperformance over strong baselines and existing semantic-layer approaches. The listing does not specify quantitative metric values, exact benchmark names, or the specific nature of the \"strong baselines\" used for comparison.\n\nResearchers working on data agents, semantic layers, or ontology management may find this relevant. Those not focused on agent-data interaction or ontology-based tooling may ignore it.",
+      "abstract": "Data agents aim to fulfill natural-language instructions over heterogeneous data, including tables, files, and databases. However, data agents face a challenging agent-data gap: heterogeneous data resides outside the agent, while the agent can access it (e.g., column names and file paths) only through generic tools. Existing approaches either let agents directly explore raw data sources or inject manually constructed semantic layers into prompts. However, neither scales well to large heterogeneous data sources nor adapts to different agent behaviors. In this paper, we introduce EvoOntology, a self-evolving ontology layer for data agents. EvoOntology encapsulates the ontology as an MCP server comprising a schema layer, a content layer, and a tool layer, enabling agents to actively query and interact with the ontology at runtime. To this end, we introduce a builder agent for autonomous ontology construction and a self-evolution loop that continuously refines the ontology through attribution-guided typed edits that are accepted only after a backbone-conditional paired evaluation. Experiments on three well-adopted data-agent benchmarks with four LLM backbones demonstrate that EvoOntology consistently outperforms strong baselines and existing semantic-layer approaches, effectively bridging the agent-data gap and enabling more effective interaction with heterogeneous data. Code: https://github.com/ruc-datalab/EvoOntology",
+      "takeaways": [
+        "The object is a self-evolving ontology layer structured as an MCP server with schema, content, and tool layers.",
+        "A visible limit is the lack of specific quantitative results or named benchmarks in the abstract, making it difficult to assess the magnitude of improvement.",
+        "The artifact status is indicated by a provided GitHub repository URL, though the listing does not confirm the code's completeness or availability."
+      ],
+      "plain": {
+        "reported": "The authors state that their system, EvoOntology, performs better than other strong methods and existing semantic layer tools on three standard tests for data agents, using four different large language models.",
+        "brief": "The authors suggest a new system called EvoOntology to help AI agents understand and use different types of data, like tables and files. This system acts like a dynamic dictionary or map that the AI can look up while it is working, and it updates itself automatically.\n\nThe authors say their system works better than other good methods on three common tests. However, the summary does not say exactly how much better it is or which specific tests were used, so the exact scale of the improvement is unknown.\n\nPeople who build AI systems that handle data or manage complex data structures might find this useful. People who do not work with AI data agents or data organization might not need to look at this.",
+        "takeaways": [
+          "The main thing being described is a self-updating data map or dictionary that AI agents can use to understand different data sources.",
+          "A clear limitation is that the summary does not give specific numbers showing how much better the new system is, nor does it name the specific tests used.",
+          "The authors provide a link to a code repository, but the summary does not confirm if the code is complete or ready to use."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark names and quantitative performance metrics by reading the full PDF.",
+        "Check the GitHub repository to confirm the availability and functionality of the EvoOntology code."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/ruc-datalab/EvoOntology",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-21",
+        "publishedOn": "2026-09-14",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.15779",
+            "upvotes": 66
+          }
+        ]
+      },
+      "trend": {
+        "votes": 66,
+        "rank": 2,
+        "of": 28,
+        "perDay": 9
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 66,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-14"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-21T18:18:05.002Z"
+      }
+    },
+    {
+      "id": "2609.22000",
+      "arxivId": "2609.22000",
+      "url": "https://arxiv.org/abs/2609.22000",
+      "topic": "AI",
+      "reported": "The authors report that GPT-6 Astra leads at 58.1% overall on RecreationBench, which comprises 250 diverse tasks across domains and platforms.",
+      "metrics": [
+        "58.1% overall",
+        "2.8% of tasks",
+        "250 diverse tasks"
+      ],
+      "title": "RecreationWorld: Scalable and Verifiable Environments for Hybrid Computer-Use Agents",
+      "authors": "Shuai Bai, Jiayong Deng, Yikun Fu, Chang Gao, Xuhao Hu, Mianqiu Huang, Yizhen Jiang, Yuheng Jing, Dehui Kong, Keliang Li, Ning Li, Wanli Li, Dayiheng Liu, Dunjie Lu, Changwei Luo, Que Shen, Zheyuan Wang, Zijian Wang, Jie Wu, Gao Wu, Zhihui Xie, Rui Xie, Haiyang Xu, An Yang, Jiakang Yuan, Yanming Zhang, Jiajun Zhang, Xi Zhang, Zhenru Zhang, Zhuo Zhen, Mingkang Zhu, Bowen Zhou",
+      "takeaway": "The paper introduces RecreationWorld, a five-platform framework for hybrid computer-use agents that requires building faithful implementations from running references without prescribed workflows.",
+      "brief": "The authors propose a framework where agents must discover behavior from a running reference and build a faithful implementation. This approach aims to bridge graphical interaction and software development in real digital work.\n\nModels trained on generated trajectories improve across five out-of-distribution benchmarks. GPT-6 Astra achieves 58.1% overall on RecreationBench but passes all programmatic tests on only 2.8% of tasks. Agents reproduce static structure more reliably than interactions and computed outputs.\n\nResearchers working on hybrid computer-use agents or verifiable environment design may find the framework relevant. Those focused solely on static interface reproduction or non-hybrid workflows may find the scope less applicable.",
+      "abstract": "Computer-use agents (CUAs) have advanced along two separate lines: graphical interaction and software development through code and the command line. Real digital work requires both, interleaved rather than stacked end to end. We study hybrid CUAs that autonomously decide when to explore an interface, implement software, and run and visually verify their artifacts. We introduce RecreationWorld, a five-platform framework built around recreation: given a running reference, an agent must discover its behavior and build a faithful implementation with no prescribed workflow. RecreationWorld provides reproducible environments on Ubuntu, macOS, Windows, Android, and Web, plus a unified harness with native GUI control and coding tools. The running reference serves as an oracle for hidden behavioral tests, providing execution-grounded rewards. We scale trajectory generation with high-quality open-source applications. Models trained on these trajectories improve across five out-of-distribution coding and hybrid computer-use benchmarks and more frequently verify their rendered outputs, providing evidence of transfer beyond recreation. For held-out evaluation, we introduce RecreationBench, comprising 250 diverse tasks across domains and platforms. Reference-grounded programmatic and visual assertions cover action-conditioned outcomes at multiple interaction depths; each is validated on the reference and by human reviewers before the suite is frozen for automatic scoring. GPT-6 Astra leads at 58.1% overall, but passes all programmatic tests on just 2.8% of tasks. Agents reproduce static interface structure more reliably than interactions and computed outputs, while generated applications remain smaller and more monolithic than their references. We release the benchmark, environments, and test suites.",
+      "takeaways": [
+        "The object is a five-platform framework for hybrid computer-use agents that uses running references as oracles for hidden behavioral tests.",
+        "A visible limit is that agents reproduce static interface structure more reliably than interactions and computed outputs, with generated applications remaining smaller and more monolithic.",
+        "The artifact status is established: the authors state they release the benchmark, environments, and test suites, with a declared code repository URL provided."
+      ],
+      "plain": {
+        "reported": "The authors report that the GPT-6 Astra model achieved a 58.1% overall score on their new test suite, which contains 250 different tasks across various computer systems.",
+        "brief": "The researchers created a system where AI agents must watch a working program and then build their own version of it. This system tests both how the program looks and how it works across five different operating systems.\n\nAI models trained on this system performed better on other unrelated tests. The best model, GPT-6 Astra, scored 58.1% overall but only fully passed the strict code tests on 2.8% of the tasks. The AI agents were better at copying the visual layout than the actual functionality.\n\nPeople studying AI that can use computers like humans might find this useful. People only interested in simple visual copying or specific non-hybrid tasks might not need this.",
+        "takeaways": [
+          "The main contribution is a testing system for AI agents that can both click buttons and write code, using a working example as the standard for correctness.",
+          "A clear limitation is that the AI agents are better at copying the visual appearance of software than its actual behavior and calculations, and their code is simpler than the original.",
+          "The authors confirm they are releasing the test suite, the environments, and the code, with a link to the project on GitHub provided."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark results and the 2.8% programmatic test pass rate by consulting the full PDF and supplementary materials.",
+        "Check the declared GitHub repository to confirm the availability and completeness of the released environments and test suites."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/QwenLM/RecreationWorld",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-21",
+        "publishedOn": "2026-09-18",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.22000",
+            "upvotes": 60
+          }
+        ]
+      },
+      "trend": {
+        "votes": 60,
+        "rank": 3,
+        "of": 28,
+        "perDay": 20
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 60,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-18"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-21T18:18:05.002Z"
+      }
+    },
+    {
+      "id": "2609.21346",
+      "arxivId": "2609.21346",
+      "url": "https://arxiv.org/abs/2609.21346",
+      "topic": "AI",
+      "reported": "The authors report a 2.4% relative UVCTR gain in online A/B testing for AMap's generative recommendation system.",
+      "metrics": [
+        "2.4% relative UVCTR gain",
+        "60ms latency budget"
+      ],
+      "title": "IntBMoE: Integrating Block-Level Conditioning into Expert Composition for Full-Participation Mixture-of-Experts",
+      "authors": "Ran Cheng, Longfei Xu, Zheng Liu, Kaikui Liu, Xiangxiang Chu",
+      "takeaway": "IntBMoE decouples participation, execution, and materialization in Mixture-of-Experts by pairing dense expert composition with sparse block execution.",
+      "brief": "The authors propose IntBMoE, a block-conditioned MoE that uses a learned codebook and hypernetwork to merge expert bases, aiming to independently control token participation, compute execution, and memory materialization. They report consistent gains over sparse and dense MoE baselines on image classification, language modeling, and sequential recommendation, alongside a 2.4% relative UVCTR gain in an online A/B test for a deployed recommendation system. The listing does not specify the exact datasets, model sizes, or baseline configurations used for the offline benchmark comparisons, nor does it detail the specific hyperparameters for the hypernetwork or codebook.\n\nThe strongest reported result is the 2.4% relative UVCTR gain in an online A/B test serving hundreds of millions of users under a 60ms latency budget. The authors state that the method generalizes beyond vision to language modeling and sequential recommendation, but the abstract does not provide specific quantitative metrics for these non-vision tasks. The claim that materialization is bounded relies on the codebook fixing the number of blocks, a design choice whose impact on training stability or convergence speed is not described in the listing.\n\nResearchers working on mixture-of-experts architectures, particularly those seeking to balance compute efficiency with model capacity, may find the decoupling of execution and materialization relevant. Practitioners deploying large-scale recommendation systems might examine the reported online A/B results and the provided code repository for implementation details. Those focused solely on theoretical MoE routing without interest in block-level conditioning or industrial deployment constraints may find the specific architectural modifications less applicable to their work.",
+      "abstract": "Mixture-of-Experts (MoE) scales capacity, but existing designs cannot set three quantities independently. For a single token, participation is how many experts contribute knowledge to its output, execution is how many are actually computed (compute cost), and materialization is how many expert-sized parameter sets must be built and stored (memory cost). Sparse routing keeps execution and materialization low, but shrinks participation: for each token, only a few experts contribute. Dense output-mixing restores full participation, but its execution grows with the number of experts. Parameter-merging keeps execution at one expert, but its materialization grows with the number of routing decisions. We propose IntBMoE, a block-conditioned MoE that decouples all three by pairing dense expert composition with sparse block execution. Its blocks come from a small learned codebook, one per entry. At each internal layer, a lightweight hypernetwork merges all expert bases in that layer's pool into one composed expert. Participation is full, because every composed expert draws on the entire pool. Execution stays sparse, because a router sends each token to only a few blocks. Materialization is bounded, because the codebook, not the input, fixes how many blocks exist. Dual-Path Residual Gating (DPRG) further couples two independently composed paths through multiplicative gating. Experiments on image classification show consistent gains over representative sparse and dense MoE baselines. Additional experiments on language modeling and sequential recommendation validate its generalization beyond vision. IntBMoE is fully deployed in AMap's generative recommendation system, serving hundreds of millions of users under a 60ms latency budget, with a 2.4% relative UVCTR gain in online A/B testing. Our code is available at https://github.com/AMAP-ML/DreamX-Rec/.",
+      "takeaways": [
+        "The object is a block-conditioned MoE architecture that uses a learned codebook and hypernetwork to compose experts, aiming to decouple participation, execution, and materialization.",
+        "A visible limit is the lack of specific quantitative benchmarks for language modeling and sequential recommendation in the abstract, leaving the magnitude of gains in these domains unverified from the listing alone.",
+        "The artifact status is indicated by a provided GitHub repository URL, though the listing does not confirm the completeness or license of the code."
+      ],
+      "plain": {
+        "reported": "The authors report a 2.4% relative increase in unique visitor click-through rate in an online comparison test for a map application's recommendation system.",
+        "brief": "The authors propose a new type of neural network structure called IntBMoE. It uses a system of small, learned building blocks to combine different parts of the model. The goal is to control three things separately: how many parts of the model contribute to an answer, how many parts are actually calculated, and how much memory is needed to store the model. They claim this new structure performs better than existing methods on tasks like recognizing images, understanding text, and predicting user behavior. They also report a 2.4% improvement in user engagement in a real-world test of a map application used by hundreds of millions of people. The summary does not list the specific test data or the exact settings used for the non-image tasks.\n\nThe most significant result mentioned is the 2.4% improvement in user engagement in the live application test. The authors say the method works for text and recommendation tasks too, but they do not give specific numbers for those areas in the summary. The claim that memory usage is limited depends on the fixed number of building blocks, but the summary does not explain how this affects the speed or stability of training the model.\n\nPeople who design large neural networks that use multiple specialized sub-models might find this useful if they want to balance speed and model size. Engineers building large-scale recommendation systems might look at the real-world test results and the shared code. People who are only interested in the theory of how these networks route information, and not in specific architectural changes or real-world deployment, might not find this directly relevant.",
+        "takeaways": [
+          "The main idea is a new network design that uses a fixed set of small components to combine model parts, allowing separate control over how many parts are used, calculated, and stored.",
+          "A clear limitation is that the summary does not provide specific performance numbers for the text and recommendation tasks, so the exact benefit in those areas is not clear from this text.",
+          "The authors provide a link to a code repository, but the summary does not confirm if the code is complete or what license it uses."
+        ]
+      },
+      "actions": [
+        "Verify the specific datasets and baseline models used for the image classification, language modeling, and sequential recommendation experiments by consulting the full PDF.",
+        "Inspect the provided GitHub repository to confirm the availability of training scripts, model checkpoints, and documentation for the IntBMoE architecture."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-21",
+        "publishedOn": "2026-09-18",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.21346",
+            "upvotes": 33
+          }
+        ]
+      },
+      "trend": {
+        "votes": 33,
+        "rank": 4,
+        "of": 28,
+        "perDay": 11
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 33,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-18"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-21T18:18:05.002Z"
+      }
+    },
+    {
+      "id": "2609.20852",
+      "arxivId": "2609.20852",
+      "url": "https://arxiv.org/abs/2609.20852",
+      "topic": "Physics",
+      "reported": "The authors report that the square topology consistently achieves the highest UCQM score among the four-mode path, square, and star cluster topologies considered.",
+      "metrics": [
+        "squeezing range $r \\in [0.2,1.8]$"
+      ],
+      "title": "UCQM: A Six-Metric Quality Framework for Continuous-Variable Cluster States",
+      "authors": "Saman Sarshar",
+      "takeaway": "The paper proposes the Unified Cluster Quality Metric (UCQM), a framework integrating six complementary descriptors to quantitatively evaluate and compare continuous-variable cluster-state architectures.",
+      "brief": "The authors introduce a six-metric framework combining total correlation strength, correlation uniformity, error resilience, communication overhead, path redundancy, and bottleneck vulnerability into a single score for continuous-variable cluster states. They report that the square topology achieves the highest UCQM score across the investigated squeezing range, though the listing does not establish whether this advantage persists outside the tested four-mode geometries or parameter bounds. Researchers working on measurement-based quantum computation resource states may find the comparative framework useful for topology selection, while those focused on discrete-variable systems or unrelated quantum hardware may find it less directly applicable.\n\nThe strongest reported result is the square topology’s highest UCQM score among the three tested four-mode structures, measured over the squeezing range r ∈ [0.2,1.8]. The listing does not specify whether the framework was validated against experimental data or only applied to theoretical covariance matrices, nor does it state whether the six metrics are independently verifiable from the supplied abstract alone. The claim of extension to arbitrary N-mode states is stated by the authors but not demonstrated with results in the provided text.\n\nThe object is a quantitative scoring framework for continuous-variable cluster-state quality. A visible limit is that the reported comparison covers only three specific four-mode topologies within a defined squeezing range, without evidence of performance on larger or experimentally noisy systems. The artifact status is not established in the listing, as no code, dataset, or repository is declared.",
+      "abstract": "Continuous-variable (CV) cluster states constitute one of the central resources for measurement-based quantum computation (MBQC). Despite substantial progress in their theoretical development and experimental realization, comparing the quality of different cluster-state topologies remains challenging, as existing approaches typically rely either on qualitative inspection of covariance matrices or on individual metrics that characterize only a single aspect of the underlying correlation structure. In this work, we propose a quantitative evaluation framework that integrates six complementary descriptors of CV cluster states: total correlation strength (SSC), correlation uniformity (CAV), error resilience (EVC), communication overhead (COM), path redundancy (RED), and bottleneck vulnerability (BOT). These quantities are combined into a single \\textbf{Unified Cluster Quality Metric (UCQM)}, providing a consistent basis for evaluating and comparing different cluster-state architectures. The proposed framework is applied to four-mode path, square, and star cluster topologies over the squeezing range $r \\in [0.2,1.8]$. Across the investigated parameter regime, the square topology consistently achieves the highest UCQM score, indicating the most balanced structural characteristics among the topologies considered and supporting its suitability for measurement-based quantum computation. Because all six metrics are derived directly from covariance-matrix elements together with graph connectivity, the framework naturally extends to arbitrary $N$-mode cluster states, higher-dimensional lattice geometries, and experimentally reconstructed covariance matrices. Beyond providing a single numerical score, UCQM offers a unified perspective for analyzing the structural quality of CV cluster states and establishes a practical framework for their systematic comparison, optimization, and future design.",
+      "takeaways": [
+        "The object is a unified numerical scoring framework for comparing continuous-variable cluster-state topologies based on covariance-matrix and graph-connectivity descriptors.",
+        "A visible limit is that the reported highest score for the square topology is restricted to three four-mode topologies within the squeezing range r ∈ [0.2,1.8], with no stated validation on larger or experimental systems.",
+        "The artifact status is not established in the listing, as no code, dataset, or repository URL is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that the square-shaped network of quantum states gets the best overall quality score compared to the line-shaped and star-shaped networks they tested.",
+        "brief": "The authors created a new way to score how good different types of quantum networks are for a specific kind of quantum computing. They combined six different measurements of the network’s structure into one single number. They say the square-shaped network gets the best score among the three shapes they tested, but they do not say if this holds true for bigger networks or real lab experiments. People who build these specific quantum networks might find the scoring tool helpful for choosing a design, while people working on other types of quantum computers might not find it useful.\n\nThe main result they report is that the square network has the highest score among the three small networks they looked at, tested over a specific range of quantum strength settings. The text does not say if they tested this with real lab data or just with math models, and it does not show the math behind how the six measurements are combined. They claim the method works for any size network, but they do not show results for bigger networks in this summary.\n\nThe thing they made is a scoring system for judging the quality of these quantum networks. A clear limit is that they only tested three small network shapes in a specific range of settings, and they did not show it working on real, noisy lab equipment. The listing does not say if they shared their code or data, so it is not clear if you can check their work yourself.",
+        "takeaways": [
+          "The object is a scoring system that gives one number to judge the quality of quantum networks used in a specific type of quantum computing.",
+          "A visible limit is that they only tested three small network shapes in a specific range of settings, and did not show results for bigger networks or real lab equipment.",
+          "The listing does not say if the authors shared their code or data, so it is not clear if you can check their work yourself."
+        ]
+      },
+      "actions": [
+        "Verify the derivation of the six metrics and the UCQM combination rule by reading the full PDF, as the abstract does not provide the mathematical formulas or weighting scheme.",
+        "Check whether the authors provide supplementary data or code for the covariance-matrix calculations, since the listing declares no code and the abstract does not specify data availability."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-09-21",
+        "publishedOn": "2026-09-21",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.20852"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-21T18:18:05.002Z"
+      }
+    },
+    {
+      "id": "2609.20884",
+      "arxivId": "2609.20884",
+      "url": "https://arxiv.org/abs/2609.20884",
+      "topic": "Security",
+      "reported": "The authors report that they decompose the gap into three sub-problems and derive four recommendations for future mitigation-selection approaches.",
+      "metrics": [],
+      "title": "The Right Tool for the Job: On the Selection of Mitigations for GenAI Privacy Threats",
+      "authors": "Jonah Bellemans, Qianying Liao, Laurens Sion, Lieven Desmet, Wouter Joosen",
+      "takeaway": "The paper argues that the primary challenge in GenAI privacy engineering is the missing bridge between privacy threats and mitigation techniques.",
+      "brief": "The authors claim that GenAI privacy engineering lacks a systematic bridge between identified threats and available mitigations. They argue that knowledge of threats and solutions has developed independently, creating a selection gap.\n\nThe listing describes a position paper that decomposes this gap into three sub-problems and derives four recommendations. It outlines an approach extending threat-to-mitigation mapping methods to GenAI-specific characteristics. No empirical results, benchmarks, or quantitative measurements are reported in the supplied abstract.\n\nResearchers working on privacy threat modeling or mitigation selection for generative systems may find the proposed framework relevant. Those seeking empirical validation of specific mitigation techniques or quantitative performance data should look elsewhere.",
+      "abstract": "Generative Artificial Intelligence (GenAI) has rapidly evolved from an experimental technology into a foundational component of modern software systems. However, as its adoption grows, protecting sensitive personal data becomes increasingly challenging. Specifically, GenAI systems not only amplify traditional privacy threats but also introduce new inference-based risks, such as constructing detailed user profiles from seemingly harmless inputs. In response, privacy threat modeling frameworks are beginning to capture GenAI-specific privacy threats with finer granularity. At the same time, a growing number of mitigation techniques have been proposed to address these threats. However, although knowledge of both threats and mitigations continues to mature, the problem- and solution-space have developed largely independently. This position paper argues that the primary challenge in GenAI privacy engineering is not the lack of knowledge about privacy threats or mitigation techniques, but the missing bridge between them. We decompose this gap into three sub-problems: (i) lack of fine-grained threat-to-mitigation mapping for GenAI systems, (ii) inapplicable solution-space assumptions in the GenAI context, and (iii) prioritization difficulty under GenAI constraints. We derive four recommendations for future mitigation-selection approaches, and outline a suggested approach that extends established threat-to-mitigation mapping methods to GenAI-specific threat characteristics. We propose a research agenda toward more systematic privacy mitigation selection for GenAI-based systems.",
+      "takeaways": [
+        "The object is a conceptual framework for mapping GenAI privacy threats to mitigation techniques.",
+        "The visible limit is the absence of empirical evaluation or quantitative results in the supplied listing.",
+        "The artifact status is a position paper with no declared code or dataset."
+      ],
+      "plain": {
+        "reported": "The authors state that they break down the problem into three parts and suggest four guidelines for choosing privacy protections.",
+        "brief": "The authors say that while we know about privacy risks and fixes for AI systems, we don't have a clear way to match the right fix to the right risk. They say this is the main problem, not a lack of knowledge about the risks or fixes themselves.\n\nThe text describes this as a position paper, meaning it presents an argument rather than new experimental data. It lists three specific gaps in current approaches and offers four suggestions for how to fix them. It does not provide any numbers, test results, or measurements to prove these suggestions work.\n\nPeople who design privacy systems for AI might find the structure useful for organizing their work. People who need proof that a specific privacy tool works in a specific way should not rely on this listing alone.",
+        "takeaways": [
+          "The paper is about organizing how to choose privacy protections for AI.",
+          "The listing does not show any tests or numbers proving the ideas work.",
+          "There is no code or data file provided with this listing."
+        ]
+      },
+      "actions": [
+        "Verify the full PDF to confirm whether the four recommendations include any empirical validation or case studies.",
+        "Check the references section to identify the specific threat-to-mitigation mapping methods being extended."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR"
+      ],
+      "listing": {
+        "listedOn": "2026-09-21",
+        "publishedOn": "2026-09-21",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.20884"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-21T18:18:05.002Z"
+      }
+    },
+    {
+      "id": "2609.20910",
+      "arxivId": "2609.20910",
+      "url": "https://arxiv.org/abs/2609.20910",
+      "topic": "Stats",
+      "reported": "The authors report that their quasi-maximum likelihood estimation procedure allows consistent estimation on the whole identifiable subspace, a result they demonstrate through a simulation study and a real application.",
+      "metrics": [],
+      "title": "Identification problem and quasi-maximum likelihood estimation for matrix-variate CP-factor models",
+      "authors": "Hanzi Ye, Chun Yip Yau",
+      "takeaway": "The paper provides a unified treatment for the identification problem of CP factor models and proposes a quasi-maximum likelihood estimation procedure that achieves consistent estimation on the whole identifiable subspace.",
+      "brief": "The authors characterize the parameter space of matrix-variate CP-factor models as the union of identifiable and non-identifiable subspaces. They propose a quasi-maximum likelihood estimation procedure intended to handle the entire identifiable subspace, which they state existing methods do not fully cover.\n\nThe authors report that their method achieves a faster convergence rate for estimated loading matrices compared to existing approaches. They demonstrate finite-sample performance using a simulation study and a real application, though specific quantitative benchmarks are not provided in the listing.\n\nResearchers working on matrix-valued time series or low-rank structure modeling may find the identification analysis relevant. Those requiring specific numerical performance comparisons or code availability should verify the full text, as the listing does not include these details.",
+      "abstract": "Matrix-valued time series, arising in diverse fields such as economics, neuroscience, and recommender systems, have become increasingly prominent in modern data analysis. Among various modeling frameworks, the matrix-variate CP-factor model represents an important and widely applicable class for capturing low-rank structures in matrix time series. In this paper, we provide a unified treatment for the identification problem of CP factor models using both analytic and algebraic tools. In particular, we characterize the parameter space as the union of two subspaces, one identifiable and the other non-identifiable. We show that existing estimation methods only apply to an open proper subset of the identifiable subspace. In contrast, we propose a quasi-maximum likelihood estimation (QMLE) procedure for CP factor models, which allows consistent estimation on the whole identifiable subspace. Moreover, we show that the estimated loading matrices by QMLE achieve a faster convergence rate compared to existing approaches. A simulation study and a real application are conducted to demonstrate the finite-sample performance of the proposed method.",
+      "takeaways": [
+        "The object is a statistical estimation procedure for matrix-variate CP-factor models, specifically addressing the identification problem within the parameter space.",
+        "A visible limit is that the listing does not specify the exact convergence rate improvement or the specific real-world dataset used, leaving the magnitude of the advantage unquantified in this summary.",
+        "The artifact status is unclear because no code repository or supplementary material is declared in the listing, so the implementation is not directly accessible from this metadata."
+      ],
+      "plain": {
+        "reported": "The authors state that their new statistical method can reliably estimate the model's parameters across the entire range where the model is mathematically distinguishable, which they tested using computer simulations and real-world data.",
+        "brief": "The authors analyze a type of statistical model used for data that looks like a grid of numbers changing over time. They map out exactly where this model works and where it fails, finding that previous methods only worked in a small part of the working area.\n\nThey introduce a new way to calculate the model's parameters that works across the entire working area. They claim this new method gets closer to the true values faster than older methods, based on tests they ran, but they do not list specific numbers in this summary.\n\nPeople who use these grid-like time series models in economics or neuroscience might find the mathematical breakdown useful. If you need to see the actual code or specific performance numbers, you will need to look at the full paper because this summary does not include them.",
+        "takeaways": [
+          "The paper focuses on a mathematical method for analyzing data that is organized in rows and columns and changes over time.",
+          "The summary does not say how much faster the new method is or what specific real-world data was used, so the practical impact is not fully clear from this text.",
+          "It is not stated whether the authors have shared their computer code, so you cannot assume you can download and run their method directly from this listing."
+        ]
+      },
+      "actions": [
+        "Verify the specific convergence rate claims and the details of the real application by reading the full PDF.",
+        "Check the paper's supplementary materials or author websites for code availability, as the listing does not declare a repository."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-09-21",
+        "publishedOn": "2026-09-21",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.20910"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-21T18:18:05.002Z"
+      }
+    },
+    {
+      "id": "2609.20993",
+      "arxivId": "2609.20993",
+      "url": "https://arxiv.org/abs/2609.20993",
+      "topic": "Engineering",
+      "reported": "The authors report that their event-based scoring metric confirmed accuracy of estimated detrusor pressure with scores ranging from 85% to 95% with median at 93%.",
+      "metrics": [
+        "scores ranging from 85% to 95%",
+        "median at 93%",
+        "30 of the 40 cases"
+      ],
+      "title": "Event-Based Estimation for Detrusor Pressure Using a Single Bladder Catheter Augmented with Abdominal Electromyography",
+      "authors": "Mohamed Abdelhady, Reilly Burhanna, Lee Brody, Margot S. Damaser, Steve J. A. Majerus",
+      "takeaway": "The paper claims to develop a real-time framework using a single bladder catheter and abdominal electromyography to estimate detrusor pressure without an abdominal catheter.",
+      "brief": "The authors propose a method to estimate detrusor pressure using a single vesical pressure channel and surface abdominal electromyography, aiming to remove the need for a second abdominal catheter during urodynamic studies.\n\nThey report that 30 of 40 cases met feasibility criteria after a provocative maneuver, and an event-based scoring metric yielded accuracy scores between 85% and 95% with a median of 93%. The listing does not specify the exact clinical validation protocol beyond the 40 studies or the specific hardware compatibility details beyond general compatibility claims.\n\nResearchers in urodynamic signal processing or clinical engineering may find this relevant for catheter-reduction strategies. Clinicians or engineers not focused on urodynamic pressure estimation or surface EMG integration may find the specific application niche too narrow for their immediate work.",
+      "abstract": "Objective: The aim of this study was to enhance patient comfort and diagnostic accuracy in urodynamic studies (UDS) by developing a novel framework that uses a single vesical pressure (Pves) channel combined with a surface abdominal electromyography (AEMG) electrode array to estimate detrusor pressure (Pdet) without the need for an abdominal catheter. The proposed method was designed to operate in real-time, and to be compatible with current UDS clinical hardware. Methods: 40 UDS studies were performed with AEMG measured simultaneously with both Pves and Pabd. A predefined, provocative abdominal maneuver was used before each study to ensure accurate coupling between the AEMG signal and associated abdominal pressures seen in Pves. Criteria were set to determine if coupling was sufficient for Pdet estimation from Pves and AEMG. Post-hoc signal processing was used to further refine and evaluate estimated Pdet using automated, non-causal event detection. An event-based scoring metric was used to determine how accurately this approach estimated Pdet by calculating the percentage of signal contained in the appropriate channel for that event (Pdet vs abdominal pressure). Results: The results showed that 30 of the 40 cases indicated a \"Go\" status after the provocative maneuver, demonstrating feasibility of this method in a majority of UDS studies. The scoring metric, along with correlation analysis, confirmed accuracy of estimated Pdet with scores ranging from 85% to 95% with median at 93%. Significance: This innovative approach has the potential to revolutionize urodynamic studies by providing a more comfortable and accurate diagnostic tool for assessing bladder function. This is particularly beneficial for vulnerable populations, such as the elderly and children, reducing the need for multiple catheters and improving the overall patient experience during UDS.",
+      "takeaways": [
+        "The object is a signal-processing framework for estimating detrusor pressure from single-channel bladder pressure and abdominal EMG.",
+        "A visible limit is the reliance on a predefined provocative maneuver to ensure signal coupling, which may not apply to all patient populations or spontaneous events.",
+        "The artifact status is not established in the listing; no code or dataset repository is provided."
+      ],
+      "plain": {
+        "reported": "The authors state that their measurement method showed accuracy scores between 85% and 95%, with a middle value of 93%, when comparing their estimated bladder muscle pressure to the actual pressure.",
+        "brief": "The researchers created a system to guess the pressure inside the bladder muscle using one tube in the bladder and sensors on the belly, instead of using two tubes.\n\nThey tested this on 40 patients. In 30 cases, the system worked well. Their scoring system showed the estimates were 85% to 95% accurate, with a typical score of 93%. The text does not explain exactly how the system handles patients who cannot perform the specific belly movement required for the test.\n\nPeople who study how to measure bladder pressure or who design medical sensors might find this useful. People who do not work with bladder tests or belly muscle sensors might not find this directly useful for their daily work.",
+        "takeaways": [
+          "The main thing being studied is a way to calculate bladder muscle pressure using one tube and belly sensors.",
+          "A clear limitation is that the test requires the patient to do a specific belly movement to make the sensors work correctly.",
+          "The listing does not say if the computer code or data used for this study is available for others to download or check."
+        ]
+      },
+      "actions": [
+        "Verify the specific definitions of the 'Go' status criteria and the event-based scoring metric in the full PDF to assess clinical applicability.",
+        "Check the full text for details on the abdominal EMG electrode array configuration and the specific urodynamic hardware used for compatibility claims."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-09-21",
+        "publishedOn": "2026-09-21",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.20993"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-21T18:18:05.002Z"
+      }
+    },
+    {
+      "id": "2609.21056",
+      "arxivId": "2609.21056",
+      "url": "https://arxiv.org/abs/2609.21056",
+      "topic": "Econ",
+      "reported": "The authors report that their proposed PPML estimator substantially reduces bias and is more stable than nonlinear least squares in Monte Carlo simulations under moderate and strong selection dependence.",
+      "metrics": [],
+      "title": "Poisson Regression under Multivariate Sample Selection",
+      "authors": "Kirill O. Morozov",
+      "takeaway": "The paper develops a Poisson regression model with multivariate sample selection that allows for an arbitrary number of selection equations and proposes two-step estimation procedures.",
+      "brief": "The authors propose a Poisson regression model with multivariate sample selection, claiming it is the first to allow an arbitrary number of selection equations and to apply PPML to this setting.\n\nThey report that Monte Carlo simulations show the PPML estimator reduces bias and is more stable than nonlinear least squares under moderate and strong selection dependence. The listing does not specify the exact magnitude of bias reduction, the specific data or benchmark used for empirical validation, or the exact parameter values tested in the simulations.\n\nResearchers working on count data with complex selection mechanisms may find the identification results and PPML estimator relevant. Those requiring empirical validation on real-world datasets or specific numerical performance benchmarks should note the listing only provides simulation-based evidence.",
+      "abstract": "This paper develops a Poisson regression model with multivariate sample selection, in which the outcome is observed only when several potentially correlated selection conditions are satisfied. To the best of our knowledge, this is the first Poisson sample selection model that allows for an arbitrary number of selection equations. We derive the conditional mean of the observed outcome under joint normality of the outcome and selection errors and obtain a multivariate selection-correction term. We prove identification of the model parameters and show that, under suitable support and rank conditions, the outcome parameters can be identified without an exclusion restriction. We also propose two-step estimation procedures based on nonlinear least squares and Poisson pseudo-maximum likelihood. To the best of our knowledge, this paper is the first to apply PPML to a Poisson regression model with sample selection. The consistency of both estimators is established, and a robust two-step sandwich covariance matrix is proposed to account for the estimation error from the first-step selection model. In addition, factorial moments are used to recover the variance of the latent outcome error and the correlations between the outcome and selection errors. Monte Carlo simulations show that ignoring sample selection leads to persistent bias when the outcome and selection errors are correlated, while the proposed PPML estimator substantially reduces this bias and is more stable than nonlinear least squares, especially under moderate and strong selection dependence.",
+      "takeaways": [
+        "The object is a theoretical and simulation-based econometric model for Poisson regression with multivariate selection.",
+        "A visible limit is the reliance on Monte Carlo simulations for performance claims, with no empirical application or specific numerical bias reduction figures provided in the abstract.",
+        "The artifact status is theoretical; no code repository or dataset is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that their proposed PPML estimator substantially reduces bias and is more stable than nonlinear least squares in Monte Carlo simulations under moderate and strong selection dependence.",
+        "brief": "The authors propose a statistical model for counting data where the data is only observed if multiple conditions are met. They claim this is the first model of its kind to handle any number of conditions and to use a specific estimation method called PPML.\n\nThey report that computer simulations show their method reduces errors and is more stable than an alternative method when the conditions are strongly related. The listing does not say how much the errors are reduced, what real-world data was used, or the exact numbers tested in the simulations.\n\nPeople who study counting data with complex filtering rules may find the theory and estimation method useful. People who need proof that the method works on real data or specific performance numbers should note that the listing only shows simulation results.",
+        "takeaways": [
+          "The object is a mathematical model and simulation study for counting data with multiple filters.",
+          "A visible limit is that the performance claims come only from computer simulations, with no real-world data or specific error reduction numbers in the abstract.",
+          "The artifact status is theoretical; no code or data files are listed."
+        ]
+      },
+      "actions": [
+        "Verify the specific simulation design and bias reduction magnitudes by reading the full PDF.",
+        "Check the paper's appendix or supplementary materials for the exact support and rank conditions required for identification without exclusion restrictions."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.EM"
+      ],
+      "listing": {
+        "listedOn": "2026-09-21",
+        "publishedOn": "2026-09-21",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.21056"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-21T18:18:05.002Z"
+      }
+    },
+    {
+      "id": "2609.21394",
+      "arxivId": "2609.21394",
+      "url": "https://arxiv.org/abs/2609.21394",
+      "topic": "Health",
+      "reported": "The authors report that combined recovery was 13.9% across 4,320 synthetic 16-muscle datasets, with rank selection exact in only 17.6% of cases.",
+      "metrics": [
+        "combined recovery was 13.9%",
+        "Rank selection was exact in 17.6% of datasets",
+        "cosine similarity of at least 0.80"
+      ],
+      "title": "High Reconstruction Quality and Restart Repeatability Do Not Guarantee Recovery of Ground-Truth Muscle Synergies",
+      "authors": "Ye Ma, Dongwei Liu, Meijin Hou, Chenyi Guo",
+      "takeaway": "High reconstruction quality and restart repeatability do not guarantee the recovery of ground-truth muscle synergies.",
+      "brief": "The paper claims that high variance-accounted-for (VAF) scores and consistent results across repeated fits do not ensure that the underlying muscle synergy structure is correctly identified. The authors tested this using non-negative matrix factorisation on synthetic datasets to see if standard selection rules recover the true generating rank and spatial vectors.\n\nThe strongest reported result is that combined recovery occurred in only 13.9% of 4,320 synthetic datasets, even when VAF was high. Among fits with VAF at least 0.90, only 11.3% achieved combined recovery. The authors note that recovery declined significantly with increasing spatial similarity and activation overlap, and that rank selection was often incorrect.\n\nResearchers using muscle synergy analysis should open this paper to understand the limitations of VAF and repeatability as validation metrics. Those relying solely on reconstruction quality for biological interpretation should ignore the assumption that high VAF implies correct structural recovery.",
+      "abstract": "High reconstruction quality and agreement across repeated fits do not necessarily establish recovery of muscle synergies. We tested whether a variance-accounted-for (VAF)/elbow rule recovers the generating synergy count and spatial vectors, whether high restart repeatability indicates recovery, and how five design factors affect recovery. Non-negative matrix factorisation was applied to 4,320 synthetic 16-muscle datasets varying generating rank, noise, trial count, spatial similarity and activation overlap. Combined recovery required the correct rank and cosine similarity of at least 0.80 for every matched spatial vector. Factor effects and two-factor interactions were assessed using exploratory heteroscedastic Wald tests with Benjamini-Hochberg adjustment. Rank selection was exact in 17.6% of datasets, too low in 54.9% and too high in 27.5%; combined recovery was 13.9%. Among fits with VAF at least 0.90, only 11.3% achieved combined recovery. Among 3,762 datasets with spatial repeatability at least 0.95, 19.6% had the correct rank and 15.7% achieved combined recovery. All five factors were associated with recovery (adjusted p < 0.001). Recovery declined from 26.2% to 1.7% with increasing spatial similarity and from 26.2% to 2.2% with increasing activation overlap. It was lower at ranks 7-9 than at 3-5, increased from 11.0% with 3 trials to 15.8% with 80 trials, and varied non-monotonically with noise. Five noiseless signals synthesised from measured-sEMG reference factors also showed under-selection despite VAF above 0.918. Under this selector, high reconstruction quality and restart agreement were insufficient indicators of correct rank and spatial recovery. Muscle-synergy interpretation should account for rank sensitivity and the separability of spatial and activation patterns.",
+      "takeaways": [
+        "The object is the validity of VAF and restart repeatability as indicators of correct muscle synergy recovery.",
+        "A visible limit is that the study relies on synthetic datasets and a specific VAF/elbow rule, which may not capture all real-world EMG complexities.",
+        "The artifact status is not established in the listing, as no code or data repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that their method correctly identified the true muscle patterns in only 13.9% of 4,320 computer-generated datasets, with the correct number of patterns found in only 17.6% of cases.",
+        "brief": "The paper argues that getting a high score for how well a model fits data, and getting the same result when you run the model multiple times, does not mean the model has found the true underlying muscle patterns. The authors tested this by using a mathematical method called non-negative matrix factorisation on fake data sets designed to mimic muscle activity.\n\nThe main finding is that even when the model fit the data very well (a score of 0.90 or higher), it only found the correct true patterns in 11.3% of cases. The authors found that the method failed more often when the muscle patterns were very similar to each other or when the muscle activity overlapped significantly. The correct number of patterns was often guessed wrong.\n\nScientists who analyze muscle signals should read this paper to understand why high fit scores might be misleading. People who assume that a good fit score means the biological structure is correctly identified should ignore that assumption.",
+        "takeaways": [
+          "The paper examines whether high fit scores and consistent results actually mean the true muscle patterns have been found.",
+          "A limitation is that the tests were done on computer-generated data, which might not perfectly match real human muscle signals.",
+          "It is not stated in the summary whether the authors have shared their code or data for others to check."
+        ]
+      },
+      "actions": [
+        "Verify the specific implementation of the VAF/elbow rule and the synthetic data generation parameters in the full PDF.",
+        "Check if the authors provide supplementary code or data to reproduce the 4,320 dataset experiments."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM"
+      ],
+      "listing": {
+        "listedOn": "2026-09-21",
+        "publishedOn": "2026-09-21",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.21394"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-21T18:18:05.002Z"
+      }
+    }
+  ]
+}
