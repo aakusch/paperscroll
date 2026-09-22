@@ -1,0 +1,667 @@
+{
+  "date": "2026-09-22",
+  "label": "Tue, Sep 22",
+  "minutes": 10,
+  "poolSize": 128,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-09-22T17:00:51.751Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2609.24972",
+      "arxivId": "2609.24972",
+      "url": "https://arxiv.org/abs/2609.24972",
+      "topic": "AI",
+      "reported": "The authors report that RRSI gains up to 14.1 points on the split it evolves against and up to 4.7 points on the five out-of-distribution benchmarks.",
+      "metrics": [
+        "up to 14.1 points",
+        "up to 4.7 points",
+        "30% fewer policy tokens"
+      ],
+      "title": "RRSI: Regularized Recursive Self-Improvement of Agent Harnesses",
+      "authors": "Peng Xia, Rujun Han, Zifeng Wang, Yanfei Chen, Yufan Zhang, Yoonho Lee, Chengsong Huang, Han Yu, Zhongying CuiZhu, Yifei Ming, Huaxiu Yao, Burak Gokturk, Tomas Pfister, Chen-Yu Lee",
+      "takeaway": "The paper introduces Regularized Recursive Self-Improvement of Agent Harnesses (RRSI) to constrain harness evolution and prevent overfitting to training tasks.",
+      "brief": "The authors propose RRSI, a method that regularizes the iterative improvement of LLM agent harnesses by constraining both the proposal and selection of component edits. They argue that existing recursive self-improvement methods often overfit to in-distribution tasks, leading to diminished performance on out-of-distribution benchmarks.\n\nThe authors report that RRSI achieves up to 14.1 points on the evolution split and up to 4.7 points on five out-of-distribution benchmarks across coding, agentic workspace, and engineering design tasks. They also state that the resulting harness uses 30% fewer policy tokens than unregularized evolution. The listing does not specify the exact baseline models or the specific composition of the eight benchmarks used for evaluation.\n\nResearchers working on LLM agent architecture optimization and automated prompt engineering may find this relevant. Those focused solely on static model fine-tuning or non-agent LLM applications may find the specific harness-centric approach less applicable.",
+      "abstract": "An LLM agent's capability is largely magnified by its harness, namely the prompts, control flow, tooling, memory, and context management surrounding the frozen backbone model. Recent methods increasingly automate this process by iteratively proposing and selecting component-wise edits of an agent harness, practically establishing a form of recursive self-improvement (RSI) at the agent-system level. However, such recursive evolution may overfit by memorizing the training tasks, showing large in-distribution gains that shrink or even vanish on out-of-distribution benchmarks. We introduce Regularized Recursive Self-Improvement of Agent Harnesses (RRSI), which incorporates the principles of regularizations into harness self-improvement by constraining the evolution candidate proposal and selection. The proposer operates with a temporally annealed budget, limiting how many edits a candidate can bundle, and it encourages unexplored trajectories based on evolution history. The selector is equipped with a critic and a pruner: the critic screens benchmark-specific proposals, while the pruner, removes changes that are too small, too expensive, or no longer useful. Together these constraints favor reusable agent mechanisms over benchmark-specific ones or even noises. Across eight benchmarks spanning coding, agentic workspace and engineering design tasks, RRSI gains up to 14.1 points on the split it evolves against and up to 4.7 points on the five out-of-distribution benchmarks, while producing a harness that runs on 30% fewer policy tokens than the unregularized evolution. Code is available at https://github.com/google-research/rrsi and project page is https://regularized-rsi.com/.",
+      "takeaways": [
+        "The object is a regularization framework for automated agent harness editing, not a new foundation model.",
+        "A visible limit is the reliance on specific benchmark splits for validation, with the exact in-distribution task set not detailed in the abstract.",
+        "The artifact status is established by the provided GitHub repository and project page links."
+      ],
+      "plain": {
+        "reported": "The authors report that their method improves performance by up to 14.1 points on the test set used for training and by up to 4.7 points on five different test sets not used for training.",
+        "brief": "The authors propose a method called RRSI that improves how AI agents are built by carefully limiting the changes made to their instruction sets and tools. They argue that previous methods often memorize the specific training examples, which causes performance to drop when the AI faces new, unseen tasks.\n\nThe authors state that their method achieves up to 14.1 points on the training test set and up to 4.7 points on five new test sets covering coding and design tasks. They also claim the final AI system uses 30% fewer computational tokens than the unregulated version. The abstract does not list the specific names of the eight benchmarks or the base AI models used.\n\nPeople who build and optimize AI agent systems may find this useful. People who only use standard AI chatbots or work on different AI fields may not find this specific technical approach relevant.",
+        "takeaways": [
+          "The focus is on a technique for automatically improving AI agent instructions and tools, not on training a new AI brain.",
+          "A limitation is that the specific test tasks used to prove the method works are not listed in the summary.",
+          "The code and project website are publicly available as stated in the listing."
+        ]
+      },
+      "actions": [
+        "Verify the specific eight benchmarks and baseline harness configurations in the PDF to assess the generalizability of the reported gains.",
+        "Check the GitHub repository to confirm the availability of the critic and pruner implementation details mentioned in the abstract."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/google-research/rrsi",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-22",
+        "publishedOn": "2026-09-21",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.24972",
+            "upvotes": 141
+          }
+        ]
+      },
+      "trend": {
+        "votes": 141,
+        "rank": 1,
+        "of": 25,
+        "perDay": 141
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 141,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-22T17:00:51.751Z"
+      }
+    },
+    {
+      "id": "2609.24984",
+      "arxivId": "2609.24984",
+      "url": "https://arxiv.org/abs/2609.24984",
+      "topic": "AI",
+      "reported": "The authors report substantial gains in long-horizon consistency and camera-control accuracy while preserving visual quality during minute-scale exploration.",
+      "metrics": [],
+      "title": "WorldCrafter: Consistent Video World Model with Implicit 3D-aware Memory",
+      "authors": "Wangbo Yu, Kunhao Liu, Wenbo Hu, Shenghai Yuan, Chaoran Feng, Haiyang Zhou, Yukun Huang, Yiran Wang, Wang Zhao, Yingmin Luo, Ying Shan",
+      "takeaway": "WorldCrafter is a video world model that learns a camera-queryable implicit 3D-aware memory to respect prior observations over long horizons and across viewpoints.",
+      "brief": "The authors propose WorldCrafter, a video world model using an implicit 3D-aware memory to maintain consistency across viewpoints and long horizons. The system integrates historical observations into view-specific tokens without explicit depth-based correspondences.\n\nExperiments across static and dynamic scenes show substantial gains in long-horizon consistency and camera-control accuracy. The authors state that visual quality is preserved during minute-scale exploration. No specific quantitative metrics or benchmark names are provided in the abstract.\n\nResearchers working on video generation, 3D-aware memory, or interactive world models may find this relevant. Those requiring specific quantitative benchmarks or explicit depth correspondence methods may need to consult the full paper.",
+      "abstract": "Video world models enable interactive exploration of dynamic environments, yet struggle to respect prior observations over long horizons and across viewpoints. We present WorldCrafter, a video world model that learns a camera-queryable implicit 3D-aware memory for this purpose. The key insight is to let the requested viewpoint shape how multi-view evidence is compressed into the video generator's limited token budget. Trained jointly with the video generator, a memory encoder and pose-conditioned readout module integrate historical observations into a fixed set of target view-specific tokens before denoising, without explicit depth-based correspondences. By combining this memory with recent temporal context and few-step distillation, WorldCrafter enables streaming scene exploration from a single input image or text prompt. Experiments across static and dynamic scenes show substantial gains in long-horizon consistency and camera-control accuracy while preserving visual quality during minute-scale exploration.",
+      "takeaways": [
+        "The core object is a video world model with an implicit 3D-aware memory module.",
+        "The abstract claims gains in consistency and camera control but does not specify the magnitude of these improvements.",
+        "The listing does not establish whether the reported gains are statistically significant or compared against specific baselines."
+      ],
+      "plain": {
+        "reported": "The authors report that their model performs better at keeping scenes consistent over long periods and following camera commands accurately, while still looking good, during explorations lasting several minutes.",
+        "brief": "The authors created a tool called WorldCrafter that generates videos of environments. It uses a special memory system to remember what it has seen before, helping it stay consistent when the camera moves around or when a lot of time passes. This memory works without needing to calculate exact 3D distances between objects.\n\nTests in both still and moving scenes showed that the model is better at keeping things consistent over long stretches and following camera directions. The authors say the video quality stays high even when exploring for several minutes. The summary does not include specific numbers or names of the tests used.\n\nPeople who build AI systems that create videos or simulate 3D worlds might find this useful. People who need exact numbers or specific test results should look at the full document.",
+        "takeaways": [
+          "The main thing being built is a video generator that remembers 3D details implicitly.",
+          "The summary says it works better but does not say by how much.",
+          "It is not clear from the summary if the improvements are proven against other specific models."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative metrics and baseline comparisons in the full PDF.",
+        "Check the provided GitHub repository for code availability and implementation details."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/TencentARC/WorldCrafter",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-22",
+        "publishedOn": "2026-09-21",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.24984",
+            "upvotes": 107
+          }
+        ]
+      },
+      "trend": {
+        "votes": 107,
+        "rank": 2,
+        "of": 25,
+        "perDay": 107
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 107,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-22T17:00:51.751Z"
+      }
+    },
+    {
+      "id": "2609.25001",
+      "arxivId": "2609.25001",
+      "url": "https://arxiv.org/abs/2609.25001",
+      "topic": "AI",
+      "reported": "The authors report evaluating 47 models through more than one million model invocations, revealing a meaningful hierarchy of task difficulty and pronounced differences in model capabilities.",
+      "metrics": [
+        "5,000 hours of recordings",
+        "21 games",
+        "47 models"
+      ],
+      "title": "GameHorizon Suite: Multi-Horizon Data and Evaluation in Gameplay",
+      "authors": "Yiran Wang, Xingyilang Yin, Junfu Pu, Guangzhi Wang, Kaifeng Li, Mingyu Ouyang, Huiqiang Sun, Lingen Li, Cheng Cheng, Wangbo Yu, Honghao Chen, Xiaodong Cun, Chi-Man Pun, Zhiguo Cao, Ying Shan",
+      "takeaway": "The paper introduces GameHorizon, a unified data and evaluation suite that measures gameplay capabilities at different horizons for diverse model families.",
+      "brief": "The authors present GameHorizon Suite, comprising an automated annotation pipeline, a large-scale AAA gameplay dataset, and a benchmark with offline and online tracks. The dataset includes 5,000 hours of recordings from 21 games collected by 100 human expert players, while the benchmark uses standardized questions and stepwise online testing to localize failures. The authors state that existing datasets often cover narrow game ranges, lack language instructions, or rely on high-variance online rollouts, which this suite aims to address.\n\nThe strongest reported result is the evaluation of 47 models through more than one million model invocations, which the authors say reveals a meaningful hierarchy of task difficulty and pronounced differences in model capabilities. The listing does not specify particular accuracy scores, latency figures, or statistical significance levels for individual models. It also does not establish whether the offline scores fully predict online gameplay performance beyond the stated goal of testing this relationship.\n\nResearchers working on video game AI, multi-horizon planning, or large-scale gameplay data collection may find the standardized yardstick and released components useful. Those focused on non-game visual understanding or models that do not require precise action control over temporal horizons may find the specific benchmark less directly applicable.",
+      "abstract": "Modern video games provide a measurable testbed for AI models, combining abilities of visual understanding, instruction decomposition, goal planning, and precise action control over multiple temporal horizons. Existing datasets and benchmarks, however, either cover a narrow range of games, lack language instructions, or rely on high-variance online rollouts. To address these challenges, we introduce GameHorizon, a unified data and evaluation suite that measures gameplay capabilities at different horizons for diverse model families. GameHorizon Suite consists of three components. First, GameHorizon-Annotator is a scalable and automated annotation pipeline for multi-horizon instructions. Second, utilizing the pipeline, we construct GameHorizon-Data, the first large-scale AAA gameplay dataset with temporally aligned videos, player actions, and multi-horizon instructions. It comprises 5,000 hours of recordings from 21 games, collected by 100 human expert players. Third, we build GameHorizon-Bench with reproducible offline and stepwise online testing. The offline track enables reproducible evaluation using thousands of standardized questions organized into three primary tasks and a series of diagnostic variants, while the online track tests whether offline scores reflect actual gameplay capabilities and localizes failures to specific steps within long-horizon gameplay. Based on our GameHorizon Suite, we evaluate 47 models through more than one million model invocations, revealing a meaningful hierarchy of task difficulty and pronounced differences in model capabilities. Our work can provide a standardized yardstick for evaluating gameplay capabilities across horizons and model families. We will release our dataset, annotator, and benchmark to facilitate future research.",
+      "takeaways": [
+        "The object is a unified suite combining an annotator, a 5,000-hour AAA gameplay dataset, and a dual-track benchmark for multi-horizon evaluation.",
+        "A visible limit is that the listing does not provide specific quantitative performance metrics for individual models, only stating that differences were pronounced.",
+        "The artifact status is declared as a GitHub repository at https://github.com/TencentARC/GameHorizon, with the authors stating they will release the dataset, annotator, and benchmark."
+      ],
+      "plain": {
+        "reported": "The authors report testing 47 different AI models using over one million separate runs, finding that some tasks are harder than others and that the models perform differently on them.",
+        "brief": "The authors created a tool called GameHorizon Suite. It has three parts: a program that automatically labels video game footage, a large collection of 5,000 hours of gameplay from 21 games recorded by 100 skilled humans, and a test set with both offline questions and online gameplay tests. They say current tools are limited because they cover few games, lack text instructions, or give inconsistent results when testing live.\n\nThe main result they report is that they tested 47 models over one million times. They say this showed a clear ranking of how hard different tasks are and big differences in how well the models did. The summary does not give specific scores, error rates, or statistical proof for these differences. It also does not confirm if the offline test scores perfectly match real gameplay performance.\n\nPeople studying AI in video games, planning over time, or collecting large game data might find this useful. People studying other types of visual AI or models that do not need to control actions over time might not find it directly useful.",
+        "takeaways": [
+          "The thing being described is a package with a labeling tool, a 5,000-hour game video dataset, and a test system for checking AI skills over different time spans.",
+          "A clear limitation is that the summary does not list specific numbers for how well each model performed, only saying the differences were noticeable.",
+          "The code and data are said to be available at a specific GitHub link, and the authors say they will release the full package."
+        ]
+      },
+      "actions": [
+        "Verify the existence and contents of the GitHub repository at https://github.com/TencentARC/GameHorizon to confirm the release of the dataset and benchmark code.",
+        "Read the full PDF to identify the specific quantitative metrics and statistical analyses used to support the claim of a meaningful hierarchy of task difficulty."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/TencentARC/GameHorizon",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-22",
+        "publishedOn": "2026-09-21",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.25001",
+            "upvotes": 107
+          }
+        ]
+      },
+      "trend": {
+        "votes": 107,
+        "rank": 3,
+        "of": 25,
+        "perDay": 107
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 107,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-22T17:00:51.751Z"
+      }
+    },
+    {
+      "id": "2609.22966",
+      "arxivId": "2609.22966",
+      "url": "https://arxiv.org/abs/2609.22966",
+      "topic": "AI",
+      "reported": "The authors report that RoboDawn achieves a 73.6% success rate on RoboTwin 2.0 C2R in a one-shot setting, outperforming the π0.5 baseline of 46.0%.",
+      "metrics": [
+        "73.6% one-shot",
+        "46.0%",
+        "47.17% one-shot"
+      ],
+      "title": "Transferring the Intelligence of VLMs to Robotic Control",
+      "authors": "Meng-Hao Guo, Zhe-Han Mo, Jia-Jun Wang, Yi Zhang, Kejin Wang, Yi-Xuan Deng, Jia-Peng Zhang, Yongming Rao, Shi-Min Hu",
+      "takeaway": "The paper claims that a vision-language model can control a robot in a closed loop using a discrete command interface without task-specific robot training.",
+      "brief": "The authors propose RoboDawn, an interface that allows a vision-language model to control a robot via discrete translation, rotation, and gripper commands. They introduce an in-context learning scheme that uses a few demonstrations to ground the model in interface usage and task-solving strategies.\n\nExperiments on RoboTwin 2.0 C2R and RoboDojo show that the method outperforms several strong policies trained on benchmark-specific robot data in the zero-shot setting. A single in-context demonstration yields substantial performance gains, establishing state-of-the-art results on these benchmarks. The authors also state that the framework transfers to real-world robots, performing block-in-basket and block stacking on Franka.\n\nResearchers working on vision-language models for robotic control or cross-embodiment generalization should open this paper. Those focused on low-level motor control or non-visual robotic tasks may ignore it.",
+      "abstract": "Humans can seamlessly adapt to both physical and digital worlds, suggesting that while a digital-to-real gap exists in embodiment, environment and task, human intelligence itself may transfer across this gap. This naturally raises a fundamental question: can the intelligence of vision-language models (VLMs) similarly generalize from the digital world to the physical world for robotic control? We investigate this question through RoboDawn, a human-intuitive interface that exposes robotic control to an agentic VLM through a compact set of discrete translation, rotation, and gripper commands. Using this interface, the VLM controls a robot in a closed loop: it observes the current visual state, reasons about the next action, executes it, and adapts subsequent decisions to the resulting state. Furthermore, we introduce an in-context learning (ICL) scheme that uses a few demonstrations to ground the VLM in both interface usage and task-solving strategies. Experiments on RoboTwin 2.0 C2R and RoboDojo demonstrate that RoboDawn achieves strong performance without task-specific robot training. In the zero-shot setting, RoboDawn outperforms several strong policies trained on benchmarkspecific robot data, while a single in-context demonstration further yields substantial performance gains and establishes state-of-the-art (SOTA) results. On RoboTwin 2.0 C2R, the success rate increases from 53.2% zero-shot to 73.6% one-shot, exceeding the solid baseline π0.5 (46.0%). Similar gains are observed on RoboDojo, where success rate improves from 35.67% zero-shot to 47.17% one-shot. The same framework also transfers to real-world robots, performing block-in-basket and block stacking on Franka.",
+      "takeaways": [
+        "The object is a high-level agentic interface that translates VLM reasoning into discrete robotic commands rather than a low-level policy network.",
+        "The visible limit is the reliance on a compact set of discrete commands, which may constrain the granularity of physical manipulation compared to continuous control.",
+        "The artifact status is not established in the listing, as no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their system achieved a 73.6% success rate on a specific robot benchmark when given one example, beating a competing system that scored 46.0%.",
+        "brief": "The authors created a system called RoboDawn that lets an AI model control a robot by sending simple commands like move, rotate, or grab. They also added a method where the AI learns from a few examples of how to use the controls and solve tasks.\n\nTests on two robot benchmarks showed the system worked better than other AI systems trained specifically for those tasks. Giving the AI just one example significantly improved its performance, making it the best on those tests. The authors also say it worked on a real robot, stacking blocks and putting them in a basket.\n\nPeople studying how AI models can control robots or work across different physical setups should look at this. People focused on the detailed mechanics of robot movement or tasks that do not involve vision might skip it.",
+        "takeaways": [
+          "The system acts as a translator between a high-level AI brain and a robot's physical actions, using simple commands instead of complex mathematical calculations.",
+          "A limitation is that the robot can only do specific, pre-defined movements, which might make it less flexible than a robot that can move smoothly in any direction.",
+          "The listing does not say if the code or software is available for others to download and use."
+        ]
+      },
+      "actions": [
+        "Verify the specific success rate numbers and baseline comparisons by reading the full PDF and checking the experimental setup details.",
+        "Check the supplementary materials or repository for the exact definition of the discrete command set and the in-context learning demonstration format."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-22",
+        "publishedOn": "2026-09-19",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.22966",
+            "upvotes": 99
+          }
+        ]
+      },
+      "trend": {
+        "votes": 99,
+        "rank": 4,
+        "of": 25,
+        "perDay": 33
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 99,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-19"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-22T17:00:51.751Z"
+      }
+    },
+    {
+      "id": "2609.22087",
+      "arxivId": "2609.22087",
+      "url": "https://arxiv.org/abs/2609.22087",
+      "topic": "Engineering",
+      "reported": "The authors report that a strong checkpoint baseline matches uninterrupted training to within data-ordering noise on CIFAR-10/ResNet-18 and exactly on a GPT-2/AdamW task.",
+      "metrics": [
+        "50 physics-grounded availability traces",
+        "~21% of the state-loss penalty"
+      ],
+      "title": "When Is Availability-Aware Training Worth It? A Benchmark and Empirical Study of Interruption-Resilient Optimization Under Predictable Compute Schedules",
+      "authors": "Subhadip Mitra",
+      "takeaway": "The paper claims to provide a benchmark, a strong reproducible baseline protocol, and a characterization of when interruption-resilient optimization is worth its complexity.",
+      "brief": "The authors argue that specialized availability-aware optimizers are often unnecessary when optimizer state can be preserved across compute gaps. They introduce OrbitTrace, a benchmark of 50 physics-grounded availability traces derived from satellite orbital data, to test this premise. The central finding is that a strong checkpoint-and-resume baseline performs comparably to uninterrupted training in most scenarios.\n\nThe strongest reported result is that this baseline matches uninterrupted training to within data-ordering noise on CIFAR-10/ResNet-18 and exactly on a GPT-2/AdamW task. The authors state that previously reported advantages for availability-aware methods arise from comparison against weak baselines. One narrow exception exists where reactive adaptation helps: for large models with non-persistable optimizer state interrupted by frequent short pauses, reconstructing decayed moments recovers only ~21% of the state-loss penalty on average. This benefit vanishes for eclipse-scale gaps.\n\nResearchers working on distributed training, edge computing, or satellite-based machine learning may find the benchmark and baseline protocol useful. Those focused on specialized optimizer design for non-stationary compute environments should note the authors' finding that such methods offer no advantage over strong checkpointing in most tested regimes. The study does not establish whether these findings generalize to other model architectures or hardware configurations beyond those tested.",
+      "abstract": "Training under non-stationary but predictable compute availability (satellites under eclipse, duty-cycled edge devices, power-capped datacenters) is often framed as needing specialized, availability-aware optimizers. We test that premise. We release OrbitTrace, a benchmark of 50 physics-grounded availability traces from SGP4 propagation of live two-line element sets across three orbital regimes, and ask a falsifiable question: when an availability gap interrupts training, is a specialized resumption strategy worth it, or is competent checkpoint-and-resume enough? Our central finding: when optimizer state can be preserved across a gap, the gap is essentially free. A strong checkpoint baseline that restores full optimizer state and indexes its learning-rate schedule in effective (active) time matches uninterrupted training to within data-ordering noise on CIFAR-10/ResNet-18, and exactly on a GPT-2/AdamW task. Advantages previously reported for availability-aware methods, including our own three-pillar method AAT, arise almost entirely from comparison against a weak baseline that indexes its schedule on wall-clock time. Against the strong baseline, reactive adaptation provides no advantage across stationary, optimizer-state-loss, and distribution-drift regimes. We isolate one narrow regime where it helps: for large models whose optimizer state cannot be persisted across gaps and that are interrupted by frequent, short pauses, reconstructing a decayed optimizer moment recovers only ~21% of the state-loss penalty on average (and not robustly across seeds); this vanishes for eclipse-scale gaps, where the decayed moment is indistinguishable from zero. Our contributions are a benchmark, a strong reproducible baseline protocol, and a clear characterization of when interruption-resilient optimization is worth its complexity, and when it is not.",
+      "takeaways": [
+        "The object is a benchmark (OrbitTrace) and empirical study comparing availability-aware optimization against strong checkpoint-and-resume baselines under predictable compute interruptions.",
+        "A visible limit is that the narrow regime where reactive adaptation helps (large models, non-persistable state, frequent short pauses) shows only ~21% recovery of state-loss penalty on average and is not robust across seeds.",
+        "The artifact status is that the authors release OrbitTrace, a benchmark of 50 physics-grounded availability traces, but no code repository URL is provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that a strong checkpoint baseline matches uninterrupted training to within data-ordering noise on CIFAR-10/ResNet-18 and exactly on a GPT-2/AdamW task.",
+        "brief": "The authors argue that specialized availability-aware optimizers are often unnecessary when optimizer state can be preserved across compute gaps. They introduce OrbitTrace, a benchmark of 50 physics-grounded availability traces derived from satellite orbital data, to test this premise. The central finding is that a strong checkpoint-and-resume baseline performs comparably to uninterrupted training in most scenarios.\n\nThe strongest reported result is that this baseline matches uninterrupted training to within data-ordering noise on CIFAR-10/ResNet-18 and exactly on a GPT-2/AdamW task. The authors state that previously reported advantages for availability-aware methods arise from comparison against weak baselines. One narrow exception exists where reactive adaptation helps: for large models with non-persistable optimizer state interrupted by frequent short pauses, reconstructing decayed moments recovers only ~21% of the state-loss penalty on average. This benefit vanishes for eclipse-scale gaps.\n\nResearchers working on distributed training, edge computing, or satellite-based machine learning may find the benchmark and baseline protocol useful. Those focused on specialized optimizer design for non-stationary compute environments should note the authors' finding that such methods offer no advantage over strong checkpointing in most tested regimes. The study does not establish whether these findings generalize to other model architectures or hardware configurations beyond those tested.",
+        "takeaways": [
+          "The object is a benchmark (OrbitTrace) and empirical study comparing availability-aware optimization against strong checkpoint-and-resume baselines under predictable compute interruptions.",
+          "A visible limit is that the narrow regime where reactive adaptation helps (large models, non-persistable state, frequent short pauses) shows only ~21% recovery of state-loss penalty on average and is not robust across seeds.",
+          "The artifact status is that the authors release OrbitTrace, a benchmark of 50 physics-grounded availability traces, but no code repository URL is provided in the listing."
+        ]
+      },
+      "actions": [
+        "Verify the OrbitTrace benchmark and baseline protocol by accessing the full PDF to confirm the exact implementation details of the strong checkpoint baseline and the three-pillar AAT method.",
+        "Check the full paper for details on the specific hardware and model configurations used in the GPT-2/AdamW and CIFAR-10/ResNet-18 experiments to assess generalizability."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP",
+        "cs.DC",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-22",
+        "publishedOn": "2026-09-22",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.22087"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-22"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-22T17:00:51.751Z"
+      }
+    },
+    {
+      "id": "2609.22159",
+      "arxivId": "2609.22159",
+      "url": "https://arxiv.org/abs/2609.22159",
+      "topic": "Physics",
+      "reported": "The author argues that David Glick's perspectival normative realism fails to ground the Born rule's objectivity, proposing instead that a phenomenological horizon explains the quantum state as an agent's weighting.",
+      "metrics": [],
+      "title": "The Limit and Its Ground. QBism, Scientific Realism, and the Born Rule",
+      "authors": "Harald A Wiltsche",
+      "takeaway": "The paper argues that David Glick's perspectival normative realism fails to ground the Born rule's objectivity and that a phenomenological horizon provides a better account of the quantum state.",
+      "brief": "The author contends that QBism's claim to realism is difficult to place because it denies the quantum formalism represents a mind-independent world. The paper examines David Glick's attempt to ground the Born rule's objectivity in states of affairs and argues this approach fails because it treats the agent's perspective as a location within an already-constituted world.\n\nThe author reports that Glick must book the ground of the Born rule as brute because he finds no state of affairs fit to bind every agent at once. The paper proposes that phenomenology supplies the missing element by defining a horizon as the condition under which a world is given, rather than a position within it. The quantum state is then read as an agent's weighting of such a horizon, articulating the invariant lawfulness by which sense confers curvature.\n\nResearchers working on the philosophy of quantum mechanics, specifically the intersection of QBism and scientific realism, should open this paper. Those interested in empirical quantum physics or mathematical derivations of the Born rule should ignore it, as the text is a conceptual argument without experimental data.",
+      "abstract": "QBists insist that theirs is a realist position while denying that the quantum formalism represents a mind-independent world. The insistence is hard to place. The realism debate is throughout a dispute about represented content, so a theory that denies standing in the representation relation appears not to take up a position within that debate at all. This paper examines the most developed attempt to make good on the QBist claim--David Glick's perspectival normative realism--and argues that it fails instructively. Glick seeks the ground of the Born rule's objectivity among states of affairs and construes an agent's perspective as a location within an already-constituted world; finding no state of affairs fit to bind every agent at once, he must book the ground as brute. Phenomenology supplies the third thing his picture lacks. A horizon is not a position within the world but the condition under which a world is given. Read as an agent's weighting--her curvature--of such a horizon, the quantum state is neither a defective description nor a brute posit, and the Born rule articulates the invariant lawfulness by which any sense confers a curvature at all.",
+      "takeaways": [
+        "The object is a philosophical argument critiquing a specific realist interpretation of QBism and offering a phenomenological alternative.",
+        "The visible limit is that the argument relies on the author's interpretation of Glick's work and the applicability of phenomenological concepts to quantum formalism, which are not empirically testable in this listing.",
+        "The artifact status is not established in the listing; no code, dataset, or repository is mentioned."
+      ],
+      "plain": {
+        "reported": "The author argues that a specific philosophical interpretation of quantum mechanics (QBism) fails to explain why the mathematical rules of quantum physics are objective, and suggests a different philosophical framework (phenomenology) works better.",
+        "brief": "The author says that a group of philosophers called QBists claim their view is realistic, but they also say quantum math does not describe a world that exists without minds. This creates a logical problem because realism debates are usually about what the math represents. The paper looks at a specific attempt by a philosopher named David Glick to fix this problem and argues it does not work.\n\nThe author says Glick tries to find the objective basis for quantum rules in facts about the world, but he ends up saying the basis is just a brute fact with no deeper explanation. The paper suggests using ideas from phenomenology (the study of experience) to fill this gap. It defines a 'horizon' as the condition that allows a world to appear to us, not a spot inside the world. The quantum state is then seen as how an agent weights this horizon, which explains the quantum rules as a law of how experience works.\n\nPeople who study the philosophy of quantum mechanics should read this. People who do experiments or calculate quantum physics should skip it because it contains no new data or mathematical proofs.",
+        "takeaways": [
+          "The paper is a philosophical argument about how to interpret quantum mechanics, not a scientific experiment.",
+          "The main weakness is that it depends on interpreting another philosopher's work and applying abstract philosophical concepts to physics, which cannot be tested in a lab.",
+          "The listing does not say if there is any code or data associated with this paper."
+        ]
+      },
+      "actions": [
+        "Verify the specific claims about David Glick's 'perspectival normative realism' by reading the full PDF to ensure the critique accurately represents Glick's position.",
+        "Check the bibliography in the PDF to confirm the primary sources for the phenomenological concepts used to define the 'horizon' and 'curvature'."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "physics.hist-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-09-22",
+        "publishedOn": "2026-09-22",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.22159"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-22"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-22T17:00:51.751Z"
+      }
+    },
+    {
+      "id": "2609.22369",
+      "arxivId": "2609.22369",
+      "url": "https://arxiv.org/abs/2609.22369",
+      "topic": "Health",
+      "reported": "The authors report that under clinician consensus labels, false positives fell to zero in both independent pediatric and adult datasets.",
+      "metrics": [
+        "Jaccard 0.63 vs 0.63",
+        "0.93 vs 0.76",
+        "15/15 adult held-out"
+      ],
+      "title": "Foundation-model-based multi-label phenotyping of combined hyperkinetic movement disorders",
+      "authors": "Laura Cif, Zohra Souei, Diane Demailly, Mayte Castro-Jimenez, Juan Dario Ortigoza-Escobar, Muhammad Mushhood Ur Rehman, Morgan Dornadic, Sophie Huby, Gun-Marie Hariz, Cecile Hubsch, Nathalie Dorison, Eduardo M. Moraud, Jocelyne Bloch, Gabriella Horvath, Olivier Oullier, Xavier Vasques",
+      "takeaway": "The paper claims a frozen foundation-model backbone with light per-site calibration yields transferable, interpretable, conservative multi-label phenotyping of co-occurring hyperkinetic movement disorders across ages.",
+      "brief": "The authors propose a system combining Segment Anything Model 3 and TabICLv2 for multi-label classification of eight hyperkinetic movement disorder phenomenologies using markerless video.\n\nThey report zero false positives under clinician consensus labels in two independent datasets and higher Jaccard scores than YOLOv8 under consensus labels. The listing notes that prospective multi-centre validation is required before clinical use.\n\nResearchers working on movement disorder phenotyping or foundation model transfer may find the specific recalibration approach relevant. Those requiring prospective clinical validation before deployment should note the stated limitation.",
+      "abstract": "Movement disorders (MDs) frequently co-occur, yet phenomenological and severity assessment shows substantial inter-rater variability. Markerless video could improve reproducibility, but prior work is largely single-symptom, depends on standardized acquisition, and lacks validation and transfer across ages and sites. We combined two foundation models into one frozen backbone: Segment Anything Model 3 (SAM 3) for dense, per-frame markerless segmentation summarized into geometric, contour and grid kinematic signals, and TabICLv2, a tabular foundation model, for in-context multi-label classification of eight hyperkinetic MD phenomenologies. Trained on standardized recordings of 21 adults and 4 controls, it transferred unchanged to two independent datasets, pediatric (n=12) and tremor-dominant adult (n=20), assessed with the CODY-SAMP scale; only the patient-level decision step was recalibrated per site. Under clinician consensus labels, false positives fell to zero in both datasets. Dystonia recovered perfectly (7/7 pediatric; 15/15 adult held-out), chorea fully in children (3/3), and tremor was recovered in adults (11/15) once a tremor-rich cohort made it evaluable, through recalibration alone. Per-region effect-size analysis gave clinically coherent, phenomenology-specific signals and identified myoclonus as the principal failure. Against YOLOv8 sparse keypoints, the dense representation matched under clinician permissive labels (Jaccard 0.63 vs 0.63) and was markedly more robust under clinician-label consensus (0.93 vs 0.76). This frozen foundation-model backbone with light per-site calibration yields transferable, interpretable, conservative multi-label phenotyping of co-occurring hyperkinetic MDs across ages and from standardized to routine video, adding robustness on high-confidence, clinician-agreed labels. Prospective multi-centre validation is required before clinical use.",
+      "takeaways": [
+        "The object is a frozen backbone combining SAM 3 and TabICLv2 for multi-label phenotyping of hyperkinetic movement disorders.",
+        "A visible limit is the reliance on clinician consensus labels and the explicit statement that prospective multi-centre validation is required.",
+        "The artifact status is not established in the listing, as no code or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors state that when doctors agreed on the labels, the system did not incorrectly identify any movement disorders in the two separate test groups.",
+        "brief": "The researchers built a tool that uses two existing AI models to identify eight types of involuntary movement disorders from videos without special markers.\n\nThey say the tool made no false alarms when doctors agreed on the correct answers in two different groups of patients. It also performed better than another AI model when using strict doctor-agreed labels. The authors say the tool needs testing in multiple hospitals before it can be used in real clinics.\n\nPeople studying how to automatically identify movement disorders might find the method useful. People who need a tool ready for immediate hospital use should note that the authors say more testing is needed.",
+        "takeaways": [
+          "The tool uses two pre-trained AI models to identify eight types of involuntary movement disorders from video.",
+          "The authors say the tool needs more testing in multiple hospitals before it can be used in real clinics.",
+          "The listing does not say if the code or data are available to download."
+        ]
+      },
+      "actions": [
+        "Verify the specific recalibration procedure for the patient-level decision step in the full PDF.",
+        "Check the full PDF for details on the CODY-SAMP scale assessment and the specific failure mode for myoclonus."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "q-bio.NC"
+      ],
+      "listing": {
+        "listedOn": "2026-09-22",
+        "publishedOn": "2026-09-22",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.22369"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-22"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-22T17:00:51.751Z"
+      }
+    },
+    {
+      "id": "2609.22383",
+      "arxivId": "2609.22383",
+      "url": "https://arxiv.org/abs/2609.22383",
+      "topic": "Stats",
+      "reported": "The authors report that the framework provides a proxy-based route from local IV effects to population causal effects under latent treatment effect and compliance heterogeneity.",
+      "metrics": [],
+      "title": "Bridging Local and Population Causal Effects: A Proximal Instrumental Variable Approach",
+      "authors": "Zixuan Yao, Guosheng Yin",
+      "takeaway": "The paper develops a proximal instrumental variable framework using proxies for latent factors to adjust compliance weighting in LATE and recover the ATE.",
+      "brief": "The authors propose a proximal instrumental variable framework to recover the population average treatment effect (ATE) when treatment effects and compliance probabilities are heterogeneous and dependent through latent factors. They state that the ATE is identified through an outcome bridge or a compliance bridge, with a doubly robust representation when combined, and they derive the efficient influence function under known and unknown instrument propensities.\n\nThe listing describes theoretical results, including projected bridge-risk bounds and conditions for asymptotic normality and semiparametric efficiency, but it does not report empirical results, specific numerical performance, or validation on a dataset. The abstract does not establish whether the proposed regularized kernel minimax bridge estimators have been tested on real-world data or simulated benchmarks.\n\nResearchers working on causal inference with non-compliance and heterogeneous treatment effects may find the theoretical framework relevant. Those seeking applied results or ready-to-use code should note that the listing does not mention empirical validation or code availability.",
+      "abstract": "Instrumental variable (IV) methods address treatment endogeneity, but with non-compliance and heterogeneous treatment effects a binary instrument generally identifies the local average treatment effect (LATE) among compliers rather than the population average treatment effect (ATE). When treatment effects and compliance probabilities are heterogeneous and dependent through latent factors, the ATE need not be identified by IV variation alone. We develop a proximal instrumental variable framework that uses proxies for these factors to adjust for the compliance weighting in LATE and recover the ATE. We show that the ATE is identified through either an outcome bridge capturing latent treatment effect heterogeneity or a compliance bridge representing inverse compliance probabilities, and combining the two yields a doubly robust representation. We derive the efficient influence function under known and unknown instrument propensities. For estimation, we propose regularized kernel minimax bridge estimators, with orthogonalized conditional moments for estimated propensity, and a three-way sequential cross-fitting scheme. We establish projected bridge-risk bounds, and give conditions for asymptotic normality and semiparametric efficiency. The framework provides a proxy-based route from local IV effects to population causal effects under latent treatment effect and compliance heterogeneity.",
+      "takeaways": [
+        "The object is a theoretical framework for identifying the ATE using proximal instrumental variables when latent factors drive heterogeneity in treatment effects and compliance.",
+        "A visible limit is the absence of reported empirical results or numerical benchmarks in the abstract, leaving the practical performance of the estimators unverified in this listing.",
+        "The artifact status is unclear because the listing does not mention code availability, datasets, or specific implementation details beyond the proposed estimator names."
+      ],
+      "plain": {
+        "reported": "The authors state that their method offers a way to move from effects measured in a specific subgroup to effects for the whole population, using extra variables to account for hidden differences in how people respond to treatment and whether they follow the assigned treatment.",
+        "brief": "The authors suggest a new statistical method to estimate the average effect of a treatment for everyone, not just those who complied with the assignment. They explain that this is possible by using extra variables, called proxies, to account for hidden factors that make treatment effects and compliance vary between individuals. They claim this method can be robust if two different types of adjustments are used together.\n\nThe abstract lists mathematical guarantees, such as bounds on error and conditions for the estimator to behave well with large samples, but it does not say whether the method was tested on real data or how well it performed in practice. It is not clear from the listing if the authors have run experiments or if the method has been applied to any specific study.\n\nPeople studying how to measure cause-and-effect relationships in situations where not everyone follows the assigned treatment might find this useful. People looking for a ready-made tool or evidence that the method works on real-world data should note that the listing does not provide that information.",
+        "takeaways": [
+          "The main contribution is a theoretical method for estimating the overall effect of a treatment when individual responses and compliance vary due to hidden factors.",
+          "A clear limitation in the listing is the lack of any reported test results or numbers showing how well the method works in practice.",
+          "It is not stated whether the authors have made their code or data available, so the status of any software implementation is unknown."
+        ]
+      },
+      "actions": [
+        "Verify the theoretical claims and estimator definitions by reading the full PDF, specifically checking the sections on identification assumptions and the efficient influence function.",
+        "Check the paper's supplementary materials or repository links for code and empirical applications to assess the practical utility of the regularized kernel minimax bridge estimators."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME",
+        "stat.ML"
+      ],
+      "listing": {
+        "listedOn": "2026-09-22",
+        "publishedOn": "2026-09-22",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.22383"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-22"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-22T17:00:51.751Z"
+      }
+    },
+    {
+      "id": "2609.22401",
+      "arxivId": "2609.22401",
+      "url": "https://arxiv.org/abs/2609.22401",
+      "topic": "Security",
+      "reported": "The authors report that TRUST LONGSYNTH achieved a mean train synthetic test real AUPRC of 0.342 on five independently generated, three cohort benchmarks.",
+      "metrics": [
+        "mean train synthetic test real AUPRC 0.342",
+        "Brier score 0.088",
+        "membership attack AUROC 0.499"
+      ],
+      "title": "Differentially Private and Fairness-Audited Score Diffusion for Irregular Longitudinal Health Records",
+      "authors": "Taimoor Ahmad",
+      "takeaway": "The paper presents TRUST LONGSYNTH, an auditable patient level private generator combining bounded sufficient statistics, zCDP accounted Gaussian releases, and conditional analytic score diffusion for irregular longitudinal health records.",
+      "brief": "The authors propose a differentially private synthetic data generator for irregular longitudinal health records that incorporates fairness auditing and temporal covariance modeling. They report that their method achieved a mean train synthetic test real AUPRC of 0.342 and a membership attack AUROC of 0.499 on five independently generated, three cohort benchmarks containing 720 patients. The authors state that the method did not dominate every nonprivate or discrete baseline and that corrected paired tests were inconclusive with five seeds, limiting the strength of the comparative evidence.\n\nThe evaluation relied on synthetic benchmarks rather than real clinical data, and the authors explicitly note that the findings support a transparent evaluation protocol rather than clinical validity or unconditional release safety. The reported canary exposure of 1.8 percent was lower than the 28.8 percent observed for DP Score in the same stress test, but the authors do not establish whether this gap holds on real multi site records. The listing does not provide information on code availability or external validation results.\n\nResearchers working on privacy preserving synthetic data generation for longitudinal health records may find the protocol and metrics useful for benchmarking. Practitioners seeking a ready to deploy clinical tool should note the lack of real data validation and the inconclusive statistical tests. The paper is best treated as a methodological contribution to privacy utility fairness evaluation rather than a validated clinical release solution.",
+      "abstract": "Sharing irregular longitudinal health records can accelerate model development, yet synthetic releases may leak participation, distort temporal dependence, suppress rare events, or reduce utility for underrepresented groups. We present TRUST LONGSYNTH, an auditable patient level private generator that combines bounded sufficient statistics, zCDP accounted Gaussian releases, conditional analytic score diffusion, block banded temporal covariance, separate missingness and gap models, and a protected event sampling floor with population weights. The method was evaluated on five independently generated, three cohort benchmarks containing 720 patients, fourteen irregular observation slots, six mixed variables, informative missingness, and a rare deterioration outcome. At epsilon = 12 and delta = 10 to the power of minus 5, TRUST LONGSYNTH achieved mean train synthetic test real AUPRC 0.342, Brier score 0.088, expected calibration error 0.082, correlation error 0.222, autocorrelation error 0.317, and membership attack AUROC 0.499. Relative to the private diagonal score baseline, AUPRC increased by 7.5 percent, while Brier, calibration, correlation, and autocorrelation errors decreased by 6.1 percent, 17.0 percent, 28.0 percent, and 30.1 percent, respectively. The method did not dominate every nonprivate or discrete baseline, and corrected paired tests were inconclusive with five seeds. Canary exposure was 1.8 percent, compared with 28.8 percent for DP Score in the same stress test. These findings support a transparent privacy utility fairness evaluation protocol, not clinical validity or unconditional release safety, and motivate governed external validation on real multi site records.",
+      "takeaways": [
+        "The object is a synthetic data generator for irregular longitudinal health records that combines differential privacy with fairness auditing and temporal modeling.",
+        "A visible limit is that the method did not dominate every nonprivate or discrete baseline, and corrected paired tests were inconclusive with five seeds, weakening the comparative claims.",
+        "The artifact status is unclear because the listing does not declare code availability, and the authors explicitly state that the findings do not support clinical validity or unconditional release safety."
+      ],
+      "plain": {
+        "reported": "The authors report that their synthetic data tool achieved a score of 0.342 on a test measuring how well a model trained on fake data predicts real patient outcomes, using five sets of fake patient records.",
+        "brief": "The authors created a tool that makes fake patient records that protect privacy and try to be fair to different groups of patients. They tested it on five sets of fake patient records and found that a model trained on the fake data scored 0.342 on a test of how well it predicted real patient outcomes. They also found that the tool did not beat every other method they compared it to, and their statistical tests were not strong enough to prove the differences were real.\n\nThe tests used only fake patient records, not real hospital data, and the authors say their results show a way to test privacy and fairness, not that the tool is safe to use in real clinics. One test showed that the tool leaked less information about which patients were in the original data than a competing method, but the authors do not know if this holds for real hospital data. The listing does not say if the authors shared their code or data.\n\nPeople who make fake data for medical research might find the testing method useful. People who want to use the tool in a real clinic should note that it has not been tested on real data and the statistical tests were not conclusive. The paper is best seen as a new way to test privacy and fairness, not a finished clinical tool.",
+        "takeaways": [
+          "The tool makes fake patient records that protect privacy and try to be fair, using a method that accounts for the timing of patient visits.",
+          "A limit is that the tool did not beat every other method, and the statistical tests were not strong enough to prove the differences were real.",
+          "It is not clear if the code is available, and the authors say the results do not prove the tool is safe for real clinical use."
+        ]
+      },
+      "actions": [
+        "Verify the full PDF to confirm the exact benchmark construction, the definition of the five seeds, and whether the inconclusive paired tests apply to all reported metrics or only specific comparisons.",
+        "Check whether the authors have released code or data for the TRUST LONGSYNTH generator, as the listing does not declare code availability and the method relies on specific implementation details such as block banded temporal covariance and protected event sampling."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR"
+      ],
+      "listing": {
+        "listedOn": "2026-09-22",
+        "publishedOn": "2026-09-22",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.22401"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-22"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-22T17:00:51.751Z"
+      }
+    },
+    {
+      "id": "2609.22446",
+      "arxivId": "2609.22446",
+      "url": "https://arxiv.org/abs/2609.22446",
+      "topic": "Econ",
+      "reported": "The authors report that asymmetric payoffs increase the reported belief of the preferred state by about 8 percentage points among best-fit updaters in a laboratory experiment.",
+      "metrics": [
+        "about 8 percentage points"
+      ],
+      "title": "Biased Agents, Extreme Beliefs: Motivated Reasoning Under Competing Models",
+      "authors": "Zhongheng Qiao",
+      "takeaway": "The paper develops a framework where preference-driven bias distorts the perceived model, affecting Bayesian and best-fit updating differently.",
+      "brief": "The paper develops a framework where preference-driven bias distorts the perceived model, affecting Bayesian and best-fit updating differently.\n\nThe authors report that asymmetric payoffs increase the reported belief of the preferred state by about 8 percentage points among best-fit updaters, while the estimated effect among Bayesian updaters is close to zero. The listing does not establish specific statistical significance levels or sample sizes for these estimates.\n\nResearchers studying model-based learning, political polarization, or financial investment where competing narratives and strong preferences coexist may find the framework relevant. Those not interested in belief updating under competing models may ignore it.",
+      "abstract": "People often face environments where multiple models compete to explain the same observations. This paper examines how people update beliefs in such settings and how preferences over payoff-relevant states shape model selection and belief updating. This paper first develops a framework where preference-driven bias distorts the perceived model, affecting Bayesian and best-fit updating differently. In a laboratory experiment, most participants are classified as Bayesian updaters, who average across models, while a substantial minority are classified as best-fit updaters, who select the model that best fits the observed signal. Within-participant comparisons between the symmetric payoff and asymmetric payoff conditions indicate that asymmetric payoffs shift reported beliefs toward the preferred state, particularly among participants classified as best-fit updaters. Relative to symmetric payoffs, asymmetric payoffs increase the reported belief of the preferred state by about 8 percentage points among best-fit updaters, while the estimated effect among Bayesian updaters is close to zero. These findings help us better understand model-based learning and have implications for domains such as political polarization and financial investment, where competing narratives and strong preferences often coexist.",
+      "takeaways": [
+        "The object is a theoretical framework and laboratory experiment examining how preferences shape model selection and belief updating.",
+        "A visible limit is that the listing does not specify the sample size or statistical tests used to determine the significance of the 8 percentage point effect.",
+        "The artifact status is not established in the listing, as no code or data repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that when rewards were uneven, participants who chose the model that best fit the data increased their stated belief in their preferred outcome by about 8 percentage points in a lab test.",
+        "brief": "The paper creates a model showing how personal preferences can twist how people see different explanations for the same facts, changing how they update their beliefs.\n\nThe authors say that uneven rewards made participants who picked the best-fitting model believe more in their preferred outcome by about 8 percentage points, while those who averaged across models showed almost no change. The listing does not say how many people were tested or if the results were statistically significant.\n\nPeople studying how we learn from competing stories, like in politics or investing, might find this useful. People not interested in how beliefs change under pressure might skip it.",
+        "takeaways": [
+          "The paper is about a theory and a lab test on how personal likes change how we pick and use different explanations.",
+          "A clear gap is that the listing does not say how many people were in the test or if the 8 percent change was statistically reliable.",
+          "It is not stated whether the code or data for this study is available to the public."
+        ]
+      },
+      "actions": [
+        "Verify the sample size and statistical significance of the reported 8 percentage point effect by reading the full PDF.",
+        "Check the paper's supplementary materials or repository for the laboratory experiment protocol and raw data."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-09-22",
+        "publishedOn": "2026-09-22",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.22446"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-22"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-22T17:00:51.751Z"
+      }
+    }
+  ]
+}
