@@ -1,0 +1,664 @@
+{
+  "date": "2026-09-24",
+  "label": "Thu, Sep 24",
+  "minutes": 10,
+  "poolSize": 137,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-09-24T17:14:30.641Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2609.26780",
+      "arxivId": "2609.26780",
+      "url": "https://arxiv.org/abs/2609.26780",
+      "topic": "AI",
+      "reported": "The authors report that SpeakerMem-R1 achieves binary accuracies of 47.9%, 69.2%, and 61.9% on GroupMemBench, SocialMemBench, and EverMemBench, respectively.",
+      "metrics": [
+        "binary accuracies of 47.9%, 69.2%, and 61.9%",
+        "62.33%, the best reported result",
+        "70.85% on all 1,986 LoCoMo questions"
+      ],
+      "title": "SpeakerMem-R1: Speaker-Centered Dual-Track Memory for Multi-Party Dialogue",
+      "authors": "Haobo Zheng, Tan Tang, Yan Chen, Weijie Wang, Yingcai Wu",
+      "takeaway": "The paper proposes SpeakerMem-R1, a dual-track memory system that stores speaker-labeled verbatim messages and derived states to improve message attribution and relational understanding in multi-party dialogue.",
+      "brief": "The authors propose SpeakerMem-R1, a dual-track memory system that stores speaker-labeled verbatim messages and derived states organized into person-level and group-level views. The system aims to address bottlenecks in message attribution and relational understanding in multi-party dialogue by combining evidence from both tracks at query time.\n\nThe authors report binary accuracies of 47.9%, 69.2%, and 61.9% on GroupMemBench, SocialMemBench, and EverMemBench, respectively. They also report 62.33% on the EverMemBench leaderboard and 70.85% on 1,986 LoCoMo questions. Ablations indicate that verbatim and structured tracks, as well as person-level and group-level views, are complementary under the standardized evaluation interface.\n\nResearchers working on long-term conversational memory, multi-party dialogue systems, or LLM memory architectures may find the dual-track approach and the specific benchmark comparisons relevant. Those not focused on speaker attribution or relational state reconstruction in group settings may find the specific metrics less applicable to their work.",
+      "abstract": "Long-term conversational memory in multi-party settings requires more than retrieving relevant content from long-term conversations: it must distinguish who said what, whom each statement concerns, how individuals perceive one another, what information is shared by the group, and how states change over time. Recent studies on multi-party dialogue benchmarks show that existing general-purpose LLM memory systems tend to lose person and group relations or struggle to integrate clues distributed across members, groups, and time. Together, these issues reveal two core bottlenecks: message attribution and relational understanding in multi-party dialogue, and state reconstruction from interleaved histories. To address both, we propose SpeakerMem-R1: its dual-track memory stores speaker-labeled verbatim messages and derived states organized into person-level and group-level views, then combines evidence from both tracks by entity, event, and time at query time. To reduce attribution and update errors during structured memory construction while enabling local deployment, we train Writer-R1 with SpeakerLevenshtein and speaker-conditioned GRPO. On GroupMemBench, SocialMemBench, and EverMemBench, SpeakerMem-R1 achieves binary accuracies of 47.9%, 69.2%, and 61.9%, respectively. On the publicly reported EverMemBench leaderboard from EverMind-AI, we achieves 62.33%, the best reported result among the latest state-of-the-art frameworks. It also achieves 70.85% on all 1,986 LoCoMo questions, which we use as a two-person long-term conversation boundary test. In a controlled evaluation of 305 questions, RL raises the SFT Writer's mean accuracy from 57.38% to 68.20%. We report both binary accuracy and token-F1, and ablations show that the verbatim and structured tracks, as well as person-level and group-level views, are complementary under the standardized evaluation interface.",
+      "takeaways": [
+        "The object is a dual-track memory system that separates verbatim speaker-labeled messages from derived person and group states.",
+        "A visible limit is that the system is evaluated on specific benchmarks like GroupMemBench and LoCoMo, and its performance on other multi-party dialogue scenarios is not established in the listing.",
+        "The artifact status is that the authors provide a GitHub repository URL, but the listing does not confirm the availability of code, models, or data beyond the provided link."
+      ],
+      "plain": {
+        "reported": "The authors report that their system, SpeakerMem-R1, gets correct answers 47.9% of the time on GroupMemBench, 69.2% of the time on SocialMemBench, and 61.9% of the time on EverMemBench.",
+        "brief": "The authors created a system called SpeakerMem-R1 that keeps two types of memory: one that records exactly what each person said, and another that summarizes the state of individuals and the group. This is designed to help computers understand who said what and how people relate to each other in group conversations.\n\nThe authors say their system gets correct answers 47.9% of the time on GroupMemBench, 69.2% of the time on SocialMemBench, and 61.9% of the time on EverMemBench. They also say it gets 62.33% on a public leaderboard and 70.85% on 1,986 questions from LoCoMo. They say that using both types of memory together works better than using just one.\n\nPeople who study how computers remember long conversations in groups might find this useful. People who do not work on group conversations or speaker identification might not find it relevant.",
+        "takeaways": [
+          "The system keeps two kinds of memory: exact words from each speaker and summaries of people and groups.",
+          "The listing does not say how well the system works on other types of group conversations besides the specific tests mentioned.",
+          "The authors give a link to a code repository, but the listing does not say if the code or data are actually there."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark configurations and evaluation protocols by reviewing the full PDF, as the listing does not detail the exact setup for the reported accuracies.",
+        "Check the provided GitHub repository to confirm the availability of the SpeakerMem-R1 code, Writer-R1 training scripts, and any associated datasets or evaluation scripts."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/2022hpsk/SpeakerMemR1",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-24",
+        "publishedOn": "2026-09-22",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.26780",
+            "upvotes": 76
+          }
+        ]
+      },
+      "trend": {
+        "votes": 76,
+        "rank": 1,
+        "of": 26,
+        "perDay": 38
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 76,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-22"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-24T17:14:30.641Z"
+      }
+    },
+    {
+      "id": "2609.23038",
+      "arxivId": "2609.23038",
+      "url": "https://arxiv.org/abs/2609.23038",
+      "topic": "AI",
+      "reported": "The authors report consistent gains in local transition modeling and long-horizon integration across multiple VLMs and spatial benchmarks.",
+      "metrics": [],
+      "title": "Spatial-Interactor: Learning Spatial Reasoning through Interaction with the Observable Physical World",
+      "authors": "Kaixiang Yao, Xu Wang, Miao Pan, Hu Xiyue, Weishi Wang, Daniel Dahlmeier, Jintao Chen, Yongliang Shen, Xuhong Zhang, Wenqi Zhang",
+      "takeaway": "The paper introduces Spatial-Interactor, a framework that trains vision-language models to model physical-world state transitions through interaction using a three-level curriculum.",
+      "brief": "The authors propose a training framework for vision-language models that uses interaction trajectories to supervise local state transitions and long-horizon integration. They construct a dataset called LSI-108K from simulated and real interaction trajectories to support this learning process.\n\nThe reported evidence consists of consistent gains in local transition modeling and long-horizon integration across multiple VLMs and spatial benchmarks. The listing does not specify the exact benchmarks used, the magnitude of the gains, or the specific VLMs evaluated. It also does not establish whether the gains are statistically significant or robust to distribution shift.\n\nResearchers working on vision-language model training for dynamic environments may find the curriculum structure and dataset construction relevant. Those focused on static spatial reasoning or non-physical domains may find the specific interaction-based supervision less applicable.",
+      "abstract": "Spatial reasoning is essential for vision-language models (VLMs) to understand and act in the physical world. Reasoning in dynamic environments requires VLMs to perceive local state transitions caused by object motion and viewpoint changes and integrate them over long trajectories to maintain an updated spatial state, yet existing VLMs remain limited in both capabilities. Current spatial training primarily focuses on static questions about object attributes and spatial relations, providing limited direct supervision for state transitions; in contrast, interaction trajectories naturally connect a preceding observation, an action, and a subsequent observation, offering direct supervision for local state transitions, while complete trajectories reveal dependencies among consecutive transitions. We therefore introduce Spatial-Interactor, a framework that trains VLMs to model physical-world state transitions through interaction, organizing this learning process into a three-level curriculum covering L1 passive world-state transitions, L2 active self-state transitions, and L3 long-horizon interaction trajectories. Accordingly, we construct the Learning from Spatial Interaction dataset (LSI-108K) from simulated and real interaction trajectories, with tasks aligned with the objective of each level. Our two-stage training strategy applies Supervised Fine-Tuning (SFT) to L1 and L2 for local transition modeling, and On-Policy Distillation (OPD) then uses privileged self-distillation: a teacher branch given segment-level transition descriptions supervises the student's on-policy CoT, helping the student learn to integrate consecutive transitions over L3 long trajectories. Experiments across multiple VLMs and spatial benchmarks show consistent gains in local transition modeling and long-horizon integration.",
+      "takeaways": [
+        "The core object is a two-stage training strategy combining Supervised Fine-Tuning and On-Policy Distillation for spatial state transition modeling.",
+        "The listing does not provide quantitative metrics, specific benchmark names, or baseline comparisons, leaving the magnitude and reliability of the reported gains unverified.",
+        "A code repository is declared at https://github.com/ZJU-OmniAI/Spatial-Interactor, but the listing does not confirm whether the code, data, or models are fully released or functional."
+      ],
+      "plain": {
+        "reported": "The authors say their method improved how well AI models track changes in physical scenes and handle long sequences of actions, but they do not give specific numbers or name the tests used.",
+        "brief": "The paper presents a way to teach AI models to understand how objects move and change position in the real world by having them practice interacting with simulated and real environments. They created a large dataset of these interactions to help the models learn.\n\nThe authors claim their method works better than previous approaches at tracking small changes and understanding long sequences of events. However, the summary does not say how much better it is, which specific tests were used, or if the results are reliable. It also does not say if the method works well in situations different from the training data.\n\nPeople who build AI systems that need to understand moving objects or physical spaces might find this useful. People who work with static images or non-physical topics might not find it directly helpful.",
+        "takeaways": [
+          "The main idea is a step-by-step training method that helps AI models learn to track changes in physical scenes.",
+          "The summary lacks specific numbers, test names, and comparisons to other methods, so it is hard to judge how good the results really are.",
+          "The authors say code is available online, but it is not confirmed if the code and data are complete and working."
+        ]
+      },
+      "actions": [
+        "Verify the specific spatial benchmarks and quantitative results by reading the full PDF, as the abstract only mentions 'consistent gains' without numbers.",
+        "Check the declared GitHub repository to confirm the availability of the LSI-108K dataset and the training code for the two-stage strategy."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/ZJU-OmniAI/Spatial-Interactor",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-24",
+        "publishedOn": "2026-09-19",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.23038",
+            "upvotes": 41
+          }
+        ]
+      },
+      "trend": {
+        "votes": 41,
+        "rank": 2,
+        "of": 26,
+        "perDay": 8
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 41,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-19"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-24T17:14:30.641Z"
+      }
+    },
+    {
+      "id": "2609.24308",
+      "arxivId": "2609.24308",
+      "url": "https://arxiv.org/abs/2609.24308",
+      "topic": "AI",
+      "reported": "The authors report that spatial models achieve at best 70.14% placement accuracy and 73.33% edit execution.",
+      "metrics": [
+        "70.14% placement accuracy",
+        "73.33% edit execution",
+        "1,138 video prompts"
+      ],
+      "title": "HappyWorld-Bench",
+      "authors": "Zhiqi Bai, Junai Cai, Yixin Chen, Jingrun Du, Tao Feng, Wei Gong, Siyuan Huang, Xiao Lin, Jiaheng Liu, Jun Luo, Yongzhe Lyu, Liya Ma, Zenan Meng, Lin Qu, Wenbo Su, Jiaming Wang, Qinghe Wang, Shaofei Wang, Yanghai Wang, Zequn Wang, Ziming Wang, Hu Wei, Jiangtao Wu, Ruiqi Wu, Jiaxin Xie, Yuchi Xu, Ze Xu, Chengting Yu, Liangyu Yuan, Gang Zeng, Yawen Zeng, Xingyao Zhang, Zizheng Zhang, Bo Zheng, Jiancheng Zhu, Song-Chun Zhu",
+      "takeaway": "The paper introduces HappyWorld-Bench, a comprehensive benchmark evaluating whether generated worlds remain reliable as agents interact with them across video, spatial, and embodied tracks.",
+      "brief": "The authors propose a benchmark built on a hierarchical framework of six world capabilities, instantiated across three independent evaluation tracks for video, spatial, and embodied world models.\n\nThey report that video models exhibit reduced consistency during extended rollouts, spatial models achieve at best 70.14% placement accuracy and 73.33% edit execution, and embodied models struggle to preserve state across multi-step actions. The listing does not specify the exact automated metrics used to derive these behavioral correctness scores beyond the named percentages.\n\nResearchers evaluating world model reliability under interaction and modification should open this paper. Those focused solely on static visual generation quality without interaction dynamics may ignore it.",
+      "abstract": "Evaluating world models requires assessing both the quality of the worlds they generate and their consistency and responsiveness under exploration, interaction, and modification. We introduce HappyWorld-Bench, a comprehensive benchmark that evaluates whether generated worlds remain reliable as agents interact with them. Our design is built on a hierarchical capability framework of six world capabilities (W1-W6), from generative construction to unified world modeling, instantiated across three independent evaluation tracks: video world models, spatial world models, and embodied world models. HappyWorld-Bench comprises 1,138 video prompts, 300 spatial scenes, and 254 embodied test cases. Across all three tracks, we build and operate HappyWorld-Arena to organize human A/B comparisons and derive model-level Elo ratings, which complement newly designed automated metrics that capture behavioral correctness. We evaluate 14 video world models, 9 spatial systems, and 8 embodied candidates under this unified framework. Results reveal remaining reliability gaps across all three tracks: video models exhibit reduced consistency during extended rollouts and revisits, spatial models achieve at best 70.14% placement accuracy and 73.33% edit execution, and embodied models struggle to preserve state across multi-step actions and respond precisely to altered action conditions and physical rules. These findings highlight the need to evaluate world models not only by visual quality, but also by state consistency and the correctness of their responses to actions and interventions.",
+      "takeaways": [
+        "The object is a benchmark comprising 1,138 video prompts, 300 spatial scenes, and 254 embodied test cases, organized via human A/B comparisons and automated metrics.",
+        "A visible limit is the reported reduction in video model consistency during extended rollouts and revisits, indicating that current models fail to maintain state reliability over time.",
+        "The artifact status is not established in the listing; no code repository or dataset URL is provided in the supplied metadata."
+      ],
+      "plain": {
+        "reported": "The authors report that spatial models achieve at best 70.14% placement accuracy and 73.33% edit execution.",
+        "brief": "The authors propose a test suite to check if AI-generated virtual worlds stay consistent when users or agents change things inside them. They test three types of AI systems: those that make videos, those that build 3D spaces, and those that control robots or characters.\n\nThey found that video-generating AIs lose track of what is happening when the scene plays for a long time. Spatial AIs are only about 70% accurate in placing objects correctly and 73% accurate in making edits. Robot-like AIs have trouble remembering the state of the world after taking several steps in a row. The summary does not explain exactly how the automated scoring works, only the final percentages.\n\nPeople who study how AI models maintain consistency in interactive environments should look at this. People who only care about making pretty pictures without any interaction or logic may not need to.",
+        "takeaways": [
+          "The tool is a set of tests including 1,138 video instructions, 300 3D scenes, and 254 robot tasks, judged by human comparisons and automated checks.",
+          "A clear weakness is that video AIs become inconsistent when the simulation runs for a long time or when the user goes back to a previous view.",
+          "It is not stated in the summary whether the code or data is available for download; no link is provided."
+        ]
+      },
+      "actions": [
+        "Verify the specific definitions of the automated metrics for behavioral correctness by reading the full PDF, as the abstract only names the resulting percentages.",
+        "Check the full paper for the detailed breakdown of the six world capabilities (W1-W6) to understand how the hierarchical framework maps to the three evaluation tracks."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-24",
+        "publishedOn": "2026-09-21",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.24308",
+            "upvotes": 39
+          }
+        ]
+      },
+      "trend": {
+        "votes": 39,
+        "rank": 3,
+        "of": 26,
+        "perDay": 13
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 39,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-24T17:14:30.641Z"
+      }
+    },
+    {
+      "id": "2609.28466",
+      "arxivId": "2609.28466",
+      "url": "https://arxiv.org/abs/2609.28466",
+      "topic": "AI",
+      "reported": "The authors report a systematic and comprehensive review of memory mechanisms in AR video generation, organized through five complementary perspectives.",
+      "metrics": [],
+      "title": "The Past Frames the Future: Memory for Autoregressive Video Generation",
+      "authors": "Harold Haodong Chen, Rongjin Guo, Disen Lan, Wen-Jie Shu, Hongfei Zhang, Hanzhe Hu, Shengtao Yao, Zixin Zhang, Guibin Zhang, Zhefan Rao, Jinxiu Liu, Yexin Liu, Rui Peng, Yuhao Liu, Bin Ren, Shuai Yang, Yukang Chen, Salman Khan, Ying-Cong Chen, Ser-Nam Lim, Rynson W. H. Lau, Nicu Sebe, Yu Cheng, Ming-Hsuan Yang, Qifeng Chen",
+      "takeaway": "The paper presents a unified framework and systematic review of memory mechanisms for autoregressive video generation, organized by forms, functions, operations, learning, and evaluation.",
+      "brief": "The authors propose an operational definition of memory as persistent historical information maintained across autoregressive steps, even after originating evidence leaves the local context. They organize the literature into five perspectives: forms, functions, operations, learning, and evaluation, and identify open challenges such as composable architectures and standardized evaluation. The listing describes a review and framework without reporting quantitative experimental results, benchmarks, or specific model performance metrics.\n\nThe strongest reported contribution is the structured taxonomy and synthesis of existing memory mechanisms. The authors state that critical historical information often leaves the active context before its relevance diminishes, framing this as a fundamental memory problem. No specific numerical results, dataset sizes, or performance improvements are provided in the supplied abstract, so the empirical strength of the proposed framework is not established in this listing.\n\nResearchers working on long-horizon video generation, world modeling, or autoregressive sequence extension may find the taxonomy useful for structuring their own memory designs. Practitioners seeking specific state-of-the-art benchmarks or immediate implementation details should note that the abstract does not list quantitative comparisons or specific model outputs.",
+      "abstract": "Advances in generative models have improved video fidelity, enabling long-horizon generation, interactive world modeling, and evolving visual environments. Autoregressive (AR) video generation extends visual sequences through causal rollouts. However, a fundamental bottleneck emerges: as the generated sequence expands, practical models must operate under strictly bounded context windows, storage, and computational limits. Consequently, critical historical information, e.g., entity identities, dynamic states, and intervention-induced causal changes, often leaves the active context long before its relevance diminishes. Overcoming this limitation and maintaining temporal persistence constitutes a fundamental memory problem. We present a systematic and comprehensive review of memory mechanisms in AR video generation. We formulate memory operationally as persistent historical information maintained across outer AR steps, capable of influencing future generation even after the originating evidence is no longer locally accessible. Building upon this unified framework, we organize the literature through five complementary perspectives: (I) Forms, the representational carriers of history; (II) Functions, the specific semantic and physical information requiring preservation; (III) Operations, the lifecycle of writing, reading, updating, managing, and integrating memory; (IV) Learning, the optimization of memory behaviors under closed-loop rollouts; and (V) Evaluation, the paradigms for diagnosing genuine memory capabilities. We conclude by synthesizing open challenges, including composable and resource-aware memory architectures, trustworthy state updating, self-rollout learning, and standardized evaluation. By bridging representations, mechanisms, and learning paradigms, this paper establishes a structured foundation for developing reliable, memory-conditioned video generation systems.",
+      "takeaways": [
+        "The object is a conceptual framework and literature review, not a new generative model or dataset.",
+        "The visible limit is the absence of quantitative evidence in the listing; the authors do not report specific performance numbers or benchmark results.",
+        "The artifact status is a survey with a linked repository, but the abstract does not confirm the repository contains code for a specific model or evaluation suite."
+      ],
+      "plain": {
+        "reported": "The authors report a detailed summary and categorization of how memory works in video generation models that create frames one after another.",
+        "brief": "The authors define memory as keeping track of past details in a video even after those details are no longer in the immediate computer memory. They sort existing research into five categories: what the memory looks like, what information it holds, how it is managed, how it is learned, and how it is tested. The text describes this as a review of the field and does not include any specific numbers, test scores, or performance data.\n\nThe main contribution is a structured way to understand and organize existing research on video memory. The authors explain that important details often get lost before they are no longer needed, which they call a core problem. Because the summary does not include any specific results or measurements, it is not possible to judge the practical effectiveness of the proposed framework from this text alone.\n\nPeople who build or study video generation systems might find this categorization helpful for organizing their own work. People looking for specific test results or ready-to-use software should note that the summary does not provide any numerical data or direct links to working code.",
+        "takeaways": [
+          "This is a review and framework, not a new software tool or dataset.",
+          "The main limitation is that there are no numbers or test results in the summary to show how well the ideas work.",
+          "There is a link to a website, but the summary does not say if that website contains working code or just a list of papers."
+        ]
+      },
+      "actions": [
+        "Verify the linked GitHub repository to determine if it contains executable code, datasets, or evaluation scripts beyond a list of papers.",
+        "Check the full PDF to see if the authors provide quantitative comparisons or specific experimental results that are omitted from the abstract."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/HaroldChen19/Awesome-AR-Video-Memory",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-24",
+        "publishedOn": "2026-09-23",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.28466",
+            "upvotes": 35
+          }
+        ]
+      },
+      "trend": {
+        "votes": 35,
+        "rank": 4,
+        "of": 26,
+        "perDay": 35
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 35,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-24T17:14:30.641Z"
+      }
+    },
+    {
+      "id": "2609.26800",
+      "arxivId": "2609.26800",
+      "url": "https://arxiv.org/abs/2609.26800",
+      "topic": "Physics",
+      "reported": "The authors report that an 18-layer schedule optimized with Adam achieves a mean public-consistent-key probability of 46.78 percent on ten random three-pair 16-bit S-AES instances.",
+      "metrics": [
+        "mean public-consistent-key probability of 46.78 percent",
+        "largest observed false-key probability to 1.11 percent",
+        "ten random three-pair 16-bit S-AES instances"
+      ],
+      "title": "Structured Variational Key Concentration for a Reduced AES Cipher",
+      "authors": "Xi Li",
+      "takeaway": "The paper claims to construct phase separators for a reduced AES cipher using S-box differential-distribution constraints and candidate-key-dependent inverse diagnostics to shape a variational key register.",
+      "brief": "The authors propose a structured variational approach to key recovery for a simplified AES cipher, using reversible phase separators derived from S-box constraints and inverse diagnostics. They report that an 18-layer schedule optimized with Adam achieves a mean public-consistent-key probability of 46.78 percent on ten random three-pair 16-bit S-AES instances, ranking the correct key first in every run. The study explicitly limits its scope to reduced-cipher benchmarks and does not claim an attack on full AES or an asymptotic advantage over Grover search.\n\nThe reported evidence relies on a small set of ten random instances and a specific 18-layer schedule optimized with Adam. The authors note that the 16-bit study evaluates key-register dynamics without shot sampling, while a separate gate-level S-DES experiment validates the reversible oracle pattern. The listing does not establish whether the observed performance generalizes to larger key spaces or different instance distributions beyond the ten tested cases.\n\nResearchers working on quantum algorithms for symmetric-key cryptography or variational quantum circuits may find the framework useful for analyzing how AES structure can be incorporated into quantum algorithms. Those seeking practical attacks on full AES or asymptotic speedups over Grover search should note that the authors explicitly state these are not claimed in this work.",
+      "abstract": "Grover search provides the generic quantum baseline for symmetric-key recovery by amplifying a reversible public-verification oracle. We investigate whether public round structure can instead shape a variational key register before exact verification. For simplified AES (S-AES), we construct phase separators from S-box differential-distribution constraints, candidate-key-dependent inverse diagnostics, and a global residual Hamming-shell term. Each component has a reversible compute-phase-uncompute realization. We prove a one-sided completeness statement for these diagnostics and derive a conditional lower-tail bound for false keys under a weakly correlated diagnostic model. On ten random three-pair 16-bit S-AES instances, an 18-layer schedule optimized with Adam achieves a mean public-consistent-key probability of 46.78 percent, ranks the correct key first in every run, and limits the largest observed false-key probability to 1.11 percent. The 16-bit study evaluates the induced key-register dynamics without shot sampling, while a separate gate-level S-DES experiment validates the reversible oracle pattern without a key-space phase table. The results establish a controlled reduced-cipher benchmark; they do not claim an attack on full AES or an asymptotic advantage over Grover. Within these limits, the construction provides a useful framework for analyzing how AES structure can be incorporated into quantum algorithms.",
+      "takeaways": [
+        "The object is a variational quantum circuit design for key recovery on a reduced AES cipher, not a full AES attack.",
+        "A visible limit is the evaluation on only ten random three-pair 16-bit instances, which may not reflect performance on larger or more complex key spaces.",
+        "The artifact status is not established in the listing, as no code or repository URL is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that an 18-layer schedule optimized with Adam achieves a mean public-consistent-key probability of 46.78 percent on ten random three-pair 16-bit S-AES instances.",
+        "brief": "The authors propose a structured variational approach to key recovery for a simplified AES cipher, using reversible phase separators derived from S-box constraints and inverse diagnostics. They report that an 18-layer schedule optimized with Adam achieves a mean public-consistent-key probability of 46.78 percent on ten random three-pair 16-bit S-AES instances, ranking the correct key first in every run. The study explicitly limits its scope to reduced-cipher benchmarks and does not claim an attack on full AES or an asymptotic advantage over Grover search.\n\nThe reported evidence relies on a small set of ten random instances and a specific 18-layer schedule optimized with Adam. The authors note that the 16-bit study evaluates key-register dynamics without shot sampling, while a separate gate-level S-DES experiment validates the reversible oracle pattern. The listing does not establish whether the observed performance generalizes to larger key spaces or different instance distributions beyond the ten tested cases.\n\nResearchers working on quantum algorithms for symmetric-key cryptography or variational quantum circuits may find the framework useful for analyzing how AES structure can be incorporated into quantum algorithms. Those seeking practical attacks on full AES or asymptotic speedups over Grover search should note that the authors explicitly state these are not claimed in this work.",
+        "takeaways": [
+          "The object is a variational quantum circuit design for key recovery on a reduced AES cipher, not a full AES attack.",
+          "A visible limit is the evaluation on only ten random three-pair 16-bit instances, which may not reflect performance on larger or more complex key spaces.",
+          "The artifact status is not established in the listing, as no code or repository URL is provided."
+        ]
+      },
+      "actions": [
+        "Verify the PDF to confirm the exact definition of the 'weakly correlated diagnostic model' used in the lower-tail bound derivation.",
+        "Check the PDF for details on the S-DES gate-level experiment to understand how it validates the reversible oracle pattern without a key-space phase table."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-09-24",
+        "publishedOn": "2026-09-24",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.26800"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-24"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-24T17:14:30.641Z"
+      }
+    },
+    {
+      "id": "2609.26814",
+      "arxivId": "2609.26814",
+      "url": "https://arxiv.org/abs/2609.26814",
+      "topic": "Security",
+      "reported": "The authors report that FedCoT-VQA improves grounding quality by up to 4.45% and achieves a counterfactual gap of only 7.38% after unlearning, measured on federated training and unlearning utility.",
+      "metrics": [
+        "improving grounding quality by up to 4.45%",
+        "counterfactual gap of only 7.38%"
+      ],
+      "title": "FedCoT-VQA: A Federated Learning and Unlearning Framework for Chain-of-Thought Planners in VideoQA",
+      "authors": "Rui Lu, Tao Ling, Dan Wang, Qing Li",
+      "takeaway": "FedCoT-VQA is a federated learning and unlearning framework for Chain-of-Thought planners in VideoQA that supports efficient training and client deletion without full retraining.",
+      "brief": "The paper proposes FedCoT-VQA, a framework combining federated learning and unlearning for Chain-of-Thought planners in VideoQA. It introduces planner-side partitioning, server-side aggregation, and a residual unlearning module to handle client deletion requests while maintaining model utility.\n\nThe authors report that the framework improves grounding quality by up to 4.45% compared to current federated approaches and achieves a counterfactual gap of only 7.38% after unlearning. The listing does not specify the exact datasets or benchmarks used for these measurements, nor does it detail the specific baselines compared against.\n\nResearchers working on federated learning for multimodal models or privacy-preserving machine learning may find this relevant. Those not interested in federated unlearning or VideoQA-specific architectures may ignore it.",
+      "abstract": "Chain-of-Thought (CoT) planners have emerged as an effective design for VideoQA, where a lightweight planner first generates intermediate reasoning steps to guide temporal evidence selection before answer prediction. This modularity makes CoT-based VideoQA attractive for federated learning, since only the planner side needs collaborative adaptation while the heavy vision-language backbone can remain fixed. However, in decentralized settings, the planner must not only be trained efficiently across heterogeneous clients but also support later client deletion requests. This is challenging because deleted-client influence is reflected both in model parameters and the planner's reasoning-trace behavior. We present FedCoT-VQA, a federated learning and unlearning framework for CoT planners in VideoQA. FedCoT-VQA consists of three modules: planner-side partitioning (PSP), which exposes a compact shared-residual adaptation space for efficient federated training; server-side aggregation (SSA), which aggregates planner-side updates while maintaining a deletion-ready contribution log; and a residual unlearning module (RUM), which approximates the retained-only counterfactual planner through retained-client replay and selective residual correction, without full retraining. We evaluate FedCoT-VQA in terms of federated training utility, federated unlearning utility, forgetting quality, and efficiency. Results show that compared to current federated approaches, FedCoT-VQA preserves strong federated training utility, improving grounding quality by up to 4.45%. After unlearning, it retains high accuracy and achieves a counterfactual gap of only 7.38%.",
+      "takeaways": [
+        "The object is a federated learning and unlearning framework specifically designed for Chain-of-Thought planners in VideoQA tasks.",
+        "A visible limit is the lack of specified datasets or benchmarks in the abstract, making it difficult to assess the generalizability of the reported 4.45% improvement and 7.38% gap.",
+        "The artifact status is unclear as no code repository or implementation details are provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors state that their system improves the accuracy of identifying relevant video segments by up to 4.45% and shows a difference of only 7.38% between the model after removing a user's data and a model that never had that data, based on their internal tests.",
+        "brief": "The paper introduces a system called FedCoT-VQA that allows multiple users to train a video question-answering AI together without sharing their raw data. It also includes a feature to completely remove a user's influence from the AI if they request it, without needing to retrain the entire system from scratch.\n\nThe authors claim their system is better than existing methods at identifying relevant parts of videos, with an improvement of up to 4.45%. They also claim that when a user is removed, the resulting AI behaves very similarly to one that never included that user, with a difference of only 7.38%. However, the summary does not say which specific videos or tests were used to get these numbers.\n\nPeople who work on privacy in AI or video analysis might find this useful. People who do not care about removing user data from AI models or video question-answering might not need to look at it.",
+        "takeaways": [
+          "The main thing being described is a way for multiple people to train a video AI together while allowing them to delete their data later.",
+          "A limitation is that we do not know which specific videos or tests were used to measure the 4.45% improvement and 7.38% difference.",
+          "It is not clear if the code for this system is available to the public because no link is provided."
+        ]
+      },
+      "actions": [
+        "Verify the specific datasets and baselines used in the full PDF to contextualize the reported 4.45% grounding quality improvement.",
+        "Check the full paper for details on the residual unlearning module to understand how the 7.38% counterfactual gap was calculated."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR"
+      ],
+      "listing": {
+        "listedOn": "2026-09-24",
+        "publishedOn": "2026-09-24",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.26814"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-24"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-24T17:14:30.641Z"
+      }
+    },
+    {
+      "id": "2609.26840",
+      "arxivId": "2609.26840",
+      "url": "https://arxiv.org/abs/2609.26840",
+      "topic": "Econ",
+      "reported": "The authors report new 80-digit positive-weight Gauss-Hermite and positive-weight interior-node Gauss-Legendre quadrature rules for up to five dimensions.",
+      "metrics": [
+        "80-digit positive-weight"
+      ],
+      "title": "Positive weight Hermite and Legendre quadrature rules",
+      "authors": "Joris Pinkse",
+      "takeaway": "The paper presents new high-precision positive-weight quadrature rules for Gauss-Hermite and interior-node Gauss-Legendre types across multiple dimensions.",
+      "brief": "The author claims to provide new 80-digit positive-weight Gauss-Hermite and positive-weight interior-node Gauss-Legendre quadrature rules for up to five dimensions. These rules are stated to improve on existing literature or fill gaps where only tensor product rules existed.\n\nThe reported evidence consists of the generation of these specific rules using combined previous and new methodologies. The listing does not establish specific numerical error benchmarks or comparative performance metrics beyond the precision and dimensionality of the rules themselves. The availability of software in Julia, Python, and R is noted, but the listing does not detail the specific validation tests performed on the rules.\n\nResearchers requiring high-precision numerical integration in econometric or statistical applications may find these rules useful. Those relying on lower precision or different quadrature types may not need this specific resource. The listing does not provide enough detail to assess the computational cost of generating or using these rules.",
+      "abstract": "This paper contains new 80-digit positive-weight Gauss-Hermite and positive-weight interior-node Gauss-Legendre quadrature rules for up to five dimensions and varying polynomial degree accuracy (depending on quadrature type and dimension). Some of these rules improve on the best available rules in the literature and some offer rules where none (other than the tensor product) existed. The results were produced by combining methodology developed by previous researchers with new approaches. The full precision rules themselves are at https://doi.org/10.5281/zenodo.22881864. Software in Julia, Python, and R providing the rules is available via a package registry and/or GitHub: Quadriceps.jl (both 64-bit and 128-bit; https://github.com/NittanyLion/Quadriceps.jl), quadriceps-py (64-bit only; https://github.com/NittanyLion/quadriceps-py), and quadriceps-r (64-bit only; https://github.com/NittanyLion/quadriceps-r). The software used to create these rules is available via PositiveWeightQuadratureSolvers.jl (https://github.com/NittanyLion/PositiveWeightQuadratureSolvers.jl). The replication package is at QuadricepsReplicationPackage.jl (https://github.com/NittanyLion/QuadricepsReplicationPackage.jl). A snapshot of all five packages is archived at https://doi.org/10.5281/zenodo.22883240.",
+      "takeaways": [
+        "The object is a set of high-precision quadrature rules for specific polynomial types and dimensions.",
+        "A visible limit is the lack of reported error bounds or comparative accuracy metrics against existing rules in the abstract.",
+        "The artifact status is established with multiple software packages and a replication package provided via GitHub and Zenodo."
+      ],
+      "plain": {
+        "reported": "The authors report new 80-digit positive-weight Gauss-Hermite and positive-weight interior-node Gauss-Legendre quadrature rules for up to five dimensions.",
+        "brief": "The author claims to provide new 80-digit positive-weight Gauss-Hermite and positive-weight interior-node Gauss-Legendre quadrature rules for up to five dimensions. These rules are stated to improve on existing literature or fill gaps where only tensor product rules existed.\n\nThe reported evidence consists of the generation of these specific rules using combined previous and new methodologies. The listing does not establish specific numerical error benchmarks or comparative performance metrics beyond the precision and dimensionality of the rules themselves. The availability of software in Julia, Python, and R is noted, but the listing does not detail the specific validation tests performed on the rules.\n\nResearchers requiring high-precision numerical integration in econometric or statistical applications may find these rules useful. Those relying on lower precision or different quadrature types may not need this specific resource. The listing does not provide enough detail to assess the computational cost of generating or using these rules.",
+        "takeaways": [
+          "The object is a set of high-precision quadrature rules for specific polynomial types and dimensions.",
+          "A visible limit is the lack of reported error bounds or comparative accuracy metrics against existing rules in the abstract.",
+          "The artifact status is established with multiple software packages and a replication package provided via GitHub and Zenodo."
+        ]
+      },
+      "actions": [
+        "Verify the specific accuracy improvements and error bounds by examining the full PDF and the provided replication package.",
+        "Check the software repositories for documentation on the computational requirements and usage constraints of the 80-digit rules."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.EM",
+        "stat.CO"
+      ],
+      "listing": {
+        "listedOn": "2026-09-24",
+        "publishedOn": "2026-09-24",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.26840"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-24"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-24T17:14:30.641Z"
+      }
+    },
+    {
+      "id": "2609.26867",
+      "arxivId": "2609.26867",
+      "url": "https://arxiv.org/abs/2609.26867",
+      "topic": "Stats",
+      "reported": "The authors report that the method is empirically validated through simulation studies and analysis of multi-modal neuroimaging data from the ABCD study.",
+      "metrics": [],
+      "title": "Additive Nonparametric Regression with Spatial and Network Objects",
+      "authors": "Rajarshi Guhaniyogi, Pritam Dey, Krishnendu Chandra, Aaron Scheffler, Bani K. Mallick",
+      "takeaway": "The paper introduces a novel regression framework treating t-fMRI and s-MRI images as functional data with additive non-linear effects of network and functional predictors.",
+      "brief": "The authors propose an additive nonparametric regression framework for spatial and network objects, motivated by predicting task-based brain activation from structural and resting-state imaging data in the ABCD study. They report empirical validation via simulation studies and analysis of multi-modal neuroimaging data, supported by theoretical results on predictive accuracy for the functional response. No specific quantitative performance figures are provided in the listing, and the abstract does not establish specific computational limits or artifact availability.\n\nThe strongest reported evidence is empirical validation on ABCD data and simulations, but the listing lacks specific numerical metrics or benchmark comparisons. The theoretical support is described generally as results on predictive accuracy without specifying the exact bounds or conditions in the abstract. The absence of declared code or repository links means the implementation details are not verifiable from this metadata alone.\n\nResearchers working on hierarchical Bayesian modeling for multi-modal neuroimaging or functional data analysis with network predictors should open this paper. Those seeking a ready-to-use software package or specific benchmark comparisons against existing nonparametric methods may ignore it, as the listing does not confirm code availability or detailed comparative results.",
+      "abstract": "This article is motivated by an imaging application from the Adolescent Brain Cognitive Development (ABCD) study, aiming to predict task-based brain activation maps from t-fMRI using cortical metrics from structural MRI (s-MRI) and brain connectivity data from resting-state fMRI (rs-fMRI). Hierarchical Bayesian modeling is well-suited for integrating diverse imaging data and quantifying prediction uncertainty. However, progress in this field is limited due to challenges in designing joint priors that capture the structures and interconnections between different imaging modalities, along with computational complexity and lack of theoretical assurances. To address these challenges, the article introduces a novel regression framework that treats t-fMRI and s-MRI images as functional data, incorporating additive non-linear effects of both network and functional predictors on the functional response. Specifically, we employ Gaussian process (GP) priors on coefficients related to the functional predictors to capture their intricate functional dependencies with the response. Furthermore, a GP prior is assigned to encapsulate the non-linear nodal effects of the network predictor on the response function. The method is supported by theoretical results on predictive accuracy for the functional response, and is empirically validated through simulation studies and analysis of multi-modal neuroimaging data from the ABCD study.",
+      "takeaways": [
+        "The object is a hierarchical Bayesian regression framework using Gaussian process priors for functional and network predictors in neuroimaging.",
+        "A visible limit is the lack of specific quantitative metrics or benchmark comparisons in the abstract, making performance assessment difficult without the full text.",
+        "The artifact status is unverified because no code or repository is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors say they tested their method using computer simulations and real brain scan data from the ABCD study.",
+        "brief": "The authors created a new statistical method to predict brain activity patterns using different types of brain scans. They say they tested this method using simulations and real data from a large brain development study. The listing does not include specific numbers showing how well the method works, nor does it say if the computer code is available for download.\n\nThe main evidence is that they tested it on real data and simulations, but we do not have specific scores or comparisons to other methods from this summary. The theory behind the method is mentioned but not explained in detail. Since no code link is provided, we cannot check if the method is ready to use.\n\nPeople who study how to combine different brain scan types using statistical models should look at this paper. People who want to download a ready-made software tool or see specific score comparisons might skip it, because the summary does not confirm those things exist.",
+        "takeaways": [
+          "The paper describes a statistical model that uses complex probability tools to link different brain scan types.",
+          "A limit is that the summary does not show specific performance numbers or comparisons to other models.",
+          "It is not known if the computer code for this model is available because the listing does not say so."
+        ]
+      },
+      "actions": [
+        "Verify the specific theoretical guarantees and simulation results by reading the full PDF, as the abstract only mentions 'theoretical results on predictive accuracy' without details.",
+        "Check the paper's supplementary materials or author websites for code availability, since the listing declares no code repository."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME",
+        "stat.AP",
+        "stat.ML"
+      ],
+      "listing": {
+        "listedOn": "2026-09-24",
+        "publishedOn": "2026-09-24",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.26867"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-24"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-24T17:14:30.641Z"
+      }
+    },
+    {
+      "id": "2609.26960",
+      "arxivId": "2609.26960",
+      "url": "https://arxiv.org/abs/2609.26960",
+      "topic": "Engineering",
+      "reported": "The authors report that their framework demonstrates superior performance in speed and geometry extraction, robustly recovering underlying geometry, speeds, Doppler-ridge amplitudes, and ridge widths across all settings, while substantially outperforming the strongest baselines.",
+      "metrics": [
+        "31 real WiFi experiments"
+      ],
+      "title": "Untangling the Geometry and Speed for RF Sensing Spectrograms",
+      "authors": "Mert Torun, Darius Cuenca, Yasamin Mostofi",
+      "takeaway": "The paper claims to establish a new foundation for physically interpretable RF sensing that disentangles reflector speed from geometry, jointly recovering speed, geometry factor, relative amplitude, and width of each dominant Doppler ridge.",
+      "brief": "The authors propose a physics-informed autoencoder with a structured bottleneck and differentiable RF forward model to separate reflector speed from sensing geometry in WiFi spectrograms. They introduce a synthetic-to-real training framework that eliminates the need for real WiFi training data.\n\nThe authors state they extensively validate the framework under known and time-varying geometries using independently generated synthetic test sets and 31 real WiFi experiments. They report superior performance in speed and geometry extraction, robustly recovering underlying geometry, speeds, Doppler-ridge amplitudes, and ridge widths across all settings, while substantially outperforming the strongest baselines. The listing does not specify quantitative error rates, confidence intervals, or specific baseline names.\n\nResearchers working on RF sensing, WiFi-based motion detection, or physics-informed machine learning for signal processing may find the disentangling approach relevant. Those requiring specific quantitative benchmarks or code availability for immediate reproduction should note the absence of declared code and detailed metric values in the listing.",
+      "abstract": "A fundamental challenge in RF sensing is that Doppler signatures observed by a link entangle the target's motion with the sensing geometry, resulting in limited applicability to unconstrained real-world settings. In this paper, we establish a new foundation for physically interpretable RF sensing that disentangles reflector speed from geometry, jointly recovering the speed, geometry factor, relative amplitude, and width of each dominant Doppler ridge. More specifically, we first develop a compact parametric representation of WiFi spectrograms and establish its low-dimensional structure through a systematic computer-vision analysis of a large and diverse human-activity dataset, thereby providing a tractable foundation for learning. Building on this representation, we then design a physics-informed autoencoder whose structured bottleneck and differentiable RF forward model enforce physically meaningful estimates of reflector speed and geometry. We further introduce a synthetic-to-real training framework, eliminating the need for real WiFi training data. We extensively validate the proposed framework under both known and time-varying geometries, using both independently generated synthetic test sets and 31 real WiFi experiments. The results demonstrate the superior performance in speed and geometry extraction, robustly recovering the underlying geometry, speeds, Doppler-ridge amplitudes, and ridge widths across all settings, while substantially outperforming the strongest baselines.",
+      "takeaways": [
+        "The object is a physics-informed autoencoder designed to disentangle reflector speed from geometry in RF sensing spectrograms.",
+        "A visible limit is the lack of specific quantitative error metrics or named baselines in the provided abstract, making direct performance comparison difficult.",
+        "The artifact status is unclear as no code repository is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that their system performs better than the best existing methods at separating the speed of moving objects from the physical layout of the room, accurately measuring speed, layout, signal strength, and signal width in all tested scenarios.",
+        "brief": "The authors created a computer model that uses physics rules to separate how fast an object is moving from the shape of the room when using WiFi signals. They trained this model using simulated data so it does not need real WiFi data for training.\n\nThe authors tested their system in 31 real-world WiFi experiments and with simulated data. They say their system is better than the best other methods at finding the speed and room layout, and it accurately measures the signal details in every test. The summary does not give specific numbers for how accurate the measurements are or name the other methods it beat.\n\nPeople who study using WiFi to detect movement or who build AI models based on physics might find this useful. People who need exact accuracy numbers or want to download the code immediately should note that the summary does not provide these details.",
+        "takeaways": [
+          "The main thing is a computer model that separates object speed from room shape using WiFi signals.",
+          "A limitation is that the summary does not give specific accuracy numbers or name the other methods it was compared against.",
+          "It is not known if the code is available because the listing does not say where to find it."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative metrics and baseline comparisons by reading the full PDF, as the abstract only provides qualitative claims of superiority.",
+        "Check the paper's supplementary materials or author pages for code availability, since the listing indicates no declared code."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-24",
+        "publishedOn": "2026-09-24",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.26960"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-24"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-24T17:14:30.641Z"
+      }
+    },
+    {
+      "id": "2609.27207",
+      "arxivId": "2609.27207",
+      "url": "https://arxiv.org/abs/2609.27207",
+      "topic": "Health",
+      "reported": "The authors report that classical models reach test/holdout AUCs of 0.77/0.60 for cancer diagnosis and 1.00/0.83 for cancer type prediction on the BreCol benchmark.",
+      "metrics": [
+        "2,040 16S rRNA gene sequencing runs",
+        "test/holdout AUCs of 0.77/0.60",
+        "1.00/0.83 for cancer type prediction"
+      ],
+      "title": "BreCol: Benchmarking Classical and Deep-Learning Methods for Microbiome-Based Cancer Detection",
+      "authors": "Jeffrey M. Dick",
+      "takeaway": "The paper proposes BreCol, a benchmark of 2,040 16S rRNA gene sequencing runs across 26 studies to evaluate the generalizability of classical and deep-learning methods for microbiome-based cancer detection.",
+      "brief": "The authors introduce BreCol, a benchmark comprising 2,040 16S rRNA gene sequencing runs from 26 studies covering breast cancer, colorectal cancer, and healthy cohorts. They evaluate classical and deep-learning models using temporal train-test splits, with holdout data from 2023 onward to assess generalizability.\n\nClassical models achieve test/holdout AUCs of 0.77/0.60 for cancer diagnosis and 1.00/0.83 for cancer type prediction. The authors state that two deep learning models, HyenaDNA and SetBERT, underperform the best classical methods on holdout data, though tuning yields modest gains. The classical pipeline uses unsupervised clustering on tetramer frequencies to preserve compositional signal without taxonomic assignments.\n\nResearchers working on microbiome-based cancer detection or benchmarking generalizability across temporal cohorts may find the dataset and code useful. Those seeking state-of-the-art deep learning performance for this specific task may note the reported underperformance of deep models relative to classical baselines on holdout data.",
+      "abstract": "DNA sequencing of the gut microbial community shows promise for cancer detection, but questions remain about the generalizability of results across studies. We propose BreCol, a benchmark of 2,040 16S rRNA gene sequencing runs across 26 studies spanning breast cancer, colorectal cancer, and healthy cohorts. Train-test splits are made within pre-2023 studies, while holdout evaluation uses studies from 2023 onward, reflecting temporal separation from training data. Classical models reach test/holdout AUCs of 0.77/0.60 for cancer diagnosis and 1.00/0.83 for cancer type prediction. We train the models on both cancer types simultaneously and find that colorectal cancer is often easier to detect than breast cancer. We also evaluate two deep learning models: HyenaDNA, a long-range sequence model that pools hidden states for classification, and SetBERT, a transformer that produces contextualized embeddings over sets of reads. Both deep learning models underperform the best classical methods on holdout data, though tuning training set size and the classification head yields modest gains. Our classical pipeline uses unsupervised clustering to derive features from tetramer frequencies, preserving within-run compositional signal and achieving near state-of-the-art performance without relying on taxonomic assignments. BreCol data and associated code are publicly available.",
+      "takeaways": [
+        "The object is a benchmark of 2,040 16S rRNA gene sequencing runs across 26 studies, designed to test generalizability via temporal separation.",
+        "A visible limit is the reported underperformance of deep learning models compared to classical methods on holdout data, suggesting current deep architectures may not capture the signal as effectively in this setting.",
+        "The artifact status is that BreCol data and associated code are publicly available, though the listing does not specify repository URLs or license terms."
+      ],
+      "plain": {
+        "reported": "The authors report that their standard statistical models achieved accuracy scores of 0.77/0.60 for detecting cancer and 1.00/0.83 for identifying the cancer type on the BreCol test set.",
+        "brief": "The authors created a test set called BreCol, which includes 2,040 DNA sequencing samples from 26 different studies. These studies involved patients with breast cancer, colorectal cancer, and healthy individuals. They tested both traditional statistical methods and newer AI models to see how well they could predict cancer from gut bacteria data.\n\nThe traditional methods performed better than the AI models when tested on new data from later years. The traditional methods scored 0.77/0.60 for detecting cancer and 1.00/0.83 for identifying the type. The AI models, called HyenaDNA and SetBERT, did not perform as well on the new data, even after some adjustments. The traditional method worked by grouping similar DNA patterns without needing to identify specific bacteria species.\n\nScientists studying how gut bacteria relate to cancer might find this test set helpful for comparing different methods. People looking for the best AI model for this specific task should note that the traditional methods outperformed the AI models in this particular test.",
+        "takeaways": [
+          "The main item is a collection of 2,040 DNA samples from 26 studies, used to test how well different methods can predict cancer from gut bacteria.",
+          "One limitation is that the newer AI models did not perform as well as the older statistical methods when tested on new data from later years.",
+          "The data and code are available to the public, but the specific website links and usage rules are not listed in this summary."
+        ]
+      },
+      "actions": [
+        "Verify the public availability and access instructions for the BreCol data and code by checking the paper's supplementary materials or linked repositories.",
+        "Review the full PDF to confirm the specific hyperparameters and tuning procedures used for the deep learning models, as the abstract only mentions 'modest gains' from tuning."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "q-bio.GN"
+      ],
+      "listing": {
+        "listedOn": "2026-09-24",
+        "publishedOn": "2026-09-24",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.27207"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-24"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-24T17:14:30.641Z"
+      }
+    }
+  ]
+}
