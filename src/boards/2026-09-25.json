@@ -1,0 +1,660 @@
+{
+  "date": "2026-09-25",
+  "label": "Fri, Sep 25",
+  "minutes": 10,
+  "poolSize": 116,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-09-25T17:18:46.848Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2609.28654",
+      "arxivId": "2609.28654",
+      "url": "https://arxiv.org/abs/2609.28654",
+      "topic": "AI",
+      "reported": "The authors report that PWM-WROP ranks first among continuation models and third overall in a blind pairwise Elo study on a 300-question exam.",
+      "metrics": [
+        "150 hand-designed cognitive science inspired tasks",
+        "10,000+ samples per task",
+        "1.5M-sample training corpus"
+      ],
+      "title": "Training Object Permanence in World Models",
+      "authors": "Haotian Zhang, Fengyuan Yu, Dezhi Luo, Haoran Sun, Zehong Zhao, Qingying Gao, Yihan Li, Siyuan An, Huayi Qin, Yilan Zhang, Zhengze Jiang, Pinyuan Feng, Renrui Zhang, Ziyu Guo, Letian Wang, Mengyue Yang, Kangfu Mei, Maijunxian Wang, Ran Ji, Vikash Kumar, Freda Shi, Chandra Sripada, Vincent C. Muller, Philip Torr, Alan Yuille, Nikolaus Kriegeskorte, Felix Juefei-Xu, Lvmin Zhang, Jieneng Chen, Yilun Du, Hokin Deng",
+      "takeaway": "The paper introduces WROP, a data infrastructure and training method to instill object permanence in video generation world models.",
+      "brief": "The authors propose WROP to train video models on object permanence using a dataset of 150 cognitive science-inspired tasks. They report that their 16B model, PWM-WROP, ranks first among continuation models and third overall in a blind pairwise Elo evaluation on a 300-question exam. The listing does not establish specific failure modes or generalization limits beyond the reported benchmark performance.\n\nThe strongest reported evidence is the Elo ranking of PWM-WROP against 14 other video models on the released exam. The authors state that the model ranks behind only a statistical tie between two reference-to-video models. The listing does not provide details on the specific cognitive categories where performance varied or the exact Elo score margins.\n\nResearchers working on video generation, world models, or cognitive science-inspired AI training may find the released data and training stack relevant. Those not focused on physical intelligence or object permanence in generative models may ignore this work.",
+      "abstract": "Object permanence and solidity are hallmarks of human cognitive priors. Recent studies show that video generation models, a paradigmatic class of current world models, have begun to show emerged reasoning abilities, making them ideal candidates for building human-like physical intelligence. Do video models have emerged object permanence in them? If not, could we train them with a core-cognition inspired dataset? We introduce WROP (World Reasoning with Object Permanence), a data infrastructure of 150 hand-designed cognitive science inspired tasks, divided into six cognitive categories. We build Blender generators that randomize speed, lighting, camera angle, and other nuisance parameters while preserving each task's cognitive structure, yielding 10,000+ samples per task. We release a 1.5M-sample training corpus and a 300-question exam. On this exam we evaluate 14 video models: 3 reference-to-video, 7 edit, and 4 continuation, among which PWM-WROP, our 16B world model. In a blind pairwise Elo study, PWM-WROP ranks first among continuation models and third overall, behind only a statistical tie between two reference-to-video models. We release the data, exam, model answers, scores, weights, and PWM, our native-PyTorch training stack on AWS Trainium2.",
+      "takeaways": [
+        "The object is a 16B world model trained on a 1.5M-sample corpus of object permanence tasks.",
+        "The visible limit is that the reported ranking is based on a specific 300-question exam and blind pairwise Elo study.",
+        "The artifact status includes released data, exam, model answers, scores, weights, and a native-PyTorch training stack on AWS Trainium2."
+      ],
+      "plain": {
+        "reported": "The authors say their model, called PWM-WROP, came in first place for a specific type of video prediction task and third place overall in a head-to-head comparison test with 14 other video models.",
+        "brief": "The researchers created a new way to teach AI video generators to understand that objects still exist even when they are hidden from view. They built a large dataset of 150 specific scenarios designed to test this understanding and used it to train a large AI model. They report that their model performed very well in a competition-style test against other video models, placing first in its category and third overall. The summary does not say if the model fails in other situations or how much better it is than the others in exact points.\n\nThe main proof they give is the ranking from the competition-style test. They say their model beat all other models in the 'continuation' category and was only behind two other models in the overall ranking, which were tied with each other. The summary does not explain which specific types of object permanence tasks the model struggled with or the exact point differences in the rankings.\n\nPeople who build AI systems that generate video or try to make AI understand physical rules might want to look at this. People who are not interested in teaching AI about physical objects or video generation probably do not need to look at this paper.",
+        "takeaways": [
+          "The main thing they made is a large AI model trained on a huge set of examples about objects staying in existence.",
+          "The main limitation we can see is that the results are based on one specific test with 300 questions and a specific comparison method.",
+          "They have shared the data, the test questions, the model's answers, the scores, the model files, and the code used to train it."
+        ]
+      },
+      "actions": [
+        "Verify the Elo ranking details and the statistical tie claim by reading the full PDF.",
+        "Inspect the released GitHub repository to confirm the availability of the 1.5M-sample corpus and training code."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/hokindeng/object-permanence",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-25",
+        "publishedOn": "2026-09-23",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.28654",
+            "upvotes": 152
+          }
+        ]
+      },
+      "trend": {
+        "votes": 152,
+        "rank": 1,
+        "of": 19,
+        "perDay": 76
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 152,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-25T17:18:46.848Z"
+      }
+    },
+    {
+      "id": "2609.29845",
+      "arxivId": "2609.29845",
+      "url": "https://arxiv.org/abs/2609.29845",
+      "topic": "AI",
+      "reported": "The authors report that linearity can be substantially restored through lightweight fine-tuning, significantly reducing the divergence between the predicted next-token distribution and the average of the individual next-token distributions.",
+      "metrics": [],
+      "title": "Your Transformer Can Hold Two Thoughts at Once: Evidence of Linear Superposition in LLMs",
+      "authors": "Pavel Tikhonov, Anton Korznikov, Matvey Mikhalchuk, Nikita Dragunov, Temurbek Rahmatullaev, Polina Druzhinina, Anton Razzhigaev, Ivan Oseledets, Elena Tutubalina",
+      "takeaway": "The paper claims that Transformers exhibit fundamental linearity where linearly combined inputs produce superposed next-token distributions, a property that can be restored via fine-tuning and exploited for simultaneous generation.",
+      "brief": "The authors propose the Superposition Linearity Hypothesis, arguing that LLMs exhibit fundamental linearity when inputs from distinct text streams are linearly combined. They claim this is an intrinsic property of the Transformer architecture rather than an emergent consequence of training.\n\nEvidence includes observations that superposition tends to diminish as pretraining progresses but can be substantially restored through lightweight fine-tuning. The authors introduce a guided decoding procedure that disentangles superposed outputs, enabling the simultaneous generation of two coherent continuations from a single forward pass. The listing does not specify the exact models, datasets, or quantitative benchmarks used to measure this divergence.\n\nResearchers investigating the internal linearity of Transformer architectures or developing multi-stream decoding methods may find this relevant. Those focused solely on standard single-stream generation performance or empirical benchmarking without architectural analysis may find the scope limited.",
+      "abstract": "While Large Language Models (LLMs) rely on highly non-linear components, in this work we demonstrate that they exhibit fundamental linearity: when inputs from distinct text streams are linearly combined, the model outputs a superposition of the individual next-token distributions. We term this the Superposition Linearity Hypothesis. We provide evidence that superposition is an intrinsic property of the Transformer architecture rather than an emergent consequence of training; in fact, we observe that it tends to diminish as pretraining progresses. However, we demonstrate that linearity can be substantially restored through lightweight fine-tuning, significantly reducing the divergence between the predicted next-token distribution and the average of the individual next-token distributions. Finally, we introduce a guided decoding procedure that disentangles superposed outputs, enabling the simultaneous generation of two coherent continuations from a single forward pass.",
+      "takeaways": [
+        "The object is the linearity of next-token distributions in Transformers when processing linearly combined inputs from distinct text streams.",
+        "A visible limit is that the listing does not specify the quantitative metrics, model sizes, or datasets used to measure the reduction in divergence.",
+        "The artifact status is not established in the listing, as no code repository or specific implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors state that a simple adjustment to the model's training can make its behavior more linear, which reduces the difference between its prediction for a mixed input and the average of its predictions for the separate inputs.",
+        "brief": "The authors suggest that large language models have a basic linear property: if you mix inputs from two different texts, the model's output is a mix of the outputs it would give for each text alone. They argue this is built into the model's design, not just a result of how it was trained.\n\nThey show that this linear property gets weaker as the model is trained on more data, but it can be brought back with a small amount of extra training. They also describe a method to separate the mixed outputs, allowing the model to generate two separate, coherent text continuations at the same time in one calculation. The provided summary does not say which specific models or tests were used to measure these effects.\n\nPeople studying how these models work internally or looking for ways to generate multiple text streams at once might find this useful. People only interested in standard single-text generation scores or who do not care about the internal math of the model might not find it relevant.",
+        "takeaways": [
+          "The focus is on how the model's predictions mix when given a mathematical blend of two different text inputs.",
+          "A limitation is that the summary does not list the specific numbers, model sizes, or data used to prove the linear property was restored.",
+          "It is not stated in the summary whether the code or specific tools for this method are available for download."
+        ]
+      },
+      "actions": [
+        "Verify the specific models and datasets used to measure the divergence between predicted and averaged next-token distributions in the full PDF.",
+        "Check the full PDF for the quantitative results demonstrating the restoration of linearity through lightweight fine-tuning."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-25",
+        "publishedOn": "2026-09-24",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.29845",
+            "upvotes": 42
+          }
+        ]
+      },
+      "trend": {
+        "votes": 42,
+        "rank": 2,
+        "of": 19,
+        "perDay": 42
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 42,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-24"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-25T17:18:46.848Z"
+      }
+    },
+    {
+      "id": "2609.30221",
+      "arxivId": "2609.30221",
+      "url": "https://arxiv.org/abs/2609.30221",
+      "topic": "AI",
+      "reported": "The authors report that WanPE-397B boosts human preference over raw user prompts by 10.66-18.84 points at 5-15 seconds and by a dramatic 50.86 points in the 30-second arena.",
+      "metrics": [
+        "397B-parameter prompt enhancement model",
+        "1.05M real-world videos",
+        "10.66-18.84 points at 5-15 seconds"
+      ],
+      "title": "WanPE: Towards Cinematic Prompt Enhancement for Modern Text-to-Video Generation",
+      "authors": "Yubo Zhu, Yawen Shao, Ziyun Dai, Zixun Fang, Kai Zhu, Siyang Sun, Haolan Xue, Chuxin Wang, Tingyu Weng, Jingming Luo, Chen Shi, Lianghua Huang, Yufeng Ai, Yuzheng Wang, Wenyuan Zhang, Yu Shang, Yuxiang Bao, Zoubin Bi, Jie Xiao, Jinbo Xing, Jiaxing Zhao, Chongyang Zhong, Hengjian Chen, Chenwei Xie, Akide Liu, Zhehan Kan, Yu Liu, Wei Zhai, Sheng Zhong, Wei Tong",
+      "takeaway": "The paper presents WanPE, a 397B-parameter prompt enhancement model trained on 1.05M real-world videos to master director-level cinematic planning for text-to-video generation.",
+      "brief": "The authors introduce WanPE, a large-scale model designed to enhance text prompts for video generation by formulating shot-level cinematic plans. They state that the model uses video-grounded reverse construction and a specific reinforcement learning method to preserve user requirements across multiple shots.\n\nThe authors report that their model improves human preference scores significantly compared to raw prompts, with the largest gain observed in 30-second video generation. They also state that their benchmark, WanPEval, includes human-annotated data and blind pairwise assessments to measure these capabilities.\n\nResearchers working on text-to-video prompt engineering or large-scale video generation models may find the architectural details and benchmark results relevant. Those not focused on cinematic prompt planning or large parameter models may find the specific technical contributions less applicable to their work.",
+      "abstract": "Video generation begins in text space by authoring a cinematic screenplay, then materializes into pixels. As contemporary video generators scale to 30 seconds and faithfully follow complex conditions, the textual prompt largely directs the production, planning how actions, camera trajectories, lighting, and sound unfold across multi-shot sequences. In this paper, we present WanPE, a 397B-parameter prompt enhancement model trained on 1.05M real-world videos to master director-level cinematic planning. WanPE formulates shot-level cinematic plans via video-grounded reverse construction and employs Semantic-Consistency GRPO (SC-GRPO) to faithfully preserve user requirements across shots and over time. To benchmark this capability, we curate WanPEval, a human-annotated testbed covering durations from 5 to 30 seconds across varying intent granularities, supported by approximately 11K blind pairwise assessments. When powering Wan3.0's video generator, WanPE-397B boosts human preference over raw user prompts by 10.66-18.84 points at 5-15 seconds and by a dramatic 50.86 points in the 30-second arena. Ablation studies show that reverse construction demonstrates clear superiority over forward rewriting, while SC-GRPO robustly preserves semantic fidelity across model scales. Ultimately, WanPE leads all evaluated commercial offerings at 5-15 seconds and remains competitive with Seedance 2.5 at 30 seconds.",
+      "takeaways": [
+        "The object is a 397B-parameter prompt enhancement model specifically designed for cinematic planning in video generation.",
+        "The listing does not establish whether the reported preference gains are statistically significant or if the benchmark has known biases.",
+        "The artifact status is unclear as no code or model weights are declared in the supplied metadata."
+      ],
+      "plain": {
+        "reported": "The authors report that their model improves how much humans prefer the generated videos compared to using the original text prompts, with the biggest improvement seen in 30-second videos.",
+        "brief": "The authors created a large computer program that takes simple text descriptions and turns them into detailed movie-like instructions for making videos. They say this program helps make the videos match what the user asked for more closely, especially when the video is long.\n\nThey tested their program by having people compare videos made with their instructions versus videos made with the original simple text. They found that people preferred the videos made with their program's instructions, especially for longer videos. They also created a set of test videos to measure how well the program works.\n\nPeople who work on making computer programs that create videos from text might find this useful. People who do not work on this specific type of video creation might not find it very useful.",
+        "takeaways": [
+          "The main thing they made is a large computer program that improves text instructions for making videos.",
+          "The listing does not say if the improvements are reliable or if the test videos are fair.",
+          "It is not clear if the computer program or its data are available for others to use."
+        ]
+      },
+      "actions": [
+        "Verify the specific implementation details of Semantic-Consistency GRPO and the reverse construction method in the full PDF.",
+        "Check the full paper for details on the WanPEval benchmark construction and the specific commercial offerings compared against."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-25",
+        "publishedOn": "2026-09-24",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.30221",
+            "upvotes": 23
+          }
+        ]
+      },
+      "trend": {
+        "votes": 23,
+        "rank": 3,
+        "of": 19,
+        "perDay": 23
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 23,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-24"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-25T17:18:46.848Z"
+      }
+    },
+    {
+      "id": "2609.23407",
+      "arxivId": "2609.23407",
+      "url": "https://arxiv.org/abs/2609.23407",
+      "topic": "AI",
+      "reported": "The authors report that OmniEcho achieves state-of-the-art performance on spatial audio-visual perception and reaches a performance level close to traditional vision-language navigation for sound-guided tasks.",
+      "metrics": [
+        "197 real-world spatial audio-visual scenes",
+        "2,972 question-answer pairs",
+        "900 navigation samples"
+      ],
+      "title": "OmniEcho: Spatial Audio Understanding for Embodied Agents",
+      "authors": "Ruixun Liu, Yuxuan Wang, Jiacheng Xie, Yuhuan You, Donghua Cai, Junming Lin, Xiong-Hui Chen, Zhifang Guo, Yunfei Chu, Qize Yang, Xize Cheng, Jin Xu, Yiwu Zhong",
+      "takeaway": "The paper introduces OmniEchoBench, a unified benchmark for spatial audio-visual perception and navigation, and OmniEcho, a spatially aware omni-modal model designed to process first-order ambisonics audio.",
+      "brief": "The authors propose OmniEchoBench and the OmniEcho model to address the lack of evaluation and modeling for spatial audio understanding in embodied agents. The benchmark includes six tasks, 197 real-world scenes, and a controllable rendering pipeline for spatial audio supervision.\n\nThe authors report state-of-the-art performance on spatial audio-visual perception and navigation performance close to traditional vision-language navigation. They identify fine-grained spatial localization and distance estimation as important open challenges, though specific quantitative gaps or failure rates are not detailed in the abstract.\n\nResearchers working on embodied AI, spatial audio processing, or multi-modal navigation may find the benchmark and model architecture relevant. Those focused solely on 2D visual reasoning or non-spatial audio tasks may find the specific first-order ambisonics focus less applicable.",
+      "abstract": "Humans can effortlessly localize the direction of a sound source and integrate it with visual cues for reasoning, yet this remains challenging for embodied agents. In particular, it is still unclear how to effectively evaluate and model spatial audio understanding in embodied settings. To address this gap, we introduce OmniEchoBench, a unified benchmark for spatial audio-visual perception and audio-vision-language navigation. OmniEchoBench comprises six tasks over 197 real-world spatial audio-visual scenes, 2,972 question-answer pairs, and 900 navigation samples with first-order ambisonics (FOA) audio collected from 30 real-world environments. To enable scalable training supervision, we develop a controllable rendering pipeline for spatial audio. It preserves geometric consistency among sound sources, visual observations, and agent trajectories. Building on this, we propose OmniEcho, a spatially aware omni-modal model. It introduces an FOA spatial encoder alongside a pretrained semantic audio pathway. Extensive experiments show that OmniEcho achieves state-of-the-art performance on spatial audio-visual perception. For our sound-guided navigation, OmniEcho reaches a performance level close to that of traditional vision-language navigation. These results demonstrate that spatial audio can serve as a valuable signal for embodied scene reasoning and navigation, while also highlighting fine-grained spatial localization and distance estimation as important open challenges.",
+      "takeaways": [
+        "The core object is a unified benchmark and a spatially aware omni-modal model that integrates first-order ambisonics audio with visual and language pathways.",
+        "The abstract highlights fine-grained spatial localization and distance estimation as unresolved challenges, indicating that the model does not fully solve precise spatial reasoning.",
+        "The listing provides a GitHub repository URL, but the abstract does not specify whether the code includes the full benchmark data, the rendering pipeline, or the trained model weights."
+      ],
+      "plain": {
+        "reported": "The authors state that their model performs better than existing methods on recognizing spatial audio and visual scenes, and performs almost as well as standard vision-and-language models for navigating using sound.",
+        "brief": "The paper creates a new test set called OmniEchoBench and a new AI model called OmniEcho. These are designed to help robots or virtual agents understand where sounds are coming from and how that relates to what they see. The test set uses 197 real-world scenes and includes a tool to create realistic spatial audio for training.\n\nThe authors say their model is the best at understanding spatial audio and visual scenes. For navigating using sound, it performs nearly as well as models that only use vision and language. They note that accurately pinpointing exact locations and distances remains a difficult problem that their model does not fully solve.\n\nPeople studying how robots perceive their environment, especially using sound, might find this useful. People who only care about 2D image recognition or audio that does not have a specific direction might not need this paper.",
+        "takeaways": [
+          "The main contribution is a new test set and a new AI model that can understand 3D sound direction alongside images and text.",
+          "The authors admit that the model still struggles with pinpointing exact locations and measuring distances accurately.",
+          "The paper lists a code link, but it is not clear from the summary if the actual test data and trained model files are included in that link."
+        ]
+      },
+      "actions": [
+        "Verify the GitHub repository to confirm the availability of the 197 real-world scenes, the 2,972 question-answer pairs, and the 900 navigation samples mentioned in the abstract.",
+        "Check the PDF for specific quantitative metrics comparing OmniEcho to baseline models on the six benchmark tasks, as the abstract only provides qualitative performance descriptions."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/PKU-VaLuE-Lab/OmniEcho",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-25",
+        "publishedOn": "2026-09-20",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.23407",
+            "upvotes": 20
+          }
+        ]
+      },
+      "trend": {
+        "votes": 20,
+        "rank": 4,
+        "of": 19,
+        "perDay": 4
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 20,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-20"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-25T17:18:46.848Z"
+      }
+    },
+    {
+      "id": "2609.28491",
+      "arxivId": "2609.28491",
+      "url": "https://arxiv.org/abs/2609.28491",
+      "topic": "Physics",
+      "reported": "The authors report that the proposed framework is trained and evaluated on various multi-class datasets(MNIST, KMNIST, Fashion-MNIST, and EMNIST).",
+      "metrics": [],
+      "title": "Hybrid Variational Quantum-Classical Framework with Adaptive Weighting and Efficiency Assessment",
+      "authors": "Dilli Hang Rai",
+      "takeaway": "The paper presents Sim-HVQC, a hybrid Deep Quantum Neural Network coupling an adaptive SimAM weighting module with classical feature extraction for multi-class classification.",
+      "brief": "The authors propose Sim-HVQC, a hybrid Deep Quantum Neural Network that couples an adaptive, parameter-free SimAM weighting module with classical feature extraction to preserve class-discriminative information prior to encoding into a Variational Quantum Circuit (VQC). They state that previous studies are restricted to binary classification, whereas their framework is trained and evaluated on various multi-class datasets(MNIST, KMNIST, Fashion-MNIST, and EMNIST). They further claim the framework demonstrates reproducibility, parameter efficiency, and interpretability through multi-seed evaluation, parameter analysis, and latent/quantum feature inspection.\n\nThe listing identifies the evaluation datasets as MNIST, KMNIST, Fashion-MNIST, and EMNIST, but provides no quantitative accuracy, loss, or efficiency metrics. The authors state that the source code is publicly available at a specific GitHub URL, but the listing does not confirm the repository's current status or contents. No specific numerical results or benchmark comparisons are included in the supplied abstract.\n\nResearchers working on hybrid quantum-classical neural networks or multi-class image classification may find the proposed SimAM weighting module and VQC integration relevant. Those requiring immediate quantitative performance benchmarks or verified code access without external verification may find the listing insufficient for direct implementation decisions.",
+      "abstract": "Hybrid quantum-classical neural networks have emerged as a promising approach for leveraging quantum computing in machine learning while mitigating current hardware limitations. This paper presents Sim-HVQC, a hybrid Deep Quantum Neural Network that couples an adaptive, parameter-free SimAM weighting module with classical feature extraction to preserve class-discriminative information prior to encoding into a Variational Quantum Circuit (VQC). Previous studies are restricted to binary classification [1] [2] [3] [4] [5]. In contrast, the proposed framework is trained and evaluated on various multi-class datasets(MNIST, KMNIST, Fashion-MNIST, and EMNIST). The framework further demonstrates reproducibility, parameter efficiency, and interpretability through multi-seed evaluation, parameter analysis, and latent/quantum feature inspection. The source code is publicly available at https://github.com/Dilli822/ SimAM-HVQC",
+      "takeaways": [
+        "The object is Sim-HVQC, a hybrid Deep Quantum Neural Network using an adaptive SimAM weighting module and a Variational Quantum Circuit for multi-class classification.",
+        "The visible limit is the absence of quantitative performance metrics in the abstract, leaving the actual accuracy or efficiency gains unverified in this listing.",
+        "The artifact status is claimed as publicly available source code at a GitHub URL, but the listing does not verify the repository's existence, completeness, or current accessibility."
+      ],
+      "plain": {
+        "reported": "The authors report that the proposed framework is trained and evaluated on various multi-class datasets(MNIST, KMNIST, Fashion-MNIST, and EMNIST).",
+        "brief": "The authors propose a system called Sim-HVQC, which combines a quantum computer component with a classical computer component. It uses a specific weighting method called SimAM to help the system distinguish between different categories of images before sending the data to the quantum part. They state that earlier similar systems only worked with two categories, but their system works with multiple categories using four specific image datasets: MNIST, KMNIST, Fashion-MNIST, and EMNIST. They also claim the system is consistent, uses few parameters, and is easy to interpret based on their testing methods.\n\nThe listing names the four datasets used for testing but does not provide any numbers showing how well the system performed, such as accuracy percentages or error rates. The authors say the computer code is available on a public website, but the listing does not confirm if the link works or if the code is complete. There are no specific numerical results or comparisons to other systems in the provided text.\n\nPeople who study how to combine quantum and classical computers for image recognition might find this useful. People who need specific performance numbers or verified code without checking external sources might find this summary not enough to make a decision.",
+        "takeaways": [
+          "The system is a hybrid network that uses a quantum circuit and a classical weighting module to classify images into multiple categories.",
+          "The main limitation in this summary is that it does not show any numbers proving how well the system works compared to others.",
+          "The authors say the code is online, but this summary does not confirm that the link is active or that the code is complete."
+        ]
+      },
+      "actions": [
+        "Verify the existence and contents of the GitHub repository at https://github.com/Dilli822/ SimAM-HVQC to confirm code availability and reproducibility.",
+        "Review the full PDF to extract the specific quantitative results and benchmark comparisons on MNIST, KMNIST, Fashion-MNIST, and EMNIST that are omitted from the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-25",
+        "publishedOn": "2026-09-25",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.28491"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-25T17:18:46.848Z"
+      }
+    },
+    {
+      "id": "2609.28504",
+      "arxivId": "2609.28504",
+      "url": "https://arxiv.org/abs/2609.28504",
+      "topic": "Econ",
+      "reported": "The authors report that scientists using AI save nearly 7 hours per week, a figure they attribute to survey responses from over 600 scientists.",
+      "metrics": [
+        "15 million Gemini interactions",
+        "2,600 specialized AI models",
+        "600 scientists"
+      ],
+      "title": "AI in Science: Early Insights",
+      "authors": "Mihai Codreanu, Alex Imas, Juan Mateos-Garcia, Joseph Emmens, Evalyne Muiruri, Arthur Turrell, Julian Jacobs, Atoosa Kasirzadeh, Ana Trisovic, Yiyuan Chen, Tanya Rodchenko, Catherine Pollard, Scott Strand, Daniel Rock, Zanna Iscenko, Fabien Curto Millet, Neil Thompson, James Manyika",
+      "takeaway": "The paper provides early insights into AI impacts on science by mapping three distinct data sources to a new taxonomy of scientific tasks.",
+      "brief": "The authors claim to provide early insights into AI in science using a sample of 15 million Gemini interactions, an inventory of over 2,600 specialized AI models, and a survey of over 600 scientists. They map these data to a new taxonomy of scientific tasks to study usage patterns.\n\nThey report that scientists use AI more than most other occupations and that LLMs and specialized models act as complements. They state that scientists report a saving of nearly 7 hours per week, primarily re-invested in more research. They also note that bottlenecks shift downstream, with increased backlogs of untested hypotheses and demand for output verification.\n\nResearchers studying the intersection of artificial intelligence and scientific productivity may find the taxonomy and multi-source data mapping relevant. Those seeking definitive causal evidence of long-term economic impact should note the authors describe these as early insights with limited data.",
+      "abstract": "Scientific progress is a key driver of economic growth and prosperity. There is great excitement - but also concerns - about the impacts of AI on science, but so far little data. We provide early insights on this from three data sources: a sample of 15 million Gemini interactions, an inventory of over 2,600 specialized AI models across disciplines, and a survey of over 600 scientists. We map these data to a new taxonomy of scientific tasks to study how scientists are using AI. Four main findings emerge. First, we find broad adoption and coverage: scientists use AI more than most other occupations. Specialized AI models have broad disciplinary coverage and are highly cited. Nearly half of the scientists surveyed report using some form of AI every day. Second, we document evidence that LLMs (proxied through Gemini usage) and specialized models act as complements-- LLMs are used for general analysis, coding, and manuscript preparation, while specialized models provide domain-specific predictions, data generation and classification. Third, scientists report large productivity gains from using AI: a saving of nearly 7 hours per week, time which is primarily re-invested in more research. Finally, we show that AI is already changing the scientific process. As some stages of scientific research become easier, bottlenecks shift downstream. Scientists report an increased backlog of untested hypotheses and substantial demand for output verification. Our findings suggest that AI holds significant potential to increase scientific productivity. However, as with other sectors, its ultimate impact will be governed by complex task interdependencies and investment into the elimination of emerging bottlenecks.",
+      "takeaways": [
+        "The object is a descriptive mapping of AI usage in science using three specific data sources and a new task taxonomy.",
+        "A visible limit is the authors' own statement that there is so far little data, positioning their findings as early insights rather than comprehensive conclusions.",
+        "The artifact status is not established in the listing, as no code, dataset, or repository URL is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that scientists using AI save nearly 7 hours per week, a figure they attribute to survey responses from over 600 scientists.",
+        "brief": "The authors claim to provide early insights into AI in science using a sample of 15 million Gemini interactions, an inventory of over 2,600 specialized AI models, and a survey of over 600 scientists. They map these data to a new taxonomy of scientific tasks to study usage patterns.\n\nThey report that scientists use AI more than most other occupations and that LLMs and specialized models act as complements. They state that scientists report a saving of nearly 7 hours per week, primarily re-invested in more research. They also note that bottlenecks shift downstream, with increased backlogs of untested hypotheses and demand for output verification.\n\nResearchers studying the intersection of artificial intelligence and scientific productivity may find the taxonomy and multi-source data mapping relevant. Those seeking definitive causal evidence of long-term economic impact should note the authors describe these as early insights with limited data.",
+        "takeaways": [
+          "The object is a descriptive mapping of AI usage in science using three specific data sources and a new task taxonomy.",
+          "A visible limit is the authors' own statement that there is so far little data, positioning their findings as early insights rather than comprehensive conclusions.",
+          "The artifact status is not established in the listing, as no code, dataset, or repository URL is provided."
+        ]
+      },
+      "actions": [
+        "Verify the specific methodology for mapping Gemini interactions to the scientific task taxonomy in the full PDF.",
+        "Check the full PDF for details on how the 7 hours per week productivity gain was calculated and measured in the survey."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "cs.AI",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-09-25",
+        "publishedOn": "2026-09-25",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.28504"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-25T17:18:46.848Z"
+      }
+    },
+    {
+      "id": "2609.28517",
+      "arxivId": "2609.28517",
+      "url": "https://arxiv.org/abs/2609.28517",
+      "topic": "Security",
+      "reported": "The authors report that a community-support guard reduces combined NLL by 0.1133 and high-confidence errors from 43.25 to 33.25 per 400-sample cell on MalNet-Tiny.",
+      "metrics": [
+        "increases mean negative log likelihood (NLL) by 0.1369",
+        "increases NLL by only 0.0415",
+        "reduces combined NLL by 0.1133"
+      ],
+      "title": "Stress-Testing Structure-Aware Calibration of Malware Graph Neural Networks under Type Shift",
+      "authors": "Junru Zhu, Yixin Yang, Xiaoqing Ding, Ruoyu Qi",
+      "takeaway": "The paper claims that structural covariates in post-hoc malware calibrators can create support-sensitive confidence errors under malware-type shift, which a label-free fallback guard can mitigate.",
+      "brief": "The authors argue that adding graph-structure inputs to malware confidence calibrators risks degrading performance when the validation data does not represent the target malware types. They test this on MalNet-Tiny by holding out specific malware types and comparing a structure-aware calibrator against a generic one and a control with nuisance variables. The structure-aware model showed higher error rates, but a proposed guard that reverts to the generic model when structural inputs are out-of-distribution recovered most of the lost accuracy.\n\nThe strongest reported result is a reduction in high-confidence errors from 43.25 to 33.25 per 400-sample cell using the guard. The authors note that a capacity-matched control explains part of the degradation, suggesting input count matters, but the structural effect remains. The study is limited to the MalNet-Tiny dataset and a specific graph isomorphism network architecture, so generalizability to other malware datasets or model types is not established in the listing.\n\nResearchers working on malware detection calibration or out-of-distribution detection in graph neural networks should open this paper. Those focused on other security domains or non-graph malware classifiers may ignore it, as the findings are specific to structure-aware calibration under type shift.",
+      "abstract": "Post-hoc malware calibrators can condition confidence on graph structure, but their structural inputs may leave the support represented by validation data under malware-type shift. We study this risk on MalNet-Tiny by holding out each of four malware types across three seeds, freezing a graph isomorphism network, and fitting post-hoc mappings only on known-type data. Adding eight community covariates to a generic-topology calibrator increases mean negative log likelihood (NLL) by 0.1369; a type-cluster bootstrap gives a 95% interval of [-0.0125, 0.2864]. A capacity-matched control adds eight label-independent nuisance variables over 20 deterministic repeats and increases NLL by only 0.0415, indicating that input count explains part but not all of the degradation. We then use calibration data to define a community-support guard: predictions outside the 95th percentile of calibration-standardized community displacement revert to the generic calibrator. The guard reduces combined NLL by 0.1133 and high-confidence errors from 43.25 to 33.25 per 400-sample cell, while its NLL remains close to the generic baseline. These results show how structural covariates can create support-sensitive confidence errors and how a label-free fallback can recover most of the resulting loss.",
+      "takeaways": [
+        "The object is a post-hoc calibration method for malware graph neural networks that uses community covariates to adjust confidence scores.",
+        "A visible limit is that the evaluation is restricted to MalNet-Tiny and a frozen graph isomorphism network, leaving performance on larger or different architectures unverified.",
+        "The artifact status is not established in the listing, as no code or dataset links are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that a safety check reduces prediction errors by 0.1133 and high-confidence mistakes from 43.25 to 33.25 per 400-sample cell on the MalNet-Tiny dataset.",
+        "brief": "The authors suggest that using graph structure to adjust malware detection confidence can backfire if the training data doesn't cover all malware types. They tested this on a small dataset called MalNet-Tiny by hiding certain malware types and comparing different calibration methods. The structure-based method performed worse, but a fallback rule that switches to a simpler method when the structure looks unfamiliar fixed most of the problem.\n\nThe best result was a drop in high-confidence errors from 43.25 to 33.25 per 400-sample cell. The authors also found that just adding more variables, regardless of their meaning, caused some error increase, but not as much as the structural variables did. The study only used one small dataset and one type of neural network, so it is unclear if these results apply to other malware detection systems.\n\nPeople studying how to make malware detectors more reliable or how to handle unexpected data in graph models should look at this. Others working on different security topics or non-graph models can likely skip it, as the findings are very specific to this setup.",
+        "takeaways": [
+          "The paper focuses on a method to adjust the confidence scores of malware detectors that use graph structure.",
+          "A clear limitation is that the tests were only done on a small dataset and one specific neural network type, so results may not hold elsewhere.",
+          "It is not stated whether the code or data used in the study are available for others to use."
+        ]
+      },
+      "actions": [
+        "Verify the exact implementation of the community-support guard and the definition of 'community displacement' in the full PDF.",
+        "Check if the MalNet-Tiny dataset and the specific graph isomorphism network configuration are publicly available to reproduce the 0.1133 NLL reduction."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR"
+      ],
+      "listing": {
+        "listedOn": "2026-09-25",
+        "publishedOn": "2026-09-25",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.28517"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-25T17:18:46.848Z"
+      }
+    },
+    {
+      "id": "2609.28689",
+      "arxivId": "2609.28689",
+      "url": "https://arxiv.org/abs/2609.28689",
+      "topic": "Stats",
+      "reported": "The authors report a theoretical framework for Functional Data Analysis of parametrized curves in Rp, measured on the mathematical formulation of smoothing and functional PCA.",
+      "metrics": [],
+      "title": "On Some Theoretical Aspects of Functional Data Analysis of Parametrized Curves in $\\mathbb{R}^p$",
+      "authors": "Bernard Colin",
+      "takeaway": "The paper provides a comprehensive mathematical and practical overview of Functional Data Analysis applied to parametrized curves in Rp.",
+      "brief": "The author presents a theoretical framework for analyzing parametrized curves using Functional Data Analysis. The work connects discrete measurements to smooth functions via least squares criteria and extends Principal Component Analysis to a functional setting.\n\nThe abstract describes the mathematical tools used, such as Sobolev spaces and the Euler-Lagrange multiplier theorem. It does not report specific numerical results, dataset sizes, or empirical performance benchmarks from experiments.\n\nResearchers working on curve smoothing or functional variance decomposition may find the theoretical formulation relevant. Those seeking empirical validation on specific datasets may need to consult the full text.",
+      "abstract": "In this paper, one provides a comprehensive mathematical and practical overview of Functional Data Analysis (FDA) specifically applied to parametrized curves in Rp. One observes that curves depending on continuously parameter are naturally present across many fields, such as, for example, monitoring child development in pediatrics, assessing meteorological phenomena, analyzing financial portfolios, tracking neurological functions, and mapping geographic pollution levels. One considers a formal theoretical framework given by a Cartesian product of real separable Hilbert spaces, to model these curves mathematically. To bridge the gap between discrete experimental measurements subject to errors, and smooth continuous functions, the paper details the essential phase of data smoothing and fitting and sets its mathematical formulation via of the Ordinary or Penalized Least Squares criteria which, for the later, using the Sobolev spaces framework, incorporates a smoothing parameter ${\\lambda}$ and differential operators to prevent erratic geometric behaviors by penalizing excessive curve roughness. Furthermore, one extends the usual Principal Component Analysis to its functional counterpart in $\\mathbb{R}^3$, using the calculus of variations and the Euler-Lagrange multiplier theorem in order to find eigenfunctions and eigenvalues of the covariance operator to exhibit the optimal decomposition of the spatial variance and finally, one highlights the geometric advantages of FDA over traditional multivariate data analysis, emphasizing its unique capacity to capture critical differential features as velocity, acceleration, curvature, and torsion.",
+      "takeaways": [
+        "The object is a theoretical framework for Functional Data Analysis of parametrized curves in Rp.",
+        "The listing does not establish empirical limits, dataset sizes, or quantitative performance results.",
+        "No code repository or artifact is declared in the supplied metadata."
+      ],
+      "plain": {
+        "reported": "The authors describe a mathematical method for analyzing smooth curves, focusing on how to turn noisy data points into smooth lines and how to find the main patterns in that data.",
+        "brief": "The author explains a way to analyze curves that change smoothly over time or space. The method uses math to clean up noisy data and find the most important shapes in the data.\n\nThe abstract lists the mathematical tools used, like specific types of equations and spaces. It does not show any actual numbers, test results, or examples of the method working on real-world data.\n\nPeople who study the math of curves or data patterns might find this useful. People looking for ready-to-use software or test results on specific problems should look at the full paper.",
+        "takeaways": [
+          "The paper is about a mathematical method for analyzing smooth curves.",
+          "The summary does not say if the method was tested on real data or how well it worked.",
+          "The summary does not mention any downloadable code or software."
+        ]
+      },
+      "actions": [
+        "Verify the specific mathematical formulations and assumptions in the PDF.",
+        "Check the full paper for any empirical examples or numerical illustrations not mentioned in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-09-25",
+        "publishedOn": "2026-09-25",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.28689"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-25T17:18:46.848Z"
+      }
+    },
+    {
+      "id": "2609.28815",
+      "arxivId": "2609.28815",
+      "url": "https://arxiv.org/abs/2609.28815",
+      "topic": "Engineering",
+      "reported": "The authors report that their framework demonstrates accurate estimation of the geometric parameters and reconstruction of the LoS MIMO channel using one UL and two DL pilot sequences.",
+      "metrics": [],
+      "title": "Near-Field MIMO LoS Channel Recovery Under User Antenna Asymmetry",
+      "authors": "Shima Eslami, Jarkko Kaleva, Antti T\\\"olli",
+      "takeaway": "The paper proposes a two-stage geometry-based near-field line-of-sight MIMO channel acquisition framework that distributes geometric parameter estimation between the base station and user equipment under asymmetric antenna capabilities.",
+      "brief": "The authors propose a two-stage geometry-based framework for near-field line-of-sight MIMO channel acquisition under asymmetric user-equipment antenna capabilities. The method uses one uplink pilot for base station-side angle estimation and two downlink pilots for user-side orientation estimation.\n\nNumerical results characterize error propagation and demonstrate accurate geometric parameter estimation and channel reconstruction. The listing does not establish specific quantitative performance limits or compare against baseline methods.\n\nResearchers working on near-field MIMO channel estimation or asymmetric antenna systems may find the geometric parameterization approach relevant. Those requiring full channel matrix estimation or different antenna configurations may find the scope limited.",
+      "abstract": "Near-field (N-F) line-of-sight (LoS) MIMO channels admit a compact representation through a small number of geometric parameters describing the relative transceiver geometry, enabling low-overhead channel acquisition without estimating the full channel matrix. This paper considers downlink (DL) channel acquisition under practical asymmetric user-equipment (UE) antenna capabilities with multiple DL receive antennas, but only a single active uplink (UL) transmit chain. In this setting, UL observations across the large BS aperture enable accurate estimation of the relative location of the UL-active UE antenna but are insufficient to determine the orientation of the entire UE array. We propose a two-stage geometry-based N-F LoS MIMO channel acquisition framework that distributes the estimation of the channel-defining geometric parameters between the BS and UE. First, a single UL pilot sequence enables the BS to estimate two BS-side reference angles that parameterize the relative location of the UL-active UE antenna. The BS conveys these estimates to the UE and transmits two DL pilot sequences, from which the UE estimates the remaining array-orientation parameter. We derive Cramer-Rao lower bounds (CRLBs) for the first-stage parameters and a first-order error-covariance approximation for the UE orientation that explicitly captures the propagation of first-stage estimation uncertainty. Numerical results characterize the resulting error propagation and demonstrate accurate estimation of the geometric parameters and reconstruction of the LoS MIMO channel using one UL and two DL pilot sequences.",
+      "takeaways": [
+        "The object is a two-stage geometry-based channel acquisition framework for near-field MIMO systems with asymmetric user antenna capabilities.",
+        "The visible limit is that uplink observations are insufficient to determine the entire user equipment array orientation, requiring downlink pilots for completion.",
+        "The artifact status is not established in the listing; no code, dataset, or repository URL is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their method accurately estimates the geometric parameters and reconstructs the line-of-sight multiple-input multiple-output channel using one uplink and two downlink pilot sequences.",
+        "brief": "The authors propose a two-step method for estimating near-field line-of-sight multiple-input multiple-output channels when user devices have asymmetric antenna capabilities. The method uses one uplink pilot for base station-side angle estimation and two downlink pilots for user-side orientation estimation.\n\nComputer simulations show the method accurately estimates the geometric parameters and reconstructs the channel. The listing does not specify exact performance numbers or compare against other methods.\n\nEngineers working on near-field multiple-input multiple-output channel estimation or asymmetric antenna systems may find this approach useful. Those needing full channel matrix estimation or different antenna setups may find the scope too narrow.",
+        "takeaways": [
+          "The object is a two-step method for estimating near-field line-of-sight multiple-input multiple-output channels with asymmetric user antenna capabilities.",
+          "The visible limit is that uplink signals alone cannot determine the full user device antenna orientation, requiring downlink pilots.",
+          "The artifact status is not established; no code, data, or repository link is provided in the listing."
+        ]
+      },
+      "actions": [
+        "Verify the Cramer-Rao lower bound derivations and first-order error-covariance approximation in the full PDF.",
+        "Check the numerical results section for specific error metrics and comparison baselines not detailed in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-09-25",
+        "publishedOn": "2026-09-25",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.28815"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-25T17:18:46.848Z"
+      }
+    },
+    {
+      "id": "2609.29155",
+      "arxivId": "2609.29155",
+      "url": "https://arxiv.org/abs/2609.29155",
+      "topic": "Health",
+      "reported": "The authors report that ProteoEM accurately recovered underlying molecular composition in simulations where hard yes/no call approaches introduced substantial errors.",
+      "metrics": [],
+      "title": "ProteoEM: probabilistic protein abundance estimation from iterative affinity traces",
+      "authors": "Narayanan Raghupathy",
+      "takeaway": "The paper claims to develop ProteoEM, an expectation-maximization framework for weighted proteoform quantification from single-molecule affinity traces.",
+      "brief": "The authors present ProteoEM, an open-source Python package using expectation-maximization to estimate protein abundance by apportioning ambiguous affinity traces rather than assigning them to single candidates.\n\nSimulations show accurate recovery of molecular composition compared to hard-call methods, with performance insensitive to moderate uniform calibration error. The authors note bias from informative missing data and proteoforms absent from the reference, and state that experimental validation is still needed.\n\nResearchers working on single-molecule affinity mapping or proteoform quantification may find the framework relevant. Those requiring validated experimental results or handling specific missing-data scenarios should note the stated limitations.",
+      "abstract": "Single-molecule affinity mapping enables molecular-level measurement of proteins and proteoforms, but imperfect and nonspecific probe binding makes individual affinity traces compatible with multiple molecular identities. Accurate abundance estimation therefore requires apportionment of ambiguous traces by weight rather than assignment to a single candidate. We developed ProteoEM, an expectation-maximization framework for weighted proteoform quantification, inspired by transcript abundance estimation methods for RNA sequencing and released as an open-source Python package. ProteoEM evaluates each molecule against every candidate using fixed, pre-calibrated probe-response rates held separate from the abundance estimate, while retaining the full likelihood of the observed affinity features. The framework estimates proteoform abundances, reports indistinguishable proteoforms as groups when measurements cannot separate them, and accounts for differential observation yields to distinguish the composition of observed molecules from that of the source sample. In simulations, ProteoEM accurately recovered the underlying molecular composition where approaches that reduce each trace to a hard yes/no call introduced substantial errors. ProteoEM's performance was insensitive to a moderate, uniform calibration error but was biased by informative missing data and by proteoforms absent from the reference. When observation yields were known, it also recovered source-sample composition from observed molecular counts. ProteoEM provides an open-source, reproducible framework for quantitative analysis of single-molecule affinity measurements, and these results motivate validation on experimental molecule-level data.",
+      "takeaways": [
+        "The object is an expectation-maximization framework for weighted proteoform quantification from single-molecule affinity traces.",
+        "A visible limit is that performance is biased by informative missing data and proteoforms absent from the reference.",
+        "The artifact is an open-source Python package, but the listing does not provide a repository URL or code availability details."
+      ],
+      "plain": {
+        "reported": "The authors report that their software correctly identified the mix of protein types in computer simulations, while simpler methods made significant mistakes.",
+        "brief": "The authors created a software tool called ProteoEM that uses a statistical method to estimate how much of each protein type is present. It handles cases where a measurement could match multiple protein types by using weighted probabilities instead of picking just one.\n\nIn computer simulations, the tool correctly identified the protein mix, while simpler methods made big errors. The tool worked well even with some small measurement errors, but it gave skewed results if data was missing in a specific pattern or if a protein type wasn't in the reference list. The authors say they still need to test this on real lab data.\n\nScientists who measure proteins at the single-molecule level might find this useful. People who need results from real lab experiments or who have specific data gaps should be aware of the stated limitations.",
+        "takeaways": [
+          "The tool is a statistical method for estimating protein amounts from single-molecule measurements.",
+          "A known weakness is that it gives skewed results if data is missing in a specific pattern or if a protein type is missing from the reference list.",
+          "The tool is available as free software, but the listing does not say where to download it."
+        ]
+      },
+      "actions": [
+        "Verify the open-source Python package availability and repository location by checking the full PDF or author contact.",
+        "Review the simulation setup details in the PDF to assess the specific conditions under which the reported accuracy was measured."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "q-bio.BM"
+      ],
+      "listing": {
+        "listedOn": "2026-09-25",
+        "publishedOn": "2026-09-25",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.29155"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-25T17:18:46.848Z"
+      }
+    }
+  ]
+}
