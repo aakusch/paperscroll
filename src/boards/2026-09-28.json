@@ -1,0 +1,658 @@
+{
+  "date": "2026-09-28",
+  "label": "Mon, Sep 28",
+  "minutes": 10,
+  "poolSize": 125,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-09-28T19:45:36.876Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2609.31620",
+      "arxivId": "2609.31620",
+      "url": "https://arxiv.org/abs/2609.31620",
+      "topic": "AI",
+      "reported": "The authors report that decoder replacement alone reduces unguided gFID by 27% with an unchanged RAEv2 DiT-XL generator.",
+      "metrics": [
+        "reduces unguided gFID by 27%",
+        "reducing unguided gFID by 29%"
+      ],
+      "title": "FuseReg: Regularizing Layer Fusion Mitigates the Reconstruction-Generation Gap in Representation Autoencoders",
+      "authors": "Hongyang Du, Yunfei Xie, Junjie Ye, Jiawei Yang, Xiaoyan Cong, Haodong Zhang, Yongchao Huang, Haiyu Wu, Zongxia Li, Shihang Gui, Dawei Liu, Runhao Li, Jingcheng Ni, Chen Wei, Randall Balestriero, Yue Wang",
+      "takeaway": "FuseReg replaces heuristic feature selection with training over random subsets of encoder layers to regularize layer fusion and mitigate the reconstruction-generation gap in representation autoencoders.",
+      "brief": "FuseReg regularizes layer fusion in representation autoencoders by training over random subsets of encoder layers instead of using fixed heuristics. The authors state that this approach narrows the reconstruction-generation gap without modifying the pretrained encoder.\n\nThe authors report that a single FuseReg decoder reconstructs from full, sparse, and single-layer fusions without retraining, achieving higher PSNR than decoders specialized to fixed fusions. They also state that decoder replacement alone reduces unguided gFID by 27% with an unchanged RAEv2 DiT-XL generator, and that joint regularization reduces unguided gFID by 29% on DiT-Base. The listing does not establish specific computational costs or failure modes for the random subset training process.\n\nResearchers working on representation autoencoders, layer fusion strategies, or image generation metrics may find the reported gFID and PSNR comparisons relevant. Those not focused on visual encoder latent spaces or diffusion model regularization may find the specific architectural changes less applicable.",
+      "abstract": "Representation autoencoders (RAEs) reuse features from a pretrained visual encoder as reconstruction and diffusion latents, integrating strong visual representations into image generation. However, RAEs still need to decide which encoder layers form the shared latent space for the generator and pixel decoder. This choice involves a trade-off. Shallower layers tend to preserve fine pixel details better, while deeper layers tend to yield better generation metrics. A fixed heuristic layer fusion therefore couples two stages that benefit from different information. We introduce FuseReg, which replaces heuristic feature selection with training over random subsets of encoder layers. We theoretically analyze the underlying mechanism: subset sampling explicitly penalizes sensitivity to cross-layer disagreement. On ImageNet-256 with DINOv3-L, a single FuseReg decoder reconstructs from full, sparse, and single-layer fusions without retraining, achieving higher PSNR than decoders specialized to fixed fusions. This flexibility also benefits generation: decoder replacement alone reduces unguided gFID by 27% with an unchanged RAEv2 DiT-XL generator. The same regularization principle extends to diffusion training, with joint regularization of both stages reducing unguided gFID by 29% on DiT-Base. These results show that training downstream models for layer-fusion robustness narrows the reconstruction-generation gap without modifying the pretrained encoder.",
+      "takeaways": [
+        "The method targets the trade-off between shallow layer detail preservation and deep layer generation metrics in representation autoencoders.",
+        "The listing reports specific gFID reductions but does not detail the variance or statistical significance of these improvements across multiple runs.",
+        "A code repository is declared at https://github.com/Hongyang-Du/FuseReg, but the listing does not confirm the completeness or availability of the implementation."
+      ],
+      "plain": {
+        "reported": "The authors report that swapping in the new decoder alone lowers the unguided gFID score by 27% when using an unchanged RAEv2 DiT-XL generator.",
+        "brief": "FuseReg is a method that trains image reconstruction models by randomly mixing different layers of a visual encoder, rather than picking specific layers by rule. The authors claim this makes the model more flexible and closes the gap between how well it reconstructs images and how well it generates new ones.\n\nThe authors state that their decoder can handle different layer combinations without needing to be retrained, and it achieves higher PSNR scores than decoders built for fixed layer combinations. They also report that just replacing the decoder lowers the unguided gFID score by 27% in one setup, and that training both stages together lowers it by 29% in another. The provided text does not explain how much extra computing power or time this random training requires.\n\nPeople who build or study image generation models using visual encoders might find these specific score improvements useful. People who do not work with these specific types of AI image models might not find the technical details directly useful for their work.",
+        "takeaways": [
+          "The method tries to solve a problem where different layers of a visual encoder are good for different tasks, like keeping details versus generating good images.",
+          "The text gives specific percentage improvements in image quality scores but does not say if these results are consistent or if the method has known weaknesses.",
+          "The authors provide a link to a code repository, but the text does not say if the code is complete or ready to use."
+        ]
+      },
+      "actions": [
+        "Verify the reported PSNR and gFID numbers against the full PDF to confirm the specific experimental settings and baselines used.",
+        "Check the declared code repository to confirm whether the random subset training implementation and evaluation scripts are available for reproduction."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Hongyang-Du/FuseReg",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-28",
+        "publishedOn": "2026-09-25",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.31620",
+            "upvotes": 113
+          }
+        ]
+      },
+      "trend": {
+        "votes": 113,
+        "rank": 1,
+        "of": 29,
+        "perDay": 38
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 113,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-28T19:45:36.876Z"
+      }
+    },
+    {
+      "id": "2609.18703",
+      "arxivId": "2609.18703",
+      "url": "https://arxiv.org/abs/2609.18703",
+      "topic": "AI",
+      "reported": "The authors report that RayOrch achieves 15.14 times speedup when scaling MinerU from 4 to 64 GPUs on NVIDIA H20 hardware.",
+      "metrics": [
+        "15.14 times speedup",
+        "7.82 times speedup",
+        "13.1 percent"
+      ],
+      "title": "RayOrch: Programming and Executing Lineage-Controlled Multi-Grain Dataflows for Foundation-Model Data Preparation",
+      "authors": "Xiaochen Ma, Zimo Meng, Junzhu Liang, Youhe Jiang, Yue Cheng, Hao Liang, Bohan Zeng, Dengchun Li, Lu Ma, Zhengyang Zhao, Zhen Hao Wong, Runming He, Meiyi Qiang, Jiangtao Guan, Binhang Yuan, Wentao Zhang",
+      "takeaway": "RayOrch is a programming model and distributed execution engine that preserves parent-child relations throughout execution for foundation-model data preparation.",
+      "brief": "The authors present RayOrch, a system designed to manage lineage-controlled multi-grain dataflows for preparing foundation model training data. It aims to preserve parent-child relationships and child order while batching children across parents on GPUs.\n\nThe authors report speedups of 15.14 times for MinerU and 7.82 times for a video pipeline when scaling to 64 GPUs on NVIDIA H20 hardware. They also report end-to-end time reductions of 13.1 percent versus Ray Data and 29.0 percent versus Daft on MinerU. The listing does not establish specific limitations or artifacts beyond the provided code link.\n\nResearchers working on distributed data pipelines for foundation models may find this relevant. Those not involved in large-scale data preprocessing or GPU batch scheduling may ignore it.",
+      "abstract": "Preparing high quality training data for foundation models requires scalable pipelines that transform heterogeneous documents and videos into structured records. Such pipelines expand each parent item into an ordered and input dependent sequence of children, whose counts may be long tailed. GPUs should batch children across parents while preserving parent relationships, child order, completion status, and result routing. Existing systems either hide parallelism behind coarse grained jobs or expose flat records that force applications to manage lineage and regrouping. We present RayOrch, a programming model and distributed execution engine that preserves parent child relations throughout execution. Programs declare ordered variable cardinality expansions and matching gathers. The compiler validates each pair, while the runtime records child membership, immediate parents, immutable ordinals, and terminal states. Per Call FIFO Ready Queues batch ready children across parents. Gathers reconstruct results from declared membership and ordinals rather than batch boundaries or completion order. Parents can advance as soon as all required children become terminal. Typed parent scoped failures suppress undispatched siblings of the failed parent while allowing unrelated parents to continue. On NVIDIA H20 GPUs, RayOrch achieves 15.14 times speedup when scaling MinerU from 4 to 64 GPUs and 7.82 times speedup when scaling a video pipeline from 8 to 64 GPUs. It reduces end to end time by 13.1 percent versus Ray Data and 29.0 percent versus Daft on MinerU, and by 16.0 percent versus Ray Data on Docling. Code available at https://github.com/OpenDCAI/RayOrch .",
+      "takeaways": [
+        "The object is a programming model and execution engine for lineage-controlled dataflows.",
+        "The visible limit is that results are reported only on NVIDIA H20 GPUs with specific scaling configurations.",
+        "The artifact status is that code is available at the provided GitHub URL."
+      ],
+      "plain": {
+        "reported": "The authors state that their system, RayOrch, runs 15.14 times faster when processing the MinerU document tool using 64 graphics cards instead of 4, tested on specific NVIDIA hardware.",
+        "brief": "The authors built a system called RayOrch to help organize and process large amounts of data for training AI models. It keeps track of how different pieces of data are related to each other while processing them on powerful computer chips.\n\nThe authors say their system is much faster than other tools when using many graphics cards. For example, it is 15.14 times faster for one document tool and 7.82 times faster for a video tool. They also say it finishes tasks 13.1 percent faster than another tool called Ray Data. The text does not say what problems the system might have or what files are included besides a link to the code.\n\nPeople who build systems to prepare data for AI models might want to look at this. People who do not work on large data processing or computer graphics scheduling might not need to.",
+        "takeaways": [
+          "The thing being described is a software system for organizing data processing tasks.",
+          "The known limitation is that the speed tests were only done on specific NVIDIA graphics cards.",
+          "The code for the system is available at a specific website link."
+        ]
+      },
+      "actions": [
+        "Verify the reported speedup numbers and benchmark configurations by reading the full PDF.",
+        "Inspect the GitHub repository to confirm the availability and functionality of the RayOrch code."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/OpenDCAI/RayOrch",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-28",
+        "publishedOn": "2026-09-16",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.18703",
+            "upvotes": 43
+          }
+        ]
+      },
+      "trend": {
+        "votes": 43,
+        "rank": 2,
+        "of": 29,
+        "perDay": 4
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 43,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-28T19:45:36.876Z"
+      }
+    },
+    {
+      "id": "2609.31093",
+      "arxivId": "2609.31093",
+      "url": "https://arxiv.org/abs/2609.31093",
+      "topic": "AI",
+      "reported": "The authors report that PISA achieves comparable performance on commonsense reasoning benchmarks while delivering better results on retrieval tasks compared with the baseline.",
+      "metrics": [],
+      "title": "Block Sparse Attention with Log-Linear Complexity",
+      "authors": "Bohao Tang, Zhen Qin, Yuqi Pan, Zheng Li, Pengfei Liu",
+      "takeaway": "The paper proposes PISA, a block-sparse attention mechanism using a pyramid Top-K selection strategy to reduce self-attention complexity to O(Nlog N).",
+      "brief": "The authors propose PISA, a block-sparse attention mechanism that uses a pyramid Top-K selection strategy to reduce the quadratic cost of self-attention. They construct a coarse-to-fine hierarchy of keys and apply LogSumExp scoring to a bounded candidate set at each level, yielding an overall complexity of O(Nlog N).\n\nThe authors report comparable performance on commonsense reasoning benchmarks and better results on retrieval tasks compared with a baseline. They develop hardware-aware Triton kernels for training and inference that fuse hierarchical routing and LogSumExp scoring without materializing the query-key score matrix. The listing does not specify the exact benchmarks used for the retrieval tasks or the specific baseline model architecture.\n\nResearchers working on long-context language models or efficient attention mechanisms may find this relevant. Those focused solely on short-context tasks or non-attention-based architectures may find it less applicable. The method relies on specific hardware-aware kernel implementations for its efficiency claims.",
+      "abstract": "Scaling language models to long contexts is limited by the quadratic cost of self-attention. Block sparse attention offers an efficient alternative, but selecting the retained blocks remains a bottleneck. Conventional block selection requires scoring all query-block pairs and therefore remains quadratic in sequence length. To address this issue, we propose PISA, a block-sparse attention mechanism that employs a pyramid Top-K selection strategy. The main idea is to gradually narrow down the candidates across different levels, making it more efficient to find the most relevant keys. Specifically, we construct a coarse-to-fine hierarchy of keys and perform selection from the coarsest level. At each level, LogSumExp scoring is applied to a bounded candidate set to select candidates for the next finer level, continuing until the finest level is reached. Through pooling, we construct O(log N) levels of keys, yielding an overall complexity of O(Nlog N), where N denotes the sequence length. We develop hardware-aware Triton kernels for both training and inference, fusing hierarchical routing and LogSumExp scoring without materializing the query-key score matrix. We further evaluate our method on language modeling tasks. Compared with the baseline, our method achieves comparable performance on benchmarks such as commonsense reasoning while delivering better results on retrieval tasks.",
+      "takeaways": [
+        "The core object is a hierarchical block-sparse attention mechanism that narrows key candidates across multiple levels.",
+        "A visible limit is that the selection process still requires scoring at each level, though the candidate set is bounded, and the listing does not detail the computational overhead of the hierarchy construction.",
+        "The artifact status is unclear as no code repository URL is provided in the listing, though the authors mention developing Triton kernels."
+      ],
+      "plain": {
+        "reported": "The authors state that their method performs similarly to the standard method on common-sense logic tests but works better on tasks that require finding specific information in long texts.",
+        "brief": "The authors created a new way for AI models to process long texts called PISA. Instead of checking every part of the text against every other part, which is very slow, PISA groups the text into blocks and uses a step-by-step filtering process to find the most important blocks. This reduces the computational effort from a quadratic scale to a log-linear scale.\n\nThe authors say their method works just as well as the standard method on common-sense reasoning tests and better on information retrieval tests. They also wrote specific code for computer chips to run this process efficiently without creating large temporary data tables. The provided summary does not list the specific names of the tests used for the retrieval results or the exact standard method used for comparison.\n\nPeople who build AI systems that need to handle very long documents might find this useful. People who only use AI for short conversations or who do not use attention-based models might not need this. The efficiency gains depend on using specific code optimized for certain hardware.",
+        "takeaways": [
+          "The main idea is a step-by-step filtering system for finding relevant parts of long text.",
+          "A limitation is that the summary does not explain how much extra time is needed to build the filtering hierarchy.",
+          "It is not clear if the code is publicly available because no link is provided in the summary."
+        ]
+      },
+      "actions": [
+        "Verify the specific retrieval benchmarks and baseline models used in the evaluation by reading the full PDF.",
+        "Check the paper for details on the hardware requirements and the specific Triton kernel implementations to assess practical deployment feasibility."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-28",
+        "publishedOn": "2026-09-25",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.31093",
+            "upvotes": 19
+          }
+        ]
+      },
+      "trend": {
+        "votes": 19,
+        "rank": 3,
+        "of": 29,
+        "perDay": 6
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 19,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-28T19:45:36.876Z"
+      }
+    },
+    {
+      "id": "2609.31394",
+      "arxivId": "2609.31394",
+      "url": "https://arxiv.org/abs/2609.31394",
+      "topic": "AI",
+      "reported": "The authors report that InternW0-Δ outperforms prior methods across simulation benchmarks and real-robot platforms.",
+      "metrics": [
+        "20K hours of processed training data"
+      ],
+      "title": "InternW0-Δ: A World Action Model Bridging Predictive Dynamics and Actions with 20K+ Hours of Open Data",
+      "authors": "Xingyu Miao, Zizun Li, Baole Fang, Kaiwen Song, Tenghui Wang, Hanxue Zhang, Yating Wang, Xudong Li, Yuping He, Xueyuan Wei, Chao Gao, Xijie Yang, Yingxiang Xu, Kerui Ren, Wenqi Guo, Jianjun Zhou, Xinzhe Wang, Weiguang Zhao, Ni Yang, Zetao Cai, Yufei Xue, Hengjie Li, Zeyu He, Yuanzhen Zhou, Rong Fu, Jianyang Zhang, Siwei Cui, Fuxian Huang, Yunsong Zhou, Xing Gao, Yifei Yao, Qiaojun Yu, Kailin Li, Ming Zhou, Mu Huang, Xinyue Li, Wenze Cui, Bingqi Jiang, Xueyue Zhu, Junting Dong, Haoyu Guo, Tao Lu, Mulin Yu, Bowen Zhou, Bin Zhao, Tianfan Xue, Weinan Zhang, Chunhua Shen",
+      "takeaway": "InternW0-Δ is a unified World Action Model that integrates visual dynamics, scene semantics, geometry, and motion priors into a Mixture-of-Transformers framework for robot action generation.",
+      "brief": "The authors propose InternW0-Δ, a World Action Model that unifies visual dynamics, scene semantics, 4D geometric and motion priors, and action generation within a Mixture-of-Transformers architecture. They introduce Causal Imprint to provide predictive representations to the action expert without future-video rollout at inference.\n\nThe authors state the model outperforms prior methods across simulation benchmarks and real-robot platforms. They report constructing a heterogeneous corpus containing over 20K hours of processed training data, described as the largest open-source corpus of its kind. Specific quantitative performance scores or benchmark names are not provided in the abstract.\n\nResearchers working on generalist robot manipulation, world action models, or large-scale robot data curation may find the architecture and data pipeline relevant. Those requiring specific benchmark scores or immediate code access without license verification should note the abstract mentions open-sourcing where licenses permit.",
+      "abstract": "World Action Models (WAMs) jointly model visual dynamics and action generation for generalist robot manipulation. A central challenge is to integrate priors from large-scale pretrained models---including visual dynamics, scene semantics, geometry, and motion---into a unified framework for robot action generation. We introduce InternW0-Δ, a unified WAM pretrained on a heterogeneous corpus that outperforms prior methods across simulation benchmarks and real-robot platforms. InternW0-Δ combines pretrained visual dynamics, scene-level semantics, 4D geometric and motion priors, and action generation within a Mixture-of-Transformers (MoT) framework. A pretrained video expert and an action expert interact under semantic guidance from a frozen VLM, while a pretrained 4D foundation model injects geometric and motion priors through training-only distillation. We further introduce Causal Imprint, which learns future-relevant scene changes from training-only future supervision and provides predictive representations directly to the action expert without future-video rollout at inference. For large-scale joint training, we construct a heterogeneous corpus of robot demonstrations, UMI data, egocentric human demonstrations, and Ego2Robot data, curated and aligned under a common state-action representation. The resulting corpus contains over 20K hours of processed training data, to our knowledge the largest open-source corpus of its kind. We pretrain InternW0-Δ on this corpus and demonstrate strong performance across simulation benchmarks and real-robot platforms. We will open source the training code, model weights, infrastructure, data-processing pipeline, and processed data where licenses permit. Project page: https://internrobotics.github.io/InternW0-Delta/",
+      "takeaways": [
+        "The object is a unified World Action Model combining visual dynamics, semantics, geometry, and action generation in a Mixture-of-Transformers framework.",
+        "The abstract claims outperformance on simulation and real-robot platforms but does not specify which benchmarks or provide numerical scores.",
+        "The authors state they will open source code, weights, and data where licenses permit, but the current listing does not confirm immediate availability or specific repository URLs."
+      ],
+      "plain": {
+        "reported": "The authors say their model works better than previous methods in computer simulations and on actual physical robots.",
+        "brief": "The authors created a robot AI system called InternW0-Δ. It combines video prediction, scene understanding, 3D geometry, and motion planning into one model. They also added a feature called Causal Imprint that helps the robot predict actions without needing to simulate future video frames.\n\nThe authors claim their system beats older methods in tests and on real robots. They built a huge dataset with more than 20,000 hours of robot and human movement data. They say this is the biggest public dataset of its type. However, the summary does not list specific test scores or names of the tests used.\n\nPeople studying robot control or large robot datasets might find this useful. If you need exact test scores or want to use the code immediately, you should check if the files are actually available, since the authors only say they plan to share them if legal.",
+        "takeaways": [
+          "The system is a robot AI that combines video prediction, scene understanding, 3D geometry, and action planning.",
+          "The summary says it is better than older methods but does not give specific test scores or names.",
+          "The authors say they will share the code and data if allowed by licenses, but the summary does not confirm if it is available now."
+        ]
+      },
+      "actions": [
+        "Verify the specific simulation benchmarks and real-robot platforms used for evaluation by consulting the full paper or project page.",
+        "Check the project page for the actual availability of the open-source code, model weights, and data pipeline, as the abstract only states intent subject to licenses."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-28",
+        "publishedOn": "2026-09-25",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.31394",
+            "upvotes": 17
+          }
+        ]
+      },
+      "trend": {
+        "votes": 17,
+        "rank": 4,
+        "of": 29,
+        "perDay": 6
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 17,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-28T19:45:36.876Z"
+      }
+    },
+    {
+      "id": "2609.30269",
+      "arxivId": "2609.30269",
+      "url": "https://arxiv.org/abs/2609.30269",
+      "topic": "Econ",
+      "reported": "The authors report that on degree-controlled networks, adoption tips at a small-world rewiring threshold near 0.41, with a 95 percent bootstrap confidence interval of 0.39 to 0.43.",
+      "metrics": [
+        "small-world rewiring threshold near 0.41",
+        "95 percent bootstrap confidence interval of 0.39 to 0.43"
+      ],
+      "title": "When a Few Misfits Trigger Digital Adoption Cascades: Network Reach, Threshold Heterogeneity, and Performance-Conditioned Complex Contagion in an Agent-Based Model of Firms",
+      "authors": "Esteve Almirall, Steve Willmott, Ulises Cort\\'es",
+      "takeaway": "The paper claims to develop an agent-based model showing that performance-conditioned imitation and specific network structures trigger digital adoption cascades in firms.",
+      "brief": "The authors propose an agent-based model where firms adopt digital technology by imitating successful neighbors, distinguishing between frequency-based and performance-conditioned imitation. They define a cascade as high final adoption reached through rapid, accelerating takeoff rather than slow accumulation.\n\nIn a calibrated regime, the authors report that dynamic cascades arise under performance-conditioned imitation but not under frequency-based imitation. They identify a small-world rewiring threshold near 0.41 for adoption tipping points and note that concentrating receptiveness in the lower tail can generate cascades. The listing does not establish whether the model has been validated against real-world industry data or specific empirical datasets.\n\nResearchers modeling technology diffusion, network contagion, or organizational adoption may find the structural findings relevant. Those seeking predictive forecasts for specific industries or empirical validation of the heuristic in real markets may find the scope limited to the model's internal logic.",
+      "abstract": "Why does a superior technology sometimes spread and sometimes stall, even when its expected returns are much higher? We develop an agent-based model in which firms adopt a digital technology by imitating successful neighbours through a fast-and-frugal heuristic. We compare frequency-based imitation, where firms follow the local majority, with performance-conditioned imitation, where they follow better-performing neighbours. We define a cascade as high final adoption reached through rapid, accelerating takeoff rather than slow accumulation. In the calibrated regime, four results emerge. First, dynamic cascades arise under performance-conditioned imitation, but not under an exogenous adoption hazard or frequency-based imitation. Second, on degree-controlled networks, adoption tips once the network provides sufficient reach, at a small-world rewiring threshold near 0.41, with a 95 percent bootstrap confidence interval of 0.39 to 0.43. This reflects short paths, low clustering, and high-reach nodes rather than one graph statistic. Third, at a fixed mean threshold, concentrating receptiveness in the lower tail can generate cascades that homogeneous thresholds cannot. Fourth, cascade probability depends strongly on the positions of initial adopters and low-threshold pioneers. At human-scale observation degrees, the mechanism is genuine complex contagion: adoption requires reinforcement from multiple successful exemplars, survives a requirement of at least two successful digital neighbours when seeded by a clustered critical mass, and weakens beyond Dunbar-scale neighbourhoods. The model identifies where interventions may have leverage rather than forecasting industries. Broad cultural change is not required for system-wide adoption: a small minority of receptive firms, positioned where the network can transmit success, can be enough. In short, a few misfits can change the world.",
+      "takeaways": [
+        "The object is an agent-based model of firm-level digital technology adoption using imitation heuristics.",
+        "A visible limit is that the model identifies where interventions may have leverage rather than forecasting industries, and the listing does not confirm external empirical validation.",
+        "No code or repository is declared in the listing, so the artifact status is not established."
+      ],
+      "plain": {
+        "reported": "The authors report that in their simulated networks, adoption spreads widely once the network structure reaches a specific point of connectivity, measured at a value near 0.41, with a statistical range of 0.39 to 0.43.",
+        "brief": "The authors created a computer simulation where companies decide to use new digital tools by copying successful nearby companies. They tested two ways of copying: following the most common choice, or following the most successful choice. They define a 'cascade' as a situation where adoption grows quickly and sharply, not just slowly over time.\n\nIn their specific simulation settings, the authors found that cascades only happened when companies copied the most successful neighbors. They found that the network structure needed to reach a specific level of connectivity, around 0.41, for this to happen. They also found that having a few very open-minded companies in the right spots could start a cascade. The listing does not say if this simulation matches real-world company data.\n\nPeople studying how new technologies spread through groups or networks might find the structural rules useful. People looking for a tool to predict exactly which real-world companies will adopt a specific technology might find the model too abstract or unverified.",
+        "takeaways": [
+          "The main thing being studied is a computer model of how companies copy each other's technology choices.",
+          "A clear limitation is that the model shows where changes might work, but it does not predict specific real-world industries, and there is no proof it matches real data.",
+          "The listing does not say if the computer code for the model is available to the public."
+        ]
+      },
+      "actions": [
+        "Verify the specific calibration parameters and network generation methods in the PDF to assess the robustness of the 0.41 threshold.",
+        "Check the PDF for any mention of empirical data sources or validation studies to determine if the model is purely theoretical."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-09-28",
+        "publishedOn": "2026-09-28",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.30269"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-28"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-28T19:45:36.876Z"
+      }
+    },
+    {
+      "id": "2609.30282",
+      "arxivId": "2609.30282",
+      "url": "https://arxiv.org/abs/2609.30282",
+      "topic": "Physics",
+      "reported": "The authors report that a virtual excitation channel induces an attosecond topological interference with Floquet-Volkov paths, encoding local Berry curvature into the time shift of RABBIT sidebands.",
+      "metrics": [],
+      "title": "Attosecond topological interference beyond Floquet-Volkov paths",
+      "authors": "Hyosub Park, J. D. Lee",
+      "takeaway": "The paper develops a theoretical framework integrating RABBIT spectroscopy and tr-ARPES to identify a novel quantum path involving virtual excitation that induces topological interference in semiconductors.",
+      "brief": "The authors propose a theoretical framework based on second-order time-dependent perturbation theory to integrate RABBIT spectroscopy and tr-ARPES. They identify a virtual excitation channel that interferes with Floquet and Volkov states, encoding topological quantities like local Berry curvature into RABBIT sideband time shifts. The listing presents theoretical findings without experimental validation or specific numerical benchmarks.\n\nThe strongest reported result is the identification of a virtual excitation channel that induces attosecond topological interference. The authors state this encodes local Berry curvature into the time shift of RABBIT sidebands, which relates to photoelectron emission delay. No experimental data, specific material parameters, or quantitative metrics are provided in the abstract to verify the magnitude of these effects.\n\nResearchers working on attosecond spectroscopy or semiconductor photoemission may find the theoretical connection between RABBIT and tr-ARPES relevant. Those requiring experimental validation or specific numerical predictions for particular materials should note the absence of such data in the listing.",
+      "abstract": "Combining attosecond science with semiconductor physics provides a promising interdisciplinary platform for the attosecond control of semiconducting properties. In each field, the reconstruction of attosecond beating by interference of two-photon transitions (RABBIT) and the time-resolved and angle-resolved photoemission spectroscopy (tr-ARPES) have been central experimental techniques for probing microscopic dynamics of electrons. However, the integration of the two techniques, bridging the two fields, has been missing so far although they have many technical similarities. Here, we develop a theoretical framework that integrates the two techniques based on the second-order time-dependent perturbation theory. Within this framework, we investigate the RABBIT spectroscopy in semiconductors focusing on the recent hallmark of tr-ARPES, namely quantum path interference between Floquet and Volkov states. Moreover, we theoretically identify a novel quantum path incorporating the virtual excitation, which substantially interferes with the Floquet and Volkov states in both the RABBIT spectroscopy and tr-ARPES of semiconductors. Importantly, we find that such virtual excitation channel induces an attosecond topological interference with the Floquet-Volkov paths, encoding topological quantities such as the local Berry curvature into the time shift of RABBIT sidebands, which is directly related to the photoelectron emission delay. Our findings establish a theoretical framework connecting attosecond spectroscopy to tr-ARPES, paving the way for future applications of attosecond science in semiconductors.",
+      "takeaways": [
+        "The object is a theoretical framework linking attosecond spectroscopy techniques to semiconductor topological properties.",
+        "The visible limit is the lack of experimental confirmation or specific numerical results in the provided abstract.",
+        "The artifact status is theoretical, with no code or dataset declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that a specific type of electron transition creates a measurable interference pattern that reveals the material's internal geometric properties, measured by the timing of electron emission.",
+        "brief": "The authors create a mathematical model that combines two different laser-based measurement techniques used to study electrons in materials. They find that a temporary, non-physical electron state creates an interference pattern that reveals the material's topological structure. This is shown by how the timing of electron emission changes. The text describes only the theory and does not include lab results or specific numbers.\n\nThe main finding is that this temporary electron state causes a specific interference effect. The authors say this effect encodes the material's geometric properties into the timing of the electron signal. There is no data from actual experiments or specific values for any material mentioned in the summary.\n\nScientists studying how lasers interact with semiconductors might find this mathematical link useful. People who need real-world data or specific numbers for a particular material should note that the summary does not provide any.",
+        "takeaways": [
+          "The work is a mathematical model connecting laser measurement techniques to material properties.",
+          "The main limitation is that it is only a theory without lab proof or specific numbers.",
+          "There is no computer code or data file mentioned in the listing."
+        ]
+      },
+      "actions": [
+        "Verify the theoretical predictions against existing tr-ARPES experimental data for specific semiconductors.",
+        "Check the full PDF for any provided numerical examples or simulation parameters."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-09-28",
+        "publishedOn": "2026-09-28",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.30282"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-28"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-28T19:45:36.876Z"
+      }
+    },
+    {
+      "id": "2609.30322",
+      "arxivId": "2609.30322",
+      "url": "https://arxiv.org/abs/2609.30322",
+      "topic": "Health",
+      "reported": "The authors report that health-dependent prediction bias persisted after calibration and systematically altered associations across age subgroups, measured using association analyses on five ageing markers.",
+      "metrics": [],
+      "title": "Prediction bias in biological ageing models",
+      "authors": "Yiqun Lin, Ariel Yuhan Ong, Matthew Yu Heng Wong, Yilan Wu, Wenyi Hu, Shubhank Shobhit Verma, Broder Poschkamp, Lie Ju, Akshay Narayan, Sophie A. Martin, Maitrei Kohli, Fares Antaki, Alexander C. Heatley, Josef Huemer, Meng Wang, Ke Zou, Zheyuan Wang, Eden Ruffell, Dominic Williamson, Justin Engelmann, Hyunmin Kim, Takahiro Ninomiya, Rahul A. Jonas, Yansong Liu, Zijie Cheng, Hanyuan Zhang, Hejie Cui, Jiayang Xu, Hualiang Wang, Zuozhu Liu, Bin Pu, Chubo Liu, Kenli Li, Xinpeng Ding, Guokai Zhang, Weiru Wang, Jiaxiang Wang, Huazhu Fu, Zongyuan Ge, Xujia Liu, Mohammad Eslami, Milen Raytchev, Tobias Elze, Michael G. Morley, Neil P. Oxtoby, Daniel C. Alexander, Anthony P. Khawaja, Ching-Yu Cheng, Lisa Zhuoting Zhu, Yih Chung Tham, James H. Cole, Carol Y. Cheung, Pearse A. Keane, Siegfried K. Wagner, Yukun Zhou",
+      "takeaway": "The paper claims to identify a widespread health-dependent prediction bias in biological ageing markers that affects their key interpretation and application.",
+      "brief": "The authors claim that biological ageing markers suffer from a widespread health-dependent prediction bias that distorts their interpretation and application in health assessment.\n\nThey report observing regression to the mean in four organ-image based markers, with stronger effects in unhealthy individuals, and note that these markers had limited ability to distinguish health status at the individual level. The listing does not establish specific quantitative performance limits or artifact details beyond the described bias.\n\nResearchers working on biological ageing models, clinical biomarker validation, or health prediction systems should open this paper to understand the bias mechanism. Those not focused on ageing marker interpretation or clinical prediction models may ignore it.",
+      "abstract": "Biological ageing markers have attracted growing interest, with models estimating age from organ imaging or blood biomarkers. An estimated age above chronological age or the age-specific population expectation is assumed to reflect accelerated ageing and poorer health. Previous research has supported this assumption through positive associations between disease and age gaps or acceleration. However, in this study, we identified a widespread health-dependent prediction bias in ageing markers that affects their key interpretation and application. Specifically, we investigated five ageing markers derived from retinal images, brain MRI, chest radiographs, abdominal CT, and blood tests, and evaluated them using association analyses. We observed the well-recognised phenomenon of regression to the mean (RTM) in the four organ-image based markers, whereby estimated ages were shifted towards the mean age of the training cohort. More importantly, we revealed that the strength of RTM varied with health status, with stronger RTM in unhealthy than in healthy individuals. This differential RTM introduced a health-dependent prediction bias that persisted after calibration and systematically altered associations across age subgroups, suggesting that whole cohort associations may not reflect those observed within individual age subgroups. Additionally, we showed that the tested ageing markers, including PhenoAge derived from blood biomarkers, had limited ability to distinguish health status at the individual level. These findings call for careful interpretation of biological ageing markers and their use in clinical studies, and highlight the need for further development and validation before these ageing markers can reliably inform individual health assessments.",
+      "takeaways": [
+        "The object is a prediction bias in biological ageing markers derived from retinal images, brain MRI, chest radiographs, abdominal CT, and blood tests.",
+        "A visible limit is that the tested ageing markers, including PhenoAge, had limited ability to distinguish health status at the individual level.",
+        "The artifact status is not established in the listing; no code or dataset is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that a bias depending on health status remained even after adjusting the models, and this bias changed how the markers related to age in different age groups, measured by looking at statistical connections between the markers and health outcomes.",
+        "brief": "The authors say that tools designed to estimate a person's biological age from scans or blood tests have a built-in error that depends on how healthy the person is, which makes the results hard to interpret correctly.\n\nThey found that these tools tend to pull estimates toward the average age of the group used to train them, and this pulling effect is stronger in people who are not healthy. They also found that these tools are not good at telling apart healthy and unhealthy individuals on a case-by-case basis. The summary does not give specific numbers for how large these errors are or what specific technical flaws exist beyond the described bias.\n\nPeople who build or use models to estimate biological age, or who validate medical tests for health prediction, should look at this paper to understand the error. People who do not work on ageing models or medical prediction tools can skip it.",
+        "takeaways": [
+          "The subject is an error in tools that estimate biological age from eye scans, brain scans, chest X-rays, abdominal scans, and blood tests.",
+          "A clear limitation is that these tools, including one based on blood tests called PhenoAge, are not good at telling whether a specific person is healthy or unhealthy.",
+          "It is not stated in the summary whether the code or data used in the study is available to the public."
+        ]
+      },
+      "actions": [
+        "Verify the specific association analyses and calibration methods described in the PDF to confirm the persistence of the bias after calibration.",
+        "Check the PDF for details on the training cohort composition and how regression to the mean was quantified across health status groups."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM"
+      ],
+      "listing": {
+        "listedOn": "2026-09-28",
+        "publishedOn": "2026-09-28",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.30322"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-28"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-28T19:45:36.876Z"
+      }
+    },
+    {
+      "id": "2609.30338",
+      "arxivId": "2609.30338",
+      "url": "https://arxiv.org/abs/2609.30338",
+      "topic": "Stats",
+      "reported": "The authors report that their numerical simulations align closely with their derived theoretical bounds, confirming the predictive power of the bounds in both under-parameterized and over-parameterized regimes.",
+      "metrics": [],
+      "title": "Double Descent for Random Fourier Series Models",
+      "authors": "Hang Xu, Yi Shen, Yuzhong Zhao",
+      "takeaway": "The paper claims to provide a rigorous analysis of the generalization error for least squares linear regression with random partial Discrete Fourier Transform matrices, deriving exact non-asymptotic bounds for the risk of the Moore-Penrose estimator.",
+      "brief": "The authors claim to derive exact non-asymptotic bounds for the risk of the Moore-Penrose estimator in linear regression using random partial DFT matrices. They report that numerical simulations align closely with these derived bounds, confirming their predictive power in under- and over-parameterized regimes. The listing does not establish specific quantitative error values or benchmark comparisons beyond the stated alignment of simulations with theory.\n\nThe evidence consists of theoretical derivations using random matrix theory and Stieltjes transforms, validated by numerical examples. The listing does not specify the exact sample sizes, dimensions, or noise variances used in the simulations, nor does it provide a table of specific risk values. The artifact status is not established in the listing, as no code repository is declared.\n\nResearchers working on random matrix theory, high-dimensional statistics, or the double descent phenomenon may find the theoretical bounds relevant. Those seeking empirical benchmarks on standard datasets or specific numerical error rates may find the listing insufficient without accessing the full paper.",
+      "abstract": "We investigate the least squares linear regression problem with random partial Discrete Fourier Transform (DFT) matrices, providing a rigorous analysis of the model's generalization error. By leveraging tools from random matrix theory, we derive exact non-asymptotic bounds for the risk of the Moore-Penrose estimator, which hold for finite-dimensional problems and reveal the precise dependence on key parameters such as the sample size, dimension, and noise variance. Then we obtain a characterization of the double descent phenomenon in the linear regression context, demonstrating how the risk evolves when the number of parameters $p$ and the number of samples $n$ tend to infinity, with $p/n$ fixed. The analysis relies on applications of the Stieltjes transform for random Fourier matrices, enabling a precise description of the spectral properties of these matrices and their impact on regression performance. To validate our theoretical findings, we present several numerical examples that illustrate the double descent curves. These simulations align closely with our derived bounds, confirming their predictive power in both under-parameterized and over-parameterized regimes.",
+      "takeaways": [
+        "The object is a theoretical analysis of generalization error for linear regression with random partial DFT matrices, focusing on the Moore-Penrose estimator.",
+        "A visible limit is that the listing describes the alignment of simulations with theory but does not provide specific quantitative risk values or detailed simulation parameters.",
+        "The artifact status is not established in the listing, as no code or data repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that their computer simulations match their mathematical predictions very well, showing that the predictions work in both cases where there are fewer parameters than data points and where there are more parameters than data points.",
+        "brief": "The authors claim to have created precise mathematical rules that predict how well a specific type of statistical model will perform when using random Fourier matrices. They report that their computer simulations match these mathematical rules closely, showing the rules work in both under-parameterized and over-parameterized settings. The listing does not give specific numbers for the error rates or the exact settings used in the simulations.\n\nThe evidence comes from mathematical proofs using random matrix theory and computer simulations. The listing does not say exactly how many data points or parameters were used in the simulations, nor does it list specific error numbers. It is not stated whether the code for these simulations is available for download.\n\nPeople studying the mathematics of high-dimensional statistics or the double descent effect might find this useful. People looking for specific error numbers on standard datasets or ready-to-use code might need to read the full paper to see if it has what they need.",
+        "takeaways": [
+          "The paper is about a mathematical analysis of how well a statistical model works when using random Fourier matrices.",
+          "A limit is that the listing says the simulations match the theory but does not give the specific numbers or settings used in the simulations.",
+          "It is not stated in the listing whether the code for the simulations is available."
+        ]
+      },
+      "actions": [
+        "Verify the specific numerical examples and simulation parameters in the PDF to assess the practical applicability of the bounds.",
+        "Check the full paper for any supplementary code or data availability statements not included in the arXiv listing."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "math.ST",
+        "cs.IT",
+        "math.IT",
+        "stat.TH"
+      ],
+      "listing": {
+        "listedOn": "2026-09-28",
+        "publishedOn": "2026-09-28",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.30338"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-28"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-28T19:45:36.876Z"
+      }
+    },
+    {
+      "id": "2609.30345",
+      "arxivId": "2609.30345",
+      "url": "https://arxiv.org/abs/2609.30345",
+      "topic": "Security",
+      "reported": "The authors report that the Sola Security Brain reaches 0.693 coverage against 0.387 for Claude Code on 28 cloud-security investigation tasks.",
+      "metrics": [
+        "0.693 coverage",
+        "0.387 coverage",
+        "28 cloud-security investigation tasks"
+      ],
+      "title": "Coding Agents Aren't Enough! Evaluating an Enterprise Security Brain for Agentic Cloud Investigations",
+      "authors": "Leon Goldberg, Gal Engelberg, Eden Yavin, Elad Elouz, Ariel Zadok, Konstantin Koutsyi",
+      "takeaway": "The paper evaluates the Sola Security Brain against Claude Code on cloud-security investigation tasks to determine the contribution of a purpose-built security context layer.",
+      "brief": "The authors evaluate the Sola Security Brain, a security intelligence layer, against Claude Code operating a live AWS environment through a read-only CLI. They measure performance on 28 cloud-security investigation tasks using a blinded, tier-weighted, grounding-gated relative recall metric. The Sola Security Brain achieves 0.693 coverage compared to 0.387 for Claude Code, a gap of 0.306.\n\nThe authors report a relative gain of 79.2% and lower reasoning and coverage costs for the Sola Security Brain. They identify an answer-level pattern where the live agent enumerates a fraction of a population and asserts an unhedged universal negative. The abstract notes that in one task, the agent reported no bucket policies exist after checking four bucket families, sampling 40 of roughly 5,000 buckets.\n\nResearchers evaluating security intelligence layers or agentic cloud investigations may find the comparative metrics and failure patterns relevant. Those focused solely on general-purpose coding agents without a specific security context layer may find the specialized evaluation less applicable. The listing does not establish whether the results generalize beyond the specific AWS environment and task set used.",
+      "abstract": "Cloud-security investigation is dominated by population tasks: which identities can read a data store, how many resources fail a control, which assets are reachable from another account. These resolve against a complete inventory, not a named object. A partial answer to one is not a partial result. It is a different result. General-purpose coding agents can now be given read-only cloud credentials and asked to investigate directly, which raises the question of what a purpose-built security context layer still contributes. We evaluate the Sola Security Brain, a security intelligence layer whose relational substrate is resolved offline and whose security logic is evaluated against it at query time, against Claude Code operating the same live AWS environment through a read-only CLI, over 28 cloud-security investigation tasks. Answers are scored by a blinded, tier-weighted, grounding-gated relative recall over the joint claim pool, averaged across three independent grading draws. The Sola Security Brain reaches 0.693 coverage against 0.387, a gap of 0.306 that varied by $\\pm 0.018$ across three grading draws, or a relative gain of $79.2\\%$. It leads on 25 of 28 tasks from the weaker model tier, at $17.7\\times$ lower reasoning cost per task and $31.6\\times$ lower cost per unit of coverage. Beyond the aggregate, we describe an answer-level pattern we term sample-and-generalise: under a turn budget the live agent enumerates a fraction of a large population, asserts an unhedged universal negative, and discloses the sample size only in answer metadata rather than in the answer. In one task it reported that no bucket policies exist after checking four bucket families, in a sweep that sampled 40 of roughly 5{,}000 buckets, in an account where 65 buckets carry a wildcard-principal read grant.",
+      "takeaways": [
+        "The object is a comparative evaluation of a purpose-built security intelligence layer against a general-purpose coding agent on cloud-security investigation tasks.",
+        "A visible limit is that the evaluation is conducted on 28 specific tasks in a live AWS environment, and the abstract does not state whether these tasks represent a broader distribution of security investigations.",
+        "The artifact status is not established in the listing; the abstract describes the Sola Security Brain and Claude Code but does not provide code or repository URLs."
+      ],
+      "plain": {
+        "reported": "The authors report that their security tool, Sola Security Brain, gets a score of 0.693 while a general AI coding tool, Claude Code, gets a score of 0.387 on 28 cloud security check tasks.",
+        "brief": "The authors test a specialized security tool called Sola Security Brain against a general AI coding assistant called Claude Code. They give both tools read-only access to a live Amazon Web Services (AWS) cloud environment and ask them to answer 28 specific security questions. The specialized tool scores 0.693 on a coverage metric, while the general AI scores 0.387.\n\nThe specialized tool is also cheaper to run, costing 17.7 times less for reasoning and 31.6 times less per unit of coverage. The authors note a specific failure mode where the general AI checks only a small sample of resources and then claims that no issues exist across the entire system. For example, it checked 40 out of 5,000 storage buckets and claimed no problematic policies existed.\n\nPeople studying how to automate cloud security checks might find the comparison between specialized and general tools useful. People only interested in general AI coding capabilities might find the specific security context less relevant. The listing does not say if these results apply to other cloud providers or different types of security tasks.",
+        "takeaways": [
+          "The paper compares a specialized security tool with a general AI coding tool on cloud security tasks.",
+          "The evaluation is limited to 28 specific tasks in one AWS environment, and it is not stated if these tasks are representative of all security investigations.",
+          "The listing does not provide links to code or data, so the exact setup and results cannot be independently verified from the abstract alone."
+        ]
+      },
+      "actions": [
+        "Verify the specific 28 cloud-security investigation tasks and the AWS environment configuration in the PDF to assess the generalizability of the 0.693 versus 0.387 coverage results.",
+        "Check the PDF for details on the blinded, tier-weighted, grounding-gated relative recall metric and the three independent grading draws to confirm the reported gap of 0.306."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "listing": {
+        "listedOn": "2026-09-28",
+        "publishedOn": "2026-09-28",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.30345"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-28"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-28T19:45:36.876Z"
+      }
+    },
+    {
+      "id": "2609.30539",
+      "arxivId": "2609.30539",
+      "url": "https://arxiv.org/abs/2609.30539",
+      "topic": "Engineering",
+      "reported": "The authors report that their method is an alternative to MCMC-based split Gibbs at lower likelihood-update cost, measured on nonlinear phase retrieval.",
+      "metrics": [],
+      "title": "Learning to Replace MCMC in Split-Gibbs Diffusion Posterior Sampling via Deep Unfolding",
+      "authors": "Yi Zhang, Rui Guo, Mengchu Xu, Zhaofeng Liu, Yonina C. Eldar",
+      "takeaway": "The paper proposes a learning-based framework that replaces the MCMC step in split-Gibbs diffusion posterior sampling by reformulating Gibbs updates as Gaussian denoising problems implemented through ODE diffusion.",
+      "brief": "The authors propose replacing the iterative MCMC likelihood update in split-Gibbs diffusion posterior sampling with a deep-unfolded network that treats the update as a Gaussian denoising problem. This approach reuses a pretrained diffusion prior for the prior step and uses a lightweight network for the likelihood step.\n\nThe authors state that experiments on nonlinear phase retrieval demonstrate the method's effectiveness as an alternative to MCMC-based split Gibbs at lower likelihood-update cost. The abstract does not provide specific quantitative metrics, convergence rates, or error bounds for this claim. It also does not specify the exact hardware or computational budget used for the cost comparison.\n\nResearchers working on diffusion-based posterior inference for nonlinear inverse problems may find the architectural replacement of MCMC with ODE diffusion relevant. Those requiring rigorous statistical guarantees or specific benchmark comparisons against standard MCMC baselines may need to consult the full text for detailed validation.",
+      "abstract": "Split Gibbs sampling enables diffusion posterior inference for general nonlinear inverse problems by decoupling prior and likelihood computations, allowing a pretrained diffusion prior to be reused across measurement models. However, its likelihood update often relies on iterative MCMC, which can hinder parallelization, require algorithm-specific tuning, and incur substantial computational cost. In this work, we propose a learning-based framework to replace this MCMC step by reformulating both Gibbs updates as Gaussian denoising problems and implementing them through ODE diffusion. The prior step reuses a pretrained denoiser, while the likelihood denoiser exploits known likelihood structure through a lightweight deep-unfolded network. Experiments on nonlinear phase retrieval demonstrate the effectiveness of the proposed method as an alternative to MCMC-based split Gibbs at lower likelihood-update cost.",
+      "takeaways": [
+        "The core object is a deep-unfolded network that replaces the MCMC likelihood update in split-Gibbs sampling with an ODE diffusion denoising process.",
+        "The abstract claims lower likelihood-update cost but does not quantify the reduction or specify the computational metrics used for comparison.",
+        "No code repository or dataset link is provided in the listing, so the implementation details and reproducibility artifacts are not established."
+      ],
+      "plain": {
+        "reported": "The authors report that their method works better than the standard MCMC-based split Gibbs method at a lower cost for the likelihood update, measured on a nonlinear phase retrieval problem.",
+        "brief": "The authors suggest a new way to handle a difficult part of a statistical sampling method called split-Gibbs diffusion posterior sampling. Instead of using a slow, iterative process called MCMC, they use a neural network that treats the update as a noise-removal problem. This network is trained to handle the specific structure of the measurement data.\n\nThe authors say that tests on a specific type of imaging problem, called nonlinear phase retrieval, show that their method is a good alternative to the older MCMC method and costs less to run. However, the summary does not give exact numbers for how much faster or more accurate it is. It also does not say what computer hardware was used to measure the cost.\n\nPeople who work on using AI models to solve complex mathematical problems in imaging or signal processing might find this useful. People who need exact statistical proofs or specific comparisons to other standard methods should look at the full paper for more details.",
+        "takeaways": [
+          "The main idea is using a neural network to replace a slow, iterative statistical step in a sampling algorithm.",
+          "The summary says the method is cheaper to run but does not give exact numbers for the cost savings or accuracy.",
+          "There is no link to the code or data in the summary, so it is not clear if the method can be easily reproduced."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative cost reductions and accuracy metrics by reviewing the full PDF, as the abstract only provides a qualitative claim of lower cost.",
+        "Check the supplementary materials or repository for the deep-unfolded network architecture and the specific nonlinear phase retrieval dataset used in the experiments."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "listing": {
+        "listedOn": "2026-09-28",
+        "publishedOn": "2026-09-28",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.30539"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-28"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-28T19:45:36.876Z"
+      }
+    }
+  ]
+}
