@@ -1,0 +1,671 @@
+{
+  "date": "2026-09-29",
+  "label": "Tue, Sep 29",
+  "minutes": 10,
+  "poolSize": 162,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-09-29T18:10:19.411Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2609.29233",
+      "arxivId": "2609.29233",
+      "url": "https://arxiv.org/abs/2609.29233",
+      "topic": "AI",
+      "reported": "The authors report a 5.34 pp gain on HumanEval+ using Qwen2.5-1.5B.",
+      "metrics": [
+        "5.34 pp gain on HumanEval+",
+        "5,664nses"
+      ],
+      "title": "Post-Training Leaves Behavioral Shadows on Unrelated Decisions",
+      "authors": "Ziyang Zhang, Yubin Jing, Yuanhao Zeng, Yuyao Li, Haofan Wang, Yichen Gong",
+      "takeaway": "The paper claims that Active Taskless Distillation transfers capabilities using only a single word from the teacher per prompt.",
+      "brief": "The authors propose Active Taskless Distillation to transfer capabilities using single-word teacher signals without target-task examples. They report a 5.34 pp gain on HumanEval+ with Qwen2.5-1.5B, though the abstract text contains several corrupted phrases. The listing does not establish whether the reported gains are statistically significant or robust across all tested model families.\n\nThe strongest evidence is the coding experiment result, but the abstract mentions transfer in scientific knowledge and commonsense reasoning without specific numbers. The text corruption in the abstract, such as \"5,664nses\" and \"thadisrupts prompt-res\", limits the ability to verify the exact experimental controls and dataset sizes. The authors state that functional analyses show the learned side effects are composable, but the specific metrics for this claim are not provided in the listing.\n\nResearchers investigating subliminal learning or task-unrelated text transfer may find this relevant. Those requiring precise, uncorrupted experimental details for replication should verify the full paper. The method relies on a specific prompt selection strategy involving a shared public ancestor, which may not generalize to all model architectures.",
+      "abstract": "We find that language models can transfer capabilities through task-unrelated text. Post-training typically improves language models using task-specific data. Prior work on subliminal learning shows that information about these updates can pass through unrelated generations, but has largely focused on traits or preferences using extensive teacher outputs. We introduce Active Taskless Distillation (ATD), which achieves capability transfer using only a single word from the teacher per prompt. ATD probes the behavioral shadow of post-training by selecting prompts where the teacher and student's shared public ancestor is nearly indifferent between two ordinary words. A student initialized from this ancestor learns solely from the resulting prompt-word pairs, without target-task examples, teacher logits, or teacher parameters. In the primary coding experiment with Qwen2.5-1.5B, 5,664nses yield a 5.34 pp gain on HumanEval+ over an exact nuisance-matched control thadisrupts prompt-resperiments showtransfer in scientific knowledge, commonsense reasoning, and reading comprehensins across additional model generations, sizes, and families. Functional analyses show that the learned sid composable, andthat its strength tracks the teacher's update strength.",
+      "takeaways": [
+        "The object is a distillation method using single-word teacher signals to transfer capabilities without target-task data.",
+        "A visible limit is the corrupted abstract text, which obscures specific control conditions and dataset details.",
+        "The artifact status is unclear because the code repository URL is provided, but the abstract does not confirm if the code matches the reported results."
+      ],
+      "plain": {
+        "reported": "The authors report a 5.34 percentage point improvement on the HumanEval+ coding benchmark using the Qwen2.5-1.5B model.",
+        "brief": "The authors suggest that language models can learn new skills from unrelated text. They introduce a method called Active Taskless Distillation that uses just one word from a larger model for each prompt to teach a smaller model. They claim this method improved coding performance by 5.34 percentage points on a standard test, but the description of their experiment contains several typos and broken sentences. It is not clear from this summary if the results are statistically reliable or if they hold for other types of tasks.\n\nThe main proof is the coding test result, but they also mention improvements in science and common sense without giving specific numbers. The broken text in the summary, like \"5,664nses\" and \"thadisrupts prompt-res\", makes it hard to know exactly how they controlled their experiments. They say their method creates useful side effects, but they do not show the specific measurements for this claim in the summary.\n\nPeople studying how models learn from hidden or unrelated information might find this interesting. People who need exact details to repeat the experiment should check the full paper. The method depends on a specific way of choosing prompts, which might not work for all different types of AI models.",
+        "takeaways": [
+          "The method teaches a smaller AI model using only one word from a larger model for each question, without using examples of the target task.",
+          "A clear limitation is that the summary text has errors, making it hard to see the exact details of the experiment setup.",
+          "It is not known if the code provided matches the results reported, because the summary does not confirm this connection."
+        ]
+      },
+      "actions": [
+        "Verify the full PDF to confirm the exact number of examples and control conditions, as the abstract text is corrupted.",
+        "Check the provided GitHub repository to ensure the code implements the specific prompt selection strategy described in the abstract."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/myboker/ATD",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-29",
+        "publishedOn": "2026-09-24",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.29233",
+            "upvotes": 207
+          }
+        ]
+      },
+      "trend": {
+        "votes": 207,
+        "rank": 1,
+        "of": 50,
+        "perDay": 41
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 207,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-24"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-29T18:10:19.411Z"
+      }
+    },
+    {
+      "id": "2609.33757",
+      "arxivId": "2609.33757",
+      "url": "https://arxiv.org/abs/2609.33757",
+      "topic": "AI",
+      "reported": "The authors report that YuE2 scores 6.73 on SongBench Global Avg, exceeding all evaluated public baselines.",
+      "metrics": [
+        "49.3% of overall preferences",
+        "34.6% without planning",
+        "6.73 on SongBench Global Avg"
+      ],
+      "title": "YuE2: Unifying Symbolic and Audio Music Generation at Frontier Quality",
+      "authors": "Ruibin Yuan, Jiahao Pan, Junyan Jiang, Zhiyue Wu, Ziya Zhou, Jiankai Sun, Yizhi Li, Ge Zhang, Yicheng Gu, Zeyue Tian, Junyu Dai, Hanfeng Lin, Kai Li, Shangda Wu, Xuanjie Liu, Jiaming Wang, Zihan Liu, Yue Wang, Yinghao Ma, Hanzhi Yin, Kangrui Chen, Xinyue Zhang, Ziyang Ma, Mengqi Liao, Hejia Zhao, Guowei Huang, Chao Yan, Lei Ke, Jianwei Yu, Bei Liu, Joe Guo, Liumeng Xue, Gus Xia, Wei Xue, Yike Guo",
+      "takeaway": "YuE2 unifies symbolic and audio music generation at frontier quality through symbolic planning.",
+      "brief": "The authors claim YuE2 unifies symbolic and audio music generation at frontier quality through symbolic planning. They report that experts prefer symbolic planning for overall quality and musicality, with 49.3% of overall preferences versus 34.6% without planning. The listing does not establish specific unresolved limits or artifacts beyond the reported benchmark comparisons.\n\nThe strongest reported result is a score of 6.73 on SongBench Global Avg, exceeding all evaluated public baselines. The authors also state that selecting from eight candidates reaches 6.96, the highest observed mean among all evaluated systems. These results are measured on WildSongBench and expert listening tests.\n\nResearchers working on music generation, symbolic planning, or audio synthesis may find this relevant. Those not interested in unified music generation models or specific benchmark comparisons may ignore it. The packet does not advise whether to read or skip the paper.",
+      "abstract": "Symbolic models make melody, harmony, rhythm, and form explicit but typically stop before a finished recording; audio models produce complete songs while leaving composition implicit. We introduce YuE2, which unifies symbolic and audio music generation at frontier quality through symbolic planning. A single AR-NAR Mixture-of-Transformers (MoT) first writes a readable score specifying melody and harmony, expands it into semantic music tokens, and realizes it as full-song audio. In comparisons using the same checkpoint, experts prefer symbolic planning for overall quality and musicality, with 49.3% of overall preferences versus 34.6% without planning. Experts also favor the unified model over a separate language model and diffusion Transformer. On WildSongBench, YuE2 scores 6.73 on SongBench Global Avg, exceeding all evaluated public baselines. Selecting from eight candidates (best-of-8), YuE2 reaches 6.96, the highest observed mean among all evaluated systems. Expert listening further establishes its competitiveness with proprietary song generators, favoring best-of-8 over Suno v4.5 and yielding nearly balanced preferences against Suno v5. To learn this generation process from recordings without aligned scores, we introduce MERT2 and SheetSage2 to supply semantic and symbolic supervision. MERT2 sets a new state of the art in music representation learning, surpassing previous best results on 14 of 15 MARBLE metrics; SheetSage2 leads 12 of 15 benchmark-metric pairs in our lead-sheet transcription comparison. The same checkpoint follows score edits while largely preserving unedited musical content and generates zero-shot covers without cover-specific training. Its readable score also enables agentic music editing, with external language models translating user feedback into revisions of the composition.",
+      "takeaways": [
+        "The object is a unified model for symbolic and audio music generation.",
+        "A visible limit is that the model relies on expert preferences and specific benchmarks for evaluation.",
+        "The artifact status is not established in the listing, though a code repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that YuE2 scores 6.73 on SongBench Global Avg, exceeding all evaluated public baselines.",
+        "brief": "The authors claim YuE2 combines written music scores and audio song generation into one system. They report that experts prefer the version with symbolic planning for overall quality and musicality, with 49.3% of overall preferences versus 34.6% without planning. The listing does not establish specific unresolved limits or artifacts beyond the reported benchmark comparisons.\n\nThe strongest reported result is a score of 6.73 on SongBench Global Avg, exceeding all evaluated public baselines. The authors also state that selecting from eight candidates reaches 6.96, the highest observed mean among all evaluated systems. These results are measured on WildSongBench and expert listening tests.\n\nResearchers working on music generation, symbolic planning, or audio synthesis may find this relevant. Those not interested in unified music generation models or specific benchmark comparisons may ignore it. The packet does not advise whether to read or skip the paper.",
+        "takeaways": [
+          "The object is a unified model for symbolic and audio music generation.",
+          "A visible limit is that the model relies on expert preferences and specific benchmarks for evaluation.",
+          "The artifact status is not established in the listing, though a code repository is declared."
+        ]
+      },
+      "actions": [
+        "Verify the PDF to confirm the exact benchmark definitions and expert evaluation protocols.",
+        "Check the declared code repository for implementation details and reproducibility."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/multimodal-art-projection/YuE",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-29",
+        "publishedOn": "2026-09-27",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.33757",
+            "upvotes": 194
+          }
+        ]
+      },
+      "trend": {
+        "votes": 194,
+        "rank": 2,
+        "of": 50,
+        "perDay": 97
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 194,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-27"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-29T18:10:19.411Z"
+      }
+    },
+    {
+      "id": "2609.35347",
+      "arxivId": "2609.35347",
+      "url": "https://arxiv.org/abs/2609.35347",
+      "topic": "AI",
+      "reported": "The authors report that their proposed method improves the average score over the baseline method at every model size tested, across three random seeds and under two answer-length limits.",
+      "metrics": [],
+      "title": "Beyond Teacher Assignment: Domain-Normalized Multi-Teacher On-Policy Distillation",
+      "authors": "Xin Li, Hao Jiang, Xin Gao, Annan Wang, Yuchen Xie, Jinghao Guo, Xingwei Qu, Yichi Zhang, Chau Yuen",
+      "takeaway": "The paper claims that Domain-Normalized Multi-Teacher On-Policy Distillation (DN-MOPD) improves multi-teacher distillation by rescaling each domain's feedback by its measured spread to balance updates.",
+      "brief": "The authors propose Domain-Normalized Multi-Teacher On-Policy Distillation (DN-MOPD) to address unbalanced feedback in multi-teacher setups. They argue that standard routing determines which specialist teaches but not how strongly its feedback influences the student model.\n\nThe authors report that DN-MOPD improves average scores over standard MOPD on six public benchmarks across three model sizes. They note that instruction-following feedback is several times more spread out than mathematics feedback, dominating student updates. Controls suggest the gain comes from reducing instruction-following feedback rather than increasing mathematics feedback.\n\nResearchers working on multi-teacher distillation or model merging may find the normalization approach relevant. Those not interested in balancing feedback signals in reinforcement learning or distillation pipelines may ignore this work.",
+      "abstract": "Reinforcement learning can turn one language model into several specialists, each excellent at a single skill such as mathematics, coding or following instructions, but users need one model with all of these skills. Multi-teacher on-policy distillation (MOPD) merges them by letting the specialists teach one student: the student answers each prompt, and the specialist for that prompt's domain gives feedback on every token. This routing decides which specialist teaches, but not how strongly its feedback moves the shared student. In Qwen3.5 models at three sizes, we find that MOPD's student does not beat one taught by the best single specialist and gains little of the mathematics specialist's advantage. The feedback is unbalanced: instruction-following feedback is several times more spread out than mathematics feedback and dominates the student's updates. We propose Domain-Normalized MOPD (DN-MOPD), which keeps the routing and rescales each domain's feedback by its measured spread. On six public benchmarks, DN-MOPD improves the average score over MOPD at every size, across three random seeds and under two answer-length limits, and recovers most of the lost mathematics gain. Controls with fixed domain weights show that the gain comes mainly from turning down instruction-following feedback rather than turning up mathematics alone, and that fixed weights close to those DN-MOPD measures perform comparably. Combining specialists therefore requires deciding not only which one teaches, but also how strongly its feedback counts.",
+      "takeaways": [
+        "The object is a normalization technique for multi-teacher on-policy distillation that rescales domain-specific feedback based on measured spread.",
+        "A visible limit is that the method relies on measuring feedback spread, which may vary across unseen domains or model architectures not tested in the listing.",
+        "The artifact status is established by the provided GitHub repository URL, though the listing does not confirm code completeness or reproducibility details."
+      ],
+      "plain": {
+        "reported": "The authors state that their new method gets better average scores than the old method on six standard tests, using three different model sizes and three different random starting points.",
+        "brief": "The authors suggest a way to fix a problem where one type of teaching signal is too strong compared to others. They call this method Domain-Normalized Multi-Teacher On-Policy Distillation. It adjusts the strength of feedback from different experts based on how varied their feedback is.\n\nThey say this method works better than the standard approach on six public tests. They found that feedback for following instructions is much more varied than feedback for math, which causes it to dominate the learning process. Their tests show that reducing the instruction-following feedback is the main reason for the improvement.\n\nPeople who work on combining multiple AI models or training them with multiple experts might find this useful. People who do not work on these specific training methods might not need to look at this paper.",
+        "takeaways": [
+          "The main idea is a way to adjust the strength of feedback from different AI experts so that no single type of feedback dominates the learning process.",
+          "A limitation is that the method depends on measuring how varied the feedback is, which might not work the same way for new types of tasks or models.",
+          "The authors provide a link to their code, but the short summary does not say if the code is complete or easy to use."
+        ]
+      },
+      "actions": [
+        "Verify the GitHub repository to confirm the code implements the described rescaling mechanism and matches the reported benchmark results.",
+        "Check the full paper for details on how 'measured spread' is calculated and whether the six public benchmarks are standard in the field."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/LiXin97/DN-MOPD",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-29",
+        "publishedOn": "2026-09-28",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.35347",
+            "upvotes": 138
+          }
+        ]
+      },
+      "trend": {
+        "votes": 138,
+        "rank": 3,
+        "of": 50,
+        "perDay": 138
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 138,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-28"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-29T18:10:19.411Z"
+      }
+    },
+    {
+      "id": "2609.35432",
+      "arxivId": "2609.35432",
+      "url": "https://arxiv.org/abs/2609.35432",
+      "topic": "AI",
+      "reported": "The authors report that HexaAnything improves Composite-Unseen and overall success over XR-1 VLA on RoboCasa365.",
+      "metrics": [
+        "RoboCasa365"
+      ],
+      "title": "Self-Evolving Coding Agents: From Digital Programs to Physical-World Intelligence",
+      "authors": "Hongcheng Gao, Jingjing Zhou, Zelin Zheng, Shijia Ge, Jay Zhu, Yazhe Wang, Jianshu Zeng, Xuan Shangguan, Di Wu, Lingyu He, Zhiqi Jia, Sihang Wu, Xiao He",
+      "takeaway": "The paper proposes Physical Coding, a framework representing task state and execution as code to enable self-evolving coding agents for physical-world intelligence.",
+      "brief": "The authors propose Physical Coding, which represents task state and execution as code to address limitations in direct vision-language-action models. They introduce HexaAnything, a system that calls perception, planning, and control tools to make in-the-loop decisions from external feedback.\n\nThe authors report that HexaAnything improves Composite-Unseen and overall success over XR-1 VLA on RoboCasa365. They state that Harness-trained HexaModel beats the base on every split, indicating code traces internalize physical execution. The listing does not provide specific numerical values for these improvements or the exact benchmark scores.\n\nResearchers working on robot learning, embodied AI, or LLM-based control systems may find this relevant. Those focused solely on static visual recognition or non-physical coding tasks may find the physical-world focus less applicable.",
+      "abstract": "Vision-language-action (VLA) and world-action (WAM) models map observations and instructions directly to robot actions. This directness ties a policy to training: minor layout or viewpoint changes cause failure, and instructions generalize poorly. The root cause lies in representation: task requirements, conditions, progress, and failure recovery are implicitly encoded in action sequences, making them difficult to inspect or revise. Digital coding agents offer a precedent: LLMs call tools, verify results, and revise from feedback as executable code. The same working pattern of explicit state, manageable execution, and revisable procedures underlies generalization and long-horizon execution in the physical world, letting physical experience return as reusable programs, memory, or evidence. We propose Physical Coding, representing task state and execution as code. Code as World records objects, relations, constraints, and progress; Code as Policy organizes planning, verification, recovery, and execution. We build HexaAnything, which calls perception, planning, and control tools, including VLA/WAM policies, and makes in-the-loop decisions from external feedback. Verified traces become data and memory, enabling evolution from tools and Harness to model weights, architectures, and ultimately hardware and task design. On RoboCasa365, HexaAnything improves Composite-Unseen and overall success over XR-1 VLA, and its Harness-trained HexaModel beats the base on every split, indicating code traces internalize physical execution. On PhyBench and a dual-arm AgileX robot, the agent autonomously completes physics experiments and most tabletop tasks, often faster than published results. We observe data, model, and tool self-evolution; future work targets weight internalization, autonomous redesign of architectures, languages, representations, and tasks, and deployment in manufacturing and science.",
+      "takeaways": [
+        "The object is a coding-agent framework for robot control that treats physical execution as revisable code rather than implicit action sequences.",
+        "A visible limit is the reliance on external tools and feedback for in-the-loop decisions, with future work targeting weight internalization and autonomous architecture redesign.",
+        "The artifact status is indicated by a declared GitHub repository URL, though the listing does not confirm the availability or completeness of the code."
+      ],
+      "plain": {
+        "reported": "The authors report that their system, HexaAnything, performs better than a previous model called XR-1 VLA on a simulation benchmark called RoboCasa365.",
+        "brief": "The authors suggest that treating robot tasks like writing and editing computer code can help robots adapt better to new situations. They built a system called HexaAnything that uses code to track what the robot is doing and how to fix mistakes.\n\nThey say their system works better than previous models in a computer simulation of a kitchen. They also claim it can do physics experiments and table tasks on a real robot, sometimes faster than other published methods. The text does not give specific numbers for how much better it is.\n\nPeople studying how robots learn or how AI controls machines might be interested. People who only care about image recognition or software coding without physical robots might not find this relevant.",
+        "takeaways": [
+          "The main idea is using code to manage robot actions so they can be checked and changed, rather than just following a fixed pattern.",
+          "A limitation is that the system currently relies on external tools and feedback, and the authors say they still need to make the robot learn these patterns directly in its own brain (weights).",
+          "The authors provide a link to a code repository, but the summary does not say if the code is fully working or complete."
+        ]
+      },
+      "actions": [
+        "Verify the specific numerical improvements on RoboCasa365 and PhyBench by consulting the full PDF, as the abstract lacks quantitative metrics.",
+        "Check the declared GitHub repository to confirm the availability of the HexaAnything implementation and any associated datasets or evaluation scripts."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/HexaFuture/PhysicalCoding",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-09-29",
+        "publishedOn": "2026-09-28",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.35432",
+            "upvotes": 90
+          }
+        ]
+      },
+      "trend": {
+        "votes": 90,
+        "rank": 4,
+        "of": 50,
+        "perDay": 90
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 90,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-28"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-29T18:10:19.411Z"
+      }
+    },
+    {
+      "id": "2609.32241",
+      "arxivId": "2609.32241",
+      "url": "https://arxiv.org/abs/2609.32241",
+      "topic": "Security",
+      "reported": "The authors report that CoverLock achieves a more favorable security--robustness trade-off than both traditional handcrafted defenses and learned classifier-based defenses across representative watermarking systems exhibiting high residual transferability.",
+      "metrics": [],
+      "title": "Residual Transferability in Neural Image Watermarking",
+      "authors": "Ziping Dong, Qi Li, Xinchao Wang",
+      "takeaway": "The paper claims to formalize residual transferability in neural image watermarking and introduces CoverLock, a plug-and-play strategy that strengthens image dependence without architectural redesign.",
+      "brief": "The authors formalize a vulnerability where watermark-bearing residuals transfer to unrelated content and propose CoverLock as a plug-and-play defense for existing systems. They report that CoverLock achieves a more favorable security--robustness trade-off than traditional handcrafted and learned classifier-based defenses on representative high-RT systems. The listing does not provide specific quantitative metrics, dataset names, or numerical performance values for these comparisons.\n\nThe strongest reported evidence is the comparative trade-off advantage of CoverLock over two specific defense categories. The authors state that architectural design plays a central role in residual transferability, but the listing does not specify which architectures were tested or the magnitude of the improvement. No numerical benchmarks, accuracy scores, or robustness percentages are included in the supplied abstract.\n\nResearchers working on neural image watermarking security or forgery resistance may find the architectural insights and the CoverLock method relevant. Those seeking specific quantitative benchmarks or code implementations should note that the listing declares no code and provides no numerical results.",
+      "abstract": "Neural image watermarks can be forged by extracting watermark-bearing residuals from released images and transferring them to unrelated content. While prior work has demonstrated this vulnerability, what makes these residuals transferable remains poorly understood. We formalize this vulnerability with residual transferability (RT), a metric that quantifies how well watermark evidence remains decodable after transfer across unrelated images. Through comparative analyses and controlled interventions, we find that common training-side variations do not account for the large RT differences across watermarking systems; instead, architectural design plays a central role. By contrasting high- and low-RT systems and validating their architectural differences through controlled interventions, we identify two mechanisms that strengthen the dependence of watermark evidence on the cover image, thereby suppressing the residual transferability. These findings provide concrete design guidance for developing more forgery-resistant watermarking architectures. Complementarily, for existing watermarking systems where architectural redesign is impractical, we introduce CoverLock, a plug-and-play strategy for existing watermarking systems that strengthens such image dependence without architectural redesign. Across representative watermarking systems exhibiting high residual transferability, CoverLock achieves a more favorable security--robustness trade-off than both traditional handcrafted defenses and learned classifier-based defenses.",
+      "takeaways": [
+        "The object is a security analysis of neural image watermarking that identifies architectural mechanisms affecting residual transferability and proposes a plug-and-play mitigation called CoverLock.",
+        "A visible limit is the absence of quantitative metrics in the listing, leaving the magnitude of the reported security--robustness trade-off improvement unspecified.",
+        "The artifact status is unclear regarding code availability, as the listing explicitly declares no code, and the specific representative watermarking systems used for evaluation are not named."
+      ],
+      "plain": {
+        "reported": "The authors report that their new method, CoverLock, provides a better balance between security and robustness compared to older manual defenses and AI-based classifier defenses when tested on watermarking systems that are known to be vulnerable to this specific type of forgery.",
+        "brief": "The researchers explain a weakness in digital image watermarks where the hidden watermark signal can be copied from one image and pasted onto another unrelated image. They propose a new tool called CoverLock that can be added to existing watermarking systems without changing their core structure. They state that this tool works better than previous defense methods in balancing security and robustness, but they do not provide specific numbers or test details in this summary.\n\nThe main evidence provided is a statement that their method outperforms two other types of defenses. The authors also claim that the design of the watermarking system itself is the main reason for this vulnerability, but they do not list which specific systems were tested or how much better their method is in numerical terms. There are no percentages, scores, or specific dataset names included in the provided text.\n\nPeople who study how to protect digital images from forgery or who work on watermarking technology might find this useful. However, if you need specific performance numbers or want to download the code to test it yourself, you should know that this summary does not provide those details or confirm that code is available.",
+        "takeaways": [
+          "The paper focuses on a security flaw in digital image watermarks and offers a new, easy-to-add defense tool called CoverLock.",
+          "A clear limitation is that the summary does not include any specific numbers showing how much better the new tool is compared to others.",
+          "It is not known if the code for this tool is available because the summary explicitly says no code is declared, and the specific systems tested are not named."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative results and the names of the representative watermarking systems used in the evaluation by reading the full PDF.",
+        "Check the paper's supplementary materials or repository links for the implementation of CoverLock, since the listing does not declare any code."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.CR",
+        "cs.CV"
+      ],
+      "listing": {
+        "listedOn": "2026-09-29",
+        "publishedOn": "2026-09-26",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.32241",
+            "upvotes": 9
+          }
+        ]
+      },
+      "trend": {
+        "votes": 9,
+        "rank": 43,
+        "of": 50,
+        "perDay": 3
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 9,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-29T18:10:19.411Z"
+      }
+    },
+    {
+      "id": "2609.31769",
+      "arxivId": "2609.31769",
+      "url": "https://arxiv.org/abs/2609.31769",
+      "topic": "Stats",
+      "reported": "The authors report that non-Bayesian methods perform competitively across simulation settings, with performance improving for larger sample sizes and moderately large treatment effects, while reducing computational runtime.",
+      "metrics": [
+        "28-day mortality",
+        "48 UK National Health Service hospitals"
+      ],
+      "title": "Estimating Heterogeneous Causal Effects with Tree-Based Methods under Imperfect Compliance",
+      "authors": "Karolina Gliszczy\\'nska-Schroeder",
+      "takeaway": "The paper introduces a two-step, model-agnostic approach for conditional complier average causal effect estimation that allows any suitable machine learning method to be used in the first step.",
+      "brief": "The authors propose a two-step, model-agnostic framework for estimating conditional complier average causal effects under imperfect compliance. This approach decouples the causal effect estimation from the subgroup discovery process, allowing the use of non-Bayesian tree-based learners.\n\nThe authors report that their proposed non-Bayesian methods perform competitively relative to Bayesian Causal Forest with Instrumental Variable in simulation studies. They note that performance improves with larger sample sizes and moderately large treatment effects, while computational runtime is reduced. The listing does not establish specific quantitative performance gaps or bias magnitudes for these methods.\n\nResearchers working on causal inference with instrumental variables and subgroup discovery may find this relevant. Those requiring strictly Bayesian posterior inference or specific non-tree-based model architectures may ignore it.",
+      "abstract": "We study the impact of conditional complier average causal effect (CCACE) estimation methods on the performance of subgroup discovery and heterogeneous causal effect estimation under imperfect compliance. Building on the Bayesian Causal Forest with Instrumental Variable (BCF-IV) (Bargagli-Stoffi et al. (2022)) method, we introduce a two-step, model-agnostic approach that allows any suitable machine learning method to be used for the CCACE estimation in the first step. Specifically, we implement two non-Bayesian tree-based methods, both using forest-based learners: DRRF-IV, a debiased transformed-outcome regression-forest approach, and a GRF-based IV adaptation of the generalized random forest framework (Athey et al., 2019). Through a simulation study, we assess the precision, bias, and the ability to correctly identify the underlying subgroup structure of the proposed methods relative to BCF-IV. The results show that the non-Bayesian methods perform competitively across the considered simulation settings, with performance improving for larger sample sizes and moderately large treatment effects, while reducing computational runtime. We apply our new methods by revisiting an empirical study that examines the effect of prompt admission to intensive care units (ICU) on 28-day mortality across 48 UK National Health Service hospitals. While previous work finds no significant overall treatment effect, we investigate whether subgroups of patients may benefit more from prompt ICU admission.",
+      "takeaways": [
+        "The object is a two-step, model-agnostic estimation framework for conditional complier average causal effects using tree-based methods.",
+        "A visible limit is that the reported competitive performance is based on simulation settings and does not specify exact bias or precision metrics relative to the baseline.",
+        "The artifact status is not established in the listing, as no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors state that their new non-Bayesian statistical methods work as well as existing Bayesian methods in computer simulations, especially when there are more data points and the treatment effect is noticeable, and they run faster.",
+        "brief": "The authors created a new two-step statistical method to estimate how much a treatment helps different groups of people when some people do not follow the treatment plan. This method allows researchers to use various machine learning tools in the first step of the calculation.\n\nThe authors say their new methods work as well as a specific existing Bayesian method in their computer simulations. They note that the methods work better when there are more data points and when the treatment effect is moderately large, and they take less time to compute. The listing does not provide specific numbers showing how much better or worse the new methods are compared to the existing one.\n\nPeople who study how to measure the effect of treatments in situations where compliance is imperfect might find this useful. People who need specific Bayesian statistical outputs or who use non-tree-based machine learning models might not need this paper.",
+        "takeaways": [
+          "The main contribution is a flexible two-step statistical method for estimating treatment effects in subgroups when some participants do not follow the assigned treatment.",
+          "A limitation is that the paper does not provide specific numerical values for bias or precision in the listing, only stating that the methods perform competitively.",
+          "It is not stated in the listing whether the code for these methods is available for public use."
+        ]
+      },
+      "actions": [
+        "Verify the specific simulation settings and baseline comparisons in the PDF to confirm the scope of the reported competitive performance.",
+        "Check the PDF for any supplementary material or code availability statements regarding the DRRF-IV and GRF-based IV implementations."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME",
+        "econ.EM"
+      ],
+      "listing": {
+        "listedOn": "2026-09-29",
+        "publishedOn": "2026-09-29",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.31769"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-29"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-29T18:10:19.411Z"
+      }
+    },
+    {
+      "id": "2609.31830",
+      "arxivId": "2609.31830",
+      "url": "https://arxiv.org/abs/2609.31830",
+      "topic": "Physics",
+      "reported": "The authors report numerical and rigorous evidence that quantum experiments with low reactivity are efficient to classically simulate, learn, and fast-forward.",
+      "metrics": [],
+      "title": "Probing the classical complexity of quantum dynamics experiments",
+      "authors": "Thomas Schuster, Andreas Elben",
+      "takeaway": "The paper introduces a new complexity measure called reactivity and experimental protocols to measure it for quantum experiments.",
+      "brief": "The authors propose reactivity as a complexity measure for quantum experiments, arguing it captures classical simulability better than entanglement or magic. They state that low reactivity correlates with efficient classical simulation, learning, and fast-forwarding, supported by numerical and rigorous evidence. They introduce Pauli path spectroscopy as an experimental protocol to measure reactivity, noting it works even when the experiment is beyond classical simulation.\n\nThe listing provides no quantitative benchmarks, specific circuit sizes, or error rates. It does not establish whether high-reactivity experiments actually evade classical simulation or how the protocols perform on real hardware. The claim that low reactivity implies simplicity is attributed to the authors' evidence, not independently verified here.\n\nResearchers studying classical simulability of quantum dynamics or designing experiments to test quantum advantage may find the reactivity measure and spectroscopy protocols relevant. Those focused on specific hardware implementations or rigorous complexity lower bounds for high-reactivity systems may need to consult the full text for details not present in the abstract.",
+      "abstract": "A confluence of recent works has shown that many quantum circuits and dynamics are efficiently simulable by classical algorithms that track local information, even when conventional complexity measures such as the entanglement and magic are high. Here, we introduce a novel measure of complexity, the reactivity, to capture this new method of classical attack. Unlike conventional complexity measures, the reactivity does not capture a property of a quantum state or operator in isolation, but rather a quantum experiment as a whole. We provide numerical and rigorous evidence that quantum experiments with low reactivity are simple by a host of measures: they are efficient to classically simulate, learn, and fast-forward. This motivates the search for quantum experiments with high reactivity, which may evade these simplistic features. To this end, we introduce easily implementable experimental protocols---dubbed Pauli path spectroscopy---that allow one to efficiently measure the reactivity of any quantum experiment of interest. Our protocols are applicable even when the experiment itself is beyond the reach of classical simulation.",
+      "takeaways": [
+        "The object is a new theoretical measure (reactivity) and a set of experimental protocols (Pauli path spectroscopy) for assessing quantum experiment complexity.",
+        "A visible limit is the absence of quantitative results in the abstract, leaving the practical performance and scalability of the protocols unverified from this listing.",
+        "The artifact status is theoretical and experimental protocol design; no code or dataset is declared, and the evidence is described as numerical and rigorous but not specified."
+      ],
+      "plain": {
+        "reported": "The authors say their new measure, called reactivity, helps predict if a quantum experiment can be easily calculated by a regular computer, and they show this with math and computer tests.",
+        "brief": "The authors created a new way to measure how hard a quantum experiment is to copy on a normal computer. They call this measure 'reactivity.' They say that if reactivity is low, the experiment is easy for a normal computer to handle. They also created a way to measure this reactivity in a lab, called Pauli path spectroscopy. This method works even for experiments that are too hard for normal computers to copy directly.\n\nThe summary does not give any specific numbers, like how big the experiments were or how accurate the method is. It does not say if experiments with high reactivity are actually hard for normal computers. The claim that low reactivity means easy simulation is based on the authors' own tests and math, not on independent checks.\n\nPeople who study how to copy quantum computers on normal computers or who design experiments to show quantum computers are better might find this useful. People who need to know if this works on real lab equipment or if it has strict mathematical limits might need to read the full paper for more details.",
+        "takeaways": [
+          "The paper presents a new measurement tool and a lab procedure for checking how hard quantum experiments are to copy on normal computers.",
+          "A clear limit is that the summary lacks specific numbers, so we don't know how well the lab procedure works in practice or at large scales.",
+          "The work is theoretical and about designing lab tests; no computer code or data files are mentioned, and the proof is described as mathematical and computer-based but not detailed."
+        ]
+      },
+      "actions": [
+        "Verify the specific numerical evidence and rigorous proofs cited in the abstract by reading the full PDF.",
+        "Check the paper for details on the implementation requirements of Pauli path spectroscopy and any experimental demonstrations."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "cond-mat.str-el",
+        "cs.CC",
+        "hep-th"
+      ],
+      "listing": {
+        "listedOn": "2026-09-29",
+        "publishedOn": "2026-09-29",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.31830"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-29"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-29T18:10:19.411Z"
+      }
+    },
+    {
+      "id": "2609.31916",
+      "arxivId": "2609.31916",
+      "url": "https://arxiv.org/abs/2609.31916",
+      "topic": "Econ",
+      "reported": "The authors report that Soviet machinery was doomed to failure, measured against resistance from complex organizational forms inherent in Kazakh nomadism.",
+      "metrics": [],
+      "title": "Diabolus ex Machina: Complexity, Nomadic Resistance, and the Machinery of Forced Migration in Kazakhstan",
+      "authors": "Christopher A. Hartwell",
+      "takeaway": "The paper claims to examine how Soviet bureaucracy in Kazakhstan from 1929 to 1933 failed to sedentarize nomads due to resistance from complex organizational forms.",
+      "brief": "The author argues that Soviet organizations relied on brute force to bend their environment, but were stymied by the complexity of other organizations in the institutional field.\n\nThe author uses archival documents, testimonies, and arrest records to show how the Soviet apparatus pulled the devil from the machine, ultimately resulting in failure. The human cost of forced migration continues to linger, though specific quantitative limits are not established in the listing.\n\nResearchers studying organizational complexity, Soviet history, or forced migration may find this relevant. Those seeking quantitative economic models or modern policy analysis should ignore it.",
+      "abstract": "Organizations may perceive disorder in their environment as a threat which can impede the attainment of desired goals. In such a situation, organizations may become single minded, obsessed, and rely on brute force to attempt to bend the external environment to their will. These efforts may be enabled by perceived power imbalances between the organization and other actors in the environment, but they may also be stymied by the complexity of other organizations in the institutional field. This paper examines such an example in Soviet Kazakhstan from 1929 to 1933, when the All Union Communist Party pursued a policy of sedentarization of the nomadic people. Forcibly migrating nomads to collective farms under a brutal policy of repression, the Soviet bureaucracy at all levels saw no policy as off-limits to achieving its goals but continued to run up against resistance from the complex organizational forms inherent in Kazakh nomadism. Using archival documents, testimonies from Kazakhs, and arrest records from this time period, I show just exactly how the Soviet apparatus pulled the devil from the machine and how, ultimately, the machines were doomed to failure. However, the human cost of forced migration continues to linger.",
+      "takeaways": [
+        "The object is a historical case study of Soviet sedentarization policy in Kazakhstan between 1929 and 1933.",
+        "A visible limit is the reliance on archival and testimonial evidence without quantitative metrics provided in the abstract.",
+        "The artifact status is a qualitative historical analysis, not a computational or statistical model."
+      ],
+      "plain": {
+        "reported": "The authors say the Soviet government's plans failed, measured by the resistance shown by the traditional lifestyle of the Kazakh people.",
+        "brief": "The author says that government groups tried to force change using power, but failed because the local society was too complex to control easily.\n\nThe author uses old documents, personal stories, and police records to show how the government tried to force people to move and failed. The suffering caused by this forced moving still matters today, but the summary does not give specific numbers.\n\nPeople studying how groups behave, Soviet history, or forced moving might find this useful. People looking for math-based economic models or modern rules should look elsewhere.",
+        "takeaways": [
+          "The subject is a historical story about Soviet rules in Kazakhstan from 1929 to 1933.",
+          "A clear limit is that the summary uses old records and stories but does not provide specific numbers.",
+          "The work is a historical story, not a computer model or statistical calculation."
+        ]
+      },
+      "actions": [
+        "Verify the specific archival sources and arrest records cited in the full PDF to assess evidentiary strength.",
+        "Check the full text for any quantitative data on migration rates or repression outcomes not included in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-09-29",
+        "publishedOn": "2026-09-29",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.31916"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-29"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-29T18:10:19.411Z"
+      }
+    },
+    {
+      "id": "2609.32242",
+      "arxivId": "2609.32242",
+      "url": "https://arxiv.org/abs/2609.32242",
+      "topic": "Engineering",
+      "reported": "The authors report that Curv-Tail achieves three-seed mean Tail-F1 scores of 85.70% and 46.30% on NUDT-Mobile and DataCon-Website, respectively.",
+      "metrics": [
+        "85.70%",
+        "46.30%",
+        "98.48%"
+      ],
+      "title": "Curv-Tail: Lightweight Long-Tailed Encrypted Traffic Classification with Discrete Packet-Length Encoding and Lorentz Prototypes",
+      "authors": "Yankun Wang, Jun-Jie Huang, Lin Liu, Xiaodong Lei, Yi Chen, Yeqing Yan, Lin Liu, Jiangyong Shi, Yongjun Wang",
+      "takeaway": "The paper proposes Curv-Tail, a lightweight end-to-end framework for long-tailed encrypted traffic classification using discrete packet-length encoding and Lorentz prototypes.",
+      "brief": "The authors introduce Curv-Tail, a lightweight framework for classifying encrypted traffic with long-tailed class distributions. It uses mixed-resolution tokenization and Lorentz prototypes to process packet sequences and byte patches without separate pretraining.\n\nThe authors report Tail-F1 scores of 85.70% and 46.30% on NUDT-Mobile and DataCon-Website, respectively, and claim 98.48% fewer parameters than MM4Flow. The listing does not establish whether these results generalize beyond the specific datasets and hardware configurations tested.\n\nResearchers working on encrypted traffic classification or long-tailed learning may find the architectural details useful. Those without access to the specific datasets or hardware may find the reported metrics difficult to reproduce or compare.",
+      "abstract": "Long-tailed encrypted traffic classification requires accurate recognition of infrequent classes under limited computational budgets. We propose Curv-Tail, a lightweight, end-to-end packet--byte framework trained without a separate pretraining stage. Mixed-resolution tokenization preserves exact packet-length identities within a bounded range and coarsens larger values to limit the vocabulary. An auxiliary objective predicts observed length tokens from contextual packet features before pooling, encouraging length-token retention beyond flow-level supervision. Compact temporal encoders process packet sequences and directional byte patches, and Lorentz prototypes with a shared learnable curvature magnitude classify their fused representation. On NUDT-Mobile and DataCon-Website under natural class frequencies, Curv-Tail achieves three-seed mean Tail-F1 scores of 85.70% and 46.30%, exceeding the strongest evaluated baselines by 2.91 and 1.89 percentage points, respectively. In 300-class profiling on an RTX 4090 with FP32 and batch size 256, Curv-Tail uses 98.48% fewer parameters and achieves 10.2 times the batch inference throughput of MM4Flow.",
+      "takeaways": [
+        "The object is a lightweight classification framework for encrypted traffic with long-tailed class distributions.",
+        "A visible limit is that the reported results are specific to NUDT-Mobile and DataCon-Website datasets and RTX 4090 hardware.",
+        "The artifact status is not established in the listing, as no code repository or model weights are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their system, Curv-Tail, gets accuracy scores of 85.70% and 46.30% on two specific datasets, NUDT-Mobile and DataCon-Website, for recognizing rare types of network traffic.",
+        "brief": "The authors created a new system called Curv-Tail to identify types of encrypted network traffic, especially rare types that are hard to recognize. The system processes data in a way that saves computer memory and does not need a separate training step first.\n\nThe authors say their system is more accurate than other tested systems on two specific datasets and uses much less computer memory. However, the listing does not say if these results will hold up on other datasets or with different computer hardware.\n\nPeople who study how to identify network traffic or how to teach computers to recognize rare items might find this useful. People who do not have access to the specific datasets or the specific computer used in the tests might find it hard to check or use these results.",
+        "takeaways": [
+          "The thing being described is a computer program that identifies types of encrypted network traffic, focusing on rare types.",
+          "A clear limitation is that the results only apply to two specific datasets and one specific type of computer chip.",
+          "It is not stated in the listing whether the computer code or the trained model is available for others to use."
+        ]
+      },
+      "actions": [
+        "Verify the reported Tail-F1 scores and parameter counts by examining the full PDF and any supplementary materials.",
+        "Check for the availability of code or model weights to assess reproducibility and practical deployment feasibility."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP",
+        "cs.CR"
+      ],
+      "listing": {
+        "listedOn": "2026-09-29",
+        "publishedOn": "2026-09-29",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.32242"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-29"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-29T18:10:19.411Z"
+      }
+    },
+    {
+      "id": "2609.32578",
+      "arxivId": "2609.32578",
+      "url": "https://arxiv.org/abs/2609.32578",
+      "topic": "Health",
+      "reported": "The authors report that their ODE systems model follicle sizes and blood estradiol concentrations over one follicular wave, supported by bovine data.",
+      "metrics": [],
+      "title": "Structured Population Models for Follicular Development",
+      "authors": "Edilbert Christhuraj, Claudio Iuliano, Alexander Lange",
+      "takeaway": "The paper introduces a class of ODE systems derived as finite-dimensional reductions of physiologically structured population models via a perturbative moment closure.",
+      "brief": "The authors propose ODE systems derived from physiologically structured population models using a perturbative moment closure. These systems aim to retain nonlinear mechanisms governing recruitment, selection for dominance, and atresia while projecting maturation onto macroscopic variables.\n\nThe authors state that zero- and first-order moments allow realistic modeling of follicle sizes and blood estradiol concentrations over one follicular wave. This application is supported by bovine data. The listing does not specify quantitative error rates, statistical significance, or specific performance benchmarks for these models.\n\nResearchers working on ovarian follicle dynamics, mathematical biology, or physiological modeling may find this relevant. Those seeking purely empirical clinical data without mathematical derivation may find the focus on PDE reductions less directly applicable.",
+      "abstract": "Ovarian follicle development has been modeled either by compartmental models, where developmental stages are represented by discrete compartments, or by physiologically structured population models (PSPMs), formulated as transport PDEs describing follicles along a continuous maturation variable. Compartmental models reproduce full-cycle hormonal and follicular dynamics but cannot describe cellular features. PSPMs capture multiscale behavior, yet lack a direct link to compartmental descriptions, making hormonal feedback difficult to incorporate. Here, we introduce a class of ODE systems derived as finite-dimensional reductions of PSPMs via a perturbative moment closure. These systems provide backbone approximations of the structured dynamics, retaining key nonlinear mechanisms governing recruitment, selection for dominance, and atresia while projecting maturation onto macroscopic variables. Zero- and first-order moments, derived from phenomenological assumptions regarding follicular maturation, allow us to realistically model follicle sizes and blood estradiol concentrations over one follicular wave. This application is supported by bovine data and likely generalizable to other mammalian species.",
+      "takeaways": [
+        "The object is a class of ODE systems derived from PSPMs via perturbative moment closure.",
+        "A visible limit is the lack of direct link to compartmental descriptions for hormonal feedback in standard PSPMs, which this method attempts to address.",
+        "The artifact status is not established in the listing; no code or data repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors say their mathematical equations can predict the size of egg sacs and hormone levels in cows during one growth cycle, using cow data as proof.",
+        "brief": "The creators made a new set of simple equations based on more complex biological models. They used a mathematical shortcut to simplify the complex models while keeping the important biological rules about how egg sacs grow and die.\n\nThey claim these simple equations can accurately track egg sac size and hormone levels in cows for one specific growth period. They used real cow data to test this. The summary does not say how accurate the predictions were compared to other methods or give specific error numbers.\n\nPeople studying how ovaries work or who use math to model biology might be interested. People who only want medical test results without the math behind them might not find this useful.",
+        "takeaways": [
+          "The main thing is a new set of simplified equations for modeling egg sac growth.",
+          "A limitation is that standard complex models struggle to connect with simpler models for hormone feedback, which this new method tries to fix.",
+          "It is not stated if the computer code or data used to make these models is available for download."
+        ]
+      },
+      "actions": [
+        "Verify the specific bovine dataset used and the exact moment closure assumptions in the full PDF.",
+        "Check whether the authors provide quantitative comparisons against existing compartmental models in the results section."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "physics.bio-ph",
+        "q-bio.CB",
+        "q-bio.PE",
+        "q-bio.TO"
+      ],
+      "listing": {
+        "listedOn": "2026-09-29",
+        "publishedOn": "2026-09-29",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2609.32578"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-29"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-09-29T18:10:19.411Z"
+      }
+    }
+  ]
+}
