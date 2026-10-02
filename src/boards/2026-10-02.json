@@ -1,0 +1,666 @@
+{
+  "date": "2026-10-02",
+  "label": "Fri, Oct 2",
+  "minutes": 10,
+  "poolSize": 144,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-10-02T17:56:44.310Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2610.01762",
+      "arxivId": "2610.01762",
+      "url": "https://arxiv.org/abs/2610.01762",
+      "topic": "AI",
+      "reported": "The authors report that their 4B model achieves the best results among compared methods across all eight evaluated streaming video understanding benchmarks.",
+      "metrics": [
+        "4B model",
+        "27.5% of annotated state tokens"
+      ],
+      "title": "OneStreamer: Unifying Perception, Memory, and Proactive Response in Streaming Video Interaction",
+      "authors": "Xiangyu Zeng, Yuandong Yang, Zhiqiu Zhang, Yuhan Zhu, Xinhao Li, Qingyi Si, Dingyu Yao, Changlian Ma, Haoran Chen, Xinyu Chen, Yansong Shi, Junhao Zhou, Yifei Li, Jun Zhang, Chuanyu Qin, Chenxu Yang, Xinlei Yu, Kun Ouyang, Yuchen Shao, Qianshan Wei, Changhai Zhou, Jun Gao, Jiaqi Wang, Limin Wang",
+      "takeaway": "The paper introduces OneStreamer, a system that jointly learns query-independent evidence recording and task response through a shared proactive generation process for streaming video interaction.",
+      "brief": "The authors propose OneStreamer to unify perception, memory, and proactive response in streaming video by using a shared proactive generation process. This approach aims to form reusable factual memory without compromising real-time perception capabilities.\n\nThe authors report that their 4B model achieves the best results among compared methods across eight streaming video understanding benchmarks. They state that retaining generated captions improves historical QA without degrading real-time perception, and that their state transition method supervises only 27.5% of annotated state tokens. The listing does not specify the exact benchmark names or the specific performance margins achieved.\n\nResearchers working on streaming video understanding, long-context memory, or real-time video interaction may find this relevant. Those focused on static image classification or non-streaming video tasks may find it less applicable.",
+      "abstract": "Streaming video LLMs must retain evidence before its relevance to future tasks is known and respond when sufficient evidence becomes available. The challenge is to form reusable factual memory without compromising real-time perception. We introduce OneStreamer, which jointly learns query-independent evidence recording and task response through a shared proactive generation process. Its Proactive Hierarchical Caption Memory (PHCM) produces time-grounded local-detail captions and summaries of completed events. Streaming caption targets supervise the interpretation of observed video prefixes during training. At inference, model-generated records complement a recent visual window, providing reusable factual context without revisiting historical visual features. Proactive State Transition Learning (PSTL) reduces the dominance of repeated waiting states by preserving supervision at all output anchors and selecting representative state-change and state-persistence tokens. We further develop a streaming data synthesis pipeline that aligns output content and timing with available evidence. Combining the resulting streaming captions and QA with cleaned open-source data yields OneStreamer-1M, a broad-coverage streaming video interaction dataset with over one million records spanning diverse tasks. Our 4B model achieves the best results among the compared methods across all eight evaluated streaming video understanding benchmarks. Ablations show that retaining generated captions improves historical QA without degrading real-time perception. PSTL also outperforms dense state supervision while supervising only 27.5% of annotated state tokens. Together, these results support proactive generation as a shared learning interface connecting perception, memory formation, and timely response in streaming video interaction.",
+      "takeaways": [
+        "The object is a 4B parameter model and a dataset called OneStreamer-1M designed for streaming video interaction.",
+        "A visible limit is that the abstract claims best results across eight benchmarks but does not list the specific benchmark names or quantitative performance gaps.",
+        "The artifact status is indicated by a declared GitHub repository URL, though the listing does not confirm the availability of code or weights."
+      ],
+      "plain": {
+        "reported": "The authors report that their 4 billion parameter model performs better than other compared methods on eight different tests for understanding video as it plays in real time.",
+        "brief": "The authors propose a system called OneStreamer that tries to handle watching video, remembering what it saw, and answering questions all at the same time. It uses a method where the model actively generates notes about the video to help it remember things for later.\n\nThe authors say their 4 billion parameter model did better than other methods on eight different video understanding tests. They also say that keeping the notes the model generates helps it answer questions about past events without hurting its ability to understand what is happening right now. Their method for tracking changes in the video only needed to check 27.5% of the time points. The summary does not say which specific tests were used or by how much the model was better.\n\nPeople who work on making computers understand video as it happens, or who work on making computers remember long videos, might be interested. People who only work with still pictures or videos that are not watched in real time might not find this useful.",
+        "takeaways": [
+          "The main things created are a computer model with 4 billion parameters and a large collection of video data called OneStreamer-1M.",
+          "One limitation is that the summary says the model was the best on eight tests but does not name the tests or say how much better it was.",
+          "The summary gives a link to a code repository, but it does not say for sure if the code and data are actually available there."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark names and performance metrics by reading the full PDF or checking the declared repository.",
+        "Check the declared GitHub repository to confirm the availability of the OneStreamer-1M dataset and model weights."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/MCG-NJU/OneStreamer",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-02",
+        "publishedOn": "2026-10-01",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.01762",
+            "upvotes": 143
+          }
+        ]
+      },
+      "trend": {
+        "votes": 143,
+        "rank": 1,
+        "of": 50,
+        "perDay": 143
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 143,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-01"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-02T17:56:44.310Z"
+      }
+    },
+    {
+      "id": "2609.37200",
+      "arxivId": "2609.37200",
+      "url": "https://arxiv.org/abs/2609.37200",
+      "topic": "AI",
+      "reported": "The authors report consistent improvements in modality quality, semantic consistency, and audio-video synchronization over strong RL baselines.",
+      "metrics": [],
+      "title": "Adaptive Reward Routing: Dynamic Multi-Reward Optimization for Joint Audio-Video Diffusion via Forward-Process RL",
+      "authors": "Songlin Yang, Xiaotong Zhao, Jiacheng Zhang, Zhe Wang, Toyota Li, Eric Liu, Alan Zhao, Anyi Rao",
+      "takeaway": "The paper proposes Adaptive Reward Routing to jointly adapt update locations and reward coordination during forward-process RL of joint audio-video diffusion models.",
+      "brief": "The authors propose Adaptive Reward Routing, which uses cross-attention responses to localize updates and branch-specific reward-gradient interactions to coordinate competing rewards during training.\n\nThey report consistent improvements in modality quality, semantic consistency, and audio-video synchronization over strong RL baselines, supported by ablations and mechanism analyses. The listing does not specify the exact datasets, model scales, or quantitative metrics used for these comparisons.\n\nResearchers working on multi-reward reinforcement learning for diffusion models may find the routing and reweighting mechanisms relevant. Those not focused on joint audio-video generation or RL-based optimization may find the specific application domain too narrow.",
+      "abstract": "Multi-reward guided reinforcement learning (i.e., RL) offers a promising way to improve joint audio-video diffusion models along several complementary objectives, including modality-specific quality, cross-modal semantic alignment, and temporal synchronization. Its effectiveness, however, depends on two quantities that change during training: where reward-driven updates should act, and how competing rewards should be combined. Existing methods tend to rely on fixed routing and reward weights, failing to track evolving model functions. To address these limitations, we propose Adaptive Reward Routing to jointly adapt update locations and reward coordination during forward-process RL (i.e., DiffusionNFT) of joint audio-video diffusion models. Our method consists of two components. (i) Cross-Modal Influence-Guided Routing (Localizing Updates): We use bidirectional cross-attention responses as an efficient proxy for evolving cross-modal influence, dynamically reweighting token-aware losses and scaling gradients across cross-modal layers without additional model interventions. (ii) Preference-Preserving Modality-Aware Reweighting (Coordinating Rewards): We preserve predefined weights as preference priors and use branch-specific reward-gradient interactions as residual corrections after warm-up. This resolves evolving conflicts without letting dominant rewards suppress weak but essential objectives. Extensive experiments demonstrate consistent improvements in modality quality, semantic consistency, and audio-video synchronization over strong RL baselines. Ablations and mechanism analyses further validate the complementary benefits of adaptive update routing and reward coordination.",
+      "takeaways": [
+        "The core object is a method that dynamically adjusts where updates occur and how rewards are combined, rather than a new model architecture.",
+        "The listing claims improvements over baselines but provides no specific numerical values, making the magnitude of the gain unverifiable from this text alone.",
+        "No code repository or dataset link is provided in the listing, so the implementation details and reproducibility status are not established."
+      ],
+      "plain": {
+        "reported": "The authors state that their method performs better than existing strong reinforcement learning methods in terms of sound quality, meaning alignment, and timing synchronization between audio and video.",
+        "brief": "The authors suggest a system that decides where in the model to make changes and how to balance different goals during training. It uses attention signals to find important areas and adjusts reward signals to prevent one goal from overpowering others.\n\nThey say this leads to better results in quality, alignment, and synchronization compared to other methods. However, the summary does not list specific numbers or the exact tests used to prove these improvements.\n\nPeople studying how to train AI models that create both sound and video using reinforcement learning might find this useful. Others not working on this specific combination of tasks may not need this paper.",
+        "takeaways": [
+          "The main contribution is a training strategy that changes how the model learns, not a new type of AI model.",
+          "The text claims the method is better but does not show the actual scores or percentages, so the size of the improvement is unknown from this summary.",
+          "There is no link to code or data in the provided information, so it is not confirmed if the method can be easily reproduced."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative metrics and baseline comparisons by reading the full PDF, as the abstract lacks numerical results.",
+        "Check the paper's supplementary materials or associated repository for the implementation of the cross-attention routing and reward reweighting components."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-02",
+        "publishedOn": "2026-09-29",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.37200",
+            "upvotes": 115
+          }
+        ]
+      },
+      "trend": {
+        "votes": 115,
+        "rank": 2,
+        "of": 50,
+        "perDay": 38
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 115,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-29"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-02T17:56:44.310Z"
+      }
+    },
+    {
+      "id": "2610.01415",
+      "arxivId": "2610.01415",
+      "url": "https://arxiv.org/abs/2610.01415",
+      "topic": "AI",
+      "reported": "The authors report that PoS achieves the highest overall performance on every benchmark with all three LLM backbones.",
+      "metrics": [],
+      "title": "Beyond Memory: Harnessing Long-Horizon Agents with Explicit Belief States",
+      "authors": "Yu Luo, Jiamin Jiang, Yimin Zuo, Xidao Wen, Rongchen Gao, Yongqian Sun, Shenglin Zhang, Guiyang Liu, Cheng Zhang, Fang Situ, Qi Zhou, Dan Pei",
+      "takeaway": "The paper introduces PoS, an inference-time framework that constructs and continually maintains explicit belief states as the agent's decision context.",
+      "brief": "The authors propose PoS, a framework that builds explicit belief states combining current world estimates with unresolved task requirements to manage long-horizon agent context.\n\nThey report that PoS achieves the highest overall performance on four benchmarks spanning execution and diagnosis using three LLM backbones, though specific numerical scores are not provided in the abstract. The listing does not establish specific failure rates or computational overhead limits.\n\nResearchers working on LLM agent memory architectures or long-horizon task execution may find the belief-state maintenance mechanism relevant. Those focused solely on short-context retrieval or static prompt engineering may find the inference-time overhead and complexity less applicable.",
+      "abstract": "Large language model (LLM) agents can now undertake increasingly complex tasks, but the way they organize interaction history into memory does not ensure a coherent understanding of the current world. We introduce PoS, an inference-time framework that constructs and continually maintains explicit belief states as the agent's decision context. Each belief combines an estimate of the current world state with unresolved task requirements, making explicit what the agent still needs to learn and accomplish. To keep this belief reliable and actionable, PoS validates its consistency and monitors task progress to detect Belief Trapping, where the agent continues to act without making meaningful progress toward the goal. Recovery is then tailored to both the trapping pattern and the type of unresolved task requirement. Experiments on four benchmarks spanning execution and diagnosis show that PoS achieves the highest overall performance on every benchmark with all three LLM backbones. Ablations demonstrate the importance of consistency validation and recovery, while context-scaling experiments show resilience to context growth. Together, these results support belief construction and continual maintenance as a foundation for long-horizon context management beyond history retention and compression.",
+      "takeaways": [
+        "The core object is an inference-time framework that explicitly maintains belief states rather than relying solely on raw history retention.",
+        "The abstract claims highest overall performance but does not specify the magnitude of improvement or the specific metrics used for comparison.",
+        "A GitHub repository is declared, but the abstract does not confirm whether the code is fully functional, tested, or matches the reported experimental setup."
+      ],
+      "plain": {
+        "reported": "The authors state that their system, PoS, performed better than other methods on four different test sets using three different large language models, but they did not list the specific scores in the summary.",
+        "brief": "The authors created a system called PoS that helps AI agents keep track of what they know and what they still need to do by creating a clear mental model of the situation, rather than just remembering past conversations.\n\nThey say this system worked best on four different tests using three different AI models. However, the summary does not say how much better it was or how much extra computing power it needed. It also does not say if the system ever failed or got stuck in a loop.\n\nPeople who build AI agents that need to handle long, complex tasks might find this useful. People who only care about simple, short-term AI interactions might not need this specific approach.",
+        "takeaways": [
+          "The main idea is a way for AI agents to actively update their understanding of the world and their remaining tasks, instead of just storing old chat history.",
+          "The summary says the system was the best performer, but it does not give the actual numbers to show how much better it was than the alternatives.",
+          "The authors provided a link to their code, but the summary does not confirm if the code works perfectly or if it exactly matches the experiments they described."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark names and numerical performance deltas in the full PDF to assess the practical significance of the claimed improvements.",
+        "Check the declared GitHub repository to confirm code availability, documentation quality, and whether the implementation matches the described belief-state validation and recovery mechanisms."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/luoyu100/PoS",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-02",
+        "publishedOn": "2026-10-01",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.01415",
+            "upvotes": 66
+          }
+        ]
+      },
+      "trend": {
+        "votes": 66,
+        "rank": 3,
+        "of": 50,
+        "perDay": 66
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 66,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-01"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-02T17:56:44.310Z"
+      }
+    },
+    {
+      "id": "2610.02193",
+      "arxivId": "2610.02193",
+      "url": "https://arxiv.org/abs/2610.02193",
+      "topic": "AI",
+      "reported": "The authors report that HC-DLM improves over discrete and continuous diffusion baselines at matched model size, in puzzle accuracy on Sudoku and Countdown and in generative perplexity on LM1B.",
+      "metrics": [
+        "generative perplexity on LM1B"
+      ],
+      "title": "Hierarchical Continuous Diffusion Language Models",
+      "authors": "Hui Ren, Zihan Li, Chang Liu, Huidong Liu, Alexander Schwing",
+      "takeaway": "The paper proposes Hierarchical Continuous Diffusion Language Models (HC-DLM), which couple discrete token generation with a continuous latent trajectory in a single, principled denoising process.",
+      "brief": "The authors propose HC-DLM to address structural bottlenecks in discrete and continuous diffusion language models by coupling discrete token generation with a continuous latent trajectory. They report improvements over baselines at matched model size in puzzle accuracy on Sudoku and Countdown and in generative perplexity on LM1B. The listing does not specify the magnitude of these improvements or the specific model sizes used for the comparisons.\n\nThe strongest reported evidence is the improvement in puzzle accuracy on Sudoku and Countdown and generative perplexity on LM1B compared to discrete and continuous diffusion baselines. The listing does not establish whether the improvements are statistically significant or provide specific numerical values for the accuracy or perplexity scores. The authors state that the training objective is derived from a variational bound on the token likelihood.\n\nResearchers working on diffusion language models or structured reasoning tasks may find the coupling of discrete and continuous states relevant. Those focused solely on autoregressive generation or specific downstream applications not covered by the reported benchmarks may find the listing less directly applicable. The project page and code repository are provided for further inspection.",
+      "abstract": "Discrete diffusion language models offer a compelling alternative to autoregressive generation for tasks demanding bidirectional reasoning and global constraint satisfaction. Yet they share a structural bottleneck: when decoding in parallel, each token is sampled independently from its marginal, severing the statistical dependencies among the tokens decoded together. Continuous diffusion language models avoid this by denoising a shared continuous state, but their denoiser sees only that state, so nothing ties it to a valid token configuration until it is finally decoded. To address this, we propose Hierarchical Continuous Diffusion Language Models (HC-DLM), which couple discrete token generation with a continuous latent trajectory in a single, principled denoising process, whose training objective is derived from a variational bound on the token likelihood. In contrast to recent methods that attach continuous context to a self-contained discrete chain, HC-DLM makes the latent the only persistent generative state: tokens are read out from it at every step and feed back as a scaffold for the next latent update. On structured reasoning (Sudoku), mathematical planning (Countdown) and language modeling (LM1B), HC-DLM improves over discrete and continuous diffusion baselines at matched model size, in puzzle accuracy on Sudoku and Countdown and in generative perplexity on LM1B. Project page: https://hc-dlm.github.io/.",
+      "takeaways": [
+        "The object is a hierarchical continuous diffusion language model that uses a continuous latent trajectory as the persistent generative state.",
+        "A visible limit is the lack of specific numerical values for the reported improvements in puzzle accuracy and generative perplexity in the listing.",
+        "The artifact status is indicated by the provision of a project page and a GitHub repository URL, though the listing does not confirm the completeness or functionality of the code."
+      ],
+      "plain": {
+        "reported": "The authors report that their model performs better than other diffusion-based language models of the same size on Sudoku puzzles, Countdown math puzzles, and a standard language modeling benchmark called LM1B.",
+        "brief": "The authors propose a new type of language model called HC-DLM. It combines two methods: one that generates words one by one (discrete) and one that generates a continuous stream of data (continuous). They say this new model is better than existing models of the same size at solving Sudoku and Countdown puzzles and at predicting text on the LM1B benchmark. The summary does not say how much better the model is or what specific sizes were compared.\n\nThe main evidence is that the model scored higher on Sudoku and Countdown puzzles and had lower perplexity (a measure of surprise or error) on the LM1B benchmark compared to other diffusion models. The summary does not say if these differences are statistically significant or give the exact scores. The authors explain that the model is trained using a mathematical method called a variational bound.\n\nPeople who study how language models generate text using diffusion processes or who work on solving structured puzzles with AI might find this useful. People who only use standard word-by-word language models or who work on tasks not tested in this paper might not find it directly relevant. The authors provide a website and a code link for more details.",
+        "takeaways": [
+          "The model uses a continuous stream of data as its main way of generating text, with words being read from this stream at each step.",
+          "The summary does not provide the exact scores for how well the model performed on the puzzles or the language benchmark.",
+          "The authors provide a link to their code, but the summary does not confirm if the code works or is complete."
+        ]
+      },
+      "actions": [
+        "Verify the specific numerical values for puzzle accuracy on Sudoku and Countdown and generative perplexity on LM1B by consulting the full PDF.",
+        "Inspect the GitHub repository to confirm the availability and usability of the code for reproducing the reported results."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/rhfeiyang/HC-DLM",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-02",
+        "publishedOn": "2026-10-01",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.02193",
+            "upvotes": 56
+          }
+        ]
+      },
+      "trend": {
+        "votes": 56,
+        "rank": 5,
+        "of": 50,
+        "perDay": 56
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 56,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-01"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-02T17:56:44.310Z"
+      }
+    },
+    {
+      "id": "2610.00348",
+      "arxivId": "2610.00348",
+      "url": "https://arxiv.org/abs/2610.00348",
+      "topic": "Security",
+      "reported": "The authors report that NEEDLE achieves the lowest mean Attack Success Rate (ASR) among evaluated defences, including 0% on challenging code injection attacks, while resulting in the lowest KL divergence.",
+      "metrics": [
+        "0% on challenging code injection attacks"
+      ],
+      "title": "Removing the NEEDLE in the Haystack: Backdoor Removal in LLMs via Weight Orthogonalisation",
+      "authors": "Minoo Kim, Vasileios Lampos, George Drayson",
+      "takeaway": "The paper proposes NEEDLE, a training-free method for targeted backdoor removal in LLMs that uses sequential weight orthogonalisation to suppress backdoors without requiring a clean reference model or original poisoned data.",
+      "brief": "The authors introduce NEEDLE, a training-free backdoor removal method for LLMs that estimates a backdoor direction and refusal subspace via activation vectors, then applies sequential weight orthogonalisation to suppress the backdoor while preserving refusal-related representations.\n\nThe authors report the lowest mean Attack Success Rate (ASR) among evaluated defences, including 0% on challenging code injection attacks, and the lowest KL divergence with minimal changes in capability and safety. The listing does not specify the exact model families, attack types, or benchmark datasets used for these evaluations, nor does it provide numerical values for the KL divergence or capability/safety metrics.\n\nResearchers working on LLM security and backdoor mitigation may find the training-free orthogonalisation approach relevant. Those requiring specific benchmark comparisons or detailed ablation studies should verify the full experimental setup in the PDF.",
+      "abstract": "Backdoor attacks can be implanted in Large Language Models (LLMs) during training, causing unwanted behaviour when a trigger appears in the input. Existing backdoor defences for LLMs attempt to remove the backdoor but inadvertently shift the model's output distribution to benign prompts, which can result in degraded model performance and safety. We propose NEEDLE, a training-free method for targeted backdoor removal. Once a trigger has been identified, our method estimates a backdoor direction and a refusal subspace through activation vectors, then applies sequential weight orthogonalisation to suppress the backdoor while preventing changes in refusal-related representations. NEEDLE requires neither a clean reference model nor the original poisoned training data. Evaluation is conducted across multiple model families and attack types. NEEDLE achieves the lowest mean Attack Success Rate (ASR) among the evaluated defences, including 0% on challenging code injection attacks, while resulting in the lowest KL divergence and minimal changes in capability and safety.",
+      "takeaways": [
+        "The method targets backdoor removal via weight orthogonalisation without needing clean reference models or poisoned training data.",
+        "The listing reports 0% ASR on code injection attacks but does not specify the exact model families or attack types used in the evaluation.",
+        "The authors provide a GitHub repository URL, but the listing does not confirm whether the code is fully functional or matches the reported results."
+      ],
+      "plain": {
+        "reported": "The authors say their method, called NEEDLE, had the lowest rate of successful attacks among the defenses they tested. This included a 0% success rate for attacks that try to inject code, and it caused the least change in how the model behaves compared to other methods.",
+        "brief": "The authors created a way to remove hidden malicious triggers from large language models without needing to retrain them. They do this by adjusting the model's internal weights in a specific way that targets the malicious behavior while keeping the model's normal safety features intact.\n\nThey say their method worked best at stopping attacks, with a 0% success rate for code injection attacks, and it changed the model's normal behavior the least. However, the summary does not say which specific models or types of attacks were tested, nor does it give the exact numbers for how much the model's behavior changed.\n\nPeople who study how to keep AI models safe from hidden malicious triggers might find this useful. People who need to know exactly which models were tested or want to see the detailed test results should read the full paper to check the details.",
+        "takeaways": [
+          "The method removes hidden malicious triggers from AI models without needing to retrain them or have access to the original bad training data.",
+          "The summary says the method stopped code injection attacks 100% of the time, but it does not say which specific AI models or which specific types of attacks were tested.",
+          "The authors share a link to their code, but the summary does not confirm if the code works exactly as described or if it produces the same results as reported."
+        ]
+      },
+      "actions": [
+        "Verify the specific model families, attack types, and benchmark datasets used in the evaluation by reading the full PDF.",
+        "Check the provided GitHub repository to confirm if the code implementation matches the described NEEDLE method and reported results."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/LocaiLabs/NEEDLE",
+      "tags": [
+        "cs.CR",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-02",
+        "publishedOn": "2026-09-29",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.00348",
+            "upvotes": 4
+          }
+        ]
+      },
+      "trend": {
+        "votes": 4,
+        "rank": 48,
+        "of": 50,
+        "perDay": 1
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 4,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-29"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-02T17:56:44.310Z"
+      }
+    },
+    {
+      "id": "2610.00023",
+      "arxivId": "2610.00023",
+      "url": "https://arxiv.org/abs/2610.00023",
+      "topic": "Econ",
+      "reported": "The authors report a conceptual framework classifying human acts into four categories: unethical-immoral, solely ethical, perceived moral, and truly moral.",
+      "metrics": [],
+      "title": "Market, Ethics, and Morality",
+      "authors": "Ali Zeytoon-Nejad",
+      "takeaway": "The paper claims to provide a philosophical framework distinguishing ethics (nonmaleficence) from morals (beneficence) and argues that free markets require only ethical agents to function effectively.",
+      "brief": "The author proposes a distinction between ethics, defined as avoiding harm, and morals, defined as doing good. This framework categorizes human behavior into four types and posits that ethical behavior is a necessary condition for moral acts.\n\nThe strongest reported result is the classification of acts into four categories with examples. The listing does not establish empirical limits, quantitative validation, or specific artifacts. The argument relies on philosophical reasoning rather than experimental data.\n\nResearchers in economic philosophy or institutional design may find the conceptual distinction useful. Those seeking empirical market models or quantitative policy tools should ignore this listing.",
+      "abstract": "This paper provides a clear philosophy on codes of human conduct within economic and social institutions like markets and government. It categorizes these codes into ethics and morals: ethics involve nonmaleficence (avoiding harm), while morals involve beneficence (doing good). Ethics, such as honesty, respecting property, and keeping promises, are universally accepted minimal norms essential for the functioning of social institutions. In contrast, morals, including altruism, self-sacrifice, and generosity, are subjective and context-dependent, linked to individual virtues and influenced by character, culture, and religion. The paper argues that ethical behavior is a necessary condition for an act to be considered moral. Accordingly, human acts can be classified into four categories: unethical-immoral, solely ethical, perceived moral, and truly moral, with examples provided for each type. It posits that the free market system, unlike socialism or communism, requires only ethical agents to succeed, as they ensure the market's mission of improving human well-being. These agents do not necessarily need to be moral for the market to function effectively. Furthermore, the paper discusses that voluntary morality, in the sense of helping others out of compassion, can greatly benefit any human-based institution, including markets, by enhancing social capital alongside ethics and the justice system. However, the forced incorporation of personal moral principles into the economic system can be detrimental to the virtuousness of intended moral acts, economic efficiency, individual liberty, responsibility, and social cohesion.",
+      "takeaways": [
+        "The object is a normative philosophical framework for economic institutions, not an empirical economic model.",
+        "The visible limit is the lack of empirical validation or quantitative metrics in the supplied abstract.",
+        "No code, dataset, or repository is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The author presents a way to sort human actions into four groups based on whether they avoid harm or actively do good.",
+        "brief": "The author suggests a way to think about rules in society and markets. They split rules into two types: ethics, which means not hurting others, and morals, which means helping others. They say a free market works if people follow basic ethics, even if they are not morally generous.\n\nThe main result is a list of four types of behavior. The text does not show any experiments, numbers, or tests to prove this idea works in real life. It is an argument based on logic and philosophy, not data.\n\nPeople who study the philosophy of economics might find this useful. People who want to use math or data to predict market behavior should look elsewhere.",
+        "takeaways": [
+          "This is a philosophical argument about how markets should work, not a mathematical model.",
+          "The text does not show any real-world data or tests to support the ideas.",
+          "There is no computer code or data file provided with this paper."
+        ]
+      },
+      "actions": [
+        "Verify the full PDF to confirm whether the four-category classification includes specific empirical examples or remains purely theoretical.",
+        "Check the bibliography to identify which philosophical traditions inform the definitions of ethics and morals used in the argument."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-10-02",
+        "publishedOn": "2026-10-02",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.00023"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-02T17:56:44.310Z"
+      }
+    },
+    {
+      "id": "2610.00046",
+      "arxivId": "2610.00046",
+      "url": "https://arxiv.org/abs/2610.00046",
+      "topic": "Physics",
+      "reported": "The authors report that drift-free single-qubit systems with bidirectional Hamiltonian controls and at most one independently actuated dissipator fall into thirteen structural strata defined by the generated algebra and its Lie-wedge geometry.",
+      "metrics": [],
+      "title": "Beyond Lie Algebras: Lie-Wedge Stratification and Pure-State Stabilizability in Single-Channel Qubit Control",
+      "authors": "Yibin Wang",
+      "takeaway": "The paper claims that Lie-wedge stratification reveals control capabilities in single-channel qubit systems that the generated Lie algebra misses.",
+      "brief": "The authors propose a Lie-wedge stratification for drift-free single-qubit systems with bidirectional Hamiltonian controls and at most one independently actuated dissipator. They prove these systems fall into thirteen structural strata defined by the generated algebra and its Lie-wedge geometry.\n\nThe authors report that in five strata, stabilizability depends on additional channel data, while in one exceptional stratum, averaging two control-rotated dissipative directions yields stabilization. The listing does not specify the experimental platform or numerical benchmarks used to validate these structural claims.\n\nResearchers working on open quantum control or geometric control theory may find the stratification useful. Those focused solely on closed-system Lie algebraic control may ignore it.",
+      "abstract": "Lie algebras describe how control generators combine, but in open systems they erase the distinction between reversible control and irreversible dissipation. Lie wedges retain this information. We study drift-free single-qubit systems with bidirectional Hamiltonian controls and at most one independently actuated dissipator generated by a traceless jump operator. In this work, we prove that they fall into thirteen structural strata defined by the generated algebra and its Lie-wedge geometry. The control algebra and four channel properties determine the stratum; in each wedge, the reversible directions are precisely the coherent controls. We then use the stratification to determine whether a wedge contains a generator with a unique globally attractive pure state. In five strata, stabilizability depends on additional channel data. In one exceptional stratum, no single control-rotated dissipative direction suffices, but averaging two such directions in the wedge yields stabilization. Lie wedges therefore reveal control capabilities that the generated Lie algebra misses.",
+      "takeaways": [
+        "The object is a structural classification of single-qubit control systems using Lie-wedge geometry rather than Lie algebras alone.",
+        "A visible limit is that stabilizability in five of the thirteen strata remains dependent on additional channel data not fully resolved by the stratification.",
+        "The artifact status is theoretical; the listing provides no code, dataset, or experimental validation."
+      ],
+      "plain": {
+        "reported": "The authors report that simple quantum computer control systems with two-way energy controls and one specific type of energy loss fall into thirteen distinct categories based on their mathematical structure.",
+        "brief": "The authors suggest a new way to categorize how simple quantum bits can be controlled when they interact with their environment. They show that these systems fit into thirteen specific groups based on their mathematical properties.\n\nThe authors state that for five of these groups, you need extra information to know if the system can be stabilized. For one special group, combining two specific control directions allows for stabilization. The summary does not say if these ideas were tested on real hardware or simulated with specific numbers.\n\nPeople studying how to control quantum systems that lose energy to their surroundings might find this useful. People only interested in perfect, isolated quantum systems might not need this.",
+        "takeaways": [
+          "The main idea is a new mathematical map for controlling quantum bits that lose energy, which is more detailed than older methods.",
+          "A limitation is that for five of the thirteen categories, the method does not fully answer whether the system can be stabilized without extra data.",
+          "This is a theoretical paper; there is no software or experimental data provided in the listing."
+        ]
+      },
+      "actions": [
+        "Verify the proof of the thirteen strata and the specific channel properties determining each stratum in the full PDF.",
+        "Check the full text for the precise definition of the 'traceless jump operator' and the conditions for the exceptional stratum's averaging stabilization."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-10-02",
+        "publishedOn": "2026-10-02",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.00046"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-02T17:56:44.310Z"
+      }
+    },
+    {
+      "id": "2610.00058",
+      "arxivId": "2610.00058",
+      "url": "https://arxiv.org/abs/2610.00058",
+      "topic": "Engineering",
+      "reported": "The authors report that their method achieved a mass estimate RMSE of 11.9 kg and integrated mass flow within 8.4 % of observed mass loss on real-world cattle-manure spreading data.",
+      "metrics": [
+        "RMSE of 11.9 kg",
+        "within 8.4 % of the observed mass loss"
+      ],
+      "title": "Terramechanics-Inspired Sensor Fusion for Slip and Mass Flow Estimation in Agricultural Conveyor Systems",
+      "authors": "Ruben Hefele, Timo Oksanen",
+      "takeaway": "The paper presents a model-based sensor fusion method for slip and mass-flow estimation in agricultural conveyor systems using an Extended Kalman Filter.",
+      "brief": "The authors propose a sensor fusion approach that combines weighing, conveyor-speed, and inertial measurements within an Extended Kalman Filter to estimate slip and mass flow in organic fertilizer spreaders.\n\nThey report validation on real-world cattle-manure spreading where mass estimates tracked raw weight with an RMSE of 11.9 kg and integrated mass flow remained within 8.4 % of observed mass loss. The listing does not specify the total duration of the test runs, the specific spreader model, or the range of tilt angles tested.\n\nResearchers working on agricultural implement state estimation or sensor fusion for non-uniform material flow may find the methodology relevant. Those focused on different conveyor applications or requiring different accuracy thresholds should evaluate the specific domain constraints.",
+      "abstract": "Precision farming requires accurate knowledge of implement states. In organic fertilizer spreaders, heterogeneous material and variable field conditions complicate flow-rate prediction, and tilt angles alter the slip behaviour between transport floor and material. This paper presents a model-based sensor fusion method for slip and mass-flow estimation, integrating weighing, conveyor-speed, and inertial measurements in an Extended Kalman Filter with a volumetric flow model and a longitudinal dynamics model. Validation on real-world cattle-manure spreading shows mass estimates tracking the raw weight with an RMSE of 11.9 kg and integrated mass flow within 8.4 % of the observed mass loss.",
+      "takeaways": [
+        "The object is a model-based sensor fusion method for slip and mass-flow estimation in agricultural conveyor systems.",
+        "The visible limit is that the reported validation is specific to real-world cattle-manure spreading, and the listing does not detail the full range of field conditions or tilt angles tested.",
+        "The artifact status is not established in the listing, as no code or dataset repository is provided."
+      ],
+      "plain": {
+        "reported": "The authors state that their system measured the weight of the material with an average error of 11.9 kilograms and calculated the total amount of material spread with an error of 8.4 percent compared to the actual weight lost during real-world tests with cattle manure.",
+        "brief": "The authors describe a computer system that combines data from scales, speed sensors, and motion sensors to guess how much material is on a conveyor belt and how much it is slipping. This is designed for machines that spread organic fertilizer in farms.\n\nThey tested this system on a real machine spreading cattle manure. The system's weight guesses were close to the actual scale readings, with an average error of 11.9 kilograms. The total amount of material it calculated was within 8.4 percent of the actual weight lost by the machine. The text does not say how long the tests lasted, which specific machine was used, or how much the machine was tilted during the tests.\n\nPeople who study how to measure the state of farm machines or how to combine different sensor data for messy materials might find this useful. People who work with different types of conveyors or need different levels of accuracy should check if the specific conditions match their needs.",
+        "takeaways": [
+          "The thing being described is a computer method that uses multiple sensors to estimate how much material is on a farm conveyor belt and how much it is slipping.",
+          "The main limitation shown is that the tests were only done with cattle manure, and the text does not list all the different field conditions or tilt angles that were tested.",
+          "It is not stated in the text whether the computer code or the test data are available for others to download and use."
+        ]
+      },
+      "actions": [
+        "Verify the specific spreader model, test duration, and tilt angle range by reading the full PDF.",
+        "Check the Extended Kalman Filter implementation details and the volumetric flow model assumptions in the methodology section."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-10-02",
+        "publishedOn": "2026-10-02",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.00058"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-02T17:56:44.310Z"
+      }
+    },
+    {
+      "id": "2610.00072",
+      "arxivId": "2610.00072",
+      "url": "https://arxiv.org/abs/2610.00072",
+      "topic": "Stats",
+      "reported": "The authors report that their model is the best or statistically indistinguishable from the best estimator in every scenario across nine data-generating scenarios spanning 200 replicates each.",
+      "metrics": [
+        "200 replicates each"
+      ],
+      "title": "Dynamic Spatial Bayesian Machine Learning Model: Applications to Intergenerational Economic Mobility and Geographic Income Inequality in the United States",
+      "authors": "Hammed A. Olayinka, Saheed O. Olayemi",
+      "takeaway": "The authors claim to develop a Dynamic Spatial Panel Bayesian Additive Regression Trees model with Horseshoe shrinkage for high-dimensional spatio-temporal panel data.",
+      "brief": "The authors propose a Dynamic Spatial Panel Bayesian Additive Regression Trees model with Horseshoe shrinkage for high-dimensional spatio-temporal panel data. They report that this model is the best or statistically indistinguishable from the best estimator in every scenario across nine data-generating scenarios spanning 200 replicates each. They also note that conventional region-time-aggregate comparators suffer severe performance degradation trailing by a factor of three or more whenever individual-level non-linearity drives outcome variance.\n\nThe authors demonstrate practical utility across two U.S. county-level panel applications under genuine unseen-region, random, and temporal holdouts. They state that under temporal extrapolation specifically, a lighter per-region autoregressive specification achieves a robust, and consistent advantage. The listing does not establish whether the model's performance holds on real-world data beyond the specified county-level applications.\n\nResearchers working on high-dimensional spatio-temporal panel data may find the model's automated variable selection and flexible inference useful. Those focused on temporal extrapolation should note the reported advantage of the lighter per-region autoregressive specification. The listing does not provide code or repository URLs for verification.",
+      "abstract": "We develop a Dynamic Spatial Panel Bayesian Additive Regression Trees model with Horseshoe shrinkage (DSP-BART-HS) for high-dimensional spatio-temporal panel data. We jointly evaluate the model against a comprehensive suite of structural spatial econometrics, non-parametric machine learning methods, and small-area estimators across nine data-generating scenarios spanning 200 replicates each, including irregular spatial topologies, dense policy effects, and non-linear individual-level interactions. DSP-BART-HS is the best or statistically indistinguishable from the best estimator in every scenario. Conventional region-time-aggregate comparators suffer severe performance degradation -- trailing by a factor of three or more -- whenever individual-level non-linearity drives outcome variance, a limitation this framework's tree-ensemble design directly addresses. The model also maintains strong predictive accuracy under a zero-training-region spatial holdout via its spatial diffusion mechanism. We demonstrate practical utility across two U.S. county-level panel applications -- intergenerational economic mobility and geographic income inequality -- under genuine unseen-region, random, and temporal holdouts, with results validated through repeated-split uncertainty quantification and paired significance testing against every comparator. One clear limitation emerges: under temporal extrapolation specifically, a lighter per-region autoregressive specification (MTS-CAR-X) achieves a robust, and consistent advantage. DSP-BART-HS nonetheless establishes strong predictive performance, automated variable selection, and flexible inference for hierarchical spatio-temporal panel data.",
+      "takeaways": [
+        "The model is designed for high-dimensional spatio-temporal panel data with irregular spatial topologies and non-linear individual-level interactions.",
+        "The authors report a limitation where a lighter per-region autoregressive specification achieves a robust, and consistent advantage under temporal extrapolation.",
+        "The listing does not declare code availability or provide repository URLs for the proposed model."
+      ],
+      "plain": {
+        "reported": "The authors report that their model is the best or statistically indistinguishable from the best estimator in every scenario across nine data-generating scenarios spanning 200 replicates each.",
+        "brief": "The authors propose a new statistical model called Dynamic Spatial Panel Bayesian Additive Regression Trees with Horseshoe shrinkage for analyzing data that changes over time and across locations. They report that this model performs as well as or better than other methods in every test scenario they created, which included nine different types of data patterns tested 200 times each. They also note that older methods that combine data by region and time perform much worse, falling behind by a factor of three or more, when individual-level non-linear patterns drive the outcomes.\n\nThe authors show that their model works well on two real-world examples using U.S. county data, testing it on unseen regions, random samples, and future time periods. They state that when predicting future time periods specifically, a simpler model called MTS-CAR-X performs better. The listing does not say whether the model works well on other real-world data beyond these two U.S. county examples.\n\nPeople who analyze data that changes over time and across locations might find this model's automatic variable selection and flexible analysis useful. People who focus on predicting future time periods should note that the simpler model performed better in that specific case. The listing does not provide computer code or website links to check the model's performance.",
+        "takeaways": [
+          "The model is built for data that changes over time and across locations, including irregular location patterns and non-linear individual-level interactions.",
+          "The authors report that a simpler model called MTS-CAR-X performs better when predicting future time periods.",
+          "The listing does not say whether computer code is available or provide website links to check the model."
+        ]
+      },
+      "actions": [
+        "Verify the reported performance degradation of conventional region-time-aggregate comparators by examining the specific data-generating scenarios and replicates in the full paper.",
+        "Check the full paper for details on the two U.S. county-level panel applications and the repeated-split uncertainty quantification methods used."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME",
+        "econ.EM",
+        "stat.AP",
+        "stat.ML"
+      ],
+      "listing": {
+        "listedOn": "2026-10-02",
+        "publishedOn": "2026-10-02",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.00072"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-02T17:56:44.310Z"
+      }
+    },
+    {
+      "id": "2610.00191",
+      "arxivId": "2610.00191",
+      "url": "https://arxiv.org/abs/2610.00191",
+      "topic": "Health",
+      "reported": "The authors report that their fine-tuned ranking model LambdaDockScore is better at identifying correct poses in its top-1 and top-5 predictions compared to EuDockScore on targets from the CAPRI score set benchmark.",
+      "metrics": [
+        "2.9M decoy poses",
+        "top-1 and top-5 predictions"
+      ],
+      "title": "Improving scoring functions for protein-protein docking with LambdaLoss",
+      "authors": "Richard Zhu, Darren Xu, Lee-Shin Chu, Jeffrey J. Gray",
+      "takeaway": "The paper proposes a general framework for improving protein-protein pose ranking using the LambdaLoss loss function.",
+      "brief": "The authors propose a general framework for improving protein-protein pose ranking and other biomolecular interaction models using the LambdaLoss loss function from the Learning-to-Rank field.\n\nThey report that their fine-tuned ranking model LambdaDockScore is better at identifying correct poses in its top-1 and top-5 predictions compared to EuDockScore on targets from the CAPRI score set benchmark. The listing does not establish specific quantitative performance gaps or statistical significance for these comparisons.\n\nResearchers working on protein-protein docking scoring functions or learning-to-rank applications in structural biology should open this paper. Those not interested in biomolecular interaction modeling or pose ranking may ignore it.",
+      "abstract": "Modeling protein-protein interactions requires accurate scoring functions that can rank potential poses (conformations) of a protein-protein complex to differentiate near-native poses from incorrect ones. Here, we propose a general framework for improving protein-protein pose ranking and other biomolecular interaction models using the LambdaLoss loss function from the Learning-to-Rank field. We test this framework by fine-tuning the energy prediction head of DFMDock with the LambdaLoss on an augmented dataset of 2.9M decoy poses derived from the DIPS dataset. On targets from the CAPRI score set benchmark, our fine-tuned ranking model LambdaDockScore is better at identifying correct poses in its top-1 and top-5 predictions compared to EuDockScore, a state-of-the-art method. LambdaDockScore also improves upon baseline DFMDock ranking performance for scoring antibody-antigen complexes and protein-protein complexes with very large or small binding interfaces.",
+      "takeaways": [
+        "The object is a fine-tuned energy prediction head for DFMDock, named LambdaDockScore, designed to rank protein-protein complex poses.",
+        "A visible limit is that the listing does not specify the magnitude of improvement over EuDockScore or provide statistical significance for the top-1 and top-5 comparisons.",
+        "The artifact status is not established in the listing, as no code repository or dataset link is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their improved scoring model, called LambdaDockScore, correctly identifies the best and top five candidate structures more often than a leading method called EuDockScore when tested on a standard set of protein interaction targets.",
+        "brief": "The authors suggest a new way to make computer models better at guessing how two proteins fit together by using a specific mathematical training method called LambdaLoss.\n\nThey state that their new model, LambdaDockScore, picks the right protein shapes more often than a current top method when looking at the first and top five guesses on a standard test set. The summary does not say exactly how much better it is or if the difference is statistically significant.\n\nScientists who build computer tools to predict how proteins interact should look at this paper. People who do not work on protein structure prediction can skip it.",
+        "takeaways": [
+          "The main thing being described is a computer model that scores how well two protein shapes fit together, specifically a version of a model called DFMDock that has been retrained.",
+          "A clear limitation is that the summary does not give the exact percentage or score difference between the new model and the old one, making it hard to judge the size of the improvement.",
+          "It is not stated in the summary whether the code or data are available for download, so the status of the software artifact is unknown."
+        ]
+      },
+      "actions": [
+        "Verify the specific performance metrics and statistical tests by reading the full PDF, as the abstract only states relative improvement without numbers.",
+        "Check the supplementary materials or repository for the augmented dataset of 2.9M decoy poses and the fine-tuned model weights to assess reproducibility."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "cs.LG",
+        "q-bio.BM"
+      ],
+      "listing": {
+        "listedOn": "2026-10-02",
+        "publishedOn": "2026-10-02",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.00191"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-02T17:56:44.310Z"
+      }
+    }
+  ]
+}
