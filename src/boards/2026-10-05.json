@@ -1,0 +1,663 @@
+{
+  "date": "2026-10-05",
+  "label": "Mon, Oct 5",
+  "minutes": 10,
+  "poolSize": 122,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-10-05T20:44:35.144Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2610.01780",
+      "arxivId": "2610.01780",
+      "url": "https://arxiv.org/abs/2610.01780",
+      "topic": "AI",
+      "reported": "The authors report that three agent systems reconstruct the persona with the same F1 at a 31-fold difference in cost.",
+      "metrics": [
+        "95.9% of probes",
+        "2.2% of those that need memory",
+        "31-fold difference in cost"
+      ],
+      "title": "RealCompanion: Benchmarking Human Understanding from Reasoning over Longitudinal Real-World Conversations",
+      "authors": "Arman Behnam, Sunglyoung Kim, Liangwei Yang",
+      "takeaway": "The paper claims to release a benchmark of ten real relationships with an AI companion, comprising 27,218 messages over up to 120 days, to test human understanding from longitudinal conversations.",
+      "brief": "The authors present RealCompanion, a benchmark derived from ten real relationships with an AI companion, containing 27,218 messages over up to 120 days. The dataset includes conversation files, profiles, personas, chat ground truth, and question sets, with every chat label carrying a reasoning trace checked against the conversation.\n\nThe authors report that a recency window finds the required message for 95.9% of probes and 2.2% of those that need memory. They state that no detector they tried can tell when memory is needed on real messages, and that labeling the same messages as memories raises their use by ten to fourteen points. They also report that three agent systems reconstruct the persona with the same F1 at a 31-fold difference in cost.\n\nResearchers evaluating long-term conversational memory or agent efficiency may find the dataset and cost comparisons relevant. Those requiring synthetic data generation or specific detector architectures may need to verify the applicability of the reported limitations and artifacts.",
+      "abstract": "A companion that talks with a person for months should come to understand them. It should remember what they said, infer who they are, and know when the past bears on the message in front of it. Testing this requires a real person's record, and such records are private, so benchmarks generate the person and the questions and settle in advance what matters. We release \\bench, ten real relationships with an AI companion: 27,218 messages over up to 120 days, released as the conversation and four files derived from it, a profile, a persona, a chat ground truth and a question set, each citing the messages it rests on. Every chat label carries the reasoning trace that produced it, checked stage by stage against the conversation. Three findings follow. First, the past is rarely needed and far away. Pooled measures mislead: a recency window finds the required message for 95.9\\% of probes and 2.2\\% of those that need memory, and at the natural rate 96\\% of the gain from supplying recorded evidence comes from messages that need none. Second, no detector we tried can tell when memory is needed on real messages, authored questions over the same histories leak the cue, and labeling the same messages as memories raises their use by ten to fourteen points. Third, three agent systems reconstruct the persona with the same F1 at a 31-fold difference in cost.",
+      "takeaways": [
+        "The object is a benchmark of ten real relationships with an AI companion, comprising 27,218 messages over up to 120 days, released with derived files and reasoning traces.",
+        "A visible limit is that no detector the authors tried can tell when memory is needed on real messages, and authored questions over the same histories leak the cue.",
+        "The artifact status is that the benchmark is released as the conversation and four files derived from it, with every chat label carrying the reasoning trace that produced it."
+      ],
+      "plain": {
+        "reported": "The authors report that three different AI systems built the same understanding of the user's personality, measured by a standard accuracy score, but one system used 31 times more computational resources than another.",
+        "brief": "The authors created a test set called RealCompanion. It contains real conversations between people and an AI assistant, lasting up to 120 days, with a total of 27,218 messages. They also provide files that describe the user's profile and personality, along with questions and the correct answers, including the step-by-step logic used to create those answers.\n\nThe authors found that most questions could be answered by looking only at the most recent messages. Specifically, a simple method that only looks at recent messages found the necessary information for 95.9% of all questions. They also found that their tools could not reliably detect when an AI needed to remember older information. Finally, they showed that different AI systems could achieve the same level of accuracy in understanding the user, but with vastly different costs in terms of computational effort.\n\nPeople studying how AI assistants remember long-term conversations or how efficiently different AI models work might find this useful. Those who need to generate fake data or use specific types of detection tools should check the full paper to see if the limitations mentioned apply to their specific needs.",
+        "takeaways": [
+          "The main thing being studied is a collection of real conversations between people and an AI assistant, lasting up to 120 days, with 27,218 messages in total.",
+          "A clear limitation is that the authors' tools could not reliably figure out when the AI needed to remember older information, and the questions they created accidentally gave away clues about which messages were important.",
+          "The data is available as a set of files, including the conversations and derived information, with each answer including the logical steps used to create it."
+        ]
+      },
+      "actions": [
+        "Verify the specific F1 scores and cost metrics for the three agent systems by consulting the full PDF, as the abstract only reports the 31-fold difference.",
+        "Check the methodology for how the 'natural rate' of gain from supplying recorded evidence was calculated, as the abstract states 96% of the gain comes from messages that need none."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-05",
+        "publishedOn": "2026-10-01",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.01780",
+            "upvotes": 179
+          }
+        ]
+      },
+      "trend": {
+        "votes": 179,
+        "rank": 1,
+        "of": 50,
+        "perDay": 45
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 179,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-01"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-05T20:44:35.144Z"
+      }
+    },
+    {
+      "id": "2609.38879",
+      "arxivId": "2609.38879",
+      "url": "https://arxiv.org/abs/2609.38879",
+      "topic": "AI",
+      "reported": "The authors report that Fold2Reason achieves structure prediction scores 2.7 to 3.5 times those of Qwen3.5-9B on FoldBench.",
+      "metrics": [
+        "2.7 to 3.5 times those of Qwen3.5-9B",
+        "45.09% to 48.33%",
+        "+3.23 pp"
+      ],
+      "title": "Does Learning Protein Folding Generalize to Broader Reasoning?",
+      "authors": "Yong Liu, Zhanpeng Shi, Yizhou Dang, Zhongyue Zhang, Xiaoliang Shi, Zhijian Wei, Shuangjia Zheng",
+      "takeaway": "The paper claims that post-training on protein folding data via Fold2Reason systematically improves broad reasoning capabilities in large language models.",
+      "brief": "The authors propose Fold2Reason, a post-training recipe using a protein-derived dataset called FoldingCorpus to teach models reusable reasoning capabilities through discrete structural answers and continuous 3D geometry.\n\nThey report that Fold2Reason improves macro-average accuracy from 45.09% to 48.33% across 10 reasoning benchmarks, with positive gains on all, while controls using random or shuffled structures yield smaller or negative gains. The listing does not establish specific limitations regarding model scale or generalization beyond the tested benchmarks.\n\nResearchers investigating non-linguistic data for LLM post-training or protein structure prediction may find this relevant. Those focused solely on standard text-based reasoning without interest in structural data may ignore it.",
+      "abstract": "Large language models rely heavily on human text, which often conveys surface answers rather than the spatial and structural logic behind them. Protein folding is a natural testbed, because one solved structure yields thousands of exactly checkable spatial and topological statements. We ask: can learning to fold proteins teach general models reusable reasoning capabilities? To answer this, we build FoldingCorpus, a protein-derived question-answer dataset, and Fold2Reason, a recipe that post-trains on it through two complementary signals: discrete structural answers predicted via the model's native language head, and continuous 3D geometry decoded from the same shared representations. On FoldBench, Fold2Reason achieves structure prediction scores 2.7 to 3.5 times those of Qwen3.5-9B. Beyond protein structure prediction, it improves performance on all 10 benchmarks spanning spatial, graph, scientific, and general reasoning, raising macro-average accuracy from 45.09% to 48.33% (+3.23 pp), with positive gains on all 10 benchmarks, while matched controls built from random, synthetic, and shuffled structure yield substantially smaller or negative gains. Our work shows that non-linguistic, structure-dense scientific data can systematically improve broad reasoning in language models, making a solved scientific problem a practical source of post-training supervision.",
+      "takeaways": [
+        "The object is a post-training method that uses protein folding data to enhance general reasoning in language models.",
+        "A visible limit is that the reported gains are measured on specific benchmarks and compared against a specific baseline model, Qwen3.5-9B.",
+        "The artifact status is established by the provided GitHub repository link, though the listing does not confirm code completeness or reproducibility."
+      ],
+      "plain": {
+        "reported": "The authors state that their method, Fold2Reason, gets scores 2.7 to 3.5 times higher than the Qwen3.5-9B model on a test called FoldBench.",
+        "brief": "The creators built a method called Fold2Reason that teaches computer models using data about how proteins fold. They used a dataset called FoldingCorpus to train the models on both text answers and 3D shapes.\n\nThey say this method makes the models better at 10 different types of logic tests. The average score went up from 45.09% to 48.33%. They also tested with random or mixed-up data, which did not work as well. The text does not say if this works for very large models or other types of problems.\n\nPeople studying how to teach computers using science data might like this. People only interested in standard text tasks might not care.",
+        "takeaways": [
+          "The main thing is a way to teach computer models using protein folding data to make them better at general logic.",
+          "A limit is that the results are only shown for specific tests and compared to one specific model.",
+          "The code is available at a website link, but the text does not say if the code is complete or easy to use."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark definitions and baseline configurations in the PDF to ensure the 2.7 to 3.5 times improvement claim is contextually accurate.",
+        "Check the GitHub repository to confirm the availability of the FoldingCorpus dataset and the exact training code for Fold2Reason."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/GENTEL-lab/Fold2Reason",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-05",
+        "publishedOn": "2026-09-30",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.38879",
+            "upvotes": 94
+          }
+        ]
+      },
+      "trend": {
+        "votes": 94,
+        "rank": 2,
+        "of": 50,
+        "perDay": 19
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 94,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-30"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-05T20:44:35.144Z"
+      }
+    },
+    {
+      "id": "2609.38839",
+      "arxivId": "2609.38839",
+      "url": "https://arxiv.org/abs/2609.38839",
+      "topic": "AI",
+      "reported": "The authors report consistent improvements in long-range consistency, visual quality, and action alignment across five benchmarks and 11 generative models.",
+      "metrics": [],
+      "title": "FrameMorrow: Future-guided Frame Selection with Prospective Tokens for Long-Horizon Video Generation",
+      "authors": "Bo Yin, Xiaobin Hu, Jiaqi Zhao, Shuicheng Yan",
+      "takeaway": "The paper proposes FrameMorrow, a prospective frame selector that predicts future information needs to guide historical frame selection for long-horizon video generation.",
+      "brief": "The authors propose FrameMorrow, a prospective frame selector that predicts a small set of prospective tokens representing future information needs. It uses these tokens to identify relevant information from history, selecting explicit historical frames rather than model-specific internal states. This design enables plug-and-play integration across diverse generators, including closed-source models, with little additional inference cost.\n\nThe authors state that extensive experiments demonstrate consistent improvements in long-range consistency, visual quality, and action alignment. These results are reported across five benchmarks and 11 generative models spanning long-video generation, interactive generation, and action-conditioned world models. The listing does not provide specific numerical values, baseline comparisons, or detailed failure modes for these reported improvements.\n\nResearchers working on long-horizon video generation, historical context management, or plug-and-play video model enhancements may find this relevant. Those focused on short-horizon generation or models that do not rely on explicit historical frame selection may find it less applicable.",
+      "abstract": "Long-horizon video generation requires models to effectively leverage an increasingly long generation history. As the generated history grows, retaining all previous content becomes increasingly expensive and redundant, making effective historical selection essential. Existing approaches often determine historical relevance based on the current content. However, information relevant to the present is not necessarily useful for future generation, while seemingly less relevant history may become important later. Our key insight is that historical information should be selected according to its relevance to future information needs. Capturing these needs does not require generating the full future; instead, a compact representation of what becomes important next is sufficient to guide historical selection. Building on this insight, we propose FrameMorrow, a prospective frame selector that predicts a small set of prospective tokens representing future information needs and uses them to identify relevant information from history. FrameMorrow selects explicit historical frames rather than model-specific internal states, enabling plug-and-play integration across diverse generators, including closed-source models, with little additional inference cost. We evaluate FrameMorrow across five benchmarks and 11 generative models spanning long-video generation, interactive generation, and action-conditioned world models. Extensive experiments demonstrate consistent improvements in long-range consistency, visual quality, and action alignment across diverse generation settings.",
+      "takeaways": [
+        "The object is a prospective frame selector that predicts future information needs to guide historical frame selection in long-horizon video generation.",
+        "The listing reports consistent improvements in long-range consistency, visual quality, and action alignment but does not specify numerical metrics, baselines, or detailed limitations.",
+        "The authors provide a GitHub repository URL, but the listing does not confirm code availability, completeness, or reproducibility details."
+      ],
+      "plain": {
+        "reported": "The authors report that their method consistently improved how well videos stay consistent over long periods, how good they look, and how well they match actions, tested on five different test sets and 11 different video-generating programs.",
+        "brief": "The authors created a tool called FrameMorrow that looks ahead to guess what information will be needed next in a video. It uses this guess to pick which past frames to keep, rather than keeping everything. This tool works by picking specific past frames, so it can be added to many different video-generating programs, even ones where the internal code is not public, without slowing them down much.\n\nThe authors say their tests showed that their tool made videos more consistent over long stretches, looked better, and matched actions better. They tested this on five different test sets and 11 different video-generating programs. The summary does not give specific numbers, compare it to other methods in detail, or explain where it might fail.\n\nPeople who work on making long videos, managing past information in video generation, or adding tools to existing video programs might find this useful. People who only make short videos or use programs that do not use past frames in this way might not find it useful.",
+        "takeaways": [
+          "The thing they made is a tool that guesses what will be needed next in a video to decide which past frames to keep.",
+          "The summary says it made videos better in several ways but does not give specific numbers, compare it to other tools in detail, or explain its limits.",
+          "They gave a link to a code repository, but the summary does not say if the code is complete or works as described."
+        ]
+      },
+      "actions": [
+        "Verify the specific numerical improvements, baseline comparisons, and ablation studies in the full PDF to assess the magnitude of the reported gains.",
+        "Check the provided GitHub repository for code availability, documentation, and compatibility with the 11 generative models mentioned in the abstract."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/YinBo0927/FrameMorrow",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-05",
+        "publishedOn": "2026-09-30",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.38839",
+            "upvotes": 85
+          }
+        ]
+      },
+      "trend": {
+        "votes": 85,
+        "rank": 3,
+        "of": 50,
+        "perDay": 17
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 85,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-30"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-05T20:44:35.144Z"
+      }
+    },
+    {
+      "id": "2609.38078",
+      "arxivId": "2609.38078",
+      "url": "https://arxiv.org/abs/2609.38078",
+      "topic": "AI",
+      "reported": "The authors report that MotorMind achieves 66.7% success on the base LIBERO-PRO suites and 53.8% under perturbations, and 95% average success on a real xArm6 robot.",
+      "metrics": [
+        "66.7% success on the base LIBERO-PRO suites",
+        "53.8% under perturbations",
+        "95% average success on a real xArm6 robot"
+      ],
+      "title": "MotorMind: Scaffolding General Vision Language Models for Zero-Shot Robot Manipulation",
+      "authors": "Bingxuan Li, Siqi Song, Yizhuo Wu, Jiarui Yao, Tong Zhang, Huan Zhang",
+      "takeaway": "The paper introduces MotorMind, a robot manipulation harness that connects general-purpose vision-language model actions to deterministic robot control for zero-shot manipulation without specialized policy training.",
+      "brief": "The authors propose a harness that allows a general-purpose vision-language model to operate a robot by reasoning directly from observations and issuing mid-level actions, bypassing the need for learned action experts or coding agents.\n\nThey report 66.7% success on base LIBERO-PRO suites and 95% average success on a real xArm6 robot, noting that remaining failures stem from visual grounding and embodied reasoning which decrease as the underlying VLM capability improves.\n\nResearchers working on vision-language-action models or robot manipulation harnesses may find the interface design relevant, while those requiring guaranteed safety or specific task policies may ignore it.",
+      "abstract": "Vision-language-action (VLA) models have advanced robotic manipulation, but their zero-shot generalization in new tasks and environments remains limited, and their reliance on specialized training keeps them from benefiting directly from rapidly advancing general-purpose vision-language models (VLMs). In parallel, recent agentic robotic systems leverage VLMs for high-level reasoning or coding agents for robot control, but often depend on extensive external models and tools, introducing additional complexity and cost. This motivates us to ask: Can a general-purpose VLM itself operate a robot more like the human teleoperator by reasoning directly from observations, issuing actions, and continuously adapting to execution feedback, without relying on external models such as learned action experts, coding agents or grounding tools like SAM3? In this work, we introduce MotorMind, a robot manipulation harness that connects VLM-proposed mid-level actions to deterministic robot control and feedback, with asynchronous monitoring and background memory updates. Without task-specific policy training, coding agents, or additional grounding tools such as SAM3, MotorMind achieves 66.7% success on the base LIBERO-PRO suites and 53.8% under perturbations, compared with at most 13.3% and 19.2%, respectively, for the prior zero-shot methods we evaluate. The same interface reaches 95% average success on a real xArm6 robot across direct manipulation and human-perturbation settings. Replacing the backbone with a stronger VLM further improves performance, while the remaining failures - primarily due to visual grounding, embodied reasoning, and action knowledge - decrease as VLM capability improves. These results show that a general-purpose VLM, when equipped with an appropriate mid-level action representation and asynchronous execution harness, can perform effective zero-shot robotic manipulation.",
+      "takeaways": [
+        "The object is a software harness that bridges VLM outputs to deterministic robot control.",
+        "A visible limit is the reliance on the backbone VLM's capability for visual grounding and embodied reasoning.",
+        "The artifact status is not established in the listing as no code repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors state that their system, called MotorMind, succeeded in 66.7% of tasks in a standard simulation test and 53.8% when the environment was changed, and succeeded in 95% of tasks on a physical robot arm.",
+        "brief": "The authors built a software system that lets a general AI model control a robot by thinking about what it sees and deciding on actions, without needing special training for specific tasks.\n\nThey measured this by running the system in computer simulations and on a real robot arm, finding high success rates. They note that the system still fails sometimes because the AI model struggles to understand exactly where objects are and how to move in 3D space.\n\nPeople who build AI systems for controlling robots might find this useful, while people who need a robot to perform one specific task perfectly might not.",
+        "takeaways": [
+          "The main thing they built is a software layer that translates AI thoughts into robot movements.",
+          "A clear weakness is that the system depends on the AI model's ability to see and understand the physical world.",
+          "The listing does not say if the code is available for download."
+        ]
+      },
+      "actions": [
+        "Verify the specific VLM backbone used to achieve the reported 95% success on the xArm6 robot.",
+        "Check the full paper for details on the asynchronous monitoring and background memory update mechanisms."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-05",
+        "publishedOn": "2026-09-29",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.38078",
+            "upvotes": 84
+          }
+        ]
+      },
+      "trend": {
+        "votes": 84,
+        "rank": 4,
+        "of": 50,
+        "perDay": 14
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 84,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-29"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-05T20:44:35.144Z"
+      }
+    },
+    {
+      "id": "2610.02247",
+      "arxivId": "2610.02247",
+      "url": "https://arxiv.org/abs/2610.02247",
+      "topic": "Health",
+      "reported": "The authors report that their offline learning method achieved 80.0% held-out accuracy on a xenobot intervention archive, matching a network trained directly on ground-truth labels.",
+      "metrics": [
+        "80.0% held-out accuracy",
+        "66.7% chance baseline"
+      ],
+      "title": "Toward Controlling Biology with Language:Offline Learning of Prompt-Conditioned Interventions for Cells, Organoids, and Biobots",
+      "authors": "Nam H. Le, Douglas Blackiston, Michael Levin, Josh Bongard",
+      "takeaway": "The paper claims to demonstrate that a natural-language interface for a xenobot can be learned entirely offline using a vision-language model's judgment as the sole training reward.",
+      "brief": "The authors propose an offline method to map natural language instructions to biological interventions for xenobots, using a vision-language model to judge archived outcomes without new wet-lab experiments. They report 80.0% held-out accuracy on a withheld archive dataset, which they state matches a network trained directly on ground-truth labels and exceeds a 66.7% chance baseline. The listing does not establish whether the vision-language model's judgment is reliable enough for broader biological systems or if human validation is required for generalization.\n\nThe strongest reported result is the 80.0% held-out accuracy on the specific xenobot archive, measured against withheld data. The authors note that the method generalizes to entirely new instructions, but the listing does not specify the size of the archive or the diversity of the interventions. It remains unclear if this performance holds for more complex biological systems like organoids or biobots mentioned in the title.\n\nResearchers working on offline reinforcement learning or language-conditioned control of synthetic biological systems may find this relevant. Those requiring real-time wet-lab validation or working with non-synthetic biological tissues should note the specific constraints of the xenobot dataset and the offline-only training paradigm.",
+      "abstract": "Artificial intelligence increasingly serves as a natural-language interface to complex technical systems, letting people accomplish sophisticated tasks by describing what they want rather than specifying how to do it. Extending this interface to living systems is harder: unlike code or images, a biological intervention has no closed-form linguistic meaning, and the paired language-intervention-outcome data needed to learn such a mapping is expensive to collect, since each example requires its own wet-lab experiment. One way around this is to treat an existing archive of interventions and their already-observed outcomes as a fixed, offline dataset, and use a vision-language model to judge, without any new experiments, whether an archived outcome matches a natural-language description. But whether that judgment is reliable enough to train a language-to-intervention mapping on -- without new experiments and without human validation -- has remained unclear. Here we show that a natural-language interface for a living organism -- a xenobot, a synthetic multicellular construct with no nervous system -- can be learned entirely offline this way, using a vision-language model's own judgment as the sole training reward: an instruction is mapped to the intervention already on record as producing the described behavior. This mapping generalizes to entirely new instructions, evaluated against archive data withheld from training (80.0% held-out accuracy vs a $66.7% chance baseline, matching a network trained directly on ground-truth labels).",
+      "takeaways": [
+        "The object is a synthetic multicellular construct called a xenobot, which lacks a nervous system and serves as the testbed for the language-to-intervention mapping.",
+        "A visible limit is that the method relies entirely on an existing archive of interventions and outcomes, meaning it cannot discover new interventions that have not been previously observed in the dataset.",
+        "The artifact status is not established in the listing, as no code repository or dataset link is provided, and the specific vision-language model used is not named."
+      ],
+      "plain": {
+        "reported": "The authors report that their computer-based method achieved 80.0% accuracy on a test set of previously recorded biological experiments, which they say is the same as a model trained with direct human labels.",
+        "brief": "The authors suggest a way to teach a computer to understand human instructions for controlling a synthetic biological robot, called a xenobot. They do this by using a computer vision model to look at old experiment results and decide if they match the instruction, without doing any new physical experiments. They claim this method works well, getting 80.0% correct answers on new instructions that were not used during training. However, it is not clear if this method works for real, complex living tissues or if it only works for these simple synthetic robots.\n\nThe main result is the 80.0% accuracy score on the test data. The authors say this is better than random guessing (66.7%) and as good as a model trained with perfect human labels. The limit is that the computer can only choose from interventions that have already been tried and recorded in the past. It cannot invent new ways to control the robot that were not in the original data.\n\nPeople who study how to use computers to control biological systems or who work with synthetic robots might find this useful. People who need to control real human cells or tissues should be careful, as this method was only tested on simple synthetic constructs and did not involve new physical experiments.",
+        "takeaways": [
+          "The thing being controlled is a xenobot, which is a man-made group of cells that acts like a simple robot but has no brain or nerves.",
+          "A clear limitation is that the system can only use actions that have already been performed and recorded in a database; it cannot try new actions that have never been done before.",
+          "It is not stated in the summary whether the computer code or the data used for the experiment is available for others to download and check."
+        ]
+      },
+      "actions": [
+        "Verify the specific vision-language model architecture and the size of the offline archive by reading the full PDF, as these details are not in the abstract.",
+        "Check the supplementary materials or repository for the withheld evaluation dataset to assess the diversity of the 'entirely new instructions' used for the 80.0% accuracy claim."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "cs.AI",
+        "cs.CV",
+        "cs.NE",
+        "cs.RO"
+      ],
+      "listing": {
+        "listedOn": "2026-10-05",
+        "publishedOn": "2026-10-05",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.02247"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-05"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-05T20:44:35.144Z"
+      }
+    },
+    {
+      "id": "2610.02287",
+      "arxivId": "2610.02287",
+      "url": "https://arxiv.org/abs/2610.02287",
+      "topic": "Physics",
+      "reported": "The authors report that the FW presentation gives a new normal form for the matchgate fragment, distinct from the rWGS-X normal form of the planar-W (pW) presentation of the same category.",
+      "metrics": [],
+      "title": "Premonoidal Semantics and Scalable Diagrammatics of Fermionic Quantum Computing",
+      "authors": "Thomas Perez, Titouan Carette",
+      "takeaway": "The paper provides a categorical account of fermionic quantum computation, showing that LFM processes form a symmetric premonoidal category and introducing pronaps to organize scalable diagrammatic notations for fermionic circuits.",
+      "brief": "The authors claim to provide a categorical account of fermionic quantum computation, showing that LFM processes form a symmetric premonoidal category and introducing pronaps to organize scalable diagrammatic notations for fermionic circuits.\n\nThey report that the FW presentation yields a new normal form for the matchgate fragment, distinct from the rWGS-X normal form of the planar-W (pW) presentation. The listing does not establish specific performance benchmarks or experimental validation limits for these diagrammatic rewrites.\n\nResearchers working on fermionic quantum computing semantics, categorical quantum mechanics, or diagrammatic rewriting systems may find this relevant. Those focused on experimental hardware implementation or standard qubit-based circuit optimization may find it less directly applicable.",
+      "abstract": "Local fermionic mode (LFM) based quantum computation has pure state spaces that are isomorphic, via the Jordan-Wigner representation, to qubit state spaces, but its compositional structure is subtly different. Indeed, the algebraic formalism specifying how to embed fermionic systems underlies a notion of parallel composition, for which, in general, the usual interchange law of monoidal categories fails. We give a categorical account of this phenomenon. Starting from the CAR-algebraic semantics of fermionic gate application, we show that LFM processes form a symmetric premonoidal category whose centre is precisely the even, parity-preserving subcategory. The same processes can alternatively be organized with the ordinary tensor product and a fermionic presymmetry that is natural exactly on even maps. To reason diagrammatically in this latter presentation, we introduce pronaps, a relaxation of the notion of prop, in which permutations are not-necessarily-natural, and use them to organize a hierarchy of fragments of the fermionic ZW calculus relevant to the study of fermionic circuits on physically motivated gate-sets. We then extend scalable diagrammatic notation to pronaps. In this setting, syntactic sugars inspired by SZX and GSA are defined, with the specificity that matrix arrows encode minors and determinants, while graph triangles encode pfaffians of principal submatrices. These constructions yield elegant normal forms and completeness proofs for our presentations of the EoW, FoW, EW, and FW fragments. In particular, the FW presentation gives a new normal form for the matchgate fragment, distinct from the rWGS-X normal form of the planar-W (pW) presentation of the same category. The resulting framework connects fermionic circuit semantics, diagrammatic rewriting with scalable notations, and the algebra of determinants and pfaffians.",
+      "takeaways": [
+        "The object is a categorical framework for fermionic quantum computation, specifically addressing the failure of the usual interchange law in monoidal categories for fermionic systems.",
+        "A visible limit is that the listing does not specify computational complexity bounds for the diagrammatic rewriting rules or the scalability of the pronap-based notations in practice.",
+        "The artifact status is theoretical; the paper presents mathematical constructions and proofs of completeness for specific fragments of the fermionic ZW calculus, with no code or experimental data provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that their specific diagrammatic method, called the FW presentation, creates a new simplified standard form for a type of quantum circuit called the matchgate fragment, which is different from the standard form used in the planar-W (pW) method for the same type of circuit.",
+        "brief": "The authors claim to provide a mathematical framework for understanding fermionic quantum computing, showing that these processes form a specific type of category and introducing a new tool called pronaps to organize scalable diagrammatic notations for fermionic circuits.\n\nThey report that their FW presentation method yields a new simplified standard form for the matchgate fragment, which is distinct from the rWGS-X normal form used in the planar-W (pW) presentation. The listing does not establish specific performance benchmarks or experimental validation limits for these diagrammatic rewrites.\n\nResearchers working on the mathematical foundations of fermionic quantum computing, categorical quantum mechanics, or diagrammatic rewriting systems may find this relevant. Those focused on building physical quantum hardware or optimizing standard qubit-based circuits may find it less directly applicable.",
+        "takeaways": [
+          "The object is a mathematical framework for fermionic quantum computing, specifically addressing how these systems do not follow the usual rules for combining operations in parallel.",
+          "A visible limit is that the listing does not specify how fast the diagrammatic rewriting rules are or how well the new notations scale in practical applications.",
+          "The artifact status is theoretical; the paper presents mathematical constructions and proofs for specific parts of the fermionic ZW calculus, with no code or experimental data provided in the listing."
+        ]
+      },
+      "actions": [
+        "Verify the specific definitions of 'pronaps' and the 'FW presentation' in the PDF to confirm the exact categorical structures used.",
+        "Check the PDF for the detailed proof of the new normal form for the matchgate fragment to assess its practical utility for circuit optimization."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "cs.LO"
+      ],
+      "listing": {
+        "listedOn": "2026-10-05",
+        "publishedOn": "2026-10-05",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.02287"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-05"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-05T20:44:35.144Z"
+      }
+    },
+    {
+      "id": "2610.02290",
+      "arxivId": "2610.02290",
+      "url": "https://arxiv.org/abs/2610.02290",
+      "topic": "Econ",
+      "reported": "The authors report that a single EUR rule attains both the minimax and the Bayes lower bounds, including their leading constants, in a regular parametric return model.",
+      "metrics": [],
+      "title": "Expected Utility Regret Rule: Minimax and Bayes Optimal Portfolio Choice",
+      "authors": "Masahiro Kato",
+      "takeaway": "The paper claims to construct an asymptotically optimal portfolio choice rule, the Expected Utility Regret (EUR) rule, that jointly selects a portfolio class and estimates its weights.",
+      "brief": "The paper proposes the Expected Utility Regret (EUR) rule for portfolio choice, aiming to maximize expected utility of wealth. It claims this rule is asymptotically optimal in terms of expected utility regret, defined as the difference between an oracle investor’s expected utility and that achieved by a data-driven portfolio.\n\nThe authors state that in a regular parametric return model, the EUR rule attains both minimax and Bayes lower bounds, including leading constants, without using the prior distribution. They also derive mean-variance and risk-parity portfolios as special cases. No empirical results, datasets, or numerical benchmarks are provided in the abstract; the evidence is theoretical.\n\nResearchers working on asymptotic portfolio theory, regret minimization, or the relationship between Bayesian and minimax decision rules may find the theoretical framework relevant. Those seeking empirical validation or computational implementations should note the absence of such details in the listing.",
+      "abstract": "This study considers the problem of portfolio choice, where we recommend a portfolio to an investor to maximize the expected utility of their wealth. Our goal is to construct an asymptotically optimal portfolio choice rule in terms of expected utility regret, the difference between the expected utility of an oracle investor and that achieved by a portfolio chosen from data. We propose the Expected Utility Regret (EUR) rule, which jointly selects a portfolio class and estimates its weights. In a regular parametric return model, a single EUR rule attains both the minimax and the Bayes lower bounds, including their leading constants, without using the prior distribution that defines the Bayes criterion. We then derive the mean--variance and risk-parity portfolios as special cases of this framework. Under smooth increasing and concave utility, the EUR rule and the sample mean--variance portfolio attain the same leading expected regret when expected excess returns approach zero sufficiently fast. When the returns divided by their volatilities have a joint distribution that does not depend on the order of the assets, the EUR rule and the risk-parity portfolio coincide.",
+      "takeaways": [
+        "The object is a theoretical portfolio choice rule, the EUR rule, designed to minimize expected utility regret.",
+        "A visible limit is the restriction to a regular parametric return model and the absence of empirical or numerical validation in the provided abstract.",
+        "No code or repository is declared, and the artifact status is purely theoretical based on the supplied text."
+      ],
+      "plain": {
+        "reported": "The authors report that their proposed rule achieves the best possible performance limits (minimax and Bayes) in a specific mathematical model of stock returns, without needing to assume a prior belief about the market.",
+        "brief": "The paper introduces a new method for choosing investments, called the EUR rule, which aims to maximize the satisfaction (utility) an investor gets from their wealth. It measures success by how much less satisfaction the investor gets compared to a hypothetical perfect investor who knows the future.\n\nThe authors prove that in a standard mathematical model of returns, their rule performs as well as the best possible strategies, both in the worst-case scenario and on average, without needing to assume a specific prior belief. They also show that common strategies like mean-variance and risk-parity are special cases of their framework. The abstract contains no real-world data or numerical results; the contribution is purely mathematical.\n\nPeople studying the mathematical theory of investment decisions, or the relationship between different optimization criteria, may find this useful. Those looking for practical trading algorithms or backtested results should note that the abstract does not mention any empirical work.",
+        "takeaways": [
+          "The main contribution is a mathematical rule for choosing investments that minimizes the loss in satisfaction compared to a perfect investor.",
+          "The theory is limited to a specific type of mathematical model for returns, and the abstract does not show any real-world testing or numerical examples.",
+          "There is no code or software provided, and the work is theoretical based on the information given."
+        ]
+      },
+      "actions": [
+        "Verify the theoretical proofs and assumptions in the full PDF, particularly the conditions under which the EUR rule attains the minimax and Bayes lower bounds.",
+        "Check whether the paper provides any simulation studies or empirical applications in the full text that are not mentioned in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.EM",
+        "cs.LG",
+        "math.ST",
+        "q-fin.MF",
+        "stat.ML",
+        "stat.TH"
+      ],
+      "listing": {
+        "listedOn": "2026-10-05",
+        "publishedOn": "2026-10-05",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.02290"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-05"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-05T20:44:35.144Z"
+      }
+    },
+    {
+      "id": "2610.02302",
+      "arxivId": "2610.02302",
+      "url": "https://arxiv.org/abs/2610.02302",
+      "topic": "Security",
+      "reported": "The authors report that compositional queries can elicit target behaviors beyond the direct-request baseline under the evaluated search budgets, while revealing a trade-off: as bundle size increases, response-level target preservation tends to decrease for several models.",
+      "metrics": [],
+      "title": "Intent-Hiding Jailbreaks: An Information-Theoretic Framework for Compositional Attacks",
+      "authors": "Fengwei Tian, Ravi Tandon",
+      "takeaway": "The paper proposes an information-theoretic framework for compositional intent-hiding jailbreaks, defining prior-posterior matching to obscure harmful intent within benign task bundles.",
+      "brief": "The authors formulate compositional jailbreaks using information theory, where selecting auxiliary tasks to match prior and posterior harmfulness probabilities leaves estimated intent unchanged. They analyze query-independent and query-dependent settings, proving computational hardness for exact matching and deriving a water-filling solution for fractional weights.\n\nThe authors evaluate effectiveness across bundle sizes, query generators, and open-source models. They report that compositional queries elicit target behaviors beyond direct requests under specific search budgets. They also note a trade-off where response-level target preservation decreases as bundle size increases for several models.\n\nResearchers studying LLM security and information-theoretic attack formulations may find the framework relevant. Practitioners relying on simple intent detection may need to consider compositional obfuscation. The listing does not specify which open-source models were tested or the exact search budgets used.",
+      "abstract": "Recent work has shown that large language models (LLMs) can be vulnerable to jailbreak attacks in which harmful intent is obscured through composition with benign tasks. A harmful request refused in isolation may elicit a different response when embedded within a larger, seemingly benign query. We study these compositional intent-hiding jailbreaks from an information-theoretic perspective. Our formulation associates each task with an estimated probability of being judged harmful: the average over the full task collection defines the prior probability of harmful intent, while the average over a selected bundle containing the target defines the posterior. Selecting auxiliary tasks so that these averages agree, which we call prior-posterior matching, leaves the estimated intent unchanged even though the harmful target remains in the bundle. We study two settings that differ in whether query construction is part of the optimization. In the query-independent setting, tasks are selected without regard to how they will be expressed in the final query. We show that exact prior-posterior matching under a bundle-size constraint is computationally hard, derive an optimal water-filling solution for fractional weights, and characterize the smallest bundle satisfying a prescribed safety threshold. In the query-dependent setting, task selection and query construction are considered jointly, and intent concealment and target preservation are evaluated on the resulting query. We evaluate jailbreak effectiveness and preservation of the target behavior across bundle sizes, query generators, and several open-source models. These results show that compositional queries can elicit target behaviors beyond the direct-request baseline under the evaluated search budgets, while revealing a trade-off: as bundle size increases, response-level target preservation tends to decrease for several models.",
+      "takeaways": [
+        "The object is an information-theoretic framework for compositional jailbreaks, not a specific attack tool or model.",
+        "The visible limit is the reported trade-off where larger bundle sizes reduce response-level target preservation for several models.",
+        "The artifact status is unspecified; the listing mentions no code repository or released implementation."
+      ],
+      "plain": {
+        "reported": "The authors report that combining a harmful request with other benign tasks can make the model respond to the harmful part more often than if the harmful request was asked alone, but this effect weakens as the number of combined tasks grows.",
+        "brief": "The authors use math to describe how hiding a harmful request inside a group of normal tasks can trick AI models. They show that finding the perfect mix of tasks is a hard math problem, but they found a way to approximate it.\n\nThey tested this on several AI models. They found that the trick works better than asking the harmful question directly, but only up to a point. When they added too many extra tasks, the AI stopped responding to the hidden harmful part as often.\n\nPeople who study how to make AI safer might want to look at this. People who use AI for normal tasks might not need to worry unless they are building security systems. The text does not say which specific AI models were tested or how much computing power was used.",
+        "takeaways": [
+          "This is a mathematical theory for how to hide bad requests in AI conversations, not a ready-to-use tool.",
+          "The main weakness is that adding too many extra tasks makes the hiding trick less effective.",
+          "The authors did not share any code or software for this method in the listing."
+        ]
+      },
+      "actions": [
+        "Verify the specific open-source models and search budgets used in the evaluation by reading the full PDF.",
+        "Check the full PDF for the exact computational hardness proof and water-filling solution details."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.IT",
+        "cs.LG",
+        "math.IT"
+      ],
+      "listing": {
+        "listedOn": "2026-10-05",
+        "publishedOn": "2026-10-05",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.02302"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-05"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-05T20:44:35.144Z"
+      }
+    },
+    {
+      "id": "2610.02408",
+      "arxivId": "2610.02408",
+      "url": "https://arxiv.org/abs/2610.02408",
+      "topic": "Engineering",
+      "reported": "The authors report that UrbanEMF is a city-scale EMF mapping dataset constructed from real world urban geometry and physical BS deployments using ray tracing.",
+      "metrics": [],
+      "title": "UrbanEMF: City-Scale EMF Mapping over a Continuous Urban Area with Real-World Base-Station Deployment",
+      "authors": "Shuangning Li, Chenxin Luo, Shanshan Wang, Yarui Zhang, Paul Lagouanelle, Joe Wiart",
+      "takeaway": "The paper presents UrbanEMF, a city-scale EMF mapping dataset constructed from real-world urban geometry and physical base-station deployments using ray tracing.",
+      "brief": "The authors introduce UrbanEMF, a city-scale electromagnetic field mapping dataset built from real urban geometry and physical base-station deployments using ray tracing. It extends traditional 2D maps by incorporating multiple receiver heights and provides both aggregated received signal strength and path loss maps.\n\nThe listing states that the dataset preserves continuous city-scale urban coverage and realistic transmitter location information. It is positioned as a benchmark for developing and evaluating learning-based methods in large-scale urban wireless environments. No quantitative performance results or specific evaluation metrics are provided in the supplied abstract.\n\nResearchers working on wireless propagation modeling, spectrum awareness, or integrated sensing and communication may find the dataset relevant. Those requiring immediate quantitative benchmark comparisons or specific algorithmic performance data should note that the abstract does not contain such figures.",
+      "abstract": "Electromagnetic Fields (EMF) mapping is essential for wireless propagation modeling and are fundamental to a wide range of applications, including spectrum awareness, network planning, and integrated sensing and communication (ISAC). However, existing datasets are often limited to spatially separated 2D scenes without real base station (BS) information. To address this gap, we present UrbanEMF, a city-scale EMF mapping dataset constructed from real world urban geometry and physical BS deployments using ray tracing. Unlike conventional single scene-based datasets, UrbanEMF preserves continuous city-scale urban coverage and realistic transmitter location information. It further extends traditional 2D maps by incorporating multiple receiver heights. In addition, both aggregated received signal strength (RSS) maps and path loss maps are provided to characterize complementary aspects of the radio environment. This work provides a realistic and flexible benchmark for developing and evaluating learning-based methods in large-scale urban wireless environments. The code for this work is available at: https://github.com/lemonstudy/UrbanEMF",
+      "takeaways": [
+        "The object is a city-scale EMF mapping dataset derived from real urban geometry and physical base-station deployments.",
+        "The visible limit is the absence of quantitative performance metrics or specific evaluation results in the provided listing.",
+        "The artifact status is a code repository available at the provided GitHub URL, though the listing does not specify version or completeness."
+      ],
+      "plain": {
+        "reported": "The authors report that UrbanEMF is a city-scale electromagnetic field mapping dataset built from real city shapes and actual cell tower locations using computer simulation.",
+        "brief": "The authors introduce UrbanEMF, a large-scale map of electromagnetic fields in a city built from real city layouts and actual cell tower locations using computer simulation. It adds different receiver heights to traditional flat maps and provides both signal strength and path loss maps.\n\nThe listing states that the dataset covers a continuous city area and includes realistic transmitter locations. It is meant as a testbed for developing and evaluating machine learning methods in large urban wireless settings. No specific numbers or performance scores are given in the abstract.\n\nPeople studying how radio waves move through cities, managing radio spectrum, or combining sensing and communication may find this useful. People who need specific performance numbers or direct comparisons to other datasets should note that the abstract does not list them.",
+        "takeaways": [
+          "The item is a large-scale map of electromagnetic fields in a city made from real city layouts and actual cell tower locations.",
+          "The visible limit is that the provided text does not include specific numbers or performance scores.",
+          "The artifact is a code repository at the given link, but the text does not say if it is complete or which version it is."
+        ]
+      },
+      "actions": [
+        "Verify the dataset structure, file formats, and coverage details by inspecting the provided GitHub repository.",
+        "Check the full PDF for any quantitative validation results or comparison against existing datasets not mentioned in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-10-05",
+        "publishedOn": "2026-10-05",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.02408"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-05"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-05T20:44:35.144Z"
+      }
+    },
+    {
+      "id": "2610.02556",
+      "arxivId": "2610.02556",
+      "url": "https://arxiv.org/abs/2610.02556",
+      "topic": "Stats",
+      "reported": "The authors report that the p-value against a fixed alternative decays as K_T^{-N}, not in T, with matching lower bounds, so the onset window, not the series length, determines the power.",
+      "metrics": [],
+      "title": "Randomization inference on cell effects under absorbing treatment onset",
+      "authors": "Xinyuan Chen",
+      "takeaway": "The paper establishes finite-sample validity and power theory for randomization tests of bounded and quantile nulls on unit-period cell effects in absorbing onset designs.",
+      "brief": "The authors propose a framework for randomization inference in staggered adoption and stepped-wedge trials where units switch to treatment once and remain treated. They define these as absorbing onset designs and focus on testing bounded and quantile nulls for cell effects rather than just the sharp null of no effect.\n\nThe authors state that under the assumption that a cell's potential outcome depends on its current treatment status and not on when treatment began, the tests have finite-sample validity. They report that the p-value against a fixed alternative decays as K_T^{-N}, not in T, with matching lower bounds, so the onset window, not the series length, determines the power. The abstract notes that cases where this assumption fails partially or completely motivate a sensitivity analysis, but specific performance metrics or empirical results are not provided in the listing.\n\nResearchers working on multiple-baseline experiments, staggered adoption designs, or stepped-wedge trials with few heterogeneous units may find the theoretical power analysis relevant. Those requiring empirical validation or specific sensitivity analysis results should verify the full text, as the abstract does not detail the outcomes of the sensitivity analysis or provide numerical examples.",
+      "abstract": "In multiple-baseline experiments, staggered adoption designs, and stepped-wedge trials, every unit switches once from baseline to treatment at a randomized onset time and remains treated afterward. We label these designs as absorbing onset. Because such experiments often involve only a few heterogeneous units, randomization tests of the sharp null of no effect on any unit at any period are common. Rejecting this null, however, implies that some effect exists somewhere, not that it is large, positive for most unit-periods, or persistent. We study what randomization tests can establish for bounded nulls and quantile nulls on unit-period cell effects in absorbing onset designs. Under the assumption that a cell's potential outcome depends on its current treatment status and not on when treatment began, we establish finite-sample validity for both tests and develop the power theory for the bounded-null tests with a fixed number of units $N$ and a growing series length $T$ that admits $K_T$ onsets. The $p$-value against a fixed alternative decays as $K_T^{-N}$, not in $T$, with matching lower bounds, so the onset window, not the series length, determines the power. We also treat cases in which this assumption fails partially or completely, which motivates a sensitivity analysis.",
+      "takeaways": [
+        "The object is a theoretical framework for randomization tests in absorbing onset designs, specifically addressing bounded and quantile nulls on unit-period cell effects.",
+        "A visible limit is the reliance on the assumption that a cell's potential outcome depends on its current treatment status and not on when treatment began, with sensitivity analysis mentioned but not detailed in the abstract.",
+        "The artifact status is not established in the listing; no code, datasets, or repository URLs are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that the probability of rejecting the null hypothesis (p-value) gets smaller as the number of treatment start times (K_T) increases, specifically following the pattern K_T to the power of negative N, rather than getting smaller as the total time length (T) increases. They state this means the number,",
+        "brief": "The authors propose a method for analyzing experiments where participants start a treatment at different times and stay in it. They call these 'absorbing onset' designs. The method focuses on testing whether the treatment has a specific type of effect on individual data points, rather than just checking if any effect exists at all.\n\nThe authors state that if the effect of the treatment depends only on whether the participant is currently treated, and not on when they started, their tests are valid for small sample sizes. They report that the chance of finding a significant effect (p-value) decreases as the number of different start times (K_T) increases, following the formula K_T to the power of negative N. This means the number of start times, not the total duration of the study, determines how well the test can detect an effect. The abstract mentions that if the effect does depend on start time, a sensitivity analysis is needed, but it does not give results for this.\n\nPeople studying experiments where different groups start a treatment at different times, such as in healthcare or policy rollouts, might find this theory useful. Those who need to see actual data results or details on how the method handles cases where the effect depends on start time should read the full paper, as the summary does not include these details.",
+        "takeaways": [
+          "The paper provides a mathematical framework for testing treatment effects in studies where participants start treatment at different times and keep it.",
+          "A limitation is that the main results assume the treatment effect does not depend on when the participant started, and the abstract does not detail how well the method works if this assumption is wrong.",
+          "It is not stated in the summary whether the authors provide computer code or data to reproduce their results."
+        ]
+      },
+      "actions": [
+        "Verify the specific conditions under which the finite-sample validity holds by reading the full PDF, particularly the section on the assumption that potential outcomes depend on current treatment status.",
+        "Check the full PDF for the details of the sensitivity analysis mentioned for cases where the assumption fails, as the abstract does not provide quantitative results for this part."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-10-05",
+        "publishedOn": "2026-10-05",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.02556"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-05"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-05T20:44:35.144Z"
+      }
+    }
+  ]
+}
