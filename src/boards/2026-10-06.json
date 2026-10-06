@@ -1,0 +1,666 @@
+{
+  "date": "2026-10-06",
+  "label": "Tue, Oct 6",
+  "minutes": 10,
+  "poolSize": 167,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-10-06T18:26:52.548Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2610.05608",
+      "arxivId": "2610.05608",
+      "url": "https://arxiv.org/abs/2610.05608",
+      "topic": "AI",
+      "reported": "The authors report that Kandinsky 6.0 Video Pro clearly outperforms its predecessor, Kandinsky 5.0 Video Pro, in side-by-side human evaluation.",
+      "metrics": [
+        "3B parameters",
+        "29B parameters",
+        "44 kHz audio"
+      ],
+      "title": "Kandinsky 6.0 Video: Foundation Models for Synchronized Video and Audio Generation",
+      "authors": "Team Kandinsky, Julia Agafonova, Bulat Akhmatov, Mikhail Aksyutin, Grigorii Alekseenko, Anastasia Aliaskina, Olga Androsova, Vladimir Arkhipkin, Anna Averchenkova, Alexander Belykh, Serafima Bocharova, Sofiya Bogakovskaya, Anton Bukashkin, Mark Bulygin, Kirill Buzygin, Irina Cheremnykh, Kirill Chernyshev, Mikhail Chernyshov, Vladimir Chernyy, David Chikovani, Georgy Daniltsev, Denis Dimitrov, Anna Dmitrienko, Vladimir Dokholyan, Sergey Emelyanov, Dmitry Ermilov, Georgii Fedorov, Polina Gavrilova, Nikolai Gerasimenko, Aleksandr Gordeev, Andrey Inozemtsev, Andrei Ivaniuta, Alexander Ivanov, Mikhail Karaev, Anastasiia Kargapoltseva, Ivan Kirillov, Nikita Kiselev, Valeria Kobenko, Yury Kolabushin, Denis Koposov, Anatoly Korobov, Vladimir Korviakov, Kirill Kozlov, Denis Krzhivokolskiy, Konstantin Kuklev, Alexander Kunitsyn, Sergey Kuzin, Vladislav Lakhtionov, Alexey Letunovskiy, Maxim Litvinov, Alexander Lyulkov, Georgy Makarov, Kirill Malakhov, Egor Malykh, Mikhail Mamaev, Dmitrii Mikhailov, Polina Mikhailova, Ivan Mikheev, Elizaveta Muromtseva, Nikolai Nazarkin, Tatiana Nikulina, Lev Novitskiy, Stanislav Onuchin, Nikita Osterov, Denis Parkhomenko, Anatoliy Parpara, Vladimir Polovnikov, Konstantin Reznikov, Azat Saginbaev, Nikita Samsonov, Alexander Sentsov, Nikita Shaimov, Artem Sherstyuk, Andrey Shutkin, Egor Silvestrov, Bulat Suleimanov, Matvey Suprunov, Sergey Taranov, Irina Tolstykh, Tatiana Trofimuk, Ilya Trushkin, Aleksandra Tsybina, Olga Varlashina, Viacheslav Vasilev, Ilya Vasiliev, Eugeny Vilisov, Sergey Yakubson, Konstantin Zakharov",
+      "takeaway": "The paper presents Kandinsky 6.0 Video, a family of foundation diffusion models for synchronized text-to-audio-video generation.",
+      "brief": "The authors introduce Kandinsky 6.0 Video, a family of foundation diffusion models designed for synchronized text-to-audio-video generation. The system comprises two model sizes: Kandinsky 6.0 Video Lite with 3B parameters and Kandinsky 6.0 Video Pro with 29B parameters. Both models generate 5-second video clips with synchronized 44 kHz audio, including lip-sync, in text-to-audio-video and image-to-audio-video modes. A built-in super-resolution model raises the output resolution to Full-HD (1920times1080). The architecture employs a dual-stream CrossDiT design connecting a pretrained video stream and a newly trained audio stream through bidirectional cross-attention for temporal and semantic alignment. The training strategy involves continuous pretraining, supervised fine-tuning, reinforcement-learning-based post-training, and distillation.\n\nThe authors state that in side-by-side human evaluation, Kandinsky 6.0 Video Pro clearly outperforms its predecessor, Kandinsky 5.0 Video Pro. They also report that the model remains competitive with leading audio-video generation models, particularly in speech quality. The listing does not provide specific numerical benchmark scores, statistical significance values, or detailed breakdowns of the human evaluation criteria. It does not establish the specific limitations of the model regarding failure modes, computational costs, or generalization to unseen domains beyond the stated competitive standing.\n\nResearchers and developers working on multimodal generative models, specifically those interested in synchronized audio-video synthesis, may find the architectural details and training strategy relevant. The release of code, model checkpoints, and diffusers integration under the MIT license is noted for open research and deployment. Individuals not focused on foundation model architecture or multimedia generation may find the specific technical details less applicable to their immediate work.",
+      "abstract": "We present Kandinsky 6.0 Video, a family of foundation diffusion models for synchronized text-to-audio-video generation, comprising Kandinsky 6.0 Video Lite (3B parameters) and Kandinsky 6.0 Video Pro (29B parameters). Both models generate 5-second video clips with synchronized 44 kHz audio, including lip-sync, in text-to-audio-video (T2AV) and image-to-audio-video (I2AV) modes; a built-in super-resolution model raises the output resolution to Full-HD (1920times1080). Building on the video generation capabilities of Kandinsky 5.0, Kandinsky 6.0 Video employs a dual-stream CrossDiT architecture that connects a pretrained video stream and a newly trained audio stream through bidirectional cross-attention for temporal and semantic alignment. Our continuous pretraining strategy first trains the audio stream from scratch on large-scale audio corpora and then trains both streams jointly on paired audio-video data while preserving unimodal fidelity; pretraining is followed by supervised fine-tuning, reinforcement-learning-based post-training, and distillation. In side-by-side human evaluation, Kandinsky 6.0 Video Pro clearly outperforms its predecessor, Kandinsky 5.0 Video Pro, and remains competitive with leading audio-video generation models, particularly in speech quality. To accelerate open research and deployment in multimedia generation, we release the code, model checkpoints, and diffusers integration under the MIT license.",
+      "takeaways": [
+        "The object is a family of foundation diffusion models for synchronized text-to-audio-video generation, specifically Kandinsky 6.0 Video Lite and Pro.",
+        "The visible limit is the lack of quantitative benchmark scores in the listing, relying instead on qualitative human evaluation comparisons against a predecessor and leading models.",
+        "The artifact status is established as released code, model checkpoints, and diffusers integration under the MIT license, with a provided GitHub repository URL."
+      ],
+      "plain": {
+        "reported": "The authors report that their new model, Kandinsky 6.0 Video Pro, performs better than the previous version, Kandinsky 5.0 Video Pro, when people compared them side-by-side.",
+        "brief": "The authors introduce a new set of AI models called Kandinsky 6.0 Video. These models are designed to create short video clips that have matching sound, such as voices that match lip movements. There are two versions: a smaller one with 3 billion parameters and a larger one with 29 billion parameters. Both create 5-second videos with high-quality audio at 44 kilohertz. The system can also enhance the video resolution to Full-HD. The models use a specific architecture that connects video and audio processing streams to ensure they stay aligned in time and meaning. The training process involves several stages, including initial training on large datasets, fine-tuning, and reinforcement learning.\n\nThe authors state that in tests where humans compared the new model to the old one, the new model was clearly better. They also say it competes well with other top models in the field, especially in the quality of speech. The summary does not give specific numbers for how much better it is, nor does it detail the specific criteria used in the human tests. It does not explain the specific weaknesses of the model, such as what types of content it fails to generate correctly or how much computing power it requires.\n\nPeople who build or study AI models that generate both video and sound might find the technical details useful. The authors have made the code and model files available for free under a permissive license. People who do not work on creating AI-generated media may not find the specific technical details relevant to their current projects.",
+        "takeaways": [
+          "The main subject is a new AI system that generates video and matching audio together, with two different sizes available.",
+          "A clear limitation in the summary is the absence of specific numerical scores, relying instead on general statements about human preference and competition with other models.",
+          "The authors have released the code and model files for public use under a standard open-source license, with a link to the code repository provided."
+        ]
+      },
+      "actions": [
+        "Verify the specific human evaluation metrics and statistical results by consulting the full PDF, as the abstract only provides qualitative comparisons.",
+        "Inspect the provided GitHub repository to confirm the availability and compatibility of the model checkpoints and diffusers integration for local deployment."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/kandinskylab/kandinsky-6",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-06",
+        "publishedOn": "2026-10-04",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.05608",
+            "upvotes": 112
+          }
+        ]
+      },
+      "trend": {
+        "votes": 112,
+        "rank": 1,
+        "of": 49,
+        "perDay": 56
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 112,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-04"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-06T18:26:52.548Z"
+      }
+    },
+    {
+      "id": "2610.04198",
+      "arxivId": "2610.04198",
+      "url": "https://arxiv.org/abs/2610.04198",
+      "topic": "AI",
+      "reported": "ALoDLM: Adaptively Looped Diffusion Language Models",
+      "metrics": [
+        "1.7B and 8B parameter scales"
+      ],
+      "title": "ALoDLM: Adaptively Looped Diffusion Language Models",
+      "authors": "Liancheng Fang, Zhuowei Li, Youngeun Kim, Tianchen Zhao, Rajat Koner, Jiaye Wu, Linghan Xu, Xuanbai Chen, Xiang Xu, Zheng Zhang, Jakub Zablocki, Nishant Sankaran, Yifan Xing",
+      "takeaway": "The authors claim ALoDLM closes the quality gap between diffusion and autoregressive language models by replacing uniform computation with token-adaptive latent recurrence that allocates compute based on token difficulty.",
+      "brief": "The paper introduces ALoDLM, a diffusion language model that uses token-adaptive latent recurrence to allocate computation according to token difficulty during denoising steps. The authors report that ALoDLM, trained at 1.7B and 8B parameter scales, outperforms all evaluated DLMs and corresponding AR baselines in average benchmark score across eleven benchmarks. They also state it retains fast parallel decoding, yielding a strong quality-efficiency trade-off among evaluated models under optimized inference engines.\n\nThe listing does not specify the exact benchmarks, the magnitude of the performance gap, or the specific inference engines used for the efficiency comparison. It does not establish whether the quality gap is fully closed or merely reduced, nor does it detail the computational overhead of the recurrent passes relative to standard AR models. The authors attribute the prior quality gap to a computation-difficulty mismatch, but the listing does not provide ablation results isolating the contribution of the adaptive allocation versus the latent recurrence itself.\n\nResearchers working on diffusion language models or efficient inference architectures may find the token-adaptive computation allocation mechanism relevant. Those focused strictly on autoregressive model scaling or non-diffusion generation paradigms may find the specific architectural changes less directly applicable. The paper is most relevant to those investigating how to balance generation speed and quality in parallel decoding frameworks.",
+      "abstract": "Diffusion language models (DLMs) enable fast generation by predicting multiple tokens in parallel, but their practical adoption remains limited by a persistent quality gap relative to comparably sized autoregressive (AR) models. We attribute this gap to a computation-difficulty mismatch: within a partially observed sequence, some unknown tokens are easy to predict, while others require substantially more computation. Existing DLMs nevertheless apply uniform computational depth to all unknown positions at each denoising step. We introduce ALoDLM, which replaces uniform computation with token-adaptive latent recurrence. At each denoising step, ALoDLM iteratively refines latent representations and allocates computation according to token difficulty. Tokens ready to commit are fed back as discrete context, while unresolved tokens retain and further refine their latent states through additional recurrent passes. To learn token prediction and computation allocation jointly, we formulate token-wise computation schedules as latent variables and derive a conditional negative evidence lower bound (NELBO). We train ALoDLM at 1.7B and 8B parameter scales. Across eleven benchmarks, ALoDLM outperforms all evaluated DLMs and the corresponding AR baselines in average benchmark score at both scales. ALoDLM also retains fast parallel decoding, yielding a strong quality-efficiency trade-off among evaluated autoregressive and diffusion models under optimized inference engines.",
+      "takeaways": [
+        "The core object is a diffusion language model architecture that modifies how computation is allocated across tokens during the denoising process.",
+        "A visible limit is the lack of specific benchmark names or quantitative performance deltas in the listing, making it difficult to assess the magnitude of the claimed improvement.",
+        "The artifact status is indicated by a declared GitHub repository URL, but the listing does not confirm the availability of weights, training code, or evaluation scripts."
+      ],
+      "plain": {
+        "reported": "ALoDLM: Adaptively Looped Diffusion Language Models",
+        "brief": "The paper presents a new type of AI text generator called ALoDLM. Unlike standard generators that process text one word at a time, this model tries to predict multiple words at once. The authors say their model improves on previous versions by giving more processing power to words that are harder to predict, while using less power for easier words. They tested this model at two sizes, 1.7 billion and 8 billion parameters, and claim it scores higher on average across eleven different tests than other similar models and standard word-by-word models. They also say it remains fast because it can still predict multiple words in parallel.\n\nThe summary does not list the names of the eleven tests or show how much better the scores were. It does not explain if the model is fully as good as standard models or just closer. It also does not detail how much extra computing power the adaptive method requires compared to standard fast models. The authors suggest that previous models failed because they treated all words the same, but the summary does not show data proving that this specific change is the sole reason for the improvement.\n\nPeople who build or study AI text generators that work in parallel might find this useful. People who only work with standard word-by-word AI models might find it less relevant. This is most useful for those trying to make parallel text generation both fast and high-quality.",
+        "takeaways": [
+          "The main subject is a text generation model that changes how it spends its computing effort on different words.",
+          "A clear limitation is that the summary does not name the specific tests used or show the exact score differences.",
+          "The paper lists a website link for code, but the summary does not confirm if the actual model files or training tools are available there."
+        ]
+      },
+      "actions": [
+        "Verify the specific eleven benchmarks and the exact average score improvements by consulting the full PDF or the declared GitHub repository.",
+        "Check the repository for the availability of model weights and inference code to assess the practical feasibility of the claimed fast parallel decoding."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/amazon-science/ALoDLM",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-06",
+        "publishedOn": "2026-10-03",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.04198",
+            "upvotes": 48
+          }
+        ]
+      },
+      "trend": {
+        "votes": 48,
+        "rank": 2,
+        "of": 49,
+        "perDay": 16
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 48,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-06T18:26:52.548Z"
+      }
+    },
+    {
+      "id": "2610.05162",
+      "arxivId": "2610.05162",
+      "url": "https://arxiv.org/abs/2610.05162",
+      "topic": "AI",
+      "reported": "The authors report that MemAdapter consistently improves memory reliability across diverse scenarios, measured on three benchmarks.",
+      "metrics": [],
+      "title": "Memadapter: Counterfactual Adaptation Against Memory-induced Sycophancy",
+      "authors": "Ruqing Ning, Haibo Meng, Zhishang Xiang, Zerui Chen, Jinsong Su, Xin Wang, Qinggang Zhang",
+      "takeaway": "MemAdapter is a framework that adaptively integrates retrieved memories to support objective and reliable reasoning by addressing sycophancy induced by correct memories.",
+      "brief": "The paper proposes MemAdapter, a framework designed to mitigate memory-induced sycophancy in LLM agents by adaptively integrating retrieved memories. It argues that existing methods fail because they assume sycophancy stems only from incorrect memories, whereas correct memories can also cause over-alignment depending on context.\n\nThe authors report that extensive experiments on three benchmarks demonstrate that MemAdapter consistently improves memory reliability across diverse scenarios. The listing does not specify the names of the benchmarks, the specific quantitative improvements, or the baseline methods used for comparison. It also does not establish whether the framework generalizes to domains outside the tested scenarios.\n\nResearchers working on long-term memory for LLM agents or sycophancy mitigation may find the counterfactual induction and context-aware reflection components relevant. Those not focused on memory management in conversational agents or long-horizon interactions may find the specific mechanisms less applicable to their immediate work.",
+      "abstract": "Long-term memory enables LLM-based agents to retain and reuse information across tasks and sessions, supporting personalization and long-horizon interactions. However, persistent memories can also induce sycophancy, causing agents to over-align with users' historical beliefs even when they are inaccurate, outdated, or inconsistent with objective evidence. Existing mitigation methods assume that memory-induced sycophancy originates from biased or incorrect memories and attempt to reduce this risk by filtering such memories at different stages of the memory pipeline. However, in the real world, objective and correct memories can still induce sycophancy, and the same memory can warrant different influence across different contexts. To this end, we propose MemAdapter, a novel framework that adaptively integrates retrieved memories to support objective and reliable reasoning. Specifically, MemAdapter consists of three components: (i) Counterfactual Induction, which leverages counterfactual reasoning to uncover the potential risk of retrieved memories; (ii) Context-Aware Reflection, which calibrates the inferential influence of each retrieved memory in light of the current task via self-reflection; and (iii) Evidence-Based Reasoning, which grounds the final response in appropriate evidence while preserving the legitimate influence of memory. Extensive experiments on three benchmarks demonstrate that MemAdapter consistently improves memory reliability across diverse scenarios. Our code is available at https://github.com/DEEP-JLU/MemAdapter.",
+      "takeaways": [
+        "The object is a three-component framework (Counterfactual Induction, Context-Aware Reflection, Evidence-Based Reasoning) for integrating retrieved memories in LLM agents.",
+        "A visible limit is that the abstract claims improvements on three benchmarks but does not name them or provide specific performance metrics, making the magnitude of improvement unclear from the listing alone.",
+        "The artifact status is established as code available at a GitHub repository, but the listing does not confirm the repository's completeness, documentation, or reproducibility of the reported results."
+      ],
+      "plain": {
+        "reported": "The authors state that their system, MemAdapter, makes the agent's use of stored information more reliable in various situations, which they tested using three different sets of test questions.",
+        "brief": "The paper introduces a system called MemAdapter. It is designed to stop AI agents from being too agreeable with users just because of past conversations. The authors argue that previous fixes only worked when the past information was wrong, but this system works even when the past information is correct but shouldn't be used in the current situation.\n\nThe authors say they tested this system on three different test sets and found it made the agent's reasoning more reliable. However, the summary does not say what those three test sets are called, how much better the system performed compared to others, or what other systems it was compared against. It also does not say if this system works well in areas other than the ones tested.\n\nPeople who build AI assistants that remember past conversations might find the specific techniques for checking past information useful. People who do not work on AI memory systems or conversational agents might not find the specific details relevant to their current projects.",
+        "takeaways": [
+          "The main thing being described is a software framework with three parts that helps AI agents decide how much to trust their past memories.",
+          "A clear limitation is that the summary says the system improved on three tests but does not name the tests or give specific scores, so it is hard to judge the size of the improvement from this text alone.",
+          "The authors say the code is available online, but the summary does not confirm if the code is complete, well-documented, or if it can exactly reproduce the results they claim."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark names and quantitative results by reading the full PDF, as the abstract only mentions 'three benchmarks' without detail.",
+        "Check the provided GitHub repository to confirm the code matches the described framework components and includes the evaluation scripts used in the reported experiments."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/DEEP-JLU/MemAdapter",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-06",
+        "publishedOn": "2026-10-04",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.05162",
+            "upvotes": 26
+          }
+        ]
+      },
+      "trend": {
+        "votes": 26,
+        "rank": 3,
+        "of": 49,
+        "perDay": 13
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 26,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-04"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-06T18:26:52.548Z"
+      }
+    },
+    {
+      "id": "2610.03120",
+      "arxivId": "2610.03120",
+      "url": "https://arxiv.org/abs/2610.03120",
+      "topic": "AI",
+      "reported": "The authors report that their method substantially outperforms prior work in mitigating drifting, as validated by both their drift metrics and a user study.",
+      "metrics": [],
+      "title": "In-Distribution Forcing for Long Video Generation at Test Time",
+      "authors": "Jeongwoo Shin, Youngyoon Choi, Sangwoo Jo, Hyunmog Kim, Sungjoon Choi, Joonseok Lee, Jaewoong Choi, Jaemoo Choi",
+      "takeaway": "The paper proposes In-Distribution Forcing, a test-time framework that aligns KV caching and conditioning with training configurations to mitigate drifting in long video generation.",
+      "brief": "The authors propose In-Distribution Forcing to address the KV-provenance problem where cached entries become out-of-distribution beyond the training horizon. They report that the method remains competitive on standard video generation benchmarks while substantially outperforming prior work in mitigating drifting, validated by drift metrics and a user study. The listing does not specify the exact benchmark names, quantitative scores, or the specific dataset used for the user study, leaving the magnitude of improvement and generalizability unverified from the abstract alone.\n\nResearchers working on autoregressive video diffusion models or long-horizon generation may find the self-caching mechanism relevant for addressing color and texture drift. Practitioners focused on short-horizon video generation or non-autoregressive architectures may find the specific KV conditioning adjustments less applicable to their current pipelines. The absence of concrete numerical results in the listing prevents a definitive assessment of the method's practical impact without further verification.\n\nThe code repository is declared in the metadata, but the abstract does not confirm whether the released code matches the described self-caching implementation or includes the specific drift metrics used for validation. Readers should verify the repository contents and the exact evaluation protocols before relying on the reported competitive performance claims.",
+      "abstract": "Modern autoregressive (AR) video diffusion models excel at short-horizon video generation, yet generating long videos remains challenging due to drifting, where colors and textures shift, and motion dynamics decay. Existing works primarily rely on KV conditioning, which selects or modifies cached key-value (KV) entries to mitigate drifting. However, we observe that KV conditioning alone is insufficient as it assumes cached KV entries remain in-distribution. This assumption fails beyond the training horizon: nothing constrains the construction of KV entries during rollout, giving rise to the KV-provenance problem where cached entries themselves become out-of-distribution (OOD). To address this, we propose In-Distribution Forcing (ID-Forcing), a test-time framework that aligns both KV caching and KV conditioning with training configurations. Its key mechanism, self-caching, prevents OOD KV entries at their source. Each chunk is cached without attending to prior KV entry, keeping the rolling window exactly in-distribution. Consequently, ID-Forcing seamlessly extends short-horizon models to minute-scale video generation. Extensive evaluations show that our method remains competitive on standard video generation benchmark while substantially outperforming prior work in mitigating drifting, as validated by both our drift metrics and a user study.",
+      "takeaways": [
+        "The core object is a test-time framework for autoregressive video diffusion models that modifies KV caching and conditioning to maintain in-distribution properties.",
+        "A visible limit is the lack of specific quantitative benchmarks or user study details in the abstract, making it difficult to gauge the scale of improvement over prior work.",
+        "The artifact status is declared as a public GitHub repository, but the abstract does not confirm if the code includes the specific drift metrics or evaluation scripts mentioned."
+      ],
+      "plain": {
+        "reported": "The authors state that their method performs much better than previous methods at reducing visual inconsistencies in long videos, based on their own measurement tools and a survey of human viewers.",
+        "brief": "The authors suggest a new way to handle long video creation by ensuring that the model's internal memory stays consistent with how it was originally trained. They claim this method keeps up with standard tests for video quality while being much better at stopping colors and textures from shifting over time, which they checked using their own tools and a human survey. The summary does not list the specific tests used, the exact scores, or the details of the human survey, so the size of the improvement is not clear from this text alone.\n\nPeople who build AI systems that create videos step-by-step might find this memory management technique useful for fixing visual glitches in long clips. People who use different types of video AI or only make short clips might not find this specific fix helpful for their current work. Because the summary lacks specific numbers, it is hard to judge how much better this method is without looking at the full details.\n\nThe authors say they have put their code on a public website, but the summary does not say if that code includes the specific tools they used to measure visual drift. Readers should check the website and the full paper to see if the code matches the description and to find the exact test results.",
+        "takeaways": [
+          "The main idea is a new way to manage the AI's memory during video generation to keep the visuals consistent.",
+          "A clear limitation is that the summary does not provide specific numbers or test names, so the exact level of improvement is unknown.",
+          "The code is said to be available online, but it is not confirmed if the specific measurement tools mentioned are included in that code."
+        ]
+      },
+      "actions": [
+        "Verify the declared GitHub repository to confirm the availability of the self-caching implementation and the specific drift metrics used for evaluation.",
+        "Check the full paper for the exact names of the standard video generation benchmarks and the quantitative results from the user study to assess the magnitude of the reported improvements."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/In-Distribution-Forcing/ID-Forcing",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-06",
+        "publishedOn": "2026-10-02",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.03120",
+            "upvotes": 25
+          }
+        ]
+      },
+      "trend": {
+        "votes": 25,
+        "rank": 4,
+        "of": 49,
+        "perDay": 6
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 25,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-06T18:26:52.548Z"
+      }
+    },
+    {
+      "id": "2610.04128",
+      "arxivId": "2610.04128",
+      "url": "https://arxiv.org/abs/2610.04128",
+      "topic": "Security",
+      "reported": "The authors report that an attacker recovers 97.38% of tokens when seeing gradients on GPT-2.",
+      "metrics": [
+        "97.38% of tokens",
+        "3.17 percentage points",
+        "37.77% with them"
+      ],
+      "title": "What Gradients Add to Text Leakage in Split Language Models, Counted per Token and per Document",
+      "authors": "Georgios Politis, Evangelos Pappas",
+      "takeaway": "The paper claims that gradients sent during split learning significantly increase the amount of client text an observer can reconstruct from split-model traffic.",
+      "brief": "The authors argue that gradients in split learning leak substantial client text, measured per token and per document.\n\nThey report higher token recovery with gradients on GPT-2 and note that document-level recovery increases sharply, while a secret mixup defence reduces exact document reconstruction but leaves high token recovery. The listing does not establish whether these results generalize beyond the specific models and layer configurations tested.\n\nResearchers studying privacy in federated or split learning should open this to assess leakage metrics; those focused solely on model accuracy may ignore it.",
+      "abstract": "Split learning lets a client train a language model on a server without sending its text. The client runs the first layers itself and sends the server only their output, a vector of numbers for each token. During training, the server sends gradients back. We show that an observer at the split can rebuild most of the client's text from this traffic, and we measure how much the gradients help. On GPT-2, an attacker who holds only the publicly released weights of the client's layers recovers 94.20% of tokens from the activations alone and 97.38% when it also sees the gradients, 3.17 percentage points more 95% interval [2.72, 3.64]. Counted by document, the difference is much larger. The attacker rebuilds 13.71% of 32-token documents exactly without the gradients and 37.77% with them, because a document only counts when every token is right. How we count also changes how good a defence looks. Secret mixup, which blends each outgoing vector with a decoy, stops the attacker from rebuilding almost any document exactly, yet the attacker still recovers 83-91% of tokens. In a second experiment on GPT-2 and Qwen3-0.6B, where the server trains only a run of consecutive layers, the layer at which the run starts changes both model quality and leakage, even when the run's length is fixed. We recommend reporting leakage both per token and per document, and treating what a split model sends as being as sensitive as the text itself.",
+      "takeaways": [
+        "The object is the leakage of client text via gradients in split language models.",
+        "A visible limit is that results are reported for specific models like GPT-2 and Qwen3-0.6B with fixed layer runs.",
+        "The artifact status is not established in the listing, as no code or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that an attacker recovers 97.38% of tokens when seeing gradients on GPT-2.",
+        "brief": "The authors argue that the mathematical updates (gradients) sent during a type of distributed training (split learning) reveal a lot of the user's private text. They measured this by checking how much of the original text an outsider could guess.\n\nThey found that including these updates helped guess more words correctly on a specific AI model (GPT-2). They also noted that a privacy trick (secret mixup) stopped outsiders from guessing whole sentences perfectly, but they could still guess most individual words. The listing does not say if these findings apply to other AI models or training setups.\n\nPeople studying how to keep data private in distributed AI systems should open this to see the details. People only interested in how fast or accurate the AI model is might ignore it.",
+        "takeaways": [
+          "The focus is on how much private text leaks through the training updates in split learning.",
+          "A visible limit is that the tests were done on specific AI models and specific parts of the model.",
+          "It is not stated in the listing whether the code or data used for the tests is available."
+        ]
+      },
+      "actions": [
+        "Verify the exact experimental setup and model versions in the PDF to confirm the reported percentages.",
+        "Check the PDF for details on the secret mixup defence implementation and its impact on model utility."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.CR",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-06",
+        "publishedOn": "2026-10-02",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.04128",
+            "upvotes": 5
+          }
+        ]
+      },
+      "trend": {
+        "votes": 5,
+        "rank": 30,
+        "of": 49,
+        "perDay": 1
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 5,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-06T18:26:52.548Z"
+      }
+    },
+    {
+      "id": "2610.03726",
+      "arxivId": "2610.03726",
+      "url": "https://arxiv.org/abs/2610.03726",
+      "topic": "Physics",
+      "reported": "The authors report that for a recent four-mass proposal, the observed flagged behavior is at least 0.1630 from the claimed field-detector family, exceeding its 0.0898 distance from Bell locality.",
+      "metrics": [
+        "0.1630",
+        "0.0898",
+        "\\(\\sqrt2\\)"
+      ],
+      "title": "Minimum Experimental Information for Certifying Bell Nonlocality of Gravity",
+      "authors": "Jianqi Sheng",
+      "takeaway": "The paper determines the additional information required to attribute a Bell violation to a gravitational field, identifying field-only factorization and a local measurement-incompatibility witness as the minimum missing information.",
+      "brief": "The authors argue that a Bell violation by material probes does not identify which internal subsystem produced the nonlocal behavior. They determine the additional information required to attribute such a violation to a gravitational field, specifically field-only factorization and a local measurement-incompatibility witness on each wing.\n\nThey report that for a recent four-mass proposal, the claimed field-only measurements obey the stronger CHSH bound \\(\\sqrt2\\). The observed flagged behavior is at least 0.1630 from the claimed field-detector family, exceeding its 0.0898 distance from Bell locality. The listing does not establish whether these distances are experimentally measured or derived from theoretical parameters.\n\nResearchers investigating quantum gravity certification or Bell nonlocality in gravitational fields may find the specific constraints on field-only factorization relevant. Those not working on attributing Bell violations to specific gravitational subsystems may find the technical requirements for certification less directly applicable.",
+      "abstract": "A Bell violation by material probes certifies nonlocal behavior, but it does not identify which internal subsystem carried or was measured to produce that behavior. We determine the additional information required to attribute such a violation to a gravitational field. For any setting-independent field-to-probe channel completed before the Bell settings are chosen, an entanglement-breaking channel makes all induced field measurements jointly measurable. A static Newtonian phase pickup belongs to this class, even with arbitrary adaptive probe control. Applied to a recent four-mass proposal, the claimed field-only measurements obey the stronger CHSH bound \\(\\sqrt2\\), whereas the Bell-active operation is the source-to-probe instrument that includes the coherent source herald. At the published parameters, the observed flagged behavior is at least \\(0.1630\\) from the claimed field-detector family, exceeding its \\(0.0898\\) distance from Bell locality. We then incorporate a common field slice, gravitational constraints, dressing, detector backreaction, and coherent references into a robust certification theorem. The result isolates the minimum missing information: field-only factorization and a local measurement- incompatibility witness on each wing. More precise phase data cannot replace either requirement.",
+      "takeaways": [
+        "The object is the minimum experimental information needed to certify Bell nonlocality specifically of a gravitational field, distinguishing it from general material probe violations.",
+        "A visible limit is that the analysis relies on a specific four-mass proposal and assumes setting-independent field-to-probe channels completed before Bell settings are chosen.",
+        "The artifact status is not established in the listing, as no code, dataset, or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that for a recent four-mass proposal, the observed flagged behavior is at least 0.1630 from the claimed field-detector family, exceeding its 0.0898 distance from Bell locality.",
+        "brief": "The authors argue that a Bell violation by material probes does not identify which internal subsystem produced the nonlocal behavior. They determine the additional information required to attribute such a violation to a gravitational field, specifically field-only factorization and a local measurement-incompatibility witness on each wing.\n\nThey report that for a recent four-mass proposal, the claimed field-only measurements obey the stronger CHSH bound \\(\\sqrt2\\). The observed flagged behavior is at least 0.1630 from the claimed field-detector family, exceeding its 0.0898 distance from Bell locality. The listing does not establish whether these distances are experimentally measured or derived from theoretical parameters.\n\nResearchers investigating quantum gravity certification or Bell nonlocality in gravitational fields may find the specific constraints on field-only factorization relevant. Those not working on attributing Bell violations to specific gravitational subsystems may find the technical requirements for certification less directly applicable.",
+        "takeaways": [
+          "The object is the minimum experimental information needed to certify Bell nonlocality specifically of a gravitational field, distinguishing it from general material probe violations.",
+          "A visible limit is that the analysis relies on a specific four-mass proposal and assumes setting-independent field-to-probe channels completed before Bell settings are chosen.",
+          "The artifact status is not established in the listing, as no code, dataset, or repository is declared."
+        ]
+      },
+      "actions": [
+        "Verify the derivation of the 0.1630 and 0.0898 distances in the PDF to confirm whether they are theoretical bounds or experimental measurements.",
+        "Check the PDF for the specific definition of the 'coherent source herald' and how it constitutes the Bell-active operation in the four-mass proposal."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "gr-qc"
+      ],
+      "listing": {
+        "listedOn": "2026-10-06",
+        "publishedOn": "2026-10-06",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.03726"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-06"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-06T18:26:52.548Z"
+      }
+    },
+    {
+      "id": "2610.03791",
+      "arxivId": "2610.03791",
+      "url": "https://arxiv.org/abs/2610.03791",
+      "topic": "Econ",
+      "reported": "The authors report that real construction output grew faster than in any regional peer except Romania, measured against regional macroeconomic statistics.",
+      "metrics": [
+        "returned by 2024 to roughly its 2000 level"
+      ],
+      "title": "Growth by Intervention: State Demand and Preferential Allocation in the Hungarian Construction Sector since 2010",
+      "authors": "Zoltan Bartha",
+      "takeaway": "The paper claims that combined demand stimulus and favouritism in the Hungarian construction sector produce extensive growth without efficiency gains.",
+      "brief": "The paper argues that post-2010 Hungarian construction growth resulted from mutually reinforcing policies of expansionary demand and preferential allocation to politically connected firms.\n\nThe authors state that evidence supports four propositions, including that connected firms captured a rising share of sector profits while labour productivity returned to its 2000 level by 2024. The listing does not establish specific statistical significance levels or causal identification strategies beyond the descriptive case study design.\n\nResearchers studying political economy, state intervention, or Hungarian economic history may find the case study relevant. Those requiring experimental or quasi-experimental causal evidence for similar markets may find the descriptive design insufficient.",
+      "abstract": "This paper examines the post-2010 expansion of the Hungarian construction sector as a case study of large-scale government intervention in a single market. A political economy framework conceptualises the intervention as two mutually reinforcing policies - expansionary demand (public procurement and housing subsidies) and preferential allocation towards politically connected firms - operating under inelastic supply through two mechanisms: market-level subsidy capitalisation and firm-level rent extraction. Using a structured descriptive case study design, the paper draws on Hungarian Central Statistical Office and Eurostat macroeconomic statistics, firm-level data on Hungary's largest companies (CrefoPort), policy documents, and a regional comparison to assess four propositions derived from the framework. The evidence supports all four: real construction output grew faster than in any regional peer except Romania; construction producer prices persistently outpaced the GDP deflator; ownership of the leading firms shifted towards politically connected domestic owners, whose profitability rose sharply while their exports remained negligible; labour productivity per hour worked returned by 2024 to roughly its 2000 level; and connected firms captured a rising share of sector profits, as the subsidies' value was partly eroded by the price increases they induced. Competing explanations do not jointly account for this configuration. The findings illustrate how combined demand stimulus and favouritism produce extensive growth without efficiency gains.",
+      "takeaways": [
+        "The object is a descriptive case study of the Hungarian construction sector from 2010 onward.",
+        "A visible limit is the reliance on a structured descriptive design rather than a causal identification strategy.",
+        "No code or data repository is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that the value of construction work done in Hungary increased more quickly than in any nearby country except Romania, based on government statistics.",
+        "brief": "The paper suggests that the growth of the building industry in Hungary after 2010 was driven by the government buying more projects and giving advantages to companies linked to politicians.\n\nThe authors say their data supports four main ideas, such as companies with political connections making more profit while the overall efficiency of workers stayed the same as in the year 2000. The summary does not say how statistically strong these connections are or how the authors proved that the government actions caused the growth rather than other factors.\n\nPeople who study how governments affect markets or the history of Hungary's economy might find this useful. People who need proof that one specific action caused a result using strict statistical tests might find this study not detailed enough.",
+        "takeaways": [
+          "The study looks at the building industry in Hungary using a detailed description of events.",
+          "A limitation is that it describes what happened without using methods that prove cause and effect.",
+          "The listing does not mention any shared computer code or data files."
+        ]
+      },
+      "actions": [
+        "Verify the specific data sources and variable definitions in the full PDF to assess the robustness of the comparative claims.",
+        "Check the full text for any discussion of alternative explanations or sensitivity analyses not summarized in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-10-06",
+        "publishedOn": "2026-10-06",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.03791"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-06"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-06T18:26:52.548Z"
+      }
+    },
+    {
+      "id": "2610.03859",
+      "arxivId": "2610.03859",
+      "url": "https://arxiv.org/abs/2610.03859",
+      "topic": "Engineering",
+      "reported": "The authors report that simulation and experimental results demonstrate the effectiveness of the proposed method under limited-rotation conditions.",
+      "metrics": [],
+      "title": "Two-Dimensional Magnetometer Calibration Using Inertial Sensors for Heading Estimation",
+      "authors": "Mohammad Sadeghi, Rouhollah Amiri",
+      "takeaway": "The paper proposes a simple, closed-form, non-iterative two-dimensional magnetometer calibration method aided by inertial sensors that uses single-axis rotational motion and measured roll and pitch angles for heading estimation.",
+      "brief": "The authors propose a two-dimensional magnetometer calibration method that relies on inertial sensors to provide roll and pitch angles. The method is described as simple, closed-form, and non-iterative, requiring only single-axis rotational motion rather than the multi-axis excitation typical of conventional three-dimensional approaches.\n\nThe listing states that simulation and experimental results demonstrate the method's effectiveness under limited-rotation conditions. No specific quantitative metrics, error bounds, or benchmark comparisons are provided in the supplied abstract, leaving the magnitude of performance gains and specific experimental constraints unresolved.\n\nThis packet is relevant to researchers working on sensor fusion, navigation systems, or magnetometer calibration who need solutions for environments where full three-axis rotation is not feasible. It may be less relevant to those requiring high-precision quantitative benchmarks or iterative optimization frameworks for general-purpose sensor calibration.",
+      "abstract": "Magnetometers have numerous applications, one of the most important being heading determination. In practice, magnetometer measurements are affected by sensor manufacturing errors and by hard-iron and soft-iron effects, and therefore calibration is required for reliable heading estimation. Many conventional three-dimensional calibration methods require sufficiently rich multi-axis rotational excitation, which is not feasible in some applications, particularly for in-situ or online calibration. This paper proposes a two-dimensional magnetometer calibration method aided by inertial sensors. The proposed method is simple, closed-form, and non-iterative, and uses a single-axis rotational motion together with measured roll and pitch angles. After calibration, the corrected magnetic measurements are used for heading determination. Simulation and experimental results demonstrate the effectiveness of the proposed method under limited-rotation conditions.",
+      "takeaways": [
+        "The core object is a closed-form, non-iterative calibration algorithm that reduces the rotational excitation requirement from three axes to one axis by leveraging inertial sensor data.",
+        "A visible limit is the absence of quantitative performance data in the listing, which prevents assessment of the method's accuracy relative to standard three-dimensional calibration techniques.",
+        "The artifact status is not established in the listing, as no code, dataset, or repository URL is declared or mentioned."
+      ],
+      "plain": {
+        "reported": "The authors state that their computer simulations and physical tests show the method works well when the device can only rotate in one direction.",
+        "brief": "The authors suggest a way to fix errors in compass sensors using data from motion sensors. Their method is mathematically straightforward and does not require complex, repeated calculations. It only needs the device to spin in one direction, unlike older methods that need spinning in multiple directions.\n\nThe listing says that tests show the method works in situations with limited movement. However, the listing does not provide specific numbers showing how accurate the method is or how it compares to other methods, so the exact level of performance is unknown.\n\nThis information is useful for engineers building navigation systems who cannot rotate their devices freely. It may not be useful for people who need detailed numerical comparisons or who are looking for software code to use immediately.",
+        "takeaways": [
+          "The main contribution is a mathematically simple formula that fixes compass errors using only one direction of rotation and motion sensor data.",
+          "A clear limitation is that the listing lacks specific numbers, so it is impossible to know how accurate the method is compared to standard techniques.",
+          "The listing does not mention any available software code or data files, so the status of any digital artifacts is unknown."
+        ]
+      },
+      "actions": [
+        "Verify the specific experimental setup and quantitative error metrics by reviewing the full PDF to determine if the 'effectiveness' claim is supported by rigorous numerical data.",
+        "Check the paper's methodology section to confirm the exact assumptions regarding inertial sensor accuracy and the specific single-axis motion profile required for the closed-form solution."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-10-06",
+        "publishedOn": "2026-10-06",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.03859"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-06"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-06T18:26:52.548Z"
+      }
+    },
+    {
+      "id": "2610.03916",
+      "arxivId": "2610.03916",
+      "url": "https://arxiv.org/abs/2610.03916",
+      "topic": "Stats",
+      "reported": "The authors report that LIFTS provides accurate point predictions, improved distributional accuracy, and well-calibrated predictive intervals in simulations and an application to PhysioNet 2019.",
+      "metrics": [
+        "PhysioNet 2019"
+      ],
+      "title": "Latent-driven Imputation and Forecasting for partially observed Time Series (LIFTS)",
+      "authors": "Sanyou Wu, Ying Wei, Kaizheng Wang",
+      "takeaway": "LIFTS is a probabilistic framework where a latent process jointly governs the complete measurement trajectory and observation mask for imputation and forecasting.",
+      "brief": "The paper proposes LIFTS, a probabilistic framework where a latent process jointly governs the complete measurement trajectory and observation mask. This design allows observation patterns to inform latent-state inference for both forecasting and imputation in partially observed multivariate time series.\n\nThe authors report that LIFTS provides accurate point predictions, improved distributional accuracy, and well-calibrated predictive intervals in simulations and an application to PhysioNet 2019. They state it outperforms competing methods particularly when training data are limited and has substantially faster inference than the diffusion-based baseline. The listing does not specify the exact quantitative error rates or speedup factors achieved in these experiments.\n\nResearchers working on missing data in time series or probabilistic forecasting may find the joint latent-masking approach relevant. Those focused solely on fully observed data or non-probabilistic point estimates may find the framework less directly applicable.",
+      "abstract": "Partially observed multivariate time series pose two coupled challenges: recovering missing measurements and forecasting future trajectories when observation patterns are informative. Existing methods often assume ignorable missingness or use the mask only as an auxiliary input. We propose LIFTS (Latent-driven Imputation and Forecasting for partly observed Time Series), a probabilistic framework in which a latent process jointly governs the complete measurement trajectory and observation mask, allowing observation patterns to inform latent-state inference for both forecasting and imputation. LIFTS combines flexible neural-network parameterizations with a forward-backward architecture: the forward pass performs filtering and autoregressive forecasting, while the backward pass performs smoothing and conditional multiple imputation. The model and inference components are trained jointly using a masked energy score and self-masking. We establish forward-backward distributional representations for the general framework and, for an explicit structural subclass, provide full-law identification and consistency guarantees. Simulations and an application to PhysioNet 2019 show that LIFTS provides accurate point predictions, improved distributional accuracy, and well-calibrated predictive intervals; it outperforms competing methods particularly when training data are limited and has substantially faster inference than the diffusion-based baseline.",
+      "takeaways": [
+        "The core object is a probabilistic framework using a latent process to jointly model measurements and observation masks.",
+        "The listing claims improved distributional accuracy and faster inference but does not provide specific numerical benchmarks or error margins.",
+        "No code repository or implementation details are declared in the supplied metadata."
+      ],
+      "plain": {
+        "reported": "The authors state that their model, LIFTS, gives accurate single-value predictions, better probability estimates, and reliable prediction ranges in computer simulations and a real-world medical dataset called PhysioNet 2019.",
+        "brief": "The paper introduces a method called LIFTS for handling time series data where some values are missing. It uses a hidden mathematical process to manage both the actual data values and the pattern of which values are missing. This helps the model predict future values and fill in missing ones more effectively.\n\nThe authors say their method works well in tests and on a medical dataset. They claim it is better than other methods when there is not much training data and that it runs much faster than a specific type of competing model called a diffusion-based baseline. However, the summary does not list the exact numbers for how much better or faster it is.\n\nPeople who study how to handle missing data in time-based records or who need probabilistic forecasts might find this useful. People who only care about simple point predictions or who have complete data sets might not need this specific approach.",
+        "takeaways": [
+          "The main idea is a model that links the missing data pattern with the actual data values using a hidden variable.",
+          "The summary claims the model is accurate and fast but does not give specific numbers to prove how much better it is.",
+          "The summary does not mention if the code for this model is available to download or use."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative improvements in distributional accuracy and inference speed by reading the full PDF.",
+        "Check the PhysioNet 2019 application section for the exact metrics used to define 'well-calibrated predictive intervals'."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-10-06",
+        "publishedOn": "2026-10-06",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.03916"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-06"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-06T18:26:52.548Z"
+      }
+    },
+    {
+      "id": "2610.04029",
+      "arxivId": "2610.04029",
+      "url": "https://arxiv.org/abs/2610.04029",
+      "topic": "Health",
+      "reported": "The authors report that a stable non-monotonic response requires either an IFFL or a combination of positive and negative feedback loops, measured across arbitrary systems.",
+      "metrics": [],
+      "title": "On non-monotonic steady state response curves",
+      "authors": "Polly Y. Yu, Eduardo D. Sontag",
+      "takeaway": "The paper claims to extend a previous counterexample to arbitrary systems, showing that non-monotonic steady state responses require either an incoherent feedforward loop or mixed feedback loops.",
+      "brief": "The authors extend a prior result to arbitrary systems, arguing that stable non-monotonic response curves require either an incoherent feedforward loop or a combination of positive and negative feedback loops. They apply these theoretical findings to signaling pathways, gene regulation, and ecological consumer-resource models, identifying necessary motifs for the first two and providing an alternative proof of the Competitive Exclusion Principle for the last. The listing does not establish specific quantitative performance metrics or experimental validation limits beyond the theoretical scope described.\n\nThe strongest reported result is the generalization of the mechanism requirement to arbitrary systems, supported by the authors' theoretical analysis. The listing does not specify whether these findings were validated against empirical biological data or purely derived from mathematical models. No numerical benchmarks or error rates are provided in the abstract.\n\nResearchers studying network motifs in biological control systems or ecological modeling may find the theoretical framework relevant. Those seeking empirical validation or specific quantitative predictions for particular biological datasets may need to consult the full text for details not present in the listing.",
+      "abstract": "Non-monotonic steady state response curves can readily arise from an incoherent feedforward loop (IFFL), which has also been conjectured to be a necessary mechanism. In a previous work, we showed this conjecture to be false for systems where the control parameter directly influences only one state variable. Here, we extend this result to arbitrary systems. We show that a stable non-monotonic response requires either an IFFL or a combination of positive and negative feedback loops. Finally, we apply our theoretical findings to three network-structured biological contexts: signaling pathways, gene regulation, and ecological consumer-resource models. For the first two contexts, we identify necessary motifs for non-monotonic responses, while for consumer-resource models, we provide an alternative proof of the Competitive Exclusion Principle.",
+      "takeaways": [
+        "The object is a theoretical extension of network motif requirements for non-monotonic responses to arbitrary systems.",
+        "A visible limit is the absence of quantitative metrics or empirical validation details in the provided listing.",
+        "The artifact status is theoretical, with no code or dataset declared in the metadata."
+      ],
+      "plain": {
+        "reported": "The authors report that a stable non-monotonic response requires either an IFFL or a combination of positive and negative feedback loops, measured across arbitrary systems.",
+        "brief": "The authors extend a prior result to arbitrary systems, arguing that stable non-monotonic response curves require either an incoherent feedforward loop or a combination of positive and negative feedback loops. They apply these theoretical findings to signaling pathways, gene regulation, and ecological consumer-resource models, identifying necessary motifs for the first two and providing an alternative proof of the Competitive Exclusion Principle for the last. The listing does not establish specific quantitative performance metrics or experimental validation limits beyond the theoretical scope described.\n\nThe strongest reported result is the generalization of the mechanism requirement to arbitrary systems, supported by the authors' theoretical analysis. The listing does not specify whether these findings were validated against empirical biological data or purely derived from mathematical models. No numerical benchmarks or error rates are provided in the abstract.\n\nResearchers studying network motifs in biological control systems or ecological modeling may find the theoretical framework relevant. Those seeking empirical validation or specific quantitative predictions for particular biological datasets may need to consult the full text for details not present in the listing.",
+        "takeaways": [
+          "The object is a theoretical extension of network motif requirements for non-monotonic responses to arbitrary systems.",
+          "A visible limit is the absence of quantitative metrics or empirical validation details in the provided listing.",
+          "The artifact status is theoretical, with no code or dataset declared in the metadata."
+        ]
+      },
+      "actions": [
+        "Verify the specific mathematical assumptions and proof details in the PDF to confirm the scope of 'arbitrary systems'.",
+        "Check the full text for any empirical examples or numerical simulations that support the theoretical claims in the biological contexts."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM"
+      ],
+      "listing": {
+        "listedOn": "2026-10-06",
+        "publishedOn": "2026-10-06",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.04029"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-06"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-06T18:26:52.548Z"
+      }
+    }
+  ]
+}
