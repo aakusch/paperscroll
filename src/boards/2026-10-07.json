@@ -1,0 +1,665 @@
+{
+  "date": "2026-10-07",
+  "label": "Wed, Oct 7",
+  "minutes": 10,
+  "poolSize": 147,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-10-07T19:02:22.506Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2610.08448",
+      "arxivId": "2610.08448",
+      "url": "https://arxiv.org/abs/2610.08448",
+      "topic": "AI",
+      "reported": "The authors report that restricting reverse KL to a student-selected top-16 subset of the shared vocabulary at each strict position achieves accuracy comparable to full shared-vocabulary OPD, outperforming the evaluated cross-tokenizer baselines on mathematical reasoning and code generation.",
+      "metrics": [
+        "top-16 subset"
+      ],
+      "title": "Rethinking Cross-Tokenizer On-Policy Distillation: From Alignment Coverage to Supervision Reliability",
+      "authors": "Bingxi Hou, Guochao Jiang, Guofeng Quan, Weiqing Li, Wenfeng Feng, Guohua Liu, Yuewei Zhang",
+      "takeaway": "The paper claims that prioritizing supervision reliability at strict alignment positions is more effective than maximizing alignment coverage in cross-tokenizer on-policy distillation.",
+      "brief": "The authors argue that expanding alignment coverage in cross-tokenizer on-policy distillation does not necessarily improve learning, proposing instead that supervision reliability at strict positions is the critical factor.\n\nThey report that a compact top-16 vocabulary subset matches full-vocabulary accuracy and outperforms baselines, while adding span supervision reduces accuracy due to conflicting gradients. The listing does not establish specific numerical accuracy values or the magnitude of the performance drop.\n\nResearchers working on knowledge distillation with heterogeneous tokenizers should open this paper to evaluate the reliability-based approach. Those focused solely on maximizing token alignment coverage may ignore it if they do not encounter conflicting supervision signals.",
+      "abstract": "On-Policy Distillation (OPD) trains a student on its own generations using teacher feedback. With different tokenizers, comparing teacher and student predictions requires alignment at both sequence and vocabulary levels. In this paper, we examine whether expanding this alignment coverage improves learning. Across three heterogeneous teacher--student pairs on mathematical reasoning and code generation, strict 1:1 groups already cover most student-generated tokens despite substantial vocabulary mismatch. On responses sampled from the students before distillation, the shared vocabulary retains nearly all teacher and student probability mass at strictly aligned positions on average. Restricting reverse KL to a student-selected top-16 subset of the shared vocabulary at each strict position achieves accuracy comparable to full shared-vocabulary OPD, outperforming the evaluated cross-tokenizer baselines. Adding mean squared error supervision on span log-probabilities in mismatch groups gives complete supervision coverage, yet reduces accuracy. At checkpoints from training with only the strict loss, the span gradients show weak or negative directional agreement with the strict gradients and grow in magnitude relative to them. These diagnostics may help explain the accuracy drop from adding span supervision. Our findings motivate a shift from maximizing alignment coverage to prioritizing supervision reliability: compact supervision at strict positions can be more effective than broader coverage that introduces weakly aligned or conflicting training signals.",
+      "takeaways": [
+        "The object is a diagnostic and methodological shift in cross-tokenizer on-policy distillation, moving from coverage maximization to supervision reliability.",
+        "A visible limit is the lack of specific quantitative accuracy figures in the abstract, leaving the exact performance gap between methods unspecified.",
+        "The artifact status is not established in the listing, as no code repository or dataset link is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that using a small, carefully chosen list of 16 common words for the teacher's feedback matches the performance of using all common words, and beats other methods, when tested on math and coding tasks.",
+        "brief": "The authors suggest that trying to match every single word between a teacher AI and a student AI is less useful than making sure the feedback on the words that do match is accurate.\n\nThey found that using just 16 key words for feedback works just as well as using all matching words, and adding extra feedback on non-matching words actually hurts performance. The text does not give specific scores, so we do not know exactly how much better or worse the methods are.\n\nPeople who train AI models by having a larger model teach a smaller one with different word lists should look at this. People who are not dealing with mismatched word lists between models can likely skip it.",
+        "takeaways": [
+          "The paper focuses on a specific problem in AI training where the teacher and student models use different word lists, suggesting a new way to handle the mismatch.",
+          "A clear limitation is that the abstract does not provide specific test scores, so the exact size of the performance differences is unknown from this summary.",
+          "It is not stated in the provided text whether the code or data used in the study is available for public use."
+        ]
+      },
+      "actions": [
+        "Verify the specific accuracy numbers and baseline comparisons by reading the full PDF, as the abstract only states 'comparable' and 'outperforming' without values.",
+        "Check the paper's supplementary materials or repository for the implementation of the 'strict 1:1 groups' alignment method to assess reproducibility."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-07",
+        "publishedOn": "2026-10-06",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.08448",
+            "upvotes": 153
+          }
+        ]
+      },
+      "trend": {
+        "votes": 153,
+        "rank": 1,
+        "of": 50,
+        "perDay": 153
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 153,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-06"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-07T19:02:22.506Z"
+      }
+    },
+    {
+      "id": "2610.03543",
+      "arxivId": "2610.03543",
+      "url": "https://arxiv.org/abs/2610.03543",
+      "topic": "AI",
+      "reported": "The authors report that human evaluations show overall preference rates above 80% against all evaluated baselines.",
+      "metrics": [
+        "overall preference rates above 80%"
+      ],
+      "title": "DuoMatching: Joint-Marginal Distribution Matching for Few-Step Video Generation",
+      "authors": "Jiahao Zhan, Yan Wang, Yongrui Ma, Qunliang Xing, Ruchang Yao, Runtao Liu, Shijie Zhao, Tianfan Xue",
+      "takeaway": "DuoMatching is a distribution matching framework that approximates the real video distribution through a unified joint-marginal formulation to improve visual quality and semantic alignment.",
+      "brief": "The authors propose DuoMatching, a framework that adds a marginal matching objective to existing joint matching formulations for video generation. This additional objective provides frame-level supervision from an image generator, transferring complementary visual and semantic priors to the video student model.\n\nThe authors report that experiments demonstrate improvements in visual quality, composition, and semantic alignment while largely preserving motion dynamics. They state that human evaluations show overall preference rates above 80% against all evaluated baselines. The listing does not specify the exact datasets, specific baseline names, or quantitative metrics for visual quality and semantic alignment beyond the preference rate.\n\nResearchers working on few-step video generation or distribution matching distillation may find the joint-marginal formulation and LatentBridge component relevant. Those not focused on video generation or distillation methods may ignore this work.",
+      "abstract": "Streaming video generation has benefited from distribution matching distillation (DMD), which matches the joint distribution of video frames to a video teacher's approximation of the real video distribution. Although this joint matching mitigates drift during autoregressive rollouts, limitations remain in visual quality and semantic alignment. To address these limitations, we propose DuoMatching, a distribution matching framework that approximates the real video distribution through a unified joint-marginal formulation. On top of existing joint matching formulations, the additional marginal matching objective provides dedicated frame-level supervision from an image generator, transferring complementary visual and semantic priors from it. To apply this frame-level supervision in video generation, we introduce LatentBridge to resolve the latent representation mismatch between the video student and the image teacher. Latent Variation Sampling further distributes such frame-level supervision across distinct temporal segments, reducing redundancy. Experiments demonstrate that DuoMatching improves visual quality, composition, and semantic alignment while largely preserving motion dynamics. Human evaluations show overall preference rates above 80% against all evaluated baselines. The project page is available at https://johnzhan2023.github.io/DuoMatching/.",
+      "takeaways": [
+        "The core object is a distribution matching framework that unifies joint and marginal objectives to leverage image generator priors for video generation.",
+        "A visible limit is the reliance on human evaluations for the primary reported result, with specific quantitative benchmarks for visual quality and semantic alignment not detailed in the abstract.",
+        "The artifact status is established by the provided project page and GitHub repository URLs, though the listing does not confirm the completeness or functionality of the code."
+      ],
+      "plain": {
+        "reported": "The authors report that human evaluations show overall preference rates above 80% against all evaluated baselines.",
+        "brief": "The authors propose DuoMatching, a method that combines two types of statistical matching to make generated videos look more like real ones. It uses an image generator to provide specific details for individual frames, helping the video generator learn better visual and semantic features.\n\nThe authors say their tests show the videos have better visual quality, better composition, and better alignment with the intended meaning, while keeping the movement natural. They state that people preferred their videos over other methods in over 80% of comparisons. The abstract does not list the specific datasets used or the exact scores for visual quality and meaning alignment.\n\nPeople who work on making videos with AI or improving how AI models learn from other models might find this useful. People who do not work in these specific areas might not need to look at this paper.",
+        "takeaways": [
+          "The main idea is a method that combines two ways of matching data distributions to help video AI learn from image AI.",
+          "A limitation is that the main result is based on human opinions, and the abstract does not give specific numbers for how well the videos look or match their meaning.",
+          "The authors provide links to a project website and a code repository, but the abstract does not say if the code is complete or works as described."
+        ]
+      },
+      "actions": [
+        "Verify the specific datasets and baseline models used in the human evaluations by consulting the full PDF.",
+        "Check the GitHub repository to confirm the availability of pre-trained models and training scripts for the LatentBridge component."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/JohnZhan2023/DuoMatching",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-07",
+        "publishedOn": "2026-10-02",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.03543",
+            "upvotes": 67
+          }
+        ]
+      },
+      "trend": {
+        "votes": 67,
+        "rank": 2,
+        "of": 50,
+        "perDay": 13
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 67,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-07T19:02:22.506Z"
+      }
+    },
+    {
+      "id": "2610.07767",
+      "arxivId": "2610.07767",
+      "url": "https://arxiv.org/abs/2610.07767",
+      "topic": "AI",
+      "reported": "The authors report that TRACE enables joint FP4 weight/activation and FP4 KV-cache rollout with RL performance comparable to BF16 rollout, measured on four large-scale MoE language models across reasoning, coding, and long-horizon RL tasks.",
+      "metrics": [
+        "up to 5.4xrollout speedup"
+      ],
+      "title": "TRACE: Rollout-Guided Quantization-Aware Training for FP4 Reinforcement Learning of MoE Language Models",
+      "authors": "Xin Wang, Hao Yu, Zhengyang Zhuge, Bochao Mao, Zheng Li, Junda Feng, Yuyan Luo, Yi Zhang, Yizhong Cao, Mi Zhang, Dayiheng Liu, Jianwei Zhang",
+      "takeaway": "TRACE is an FP4 quantization framework for RL training of MoE language models that uses rollout-guided quantization-aware training to directly reduce the discrepancy between training and rollout execution paths.",
+      "brief": "The authors propose TRACE, an FP4 quantization framework for RL training of Mixture-of-Experts language models. It uses rollout-side quantization outcomes to guide training-side FP4 rounding decisions, aiming to reduce the discrepancy between the two quantized execution paths.\n\nThe authors report that TRACE enables joint FP4 weight/activation and FP4 KV-cache rollout with RL performance comparable to BF16 rollout. They measured this on four large-scale MoE language models across reasoning, coding, and long-horizon RL tasks, achieving up to 5.4xrollout speedup. The listing does not specify the exact hardware, model names, or task benchmarks used for these measurements.\n\nResearchers working on low-precision reinforcement learning for large language models may find this relevant. Those not focused on FP4 quantization or MoE RL training may ignore it.",
+      "abstract": "Reinforcement learning (RL) for post-training large language models (LLMs) incurs substantial computation and memory overhead during rollout generation, which motivates low-precision rollout for efficient RL training. However, existing FP4 RL methods suffer from a key limitation: they primarily optimize quantization accuracy on the training and rollout paths independently rather than directly reducing the discrepancy between the two quantized execution paths. In this work, we propose TRACE (Train-Rollout Quantization Alignment via Compact GuidancE), an FP4 quantization framework for RL training of Mixture-of-Experts (MoE) language models that addresses the limitation of existing FP4 RL methods. TRACE incorporates rollout-guided quantization-aware training that uses rollout-side quantization outcomes to guide training-side FP4 rounding decisions, directly reducing train-rollout discrepancy. Moreover, TRACE adopts an efficient quantization-information caching scheme that selectively retains mantissa and scale information from deeper layers to reduce the storage and communication overhead introduced by rollout guidance. We evaluate TRACE on four large-scale MoE language models across reasoning, coding, and long-horizon RL tasks. Our results demonstrate that TRACE enables joint FP4 weight/activation and FP4 KV-cache rollout with RL performance comparable to BF16 rollout, while achieving up to 5.4xrollout speedup and strong final FP4 performance compared with post-hoc FP4 quantization of BF16-trained policies.",
+      "takeaways": [
+        "The object is an FP4 quantization framework specifically designed for RL training of MoE language models.",
+        "A visible limit is that the listing does not specify the exact hardware, model names, or task benchmarks used for the reported speedup and performance comparisons.",
+        "The artifact status is not established in the listing, as no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their method allows the model to run in a very low-precision format (FP4) during both training and the generation phase, with performance similar to the standard high-precision format (BF16), tested on four large AI models.",
+        "brief": "The authors propose a method called TRACE to make large AI models run faster and use less memory during a specific type of training called reinforcement learning. It does this by using a very low-precision number format (FP4) and aligning how the model behaves during training and when it generates new text.\n\nThe authors say their method works as well as the standard high-precision format (BF16) on four large AI models. They tested this on tasks like reasoning and coding, and found it could be up to 5.4 times faster. The listing does not say which specific computer hardware or exact model names were used.\n\nPeople who work on making large AI models run efficiently with low-precision numbers might find this useful. People who do not work on this specific area of AI might not need to look at it.",
+        "takeaways": [
+          "The thing being described is a method to make large AI models run faster using a low-precision number format during a specific training process.",
+          "A limit is that the listing does not say which specific computer hardware or exact model names were used for the tests.",
+          "It is not stated in the listing whether the code for this method is available to download or use."
+        ]
+      },
+      "actions": [
+        "Verify the specific MoE model names, hardware configurations, and RL task benchmarks used in the evaluation by reading the full PDF.",
+        "Check the full PDF for details on the quantization-information caching scheme and its impact on storage and communication overhead."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-07",
+        "publishedOn": "2026-10-06",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.07767",
+            "upvotes": 54
+          }
+        ]
+      },
+      "trend": {
+        "votes": 54,
+        "rank": 3,
+        "of": 50,
+        "perDay": 54
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 54,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-06"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-07T19:02:22.506Z"
+      }
+    },
+    {
+      "id": "2610.05030",
+      "arxivId": "2610.05030",
+      "url": "https://arxiv.org/abs/2610.05030",
+      "topic": "AI",
+      "reported": "The authors report that experiments on three interactive benchmarks across six LLM backbones demonstrate the effectiveness of this approach.",
+      "metrics": [],
+      "title": "EVISKILL: Grounding Skill Evolution in Replayable Evidence",
+      "authors": "Yan Zhou, Yili Wang, Yiwei Dai, Qinggang Zhang, Xin Wang",
+      "takeaway": "EVISKILL is an evidence-driven framework that organizes execution observations into Replayable Evidence Cards and synthesizes edits with explicit links to their supporting contexts.",
+      "brief": "The authors propose EVISKILL to ground skill evolution in replayable evidence for LLM agents. They state that the framework organizes execution observations into Replayable Evidence Cards and synthesizes edits with explicit links to their supporting contexts. Targeted replay verifies these edits through re-execution and provides feedback for correction.\n\nThe authors report experiments on three interactive benchmarks across six LLM backbones demonstrating the effectiveness of this approach. The listing does not specify the names of the benchmarks, the specific LLM backbones, or any quantitative performance metrics. It also does not establish whether the reported effectiveness includes statistical significance or specific error rates.\n\nResearchers working on LLM agent skill evolution or procedural knowledge accumulation may find this relevant. Those requiring specific benchmark names or quantitative comparisons in the abstract may need to consult the full paper.",
+      "abstract": "Continual skill evolution enables LLM agents to accumulate and refine reusable procedural knowledge from interaction experience without updating model parameters. Its effectiveness depends on determining not only what to change, but also why a change is justified and when it should become persistent guidance. However, existing experience-driven methods can lose the behavioral evidence and task contexts supporting edits. Moreover, a global validation outcome provides an incomplete judgment of its constituent changes: locally supported corrections may be discarded with a rejected revision, while evidence may require further experience to inform useful updates. To this end, we introduce EVISKILL, an evidence-driven framework that organizes execution observations into Replayable Evidence Cards and synthesizes edits with explicit links to their supporting contexts. Targeted replay verifies these edits through re-execution and provides feedback for correction. Across epochs, EVISKILL preserves evidence and provisionally retains supported edits for further refinement, while global validation governs their incorporation into the final skill. Experiments on three interactive benchmarks across six LLM backbones demonstrate the effectiveness of this approach.",
+      "takeaways": [
+        "The object is a framework for LLM agents that uses Replayable Evidence Cards to justify and verify skill edits.",
+        "The visible limit is the absence of specific benchmark names, backbone details, or quantitative metrics in the provided listing.",
+        "The artifact status is indicated by a declared code repository URL, but the listing does not confirm its completeness or functionality."
+      ],
+      "plain": {
+        "reported": "The authors state that they tested their method on three interactive test suites using six different large language models and found it to be effective.",
+        "brief": "The authors suggest a system called EVISKILL that helps AI agents learn new skills by keeping a record of why changes are made. They claim this system creates 'cards' that link specific actions to the evidence that justified them. The system then re-runs these actions to check if they work correctly.\n\nThe authors say they tested this on three different interactive tasks using six different AI models. However, the summary does not say which specific tasks or models were used, nor does it provide any numbers showing how well the system performed compared to others. It is unclear if the results are statistically significant or if specific error rates were measured.\n\nPeople who study how AI agents learn new procedures might find this interesting. If you need to know exactly which tests were run or see specific performance numbers, you will need to read the full document.",
+        "takeaways": [
+          "The main idea is a system that helps AI agents learn by keeping a clear record of why they change their behavior.",
+          "A limitation is that the summary does not list the specific tests or models used, nor does it give any performance numbers.",
+          "The authors provide a link to their code, but the summary does not say if the code is complete or works as described."
+        ]
+      },
+      "actions": [
+        "Verify the specific interactive benchmarks and LLM backbones used in the experiments by reading the full PDF.",
+        "Check the declared code repository to confirm the availability of the EVISKILL implementation and associated data."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Zhouyaner/Eviskill",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-07",
+        "publishedOn": "2026-10-04",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.05030",
+            "upvotes": 36
+          }
+        ]
+      },
+      "trend": {
+        "votes": 36,
+        "rank": 4,
+        "of": 50,
+        "perDay": 12
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 36,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-04"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-07T19:02:22.506Z"
+      }
+    },
+    {
+      "id": "2610.07510",
+      "arxivId": "2610.07510",
+      "url": "https://arxiv.org/abs/2610.07510",
+      "topic": "Security",
+      "reported": "The authors report that their method, PersistBD, raises attack success from 20% to 74% after SFT and from 20% to 76% after SFT-RL on Qwen2.5-Coder-7B.",
+      "metrics": [
+        "20% to 74% after SFT",
+        "20% to 76% after SFT-RL",
+        "Qwen2.5-Coder-7B"
+      ],
+      "title": "Understanding and Enhancing Backdoor Persistency in LLM Agent Post-Training",
+      "authors": "Qiusi Zhan, Nian Lyu, Stephanie Ding, Arnav Mehta, Xander Davies, Daniel Kang",
+      "takeaway": "The paper claims to demonstrate that backdoors can persist through benign post-training and that adversaries can deliberately increase their persistence using a method called PersistBD.",
+      "brief": "The authors propose PersistBD to refine backdoored models before release, aiming to improve their survival through supervised fine-tuning and reinforcement learning.\n\nThey report that on Qwen2.5-Coder-7B, PersistBD increases attack success from 20% to 74% after SFT and from 20% to 76% after SFT-RL. The listing does not specify the exact benign task performance metrics or the specific input patterns used for the backdoor.\n\nResearchers studying LLM agent security and supply-chain threats may find this relevant. Those not working on model adaptation or backdoor defense may find it less applicable.",
+      "abstract": "Developers can build LLM agents by adapting third-party models through benign post-training. We study a supply-chain threat in which an attacker supplies a model with a backdoor: hidden behavior that produces malicious outputs when a particular input pattern appears. Focusing on software-engineering agents, we ask whether such backdoors survive the developer's supervised fine-tuning (SFT) and subsequent task-level reinforcement learning (RL). We observe that benign SFT substantially reduces attack success, but subsequent RL often preserves the residual behavior and sometimes even increases attack success. Our analysis of backdoor erosion during SFT identifies two factors that may favor survival: initial backdoor strength and gradient compatibility with benign training. These factors motivate PersistBD, which refines an already-backdoored model before release to improve its persistency through the benign post-training process. On Qwen2.5-Coder-7B, PersistBD raises attack success from 20% to 74% after SFT and from 20% to 76% after SFT-RL, while maintaining comparable benign task performance. Together, our results show that backdoors can remain active through benign post-training and that adversaries can deliberately increase their persistence. This highlights a supply-chain risk for AI developers and motivates stronger techniques for detecting and mitigating inherited backdoors when adapting third-party models into agents. Our code is available at https://github.com/uiuc-kang-lab/PersistBD.",
+      "takeaways": [
+        "The object is a method, PersistBD, designed to enhance the persistence of backdoors in LLM agents during post-training.",
+        "A visible limit is that the reported results are specific to the Qwen2.5-Coder-7B model and software-engineering agents, with no generalization to other model families or tasks stated in the listing.",
+        "The artifact status is established: the authors state their code is available at the provided GitHub URL."
+      ],
+      "plain": {
+        "reported": "The authors report that their method, PersistBD, raises attack success from 20% to 74% after SFT and from 20% to 76% after SFT-RL on Qwen2.5-Coder-7B.",
+        "brief": "The authors propose a method called PersistBD to make hidden malicious behaviors in AI models harder to remove during standard improvement processes.\n\nThey report that on a specific AI model (Qwen2.5-Coder-7B), their method increases the success rate of triggering the hidden behavior from 20% to 74% after one type of training, and from 20% to 76% after another type of training. The listing does not specify how well the model performs on normal tasks or what specific inputs trigger the hidden behavior.\n\nPeople studying the security of AI agents and how models are updated may find this relevant. People not working on AI model security or updates may find it less applicable.",
+        "takeaways": [
+          "The object is a method designed to make hidden malicious behaviors in AI models persist through standard training updates.",
+          "A visible limit is that the results are only shown for one specific AI model and one type of AI agent, with no evidence provided for other models or tasks.",
+          "The artifact status is established: the authors state their code is available at the provided GitHub URL."
+        ]
+      },
+      "actions": [
+        "Verify the specific benign task performance metrics and the definition of 'comparable' in the full PDF.",
+        "Check the GitHub repository to confirm the availability and functionality of the PersistBD implementation."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/uiuc-kang-lab/PersistBD",
+      "tags": [
+        "cs.CR"
+      ],
+      "listing": {
+        "listedOn": "2026-10-07",
+        "publishedOn": "2026-10-05",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.07510",
+            "upvotes": 6
+          },
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.07510"
+          }
+        ]
+      },
+      "trend": {
+        "votes": 6,
+        "rank": 24,
+        "of": 50,
+        "perDay": 3
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 6,
+          "sourceCount": 2,
+          "publishedOn": "2026-10-05"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-07T19:02:22.506Z"
+      }
+    },
+    {
+      "id": "2610.06869",
+      "arxivId": "2610.06869",
+      "url": "https://arxiv.org/abs/2610.06869",
+      "topic": "Stats",
+      "reported": "The authors report distribution-free results comparing coherent systems with heterogeneous and dependent components under majorization conditions.",
+      "metrics": [],
+      "title": "Comparing the reliability of coherent systems with heterogeneous, dependent and distribution-free components",
+      "authors": "Nuria Torrado",
+      "takeaway": "The paper provides distribution-free results to compare coherent systems with heterogeneous and dependent components using any copula under majorization conditions.",
+      "brief": "The authors claim to provide distribution-free results for comparing coherent systems with heterogeneous and dependent components. They state that the dependency structure can be defined by any copula, moving beyond specific Archimedean copulas. No quantitative performance metrics are reported in the supplied abstract.\n\nThe reported evidence consists of theoretical distribution-free results under majorization conditions. The abstract mentions applications for specific copulas and marginal distributions but does not detail the specific systems tested or the magnitude of reliability differences. The listing does not establish whether these results hold for all possible system structures or only specific classes.\n\nResearchers working on system reliability with dependent components may find the general copula framework relevant. Those requiring specific numerical benchmarks or empirical validation on real-world data should note the abstract lacks these details.",
+      "abstract": "In recent years, there has been a growing interest in comparing the reliability of systems with dependent components. Most of the recent works consider Archimedean copulas to define the dependency structure of systems and examine specific familiy of distributions. In this work, we provide distribution-free results to compare, in the usual stochastic order under some majorization conditions, coherent systems with heterogeneous and dependent components where the dependency structure can be defined by any copula. Applications of our main results for specific copulas and different families of marginal distributions are also given.",
+      "takeaways": [
+        "The object is a theoretical comparison framework for coherent systems with dependent components.",
+        "A visible limit is the reliance on majorization conditions, which may not apply to all dependency structures.",
+        "The artifact status is theoretical, with no code or dataset provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report mathematical results that do not depend on specific probability distributions for comparing how reliable different systems are when their parts are connected and not independent.",
+        "brief": "The authors claim to offer a way to compare the reliability of systems where the parts are connected and influence each other, without needing to assume specific types of probability distributions. They say this method works for any type of dependency relationship, not just specific common ones. The abstract does not list any specific numbers or performance scores.\n\nThe evidence provided is based on mathematical theory using conditions called majorization. The abstract says they applied these results to specific examples but does not explain which systems were tested or how much more reliable one was compared to another. It is not clear from the listing if these results apply to every possible system design or only certain types.\n\nPeople studying how reliable complex systems are when their parts are linked might find this general framework useful. People who need specific numbers or real-world test results should note that the abstract does not provide them.",
+        "takeaways": [
+          "The subject is a mathematical method for comparing the reliability of systems with connected parts.",
+          "A limitation is that the method requires specific mathematical conditions called majorization to work.",
+          "The output is theoretical math, with no computer code or data files mentioned."
+        ]
+      },
+      "actions": [
+        "Verify the specific majorization conditions required for the distribution-free results in the full PDF.",
+        "Check the applications section for the specific copulas and marginal distributions used to illustrate the main results."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "math.ST",
+        "math.PR",
+        "stat.TH"
+      ],
+      "listing": {
+        "listedOn": "2026-10-07",
+        "publishedOn": "2026-10-07",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.06869"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-07"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-07T19:02:22.506Z"
+      }
+    },
+    {
+      "id": "2610.06961",
+      "arxivId": "2610.06961",
+      "url": "https://arxiv.org/abs/2610.06961",
+      "topic": "Physics",
+      "reported": "The authors report that their framework saturates the Cramér–Rao bound dictated by classical Fisher information in numerical simulations.",
+      "metrics": [],
+      "title": "Neural Correlation Learning for Quantum-Enhanced Sensing with Time-Independently Driven Rydberg Atom Arrays",
+      "authors": "Tao Zhang, Xiaotian Nie, Linghui Chen",
+      "takeaway": "The paper claims a neural correlation learning framework enables quantum-enhanced sensing in Rydberg atom arrays without engineered entangled states.",
+      "brief": "The authors propose using native time-independent dynamics in Rydberg atom arrays to generate correlations for parameter estimation. They introduce a neural framework combining Bayesian inference with networks trained on calibration data. The goal is to extract metrological information from spatial correlations in measurement patterns.\n\nNumerical demonstrations show the framework saturates the Cramér–Rao bound and surpasses the standard quantum limit. The authors state the estimator is robust to realistic noise and accurate without rare measurement patterns. The listing does not specify experimental hardware or physical validation beyond numerical simulation.\n\nResearchers working on quantum sensing protocols or Rydberg atom array control may find the method relevant. Those requiring experimental validation or specific hardware implementations should note the numerical-only evidence presented.",
+      "abstract": "Quantum-enhanced sensing typically relies on preparing specific entangled states. However, engineering these states in scalable many-body systems remains challenging due to the difficulty of designing robust preparation protocols and accounting for realistic noise. We show that evolving a simple product state under native time-independent Hamiltonian dynamics in Rydberg atom arrays generates complex many-body correlations that can potentially enable quantum-enhanced parameter estimation reaching the Heisenberg limit (HL). The key challenge is then shifted to extracting the metrological information encoded in spatial correlations of measurement patterns. We introduce a neural correlation learning framework that combines Bayesian inference with neural networks trained on calibration data. Operating in a two-stage calibration-and-sensing protocol, we numerically demonstrate that this framework effectively extracts many-body correlations to saturate the Cram\\'er--Rao bound dictated by the classical Fisher information. Consequently, it achieves quantum-enhanced sensitivity surpassing the standard quantum limit (SQL). Furthermore, the learned estimator is robust to realistic noise, and remains accurate in the absence of rare measurement patterns. Our results establish a hardware-efficient and scalable paradigm for quantum sensing in interacting many-body systems without requiring engineered entangled states.",
+      "takeaways": [
+        "The object is a neural correlation learning framework for quantum-enhanced parameter estimation in Rydberg atom arrays.",
+        "A visible limit is that the results are numerically demonstrated, with no experimental validation provided in the listing.",
+        "The artifact status is not established; no code or repository is declared in the supplied metadata."
+      ],
+      "plain": {
+        "reported": "The authors report that their computer model matches the theoretical best possible accuracy for measuring physical parameters in a simulated quantum system.",
+        "brief": "The authors suggest that letting atoms in a quantum system evolve naturally can create useful patterns for measuring things more precisely. They use a computer program that learns from test data to read these patterns. The aim is to get better measurements without creating special, hard-to-make quantum states.\n\nComputer simulations show their method reaches the best possible accuracy allowed by physics and beats the usual limit for standard measurements. They say the method works even when there is background noise or missing data. The listing does not say if this was tested on real physical hardware.\n\nPeople studying how to measure things using quantum systems or controlling arrays of atoms might find this useful. People who need proof that it works on real machines should note that only computer simulations are described.",
+        "takeaways": [
+          "The thing being described is a computer method for improving measurements in a system of atoms.",
+          "A clear limitation is that the results come from computer simulations, not real experiments.",
+          "It is not stated whether the computer code is available for others to use."
+        ]
+      },
+      "actions": [
+        "Verify the numerical simulation details and noise models by reading the full PDF.",
+        "Check for any supplementary materials or code availability not listed in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-10-07",
+        "publishedOn": "2026-10-07",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.06961"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-07"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-07T19:02:22.506Z"
+      }
+    },
+    {
+      "id": "2610.07003",
+      "arxivId": "2610.07003",
+      "url": "https://arxiv.org/abs/2610.07003",
+      "topic": "Econ",
+      "reported": "The authors report that evaluated reliability increased by 0.53 standard deviations from March to August 2026 after adjusting for reviewer effects and smoothing batch-level estimates.",
+      "metrics": [
+        "0.79 standard deviations",
+        "0.53 standard deviations",
+        "10% per month"
+      ],
+      "title": "Reliability of AI Agents: Rater Effects, Drift, and the Return to an Evaluation Program",
+      "authors": "Liu Zhang, Mark Esposito",
+      "takeaway": "The paper claims that longitudinal AI evaluation requires three checks: comparability across raters, evidence currency under drift, and corroboration with consequential operational outcomes.",
+      "brief": "The authors propose a framework for evaluating deployed AI agents that accounts for rater effects and system drift. They argue that observed score changes often reflect the measurement process rather than actual agent performance.\n\nThe strongest reported result is a 0.53 standard deviation increase in evaluated reliability from March to August 2026, measured on 2,611 rubric-scored production interviews. The authors note that forecast uncertainty reaches the magnitude of the largest observed deploy contrast after about five weeks, though this horizon is imprecisely estimated. The data do not identify a causal effect of evaluation on performance.\n\nResearchers studying AI evaluation reliability, rater bias, or longitudinal system monitoring should open this paper. Those seeking causal performance guarantees or generalizable benchmarks for other agent types may ignore it.",
+      "abstract": "Firms increasingly evaluate deployed AI agents using repeated human ratings, yet observed score changes may reflect the measurement process as much as changes in the agent itself. Firms also rarely know how long an evaluation remains informative as deployed systems evolve. We study reliability as a latent state using 2,611 rubric-scored production interviews from a deployed voice-and-video interviewing agent, overlapping human reviewers, the agent's change log, and support tickets. Reviewer severity varied substantially: two reviewers assessing the same batches differed by 0.79 standard deviations on the composite index, and a shift in reviewer composition flattened the raw trend. After adjusting for reviewer effects and smoothing batch-level estimates, evaluated reliability increased by 0.53 standard deviations from March to August 2026. Reliability also shifted materially across logged deploys. At the estimated rate of unaccounted movement, forecast uncertainty reaches the magnitude of the largest observed deploy contrast after about five weeks, although this horizon is imprecisely estimated and based on a small number of step-like changes. An independent operational outcome moved in the same direction: interview-related support tickets fell by about 10% per month relative to technical-issue tickets. These data do not identify a causal effect of evaluation on performance. Instead, they show that longitudinal AI evaluation requires three checks: comparability across raters, evidence currency under drift, and corroboration with consequential operational outcomes.",
+      "takeaways": [
+        "The object is a reliability assessment framework for deployed voice-and-video interviewing agents using latent state modeling.",
+        "A visible limit is that the forecast horizon for unaccounted movement is imprecisely estimated and based on a small number of step-like changes.",
+        "The artifact status is not established in the listing; no code or dataset repository is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that the measured reliability score went up by 0.53 standard deviations between March and August 2026, after correcting for differences in how human reviewers scored the same batches.",
+        "brief": "The authors suggest a way to check if AI agents are actually improving or if the scores are just changing because the human judges are inconsistent. They believe that score changes often come from the judging process, not the AI itself.\n\nThe main result they show is that the adjusted reliability score rose by 0.53 standard deviations over five months, based on 2,611 recorded interviews. They also note that predictions about future changes become very uncertain after about five weeks, but this estimate is not very precise. The data does not prove that the evaluation process caused the performance change.\n\nPeople who study how to fairly measure AI performance over time or how to handle inconsistent human judges should look at this paper. People looking for proof that AI performance improved because of specific changes, or looking for tools for other types of AI, might not find it useful.",
+        "takeaways": [
+          "The paper focuses on a method to measure the consistency and improvement of a specific AI interview system using human scores.",
+          "A clear limitation is that the estimate for how long predictions remain valid is not very accurate and relies on few data points.",
+          "The listing does not say if the code or data used in the study is available for others to use."
+        ]
+      },
+      "actions": [
+        "Verify the specific rubric definitions and reviewer composition details in the full PDF to assess the generalizability of the 0.79 standard deviation rater difference.",
+        "Check the full PDF for the exact methodology used to smooth batch-level estimates and adjust for reviewer effects to replicate the 0.53 standard deviation reliability increase."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-10-07",
+        "publishedOn": "2026-10-07",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.07003"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-07"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-07T19:02:22.506Z"
+      }
+    },
+    {
+      "id": "2610.07185",
+      "arxivId": "2610.07185",
+      "url": "https://arxiv.org/abs/2610.07185",
+      "topic": "Engineering",
+      "reported": "The authors report that the proposed solution is effective, measured through a performance assessment conducted in comparison to a natural competitor.",
+      "metrics": [],
+      "title": "Subspace-based Second-Order Detection Architectures for Radar Signals in the Presence of Unstructured Interference",
+      "authors": "Nicola Acito, Danilo Orlando, Giuseppe Ricci",
+      "takeaway": "The paper proposes a subspace-based decision scheme to detect range-spread targets in the presence of thermal noise, clutter, and intentional interference.",
+      "brief": "The authors propose a subspace-based decision scheme for detecting range-spread targets amid thermal noise, clutter, and intentional interference. They derive an architecture based on the likelihood ratio test where unknown second-order parameters are estimated using primary, secondary, and additional passive training data.\n\nThe authors state that a performance assessment highlights the effectiveness of the proposed solution compared to a natural competitor. The listing does not specify the quantitative metrics, simulation parameters, or specific interference scenarios used to establish this effectiveness.\n\nResearchers working on radar signal detection in jammed environments may find the unified theoretical framework and geometrical interpretation relevant. Those requiring specific numerical performance guarantees or code implementations should note the absence of these details in the listing.",
+      "abstract": "This paper proposes a subspace-based decision scheme to detect range-spread targets in presence of thermal noise, clutter, and intentional interference. The target and intentional interference (i.e., noise-like jammer) effects are confined to the covariance matrix of the received primary data vectors. The jammer is also present in the secondary data vectors necessary to estimate the clutter covariance matrix. Finally, an additional set of training data, acquired by the system in passive mode and, hence, not contaminated by target and clutter echoes, is used to avoid the jammer parameters are unidentifiable. The detection problem is addressed by deriving an architecture based upon the likelihood ratio test where the unknown second-order parameters are suitably estimated. To this end, a unified theoretical framework is defined also providing a geometrical interpretation of the estimation procedures. The performance assessment, conducted also in comparison to a natural competitor, highlights the effectiveness of the proposed solution.",
+      "takeaways": [
+        "The object is a subspace-based detection architecture for range-spread targets that handles unstructured interference via likelihood ratio testing.",
+        "The visible limit is the lack of quantitative performance data or specific benchmark comparisons in the provided abstract.",
+        "The artifact status is undefined, as no code, dataset, or repository is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors say their method works well, based on a test they ran against a standard alternative method.",
+        "brief": "The authors suggest a new way to find radar targets that are spread out over a distance, even when there is background noise, ground clutter, and deliberate electronic jamming. They build a system that uses a mathematical test to decide if a target is present, using data from the radar and some extra clean data collected when the radar is not actively transmitting.\n\nThe authors say their tests show the new method works better than a common existing method. However, the summary does not say exactly how much better it is, what numbers they got, or what specific jamming conditions they tested.\n\nPeople who design radar systems that need to work when enemies try to jam them might find this useful. People who need exact numbers to prove the system works in a specific way should know this summary does not provide them.",
+        "takeaways": [
+          "The thing being described is a new radar detection method that handles electronic jamming.",
+          "The main missing piece is the actual numbers showing how well it works.",
+          "It is not stated whether the authors have shared their computer code or data."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative performance metrics and simulation conditions by reading the full PDF.",
+        "Check the paper's supplementary materials or author correspondence for any available code or data repositories."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-10-07",
+        "publishedOn": "2026-10-07",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.07185"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-07"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-07T19:02:22.506Z"
+      }
+    },
+    {
+      "id": "2610.07341",
+      "arxivId": "2610.07341",
+      "url": "https://arxiv.org/abs/2610.07341",
+      "topic": "Health",
+      "reported": "The authors report that the directed interaction operator and diffusivity matrix are generically identifiable for any number of interacting populations from the stationary second-order spatial statistics of a single snapshot, up to a global time rescaling.",
+      "metrics": [],
+      "title": "Identifiability of a linear dynamical reaction-diffusion system with directed interactions from the second-order statistics of a single snapshot",
+      "authors": "Pirmin Schlicke",
+      "takeaway": "The paper claims that the directed interaction operator and diffusivity matrix of a linear reaction-diffusion system are generically identifiable from the second-order statistics of a single spatial snapshot, up to a global time rescaling.",
+      "brief": "The authors claim that the directed interaction operator and diffusivity matrix of a linear reaction-diffusion system are generically identifiable from the second-order statistics of a single spatial snapshot, up to a global time rescaling.\n\nThey report that the directed interaction operator and diffusivity matrix are generically identifiable for any number of interacting populations from the stationary second-order spatial statistics of a single snapshot, up to a global time rescaling. The absolute time scale is not identifiable from a single snapshot of any sample size and requires an external clock.\n\nResearchers studying linear reaction-diffusion systems with directed interactions may find the identifiability conditions relevant. Those requiring absolute rate estimates from single snapshots without external timing data should note the stated limitation.",
+      "abstract": "A single spatial snapshot of a system with multiple interacting populations captures positions but not the underlying dynamics that have led to the observation. This work asks what the stationary second-order spatial statistics of a snapshot can reveal about the structure of the linear reaction-diffusion dynamical model, and in particular about the pairwise directed entries of its interaction operator. The observation is the matrix-valued structure factor $S(k)$ as a one-parameter family in the diffusion-inherited dependence on the wavenumber $\\kappa=|k|^2$. The main result is that the directed interaction operator $A$ and the diffusivity matrix $D$ are generically identifiable for any number of interacting populations from $\\{S(\\kappa)\\}$ up to a single global time rescaling. The findings do not contradict known bounds and the recent result that spatial observational data only determine the Markov equivalence class of the underlying graph. In this work, we identify physical assumptions that lift this barrier. The absolute time scale is not identifiable from a single snapshot of any sample size and requires an external clock. For tumor-immune tissue, the results imply that directed cell-cell interactions are in principle recoverable from one section, that the direction cannot be inferred from the mean densities or a covariance matrix, but from the wavenumber dependence of the cross and autospectra, and that a baseline section determines the interaction structure but not the absolute rates.",
+      "takeaways": [
+        "The object is the directed interaction operator and diffusivity matrix of a linear reaction-diffusion system.",
+        "The visible limit is that the absolute time scale is not identifiable from a single snapshot of any sample size and requires an external clock.",
+        "The artifact status is not established in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that the directed interaction operator and diffusivity matrix are generically identifiable for any number of interacting populations from the stationary second-order spatial statistics of a single snapshot, up to a global time rescaling.",
+        "brief": "The authors claim that the directed interaction operator and diffusivity matrix of a linear reaction-diffusion system are generically identifiable from the second-order statistics of a single spatial snapshot, up to a global time rescaling.\n\nThey report that the directed interaction operator and diffusivity matrix are generically identifiable for any number of interacting populations from the stationary second-order spatial statistics of a single snapshot, up to a global time rescaling. The absolute time scale is not identifiable from a single snapshot of any sample size and requires an external clock.\n\nResearchers studying linear reaction-diffusion systems with directed interactions may find the identifiability conditions relevant. Those requiring absolute rate estimates from single snapshots without external timing data should note the stated limitation.",
+        "takeaways": [
+          "The object is the directed interaction operator and diffusivity matrix of a linear reaction-diffusion system.",
+          "The visible limit is that the absolute time scale is not identifiable from a single snapshot of any sample size and requires an external clock.",
+          "The artifact status is not established in the listing."
+        ]
+      },
+      "actions": [
+        "Verify the identifiability proof and the definition of the matrix-valued structure factor in the full PDF.",
+        "Check whether the physical assumptions that lift the Markov equivalence class barrier are explicitly stated and testable."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "math.PR"
+      ],
+      "listing": {
+        "listedOn": "2026-10-07",
+        "publishedOn": "2026-10-07",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.07341"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-07"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-07T19:02:22.506Z"
+      }
+    }
+  ]
+}
