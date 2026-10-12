@@ -1,0 +1,668 @@
+{
+  "date": "2026-10-12",
+  "label": "Mon, Oct 12",
+  "minutes": 10,
+  "poolSize": 144,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-10-12T21:22:26.433Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2610.12572",
+      "arxivId": "2610.12572",
+      "url": "https://arxiv.org/abs/2610.12572",
+      "topic": "AI",
+      "reported": "The authors report that DiffusionART reaches the late-stage mean reward levels of DiffusionNFT and Flow-GRPO-Fast with 12.02 and 11.72 times fewer GPU hours, respectively, while achieving 28.8% and 53.0% higher mean training rewards on HunyuanVideo-13B.",
+      "metrics": [
+        "12.02 times fewer GPU hours",
+        "11.72 times fewer GPU hours",
+        "28.8% and 53.0% higher mean training rewards"
+      ],
+      "title": "DiffusionART: Efficient, Stable and Scalable Reinforcement of Diffusion Models",
+      "authors": "Zhenglin Wan, Jiayu Chen, Zhengfeiyang Zhang, Pengfei Zhou, Wangbo Zhao, Fangyuan Kong, Pengfei Wan, Kun Gai, Yang You",
+      "takeaway": "The paper introduces DiffusionART, a reinforcement learning method for diffusion models that aggregates prompt rewards into a shared direction and uses trust-region masking to improve efficiency and stability without EMA tuning.",
+      "brief": "The authors propose DiffusionART to address efficiency and stability issues in online reinforcement learning for diffusion models. They argue that existing methods suffer from poor credit assignment or instability requiring careful exponential-moving-average tuning. Their method aggregates rewards into a shared direction and adds a trust-region-masked update to handle drift without manual tuning.\n\nThe strongest reported result is on HunyuanVideo-13B, where the method matches the late-stage mean reward levels of DiffusionNFT and Flow-GRPO-Fast. The authors state this is achieved with 12.02 and 11.72 times fewer GPU hours, respectively. They also report 28.8% and 53.0% higher mean training rewards compared to these baselines. The listing does not specify the exact reward model details or the specific image generation benchmarks used beyond the video model.\n\nResearchers working on diffusion model fine-tuning or reinforcement learning optimization may find the aggregation-first reward tilting approach relevant. Those focused on specific reward model architectures or non-diffusion generative models may find the scope limited. The method claims to support pairwise reward models and requires no differentiable reward model.",
+      "abstract": "Online reinforcement learning (RL) fine-tunes diffusion models with black-box rewards, but reverse-process methods such as Flow-GRPO are limited in efficiency by poor credit assignment, while forward-process methods such as DiffusionNFT are efficient yet unstable without carefully tuned exponential-moving-average (EMA) off-policy training. We show that NFT-style objectives contain a hidden forward--reverse consistency force that joint positive--negative training cancels only partially, and that EMA stabilizes training through restoration rather than off-policy rollouts. We introduce DiffusionART (Diffusion Reinforcement with Aggregation-First Reward Tilting), which aggregates each prompt's rewards into a shared reward-improving direction for reverse-process states, removing the consistency force by construction, and adds a trust-region-masked second update for drift-adaptive restoration without EMA tuning. It requires no differentiable reward model, remains effective with fewer samples per prompt, and supports pairwise reward models (DiffusionART-Pairwise). Across image and video generation, DiffusionART trains efficiently and stably without per-task tuning. In particular, on HunyuanVideo-13B with equally weighted visual and motion quality rewards, DiffusionART reaches the late-stage mean reward levels of DiffusionNFT and Flow-GRPO-Fast with 12.02 and 11.72 times fewer GPU hours, respectively, while achieving 28.8% and 53.0% higher mean training rewards.",
+      "takeaways": [
+        "The core object is a reinforcement learning objective that aggregates prompt-level rewards into a shared direction for reverse-process states.",
+        "A visible limit is that the reported efficiency gains are measured specifically on HunyuanVideo-13B with equally weighted visual and motion quality rewards.",
+        "The artifact status is indicated by a provided GitHub repository URL, but the listing does not confirm the completeness or availability of the code."
+      ],
+      "plain": {
+        "reported": "The authors report that their method, DiffusionART, achieves the same final average quality scores as two other methods, DiffusionNFT and Flow-GRPO-Fast, but uses 12.02 and 11.72 times less computing time, respectively, while getting 28.8% and 53.0% higher average scores during training on the HunyuanVideo-13B model.",
+        "brief": "The authors suggest a new way to train AI image and video generators using reinforcement learning. They say current methods are either slow because they struggle to assign credit for good results or unstable because they need careful manual tuning of a smoothing technique. Their new method combines rewards from similar prompts into one direction and uses a safety mask to adjust for changes without needing that manual tuning.\n\nThe best result they show is on a large video generation model called HunyuanVideo-13B. They claim their method matches the final quality of two other methods but uses much less computing power. Specifically, it uses 12.02 and 11.72 times fewer GPU hours than the other two methods. They also say their method gets higher average scores during the training process, by 28.8% and 53.0%. The text does not explain exactly how the quality scores were calculated or what other image tests were performed.\n\nPeople who work on improving AI image and video generators might find this useful. People who work on different types of AI models or specific reward systems might not. The method claims to work with different types of reward systems and does not need a reward system that can be mathematically differentiated.",
+        "takeaways": [
+          "The main idea is a new training goal that combines rewards from similar prompts into one direction for the AI's internal states.",
+          "A clear limitation is that the efficiency numbers are only shown for one specific video model with a specific type of quality score.",
+          "The authors provide a link to a code repository, but the text does not say if the code is complete or ready to use."
+        ]
+      },
+      "actions": [
+        "Verify the specific reward model definitions and baseline configurations in the PDF to confirm the comparability of the reported GPU hour savings.",
+        "Check the GitHub repository to confirm whether the code for the trust-region-masked second update and pairwise reward support is fully implemented and documented."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/vanzll/DiffusionART",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-12",
+        "publishedOn": "2026-10-08",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.12572",
+            "upvotes": 228
+          }
+        ]
+      },
+      "trend": {
+        "votes": 228,
+        "rank": 1,
+        "of": 50,
+        "perDay": 57
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 228,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-08"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-12T21:22:26.433Z"
+      }
+    },
+    {
+      "id": "2610.13527",
+      "arxivId": "2610.13527",
+      "url": "https://arxiv.org/abs/2610.13527",
+      "topic": "AI",
+      "reported": "The authors report that a perception-computation decomposition exposes a key bottleneck where MLLMs can form capable spatial representations, yet fall short in the spatial transformations required to reason reliably across viewpoint changes.",
+      "metrics": [],
+      "title": "S-Space: Exploring Spatial Workspace in Multimodal Language Models",
+      "authors": "Zhiyuan Shi, Xiang Li, Xingzhuo Guo, Shangchen Miao, Weiliang Chen, Qiyu Dai, Jinshan Ren, Jiangran Lyu, Fangfu Liu, Mingsheng Long, Jialong Wu",
+      "takeaway": "The paper claims to uncover S-Space, a linear representation subspace in multimodal language models that functions as an internal spatial workspace encoding continuous coordinates for object locations.",
+      "brief": "The authors identify S-Space as an intrinsic linear subspace where object-token representations encode continuous coordinates along horizontal, vertical, and distance axes. They state this subspace remains readable under non-spatial questions and is not induced by specific data or prompts.\n\nEvidence includes causal interventions that alter spatial judgments while largely preserving non-spatial responses, and direction-word readouts revealing systematic coupling between cardinal and image-relative reference frames. The authors note that MLLMs fall short in spatial transformations required to reason reliably across viewpoint changes, though specific quantitative failure rates are not provided in the abstract.\n\nResearchers investigating internal mechanisms of multimodal language models or spatial reasoning bottlenecks may find the diagnostic framework relevant. Those seeking immediate quantitative benchmarks for spatial transformation accuracy without access to the full PDF may find the abstract insufficient for evaluation.",
+      "abstract": "Multimodal language models (MLLMs) exhibit promising spatial reasoning capabilities, yet the internal mechanisms supporting them remain poorly understood. We uncover S-Space, a linear representation subspace in which object-token representations encode continuous coordinates along horizontal, vertical, and distance axes. Although we identify these axes by differentiating spatial-answer scores with respect to object-token activations, S-Space is intrinsic rather than induced by specific data or prompts, remaining readable under non-spatial questions. We show that S-Space functions as an internal spatial workspace of MLLMs. Perception encodes object locations into it, forming spatial representations that can be directly read out to support accurate spatial judgments. Internal reasoning transforms it for changing viewpoints. Verbal responses selectively access it, evidenced by causal interventions that alter spatial judgments while largely preserving non-spatial responses. Case studies further show that S-Space assigns locations to unseen entities and the observer, and connects physical directions with abstract linguistic meanings, suggesting both the capabilities and limitations of large-scale language training. Finally, we use S-Space as a diagnostic tool for spatial reasoning failures. Direction-word readouts reveal systematic coupling between cardinal and image-relative reference frames. More importantly, a perception-computation decomposition exposes a key bottleneck: MLLMs can form capable spatial representations, yet fall short in the spatial transformations required to reason reliably across viewpoint changes.",
+      "takeaways": [
+        "The object is a linear representation subspace named S-Space that encodes continuous spatial coordinates within object-token activations.",
+        "A visible limit is that the abstract describes systematic coupling between reference frames and transformation failures but does not list specific quantitative error rates or benchmark scores.",
+        "The artifact status is indicated by a declared GitHub repository URL, but the abstract does not specify which components are included in the code release."
+      ],
+      "plain": {
+        "reported": "The authors state that their analysis shows a main weakness: the models can create good internal maps of where things are, but they struggle to update these maps correctly when the viewing angle changes.",
+        "brief": "The researchers found a specific area inside the AI model's brain, called S-Space, that stores information about where objects are located. They say this area works even when the model is not asked about location, suggesting it is a built-in feature rather than something learned from specific examples.\n\nThey tested this by changing the model's internal signals and observing that spatial answers changed while other answers stayed the same. They also found that the model mixes up different ways of describing direction, like north versus left. The main problem they identified is that the model cannot reliably adjust its internal map when the camera angle changes, though the abstract does not give exact numbers for how often this fails.\n\nPeople studying how AI models understand space might find this useful. People looking for specific test scores or numbers in the summary might need to read the full paper to get those details.",
+        "takeaways": [
+          "The main thing they found is a specific internal space in the model that stores location data for objects.",
+          "The summary mentions problems with changing viewpoints but does not include specific numbers showing how bad the errors are.",
+          "They provided a link to a code repository, but the summary does not say exactly what parts of the project are included in that code."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative metrics for spatial transformation failures and viewpoint change accuracy by reading the full PDF.",
+        "Inspect the declared GitHub repository to confirm whether the S-Space extraction code and diagnostic tools are available for reproduction."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/mirros-lab/s-space",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-12",
+        "publishedOn": "2026-10-09",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.13527",
+            "upvotes": 201
+          }
+        ]
+      },
+      "trend": {
+        "votes": 201,
+        "rank": 2,
+        "of": 50,
+        "perDay": 67
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 201,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-09"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-12T21:22:26.433Z"
+      }
+    },
+    {
+      "id": "2610.12772",
+      "arxivId": "2610.12772",
+      "url": "https://arxiv.org/abs/2610.12772",
+      "topic": "AI",
+      "reported": "The authors report that Reflex achieves 85.7% catch success from egocentric RGB-D in simulation.",
+      "metrics": [
+        "85.7% catch success",
+        "65% and 40% success",
+        "76% and 59% of human catchers' success"
+      ],
+      "title": "Reflex: Visually Grounded Reactive Humanoid Control",
+      "authors": "Taoyang Jia, Weikai Huang, Linxin Song, Jared Darlington, Jieyu Zhao, Yue Wang, Jiafei Duan, Zhongzheng Ren, Ranjay Krishna",
+      "takeaway": "Reflex is a three-stage framework that learns visually grounded reactive whole-body control for humanoids by decomposing the task into state-based policy learning, dynamics inference, and egocentric visual encoding.",
+      "brief": "The paper presents Reflex, a framework designed to enable humanoids to catch thrown boxes using egocentric vision. It decomposes the control problem into three stages: learning a state-based catching policy, inferring object dynamics from delayed observations, and recovering that dynamics representation from RGB-D images. The authors state this decomposition provides direct training signals for each capability and makes visual learning more scalable.\n\nIn simulation, the system achieves 85.7% catch success from egocentric RGB-D, compared to 87.9% with privileged box observations. The authors report that removing temporal visual history reduces success by 35.6 and 39.8 points on centered and laterally offset throws. On a real Unitree G1 robot, Reflex catches human-thrown boxes with 65% and 40% success at 2.5 and 5 meters, respectively. The listing does not establish specific failure modes or robustness limits beyond these reported success rates.\n\nResearchers working on humanoid robot control, reactive manipulation, or egocentric vision-based policies may find the staged decomposition and reported simulation-to-real transfer relevant. Those focused on non-reactive tasks or systems without visual grounding may find the specific task of catching thrown boxes less applicable to their work.",
+      "abstract": "Humans effortlessly react to the world; they adeptly return a tennis shot, catch a falling cup, step aside from a passing cart, or pass a box tossed during truck unloading. These everyday actions require anticipating a moving target and reflexively responding with the whole body within about a second. Such visual reactive whole-body control remains challenging for humanoids, which must (1) coordinate whole-body control, (2) react to object dynamics in real time, and (3) ground perception in egocentric vision. We study catching thrown boxes as a representative task that demands all three capabilities; existing systems cover only part of it, relying on end-effectors, motion capture, or marked objects. We present Reflex, a three-stage framework that learns these capabilities stage by stage while connecting them through a compact representation of object dynamics. First, a state-based policy learns whole-body catching with reinforcement learning. Second, the policy learns to infer the dynamics of a moving box from delayed and incomplete observations. Third, an egocentric RGB-D encoder learns to recover this dynamics representation directly from visual observations while keeping the whole-body controller fixed. This decomposition provides each capability with a direct training signal and makes visual learning substantially more scalable. In simulation, Reflex achieves 85.7% catch success from egocentric RGB-D, compared with 87.9% when given privileged box observations. Temporal visual history is critical: removing it reduces success by 35.6 and 39.8 points on centered and laterally offset throws. On a real Unitree G1, Reflex catches human-thrown boxes with 65% and 40% success at 2.5 and 5 m, reaching 76% and 59% of human catchers' success at the same distances.",
+      "takeaways": [
+        "The object is a three-stage framework for visually grounded reactive whole-body control in humanoids, specifically evaluated on catching thrown boxes.",
+        "A visible limit is the gap between simulation performance (85.7%) and real-world performance (65% at 2.5m), and the significant drop in success when temporal visual history is removed.",
+        "The artifact status is established by the declared code repository URL, though the listing does not confirm the completeness or functionality of the released code."
+      ],
+      "plain": {
+        "reported": "The authors report that their system, Reflex, successfully catches boxes 85.7% of the time in a computer simulation when using only the robot's own camera view.",
+        "brief": "The paper introduces a system called Reflex that teaches humanoid robots to catch boxes thrown at them. It breaks the problem into three steps: first, the robot learns how to move its whole body to catch a box when it knows exactly where the box is. Second, it learns to predict where the box will go based on incomplete information. Third, it learns to figure out the box's movement just by looking at it through its own camera. The authors say this step-by-step approach makes it easier to train the visual part of the system.\n\nIn the computer simulation, the robot caught the box 85.7% of the time using only its camera. This is close to the 87.9% success rate when the robot was given perfect information about the box's position. The authors found that the robot needed to see the box's movement over time; if they removed this time-based visual information, the success rate dropped significantly. On a real physical robot, the system caught boxes thrown by humans 65% of the time from 2.5 meters away and 40% of the time from 5 meters away. The paper does not explain what happens when the robot fails or how well it works in other situations.\n\nPeople who study how to make robots react quickly to moving objects using cameras might find this useful. The method of breaking the problem into smaller steps could be helpful for similar tasks. However, if you are working on robots that do not need to react quickly or do not use cameras to see objects, this specific task of catching thrown boxes may not be very relevant to your work.",
+        "takeaways": [
+          "The system is a method for teaching humanoid robots to catch thrown boxes using their own cameras, broken into three learning stages.",
+          "A clear limitation is the difference in performance between the simulation (85.7% success) and the real world (65% success at 2.5 meters), and the big drop in performance when the robot cannot see the box's movement over time.",
+          "The authors provide a link to a code repository, but the listing does not confirm if the code is complete or works as described."
+        ]
+      },
+      "actions": [
+        "Verify the simulation and real-world experimental setups, including the specific Unitree G1 configuration and human thrower conditions, by reading the full PDF.",
+        "Check the declared GitHub repository to confirm the availability of code, data, and instructions for reproducing the reported results."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/ToberJ/reflex",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-12",
+        "publishedOn": "2026-10-08",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.12772",
+            "upvotes": 129
+          }
+        ]
+      },
+      "trend": {
+        "votes": 129,
+        "rank": 3,
+        "of": 50,
+        "perDay": 32
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 129,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-08"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-12T21:22:26.433Z"
+      }
+    },
+    {
+      "id": "2610.12611",
+      "arxivId": "2610.12611",
+      "url": "https://arxiv.org/abs/2610.12611",
+      "topic": "AI",
+      "reported": "The authors report that their model improves Pass@3 from 41.39% to 56.97% on the OSWorld benchmark.",
+      "metrics": [
+        "182 applications",
+        "91.5%",
+        "41.39% to 56.97%"
+      ],
+      "title": "SoftwareGym: Scaling Computer-Use Agent Training with Diverse Synthesized Software Environments",
+      "authors": "Tian Jin, Wenhao Wang, Jing Kang, Haoting Shi, Rui Ye, Yijun Lu, Siheng Chen",
+      "takeaway": "The paper claims to introduce an automated pipeline for synthesizing diverse GUI software environments to train computer-use agents.",
+      "brief": "The authors propose SoftwareGym, an automated pipeline that synthesizes GUI software environments with diverse interfaces and executable functionality. They state this approach addresses limitations in native application construction and browser-hosted interaction depth.\n\nThe authors report synthesizing 182 applications and achieving a mean GUI task pass rate of 91.5%. They state that training on these environments improves Pass@3 from 41.39% to 56.97% on the OSWorld benchmark. The listing does not establish specific unresolved limits beyond the general challenges of environment synthesis.\n\nResearchers working on computer-use agents or GUI environment synthesis may find this relevant. Those not focused on agent training or software environment generation may ignore it.",
+      "abstract": "Computer-use agents (CUAs) are rapidly improving, yet synthesizing diverse and reliable software environments at scale remains challenging. Native application environments require substantial construction and integration effort, which limits application coverage and increases the risk of application-specific overfitting. Browser-hosted environments provide limited interaction depth and workflow complexity. These limitations motivate SoftwareGym, an automated pipeline for synthesizing GUI software environments with diverse interfaces, executable functionality, and runtime-verified behavior. It generates structurally diverse designs, realizes them as runnable applications, and uses GUI evaluation with iterative repair to ensure functional reliability. Using SoftwareGym, we synthesize 182 applications across twelve categories and achieve a mean GUI task pass rate of 91.5%. We construct SoftwareGym-Bench, a 120-task evaluation suite spanning the same twelve categories, and use trajectories collected from these environments for CUA training. The resulting model improves Pass@3 from 41.39% to 56.97% on the strictly out-of-domain OSWorld benchmark and achieves 40.0% on SoftwareGym-Bench. These results demonstrate the potential of synthesized software environments as scalable and transferable supervision for CUA training.",
+      "takeaways": [
+        "The object is an automated pipeline for synthesizing GUI software environments and a corresponding evaluation suite.",
+        "A visible limit is that the reported improvements are measured on specific benchmarks, and the listing does not detail generalization beyond these.",
+        "The artifact status is indicated by a declared code repository URL, but the listing does not confirm its completeness or functionality."
+      ],
+      "plain": {
+        "reported": "The authors say their model gets a better score on a test called OSWorld, going from 41.39% to 56.97%.",
+        "brief": "The authors built a system called SoftwareGym that automatically creates fake computer programs for training AI agents. They say this helps because making real programs is hard and web-based tests are too simple.\n\nThey say they made 182 fake programs and their AI passed 91.5% of the tasks in them. They say training on these fake programs helped their AI do better on a real test called OSWorld. The summary does not say what problems still remain with their method.\n\nPeople who build AI that uses computers might want to look at this. People who do not work on AI agents or computer software might not need to.",
+        "takeaways": [
+          "The thing they made is a tool that creates fake computer programs for testing AI.",
+          "A limit is that we only know how it did on specific tests, not if it works everywhere.",
+          "They gave a link to their code, but we do not know if it works perfectly."
+        ]
+      },
+      "actions": [
+        "Verify the existence and functionality of the code repository at the provided URL.",
+        "Check the full PDF to confirm the specific metrics and benchmark details reported in the abstract."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/MrKiing-Jin/SoftwareGym",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-12",
+        "publishedOn": "2026-10-08",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.12611",
+            "upvotes": 83
+          }
+        ]
+      },
+      "trend": {
+        "votes": 83,
+        "rank": 4,
+        "of": 50,
+        "perDay": 21
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 83,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-08"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-12T21:22:26.433Z"
+      }
+    },
+    {
+      "id": "2610.12477",
+      "arxivId": "2610.12477",
+      "url": "https://arxiv.org/abs/2610.12477",
+      "topic": "Econ",
+      "reported": "The authors report that within the banking class, the lag from systemic failure to a system-wide deposit backstop fell from 816 days (1930-33) to 18 days (2008) to 2 days (2023).",
+      "metrics": [
+        "816 days (1930-33)",
+        "18 days (2008)",
+        "2 days (2023)"
+      ],
+      "title": "Crisis without Collapse: A Theory of Capitalist Persistence",
+      "authors": "Murat Ova",
+      "takeaway": "The paper supplies a model unifying adaptive systems, mechanism design, computational complexity, behavioral decision theory, global games, and political economy to explain the persistence of capitalism despite recurring crisis predictions.",
+      "brief": "The authors propose a theoretical framework treating the 175-year absence of capitalist collapse as a stylized fact requiring explanation. They claim to unify results from multiple fields to derive formal results and a theorem regarding system persistence.\n\nThe strongest reported evidence is the geometric decay of collapse hazards in banking, specifically the reduction in lag from systemic failure to deposit backstops from 816 days in 1930-33 to 2 days in 2023. The listing does not establish whether these model predictions have been empirically validated against external data beyond the cited historical lags.\n\nResearchers in political economy, mechanism design, or behavioral decision theory may find the unified framework relevant. Those seeking purely empirical macroeconomic forecasts without theoretical modeling may find the abstract insufficient for their immediate needs.",
+      "abstract": "The terminal crisis of capitalism has been predicted regularly since 1848. It has not occurred. We treat this 175-year forecasting record as a stylized fact in need of a model, and we supply one, unifying results from adaptive systems, mechanism design and computational complexity, behavioral decision theory, global games, and the political economy of redistribution. Ten assumptions deliver twelve formal results and one theorem. Recurring shock classes have geometrically decaying collapse hazards: within the banking class alone, the lag from systemic failure to a system-wide deposit backstop fell from 816 days (1930-33) to 18 days (2008) to 2 days (2023). A centralized replacement of the price mechanism fails on at least one of two horns, computation or truthful input, and we are explicit about which horn survives modern algorithms. We derive Davies's J-curve from cumulative prospect theory together with a new result: the revolutionary window closes endogenously, with length inversely proportional to the speed of hedonic adaptation, roughly four to nine years at calibrated parameters, and with its perceptibility threshold derived from the participation constraint rather than assumed. Personalized media shift protest games, in the model, into the unique no-attack equilibrium of a global game. Redistribution is a dial, not an identity: countries with market Ginis of 0.505-0.512 sustain disposable Ginis from 0.273 to 0.395. We state seven testable predictions and six falsification conditions, and map which assumption each rival school must deny.",
+      "takeaways": [
+        "The object is a theoretical model unifying multiple disciplines to explain capitalist persistence.",
+        "A visible limit is the reliance on a 175-year forecasting record as a stylized fact, which may not capture all structural changes.",
+        "The artifact status is a theoretical contribution with stated testable predictions, but no code or dataset is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that in the banking sector, the time between a major financial failure and the government stepping in to protect all bank deposits dropped from 816 days in the early 1930s to 18 days in 2008 and 2 days in 2023.",
+        "brief": "The authors create a mathematical model to explain why capitalism has not collapsed, even though many people have predicted it would for over 150 years. They combine ideas from computer science, psychology, and economics to build this explanation.\n\nThe main evidence they cite is the decreasing time it takes for governments to rescue banks after a crisis. The listing does not say if their model has been tested against real-world data other than these specific historical examples.\n\nPeople studying how economies work or how political systems react to crises might find this useful. People who only want simple economic forecasts without complex theory might not find this helpful.",
+        "takeaways": [
+          "The paper is a theoretical model that combines different fields to explain why capitalism keeps going.",
+          "A limitation is that it relies on a long history of predictions that did not come true, which might not account for new types of risks.",
+          "The paper is a theoretical work with predictions that can be tested, but no computer code or data files are provided in the listing."
+        ]
+      },
+      "actions": [
+        "Verify the specific historical dates and lag calculations for the banking class in the full PDF.",
+        "Check the full text for the detailed derivation of the 'revolutionary window' and its calibrated parameters."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-10-12",
+        "publishedOn": "2026-10-12",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.12477"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-12"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-12T21:22:26.433Z"
+      }
+    },
+    {
+      "id": "2610.12485",
+      "arxivId": "2610.12485",
+      "url": "https://arxiv.org/abs/2610.12485",
+      "topic": "Physics",
+      "reported": "The authors report that on stretched N$_2$, reading the state returns $E_0$ to $1.4\\times10^{-6}$ Ha, three orders of magnitude inside the variational bound.",
+      "metrics": [
+        "50\\times shorter than a Fourier transform needs",
+        "79 mHa high",
+        "$1.4\\times10^{-6}$ Ha"
+      ],
+      "title": "Warm-Start Quantum Computation for Energy Readout and State Preparation",
+      "authors": "Tien D. Kieu",
+      "takeaway": "The paper claims that the front-end spectral weight distribution is the only quantity crossing the split between state preparation and energy readout, enabling a swappable module arrangement called WARP.",
+      "brief": "The authors propose WARP, arguing that only the front-end's spectral weight distribution crosses the split between state preparation and readout. They state this makes the front-end a swappable module, which they swap seven times without altering downstream components.\n\nOn stretched N$_2$, the authors report that reading the prepared state returns the ground-state energy to $1.4\\times10^{-6}$ Ha, which is three orders of magnitude inside the variational bound. They also report recovering overlaps four orders of magnitude below the shot-noise floor. The abstract states that limitations are mapped throughout the work.\n\nResearchers working on quantum energy estimation or state preparation may find the modular framework relevant. Those not interested in the specific spectral weight distribution mechanism may ignore it. The listing does not provide code or repository details.",
+      "abstract": "Estimating a ground-state energy and preparing a ground state both split into a front-end that supplies an approximate state $|\\chi\\rangle$ and a back-end that reads or refines it. We argue, and measure at every step, that the only thing crossing that split is the front-end's spectral weight distribution $p_n=|\\langle E_n|\\chi\\rangle|^2$ over the eigenstates of the problem Hamiltonian $H_P$. Everything downstream is priced in it, so the front-end is a swappable module, and we swap it seven times without altering anything to its right. We call the arrangement WARP. Four back-ends spend that distribution. A readout (A) samples $g(t)=\\langle\\chi|e^{-iH_Pt}|\\chi\\rangle$ on the device and extracts true eigenvalues by classical signal processing, returning an energy below the variational bound of the state it was handed, from a signal $50\\times$ shorter than a Fourier transform needs. Three routes spend the same account on a state instead. An adiabatic schedule (B) has a minimum gap set by the overlap; a discrete amplification (C) is cheaper in depth but must halt at an index the overlap fixes, so it needs a measured value and not a bound; a recursion (D) of depth $\\mathcal{O}(3^m)$ raises the question of whether it can be run at all. The interactions are the substance. On stretched N$_2$ a sample-based diagonalisation reports a variational bound 79 mHa high, fifty times outside chemical accuracy; reading the state it has already prepared returns $E_0$ to $1.4\\times10^{-6}$ Ha, three orders of magnitude inside it, and needs no new front-end and no new circuit. And because the weights price everything, they must be measurable when scarce, so we beat a weak reference against a strong one and recover overlaps four orders of magnitude below the shot-noise floor. We map the operating envelope throughout, and state the limitations.",
+      "takeaways": [
+        "The object is a modular quantum computation framework named WARP that separates state preparation from energy readout.",
+        "A visible limit is that the discrete amplification route must halt at an index fixed by the overlap, requiring a measured value rather than a bound.",
+        "The artifact status is not established in the listing, as no code or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that on a stretched nitrogen molecule, reading the prepared quantum state gives the ground-state energy to a precision of $1.4\\times10^{-6}$ Hartree, which is much more accurate than the standard variational bound.",
+        "brief": "The authors propose a system called WARP. They argue that only the distribution of energy weights from the initial state matters for the final energy calculation. This allows them to swap out the initial state preparation method seven times without changing the rest of the process.\n\nFor a stretched nitrogen molecule, the authors say their method finds the ground-state energy to $1.4\\times10^{-6}$ Hartree. This is much more accurate than the previous bound. They also say they can measure small overlaps that are normally hidden by noise. The abstract says the limitations are discussed in the paper.\n\nPeople studying quantum computers for chemistry might find this useful. People not interested in this specific method might skip it. The listing does not mention any available code or data.",
+        "takeaways": [
+          "The main idea is a modular system for quantum energy calculation that separates preparation from readout.",
+          "One limitation is that one method requires a measured value of the overlap, not just a theoretical bound.",
+          "It is not stated in the listing whether code or data is available."
+        ]
+      },
+      "actions": [
+        "Verify the specific numerical results for stretched N$_2$ and the shot-noise floor recovery by reading the full PDF.",
+        "Check the full text for the detailed mapping of the operating envelope and the stated limitations."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "physics.chem-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-10-12",
+        "publishedOn": "2026-10-12",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.12485"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-12"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-12T21:22:26.433Z"
+      }
+    },
+    {
+      "id": "2610.12524",
+      "arxivId": "2610.12524",
+      "url": "https://arxiv.org/abs/2610.12524",
+      "topic": "Security",
+      "reported": "The authors report that their tests highlight key vulnerabilities in single-agent systems and extend these attacks to multi-agent frameworks to investigate how weaknesses propagate across agents.",
+      "metrics": [],
+      "title": "An Exploration of Attacks on AI Agent Systems",
+      "authors": "Cathleen Qiao, Layah Vigneaud, Chloe Brandon, Max Cabilangan, Xiyuan Cao, Isaac Khabra, Reva Mahajan, Lena Nguyen, Kyle Pak, Anagh Pandya, Roshni Dave, Peiran Wang",
+      "takeaway": "The paper claims to investigate how prompt injection attacks exploit direct user inputs and inter-agent communication to leak sensitive information and trigger cross-agent infections in AI agent systems.",
+      "brief": "The authors state that the paper investigates prompt injection attacks on single and multi-agent AI systems, focusing on information leakage and cross-agent infections. They report that their tests highlight key vulnerabilities in single-agent systems and extend these attacks to multi-agent frameworks to observe weakness propagation. The listing does not specify quantitative metrics, datasets, or specific defense mechanisms, leaving the scope of the experimental setup unresolved.\n\nThis work is relevant to researchers and engineers securing autonomous AI agents in sensitive domains. It may be less relevant to those working on non-agent-based AI models or general-purpose LLMs without multi-agent architectures. The absence of declared code or specific benchmark results in the listing limits immediate reproducibility.\n\nThe paper addresses security vulnerabilities in AI agent systems. The visible limit is the lack of quantitative performance data or specific defense evaluations in the provided abstract. The artifact status is unknown as no code repository is declared.",
+      "abstract": "As autonomous AI agents become more integrated into sensitive domains, it is crucial that single and multi-agent AI systems are secured. This paper investigates how prompt injection attacks can exploit both direct user inputs and inter?agent communication to leak sensitive information and trigger cross-agent infections. While our tests mostly highlight key vulnerabilities in single-agent systems, we also extend these attacks to multi-agent frameworks, investigating how weaknesses can propagate across agents. Our findings emphasize the need for more robust defenses as AI agents become more commonly embedded in real-world workflows.",
+      "takeaways": [
+        "The object is the security of single and multi-agent AI systems against prompt injection.",
+        "The visible limit is the absence of quantitative metrics or specific defense benchmarks in the listing.",
+        "The artifact status is unknown because no code repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors say their tests show important weaknesses in single AI agent systems and they also tested how these weaknesses spread in systems with multiple agents.",
+        "brief": "The authors say they looked at how hackers can trick AI agents using text prompts to steal data or spread problems between different agents. They say their tests show important weaknesses in single agent systems and they also looked at how these problems spread in multi-agent systems. The summary does not give specific numbers, test data, or details on how to fix these problems.\n\nThis is useful for people who build or secure AI systems that act on their own. It may not be useful for people who work on simple AI models that do not act as agents. The summary does not say if there is code or specific test results, so it is hard to check the work right away.\n\nThe paper is about keeping AI agents safe from attacks. The main missing part is that there are no specific numbers or test results in the summary. It is not known if there is any code available because none is listed.",
+        "takeaways": [
+          "The paper is about keeping AI agents safe from text-based attacks.",
+          "The summary does not have specific numbers or test results.",
+          "It is not known if there is any code available."
+        ]
+      },
+      "actions": [
+        "Verify the specific experimental setup and quantitative results by reading the full PDF.",
+        "Check for any associated code or datasets not mentioned in the abstract to assess reproducibility."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR"
+      ],
+      "listing": {
+        "listedOn": "2026-10-12",
+        "publishedOn": "2026-10-12",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.12524"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-12"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-12T21:22:26.433Z"
+      }
+    },
+    {
+      "id": "2610.12534",
+      "arxivId": "2610.12534",
+      "url": "https://arxiv.org/abs/2610.12534",
+      "topic": "Stats",
+      "reported": "The authors report that quaternion probes have smaller rank-one variance than four independent real probes for d≥3 under the same budget of underlying real Gaussian vectors.",
+      "metrics": [
+        "3^{d-1}-1",
+        "2^{d-1}-1",
+        "(3/2)^{d-1}-1"
+      ],
+      "title": "Quaternion Gaussian Probes for Tensor Frobenius-Norm Estimation",
+      "authors": "Yannan Chen, Hailin Sun, Min Xi",
+      "takeaway": "The paper claims to study estimation of the squared Frobenius norm of a real order-d tensor using independent real, complex, or quaternion Gaussian probes.",
+      "brief": "The authors propose using quaternion Gaussian probes to estimate the squared Frobenius norm of large tensors, claiming that this approach offers specific variance advantages over real probes for tensors of order three or higher.\n\nThey report exact relative-variance factors for rank-one tensors and prove that quaternion probes yield smaller rank-one variance than four independent real probes for d≥3. They also provide sharp uniform moment bounds and Chebyshev guarantees for arbitrary real tensors, with numerical examples testing the derived formulas.\n\nResearchers working on randomized tensor norm estimation or high-dimensional statistical inference may find the variance comparisons and moment bounds relevant. Those not focused on tensor contractions or Frobenius norm estimation may ignore it.",
+      "abstract": "Large-scale tensors arising in science and engineering are often too large to form or store explicitly. Their multilinear contractions, however, can frequently be evaluated efficiently, which makes randomized Frobenius-norm estimation a practical alternative to exact computation. In this paper, we study estimation of the squared Frobenius norm of a real order-$d$ tensor from such contractions using independent real, complex, or quaternion Gaussian probes. For a rank-one tensor, one normalized sample is a product of $d-1$ independent Gamma variables. This gives exact relative-variance factors $3^{d-1}-1$, $2^{d-1}-1$, and $(3/2)^{d-1}-1$, respectively. Under the same budget of underlying real Gaussian vectors, the quaternion probe has smaller rank-one variance than four independent real probes for $d\\ge3$; a real-channel representation identifies the gain as modewise pooling. For orthogonal CP tensors, the exact relative variance equals the corresponding rank-one factor divided by the participation-ratio effective rank and the number of samples. For arbitrary real tensors, we prove sharp uniform moment bounds, attained at rank one, and obtain Chebyshev guarantees. A classical block-median construction then gives two-sided exponential confidence for the modified estimator. Numerical examples test the rank-one and effective-rank formulas. An implicit infinite-series kernel tensor illustrates contraction-based norm evaluation; EEG maps provide a qualitative spatial interpolation illustration.",
+      "takeaways": [
+        "The object is the squared Frobenius norm of a real order-d tensor, estimated via multilinear contractions using Gaussian probes.",
+        "A visible limit is that the exact relative variance formulas for orthogonal CP tensors depend on the participation-ratio effective rank and number of samples, which may not be known a priori for arbitrary tensors.",
+        "The artifact status is not established in the listing; no code repository or dataset is mentioned."
+      ],
+      "plain": {
+        "reported": "The authors state that using quaternion-based random samples results in less variability in the estimate for simple tensor structures compared to using four separate real-number samples, when the total amount of random data is the same.",
+        "brief": "The paper suggests a new way to estimate the size (Frobenius norm) of very large multi-dimensional data arrays (tensors) that are too big to store directly. It uses random samples (Gaussian probes) to calculate this size efficiently. The authors claim that using a specific type of number system (quaternions) for these samples is more efficient than using standard real numbers for arrays with three or more dimensions.\n\nThe authors provide mathematical formulas for how accurate the estimate is for simple tensors and prove that the quaternion method is more precise than the real-number method in certain cases. They also show that their method works for more complex tensors by providing statistical guarantees. They tested these formulas with computer simulations.\n\nPeople who work on analyzing large, multi-dimensional data sets or developing efficient algorithms for statistics might find this useful. People who do not work with tensor data or norm estimation might not need to read it.",
+        "takeaways": [
+          "The main subject is estimating the total magnitude of a large multi-dimensional array without storing the whole array.",
+          "A limitation is that the accuracy formulas for certain structured tensors rely on knowing a specific property (effective rank) that might be hard to calculate for real-world data.",
+          "It is not stated in the provided text whether the authors have released any code or data files for this work."
+        ]
+      },
+      "actions": [
+        "Verify the exact relative-variance factors and the claim about quaternion probe variance reduction by checking the full PDF.",
+        "Check the numerical examples section in the PDF to confirm the specific tensors and contraction methods used for testing."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "math.ST",
+        "stat.TH"
+      ],
+      "listing": {
+        "listedOn": "2026-10-12",
+        "publishedOn": "2026-10-12",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.12534"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-12"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-12T21:22:26.433Z"
+      }
+    },
+    {
+      "id": "2610.12588",
+      "arxivId": "2610.12588",
+      "url": "https://arxiv.org/abs/2610.12588",
+      "topic": "Engineering",
+      "reported": "The authors report that Monte Carlo simulations verify the analytical results and show that RVQ and RP degrade significantly as the array size increases, while RNF achieves the most favorable high-gain scaling.",
+      "metrics": [],
+      "title": "On the Performance of Randomly Generated Codebooks in Near-Field Communications",
+      "authors": "Akarsh Yadav, Ly V. Nguyen, James V. Krogmeier, David J. Love",
+      "takeaway": "The paper claims to study four randomly generated codebooks for near-field communications and characterize their high-gain tail behavior and maximum achievable beamforming gain.",
+      "brief": "The authors analyze random vector quantization, random phase, random far-field, and random near-field codebooks for near-field communications. They derive analytical approximations for gain distributions and maximum achievable beamforming gain, using Monte Carlo simulations to verify these results.\n\nThe simulations show that random vector quantization and random phase codebooks degrade significantly as array size increases. Random near-field codebooks achieve the most favorable high-gain scaling, while random far-field codebooks can outperform the others for finite codebook sizes but their maximum gain saturates below one due to phase mismatch.\n\nResearchers working on near-field beamforming with large antenna arrays should open this paper to examine the codebook structure effects. Those focused on far-field systems or predefined codebooks may ignore it if near-field spherical wavefront effects are not relevant to their work.",
+      "abstract": "Near-field communication with large antenna arrays requires beamforming techniques that account for spherical wavefront effects. While predefined codebooks are widely used in multiple-antenna wireless systems, the performance of randomly generated codebooks in the near-field region has not been investigated. In this work, we study four randomly generated codebooks for near-field communications: random vector quantization (RVQ), random phase (RP), random far-field (RFF), and random near-field (RNF) codebooks. We use the known RVQ gain distribution as a benchmark. For RP, we derive a large-array bulk approximation and characterize the high-gain tail behavior of the gain distribution. For RNF, we characterize the high-gain tail behavior of the gain distribution. For RFF, we derive an analytical approximation for the maximum achievable beamforming gain when far-field beams are used to serve near-field users, along with the corresponding maximizing far-field direction. We also analyze the maximum-gain scaling with codebook size. Monte Carlo simulations verify the analytical results and show that RVQ and RP degrade significantly as the array size increases, while RNF achieves the most favorable high-gain scaling. RFF can outperform RVQ and RP for finite codebook sizes, but its maximum gain saturates below one due to the phase mismatch between the far-field beams and the near-field channel. These results show how codebook structure, array size, and codebook size affect random beamforming performance in the near-field.",
+      "takeaways": [
+        "The object is the performance of four specific randomly generated codebooks in the near-field region with large antenna arrays.",
+        "A visible limit is that random far-field codebooks suffer from phase mismatch between far-field beams and the near-field channel, causing maximum gain saturation.",
+        "The artifact status is not established in the listing; no code, dataset, or repository is mentioned."
+      ],
+      "plain": {
+        "reported": "The authors report that computer simulations confirm their mathematical formulas and show that two types of random codebooks work much worse as the antenna array gets bigger, while a third type scales best in terms of signal strength.",
+        "brief": "The authors look at four ways to create random lists of antenna settings for communication systems where the signal source is close to the antenna array. They use math to predict how well these lists work and use computer simulations to check their predictions.\n\nThe simulations show that two of the random lists get much worse as the antenna array gets larger. One list works best for getting strong signals, while another list can be better than the first two for smaller lists but has a limit on how strong the signal can get because the signal shape doesn't match the channel.\n\nPeople who design antenna systems for close-range communication should look at this paper to see how different random list structures affect performance. People who only work with far-distance communication or fixed antenna settings might not need this paper if close-range effects don't matter for their work.",
+        "takeaways": [
+          "The paper is about how well four specific random antenna setting lists work in close-range communication with large antenna arrays.",
+          "One clear limitation is that one type of random list has a problem where the signal shape doesn't match the channel, which limits how strong the signal can get.",
+          "The listing does not say if the authors released any code, data, or software for this work."
+        ]
+      },
+      "actions": [
+        "Verify the analytical derivations for the high-gain tail behavior of random phase and random near-field codebooks in the full PDF.",
+        "Check the Monte Carlo simulation setup and parameters in the PDF to confirm the conditions under which random far-field codebooks outperform random vector quantization."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-10-12",
+        "publishedOn": "2026-10-12",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.12588"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-12"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-12T21:22:26.433Z"
+      }
+    },
+    {
+      "id": "2610.13639",
+      "arxivId": "2610.13639",
+      "url": "https://arxiv.org/abs/2610.13639",
+      "topic": "Health",
+      "reported": "The authors report that RetroTAC achieves a root mean squared error of 0.13 and an $R^2$ of 0.65 on held-out molecules.",
+      "metrics": [
+        "root mean squared error of 0.13",
+        "$R^2$ of 0.65",
+        "mean route-derived synthesizability of 0.73"
+      ],
+      "title": "RetroTAC: Learning Route-Derived Synthetic Accessibility for PROTACs",
+      "authors": "Stefano Ribes (Andrea), Jia Xin (Andrea), Zhu Zhu, Tingting Mo, Luk\\'a\\v{s} Hudec, Kostas Papadopoulos, Atanas Patronov, Roc\\'io Mercado",
+      "takeaway": "The paper introduces RetroTAC, a machine-learning surrogate that predicts a human-interpretable, PROTAC-oriented route-derived synthetic accessibility score directly from molecular structures.",
+      "brief": "The authors propose a route-derived score and a machine-learning model, RetroTAC, to estimate synthetic accessibility for PROTACs by rewarding short synthetic depth and balanced fragment joining.\n\nThey report a root mean squared error of 0.13 and an $R^2$ of 0.65 on held-out molecules, and state that high-score candidates achieve a mean route-derived synthesizability of 0.73 compared with 0.31 for low-score candidates. The listing does not specify the exact dataset size or the specific retrosynthesis planning tool used for the route analysis.\n\nResearchers working on PROTAC discovery or synthetic accessibility scoring may find the interpretable route-derived score and the fast prioritization utility relevant. Those requiring explicit retrosynthetic routes for every candidate or working outside the PROTAC structural class may find the surrogate model less applicable.",
+      "abstract": "Proteolysis-targeting chimeras (PROTACs) enable targeted protein degradation, expanding therapeutic opportunities beyond conventional inhibition. However, assembling their large, multifunctional structures creates synthetic challenges that hinder their discovery. Traditional synthetic-accessibility scores can overestimate this difficulty by penalizing PROTACs' molecular complexity while overlooking modular assembly from accessible building blocks. In contrast, retrosynthesis planning tools provide explicit routes but are computationally expensive, particularly for large molecules. Here, we introduce a human-interpretable, PROTAC-oriented route-derived score that rewards short synthetic depth and balanced joining of molecular fragments, and RetroTAC, a machine-learning surrogate that predicts this score directly from molecular structures. RetroTAC combines complementary models in an ensemble, achieving a root mean squared error of 0.13 and an $R^2$ of 0.65 on held-out molecules. We further evaluate its utility on PROTACs enumerated by recombining warheads, linkers, and E3-ligase ligands, followed by retrosynthetic planning and route analysis. Candidates selected for high predicted scores achieve a mean route-derived synthesizability of 0.73, compared with 0.31 for low-score candidates; 98.75% versus 51.00% are fully resolved under the tested search settings. These results support RetroTAC as a fast prioritization tool for virtual PROTAC libraries, connecting molecular screening with interpretable route characteristics while reserving explicit planning for selected candidates.",
+      "takeaways": [
+        "The object is a machine-learning surrogate model that predicts a specific route-derived synthetic accessibility score for PROTACs from molecular structures.",
+        "A visible limit is that the score is a surrogate for explicit retrosynthesis planning, which the authors note is computationally expensive for large molecules, and the model's performance is reported on held-out molecules without specifying the exact training set composition.",
+        "The artifact status is not established in the listing, as no code repository or software release is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that their model, RetroTAC, has a prediction error of 0.13 and explains 65% of the variance in the test data.",
+        "brief": "The authors created a new way to score how easy it is to make PROTACs, which are drugs that break down specific proteins in the body. They built a computer model called RetroTAC that can predict this score quickly without doing the slow, detailed chemical planning for every molecule.\n\nThey say the model is accurate, with a low error rate, and that molecules it predicts as easy to make are indeed easier to make when checked with detailed planning. The listing does not say how many molecules were used to test the model or which specific planning software was used.\n\nScientists who design PROTAC drugs might find this useful for quickly filtering large lists of potential molecules. People who need the exact step-by-step recipe for every molecule or who work with other types of drugs might not find it useful.",
+        "takeaways": [
+          "The thing being described is a computer program that guesses how hard it is to build a specific type of drug molecule.",
+          "A limit is that it is a guess based on patterns, not the actual step-by-step building plan, and the listing doesn't say exactly how many molecules were used to check its accuracy.",
+          "It is not clear from the listing if the computer code is available for others to download and use."
+        ]
+      },
+      "actions": [
+        "Verify the specific retrosynthesis planning tool and search settings used to generate the route-derived scores by consulting the full PDF.",
+        "Check the full PDF for details on the held-out molecule dataset composition and the ensemble model architecture to assess reproducibility."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM"
+      ],
+      "listing": {
+        "listedOn": "2026-10-12",
+        "publishedOn": "2026-10-12",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.13639"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-12"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-12T21:22:26.433Z"
+      }
+    }
+  ]
+}
