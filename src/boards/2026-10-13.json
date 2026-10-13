@@ -1,0 +1,709 @@
+{
+  "date": "2026-10-13",
+  "label": "Tue, Oct 13",
+  "minutes": 10,
+  "poolSize": 21,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-10-13T19:21:53.358Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2609.39601",
+      "arxivId": "2609.39601",
+      "url": "https://arxiv.org/abs/2609.39601",
+      "topic": "AI",
+      "reported": "The authors report that GroundingPI establishes a new state of the art across 34 grounding benchmarks, averaging 73.68%, above the larger GPT-6 Astra (71.54%).",
+      "metrics": [
+        "averaging 73.68%",
+        "GPT-6 Astra (71.54%)",
+        "average open-loop L2 error of 0.296 m"
+      ],
+      "title": "GroundingPI: A Grounding Foundation Model towards Physical Intelligence with Visual Primitives",
+      "authors": "Qize Yu, Lianrui Fan, Boyu Chen, Jiaqi Liang, Xini Ding, Yue Chen, Zetian Song, Yuran Wang, Yi Zou, Kaixuan Wang, Tianxing Chen, Wenxuan Song, Bohan Zhou, Mingleyang Li, Siqiao Huang, Yuqi Ye, Caigao Jiang, Wei Wei, Ruihai Wu, Hang Zhang, Yixiao Ge, Shuchang Zhou, Shilong Liu, Xianming Liu, Ping Luo, Shiyu Huang",
+      "takeaway": "GroundingPI is a 4B grounding foundation model that generates points and boxes as quantized coordinates in a shared vocabulary to support physical intelligence.",
+      "brief": "The authors present GroundingPI, a 4B parameter model designed to generate precise object locations as quantized coordinates. They claim this approach addresses failures in general-purpose vision-language backbones for cluttered or tiny objects in closed-loop control.\n\nThe authors report an average of 73.68% across 34 grounding benchmarks, surpassing GPT-6 Astra. They also report improvements in robotic manipulation and autonomous driving, including an average open-loop L2 error of 0.296 m on nuScenes. The listing does not specify the exact composition of the 44 baselines or the specific data engines used for training.\n\nResearchers working on visual grounding, robotic manipulation, or autonomous driving perception may find the specific benchmark comparisons and downstream task results relevant. Those focused on general-purpose video generation or non-grounding vision tasks may find the specialized focus less applicable.",
+      "abstract": "Precise grounding matters. It specifies which object is the target and where that object is, even in clutter and for tiny objects, and it has to be fast enough for closed-loop control. Yet vision-language-action (VLA) and world-action models (WAMs) take perception from general-purpose vision-language and video-generation backbones, which still fail in these settings. We introduce GroundingPI, a 4B grounding foundation model that generates points and boxes as quantized coordinates in a shared vocabulary. Training combines multimodal and spatial pretraining, supervised fine-tuning, and reinforcement learning with GRPO, using supervision from public datasets and dedicated data engines. Against 44 baselines across 34 grounding benchmarks spanning 11 perceptual capabilities, GroundingPI establishes a new state of the art, averaging 73.68%, above the larger GPT-6 Astra (71.54%). As a downstream visual backbone, GroundingPI improves performance on robotic manipulation and autonomous driving. On RoboTwin 2.0, it outperforms every mainstream backbone we evaluate in all four out-of-distribution settings, by up to 24.8% relative to the strongest backbone. On RoboCasa-GR1, GroundingPI trained with 50% of the demonstrations outperforms those baselines trained with 75%. On nuScenes, used as the visual backbone, GroundingPI attains an average open-loop L2 error of 0.296 m. We systematically analyze GroundingPI's pretraining in scale and data composition. Downstream autonomous driving and robotic manipulation improve as the pretraining is scaled. Analyzing the data recipe across these 11 perceptual capabilities shows dense grounding's substantial benefits for both, and OCR's potential as a catalyst for perceptual learning. These results support grounding as a perceptual foundation, and dedicated perceptual pretraining as a promising direction for foundation models of physical intelligence.",
+      "takeaways": [
+        "The object is a 4B parameter grounding foundation model that outputs quantized coordinates for points and boxes.",
+        "A visible limit is that the model relies on dedicated data engines and specific pretraining recipes, which may not be fully detailed in the listing.",
+        "The artifact status is indicated by a declared GitHub repository URL, though the listing does not confirm the availability of weights or code."
+      ],
+      "plain": {
+        "reported": "The authors state that their model achieved the highest average score of 73.68% across 34 specific visual location tests, beating a larger model called GPT-6 Astra which scored 71.54%.",
+        "brief": "The authors built a computer vision model with 4 billion parameters that identifies exactly where objects are in an image. They say this is better than standard AI models that struggle with small or crowded objects. The model outputs specific coordinates rather than just describing objects.\n\nThe authors claim their model scored 73.68% on average across 34 different visual tests. They also say it helped robots and self-driving cars perform better. For example, on a driving test, the average distance error was 0.296 meters. The listing does not explain exactly how the training data was created or which specific competing models were tested.\n\nPeople who build robots or self-driving cars might find the specific test scores useful. People who work on general video creation or other types of AI might not need this specific tool.",
+        "takeaways": [
+          "The tool is a large AI model that finds the exact position of objects in images.",
+          "A limitation is that it needs specific training data that is not fully described in the short summary.",
+          "The authors provided a link to a code repository, but the summary does not confirm if the actual model files are available."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark definitions and baseline configurations in the full PDF to confirm the 73.68% average.",
+        "Check the declared GitHub repository to confirm the availability of model weights and training code."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/groundingpi/GroundingPI",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-13",
+        "publishedOn": "2026-09-30",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.39601",
+            "upvotes": 239
+          }
+        ]
+      },
+      "trend": {
+        "votes": 239,
+        "rank": 1,
+        "of": 21,
+        "perDay": 18
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 239,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-30"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-13T19:21:53.358Z"
+      }
+    },
+    {
+      "id": "2610.11765",
+      "arxivId": "2610.11765",
+      "url": "https://arxiv.org/abs/2610.11765",
+      "topic": "AI",
+      "reported": "The authors report that explicit no-think controls cannot reliably eliminate visible inference, with accuracy remaining stable on Boolean and multiple-choice tasks while open-ended tasks reveal a trade-off between answer-only compliance and task accuracy.",
+      "metrics": [],
+      "title": "Thinking Inertia: LLMs Keep Thinking When Told Not To",
+      "authors": "Dianqiao Lei, Kevin Qinghong Lin, Pan Lu, Philip Torr, James Zou",
+      "takeaway": "The paper claims to establish no-thinking as a non-trivial capability requiring systematic evaluation because explicit inference persists even under strict controls.",
+      "brief": "The authors propose a three-level evaluation framework for LLM no-thinking behavior, arguing that existing proxies like disabled modes are unreliable. They measure compliance using Empty-Thinking Rate, Question-Pre-answer Relevance, and Explicit Inference Rate to distinguish answer-only output from genuine inference.\n\nThe strongest reported evidence is that explicit no-think controls fail to eliminate visible inference, a phenomenon they term Thinking Inertia. This effect becomes more prevalent as the answer space opens, though accuracy remains stable on Boolean and multiple-choice tasks. The listing does not establish specific quantitative performance drops or statistical significance for these findings.\n\nResearchers studying LLM reasoning controls or instruction adherence should open this paper to examine the proposed metrics. Those focused solely on standard benchmark accuracy without interest in reasoning trace analysis may ignore it.",
+      "abstract": "Large Language Models (LLMs) increasingly ship with explicit \"thinking modes\", yet their counterpart, \"no-thinking\", has received far less attention. We study LLMs' no-thinking behavior along two axes. a. How to measure no-thinking? Prior work typically defines no-thinking through proxies such as a disabled thinking mode or the absence of long traces. These proxies are unreliable: disabled thinking modes may still emit reasoning, while long traces may contain filler rather than genuine inference. We instead normalize each response into a pre-answer trace and final answer, and evaluate it at three levels: (i) Empty-Thinking Rate for strict answer-only compliance; (ii) instruction-aware Question-Pre-answer Relevance for similarity between the question and pre-answer trace; and (iii) LLM-as-judge Explicit Inference Rate for visible explicit inference. Together, these metrics distinguish answer-only output, relevant but non-inferential text, and explicit inference. b. How does no-thinking vary across tasks and models? We evaluate six prompting interventions on six LLMs across Boolean, multiple-choice, and open-ended questions. We find that explicit no-think controls cannot reliably eliminate visible inference. Models instead exhibit \"Thinking Inertia\": explicit inference persists even under strict controls and becomes more prevalent as the answer space opens. Accuracy remains stable on Boolean and multiple-choice tasks, whereas open-ended tasks reveal a trade-off between answer-only compliance and task accuracy. Rewriting the same questions across answer spaces shows that supplying candidate answers makes answer-only responses easier to produce. These findings establish no-thinking as a non-trivial capability: stopping explicit reasoning cannot be assumed from model settings or instructions alone and deserves systematic evaluation alongside reasoning ability.",
+      "takeaways": [
+        "The object is a diagnostic framework for measuring LLM no-thinking behavior across different task types.",
+        "A visible limit is that the findings rely on the authors' specific definitions of inference and compliance, which may not generalize to all model architectures.",
+        "The artifact status is supported by a declared code repository, though the listing does not confirm the code's completeness or reproducibility."
+      ],
+      "plain": {
+        "reported": "The authors report that telling models not to think does not stop them from showing their reasoning steps, with performance staying steady on simple questions but showing a conflict between following instructions and getting right answers on complex questions.",
+        "brief": "The authors suggest a new way to check if AI models are actually stopping their internal reasoning when asked to do so. They argue that simply turning off a 'thinking' feature is not enough because models might still show reasoning steps. They use three specific tests to measure how well models follow the instruction to just give an answer.\n\nThe main finding is that models keep showing reasoning steps even when strictly told not to, a behavior the authors call Thinking Inertia. This happens more often when the question allows for many different answers. However, the models still get the right answers on simple multiple-choice questions. The provided text does not give specific numbers showing how much performance drops or improves.\n\nPeople who study how AI models follow instructions or how they reason should look at this paper. People who only care about standard test scores and do not care about the internal steps of the AI might not need to read it.",
+        "takeaways": [
+          "The paper is about a new method for checking if AI models stop their internal reasoning when asked.",
+          "A limitation is that the method depends on the authors' specific definitions of what counts as reasoning, which might not work for all AI systems.",
+          "The authors say they have code available, but the text does not confirm if the code works perfectly or is complete."
+        ]
+      },
+      "actions": [
+        "Verify the declared code repository to confirm the implementation of the three-level evaluation metrics.",
+        "Check the full PDF for specific quantitative results on the trade-off between answer-only compliance and task accuracy in open-ended tasks."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/thinking-inertia/code",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-13",
+        "publishedOn": "2026-10-08",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.11765",
+            "upvotes": 211
+          }
+        ]
+      },
+      "trend": {
+        "votes": 211,
+        "rank": 2,
+        "of": 21,
+        "perDay": 42
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 211,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-08"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-13T19:21:53.358Z"
+      }
+    },
+    {
+      "id": "2610.13361",
+      "arxivId": "2610.13361",
+      "url": "https://arxiv.org/abs/2610.13361",
+      "topic": "AI",
+      "reported": "The authors report that no evaluated coding agent comes close to delivering what a requirement asks for, measured across a range of models and harnesses on their 25-task benchmark.",
+      "metrics": [
+        "25 tasks"
+      ],
+      "title": "AgentSWE: Can Coding Agents Build the Agent You Actually Want?",
+      "authors": "Jiahao Wang, Hongjin Qian, Yuyang Hu, Jiajun Zhang, Zheng Liu",
+      "takeaway": "The paper introduces AgentSWE, a benchmark for agent software engineering that tests whether coding agents can faithfully build, edit, and optimize agents according to natural-language requirements.",
+      "brief": "The authors propose AgentSWE to evaluate coding agents on creating, editing, and optimizing agent software based on natural-language requirements. They frame each task as a commission where the builder iterates on illustrative cases, while acceptance tests the frozen submission on held-out cases using requirement-derived rubrics.\n\nThe authors report that none of the evaluated coding agents comes close to delivering what the requirement asks for, identifying a gap between demonstrated and delivered performance. They identify recurring failure modes such as overfitting to visible cases, hollow runtimes, and unsupported claims of completion. The listing does not specify quantitative performance scores or specific model names beyond the general category of coding agents.\n\nThis packet is relevant to researchers evaluating the reliability of autonomous software engineering tools. It may be of interest to those studying agent development lifecycles or benchmark design for software agents. Readers focused solely on specific model architectures without interest in agent-building workflows may find the scope narrow.",
+      "abstract": "As the production of software passes into the hands of software itself, coding agents are increasingly commissioned to build agents fitted to their users' own workflows. This delegation carries a quiet assumption, that the delivered agent will faithfully serve the requirement it was built for, rather than merely appear to. No existing benchmark tests that assumption. We introduce AgentSWE, a benchmark for agent software engineering spanning three stages of the agent development lifecycle: Creation of a complete agent from a natural-language requirement, Editing of production agent codebases, and Optimization toward a measurable target. Each of its 25 tasks is framed as a commission rather than an exam: the builder iterates against a handful of illustrative cases, while acceptance exercises the frozen submission on held-out cases designed to span the full requirement, grading behavior against requirement-derived rubrics under hard pass/fail gates or, for Optimization, against the source benchmark's own objective. Evaluating a range of coding agents across models and harnesses, we find that none comes close to delivering what a requirement asks for: the gap between what a builder demonstrates and what it delivers is the norm, not the corner case. An accompanying empirical analysis of the failure trajectories identifies recurring failure modes, among them overfitting to the visible cases, hollow runtimes behind code that looks complete, and unsupported claims of completion, each a signal by which coding agents can learn to build the agents they are asked for.",
+      "takeaways": [
+        "The object is a benchmark for agent software engineering spanning creation, editing, and optimization stages.",
+        "A visible limit is that the listing does not provide specific quantitative scores or detailed model comparisons beyond the general finding of failure.",
+        "The artifact status is not established in the listing, as no code repository or dataset URL is provided."
+      ],
+      "plain": {
+        "reported": "The authors state that the coding programs they tested did not successfully build the software agents they were asked to create, based on their own test suite.",
+        "brief": "The researchers created a new test set called AgentSWE to see if AI coding tools can build other AI agents as requested. They set up tasks where the AI has to build, fix, or improve an agent based on a written description. The AI practices on a few examples, but the final test uses new, hidden examples to check if the agent actually works as described.\n\nThe authors found that the AI tools failed to meet the requirements in most cases. They noticed common mistakes, like the AI only working on the practice examples and not the real ones, or claiming the job was done when the software didn't actually run. The text does not give specific scores or list exactly which AI models were tested in detail.\n\nThis information is useful for people who study how AI builds software or how to test these tools. It might help those designing systems where AI creates other AI. People who only care about specific AI chatbots or image generators might not find this directly relevant.",
+        "takeaways": [
+          "The main thing being studied is a new way to test if AI can build other AI agents correctly.",
+          "A limitation is that the summary does not show specific numbers or detailed comparisons between different AI models.",
+          "It is not stated in the summary whether the code or data for this test is publicly available."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative results and model performance breakdowns by reading the full PDF.",
+        "Check for the availability of the AgentSWE benchmark code and data in the paper's supplementary materials or repository."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-13",
+        "publishedOn": "2026-10-09",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.13361",
+            "upvotes": 201
+          }
+        ]
+      },
+      "trend": {
+        "votes": 201,
+        "rank": 3,
+        "of": 21,
+        "perDay": 50
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 201,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-09"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-13T19:21:53.358Z"
+      }
+    },
+    {
+      "id": "2610.13166",
+      "arxivId": "2610.13166",
+      "url": "https://arxiv.org/abs/2610.13166",
+      "topic": "AI",
+      "reported": "The authors report substantial performance gains on all 12 benchmarks spanning coding-agent tasks, agentic tasks in real-world production settings, and general reasoning.",
+      "metrics": [
+        "1.5K task environments",
+        "12 benchmarks",
+        "12-hour research budget"
+      ],
+      "title": "Scaling Agentic Data for Long-Horizon Terminal Intelligence",
+      "authors": "Shun Zou, Ziyu Ma, Yi Zou, Yong Wang, Lin Chen, Zehui Chen, Guanhua Chen, Xiangxiang Chu, Feng Zhao",
+      "takeaway": "The paper introduces TerminalHorizon, a fully automated data synthesis engine for long-horizon terminal agents that constructs task environments to preserve agentic behavioral patterns.",
+      "brief": "The authors propose TerminalHorizon, an automated engine that synthesizes long-horizon terminal agent data by identifying omitted key work and progressively expanding tasks under a single goal.\n\nThey report substantial performance gains on 12 benchmarks after fine-tuning Qwen3.5-27B on 1.5K constructed environments. The listing does not specify the magnitude of these gains or the specific benchmark scores, nor does it detail the failure modes of the synthesis process.\n\nResearchers working on agent data synthesis, long-horizon task design, or terminal-based AI systems may find the methodology relevant. Those seeking immediate quantitative comparisons or code access should note the absence of declared code and specific metric values in this summary.",
+      "abstract": "Terminal agents are moving beyond local operations toward completing real-world professional tasks. Short trajectories can demonstrate commands and tool calls, but they do not fully show how agents accumulate evidence through exploration, use it to inform judgments, continually adjust strategies based on feedback, and turn intermediate results into final deliverables. High-quality long-horizon trajectories capture these agentic behavioral patterns and their connections within a single problem-solving process, providing richer experience for sustained autonomous work. However, environment synthesis may complete or simplify the key work underlying these patterns in advance and thus remove the need for exploration, implementation, and verification that the agent was meant to perform. To address this, we introduce TerminalHorizon, a fully automated data synthesis engine for long-horizon terminal agents. Starting from real-world professional work, it uses independent execution to identify key work omitted during construction and uses the resulting evidence to guide environment reconstruction. To extend these patterns across stages, it progressively expands tasks under the same goal, introducing new requirements that build on prior results and call for further exploration and improvement. Using this engine, we construct 1.5K task environments and perform supervised fine-tuning of Qwen3.5-27B on the resulting dataset to obtain TerminalHorizon-27B. We achieve substantial performance gains on all 12 benchmarks spanning coding-agent tasks, agentic tasks in real-world production settings, and general reasoning. Multiple RSI case studies, each with a 12-hour research budget, further demonstrate the model's ability to continue experimenting beyond an initial solution, improve its methods based on feedback, and retain effective improvements in its final deliverables.",
+      "takeaways": [
+        "The core object is a data synthesis engine that uses independent execution to identify and reconstruct omitted work in terminal agent environments.",
+        "A visible limit is the lack of specific quantitative performance metrics in the abstract, leaving the magnitude of the reported 'substantial gains' undefined.",
+        "The artifact status is unclear as no code repository is declared, and the availability of the 1.5K task environments is not specified."
+      ],
+      "plain": {
+        "reported": "The authors say their model performed better on 12 different tests covering coding, real-world tasks, and general logic, but they do not list the specific scores in this summary.",
+        "brief": "The creators built a tool called TerminalHorizon that automatically creates complex computer tasks for AI agents to practice on. It works by finding parts of the task that were accidentally made too easy and fixing them so the AI has to actually solve them.\n\nThey trained a large AI model on 1,500 of these complex tasks and say it got much better at 12 different types of tests. However, the summary does not say exactly how much better it got or what the specific scores were.\n\nPeople who build AI that uses computers to do jobs might find this useful. If you need exact numbers or want to download the code, this summary does not provide that information.",
+        "takeaways": [
+          "The main thing they made is a machine that creates hard computer tasks for AI to learn from by fixing tasks that were too easy.",
+          "A limitation is that we do not know the exact scores or how much the AI improved because the summary only says 'substantial gains'.",
+          "It is not clear if the code or the 1,500 tasks are available for download because no link is provided in the summary."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark names and score improvements by reading the full PDF, as the abstract only lists the count of 12 benchmarks.",
+        "Check the paper for details on the 'independent execution' mechanism used to identify omitted work, as this is central to the claimed data quality."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-13",
+        "publishedOn": "2026-10-09",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.13166",
+            "upvotes": 132
+          }
+        ]
+      },
+      "trend": {
+        "votes": 132,
+        "rank": 4,
+        "of": 21,
+        "perDay": 33
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 132,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-09"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-13T19:21:53.358Z"
+      }
+    },
+    {
+      "id": "2610.09326",
+      "arxivId": "2610.09326",
+      "url": "https://arxiv.org/abs/2610.09326",
+      "topic": "AI",
+      "reported": "The authors report that VIS-Ground reaches an average absolute improvement of 10.3 points over the strongest per-backbone baselines across three video generation backbones.",
+      "metrics": [
+        "10.3 points"
+      ],
+      "title": "VIS-Ground: Video Interactive Storytelling with Contextual Grounding",
+      "authors": "Bingxuan Li, Yiwen Song, Xueqing Wu, Yanzhou Pan, Yang Li, Kuang Su, Jingyun Liu, Sebastian Ko, Huan Zhang, Tong Zhang, Nanyun Peng, Tomas Pfister, Yale Song",
+      "takeaway": "The paper introduces VIS-Ground, a framework that transforms heterogeneous input context into an executable constraint model for video generation to support interactive storytelling.",
+      "brief": "The authors propose VIS-Ground to address latent dependencies between grounding sources, rendered video states, and viewer intent in interactive video generation. They formulate contextual grounding as transforming heterogeneous inputs into executable constraints for the generation model.\n\nThe authors report that VIS-Ground achieves the highest overall composite score across three video generation backbones, with an average absolute improvement of 10.3 points over the strongest per-backbone baselines. They note remaining challenges in dependency extraction and faithful realization during video rendering.\n\nResearchers working on interactive video generation or context-grounded video synthesis may find the constraint modeling approach relevant. Those focused solely on static image generation or non-interactive video pipelines may find the specific interactive continuation focus less applicable.",
+      "abstract": "Video interactive storytelling enables viewers to actively steer how a video unfolds. However, once we allow viewers to intervene during generation, a new challenge arises: The viewer's request can have latent dependencies on both the grounding source and the current rendered video state. These dependencies may not be explicitly stated in any individual input, but emerge only when the source, rendered history, and new viewer intent are considered jointly. Existing interactive video generation systems primarily emphasize following viewer instructions, while source-grounded video generation methods focus on aligning generated content with an external narrative or knowledge source. This leaves a fundamental question underexplored: What context should a generation model ground on during interactive continuation, and how can heterogeneous, unstructured inputs be transformed into such grounding context? In this work, we formulate contextual grounding as the process of transforming heterogeneous input context into an executable constraint model for video generation. To address this challenge, we introduce VIS-Ground, which performs Structured Context Abstraction to recover grounded states and cross-context dependencies, Generation Constraints Induction to project relevant dependencies into candidate-specific constraints, and Constrained Video Generation to enforce these constraints through planning, verification, revision, and rendering. Across three video generation backbones, VIS-Ground consistently achieves the highest overall composite score, reaching an average absolute improvement of 10.3 points over the strongest per-backbone baselines. Detailed analysis further shows gains across both narrative and knowledge grounding, and reveals remaining challenges in dependency extraction, and faithful realization during video rendering.",
+      "takeaways": [
+        "The object is a constraint-based framework for interactive video generation that abstracts heterogeneous context into executable constraints.",
+        "A visible limit is the authors' acknowledgment of remaining challenges in dependency extraction and faithful realization during rendering.",
+        "The artifact status is established by the declared code repository URL provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors state that their system, VIS-Ground, scored 10.3 points higher on average than the best existing systems when tested on three different video creation engines.",
+        "brief": "The authors created a system called VIS-Ground to help create videos where viewers can change the story as it is being made. The system takes different types of information, like the original story and what has already been shown, and turns them into rules that guide the video creation.\n\nThe authors say their system got the best overall score when tested on three different video creation tools. It was 10.3 points better on average than the best other tools they compared it to. They also mention that the system still has trouble correctly identifying all the connections between different pieces of information and accurately showing them in the final video.\n\nPeople who work on making videos that change based on user input might find this useful. People who only make videos that do not change or only work with still pictures might not find this specific tool helpful for their work.",
+        "takeaways": [
+          "The tool is a set of rules that helps video software understand how different parts of a story connect to each other during interactive creation.",
+          "The authors admit the tool still struggles to find all the hidden connections between story elements and to show them correctly in the video.",
+          "The authors have published the computer code for this tool at a specific web address listed in the paper details."
+        ]
+      },
+      "actions": [
+        "Verify the specific evaluation metrics and baseline comparisons by reviewing the full PDF, as the abstract only provides an average absolute improvement figure.",
+        "Check the declared code repository to confirm the availability of the Structured Context Abstraction and Generation Constraints Induction modules."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/vis-ground/code",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-13",
+        "publishedOn": "2026-10-07",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.09326",
+            "upvotes": 75
+          }
+        ]
+      },
+      "trend": {
+        "votes": 75,
+        "rank": 5,
+        "of": 21,
+        "perDay": 13
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 75,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-07"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-13T19:21:53.358Z"
+      }
+    },
+    {
+      "id": "2609.39600",
+      "arxivId": "2609.39600",
+      "url": "https://arxiv.org/abs/2609.39600",
+      "topic": "AI",
+      "reported": "The authors report that their autoregressive variant, GroundAnything-VLM, achieves an overall score of 72.42% across 30 grounding benchmarks.",
+      "metrics": [
+        "72.42%",
+        "61.75%",
+        "4.51times speedup"
+      ],
+      "title": "GroundAnything: Reconciling Parallel Decoding with Precise Visual Grounding at Flash Speed",
+      "authors": "Qize Yu, Lianrui Fan, Bowen Ping, Xini Ding, Zetian Song, Junbo Niu, Kaixuan Wang, Tianxing Chen, Yue Chen, Minghua He, Yuran Wang, Jie Huang, Haojun Zhang, Min Chen, Hao Li, Wenxuan Song, Ruihai Wu, Xianming Liu, Shilong Liu, Shuchang Zhou, Ping Luo, Shiyu Huang",
+      "takeaway": "The paper introduces GroundAnything, a 4B-parameter grounding foundation model that reconciles fast parallel decoding with precise localization through blockwise denoising.",
+      "brief": "The authors propose a bidirectional diffusion approach to visual grounding, arguing that spatial dependencies do not require left-to-right generation. They report that their autoregressive variant achieves 72.42% on 30 benchmarks, while the diffusion variant averages 61.75% compared to 53.32% for a prior fast model. The listing does not establish specific limitations or artifacts beyond the reported speedup and accuracy trade-offs.\n\nThe strongest reported result is the 72.42% overall state of the art for the autoregressive variant among similarly sized models. The diffusion variant shows a 4.51x speedup over the autoregressive counterpart with a 0.74 percentage-point drop in COCO F1mIoU. The abstract mentions infrastructure experiments supporting practical speedups but does not detail specific hardware constraints or failure modes.\n\nResearchers working on visual grounding, diffusion models, or efficient inference may find the reconciliation of parallel decoding and precise localization relevant. Those focused strictly on autoregressive architectures or specific benchmark subsets may ignore the diffusion-specific results.",
+      "abstract": "Autoregressive (AR) grounding models serialize spatial predictions, introducing sequential latency and imposing a causal order on output tokens. We view grounding as visual evidence extraction: objects, locations, and spatial relations are jointly constrained by the image and query, yet their dependencies do not imply an intrinsic left-to-right generation order. This distinction makes bidirectional diffusion a natural fit, allowing spatial hypotheses to emerge in parallel and be jointly refined through iterative denoising. We introduce GroundAnything, a 4B-parameter grounding foundation model that reconciles fast parallel decoding with precise localization through blockwise denoising. Training combines grounding pretraining from public datasets and dedicated data engines, direct AR-to-diffusion conversion with joint AR and diffusion objectives, supervised fine-tuning, and GRPO-based reinforcement post-training. Across 30 grounding benchmarks, our autoregressive variant, GroundAnything-VLM, establishes a new overall state of the art among similarly sized models at 72.42%, remaining competitive with GPT-6 Astra (71.35%). With entropy-guided decoding, GroundAnything also surpasses the prior state of the art at this scale, averaging 61.75% versus 53.32% for the fast MTP-based LocateAnything model. We further explore decoding strategies, showing that an optional self-speculative mode achieves a 4.51times speedup over the AR counterpart with a 0.74 percentage-point drop in COCO F1mIoU. Infrastructure experiments show that progressive inference optimizations translate parallel decoding into practical speedups. These support efficient visual grounding in latency-sensitive real-world systems.",
+      "takeaways": [
+        "The object is a 4B-parameter foundation model for visual grounding that uses blockwise denoising to enable parallel spatial hypothesis refinement.",
+        "A visible limit is the 0.74 percentage-point drop in COCO F1mIoU when using the self-speculative mode for speedup, indicating a trade-off between latency and precision.",
+        "The artifact status is indicated by a declared GitHub repository URL, but the listing does not confirm the availability of weights or specific code modules for the diffusion variant."
+      ],
+      "plain": {
+        "reported": "The authors state that their model version called GroundAnything-VLM scored 72.42% on a set of 30 tests for locating objects in images.",
+        "brief": "The researchers suggest that finding objects in images does not need to happen in a strict left-to-right order. They built a model that guesses object locations in parallel and refines them, claiming it is both fast and accurate. They report high scores on standard tests and show that a faster version of their model is significantly quicker than previous fast models, though slightly less accurate.\n\nThe best result they claim is a 72.42% score on their main model. They also show that a faster version runs 4.51 times quicker than their standard version, with a small drop in accuracy measured by a specific metric called COCO F1mIoU. The summary does not explain what happens when the model fails or what specific computer hardware is needed to run it.\n\nPeople who build systems that need to find objects in images quickly might find this useful. People who only care about traditional step-by-step image models might not need to look at the parallel processing parts.",
+        "takeaways": [
+          "The main thing they built is a computer program that finds objects in pictures by guessing locations all at once and then fixing them, rather than one by one.",
+          "One clear downside is that making the program run faster causes a small loss in accuracy, specifically a 0.74 point drop in a standard measurement.",
+          "They list a website where the code is supposed to be, but the summary does not say if the actual model files are available for download."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark configurations and dataset splits used for the 30 grounding benchmarks in the PDF to ensure comparability with the cited baselines.",
+        "Check the GitHub repository for the presence of inference code and model weights to confirm the practical availability of the reported 4.51x speedup."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/groundingpi/GroundAnything",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-13",
+        "publishedOn": "2026-09-30",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.39600",
+            "upvotes": 66
+          }
+        ]
+      },
+      "trend": {
+        "votes": 66,
+        "rank": 6,
+        "of": 21,
+        "perDay": 5
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 66,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-30"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-13T19:21:53.358Z"
+      }
+    },
+    {
+      "id": "2610.13630",
+      "arxivId": "2610.13630",
+      "url": "https://arxiv.org/abs/2610.13630",
+      "topic": "AI",
+      "reported": "The authors report that MSAR achieves an iso-loss compute speedup of 1.58times over the standard residual baseline in scaling-law experiments.",
+      "metrics": [
+        "1.58times",
+        "1.35times",
+        "1.30times"
+      ],
+      "title": "Multi-Stream Attention Residuals",
+      "authors": "Xiaohan Qin, Xiangdong Zhang, Tuo Dai, Sunan Zou, Huaijin Wu, Yebin Yang, Zhuo Xia, Lin Yao, Yuliang Liu, Junchi Yan",
+      "takeaway": "The paper introduces Multi-Stream Attention Residuals (MSAR), an extension of Attention Residuals that generalizes the mechanism to multi-head depth attention to yield substantial performance gains with minimal additional overhead.",
+      "brief": "The authors propose MSAR, which extends single-stream depth attention to multi-head depth attention by drawing stream diversity from sequence context through multi-scale causal convolutions. The retrieved streams are combined via lightweight adaptive mixing to generate the single-stream layer input, supporting multi-stream computation without persistent multi-stream storage or communication.\n\nThe authors state that MSAR consistently outperforms prior residual variants, including standard residual connections, manifold-constrained Hyper-Connections (mHC), and AttnRes, across all 12 downstream benchmarks at the 18B and 28B MoE scales. Scaling-law experiments yield an iso-loss compute speedup of 1.58times over the standard residual baseline, compared with 1.35times for AttnRes and 1.30times for mHC. The listing does not establish specific limitations or artifacts beyond the reported performance comparisons.\n\nResearchers investigating residual architectures for large-scale pre-training may find the multi-head depth attention mechanism relevant. Those focused on single-stream attention or non-MoE architectures may find the specific MoE scale results less directly applicable. The declared code repository is provided for potential verification of the implementation details.",
+      "abstract": "Attention Residuals (AttnRes) enables content-dependent retrieval over network depth, which can be viewed as single-stream softmax attention along the depth axis. Inspired by the success of multi-head attention along the sequence axis, we introduce Multi-Stream Attention Residuals (MSAR), an extension of AttnRes that generalizes this mechanism to multi-head depth attention, yielding substantial performance gains with minimal additional overhead. MSAR draws stream diversity from sequence context through multi-scale causal convolutions, allowing different heads to retrieve historical representations through distinct contextual views while preserving the integrity of the hidden representation. The retrieved streams are combined through lightweight adaptive mixing to generate the single-stream layer input. By retaining single-stream sources and expanding them on demand, MSAR supports multi-stream computation without requiring persistent multi-stream storage or communication. Across all 12 downstream benchmarks at the 18B and 28B MoE scales, MSAR consistently outperforms prior residual variants, including standard residual connections, manifold-constrained Hyper-Connections (mHC), and AttnRes. Scaling-law experiments yield an iso-loss compute speedup of 1.58times over the standard residual baseline, compared with 1.35times for AttnRes and 1.30times for mHC. These results make MSAR a promising residual architecture for large-scale pre-training.",
+      "takeaways": [
+        "The object is a residual architecture extension that generalizes depth attention to multiple heads using multi-scale causal convolutions for stream diversity.",
+        "The visible limit is that the reported performance gains are specifically measured at 18B and 28B MoE scales, and the listing does not specify performance on other scales or non-MoE architectures.",
+        "The artifact status is that a code repository is declared at https://github.com/jianke0604/MSAR, but the listing does not confirm whether the code is complete, functional, or matches the reported results."
+      ],
+      "plain": {
+        "reported": "The authors report that their method, MSAR, makes training 1.58 times faster to reach the same loss level compared to the standard method, based on their scaling experiments.",
+        "brief": "The authors created a new way to process information in deep neural networks called MSAR. It works by looking at different parts of the input data using multiple 'heads' or perspectives, rather than just one. This is done using a technique called multi-scale causal convolutions, which helps different heads see different contexts. The results from these heads are then mixed together in a simple way to create the input for the next layer. This approach does not require storing extra data or communicating between layers, which keeps it efficient.\n\nThe authors say their method works better than other similar methods, including the standard way of connecting layers, a method called mHC, and a method called AttnRes. They tested this on 12 different tasks using large models with 18 billion and 28 billion parameters. Their method was 1.58 times faster to reach the same performance level as the standard method, while AttnRes was 1.35 times faster and mHC was 1.30 times faster. The paper does not say what the method cannot do or what problems it might have.\n\nPeople who are working on making large AI models train faster might find this useful. People who are not working on large models or who use different types of models might not find it as relevant. The authors have put their code online at a specific website, so you can check if it works as described.",
+        "takeaways": [
+          "The thing they made is a new way to connect layers in a neural network that uses multiple 'heads' to look at different parts of the data.",
+          "The limit we can see is that they only tested it on very large models with 18 billion and 28 billion parameters, and we don't know if it works on smaller or different types of models.",
+          "The code is said to be available online, but we don't know if it is complete or if it actually produces the results they claim."
+        ]
+      },
+      "actions": [
+        "Verify the declared code repository at https://github.com/jianke0604/MSAR to confirm the implementation matches the described multi-scale causal convolutions and adaptive mixing mechanisms.",
+        "Review the full PDF to check for additional details on the 12 downstream benchmarks, the specific MoE configurations used, and any ablation studies on the multi-head depth attention mechanism."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/jianke0604/MSAR",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-13",
+        "publishedOn": "2026-10-09",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.13630",
+            "upvotes": 34
+          }
+        ]
+      },
+      "trend": {
+        "votes": 34,
+        "rank": 7,
+        "of": 21,
+        "perDay": 9
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 34,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-09"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-13T19:21:53.358Z"
+      }
+    },
+    {
+      "id": "2609.36616",
+      "arxivId": "2609.36616",
+      "url": "https://arxiv.org/abs/2609.36616",
+      "topic": "AI",
+      "reported": "The authors report that CrossTimeEdit improves overall performance across the three editing criteria by 17.12% over the pretrained baseline.",
+      "metrics": [
+        "43,653 location-level quadruplets",
+        "17.12\\%"
+      ],
+      "title": "CrossTimeEdit: A Decade-Spanning Cross-View Dataset and Reward-Guided Editing for Historical Street-View Generation",
+      "authors": "Hanwen Lu, Jun He, Mingjia Yang, Hao Wei, Jinhao Huang, Yi Lin, Xiang Zhang",
+      "takeaway": "The paper claims to construct VIGOR-his, a decade-spanning cross-view dataset, and propose CrossTimeEdit, a model that reformulates historical street-view generation as editing using reward-guided optimization.",
+      "brief": "The authors present VIGOR-his, a dataset of 43,653 location-level quadruplets across 11 cities, and CrossTimeEdit, a model trained via supervised fine-tuning and reinforcement learning to generate historical street views from recent ones.\n\nThey report a 17.12% improvement in overall performance across three editing criteria compared to a pretrained baseline, measured on their constructed dataset. The listing does not specify external benchmarks or independent validation of the generated imagery's factual accuracy.\n\nResearchers working on temporal image editing, historical urban reconstruction, or reward-guided diffusion models may find the dataset and method relevant. Those requiring verified historical ground truth or non-urban scene applications should note the specific scope of the provided data.",
+      "abstract": "Historical street-view imagery records urban evolution, but uneven coverage leaves substantial gaps in historical records. Generating plausible past appearances requires restoring changed structures while preserving persistent scene content. We construct VIGOR-his, a decade-spanning cross-view dataset containing 43,653 location-level quadruplets across 11 cities on three continents. Its automated pipeline performs spatial pairing, consistency screening, change classification, and the generation and validation of satellite-based change descriptions and local editing instructions. Based on VIGOR-his, we propose CrossTimeEdit, a model that reformulates historical street-view generation as editing, using recent street views to constrain viewpoint and unchanged appearance and temporal satellite differences as change evidence. Starting from FLUX.2 [Klein] 4B, we train CrossTimeEdit through supervised fine-tuning (SFT) followed by online reinforcement learning (RL). We design three street-view editing criteria, namely Instruction Alignment (IA), Background Preservation (BP), and Quality and Physical Plausibility (QP), as both RL reward dimensions and evaluation metrics. We optimize this multi-reward objective using Within Group Relative Policy Optimization for flow-matching models (Flow-GRPO) with Group reward-Decoupled Normalization Policy Optimization (GDPO), which normalizes each reward dimension before aggregation. CrossTimeEdit improves overall performance across the three editing criteria by 17.12\\% over the pretrained baseline and outperforms cross-view generation models in scene consistency, visual realism, and perceptual quality. The implementation code, dataset, and model weights are available at https://luhanwen67.github.io/CrossTimeEdit-release/.",
+      "takeaways": [
+        "The object is a specific dataset and editing model for historical street-view generation, not a general-purpose image editor.",
+        "The visible limit is the reliance on automated satellite-based change descriptions and the specific urban contexts of the 11 cities included.",
+        "The artifact status is established as available, with code, dataset, and model weights provided at the listed repository URL."
+      ],
+      "plain": {
+        "reported": "The authors state that their model, CrossTimeEdit, performs 17.12% better than the starting model across three specific quality measures they created.",
+        "brief": "The researchers created a large collection of paired photos of the same city locations from different decades, called VIGOR-his. They also built a computer program, CrossTimeEdit, that uses recent photos and satellite data to create images of what those locations looked like in the past.\n\nThey claim their program is 17.12% better than the base model it was built on, based on three specific checks they designed. The summary does not say if other experts or different datasets were used to test these results.\n\nPeople interested in how cities change over time or in teaching computers to edit images based on specific rules might find this useful. People who need to verify exact historical details or work with non-city landscapes should be aware the data is limited to specific urban areas.",
+        "takeaways": [
+          "This is a tool for making old-looking city photos, not a general photo editor.",
+          "The main limitation is that it relies on automated satellite data and only covers 11 specific cities.",
+          "The code and data are publicly available at the link provided in the paper."
+        ]
+      },
+      "actions": [
+        "Verify the 17.12% improvement claim and the definition of the three editing criteria by reviewing the full PDF and supplementary materials.",
+        "Inspect the provided code repository and dataset samples to assess the quality of the automated change classification and the diversity of the 11 cities."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/LuHanwen67/CrossTimeEdit-release",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-13",
+        "publishedOn": "2026-09-29",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.36616",
+            "upvotes": 20
+          }
+        ]
+      },
+      "trend": {
+        "votes": 20,
+        "rank": 8,
+        "of": 21,
+        "perDay": 1
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 20,
+          "sourceCount": 1,
+          "publishedOn": "2026-09-29"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-13T19:21:53.358Z"
+      }
+    },
+    {
+      "id": "2610.13832",
+      "arxivId": "2610.13832",
+      "url": "https://arxiv.org/abs/2610.13832",
+      "topic": "AI",
+      "reported": "The authors report that SpatialASM improves average accuracy across seven spatial reasoning benchmarks using four LVLM backbones.",
+      "metrics": [],
+      "title": "SpatialASM: Internalizing Active Mentalization for Spatial Reasoning",
+      "authors": "Yuhong Liu, Shenxi Wu, Junyi Chi, Beichen Zhang, Xuanlang Dai, Jiaqi Wang, Yuhang Zang, Dahua Lin",
+      "takeaway": "SpatialASM is a scalable framework that internalizes Active Spatial Mentalization into Large Vision-Language Models through training-time spatial simulation.",
+      "brief": "The authors propose SpatialASM to teach Large Vision-Language Models to proactively reconstruct spatial layouts from task-relevant viewpoints, a capability they term Active Spatial Mentalization. They use an allocentric novel-view generator to create explicit trajectories and perspective-taking tasks for supervision. The authors report performance gains on seven spatial reasoning benchmarks across four model backbones while retaining general vision capabilities.\n\nThe listing states that the method improves average accuracy but does not provide specific numerical values, baseline comparisons, or statistical significance. It also does not specify the exact nature of the \"performance gain\" or the magnitude of improvement on individual benchmarks. The claim that the approach alleviates the scarcity of spatial Chain-of-Thought supervision is supported by the synthesis of ASM trajectories, but the extent of this alleviation is not quantified.\n\nResearchers working on spatial reasoning in vision-language models or developing training frameworks for viewpoint transformation may find this relevant. Those focused on general-purpose LVLMs without specific spatial reasoning requirements may find the specialized nature of the supervision less applicable.",
+      "abstract": "When solving complex spatial reasoning tasks, ordinary humans naturally revisit the scenes from task-relevant viewpoints and mentally reconstruct the spatial layouts from those viewpoints. But can Large Vision-Language Models (LVLMs) proactively think in the same way? We term this ability Active Spatial Mentalization (ASM), an intrinsic component of visual intelligence that remains substantially underdeveloped in current LVLMs. To bridge this gap, we introduce SpatialASM, a scalable framework to internalize ASM into LVLMs through training-time spatial simulation. SpatialASM employs an allocentric novel-view generator to ground hypothetical viewpoints in visual evidence and produces two complementary forms of supervision: i) explicit ASM trajectories that teach LVLMs when and how to adaptively invoke view planning and imagination during spatial reasoning, and ii) automatically-constructed perspective-taking tasks that further strengthens viewpoint-conditioned scene imagination. On seven benchmarks spanning relatively perception-oriented spatial understanding to more challenging tasks requiring multi-image, cross-view and viewpoint-transformation reasoning, SpatialASM yields performance gain on LVLMs of four LVLM backbones in spatial reasoning while retaining their original general vision capabilities. The experimental results demonstrate that our approach improves average accuracy across the seven spatial benchmarks. And the synthesis of ASM trajectories provides a scalable pathway to alleviate the scarcity of spatial Chain-of-Thought (CoT) supervision for eliciting active viewpoint exploration and mental scene simulation.",
+      "takeaways": [
+        "The object is a training framework for LVLMs that uses synthetic viewpoint data to teach active spatial mentalization.",
+        "A visible limit is the lack of specific quantitative results in the abstract, making it difficult to assess the magnitude of improvement.",
+        "The artifact status is indicated by a provided GitHub repository URL, suggesting code availability, though the listing does not confirm the repository's completeness or functionality."
+      ],
+      "plain": {
+        "reported": "The authors report that their method, SpatialASM, makes computer vision models better at understanding spatial relationships, measured by their performance on seven different test sets.",
+        "brief": "The authors created a tool called SpatialASM to help computer vision models think about space more like humans do. Humans often imagine looking at a scene from different angles to solve puzzles; the authors want models to do this automatically. They train the models using fake images generated from different viewpoints to teach them how to plan and imagine these views. The authors say this makes the models better at spatial tests without hurting their ability to understand other visual tasks.\n\nThe listing says the models got better scores on seven tests but does not say by how much. It also does not say how much better they are compared to other methods. The authors claim this helps solve the problem of not having enough examples to teach models how to think about space, but they do not give numbers to prove how much this helps.\n\nPeople who build AI systems that need to understand 3D space or how objects relate to each other might find this useful. People who use AI for general image recognition without a focus on spatial puzzles might not need this specific tool.",
+        "takeaways": [
+          "The tool is a way to train AI models to imagine different viewpoints of a scene to solve spatial problems.",
+          "A limitation is that the summary does not show the actual score improvements, so it is hard to know how effective it is.",
+          "The authors provide a link to a code repository, which suggests the software is available, but the summary does not confirm if the code works or is complete."
+        ]
+      },
+      "actions": [
+        "Verify the specific accuracy improvements and baseline comparisons by reading the full PDF, as the abstract lacks numerical details.",
+        "Check the provided GitHub repository to confirm the availability and usability of the SpatialASM code and data generation tools."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/InternLM/SpatialASM",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-13",
+        "publishedOn": "2026-10-09",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.13832",
+            "upvotes": 16
+          }
+        ]
+      },
+      "trend": {
+        "votes": 16,
+        "rank": 9,
+        "of": 21,
+        "perDay": 4
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 16,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-09"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-13T19:21:53.358Z"
+      }
+    },
+    {
+      "id": "2609.35965",
+      "arxivId": "2609.35965",
+      "url": "https://arxiv.org/abs/2609.35965",
+      "topic": "AI",
+      "reported": "The authors report that their system, TRISS, serves as a comprehensive baseline and reveals substantial room for improvement across scheduling, planning, and execution on the MAVLN benchmark.",
+      "metrics": [
+        "11,724 episodes",
+        "145 scenes"
+      ],
+      "title": "Systematic Multi-Agent Vision-and-Language Navigation: Formulation, Benchmark, and Method",
+      "authors": "Yunzhe Xu, Zhe Liu",
+      "takeaway": "The paper presents the first systematic formalization of multi-agent Vision-and-Language Navigation as a constrained coordination problem, along with a new benchmark and a coordination-ready navigation system.",
+      "brief": "The authors claim to provide the first systematic formalization of multi-agent Vision-and-Language Navigation, defining missions with dependency and resource constraints. They introduce a benchmark called MAVLN and a system called TRISS that uses an LLM scheduler and shared memory to coordinate multiple robots.\n\nThe authors state that their verified pipeline created 11,724 episodes across 145 scenes with teams of up to four agents. They report that experiments establish TRISS as a baseline but reveal substantial room for improvement in scheduling, planning, and execution. The listing does not specify quantitative performance scores or success rates for the navigation tasks.\n\nResearchers working on multi-robot coordination, vision-and-language navigation, or constrained task planning may find the formalization and benchmark useful. Those focused solely on single-agent navigation or systems without resource constraints may find the specific coordination overhead less relevant.",
+      "abstract": "Vision-and-Language Navigation (VLN) has largely focused on a single agent following a single instruction, yet many real-world applications require teams of robots to tackle tasks beyond the capabilities of any individual agent. We present Systematic Multi-Agent Vision-and-Language Navigation, providing, to our knowledge, the first systematic formalization of multi-agent VLN as a constrained coordination problem: each mission consists of subtasks carrying dependency and resource constraints (presence locks and holding chains). A verified four-stage crafting pipeline instantiates the task as MAVLN, comprising 11,724 episodes across 145 scenes with teams of up to four agents under three instruction regimes, accompanied by tailored constraint-aware metrics. We further present TRISS, a coordination-ready navigation system coupling an LLM-based subtask scheduler, a shared topological memory that turns each agent's exploration into team knowledge, and a conflict-aware execution mechanism that realizes simultaneous intentions as collision-free routes. Extensive experiments establish TRISS as a comprehensive baseline and reveal substantial room for improvement across scheduling, planning, and execution, highlighting the challenges of coordinating under MAVLN task constraints. Project page: https://xyz9911.github.io/mavln.",
+      "takeaways": [
+        "The object is a formalization of multi-agent VLN as a constrained coordination problem, a benchmark of 11,724 episodes, and a baseline system named TRISS.",
+        "A visible limit is the authors' own report of substantial room for improvement across scheduling, planning, and execution, indicating the baseline is not yet a solved solution.",
+        "The artifact status is established by the provided project page and GitHub repository URLs, though the listing does not confirm the code's completeness or reproducibility."
+      ],
+      "plain": {
+        "reported": "The authors say their robot coordination system works as a starting point for comparison but still has significant weaknesses in how it plans and moves robots, based on tests with their new set of challenges.",
+        "brief": "The authors say they created the first clear mathematical definition for how groups of robots should follow spoken instructions together. They built a test set with over 11,000 scenarios and a computer program that helps robots share information and avoid crashing into each other.\n\nThey say their test set has 11,724 scenarios in 145 different environments, with groups of up to four robots. They say their program is a good baseline for comparison but still has big problems with planning and execution. The summary does not give specific scores or percentages showing how well the robots actually succeeded.\n\nPeople studying how to make multiple robots work together or how to give them complex instructions might find this useful. People only interested in single robots or simple tasks might not need this specific complexity.",
+        "takeaways": [
+          "The main items are a new way to define group robot tasks, a large test set, and a basic computer program for controlling the group.",
+          "The authors admit their program still has major issues with planning and moving the robots, so it is not a finished solution.",
+          "The authors provide links to a website and a code repository, but the summary does not prove the code is complete or works exactly as described."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative performance metrics and success rates of TRISS by reading the full PDF, as the abstract only mentions 'substantial room for improvement' without numbers.",
+        "Inspect the GitHub repository to confirm the availability of the MAVLN benchmark data and the TRISS implementation code."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/xyz9911/MA-VLN",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-13",
+        "publishedOn": "2026-10-07",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2609.35965",
+            "upvotes": 10
+          }
+        ]
+      },
+      "trend": {
+        "votes": 10,
+        "rank": 10,
+        "of": 21,
+        "perDay": 2
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 10,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-07"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-13T19:21:53.358Z"
+      }
+    }
+  ]
+}
