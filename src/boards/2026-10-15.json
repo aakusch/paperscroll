@@ -1,0 +1,671 @@
+{
+  "date": "2026-10-15",
+  "label": "Thu, Oct 15",
+  "minutes": 10,
+  "poolSize": 135,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-10-15T17:02:59.509Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2610.20571",
+      "arxivId": "2610.20571",
+      "url": "https://arxiv.org/abs/2610.20571",
+      "topic": "AI",
+      "reported": "The authors report that ATAS improves all reported cross-shot consistency measures and achieves the highest aggregate benchmark score for each backbone across four video generators.",
+      "metrics": [],
+      "title": "Any Time, Any Space: A World-State-Centric Framework for Agentic Video Generation",
+      "authors": "Weijie Wang, Haomin Zhang, Ye Li, Akide Liu, Zeyu Zhang, Haoyu Zhao, Yefei He, Donny Y. Chen, Feng Chen, Bohan Zhuang",
+      "takeaway": "The paper presents ATAS, a framework that compiles screenplays into shot requests with explicit location, camera, and event-time references to maintain spatial and temporal consistency in long-form agentic video generation.",
+      "brief": "The authors propose a world-state-centric framework that uses scene and event memory to manage video generation consistency. They state that the system compiles screenplays into structured shot requests with explicit spatial and temporal references.\n\nThe authors report improvements in cross-shot consistency and aggregate benchmark scores across four video generators. They also claim superior performance on target-image spatial revisit and event-recapture criteria compared to other agents and 3D-guided methods. The listing does not specify the exact numerical values for these improvements or the specific benchmarks used for the aggregate scores.\n\nResearchers working on long-form video generation, spatial-temporal consistency, or agentic workflows may find this relevant. Those focused solely on single-shot generation or non-agentic pipelines may find the specific memory architecture less applicable.",
+      "abstract": "Long-form agentic video generation must turn a screenplay into shots that remain spatially and temporally consistent across nonconsecutive requests. Passing prompts or recent frames between shots does not provide a shared spatial frame for revisiting a scene or a time-indexed record for replaying an earlier event. We present Any Time, Any Space (ATAS), which compiles a screenplay into shot requests with explicit location, camera, and event-time references. Before generation, it retrieves relevant evidence from a scene memory of registered static geometry and an event memory of dynamic observations indexed by scene, event, and time. After generation, ATAS reconstructs and registers the clip. It updates memory only when review and state checks accept the observation, while film delivery remains independent of memory admission. Across four video generators, ATAS improves all reported cross-shot consistency measures and achieves the highest aggregate benchmark score for each backbone. It also outperforms the compared agents and 3D-guided methods on target-image spatial revisit, leads three event-recapture criteria, and receives the highest human ratings on all six criteria. The video results and code are available on our project page: https://lhmd.top/atas/.",
+      "takeaways": [
+        "The object is a framework for compiling screenplays into consistent video shots using explicit memory structures.",
+        "The visible limit is the lack of specific numerical metrics in the abstract, making it difficult to gauge the magnitude of improvement without the full paper.",
+        "The artifact status is established with a project page and a GitHub repository provided by the authors."
+      ],
+      "plain": {
+        "reported": "The authors say their system makes videos more consistent across different shots and gets the best overall test scores for each of the four video creation tools they tested.",
+        "brief": "The authors suggest a new way to make long videos that stay consistent in space and time. They use a system that remembers where things are and what happened when, so the video doesn't get confused when jumping between scenes.\n\nThey say their method works better than other methods they compared it to. It does a better job of keeping the same look and feel across different shots. They also say people who watched the videos rated their results higher on six different points. The abstract does not give the exact numbers for how much better it is.\n\nPeople who make long videos with AI or care about keeping scenes consistent might like this. People who only make short, single clips might not need this specific tool.",
+        "takeaways": [
+          "The thing they made is a system that helps AI make long videos that make sense in space and time.",
+          "The main thing missing from the summary is the exact numbers showing how much better it is than other methods.",
+          "They have put their code and videos online so people can look at them."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark names and numerical scores in the PDF to confirm the claimed improvements.",
+        "Check the GitHub repository to confirm the availability and functionality of the code and video results."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/ziplab/ATAS",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-15",
+        "publishedOn": "2026-10-14",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.20571",
+            "upvotes": 317
+          }
+        ]
+      },
+      "trend": {
+        "votes": 317,
+        "rank": 1,
+        "of": 49,
+        "perDay": 317
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 317,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-14"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-15T17:02:59.509Z"
+      }
+    },
+    {
+      "id": "2610.13521",
+      "arxivId": "2610.13521",
+      "url": "https://arxiv.org/abs/2610.13521",
+      "topic": "AI",
+      "reported": "The authors report that Road MOPD mitigates degradation in the disadvantaged domain, gains over 5 percentage points under high conflict, and improves overall performance in low-conflict and three-domain settings.",
+      "metrics": [
+        "over 5 percentage points"
+      ],
+      "title": "Beyond Domain-Routed Supervision: Cross-Teacher Guarding for Multi-Teacher On-Policy Distillation",
+      "authors": "Shi-Yu Tian, Yong Liu, Ximan Liu, Tianrui Zhu, Sule Bai, Xinwei Yang, Ruiqi Liu, Kun-Yang Yu, Ming Yang, Zhi Zhou, Yu-Feng Li, Yipeng Sun, Gu Simiu",
+      "takeaway": "The paper proposes Cross-Teacher Guarding for MOPD (Road MOPD) to coordinate multi-teacher supervision through token-level credit assignment and gradient updates.",
+      "brief": "The authors propose Road MOPD to address gradient conflicts in multi-teacher on-policy distillation by using non-routed teachers as auxiliary critics. They report that the method mitigates degradation in disadvantaged domains and gains over 5 percentage points under high conflict. The listing does not specify the exact benchmark, model size, or dataset used for these measurements.\n\nThe strongest reported result is a gain of over 5 percentage points under high conflict conditions. The authors state that the method improves overall performance in low-conflict and three-domain settings. The listing does not establish whether these gains are statistically significant or consistent across different model architectures.\n\nResearchers working on multi-teacher distillation or gradient conflict mitigation in large language models may find this relevant. Those not focused on on-policy distillation or multi-teacher setups may ignore it.",
+      "abstract": "Multi-teacher on-policy distillation (MOPD) extends on-policy distillation (OPD) by routing domain-specific data to specialized teachers, integrating their capabilities through dense token-level supervision on student-generated trajectories. However, domain routing only distinguishes the supervision sources for different domains; updates from all domains still act on shared parameters. When teachers differ substantially in response style and domain expertise, supervision that is effective in isolation may still lead to persistent gradient conflicts and capability degradation during joint optimization. To address this challenge, we propose Cross-Teacher Guarding for MOPD (Road MOPD), which introduces non-routed teachers as auxiliary cross-domain critics on the same student trajectories and coordinates multi-teacher supervision through token-level credit assignment and gradient updates. Specifically, cross-teacher-guided credit assignment uses teacher agreement to strengthen token-level corrections jointly supported by the teachers and attenuate conflicting signals; preventive multi-teacher gradient projection uses auxiliary gradients from the same trajectories to constrain potentially conflicting updates and adaptively controls projection strength to retain target-domain learning signals. In experiments, Road MOPD mitigates degradation in the disadvantaged domain, gains over 5 percentage points under high conflict, and improves overall performance in low-conflict and three-domain settings.",
+      "takeaways": [
+        "The object is a method for coordinating multi-teacher supervision in on-policy distillation.",
+        "A visible limit is the lack of specified benchmarks or model details in the abstract.",
+        "The artifact status is unknown as no code repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that their method, Road MOPD, reduces performance drops in weaker areas, gains more than 5 percentage points when teacher conflicts are high, and improves total performance in low-conflict and three-domain scenarios.",
+        "brief": "The authors suggest a new way to combine lessons from multiple AI teachers called Road MOPD. This helps when different teachers give conflicting advice. They say it stops the student model from getting worse in weak areas and adds over 5 percentage points of accuracy when conflicts are high. The summary does not say which specific tests or models were used to measure this.\n\nThe best result mentioned is a gain of more than 5 percentage points in high-conflict situations. The authors also say it works well in low-conflict and three-domain cases. It is not clear if these results are reliable or if they work for all types of AI models.\n\nPeople who study how to teach AI models using multiple sources might find this useful. People who do not work on this specific type of AI training might not need to look at it.",
+        "takeaways": [
+          "The paper is about a method for teaching AI models using multiple teachers.",
+          "A limit is that the specific tests and models are not named in the summary.",
+          "It is not known if the code is available because no link is provided."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmarks and model configurations used in the experiments by reading the full PDF.",
+        "Check if the reported 5 percentage point gain is consistent across different conflict levels and domain counts."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-15",
+        "publishedOn": "2026-10-09",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.13521",
+            "upvotes": 231
+          }
+        ]
+      },
+      "trend": {
+        "votes": 231,
+        "rank": 2,
+        "of": 49,
+        "perDay": 39
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 231,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-09"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-15T17:02:59.509Z"
+      }
+    },
+    {
+      "id": "2610.20584",
+      "arxivId": "2610.20584",
+      "url": "https://arxiv.org/abs/2610.20584",
+      "topic": "AI",
+      "reported": "The authors report that Player-1-9B reaches 38.33% success on MineDojo-300, compared with 12.63% for the strongest evaluated baseline.",
+      "metrics": [
+        "38.33% success",
+        "12.63% for the strongest evaluated baseline",
+        "27.8 and 17.7 percentage points"
+      ],
+      "title": "Player-1: Learning to Play from Synthetic Experience",
+      "authors": "Mingyu Ouyang, Yiran Wang, Siyuan Hu, Xingyilang Yin, Huiqiang Sun, Guangzhi Wang, Junfu Pu, Cheng Cheng, Honghao Chen, Ying Shan, Mike Zheng Shou, Hwee Tou Ng",
+      "takeaway": "Player-1 is a post-training framework that improves game control beyond supervised demonstrations by learning from synthetic experience in programmatically verifiable environments.",
+      "brief": "The authors propose Player-1, a framework extending computer-use action spaces with relative pointer motion, sustained inputs, and composite actions to learn game control from synthetic experience. They fine-tune models on 6,044 curated trajectories and train in Player-1-Gym, a suite of sixteen synthetic 2D and 3D environments using PPO reinforcement learning.\n\nThe strongest reported result is a 38.33% success rate on MineDojo-300 for Player-1-9B, exceeding the strongest evaluated baseline of 12.63%. The authors state that broader synthetic environment coverage improves transfer and that composite action usage increases during RL. The listing does not establish whether these gains hold in unseen, non-synthetic game environments or against baselines trained on larger real-world datasets.\n\nResearchers working on computer-use agents, reinforcement learning for interactive control, or synthetic data generation for game AI may find the framework and Gym environments relevant. Those focused solely on static screen understanding or non-game digital tasks may find the specific game-control focus less applicable.",
+      "abstract": "Computer-use agents have demonstrated strong capabilities in interpreting screens and executing keyboard and mouse actions. However, games, with their visually rich worlds and diverse mechanics, remain challenging and offer a demanding next step toward general digital control. Current game-agent learning pipelines often rely on large-scale demonstrations with limited coverage of dynamic game states, while scalable environments for interactive training remain difficult to obtain. We introduce Player-1, a post-training framework for learning game control beyond demonstrations through synthetic experience. We extend the computer-use action space with relative pointer motion, sustained inputs, and composite actions. For supervised initialization, we fine-tune computer-use models on 6,044 curated gameplay trajectories that pair recorded actions with task instructions and visual reasoning. We construct Player-1-Gym, sixteen synthetic 2D and 3D environments designed around control demands shared across games. Programmatically verifiable rewards and randomized observations and control dynamics support multi-environment reinforcement learning with PPO. The resulting Player-1-9B and Player-1-35B-A3B improve MineDojo-300 success over their SFT policies by 27.8 and 17.7 percentage points, respectively. Player-1-9B reaches 38.33% success compared with 12.63% for the strongest evaluated baseline, with further gains over SFT on ViZDoom-10 and GameWorld. Further analyses show that broader synthetic environment coverage improves transfer, while the use of composite actions that combine multiple keyboard and mouse inputs increases during RL. We demonstrate that learning from synthetic experience substantially improves game control beyond supervised initialization, with gains that generalize beyond the RL training suite.",
+      "takeaways": [
+        "The object is a post-training framework and a suite of sixteen synthetic game environments designed to teach interactive control beyond static demonstrations.",
+        "A visible limit is that the reported gains are measured on specific benchmarks like MineDojo-300, and the listing does not confirm performance on unseen, real-world game titles or against larger real-data baselines.",
+        "The artifact status is established by the declared code repository URL, but the listing does not confirm whether the repository contains the full training code, models, or the Player-1-Gym environments."
+      ],
+      "plain": {
+        "reported": "The authors report that their smaller model, Player-1-9B, achieved a 38.33% success rate on the MineDojo-300 test, which is much higher than the 12.63% success rate of the best other model they tested.",
+        "brief": "The authors created a system called Player-1 that teaches AI agents to play video games by letting them practice in fake, computer-generated game worlds. They first taught the AI basic skills using 6,044 recorded examples of human gameplay, then let it improve by playing in sixteen different fake game environments where it could get automatic feedback on its performance.\n\nThe best result they showed was their smaller model getting a 38.33% success rate on a specific game test, beating the best other model they compared it to, which only got 12.63%. They also noted that practicing in more different fake environments helped the AI do better in new situations. However, the summary does not say if this AI works well in real, commercial video games or if it beats models trained on much larger amounts of real human gameplay data.\n\nPeople who build AI that can use computers or who study how AI learns to control things in interactive environments might find this useful. People who only care about AI that reads text or images without needing to interact with a changing environment might not find this directly relevant.",
+        "takeaways": [
+          "The main thing they built is a way to train AI to play games using fake practice environments, plus a set of sixteen such fake environments.",
+          "A clear limitation is that we only know how well it works on the specific tests they mention, and we do not know if it works in real, unmodified video games or against AI trained on huge amounts of real data.",
+          "They say they have put their code online, but the summary does not confirm if the code includes all the fake game environments, the training instructions, or the trained AI models themselves."
+        ]
+      },
+      "actions": [
+        "Verify the declared code repository to confirm the availability of the Player-1-Gym environments, training scripts, and model weights.",
+        "Check the full paper for details on the specific baselines compared and the exact composition of the 6,044 curated trajectories used for supervised initialization."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/TencentARC/Player-1",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-15",
+        "publishedOn": "2026-10-14",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.20584",
+            "upvotes": 131
+          }
+        ]
+      },
+      "trend": {
+        "votes": 131,
+        "rank": 3,
+        "of": 49,
+        "perDay": 131
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 131,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-14"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-15T17:02:59.509Z"
+      }
+    },
+    {
+      "id": "2610.20344",
+      "arxivId": "2610.20344",
+      "url": "https://arxiv.org/abs/2610.20344",
+      "topic": "AI",
+      "reported": "The authors report that GPT-6 Astra achieved the highest pass rate at 53.05% across 328 test cases.",
+      "metrics": [
+        "53.05%",
+        "27.44%",
+        "328 test cases"
+      ],
+      "title": "Doc2Harness: Benchmarking LLMs on Long-Horizon Harness Engineering of Coding Agents",
+      "authors": "Yuyao Ge, Shenghua Liu, Peizhong Gao, Chendi Ge, Chenxu Liu, Yiwei Wang, Lingrui Mei, Baolong Bi, Jiayu Yao, Jiafeng Guo, Xueqi Cheng",
+      "takeaway": "The paper proposes Doc2Harness, a two-stage benchmark designed to evaluate long-horizon harness engineering for coding agents directly.",
+      "brief": "The authors introduce Doc2Harness to measure how well models can construct software harnesses for coding agents, rather than just testing the agents themselves. The benchmark uses a two-stage process where a model builds a harness from a contract skeleton, and then that harness is tested against a scripted mock model.\n\nThe strongest reported result is a 53.05% pass rate for GPT-6 Astra on 328 test cases, with the weakest model reaching 27.44%. The authors note that even the strongest model fails nearly half of the cases, with failures clustering around how functionality is split across modules. The listing does not establish specific limitations regarding the generalizability of the mock model or the specific frontier harnesses used in the development document.\n\nResearchers working on agent infrastructure, harness design, or LLM evaluation for coding tasks may find this relevant. Those focused solely on downstream task success without interest in the underlying harness construction process may ignore it.",
+      "abstract": "Agents driven by large language models are increasingly deployed on long-horizon tasks, where they use tools and modify real workspaces. How well they perform depends as much on the harness around the model as on the model itself. Existing benchmarks measure downstream task success under a fixed harness, leaving harness engineering itself unexplored. We propose Doc2Harness, a two-stage benchmark that evaluates long-horizon harness engineering directly. In Stage 1, a build model operating inside a fixed builder harness receives an interface-only contract skeleton and a development document that consolidates behavior across twelve frontier harnesses, and then constructs a complete candidate harness in an isolated container. In Stage 2, the frozen candidate harness runs in containers separate from the construction environment, one per test case, and is driven end to end by a scripted mock model. We score each test case using four observable channels, namely the requests sent to the model, the files on disk, the process exit code, and the command output; positive controls rule out vacuous passes. Across nineteen frontier models, each evaluated with three independent builds on 328 test cases, GPT-6 Astra achieves the highest pass rate at 53.05%, while the weakest model reaches 27.44%, a gap of roughly twenty-six percentage points. Even the strongest model fails nearly half of the test cases, and failures cluster around how cross-cutting functionality is split across modules. To our knowledge, Doc2Harness provides the first deterministic benchmark for measuring long-horizon harness engineering.",
+      "takeaways": [
+        "The object is a deterministic benchmark for evaluating the engineering of agent harnesses, not the agents' downstream task performance.",
+        "A visible limit is that the evaluation relies on a scripted mock model and specific observable channels, which may not capture all real-world dynamic interactions.",
+        "The artifact status is established by the provided GitHub repository URL, though the listing does not confirm the repository's current availability or completeness."
+      ],
+      "plain": {
+        "reported": "The authors report that the model GPT-6 Astra achieved the highest success rate at 53.05% across 328 test cases.",
+        "brief": "The authors introduce a new test suite called Doc2Harness to measure how well AI models can build the supporting software structure, or 'harness,' for coding agents. Instead of just testing if an agent can complete a task, this benchmark tests if a model can correctly construct the harness itself. The process has two stages: first, a model builds the harness from a basic outline, and second, that built harness is tested using a fake, scripted AI model to see if it works correctly.\n\nThe best result reported was a 53.05% success rate for the model GPT-6 Astra on 328 different test scenarios. The worst-performing model had a 27.44% success rate. The authors point out that even the best model failed on almost half of the tests, with errors often happening when deciding how to divide different features among different parts of the software. The provided summary does not explain if the fake AI model used for testing might limit how well the results apply to real-world situations.\n\nPeople who work on building the infrastructure for AI coding agents or who are interested in how to test the software that wraps around AI models might find this useful. People who are only interested in whether AI agents can complete specific coding tasks, without caring about the underlying software structure, might not need to look at this.",
+        "takeaways": [
+          "The main focus is a test suite for checking how well AI models can build the supporting software for coding agents, rather than testing the agents' ability to do coding tasks.",
+          "A potential limitation is that the tests use a scripted, fake AI model, which might not fully represent how real, unpredictable AI models behave in the real world.",
+          "The authors provide a link to a code repository, but the summary does not confirm if the code is fully available or working."
+        ]
+      },
+      "actions": [
+        "Verify the specific definitions of the 'four observable channels' and the 'interface-only contract skeleton' in the full PDF to understand the evaluation constraints.",
+        "Check the linked GitHub repository to confirm the availability of the test cases and the builder harness implementation."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/YuyaoGe/doc2harness",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-15",
+        "publishedOn": "2026-10-14",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.20344",
+            "upvotes": 90
+          }
+        ]
+      },
+      "trend": {
+        "votes": 90,
+        "rank": 4,
+        "of": 49,
+        "perDay": 90
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 90,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-14"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-15T17:02:59.509Z"
+      }
+    },
+    {
+      "id": "2610.18902",
+      "arxivId": "2610.18902",
+      "url": "https://arxiv.org/abs/2610.18902",
+      "topic": "Stats",
+      "reported": "The authors report a reproducible Monte Carlo study with eight settings and 4,000 generated samples comparing likelihood and moment estimation and evaluating log-scale confidence intervals.",
+      "metrics": [
+        "4,000 generated samples"
+      ],
+      "title": "The LR2 Lifetime Distribution: Rate Crossing, Reliability Properties, and Estimation",
+      "authors": "Lalita Singh",
+      "takeaway": "The paper derives the density, survival function, moments, transforms, truncated moments, quantiles, order-statistic distributions, mean residual life, and stress--strength reliability for the LR2 one-parameter lifetime distribution.",
+      "brief": "The authors derive the density, survival function, moments, transforms, truncated moments, quantiles, order-statistic distributions, mean residual life, and stress--strength reliability for the LR2 one-parameter lifetime distribution. They report a reproducible Monte Carlo study with eight settings and 4,000 generated samples comparing likelihood and moment estimation and evaluating log-scale confidence intervals. The listing does not state specific numerical performance values for the estimators, and the analysis explains the restrictions associated with a fixed working time unit.\n\nThe strongest reported evidence is the Monte Carlo study comparing likelihood and moment estimation. The listing does not provide specific numerical results for the comparison, only the study design. The authors state that the analysis distinguishes mathematical properties from empirical validation and explains the restrictions associated with a fixed working time unit.\n\nResearchers working on lifetime distributions, reliability properties, or estimation methods for mixed distributions may find the derived properties and estimation methods relevant. Those seeking specific numerical performance benchmarks for the LR2 distribution should verify the full paper for detailed results.",
+      "abstract": "We study the LR2 one-parameter lifetime distribution obtained by mixing an exponential component of rate $\\theta/2$ and a gamma component with shape four and rate $\\theta^2$. The exponential mixing probability is $\\theta^2/(1+\\theta^2)$ for $\\theta>0$. We derive the density, survival function, moments, transforms, truncated moments, quantiles, order-statistic distributions, mean residual life, and stress--strength reliability. Identifiability follows from the density at the origin, and strict monotonicity of the mean yields a unique moment estimator. A complete density-turning-point criterion and analytic initial and tail hazard expansions clarify the possible shapes. The component rates cross at one half. The hazard decreases initially for every positive parameter and eventually increases in the gamma-dominated regime; it eventually decreases in the exponential-dominated regime. We develop likelihood estimation, observed information, constrained expectation--maximization, spacing estimation, and inference under regularity conditions, and state the likelihood for independent right censoring. A reproducible Monte Carlo study with eight settings and 4,000 generated samples compares likelihood and moment estimation and evaluates log-scale confidence intervals. The analysis distinguishes mathematical properties from empirical validation and explains the restrictions associated with a fixed working time unit.",
+      "takeaways": [
+        "The object is the LR2 one-parameter lifetime distribution, obtained by mixing an exponential component and a gamma component.",
+        "A visible limit is the restriction associated with a fixed working time unit, which the authors explain in the analysis.",
+        "The artifact status is not established in the listing; no code or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report a reproducible computer simulation study with eight different scenarios and 4,000 generated data samples comparing two estimation methods and evaluating confidence intervals on a logarithmic scale.",
+        "brief": "The authors derive the mathematical formulas for the density, survival function, moments, transforms, truncated moments, quantiles, order-statistic distributions, mean residual life, and stress--strength reliability for the LR2 one-parameter lifetime distribution. They report a reproducible computer simulation study with eight different scenarios and 4,000 generated data samples comparing two estimation methods and evaluating confidence intervals on a logarithmic scale. The listing does not state specific numerical performance values for the estimators, and the analysis explains the restrictions associated with a fixed working time unit.\n\nThe strongest reported evidence is the computer simulation study comparing the two estimation methods. The listing does not provide specific numerical results for the comparison, only the study design. The authors state that the analysis distinguishes mathematical properties from empirical validation and explains the restrictions associated with a fixed working time unit.\n\nResearchers working on lifetime distributions, reliability properties, or estimation methods for mixed distributions may find the derived properties and estimation methods relevant. Those seeking specific numerical performance benchmarks for the LR2 distribution should verify the full paper for detailed results.",
+        "takeaways": [
+          "The object is the LR2 one-parameter lifetime distribution, which is a mixture of an exponential distribution and a gamma distribution.",
+          "A visible limit is the restriction associated with a fixed working time unit, which the authors explain in the analysis.",
+          "The artifact status is not established in the listing; no code or repository is declared."
+        ]
+      },
+      "actions": [
+        "Verify the specific numerical results of the Monte Carlo study in the full PDF to assess the performance of likelihood and moment estimation.",
+        "Check the full paper for details on the restrictions associated with the fixed working time unit and their impact on the distribution's properties."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-10-15",
+        "publishedOn": "2026-10-15",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.18902"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-15"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-15T17:02:59.509Z"
+      }
+    },
+    {
+      "id": "2610.18904",
+      "arxivId": "2610.18904",
+      "url": "https://arxiv.org/abs/2610.18904",
+      "topic": "Engineering",
+      "reported": "The authors report that on 2,942 injected events of thirteen fault types the method detects 96.3% (95% interval 95.7-97.0) at 0.22 false alarms per hour and attributes 91.2% (90.6-91.8) of detected events correctly from one channel.",
+      "metrics": [
+        "96.3% (95% interval 95.7-97.0)",
+        "0.22 false alarms per hour",
+        "91.2% (90.6-91.8)"
+      ],
+      "title": "Distinguishing Process Change, Instrument Fault and Data-Path Corruption in Streaming Telemetry: A Reference Implementation and Benchmark",
+      "authors": "Oleksandr Klymenko",
+      "takeaway": "The paper claims to distinguish process change, instrument fault, and data-path corruption in streaming telemetry using a bank of online detectors and a deterministic attribution rule.",
+      "brief": "The authors propose a reference implementation and benchmark for distinguishing three causes of telemetry anomalies: process change, instrument fault, and data-path corruption. They state that the three causes look alike in a single sample and require different responses.\n\nThe authors report detection and attribution rates on injected events and recorded industrial signals. They note that from one channel only 2 of 207 detected sensor drifts are attributed to the instrument, as the problem statement predicts. The listing does not establish whether the benchmark covers all possible industrial fault modes or if the 46 false alarms per hour on the Skoltech Anomaly Benchmark is acceptable for real-time operations.\n\nEngineers working on streaming telemetry monitoring may find the deterministic attribution rule and detector bank relevant. Researchers focused on single-channel anomaly detection without attribution may ignore the multi-channel results.",
+      "abstract": "A reading departs from what a monitoring system expects for one of three reasons: the physical process changed, the instrument is failing, or the value was corrupted between the instrument and the software. The three call for different responses and look alike in a single sample. We state the three-cause problem, prove which pairs of causes one channel cannot separate, and propose a bank of online detectors - a Kalman tracker with CUSUM and EWMA charts on its innovation, a Hampel median with generalized-ESD confirmation, a robust noise statistic with ADWIN, exact-value checks and an optional two-channel complementary filter - combined by a deterministic, inspectable attribution rule. The detectors were merged into a public algorithm library. On 2,942 injected events of thirteen fault types the method detects 96.3% (95% interval 95.7-97.0) at 0.22 false alarms per hour and attributes 91.2% (90.6-91.8) of detected events correctly from one channel and 99.0% (98.6-99.4) with a second, rate channel; from one channel only 2 of 207 detected sensor drifts are attributed to the instrument, as the problem statement predicts. Injected into recorded industrial signals, the same catalogue is detected at 80.8% and attributed correctly at 84.5%, at 3.6 false alarms per hour. On the Skoltech Anomaly Benchmark the method detects 32 of 33 experiments with a median delay of 15 s, at 46 false alarms per hour against 11 for a rolling z-score.",
+      "takeaways": [
+        "The object is a reference implementation and benchmark for three-cause attribution in streaming telemetry.",
+        "A visible limit is the high false alarm rate of 46 per hour on the Skoltech Anomaly Benchmark compared to 11 for a rolling z-score.",
+        "The artifact status is a public algorithm library, but the listing does not specify the repository URL or license."
+      ],
+      "plain": {
+        "reported": "The authors report that on 2,942 injected events of thirteen fault types the method detects 96.3% (95% interval 95.7-97.0) at 0.22 false alarms per hour and attributes 91.2% (90.6-91.8) of detected events correctly from one channel.",
+        "brief": "The authors propose a tool and test set to tell apart three reasons why a sensor reading might be wrong: the real process changed, the sensor is broken, or the data got corrupted in transit. They say these three reasons look the same in a single data point and need different fixes.\n\nThe authors report how well their tool finds and labels these problems using fake errors and real industrial data. They note that with just one data stream, only 2 out of 207 detected sensor drifts are correctly blamed on the sensor, which matches their theory. The listing does not say if the test set covers every possible industrial problem or if 46 false alarms per hour on the Skoltech test is too many for real use.\n\nPeople who build systems that watch live data streams might find the clear labeling rules and detection tools useful. People who only care about finding anomalies without knowing why they happened might ignore the parts about labeling the cause.",
+        "takeaways": [
+          "The thing being described is a tool and test set for figuring out why live data is wrong.",
+          "A clear weakness is that the tool makes 46 false alarms per hour on the Skoltech test, while a simpler method makes 11.",
+          "The tool is in a public library, but the listing does not give the web address or the legal terms for using it."
+        ]
+      },
+      "actions": [
+        "Verify the public algorithm library repository URL and license terms in the full PDF.",
+        "Check the full PDF for the specific definitions of the thirteen fault types and the exact composition of the Skoltech Anomaly Benchmark experiments."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-15",
+        "publishedOn": "2026-10-15",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.18904"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-15"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-15T17:02:59.509Z"
+      }
+    },
+    {
+      "id": "2610.18921",
+      "arxivId": "2610.18921",
+      "url": "https://arxiv.org/abs/2610.18921",
+      "topic": "Econ",
+      "reported": "The authors report that games designed by an AI on its own outperform those of human producers, including both amateurs and professional creatives, measured across three studies with N = 1,025 participants.",
+      "metrics": [
+        "N = 1,025"
+      ],
+      "title": "Creative destruction: Human-AI competition in an experimental market",
+      "authors": "John Conlon, Peter Schwardmann",
+      "takeaway": "The paper claims to test two hypotheses for how a human role in production could persist despite growing AI capabilities, finding no evidence for either in an experimental market.",
+      "brief": "The authors investigate whether humans retain a durable advantage in taste or if consumers intrinsically prefer human-made products. They report that AI-designed computer games outperform human-designed ones, and that revealing human authorship does not raise willingness to pay.\n\nThe evidence comes from three studies where participants acted as producers and consumers. The listing does not establish specific statistical significance levels or confidence intervals for the reported differences in performance or willingness to pay.\n\nResearchers studying human-AI competition in creative markets may find the experimental setup relevant. Those focused on qualitative aspects of creative labor or non-market valuation may find the specific game-design context limiting.",
+      "abstract": "We study two hypotheses for how a human role in production could persist despite growing AI capabilities. Humans might have a durable advantage in taste, designing better products even as AI agents automate routine tasks, or consumers might intrinsically prefer that humans have a hand in production. In our experiment, participants act as producers, designing computer games with an AI coding agent, and as consumers who buy them. Across three studies (N = 1,025), we find no evidence for either hypothesis. Games designed by an AI on its own outperform those of human producers, including both amateurs and professional creatives. Human producers do not anticipate the AI's advantage. Revealing whether a game is human-designed does not raise consumers' willingness to pay for the product.",
+      "takeaways": [
+        "The object is an experimental market where participants design and buy computer games using an AI coding agent.",
+        "A visible limit is that the study focuses specifically on computer game design, which may not generalize to all creative production domains.",
+        "The artifact status is not established in the listing, as no code or dataset repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that computer games made entirely by an AI program performed better than games made by people, including both beginners and professional designers, in a test involving 1,025 participants.",
+        "brief": "The researchers wanted to know if people are better at creating things because they have better taste, or if buyers just like knowing a human made the item. They found that the AI-made games were better than the human-made ones, and buyers did not pay more just because a human made the game.\n\nThe test involved three separate groups of people who both made and bought the games. The summary does not say how much better the AI games were or if the difference was statistically certain.\n\nPeople studying how AI and humans compete in making creative things might find this useful. People interested in other types of art or jobs where the value is not just about the final product might find this specific test too narrow.\n",
+        "takeaways": [
+          "The thing being studied is a market where people use an AI helper to make computer games and then buy them.",
+          "A clear limit is that this only tests computer game design, so it might not apply to writing, painting, or other creative jobs.",
+          "It is not stated in the summary whether the researchers shared their code or data with the public."
+        ]
+      },
+      "actions": [
+        "Verify the specific statistical tests and effect sizes used to determine if AI games 'outperform' human games in the full PDF.",
+        "Check the PDF for details on how 'professional creatives' were recruited and whether their prior experience with AI tools was controlled for."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-10-15",
+        "publishedOn": "2026-10-15",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.18921"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-15"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-15T17:02:59.509Z"
+      }
+    },
+    {
+      "id": "2610.18946",
+      "arxivId": "2610.18946",
+      "url": "https://arxiv.org/abs/2610.18946",
+      "topic": "Security",
+      "reported": "The authors report that their adaptive GMM achieves a 95-98% detection rate for spatial displacements above 150 mm while maintaining a 1% false alarm rate in an indoor massive MIMO experimental dataset.",
+      "metrics": [
+        "95-98% detection rate",
+        "1% false alarm rate",
+        "64 uniform linear array (ULA) antenna"
+      ],
+      "title": "Physical Layer Anomaly Detection via Adaptive Gaussian Mixture Model",
+      "authors": "Mamady Delamou, Luan Chen, Arsenia Chorti",
+      "takeaway": "The paper proposes an adaptive Gaussian mixture model framework for detecting physical-layer CSI spoofing attacks in indoor wireless localization systems.",
+      "brief": "The authors propose an adaptive Gaussian mixture model (GMM) to detect physical-layer spoofing attacks by identifying statistical anomalies in channel state information (CSI) patterns. This approach targets scenarios where attackers are spatially proximate to legitimate nodes, making CSI characteristics difficult to distinguish.\n\nThe reported evidence comes from a massive MIMO experimental dataset with 64 antennas and 5 mm spatial resolution. The authors state the detector achieves 95-98% detection for displacements above 150 mm with a 1% false alarm rate, outperforming conventional GMM, LOF, one-class SVM, and k-NN classifiers. The listing does not establish whether the 150 mm displacement threshold represents a hard limit or if performance degrades below this range.\n\nResearchers working on wireless security, physical-layer authentication, or anomaly detection in MIMO systems may find the specific experimental setup and comparative benchmarks relevant. Those focused on non-indoor environments or different antenna configurations should note the specific indoor and massive MIMO context of the reported results.",
+      "abstract": "Physical-layer spoofing attacks pose a critical threat to wireless localization systems by manipulating channel state information (CSI). Detecting such attacks becomes particularly challenging when the attacker and the legitimate node are spatially proximate, as their CSI characteristics become increasingly similar. To address this challenge in indoor scenarios, we propose an adaptive Gaussian mixture model (GMM)-based detection framework that learns legitimate CSI patterns and detects spatial inconsistency through statistical anomaly detection. Using a massive multiple-input multiple-output (MIMO) experimental dataset with 64 uniform linear array (ULA) antenna and 5 mm spatial resolution, we evaluated our detector against CSI spoofing attacks with spatial displacements ranging from 50 mm to 450 mm. The adaptive GMM achieves 95-98% detection rate for displacements above 150 mm while maintaining 1% false alarm rate. We benchmark our approach against conventional GMM, local outlier factor (LOF), one-class support vector machine (SVM) and k-nearest neighbors (k-NN) classifiers, demonstrating overall superior detection performance of our proposed classifier.",
+      "takeaways": [
+        "The object is an adaptive GMM detector for CSI spoofing in indoor massive MIMO systems.",
+        "A visible limit is the reliance on a specific experimental dataset with 64 antennas and 5 mm resolution, with performance claims tied to displacements above 150 mm.",
+        "The artifact status is not established in the listing, as no code or dataset repository is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their adaptive GMM achieves a 95-98% detection rate for spatial displacements above 150 mm while maintaining a 1% false alarm rate in an indoor massive MIMO experimental dataset.",
+        "brief": "The authors propose a statistical method called an adaptive Gaussian mixture model to catch fake signals in indoor wireless location systems. This method looks for unusual patterns in the radio signals that indicate an attacker is nearby.\n\nThe evidence comes from a test setup with 64 antennas in a room. The authors say their method catches 95 to 98 percent of fake signals that are at least 150 millimeters away from the real source, while only making a mistake 1 percent of the time. They say this is better than four other common detection methods. The text does not say if the method stops working for distances smaller than 150 millimeters.\n\nPeople who study how to secure wireless networks or detect fake signals in indoor environments might find this useful. People who work with outdoor systems or different types of antennas should note that these results are specific to the indoor test setup described.",
+        "takeaways": [
+          "The method is a statistical detector for fake radio signals in indoor wireless systems.",
+          "The results are based on a specific test with 64 antennas and only claim high accuracy for distances over 150 millimeters.",
+          "The listing does not say if the code or data are available for others to use."
+        ]
+      },
+      "actions": [
+        "Verify the full PDF to confirm the experimental setup details and the specific conditions under which the 95-98% detection rate was measured.",
+        "Check the supplementary materials or author correspondence for any available code or dataset links not mentioned in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-15",
+        "publishedOn": "2026-10-15",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.18946"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-15"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-15T17:02:59.509Z"
+      }
+    },
+    {
+      "id": "2610.18953",
+      "arxivId": "2610.18953",
+      "url": "https://arxiv.org/abs/2610.18953",
+      "topic": "Physics",
+      "reported": "The authors report constructing an invertible subalgebra supporting chiral semions on a square lattice with one qubit per edge, and proving that it and its anti-semion commutant generate all local operators on the Hilbert space.",
+      "metrics": [
+        "d=4k{-}2"
+      ],
+      "title": "Invertible subalgebras for chiral semion topological order",
+      "authors": "Yu-An Chen, Meng Sun, Nathanan Tantivasadakarn, Zongyuan Wang, Bowen Yang",
+      "takeaway": "The paper claims to construct invertible subalgebras for chiral semion topological order, including explicit non-Pauli generators and a three-dimensional non-Clifford quantum cellular automaton derived from pumping the semion ISA.",
+      "brief": "The authors construct an invertible subalgebra (ISA) supporting chiral semions on a square lattice with one qubit per edge. They provide explicit non-Pauli generators for the semion and anti-semion algebras and prove these generate all local operators on the Hilbert space. The construction starts from the Z4 toric code, condenses a specific boson, and decomposes qudits into qubits using a finite-depth circuit.\n\nPumping the semion ISA along the z direction defines an explicit three-dimensional non-Clifford quantum cellular automaton (QCA). The authors show that pumping eight times is equivalent to a translation followed by a finite-depth quantum circuit with ancillary qubits. They also provide a finite-depth circuit relating this to a previously obtained semion QCA from topological quantum field theory. A similar construction yields a U(1)4 ISA, and together with earlier ISAs, finite stacking realizes every pointed Witt class of bosonic Abelian anyon theories.\n\nThe constructions extend to all spatial dimensions d=4k-2, with one qubit or Z4 qudit on each (2k-1)-cell. The listing does not state experimental validation or computational complexity bounds for the circuits. The artifact status is not established in the listing, and no code repository is provided.",
+      "abstract": "Chiral topological order is incompatible with strictly two-dimensional local commuting-projector Hamiltonians on finite-dimensional tensor-product Hilbert spaces. Invertible subalgebras (ISAs) provide an alternative framework. We construct an ISA supporting chiral semions, together with its anti-semion commutant, on a square lattice with one qubit per edge. We give explicit non-Pauli generators for both algebras and prove that together they generate all local operators on the Hilbert space. Starting from the $\\mathbb{Z}_4$ toric code, we condense the boson $e^2m^2$ and identify the semion and anti-semion algebras. We then decompose each $\\mathbb{Z}_4$ qudit into two qubits and use a finite-depth circuit to disentangle one qubit per edge fixed by the condensation constraints. Pumping the semion ISA along the $z$ direction defines an explicit three-dimensional non-Clifford quantum cellular automaton (QCA). We show that pumping eight times is equivalent to a translation followed by a finite-depth quantum circuit with ancillary qubits. We also give an explicit finite-depth circuit relating this construction to the semion QCA previously obtained from topological quantum field theory. A similar condensation construction yields a $U(1)_4$ ISA on a square lattice. Together with the semion and earlier odd-prime ISAs, finite stacking realizes every pointed Witt class of bosonic Abelian anyon theories. Finally, we extend both constructions to all spatial dimensions $d=4k{-}2$, with one qubit or $\\mathbb{Z}_4$ qudit on each $(2k{-}1)$-cell for the semion or $U(1)_4$ ISA, respectively.",
+      "takeaways": [
+        "The object is an invertible subalgebra framework for chiral semion topological order, constructed on a square lattice with one qubit per edge.",
+        "A visible limit is that the construction relies on finite-depth circuits and specific condensation constraints, with no stated experimental realization or complexity analysis in the listing.",
+        "The artifact status is not established in the listing, as no code or data repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report building a mathematical structure called an invertible subalgebra that supports a type of particle called a chiral semion on a grid with one basic quantum unit per edge, and they prove this structure covers all possible local operations.",
+        "brief": "The authors build a mathematical tool called an invertible subalgebra (ISA) that handles a specific type of quantum particle called a chiral semion on a square grid. They give the exact mathematical rules for this particle and its opposite, and prove these rules cover all local quantum operations. They start with a known quantum code, simplify it, and use a short sequence of quantum operations to get the final structure.\n\nThey move this structure in one direction to create a three-dimensional quantum operation called a non-Clifford quantum cellular automaton (QCA). They show that doing this move eight times is the same as shifting the system and applying a short quantum operation with extra helper units. They also show how this connects to a similar QCA made from a different mathematical theory. They make a similar structure for another type of particle, and show that combining these structures covers all known types of a certain class of quantum theories.\n\nThey extend these structures to all spatial dimensions that fit a specific mathematical pattern, placing one quantum unit or a four-level unit on each cell. The listing does not say if this was tested in a real experiment or how hard the calculations are. The listing does not say if any code or data is available, and no website is given.",
+        "takeaways": [
+          "The main object is a mathematical structure for a specific quantum particle, built on a grid with one quantum unit per edge.",
+          "A visible limit is that the method uses short quantum operations and specific rules, but the listing does not say if it was tested in a lab or how hard the math is.",
+          "The listing does not say if any code or data is available, so the status of the artifact is unknown."
+        ]
+      },
+      "actions": [
+        "Verify the explicit non-Pauli generators and finite-depth circuit details in the PDF to confirm the construction's validity.",
+        "Check the PDF for any omitted code or data availability statements regarding the QCA implementation."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "cond-mat.str-el",
+        "hep-th",
+        "math-ph",
+        "math.MP",
+        "math.QA"
+      ],
+      "listing": {
+        "listedOn": "2026-10-15",
+        "publishedOn": "2026-10-15",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.18953"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-15"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-15T17:02:59.509Z"
+      }
+    },
+    {
+      "id": "2610.19237",
+      "arxivId": "2610.19237",
+      "url": "https://arxiv.org/abs/2610.19237",
+      "topic": "Health",
+      "reported": "The authors report that nearly all of 82 modeled cases were shared through the Viewer with clinicians from five specialties over one year at a single pediatric center.",
+      "metrics": [
+        "82 modeled cases",
+        "5 to 10 seconds"
+      ],
+      "title": "An Open-Source Web-Based Viewer for Disseminating Image-Derived Models",
+      "authors": "Christian Herz, Kyle Sunderland, Matthew Daemer, Julia Iacovella, Sehdev Pressley, Ashley Koluda, Csaba Pinter, Kevin Zuber, John Daniels, Allen Ladd, Mali Hetmaniuk, Kevin K. Whitehead, Andras Lasso, Matthew A. Jolley",
+      "takeaway": "The paper presents the SlicerHeart Viewer, an open-source web-based module that allows clinicians to access and interact with 3D Slicer/SlicerHeart sessions via a browser without local installation.",
+      "brief": "The authors developed the SlicerHeart Viewer to provide a simplified web interface for 3D Slicer/SlicerHeart sessions, addressing limitations of desktop applications and closed commercial viewers in pediatric congenital heart disease care.\n\nThey report that over one year at a single pediatric center, nearly all of 82 modeled cases were shared with clinicians from five specialties, with cases loading in 5 to 10 seconds. The listing does not establish whether these load times or usage statistics represent a statistically significant improvement over prior workflows or if the single-center deployment limits generalizability.\n\nClinicians and engineers working with 3D medical imaging in pediatric cardiology may find this relevant for workflow integration. Those without access to 3D Slicer infrastructure or specific CHD modeling needs may find the tool less applicable.",
+      "abstract": "Patient-specific 3-dimensional (3D) models are increasingly central to planning surgery and catheter-based intervention in children with congenital heart disease (CHD), whose anatomy is often atypical and variable. These models inform care only when the surgeons and interventional cardiologists who make treatment decisions can rotate, crop, and measure them directly. Desktop modeling applications require local installation, capable hardware, and training. Commercial web-based viewers are portable but closed, and, in our experience, cannot display volume rendering, time-resolved (e.g., 4-dimensional) data, or the custom workflows centers build for CHD. Because CHD populations are small and heterogeneous, such workflows are unlikely to be prioritized commercially, and end users have no means to add them. To address these limitations, we developed the SlicerHeart Viewer, an open-source module that presents a simplified interface to a complete 3D Slicer/SlicerHeart session running on a server. Clinicians access models created by clinical modeling services from any device through a web browser. Because 3D Slicer runs underneath, volume rendering, time-resolved data, and any SlicerHeart workflow, including those developed for CHD, are available without modification. The module is independent of the hosting environment; we chose internal servers behind institutional single sign-on, and a cloud-hosted option is in development. Over one year at a single pediatric center, nearly all of 82 modeled cases were shared through the Viewer with clinicians from five specialties, with cases loading in 5 to 10 seconds. The approach is not specific to CHD and is deployable at other centers.",
+      "takeaways": [
+        "The object is an open-source web module wrapping a server-side 3D Slicer/SlicerHeart session for browser-based access.",
+        "A visible limit is the reliance on a single pediatric center for reported usage data, with no multi-center validation or comparison to commercial alternatives provided in the listing.",
+        "The artifact status is an open-source module, with a cloud-hosted option noted as in development but not yet available."
+      ],
+      "plain": {
+        "reported": "The authors state that in one year at one children's hospital, almost all of 82 3D heart models were shared with doctors from five different medical fields using their new tool.",
+        "brief": "The team built a free web tool called SlicerHeart Viewer. It lets doctors look at 3D heart models on any computer or phone without installing special software. This is useful for children with heart defects where the anatomy is unusual.\n\nThey say that in one year at one hospital, doctors from five fields used the tool for almost all 82 cases. The models loaded in 5 to 10 seconds. The text does not say if this is faster or better than other tools, or if it works well at other hospitals.\n\nDoctors and IT staff at children's heart centers might find this useful. People who do not use 3D heart models or do not have the required server setup might not need it.",
+        "takeaways": [
+          "The tool is a free web app that connects to a server running 3D heart imaging software.",
+          "The data comes from only one hospital, so it is not clear if it works the same way everywhere.",
+          "The tool is free to use, but a cloud version is still being built and is not ready yet."
+        ]
+      },
+      "actions": [
+        "Verify the open-source repository and documentation to confirm the module's current availability and compatibility with existing 3D Slicer versions.",
+        "Review the full PDF to assess the technical architecture of the server-client interaction and any security or performance constraints not detailed in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM"
+      ],
+      "listing": {
+        "listedOn": "2026-10-15",
+        "publishedOn": "2026-10-15",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.19237"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-15"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-15T17:02:59.509Z"
+      }
+    }
+  ]
+}
