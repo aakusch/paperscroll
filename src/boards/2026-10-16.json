@@ -1,0 +1,672 @@
+{
+  "date": "2026-10-16",
+  "label": "Fri, Oct 16",
+  "minutes": 10,
+  "poolSize": 139,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-10-16T16:43:24.357Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2610.18829",
+      "arxivId": "2610.18829",
+      "url": "https://arxiv.org/abs/2610.18829",
+      "topic": "AI",
+      "reported": "The authors report that evaluations of 50 MLLMs show open-source models lag behind proprietary counterparts, particularly in audio-visual understanding.",
+      "metrics": [
+        "50 MLLMs",
+        "820 videos",
+        "2,460 instances"
+      ],
+      "title": "OmniCompass: A Holistic Benchmark for Omni-Modal Video Grounding and Understanding",
+      "authors": "Xuyang Liu, Shihao Wang, Xinyu Wei, Minghan Li, Zeqing Wang, Zuhao Yang, Zichen Wen, Lei Zhang",
+      "takeaway": "The paper introduces OmniCompass, a holistic benchmark for omni-modal video grounding and understanding that defines two evaluation tracks for vision-language and omni-modal models.",
+      "brief": "The authors propose OmniCompass to systematically diagnose omni-modal video understanding by covering temporal, spatial, and question-answering tasks across vision-language and audio-visual tracks. They report that 50 evaluated models show open-source systems lagging behind proprietary ones, with precise grounding remaining challenging and predictions inconsistent across paired target specifications. The listing does not establish specific quantitative performance gaps or artifact limitations beyond the stated model count and dataset sizes.\n\nResearchers evaluating multimodal video models may find the dual-track structure useful for isolating audio-visual dependencies. Practitioners focused solely on text-only video QA may find the audio-visual track less relevant to their immediate needs. The manual annotation and multi-round verification process suggests a focus on data quality over scale.\n\nThe benchmark targets a specific gap in existing evaluation dimensions for omni-modal video understanding. It is not established in the listing whether the benchmark includes code for automatic evaluation or if the provided repository contains the full dataset. The distinction between open-source and proprietary model performance is qualitative in the abstract.",
+      "abstract": "With the rapid development of multimodal large language models (MLLMs), evaluating their video understanding capabilities has become increasingly important. Existing video understanding benchmarks cover only part of the evaluation dimensions, limiting systematic diagnosis of omni-modal video understanding. We introduce OmniCompass, a holistic benchmark for omni-modal video grounding and understanding. OmniCompass defines two evaluation tracks: OmniCompass-VL assesses vision-language models on tasks requiring visual evidence, while OmniCompass-AV assesses omni-modal models on tasks requiring joint audio-visual evidence. Each track includes three complementary tasks: temporal grounding (TG), spatial grounding (SG), and question answering (QA), assessing when a referenced target appears, where it is, and what happens. QA covers five perception and three reasoning categories in OmniCompass-VL, and three perception and two reasoning categories in OmniCompass-AV. OmniCompass-VL contains 820 videos and 2,460 instances across domains and three duration types: short, medium, and long. A narrative- and audio-rich subset forms OmniCompass-AV with 240 videos and 720 instances. Each instance is evaluated under two paired settings: text-only and text+image, specifying the same target through text and visual-language guidance. All instances are manually annotated with multi-round quality verification. Evaluations of 50 MLLMs show that open-source models still lag behind proprietary counterparts, particularly in audio-visual understanding. Precise temporal and spatial grounding remains challenging even for leading models, and their predictions still exhibit inconsistencies across the paired target specifications.",
+      "takeaways": [
+        "The object is a benchmark with two tracks: OmniCompass-VL for vision-language models and OmniCompass-AV for omni-modal models, each containing temporal, spatial, and QA tasks.",
+        "A visible limit is that the abstract reports qualitative findings about model lag and inconsistency but does not provide specific accuracy scores or statistical significance for the 50 evaluated models.",
+        "The artifact status is indicated by a declared GitHub repository URL, but the listing does not confirm if the repository contains the full dataset, evaluation scripts, or model weights."
+      ],
+      "plain": {
+        "reported": "The authors report that testing 50 multimodal large language models showed that free-to-use models perform worse than paid commercial models, especially when the task requires understanding both sound and video together.",
+        "brief": "The authors created a new test suite called OmniCompass to check how well AI models understand videos that include both sound and pictures. They say that after testing 50 different AI models, the free models did not do as well as the paid ones, and even the best models struggled to pinpoint exactly when and where things happen in the video. The summary does not give specific scores or say if the test data has any known flaws.\n\nPeople who build AI systems that watch videos might find this test useful because it separates tasks that need just pictures from tasks that need both pictures and sound. People who only care about text-based video questions might not need the sound-related parts of this test. The fact that humans checked the data multiple times suggests the creators cared about having accurate labels.\n\nThis test aims to fill a gap in how we currently measure AI video understanding. It is not clear from the summary if the computer code for running the tests is fully available or if the video files themselves are included in the online link provided. The statement that free models are worse than paid ones is a general observation, not a specific number.",
+        "takeaways": [
+          "The main thing being tested is a set of video questions that check if an AI can find when, where, and what is happening, with some questions requiring sound and others not.",
+          "A clear limitation is that the summary says free models are worse but does not say by how much, using specific numbers or percentages.",
+          "The status of the downloadable files is unclear because the summary gives a website link but does not say if the actual video files and testing tools are inside that link."
+        ]
+      },
+      "actions": [
+        "Verify the contents of the declared GitHub repository to confirm the availability of the 820 and 240 video datasets and the evaluation code for the 50 MLLMs.",
+        "Check the full paper for specific quantitative metrics comparing open-source and proprietary models, as the abstract only provides qualitative descriptions of their performance gap."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/PolyU-VCLab/OmniCompass",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-16",
+        "publishedOn": "2026-10-13",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.18829",
+            "upvotes": 441
+          }
+        ]
+      },
+      "trend": {
+        "votes": 441,
+        "rank": 1,
+        "of": 50,
+        "perDay": 147
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 441,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-13"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-16T16:43:24.357Z"
+      }
+    },
+    {
+      "id": "2610.21601",
+      "arxivId": "2610.21601",
+      "url": "https://arxiv.org/abs/2610.21601",
+      "topic": "AI",
+      "reported": "The authors report that Waypoint-OPD achieves the highest domain-average score among compared distillation methods in all six domain-student settings using Qwen3 student models.",
+      "metrics": [
+        "Qwen3-4B",
+        "Qwen3-8B",
+        "Qwen3-14B"
+      ],
+      "title": "Waypoint-OPD: Transferring RL-Induced Policy Shifts via Gated On-Policy Distillation",
+      "authors": "Bingxi Hou, Guochao Jiang, Guofeng Quan, Weiqing Li, Wenfeng Feng, Guohua Liu, Yuewei Zhang",
+      "takeaway": "The paper claims to introduce Waypoint-OPD, a method that gates endpoint policy shifts based on directional agreement between early and late teacher policy shifts to improve selective transfer.",
+      "brief": "The authors propose Waypoint-OPD to address the limitation that endpoint policy shifts may mask inconsistent local action preferences during teacher training. They use an intermediate teacher checkpoint to compare early and late shifts in relative action preferences at student-visited prefixes.\n\nThe authors report that their method achieves the highest domain-average score in all six domain-student settings using Qwen3 models for mathematical and code reasoning. They state that removing or shuffling gates reduces mathematical reasoning performance in ablations with the Qwen3-8B student. The listing does not specify the exact numerical values of the domain-average scores or the magnitude of performance reduction in ablations.\n\nResearchers working on on-policy distillation or reinforcement learning policy transfer may find the gating mechanism relevant. Those not interested in specific Qwen3 model architectures or policy-shift distillation may ignore this work.",
+      "abstract": "Policy-shift distillation reuses the difference between a teacher's log probabilities before and after reinforcement learning (RL) as supervision on student-generated trajectories. However, this endpoint policy shift cannot reveal whether local action preferences evolved consistently during teacher training. The same endpoint shift can result from early and late shifts that reinforce or partially cancel each other. We investigate whether agreement between early and late teacher policy shifts can guide selective transfer. We introduce Waypoint-guided On-Policy Distillation (Waypoint-OPD), which uses an intermediate teacher checkpoint from the same RL run to compare early and late shifts in relative action preferences at student-visited prefixes. We gate the endpoint shift according to the directional agreement between the early and late shifts, suppressing it when they point in opposing directions. Compared with endpoint-only transfer, our method requires only one additional frozen-teacher scoring pass. Using RL-trained Qwen3-4B teachers, we evaluate our method with Qwen3-8B, Qwen3-14B, and Qwen3-30B-A3B as student models in mathematical and code reasoning. In all six domain--student settings, Waypoint-OPD achieves the highest domain-average score among the compared distillation methods. Ablations with the Qwen3-8B student show that removing or shuffling gates reduces mathematical reasoning performance. These results support the use of directional agreement between early and late teacher policy shifts to weight the endpoint shift during student training.",
+      "takeaways": [
+        "The object is a distillation method that uses an intermediate RL checkpoint to gate endpoint policy shifts based on directional agreement.",
+        "A visible limit is that the method requires one additional frozen-teacher scoring pass compared to endpoint-only transfer.",
+        "The artifact status is that the authors declare a code repository at https://github.com/hhhbxloveai/WaypointOPD."
+      ],
+      "plain": {
+        "reported": "The authors report that their method gets the best average score in all six test cases using specific AI models for math and coding tasks.",
+        "brief": "The authors suggest a new way to teach smaller AI models by looking at how a larger model changed its behavior during training. They check if the early and late changes in the larger model agree in direction before using them to teach the smaller model.\n\nThe authors say their method gets the best average score in all six test cases using Qwen3 models for math and coding. They also say that breaking their specific checking mechanism lowers the math performance in tests. The summary does not give the exact scores or how much the performance dropped.\n\nPeople who work on teaching AI models from other AI models might find this useful. People who do not work with these specific AI models or this teaching method might not need this paper.",
+        "takeaways": [
+          "The thing being studied is a method that uses a middle point in training to check if changes in a teacher model are consistent before passing them to a student model.",
+          "A visible limit is that this method needs one extra step to score the teacher model compared to simpler methods.",
+          "The status of the code is that the authors provide a link to a public code repository."
+        ]
+      },
+      "actions": [
+        "Verify the specific domain-average scores and ablation results by reading the full PDF, as the abstract does not provide exact numerical values.",
+        "Check the declared GitHub repository to confirm the availability and functionality of the Waypoint-OPD implementation."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/hhhbxloveai/WaypointOPD",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-16",
+        "publishedOn": "2026-10-15",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.21601",
+            "upvotes": 362
+          }
+        ]
+      },
+      "trend": {
+        "votes": 362,
+        "rank": 2,
+        "of": 50,
+        "perDay": 362
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 362,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-15"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-16T16:43:24.357Z"
+      }
+    },
+    {
+      "id": "2610.22200",
+      "arxivId": "2610.22200",
+      "url": "https://arxiv.org/abs/2610.22200",
+      "topic": "AI",
+      "reported": "The authors report that their full configuration raises mean partial score by +19.6 points on OSWorld-v2 across eight evaluated models.",
+      "metrics": [
+        "+19.6 points",
+        "53.0%",
+        "19.4 times"
+      ],
+      "title": "OpenGCUA: Toward a Fully Open Stack for Generalist Computer Use",
+      "authors": "Hanzhang Zhou, Long Li, Quyu Kong, Lei Wang, Panrong Tong, Long Chen, Tianyu Xia, Gongjie Zhang, Xu Zhang, Chen Liu, Jianan Zhang, Chenglin Cai, Zhengwen Zeng, Steven Hoi, Yue Wang",
+      "takeaway": "The paper introduces OpenGCUA, an open full-stack system for generalist computer-use agents that integrates code execution and model-driven decision transfer.",
+      "brief": "The authors present OpenGCUA as an open stack for generalist computer-use agents, emphasizing code execution and moving task-state decisions from fixed harness rules to the model.\n\nThey report a +19.6 point increase in mean partial score on OSWorld-v2 across eight models, including GPT-6 Astra and Claude Opus 5, and a 53.0% reduction in reported steps per task relative to batched GUI-only execution. They also note that selected Qwen3.8-Max runs use 19.4 times as many reported reasoning tokens as GPT-6 Astra across four real macOS tasks, highlighting efficiency differences in real-device execution.\n\nResearchers building or evaluating computer-use agents may find the open implementation and evaluation trajectories useful. Those focused solely on closed-source frontier models or non-computer-use AI tasks may find the specific agent architecture less relevant.",
+      "abstract": "Computer use has reached a turning point: the focus is expanding from GUI-only interaction to systems that complete tasks on users' computers through visual and programmatic interfaces. We define a generalist computer-use agent (GCUA) as a system in which the model chooses how to observe, act, and organize its work across visual and programmatic interfaces. Yet frontier implementations, such as GPT-6 Astra's computer-use system, remain largely closed, limiting systematic study of their design. We introduce Open Generalist CUA (OpenGCUA), an ongoing project to develop and open the full stack for GCUAs with the community. This report presents the first release of OpenGCUA. Code execution is a key feature of our agent design: it lets intermediate results determine subsequent operations and enables models to apply their existing programming capabilities directly to computer interaction. We also propose harness-to-model decision transfer, moving selected observations and task-state decisions from fixed harness rules to the model. On OSWorld-v2, our full configuration improves task scores across all eight evaluated models, including GPT-6 Astra and Claude Opus 5, raising mean partial score by +19.6 points and reducing reported steps per task by an average of 53.0% relative to batched GUI-only execution. We release our implementation and prompts, evaluation trajectories from all eight models, and preliminary versions of a real-device harness and a cross-device SDK. The harness addresses real-device challenges not fully captured by benchmarks, while the SDK provides a common programming interface across computers, mobiles and browsers. Across four real macOS tasks under our real-device harness, selected Qwen3.8-Max runs use 19.4 times as many reported reasoning tokens as GPT-6 Astra, highlighting substantial differences between models in real-device execution efficiency.",
+      "takeaways": [
+        "The object is an open-source full-stack agent system for generalist computer use, not a single model or benchmark.",
+        "A visible limit is the reliance on a specific benchmark (OSWorld-v2) and a small set of real macOS tasks for real-device evaluation, which may not capture all real-world variability.",
+        "The artifact status is an ongoing project with a first release, including code, prompts, evaluation trajectories, and preliminary harness/SDK versions."
+      ],
+      "plain": {
+        "reported": "The authors state that their system improved the average partial score by 19.6 points on the OSWorld-v2 test set across eight different AI models.",
+        "brief": "The authors built an open-source system called OpenGCUA that lets AI agents use computers by both looking at the screen and writing code. They moved some decision-making from fixed rules to the AI model itself.\n\nThey say their system improved scores by 19.6 points on a standard test called OSWorld-v2 and reduced the number of steps needed by 53.0% compared to a system that only uses the graphical interface. They also found that one model used 19.4 times more reasoning tokens than another on four real Mac tasks, showing big differences in efficiency.\n\nPeople who build or test AI agents that use computers might find the open code and test results helpful. People who only care about closed AI models or other types of AI might not find this specific agent design relevant.",
+        "takeaways": [
+          "The thing being described is an open-source software stack for AI agents that use computers, not just one AI model or one test.",
+          "A clear limitation is that the real-world testing was done on only four Mac tasks, which might not show how the system works in all real situations.",
+          "The software is a first release of an ongoing project, including code, prompts, test results, and early versions of tools for real devices and cross-device use."
+        ]
+      },
+      "actions": [
+        "Verify the reported OSWorld-v2 scores and step reductions by reproducing the evaluation using the released code and prompts.",
+        "Inspect the real-device harness and cross-device SDK to assess their coverage of real-world challenges beyond the four macOS tasks mentioned."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Tongyi-MAI/OpenGCUA",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-16",
+        "publishedOn": "2026-10-15",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.22200",
+            "upvotes": 234
+          }
+        ]
+      },
+      "trend": {
+        "votes": 234,
+        "rank": 3,
+        "of": 50,
+        "perDay": 234
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 234,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-15"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-16T16:43:24.357Z"
+      }
+    },
+    {
+      "id": "2610.22350",
+      "arxivId": "2610.22350",
+      "url": "https://arxiv.org/abs/2610.22350",
+      "topic": "AI",
+      "reported": "The authors report that the best configuration achieves a mean FDE-Gym score of 0.56 and resolves only 14 of the 95 tasks in the realistic setting.",
+      "metrics": [
+        "mean FDE-Gym score of 0.56",
+        "resolves only 14 of the 95 tasks",
+        "normalized business uplift of 0.8 or above on only 10"
+      ],
+      "title": "FDE-Gym: The Last Mile of AI Delivery",
+      "authors": "Dongxu Yang, Hongda Yan, Renxin Wang, Baoli Zhang, Haojia Zuo, Ying Zhao, Youmin Chen, Xiaojian Liao, Congming Gao, Tianyang Jiang, Yixiao Chen, Qing Wang, Zhiguo Yu, Xiaqing Li, Yuhao Zhang, Jiawen Sun, Renzhe Xu, De Mi, Tiancheng Wu, Xianya Fu, Xuanlu Zhao, Bo Feng, Meixuan Ren, Guanming Lin, Ziheng Zhou, Xinhua Wang",
+      "takeaway": "The paper introduces FDE-Gym, a benchmark of 95 end-to-end delivery tasks designed to evaluate agents on clarifying ambiguous requirements and working in live systems.",
+      "brief": "The authors propose FDE-Gym to benchmark agents on real-world customer delivery tasks that involve ambiguous requirements and live systems. They report that the best model configuration achieves a mean score of 0.56 and resolves 14 of 95 tasks, identifying the discovery of unstated constraints as a primary bottleneck. The listing does not establish specific computational limits or artifacts beyond the provided GitHub link.\n\nThe strongest reported result is a mean FDE-Gym score of 0.56 for the best configuration in a realistic setting. The authors note that performance drops sharply when models must uncover unstated constraints without explicit guidance. The listing does not specify the exact hardware or time constraints used for these evaluations.\n\nResearchers evaluating agent capabilities in ambiguous, real-world delivery scenarios may find this benchmark relevant. Those focused solely on well-specified, static task completion may find the specific focus on live system interaction and stakeholder negotiation less applicable.",
+      "abstract": "Existing agent benchmarks typically evaluate agents on well-specified tasks defined by issue reports, specifications, or task tickets. Real-world customer delivery is different: forward-deployed engineers (FDEs) must clarify ambiguous requirements, work in live systems, and uncover unstated constraints. We introduce FDE-Gym, a benchmark of 95 end-to-end delivery tasks from 20 customer scenarios across 18 sectors, each adapted by industry experts from real-world delivery projects. In simulated customer environments with scripted stakeholders and modifiable customer systems, agents interact with stakeholders and operate on production-like systems to deliver working solutions. FDE-Gym scores a delivery by how much it improves the customer's own success metric, normalized between 0 (unchanged system) and 1 (reference solution), with penalties for stakeholder interactions (messages, trial runs, and waiting time). An online platform lets humans practice FDE skills under the same grading criteria. We evaluate 13 model configurations from seven providers. In the realistic setting, where unstated constraints must be discovered, the best configuration achieves a mean FDE-Gym score of 0.56 and resolves only 14 of the 95 tasks (a score of at least 0.8 with no incident). Discovering unstated constraints is the primary bottleneck: performance drops sharply when models must uncover them without explicit guidance. Yet information discovery alone does not account for the gap: even on the 23 tasks where the best configuration obtains every key fact from stakeholders, it reaches a normalized business uplift of 0.8 or above on only 10. These results reveal a substantial gap between solving well-specified tasks and delivering effective AI systems for real customers.",
+      "takeaways": [
+        "The object is a benchmark of 95 end-to-end delivery tasks adapted from real-world projects across 18 sectors.",
+        "A visible limit is that the best configuration resolves only 14 of the 95 tasks, indicating a substantial gap in current agent capabilities for this domain.",
+        "The artifact status is indicated by a declared GitHub repository URL, though the listing does not confirm the completeness or availability of the code."
+      ],
+      "plain": {
+        "reported": "The authors state that their top-performing setup got an average score of 0.56 and successfully finished only 14 out of 95 tasks in a realistic test environment.",
+        "brief": "The creators made a test set called FDE-Gym to check if AI agents can handle messy, real-world customer projects where instructions are unclear and systems are live. They found that the best AI setup scored 0.56 on average and only finished 14 of the 95 tasks. The main problem seems to be that AIs struggle to find hidden requirements that are not explicitly stated.\n\nThe best result mentioned is an average score of 0.56. The authors say that when AIs have to figure out hidden rules on their own, their performance drops a lot. The short summary does not say how much computer power or time was needed to run these tests.\n\nPeople who study how AI handles unclear, real-world business tasks might find this useful. People who only care about AI solving clear, simple puzzles might not find this specific test very relevant.",
+        "takeaways": [
+          "The thing being tested is a set of 95 real-world business tasks from 18 different industries.",
+          "A clear weakness shown is that the best AI only finished 14 of the 95 tasks, showing it is not good enough for this job yet.",
+          "The code is said to be on GitHub, but the short summary does not prove the code is complete or working."
+        ]
+      },
+      "actions": [
+        "Verify the availability and functionality of the code at the declared GitHub URL to confirm the benchmark's reproducibility.",
+        "Review the full PDF to understand the specific grading criteria and penalty structures for stakeholder interactions."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/deeplethe/fde-gym",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-16",
+        "publishedOn": "2026-10-15",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.22350",
+            "upvotes": 203
+          }
+        ]
+      },
+      "trend": {
+        "votes": 203,
+        "rank": 4,
+        "of": 50,
+        "perDay": 203
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 203,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-15"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-16T16:43:24.357Z"
+      }
+    },
+    {
+      "id": "2610.20647",
+      "arxivId": "2610.20647",
+      "url": "https://arxiv.org/abs/2610.20647",
+      "topic": "Security",
+      "reported": "The authors report recovering the final part of a deleted IQ capture and a trimmed-away capture segment from an SD card image acquired from their own device after four months of real use.",
+      "metrics": [
+        "Mayhem v2.0.1",
+        "one 32-bit identifier"
+      ],
+      "title": "Forensic Analysis of the HackRF One with PortaPack Mayhem Firmware",
+      "authors": "D\\\"uzg\\\"un K\\\"u\\c{c}\\\"uk",
+      "takeaway": "The paper claims to establish, at source-code level, where forensically relevant data reside on the microSD card of a HackRF One running Mayhem firmware, including format, timing, and interpretation rules.",
+      "brief": "The author presents a forensic methodology for the HackRF One with PortaPack Mayhem firmware, mapping data locations and formats on the microSD card. The evidence comes from a single SD card image from the author's own device after four months of use, with inferences drawn solely from that image. The listing does not establish generalizability to other devices, firmware versions, or usage patterns beyond the specific example analyzed.\n\nThe strongest reported result is the recovery of deleted and trimmed IQ capture segments and the attribution of six captures to a single OOK transmitter sharing a 32-bit identifier. The study provides an artifact catalogue and interpretation rules, but the listing does not state whether these rules were validated against independent ground truth or tested on multiple devices. The reliance on a single self-acquired image is a visible limit not addressed in the abstract.\n\nPractitioners working on SDR forensics or RF device investigation may find the artifact catalogue and acquisition recommendations useful. Researchers requiring peer-reviewed validation or multi-device benchmarking should note that the listing states no peer-reviewed study has previously addressed this device family, implying this is a first-of-its-kind contribution but not an independently verified one.",
+      "abstract": "Software-defined radios (SDRs) have become an inexpensive, portable platform for replay attacks, location spoofing and jamming. The HackRF One can operate stand-alone when fitted with a PortaPack interface board running the open-source Mayhem firmware. No peer-reviewed study has addressed the forensic analysis of this device family. This work establishes, at source-code level, where forensically relevant data reside on the microSD card of a device running Mayhem v2.0.1, in which format, when they are written and how they should be interpreted. The methodology is applied to an SD card image that the author acquired from their own device after four months of real use, and every inference is drawn from the image alone. The workflow covers timestamp rules that depend on the real-time clock (RTC) battery state, traces of on-device trimming and text editing, cluster-level recovery of deleted in-phase/quadrature (IQ) captures, and decoding of recorded signals cross-checked with an independent decoder. In the example image, the final part of a deleted IQ capture and a trimmed-away capture segment are recovered, and six captures are attributed to a single rolling-code on-off keying (OOK) transmitter sharing one 32-bit identifier. The study provides practitioners with an artifact catalogue, interpretation rules and acquisition recommendations.",
+      "takeaways": [
+        "The object is a forensic methodology for HackRF One devices running Mayhem v2.0.1 firmware, specifically targeting microSD card data.",
+        "A visible limit is the reliance on a single SD card image from the author's own device, with no stated validation on other devices or firmware versions.",
+        "The artifact status is not established in the listing; no code, dataset, or repository URL is provided, and the author states no peer-reviewed study has previously addressed this device family."
+      ],
+      "plain": {
+        "reported": "The authors report recovering deleted and trimmed radio signal data from a memory card taken from their own radio device after four months of use.",
+        "brief": "The author describes how to examine the memory card of a specific type of radio device to find forensic evidence. The evidence comes from one memory card from the author's own device, used for four months. The listing does not say whether these methods work on other devices or firmware versions.\n\nThe main result is recovering deleted signal data and linking six signal recordings to one transmitter. The author provides a list of data artifacts and rules for interpreting them, but the listing does not say if these rules were tested on other devices or verified by independent experts. Using only one memory card from the author's own device is a limitation not addressed in the abstract.\n\nPeople who investigate radio devices for forensic purposes may find the data list and collection tips helpful. Researchers who need peer-reviewed validation or tests on multiple devices should note that the listing says no previous peer-reviewed study has looked at this device family, meaning this is a new contribution but not independently verified.",
+        "takeaways": [
+          "The subject is a method for examining the memory card of a specific radio device to find forensic evidence.",
+          "A visible limit is that the method was tested on only one memory card from the author's own device, with no stated tests on other devices or firmware versions.",
+          "The status of shared code or data is not stated in the listing; no code, dataset, or link is provided, and the author notes no previous peer-reviewed study has examined this device family."
+        ]
+      },
+      "actions": [
+        "Verify the source-code-level claims and artifact catalogue by examining the full PDF, as the abstract does not provide the specific file paths or formats.",
+        "Check whether the author has published the SD card image or analysis scripts, as the listing does not include a repository URL or code availability statement."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR"
+      ],
+      "listing": {
+        "listedOn": "2026-10-16",
+        "publishedOn": "2026-10-16",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.20647"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-16T16:43:24.357Z"
+      }
+    },
+    {
+      "id": "2610.20654",
+      "arxivId": "2610.20654",
+      "url": "https://arxiv.org/abs/2610.20654",
+      "topic": "Physics",
+      "reported": "The authors report that nearest-neighbor arithmetic band average noise exceeds the unrestricted optimum by more than 1.01265 quanta in the uniform chain for every finite N≥64.",
+      "metrics": [
+        "more than $1.01265$ quanta",
+        "every finite $N\\ge64$",
+        "$100$ kHz design band"
+      ],
+      "title": "The noise cost of reservoir locality in broadband quantum amplifier chains",
+      "authors": "Chengxi Li, Hao Zhu, Tie-Fu Zhang, Lin Zhuang, Wanzi Sun, Wuming Liu",
+      "takeaway": "The paper claims to construct adjacent-site loss channels attaining the known single-frequency minimum under local compatibility conditions as an uncapped benchmark for reservoir design.",
+      "brief": "The authors construct adjacent-site loss channels attaining the known single-frequency minimum under local compatibility conditions, as an uncapped benchmark. They compare fixed reservoirs at matched drift, ports, high-gain band and complete gain/loss rate caps for specified uniform and dimerized chains.\n\nAt the representative cap R=8 and halfwidth Ω=0.05, nearest-neighbor arithmetic band average noise exceeds the unrestricted optimum by more than 1.01265 quanta in the uniform chain for every finite N≥64. Boundary-response bounds give necessary rates and targets requiring range two. At N=64, finite-auxiliary calculations retain a noise advantage under matched total coupling budgets.\n\nResearchers working on quantum amplifier chains or cryogenic microwave arrays should open this paper. Those not interested in reservoir noise calibration or finite-band suppression may ignore it.",
+      "abstract": "Directional quantum amplifiers enable weak-signal readout while protecting the source, but reservoir noise limits sensitivity. Finite-band suppression must reconcile frequency-dependent responses with fixed local couplings and finite rates. We construct adjacent-site loss channels attaining the known single-frequency minimum under local compatibility conditions, as an uncapped benchmark. For specified uniform and dimerized chains, we compare fixed reservoirs at matched drift, ports, high-gain band and complete gain/loss rate caps. At the representative cap $R=8$ and halfwidth $\\Omega=0.05$, nearest-neighbor arithmetic band average noise exceeds the unrestricted optimum by more than $1.01265$ quanta in the uniform chain for every finite $N\\ge64$. Boundary-response bounds give necessary rates and targets requiring range two. At $N=64$, finite-auxiliary calculations retain a noise advantage under matched total coupling budgets; response bounds quantify noise-resolution tolerances. These theoretical results guide reservoir design and noise calibration for a proposed cryogenic microwave array with a $100$ kHz design band.",
+      "takeaways": [
+        "The object is a theoretical framework for adjacent-site loss channels in broadband quantum amplifier chains.",
+        "A visible limit is the requirement for range two in boundary-response bounds, which may constrain practical implementation.",
+        "The artifact status is theoretical, with no code or experimental data provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that the average noise in the signal band for a simple neighbor-to-neighbor setup is higher than the best possible theoretical noise by more than 1.01265 units of quantum noise in a uniform chain with at least 64 sites.",
+        "brief": "The authors create a mathematical model for how noise moves through a chain of quantum amplifiers, setting a baseline for the best possible performance. They compare different fixed noise setups to see how well they work under specific conditions.\n\nIn a specific test case, the simple neighbor-to-neighbor setup has significantly more noise than the ideal setup. The authors also show that more complex connections are needed to meet certain performance targets. In a smaller test case, a specific calculation method still shows a noise benefit.\n\nScientists designing quantum signal boosters or cold microwave devices should look at this paper. People not working on these specific technical problems can skip it.",
+        "takeaways": [
+          "The paper is about a mathematical model for noise in quantum signal boosters.",
+          "A limitation is that the model shows you need to connect sites two steps away to meet certain goals, which might be hard to build.",
+          "There is no software or real-world test data included; it is purely theoretical."
+        ]
+      },
+      "actions": [
+        "Verify the specific noise advantage calculations at N=64 by checking the PDF for detailed finite-auxiliary methods.",
+        "Confirm the applicability of the 100 kHz design band to your specific cryogenic microwave array parameters."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "cond-mat.mes-hall",
+        "cond-mat.other",
+        "cond-mat.quant-gas"
+      ],
+      "listing": {
+        "listedOn": "2026-10-16",
+        "publishedOn": "2026-10-16",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.20654"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-16T16:43:24.357Z"
+      }
+    },
+    {
+      "id": "2610.20759",
+      "arxivId": "2610.20759",
+      "url": "https://arxiv.org/abs/2610.20759",
+      "topic": "Stats",
+      "reported": "The authors report that their method rules out large zero-effect regions across the covariates of interest in applications to voter-turnout, HIV clinical-trial, and AI-assisted writing data.",
+      "metrics": [],
+      "title": "The Reach of Treatment Effects: Randomization Inference for Zero-Effect Regions",
+      "authors": "Pengyu Li, Yao Zhang",
+      "takeaway": "The paper develops efficient local randomization tests over nearest-neighbour regions to construct a finite-sample valid upper confidence bound for the size of the largest zero-effect region.",
+      "brief": "The authors propose a method to estimate the size of the largest region where a treatment has no effect, using local randomization tests. They claim this provides a finite-sample valid upper confidence bound for that region's size.\n\nThe authors report that the excess of the upper confidence bound over the true size decreases to zero at a minimax optimal rate up to a logarithmic factor. They also state that numerical simulations assess the coverage, power, and computational efficiency of the method. The listing does not specify the exact numerical values for these simulation results or the specific bounds achieved in the applications.\n\nResearchers studying treatment effect heterogeneity or causal inference in observational data may find this relevant. Those not interested in identifying zero-effect regions or randomization inference may ignore it.",
+      "abstract": "A treatment may affect some individuals while leaving others unaffected. We study the reach of treatment effects by asking how large an unaffected covariate region could be. We develop efficient local randomization tests over nearest-neighbour regions to construct a finite-sample valid upper confidence bound for the size of the largest zero-effect region. A small bound provides evidence that treatment effects extend broadly across covariate values by ruling out large zero-effect regions. Under a general outcome model, we characterize how the size of the bound depends on the number of affected units, the size of their treatment effects, and the geometry of the true zero-effect set. We show that, when region size is measured as a sample fraction, the excess of the upper confidence bound over the true size decreases to zero at a minimax optimal rate up to a logarithmic factor. Numerical simulations assess the coverage, power and computational efficiency of our method. Applications to voter-turnout, HIV clinical-trial, and AI-assisted writing data illustrate how our method rules out large zero-effect regions across the covariates of interest.",
+      "takeaways": [
+        "The object is a statistical method for bounding the size of zero-effect regions in treatment studies.",
+        "A visible limit is that the minimax optimal rate is achieved only up to a logarithmic factor, and the listing does not provide specific numerical performance metrics.",
+        "The artifact status is not established in the listing, as no code repository or specific implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their method rules out large zero-effect regions across the covariates of interest in applications to voter-turnout, HIV clinical-trial, and AI-assisted writing data.",
+        "brief": "The authors propose a method to estimate the size of the largest region where a treatment has no effect, using local randomization tests. They claim this provides a finite-sample valid upper confidence bound for that region's size.\n\nThe authors report that the excess of the upper confidence bound over the true size decreases to zero at a minimax optimal rate up to a logarithmic factor. They also state that numerical simulations assess the coverage, power, and computational efficiency of the method. The listing does not specify the exact numerical values for these simulation results or the specific bounds achieved in the applications.\n\nResearchers studying treatment effect heterogeneity or causal inference in observational data may find this relevant. Those not interested in identifying zero-effect regions or randomization inference may ignore it.",
+        "takeaways": [
+          "The object is a statistical method for bounding the size of zero-effect regions in treatment studies.",
+          "A visible limit is that the minimax optimal rate is achieved only up to a logarithmic factor, and the listing does not provide specific numerical performance metrics.",
+          "The artifact status is not established in the listing, as no code repository or specific implementation details are provided."
+        ]
+      },
+      "actions": [
+        "Verify the specific numerical results for coverage and power in the PDF to assess practical utility.",
+        "Check the PDF for the definition of the 'geometry of the true zero-effect set' to understand the assumptions required for the bound."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME",
+        "stat.AP",
+        "stat.CO"
+      ],
+      "listing": {
+        "listedOn": "2026-10-16",
+        "publishedOn": "2026-10-16",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.20759"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-16T16:43:24.357Z"
+      }
+    },
+    {
+      "id": "2610.20876",
+      "arxivId": "2610.20876",
+      "url": "https://arxiv.org/abs/2610.20876",
+      "topic": "Engineering",
+      "reported": "The authors report that their MoE-based QCD algorithm outperforms the rank-weighted sum (RWS) scheme, measured via simulation results on real-valued Gaussian mean shift data and high-dimensional data from Gaussian--Bernoulli Restricted Boltzmann Machines (GB-RBMs).",
+      "metrics": [],
+      "title": "A Mixture-of-Experts Framework for Multi-Stream Quickest Change Detection",
+      "authors": "Wuxia Chen, Arman Adibi, Taposh Banerjee, Vahid Tarokh",
+      "takeaway": "The paper proposes a Mixture-of-Experts framework for multi-stream quickest change detection that outperforms the best known algorithms in the literature.",
+      "brief": "The authors propose a Mixture-of-Experts framework for quickest change detection where a change is declared when a weighted sum of expert statistics crosses a threshold. They apply this to multi-stream QCD, claiming the resulting algorithms outperform the best known algorithms in the literature, specifically the rank-weighted sum scheme.\n\nThe authors demonstrate this outperformance through simulation results on real-valued Gaussian mean shift data and high-dimensional data from Gaussian--Bernoulli Restricted Boltzmann Machines. The listing does not establish specific quantitative performance gaps, computational costs, or theoretical guarantees beyond the stated simulation comparisons.\n\nResearchers working on quickest change detection or multi-stream anomaly detection may find the framework relevant. Those requiring rigorous theoretical bounds or specific computational efficiency metrics beyond the stated simulation context may need to verify the full paper.",
+      "abstract": "A Mixture-of-Experts (MoE) framework is proposed for quickest change detection (QCD) where there are multiple experts, and each expert produces a sequence of statistics for change detection. A change is declared when a weighted sum of these statistics crosses a threshold. This framework is then applied to the problem of multi-stream QCD to obtain a family of powerful algorithms that outperform the best known algorithms in the literature. In the multi-stream QCD problem, a decision-maker observes multiple streams of observations. At the change point, the distribution of an unknown subset of the streams changes. The optimal algorithm based on a generalized likelihood ratio is computationally expensive. One of the most computationally and performance-efficient algorithms in the literature is the rank-weighted sum (RWS) scheme based on Shiryaev-Roberts statistics. It is shown in the paper that the MoE-based QCD algorithm for multi-stream data outperforms the RWS scheme. This is demonstrated through simulation results on real-valued Gaussian mean shift data and high-dimensional data from Gaussian--Bernoulli Restricted Boltzmann Machines (GB-RBMs).",
+      "takeaways": [
+        "The object is a Mixture-of-Experts framework for multi-stream quickest change detection that aggregates expert statistics via a weighted sum threshold.",
+        "A visible limit is that the reported evidence relies on simulation results for specific data types (Gaussian mean shift and GB-RBMs) without stated quantitative metrics or theoretical bounds in the listing.",
+        "The artifact status is not established in the listing, as no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their new detection method works better than a previous leading method, tested using computer simulations of simple data changes and complex artificial neural network data.",
+        "brief": "The authors suggest a new way to detect sudden changes in multiple data streams by combining signals from several specialized detectors. They claim this new method is better than the current best-known methods, particularly one called the rank-weighted sum scheme.\n\nThey show this works in computer simulations using two types of data: simple changes in average values and complex data generated by a specific type of artificial neural network. The summary does not provide specific numbers showing how much better the new method is, nor does it prove it works for all types of data.\n\nPeople studying how to detect sudden changes in data streams might find this useful. People who need exact performance numbers or proof that the method is mathematically optimal should check the full paper for more details.",
+        "takeaways": [
+          "The main idea is a system that combines multiple specialized detectors to spot changes in data streams more effectively.",
+          "The main limitation shown is that the proof of success comes only from specific computer simulations, not from real-world data or mathematical proofs of superiority.",
+          "It is not stated whether the code or software for this method is available for public use."
+        ]
+      },
+      "actions": [
+        "Verify the specific simulation metrics and computational comparisons against the rank-weighted sum scheme in the full PDF.",
+        "Check the full paper for theoretical analysis or proofs regarding the optimality or efficiency of the proposed MoE framework."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP",
+        "stat.ME",
+        "stat.ML"
+      ],
+      "listing": {
+        "listedOn": "2026-10-16",
+        "publishedOn": "2026-10-16",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.20876"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-16T16:43:24.357Z"
+      }
+    },
+    {
+      "id": "2610.21019",
+      "arxivId": "2610.21019",
+      "url": "https://arxiv.org/abs/2610.21019",
+      "topic": "Econ",
+      "reported": "The authors report that in French motor insurance data, \"upper conditional quantiles vary with risk characteristics, but the tail-index tests do not reject a common tail index.\"",
+      "metrics": [],
+      "title": "Testing Tail-Index Homogeneity via Exceedance-Covariate Independence",
+      "authors": "Thomas T. Yang",
+      "takeaway": "The paper proposes a permutation test based on distance covariance to assess whether the tail index of a heavy-tailed outcome is homogeneous across observed covariates.",
+      "brief": "The authors propose a test of whether the tail index of a heavy-tailed outcome is homogeneous across observed covariates. The key observation is that, under tail-index homogeneity, normalized log exceedances are asymptotically independent of the covariates even when tail frequencies vary with them.\n\nThe authors establish validity for order-statistic thresholds and give conditions for consistency and local power. Local balancing selects extremes within two covariate groups and can improve power when tail selection concentrates the covariates. Simulations illustrate these gains. In French motor insurance data, upper conditional quantiles vary with risk characteristics, but the tail-index tests do not reject a common tail index.\n\nResearchers working with heavy-tailed outcomes and covariate-dependent tail behavior may find the method relevant. The listing does not specify the exact sample size or the specific risk characteristics used in the French motor insurance analysis. The listing does not establish whether the test performs well under specific forms of tail-index heterogeneity beyond the stated conditions.",
+      "abstract": "We propose a test of whether the tail index of a heavy-tailed outcome is homogeneous across observed covariates. The key observation is that, under tail-index homogeneity, normalized log exceedances are asymptotically independent of the covariates even when tail frequencies vary with them. This leads to a simple-to-implement permutation test based on distance covariance, without estimating conditional tail indices or specifying the form of tail-index heterogeneity. For the global and locally balanced versions, we establish validity for order-statistic thresholds and give conditions for consistency and local power. Local balancing selects extremes within two covariate groups and can improve power when tail selection concentrates the covariates. Simulations illustrate these gains. In French motor insurance data, upper conditional quantiles vary with risk characteristics, but the tail-index tests do not reject a common tail index.",
+      "takeaways": [
+        "The object is a permutation test for tail-index homogeneity that avoids estimating conditional tail indices or specifying the form of tail-index heterogeneity.",
+        "The visible limit is that the test's power gains from local balancing are illustrated via simulations, and the empirical application does not reject a common tail index despite varying upper conditional quantiles.",
+        "The artifact status is not established in the listing; no code or repository URL is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that in French motor insurance data, \"upper conditional quantiles vary with risk characteristics, but the tail-index tests do not reject a common tail index.\"",
+        "brief": "The authors propose a statistical test to check if the \"tail index\" (a measure of how heavy the tails of a data distribution are) is the same across different groups defined by observed variables (covariates). The key idea is that if the tail index is the same, then the normalized log of extreme values (exceedances) should be independent of the covariates, even if the frequency of extremes varies with them.\n\nThe authors prove that their test is valid under certain conditions and can detect differences (consistency and local power). A version called \"local balancing\" picks extreme values within two specific covariate groups, which can make the test more powerful when extreme values are concentrated in certain groups. Simulations show these improvements. In real French motor insurance data, the upper quantiles (high-value outcomes) do vary with risk factors, but the test does not find evidence that the tail index itself differs.\n\nPeople analyzing data with heavy tails (where extreme values are more common than in normal distributions) and where those extremes might depend on other variables might find this useful. The summary does not say how many data points were in the French insurance study or exactly which risk factors were used. The summary does not say if the test works well for all possible ways the tail index might differ, only under the specific conditions the authors list.",
+        "takeaways": [
+          "The tool is a test that checks if extreme values in data have the same \"heaviness\" across different groups, without needing to guess how the heaviness might differ.",
+          "A limitation is that the test did not find a difference in the French insurance data, even though the high-value outcomes did vary with risk factors, and the power improvements are only shown in simulations.",
+          "It is not known from the summary whether the authors have shared their code or data, as no link or code mention is provided."
+        ]
+      },
+      "actions": [
+        "Verify the specific conditions for consistency and local power by reading the full PDF.",
+        "Check the French motor insurance data section in the PDF to identify the exact risk characteristics and sample size used."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.EM"
+      ],
+      "listing": {
+        "listedOn": "2026-10-16",
+        "publishedOn": "2026-10-16",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.21019"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-16T16:43:24.357Z"
+      }
+    },
+    {
+      "id": "2610.22062",
+      "arxivId": "2610.22062",
+      "url": "https://arxiv.org/abs/2610.22062",
+      "topic": "Health",
+      "reported": "The authors report that a specific prompt configuration achieved 84.2% accuracy and an F1 score of 0.674 on a diarrhea development set, which they state is 47 percentage points higher than regular-expression matching.",
+      "metrics": [
+        "84.2 $\\pm$ 0.0% accuracy",
+        "F1 = 0.674",
+        "47 percentage points"
+      ],
+      "title": "Documenting Trofinetide Treatment Phenotypes in Rett Syndrome with a Dual-LLM Consensus Pipeline",
+      "authors": "Daniel Palacios, Guantong Qi, Mikael Guzman Karlsson, Shawntel K. David, Mohammed Sameeruddin, Bernhard Suter, Zhandong Liu, Davut Pehlivan, Hu Chen",
+      "takeaway": "The paper claims to present a dual-LLM consensus pipeline that extracts 18 treatment-response phenotypes from clinical notes to enable scalable real-world monitoring of trofinetide treatment in Rett syndrome.",
+      "brief": "The authors describe a dual-LLM consensus pipeline designed to extract 18 treatment-response phenotypes from clinical notes for trofinetide treatment in Rett syndrome. They report that a specific prompt configuration achieved 84.2% accuracy and an F1 score of 0.674 on a diarrhea development set, which they state is 47 percentage points higher than regular-expression matching. The listing does not establish whether the pipeline generalizes to the other 17 phenotypes or if the reported metrics apply to the full dataset.\n\nThe authors state that expert reviewers agreed with 90.2% of the pipeline's calls on a sample of 102 judgments. They note that the outcome is documented presence at each visit, not a direction-of-change judgment. The listing does not specify the limitations of the consensus architecture or the impact of the frozen prompt on other phenotypes.\n\nResearchers interested in LLM-based clinical note extraction or real-world evidence generation for rare diseases may find the methodology relevant. Those requiring validated direction-of-change metrics or comprehensive performance data across all 18 phenotypes should verify the full paper before relying on the reported results.",
+      "abstract": "Objective: Trofinetide, approved in 2023 as the first Rett syndrome treatment, lacks scalable real-world monitoring because chart review is labor-intensive. We developed a dual large language model (LLM) consensus pipeline to extract 18 treatment-response phenotypes, comprising 4 adverse effects, 13 Rett clinical features, and medication refusal, from clinical notes. Materials and Methods: We analyzed 26,763 notes from 108 patients with confirmed sustained trofinetide exposure at Texas Children's Hospital. The pipeline filters notes by keyword, classifies each through two LLMs requiring consensus, and aggregates a patient-by-timepoint matrix. Architecture and prompt were selected on a diarrhea development set, then frozen and applied to the other 17 phenotypes with the phenotype definition substituted, as an out-of-sample test. The reported prompt comparison scores 183 expert-labeled cells. Results: A prompt requiring diarrhea to be active and severe performed best (84.2 $\\pm$ 0.0% accuracy; F1 = 0.674), 47 percentage points above regular-expression matching ($p < 0.0001$). Expert reviewers judged six of the pipeline's calls per phenotype, three positive and three negative, and agreed with 90.2% (92/102). The 13 Rett clinical features are manifestations of the disorder itself rather than adverse effects of trofinetide. Gross and fine motor impairment, language/communication, and stereotypy were documented present in 92-100% of patients at every visit. Discussion: In-context LLM extraction captured multi-domain treatment responses. The outcome is documented presence at each visit, not a direction-of-change judgment. Conclusion: Coupling in-context LLM reasoning with a consensus architecture offers a scalable alternative to keyword and regular-expression extraction for real-world evidence, adapting to new phenotypes and medications through configuration alone.",
+      "takeaways": [
+        "The object is a dual-LLM consensus pipeline for extracting 18 treatment-response phenotypes from clinical notes.",
+        "A visible limit is that the reported accuracy and F1 scores are specific to a diarrhea development set, and the listing does not confirm performance on the other 17 phenotypes.",
+        "The artifact status is not established in the listing, as no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that a specific prompt configuration achieved 84.2% accuracy and an F1 score of 0.674 on a diarrhea development set, which they state is 47 percentage points higher than regular-expression matching.",
+        "brief": "The authors describe a system using two large language models to extract 18 specific health indicators from medical notes for patients with Rett syndrome taking trofinetide. They report that a specific prompt configuration achieved 84.2% accuracy and an F1 score of 0.674 on a diarrhea development set, which they state is 47 percentage points higher than regular-expression matching. The listing does not establish whether the system works well for the other 17 indicators or if the reported numbers apply to the whole group of patients.\n\nThe authors state that human experts agreed with 90.2% of the system's decisions on a small sample of 102 cases. They note that the system only records whether a symptom is present at a visit, not whether it is getting better or worse. The listing does not explain the weaknesses of using two models together or how the fixed prompt affects the other 17 indicators.\n\nPeople studying how to use AI to read medical records or gather real-world data for rare diseases might find this method useful. People who need to know if symptoms are improving or worsening, or who need performance data for all 18 indicators, should check the full paper before using these results.",
+        "takeaways": [
+          "The main thing being described is a system using two AI models to pull 18 health indicators from medical notes.",
+          "A clear limitation is that the reported accuracy and F1 scores are only for the diarrhea test set, and the listing does not say how well it works for the other 17 indicators.",
+          "It is not clear if the code or tools are available, because the listing does not mention any code repository or implementation details."
+        ]
+      },
+      "actions": [
+        "Verify the full paper to confirm whether the reported metrics apply to the entire dataset of 26,763 notes or only the diarrhea development set.",
+        "Check for any supplementary materials or code repositories that might provide the prompt configurations and evaluation scripts for the other 17 phenotypes."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "cs.CL"
+      ],
+      "listing": {
+        "listedOn": "2026-10-16",
+        "publishedOn": "2026-10-16",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.22062"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-16T16:43:24.357Z"
+      }
+    }
+  ]
+}
