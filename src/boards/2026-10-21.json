@@ -1,0 +1,680 @@
+{
+  "date": "2026-10-21",
+  "label": "Wed, Oct 21",
+  "minutes": 10,
+  "poolSize": 147,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-10-21T17:44:12.783Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2610.27999",
+      "arxivId": "2610.27999",
+      "url": "https://arxiv.org/abs/2610.27999",
+      "topic": "AI",
+      "reported": "The authors report that their system enables 480p, 60 FPS gameplay on a single NVIDIA RTX5090 with a key-press-to-display latency of 112ms.",
+      "metrics": [
+        "480p, 60 FPS gameplay",
+        "key-press-to-display latency of 112ms",
+        "83FPS steady-state throughput"
+      ],
+      "title": "Matrix-Game 4.0: Harnessing Video Models for Real-Time Playable Game Worlds",
+      "authors": "Jihai Zhang, Runjia Qian, Kaiqin Kong, Biao Jiang, Puyi Wang, Siru Chen, Tianle Li, Guanjie Chen, Junyi Wu, Chubin Chen, Yuanhang Li, Kaichen Huang, Haobo Zhang, Yangguang Li, Wei Yu, Guibin Chen, Yu Cheng, Yahui Zhou",
+      "takeaway": "The paper introduces Matrix-Game 4.0, a system that separates game execution from visual generation to create real-time playable game worlds.",
+      "brief": "The authors propose a framework that decouples game logic from visual rendering, using a lightweight engine for state and a video model for visuals. This design aims to support persistent, interactive game environments through natural language.\n\nThe strongest reported result is 480p, 60 FPS gameplay on an RTX5090 with 112ms latency. The listing does not establish qualitative limits or specific failure modes for the generated visuals or game mechanics.\n\nResearchers working on real-time video generation or interactive game engines may find the architectural separation relevant. Those not interested in low-latency video synthesis or game development may ignore it.",
+      "abstract": "Moving from controllable videos to genuinely playable worlds requires persistent world state, executable game rules, and low-latency interaction. We outline a roadmap for the next generation of Matrix-Game that separates game execution from visual generation through an executable game harness, and introduce Matrix-Game 4.0 as the first system built on this design. A lightweight game engine maintains world state and executes interaction rules, a multimodal coding agent translates player ideas into game code and dynamic scene captions, and a renderer based on autoregressive video model transforms engine-rendered low-poly proxies into detailed visuals, conditioned on dynamic captions and memory references. This framework provides continuous guidance for visual generation and enables natural-language creation and modification of scenes and gameplay. Our renderer is trained on aligned low-poly and high-fidelity video pairs and distilled into a causal generator that generates in four-frame chunks with one or two denoising steps. Together with targeted inference optimizations, Matrix-Game 4.0 enables 480p, 60 FPS gameplay on a single NVIDIA RTX5090 with a key-press-to-display latency of 112ms. Single-step generation achieves 83FPS steady-state throughput with 18.2GiB of peak GPU memory usage. With fixed prompts, steady-state throughput also reaches 67FPS on an RTX5080 and 58FPS on an RTX5070Ti. We demonstrate customizable shooter and driving games with engine-enforced mechanics, and release code, model weights, and low-poly game assets to support research and creation of playable game worlds.",
+      "takeaways": [
+        "The core object is a hybrid system combining a game engine, coding agent, and autoregressive video renderer.",
+        "The listing does not specify unresolved limits regarding visual consistency or long-term world state persistence.",
+        "The authors state they release code, model weights, and low-poly game assets, but the specific repository URL is not provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that their system allows for 480p, 60 frames per second gameplay on a single NVIDIA RTX5090 graphics card, with a delay of 112 milliseconds between a key press and the visual display.",
+        "brief": "The authors suggest a new way to build video games by splitting the work: one part handles the game rules and state, while another part generates the visual images. This approach is designed to allow players to interact with the game in real-time using natural language commands.\n\nThe best performance result mentioned is 480p resolution at 60 frames per second on a specific high-end graphics card. The provided text does not explain what happens when the system fails or what the visual quality looks like in difficult scenarios.\n\nPeople who build video games or work on making computer graphics appear in real-time might find this useful. People who do not work in these specific technical areas might not need to look at this paper.",
+        "takeaways": [
+          "The main thing being described is a system that mixes a traditional game engine with an AI video generator.",
+          "The text does not say what the weaknesses are, such as whether the video stays consistent over long periods of play.",
+          "The authors say they are sharing the code and data, but the exact web address for downloading them is not in this summary."
+        ]
+      },
+      "actions": [
+        "Verify the specific hardware requirements and latency figures by checking the full PDF against the abstract claims.",
+        "Locate the released code and model weights to assess the practical usability of the low-poly game assets."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-21",
+        "publishedOn": "2026-10-20",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.27999",
+            "upvotes": 175
+          }
+        ]
+      },
+      "trend": {
+        "votes": 175,
+        "rank": 1,
+        "of": 50,
+        "perDay": 175
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 175,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-20"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-21T17:44:12.783Z"
+      }
+    },
+    {
+      "id": "2610.26203",
+      "arxivId": "2610.26203",
+      "url": "https://arxiv.org/abs/2610.26203",
+      "topic": "AI",
+      "reported": "The authors report that FocusGUI raises overall Type Match by +33.2 and Exact Match by 3.0 times over the frozen backbone on average across four omni-modal backbones.",
+      "metrics": [
+        "Type Match by +33.2",
+        "Exact Match by 3.0 times",
+        "Type Match by +30.1"
+      ],
+      "title": "Focused Omni-Modal GUI Agents",
+      "authors": "Fuyao Zhang, Wenwen He, Jiaming Zhang, Yurong Hao, Xuan Wang, Guowei Guan, Che Wang, Longtao Huang, Wei Yang Bryan Lim",
+      "takeaway": "The paper claims to introduce FocusGUI, a lightweight adapter that dynamically prioritizes multimodal channels to address Sequential Distraction in omni-modal GUI agents.",
+      "brief": "The authors propose FocusGUI, an adapter that compresses relevant multimodal evidence into a compact latent and injects it into frozen decoder embeddings. It is designed to be step-adaptive and action-sufficient without requiring modality-relevance labels or backbone fine-tuning.\n\nThe strongest reported result is a +33.2 increase in overall Type Match and a 3.0 times increase in Exact Match over the frozen backbone average across four omni-modal backbones. The listing does not specify the exact benchmark suite, dataset size, or the specific \"strongest existing enhancement method\" used for the +30.1 Type Match comparison.\n\nResearchers working on multimodal GUI agents or context management in sequential decision-making tasks may find the adapter architecture relevant. Those not focused on GUI automation or omni-modal state tracking may find the specific application domain too narrow.",
+      "abstract": "Graphical User Interface (GUI) agents increasingly act over streaming omni-modal observations spanning screenshots, audio, video, interaction history, and device states. However, exposing this complete context uniformly at every step ignores that relevance is transient and sparse: the signal determining one action can become clutter at the next. Because executed actions feed back into the context, these errors compound into Sequential Distraction, driving the agent into irreversible trajectory drift. We formulate the underlying requirement as Focused Perception: a representation that is step-adaptive, action-sufficient, and non-intrusive. We realize this in FocusGUI, a lightweight adapter that dynamically prioritizes multimodal channels against a step-specific decision reference. Instead of uniformly processing all inputs, it compresses the most relevant evidence into a compact latent and subtly injects it into the frozen decoder's embeddings, guiding the model's attention without altering its native parameter space. FocusGUI trains from action supervision alone, requiring neither modality-relevance labels nor backbone fine-tuning. Across four omni-modal backbones, it raises overall Type Match by +33.2 and Exact Match by 3.0 times over the frozen backbone on average, and Type Match by +30.1 over the strongest existing enhancement method.",
+      "takeaways": [
+        "The object is a lightweight adapter that modifies attention via latent injection rather than fine-tuning the backbone.",
+        "A visible limit is the lack of specified benchmark details or baseline identification in the provided abstract.",
+        "The artifact status is indicated by a declared GitHub repository URL, though the listing does not confirm code availability or completeness."
+      ],
+      "plain": {
+        "reported": "The authors report that their tool improves a score called Type Match by 33.2 points and another score called Exact Match by three times compared to the original unmodified system, averaged across four different base models.",
+        "brief": "The authors created a small add-on tool called FocusGUI. It helps computer programs that look at screens, listen to audio, and watch video to decide what to do next. It picks out the most important information for each specific step and feeds it to the main decision-making part of the program without changing the main program itself.\n\nThe best result they show is that their tool makes the program much better at matching the correct type of action and the exact correct action compared to the original program. However, the short summary does not say which specific tests they used or which other tool they compared it against for one of the scores.\n\nPeople who build software that interacts with computer screens using multiple types of data might find this useful. People who do not work on this specific type of software might not need to look at it.",
+        "takeaways": [
+          "The tool is a small add-on that changes how the main program pays attention to information, rather than retraining the main program.",
+          "The summary does not list the specific tests used or the name of the competitor tool used for comparison.",
+          "The authors provide a link to a code repository, but the summary does not confirm if the code is complete or working."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark names and baseline methods by reading the full PDF.",
+        "Check the declared GitHub repository to confirm the availability of the FocusGUI code and training scripts."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/fyzhang1/FocusGUI",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-21",
+        "publishedOn": "2026-10-19",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.26203",
+            "upvotes": 166
+          }
+        ]
+      },
+      "trend": {
+        "votes": 166,
+        "rank": 2,
+        "of": 50,
+        "perDay": 83
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 166,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-19"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-21T17:44:12.783Z"
+      }
+    },
+    {
+      "id": "2610.27628",
+      "arxivId": "2610.27628",
+      "url": "https://arxiv.org/abs/2610.27628",
+      "topic": "AI",
+      "reported": "The authors report that a Qwen2.5-0.5B model trained on at most 32 moves achieves 95.5% mean full-state accuracy at 512 moves on swap-S_5.",
+      "metrics": [
+        "95.5% mean full-state accuracy",
+        "55.7% reported for RLT",
+        "0.8% for explicit chain of thought"
+      ],
+      "title": "PAR: Progress-Aligned Recurrence for Length Generalization in State Tracking",
+      "authors": "Pan Wang, Yihao Hu, Guangyuan Dong, Yitong Lin, Hang Wang, Zimi Liu, Zhihao Wen, Jianshe Li, Jiang-Ming Yang, Wei Wu, Yongqi Tong",
+      "takeaway": "The paper introduces Progress-Aligned Recurrence (PAR) to train intermediate predictions and rescale recurrent states for length generalization in sequential state tracking.",
+      "brief": "The authors propose Progress-Aligned Recurrence (PAR), which aligns iteration predictions with intermediate states and rescales recurrent states to first-iteration norms. This method aims to make additional test-time iterations useful for solving longer sequential problems.\n\nOn the swap-S_5 benchmark, a Qwen2.5-0.5B model trained on 32 moves achieved 95.5% accuracy at 512 moves. Ablations indicate that removing norm anchoring or progress-aligned targets significantly reduces the extrapolation factor. The listing does not establish limits regarding other model architectures or non-sequential tasks.\n\nResearchers working on looped language models or sequential state tracking may find the specific training alignment and norm rescaling techniques relevant. Those focused on general-purpose language modeling without recurrent state tracking may find the scope too narrow.",
+      "abstract": "Looped language models can run more iterations at test time, but additional iterations need not help them solve longer problems. For sequential state tracking, final-answer supervision does not specify how far each iteration should advance, and repeated updates can change the scale of the recurrent state. We introduce Progress-Aligned Recurrence (PAR), which trains the prediction at iteration k to match the state after the first k operations and rescales recurrent states to their first-iteration norms. On swap-S_5, a Qwen2.5-0.5B model trained on at most 32 moves achieves 95.5\\% mean full-state accuracy at 512 moves, or 16times the training length, compared with 55.7\\% reported for RLT and 0.8\\% for explicit chain of thought on the same backbone. Controlled S_5 ablations show that removing norm anchoring reduces the extrapolation factor from 16times to below 2.2times, and replacing progress-aligned targets with final-answer supervision reduces it to at most 8times. A learned completion readout selects when to answer without a supplied stopping depth. When intermediate labels are unavailable, prefix self-distillation induces the correspondence from shorter problem prefixes using only final answers. The gains apply across sequential state-tracking tasks, establishing the task structure required for depth extrapolation. These findings support training intermediate predictions and state scale together to make additional recurrent depth useful for longer problems.",
+      "takeaways": [
+        "The core object is a training method that aligns recurrent iterations with intermediate state progress and anchors state norms.",
+        "The visible limit is that the reported gains are specific to sequential state-tracking tasks like swap-S_5, not general reasoning.",
+        "No code repository is declared in the listing, so the artifact status is unverified."
+      ],
+      "plain": {
+        "reported": "The authors report that a small language model trained on short sequences achieved 95.5% accuracy on long sequences in a specific tracking task.",
+        "brief": "The authors created a method called Progress-Aligned Recurrence. It teaches the model to predict intermediate steps correctly and keeps the internal state size stable. This helps the model handle longer problems than it was trained on.\n\nIn a specific test called swap-S_5, the model got 95.5% correct answers when handling sequences 16 times longer than its training data. Removing parts of the method made the performance drop significantly. The listing does not say if this works for other types of problems or larger models.\n\nPeople studying how to make AI models handle longer sequences in step-by-step tasks might find this useful. People interested in general chatbots or non-sequential tasks might not find it directly applicable.",
+        "takeaways": [
+          "The method focuses on aligning model predictions with intermediate steps and controlling internal state size.",
+          "The results are limited to specific step-by-step tracking tasks, not general language understanding.",
+          "The listing does not provide a link to the code, so the method cannot be easily tested."
+        ]
+      },
+      "actions": [
+        "Verify the exact implementation of the norm rescaling and progress-aligned loss in the full PDF.",
+        "Check whether the 95.5% accuracy at 512 moves is reproducible with the specified Qwen2.5-0.5B backbone."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-21",
+        "publishedOn": "2026-10-20",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.27628",
+            "upvotes": 146
+          }
+        ]
+      },
+      "trend": {
+        "votes": 146,
+        "rank": 3,
+        "of": 50,
+        "perDay": 146
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 146,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-20"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-21T17:44:12.783Z"
+      }
+    },
+    {
+      "id": "2610.26855",
+      "arxivId": "2610.26855",
+      "url": "https://arxiv.org/abs/2610.26855",
+      "topic": "AI",
+      "reported": "The authors report state-of-the-art performance across five cross-embodiment benchmarks and on held-out human egocentric video.",
+      "metrics": [
+        "10k hours of egocentric human data",
+        "3k hours of robot data"
+      ],
+      "title": "Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience",
+      "authors": "Tianqi Liu, Hanfei Zhao, Qifeng Liang, Hui En Pang, Jiarui Xu, Sayang Mu, Penghao Qiu, YingSheng Zhang, Jun Wang, Ziang Cao, Mingze Sun, Yukang Cao, Fangzhou Hong, Zhaoxi Chen, Ziwei Liu",
+      "takeaway": "The paper presents Ropedia W0, described as the first egocentric loco-manipulation world foundation model spanning humans and robots with diverse embodiments.",
+      "brief": "The authors claim to introduce Ropedia W0, a world foundation model for locomotion and manipulation that unifies human and robot embodiments using a curated dataset called Xp-Data.\n\nThey report state-of-the-art results on five specific benchmarks and held-out human video, noting that scaling human pre-training data improves performance. The listing does not establish specific quantitative error rates or latency figures beyond the data volume and real-time capability.\n\nResearchers working on embodied AI, world models, or cross-embodiment transfer may find the unified kinematic representation and benchmark relevant. Those not focused on loco-manipulation or egocentric video prediction may ignore it.",
+      "abstract": "World models enable embodied agents to anticipate action consequences, yet jointly modeling locomotion and manipulation across diverse embodiments remains challenging due to heterogeneous action spaces and limited multimodal supervision. We present Ropedia W0, the first egocentric loco-manipulation world foundation model spanning humans and robots with diverse embodiments. We curate Xp-Data, comprising 10k hours of egocentric human data and 3k hours of robot data with unified multimodal annotations and systematic quality control. A unified kinematic representation encodes locomotion through camera poses and manipulation through projected skeletons, with robot skeletons combining embodiment-specific forward kinematics with extensive manual keypoint annotation and correction. We also introduce Xp-Teleop, a long-horizon loco-manipulation benchmark based on high-quality dexterous humanoid teleoperation data. Evaluations demonstrate state-of-the-art performance across five cross-embodiment benchmarks (DreamDojo, Ψ_0, ω-HOME, Xp-Teleop, and AgiBot) and on held-out human egocentric video, from zero-shot inference to few-shot and full-data post-training. Scaling human pre-training data improves performance on both human and robot evaluations. After distillation, our model supports real-time, minute-long rollouts, enabling live VR interaction. Applications in policy evaluation, model-based planning, and world-action modeling further demonstrate the model's utility for embodied decision-making.",
+      "takeaways": [
+        "The core object is a world model that encodes locomotion via camera poses and manipulation via projected skeletons.",
+        "A visible limit is the reliance on heterogeneous action spaces and limited multimodal supervision, which the authors state remains challenging.",
+        "The artifact status is indicated by a declared GitHub repository URL, though the listing does not confirm code availability or completeness."
+      ],
+      "plain": {
+        "reported": "The authors report that their model performs better than existing methods on five specific test sets and on unseen human video footage.",
+        "brief": "The authors say they built a computer model called Ropedia W0 that predicts what happens when a robot or person moves and uses their hands. They created a large database of video and movement data called Xp-Data to train it.\n\nThey say their model works better than others on five specific tests and on new human video. They also say using more human data makes the model better. The summary does not give specific numbers for how much better it is or how fast it runs.\n\nPeople who study how robots move and use tools, or how computers predict video, might find this useful. People who do not work on these specific topics might not need to look at it.",
+        "takeaways": [
+          "The main thing they made is a model that tracks body movement and hand actions using camera angles and skeleton maps.",
+          "A known difficulty is that different robots and humans have different ways of moving, making it hard to train one model for all of them.",
+          "They provided a link to a code repository, but the summary does not say if the code and data are actually there and working."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark scores and real-time latency claims by reading the full PDF.",
+        "Check the declared GitHub repository to confirm the availability of the Xp-Data dataset and model weights."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Ropedia/ropedia-w0",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-21",
+        "publishedOn": "2026-10-19",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.26855",
+            "upvotes": 131
+          }
+        ]
+      },
+      "trend": {
+        "votes": 131,
+        "rank": 4,
+        "of": 50,
+        "perDay": 66
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 131,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-19"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-21T17:44:12.783Z"
+      }
+    },
+    {
+      "id": "2610.27334",
+      "arxivId": "2610.27334",
+      "url": "https://arxiv.org/abs/2610.27334",
+      "topic": "Health",
+      "reported": "EMBER: Predicting TCR--pMHC Binding Without a Docked Complex",
+      "metrics": [
+        "0.9 to 14.4% in micro-AUROC",
+        "18.5 to 25.3% in micro-AUPRC",
+        "10.6 to 24.1% in MCC"
+      ],
+      "title": "EMBER: Predicting TCR--pMHC Binding Without a Docked Complex",
+      "authors": "Lin Ha, Chen Zhou, Haozheng Luo, Han Liu, Xiaoyu Zhang, Yan Chen",
+      "takeaway": "The authors propose EMBER, a structure-based framework for TCR--pMHC binding prediction that eliminates the need for a predicted docked complex.",
+      "brief": "The authors state that EMBER folds the TCR and pMHC independently and encodes them as SE(3)-invariant residue graphs to compare learned representations without constructing a shared coordinate frame. This design means a relative pose is not an input, so placement error cannot propagate into the prediction.\n\nThe authors report that under epitope-disjoint evaluation with six retrained baselines, EMBER is first on every metric under all four folding tools. They measure improvements of 0.9 to 14.4% in micro-AUROC, 18.5 to 25.3% in micro-AUPRC, and 10.6 to 24.1% in MCC. The listing does not specify the dataset size, the specific folding tools used, or the computational cost of the O(N+M) preprocessing relative to the O(NM) baseline.\n\nResearchers working on TCR-pMHC binding prediction or structure-based immune modeling may find the independent folding approach relevant. Those requiring a docked complex for downstream structural analysis or those needing verified code availability should note the absence of declared code in the listing.",
+      "abstract": "We propose EMBER, a structure-based framework for TCR--pMHC binding prediction that eliminates the need for a predicted docked complex, and with it the placement error that dominates such predictions. Traditional structure-based predictors utilize the co-folded complex structure of the receptor and the antigen and interpret binding from its contact surface. Consequently, every downstream feature inherits any deviation the structure-prediction tool introduced. Methodologically, EMBER folds the TCR and pMHC independently, encodes them as SE(3)-invariant residue graphs, and compares their learned representations without constructing a shared coordinate frame. A relative pose is therefore not an input of the model, so placement error cannot propagate into the prediction. Computationally, EMBER preprocesses O(N{+}M) monomer folds where a complex-based predictor needs O(NM) operations. Experimentally, under epitope-disjoint evaluation with six retrained baselines, EMBER is first on every metric under all four folding tools, by 0.9 to 14.4% in micro-AUROC, 18.5 to 25.3% in micro-AUPRC and 10.6 to 24.1% in MCC. Its ranking is also up to 85% more stable across folding tools.",
+      "takeaways": [
+        "The object is a structure-based prediction framework that avoids the input of a relative pose between TCR and pMHC.",
+        "A visible limit is that the listing does not establish the specific datasets, folding tools, or computational overhead beyond the asymptotic notation provided.",
+        "The artifact status is unclear because no code repository is declared in the supplied metadata."
+      ],
+      "plain": {
+        "reported": "EMBER: Predicting TCR--pMHC Binding Without a Docked Complex",
+        "brief": "The authors describe a method called EMBER that predicts whether a T-cell receptor binds to a specific antigen fragment. Instead of first predicting the 3D shape of the two parts fitting together, which can be inaccurate, EMBER predicts the shape of each part separately and then compares their features. This avoids errors that come from the initial shape-fitting step.\n\nThe authors say that in their tests, EMBER performed better than six other methods across four different shape-prediction tools. They report improvements in accuracy measures like micro-AUROC (0.9 to 14.4%), micro-AUPRC (18.5 to 25.3%), and MCC (10.6 to 24.1%). The listing does not say how large the test datasets were or which specific shape-prediction tools were used, nor does it detail the actual time or memory costs of the method.\n\nScientists studying how T-cells recognize antigens might find this useful. However, if you need the actual 3D structure of the binding complex for other analyses, or if you need to run the code yourself, note that no code link is provided in the listing.",
+        "takeaways": [
+          "The method predicts binding by comparing separate 3D shapes of the T-cell receptor and the antigen, rather than predicting them as one combined shape.",
+          "The listing does not provide details on the specific datasets used or the exact computational resources required, only the theoretical complexity.",
+          "There is no declared code repository in the provided information, so the software availability is unknown."
+        ]
+      },
+      "actions": [
+        "Verify the specific datasets and folding tools used in the 'epitope-disjoint evaluation' by consulting the full PDF.",
+        "Check the full PDF for any mention of code availability or supplementary materials not listed in the metadata."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "q-bio.QM",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-21",
+        "publishedOn": "2026-10-19",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.27334",
+            "upvotes": 4
+          },
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.27334"
+          }
+        ]
+      },
+      "trend": {
+        "votes": 4,
+        "rank": 45,
+        "of": 50,
+        "perDay": 2
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 4,
+          "sourceCount": 2,
+          "publishedOn": "2026-10-19"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-21T17:44:12.783Z"
+      }
+    },
+    {
+      "id": "2610.26900",
+      "arxivId": "2610.26900",
+      "url": "https://arxiv.org/abs/2610.26900",
+      "topic": "Physics",
+      "reported": "The authors report that their reinforcement learning schedulers achieve the highest success rates in simulations, improving on the MILP scheduler by up to 6%.",
+      "metrics": [
+        "improving on MILP by up to 6%",
+        "Progressive Filling and Greedy heuristics by 16.5%",
+        "Greedy heuristics by 19.5%"
+      ],
+      "title": "Concurrent Entanglement Purification Scheduling in Dynamic Quantum Networks",
+      "authors": "Gongyu Ni, Lester Ho",
+      "takeaway": "The paper presents a mixed-integer linear programming scheduler and reinforcement learning schedulers for concurrent entanglement purification in dynamic quantum networks.",
+      "brief": "The authors propose MILP and RL schedulers to manage concurrent entanglement purification requests in time-slotted quantum networks with heterogeneous links.\n\nSimulations show RL schedulers achieve higher success rates than MILP and heuristics, while MILP achieves higher fairness and lower Bell pair consumption in most scenarios.\n\nResearchers working on quantum network resource allocation or entanglement scheduling should open this paper; those focused on hardware implementation or static network optimization may ignore it.",
+      "abstract": "Quantum networks must deliver end-to-end entanglement whose fidelity meets application requirements, which typically requires entanglement purification along multi-hop paths. Existing scheduling approaches either purify at the link level or optimize end-to-end fidelity for a static set of requests, and do not capture concurrent requests competing for network resources over time. This paper studies concurrent entanglement purification scheduling in a time-slotted quantum network with heterogeneous links, in which requests compete for link capacity and quantum memories, and each request may be served by multiple parallel paths for increased reliability. We formulate a mixed-integer linear programming (MILP) scheduler that maximizes the number of scheduled requests, with max-min path allocation as a fairness criterion, and develop reinforcement learning (RL) schedulers based on DQN, PPO, and SAC, whose rewards balance request success against Bell-pair consumption. Simulations under varying network load, topologies and target fidelity thresholds show that the RL schedulers achieve the highest success rates, improving on MILP by up to 6% and on Progressive Filling and Greedy heuristics by 16.5% and 19.5% respectively, at the cost of higher Bell pair consumption and the deferral of a small fraction of requests. MILP, in contrast, achieves the highest fairness and the lowest Bell pair consumption in most scenarios.",
+      "takeaways": [
+        "The object is a scheduling framework for concurrent entanglement purification in dynamic quantum networks.",
+        "A visible limit is the increased Bell pair consumption and deferral of a small fraction of requests associated with the RL schedulers.",
+        "The artifact status is not established in the listing, as no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their reinforcement learning schedulers achieve the highest success rates in simulations, improving on the MILP scheduler by up to 6%.",
+        "brief": "The authors propose mathematical and learning-based methods to manage simultaneous requests for high-quality quantum connections in networks with varying link qualities.\n\nComputer simulations show the learning-based methods succeed more often than the mathematical method and simple rules, while the mathematical method is fairer and uses fewer quantum resources in most cases.\n\nPeople studying how to manage resources in quantum communication networks should open this paper; people focused on building physical quantum hardware or optimizing fixed networks may ignore it.",
+        "takeaways": [
+          "The subject is a method for scheduling simultaneous purification tasks in dynamic quantum networks.",
+          "A visible limit is that the learning-based methods use more quantum resources and delay some requests.",
+          "The availability of code or software is not stated in the provided listing."
+        ]
+      },
+      "actions": [
+        "Verify the specific network topologies and fidelity thresholds used in the simulations by reading the full PDF.",
+        "Check the paper for details on the state space and action space definitions of the DQN, PPO, and SAC agents."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-10-21",
+        "publishedOn": "2026-10-21",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.26900"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-21T17:44:12.783Z"
+      }
+    },
+    {
+      "id": "2610.26906",
+      "arxivId": "2610.26906",
+      "url": "https://arxiv.org/abs/2610.26906",
+      "topic": "Security",
+      "reported": "The authors report that InterType improves recall by 2.76 percentage points on O1 binaries in the coreutils benchmark.",
+      "metrics": [
+        "2.76 percentage points",
+        "89.00%",
+        "91.76%"
+      ],
+      "title": "InterType: Breaking the Single-Function Barrier in Neural Binary Type Inference",
+      "authors": "Shan Wang, Tianming Cui, Stephen McCamant, Antonia Zhai, Pen-Chung Yew",
+      "takeaway": "InterType embeds inter-procedural analysis into a pre-trained Transformer model to recover variable types in stripped binaries by incorporating caller-callee data flow dependencies.",
+      "brief": "The authors propose InterType, a method that extends the CodeArt Transformer model by incorporating caller-callee data flow dependencies during fine-tuning to resolve types that depend on cross-function data flow. They report that on O1 binaries in the coreutils benchmark, InterType improves recall by 2.76 percentage points, from 89.00% for the intra-procedural CodeArt baseline to 91.76%, corresponding to a 25.1% reduction in recall error rate. The listing does not establish whether the method generalizes to other optimization levels, architectures, or binary types beyond the coreutils benchmark, nor does it provide code or dataset links.\n\nThe strongest reported result is a 2.76 percentage point recall improvement on O1 coreutils binaries, measured against the intra-procedural CodeArt baseline. The authors attribute this gain to the model’s exposure to inter-procedural variable propagation patterns during training. No results are reported for O0, O2, or O3 binaries in the supplied abstract, and no qualitative or quantitative limits on generalization are stated.\n\nResearchers working on binary reverse engineering, specifically type inference or vulnerability discovery in stripped binaries, may find the inter-procedural extension relevant. Those focused solely on intra-procedural analysis or non-x86 architectures may find the listing insufficient without further verification of scope.",
+      "abstract": "Variable type recovery is a critical task in binary reverse engineering, enabling downstream applications such as vulnerability discovery, malware analysis, and security enforcement. While recent Transformer-based models have demonstrated strong performance in type inference by learning instruction-level semantics, they predominantly operate within single-function boundaries (i.e. intra-procedural analysis), ignoring the rich type constraints that propagate across function calls. Empirical studies have shown that nearly 44% of variables in real-world binaries propagate across function boundaries as arguments or return values, representing a significant source of type information that intra-procedural models cannot exploit. In this paper, we propose InterType, a method that embeds inter-procedural analysis into a pre-trained Transformer model for binary type recovery. Our approach builds on CodeArt, a state-of-the-art Transformer model for stripped binary analysis, and extends it by incorporating caller-callee data flow dependencies during fine-tuning. Specifically, we extract data flow dependence for each caller-callee pair from disassembled binaries and construct training instances that provide the model with cross-function context. By exposing the Transformer to inter-procedural variable propagation patterns, our model learns to resolve types that depend on cross-function data flow. We evaluate InterType on the coreutils benchmark compiled with optimization levels O0 through O3. On O1 binaries, InterType improves recall by 2.76 percentage points, from 89.00% for the intra-procedural CodeArt baseline to 91.76%, corresponding to a 25.1% reduction in recall error rate (1 - recall).",
+      "takeaways": [
+        "The object is a fine-tuned Transformer model that uses caller-callee data flow to infer variable types across function boundaries in stripped binaries.",
+        "The visible limit is that the reported evaluation is restricted to O1 binaries in the coreutils benchmark, with no stated results for other optimization levels or binary sets.",
+        "The artifact status is unknown; the listing provides no code, dataset, or model repository links."
+      ],
+      "plain": {
+        "reported": "The authors report that their method, InterType, increases the percentage of correctly identified variable types by 2.76 points on a specific set of test programs compiled with a medium level of optimization.",
+        "brief": "The authors created a tool called InterType that helps computers figure out what kind of data each variable holds in machine code. They added information about how data moves between different functions to a model that previously only looked inside single functions. They tested this on a standard set of command-line tools and found that their method correctly identified 91.76% of variable types, compared to 89.00% for the previous best method, on programs compiled with a specific optimization setting. The listing does not say if this works on other types of programs or with different optimization settings, and it does not provide links to the code or data.\n\nThe main result is a 2.76 point increase in accuracy on a specific test set. The authors say this happens because the model sees how data flows between functions. The abstract does not include results for other optimization levels or other test sets, and it does not mention any limitations on how widely the method can be applied.\n\nPeople who work on analyzing machine code to find security flaws or understand malware might find this useful. People who only care about analyzing single functions or who work on different computer architectures might not find enough information in this summary to decide if it is relevant to them.",
+        "takeaways": [
+          "The tool is a computer model that guesses the type of data in machine code by looking at how data moves between different parts of a program.",
+          "The only test results shown are for one specific optimization level on one specific set of test programs, so it is unclear if it works elsewhere.",
+          "It is not known if the code or data are available for download because the listing does not provide any links."
+        ]
+      },
+      "actions": [
+        "Verify the full paper to confirm whether results for O0, O2, and O3 optimization levels are reported and whether the method is evaluated on benchmarks beyond coreutils.",
+        "Check the paper’s supplementary materials or author pages for code, model weights, or dataset availability to assess reproducibility."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.SE"
+      ],
+      "listing": {
+        "listedOn": "2026-10-21",
+        "publishedOn": "2026-10-21",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.26906"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-21T17:44:12.783Z"
+      }
+    },
+    {
+      "id": "2610.26921",
+      "arxivId": "2610.26921",
+      "url": "https://arxiv.org/abs/2610.26921",
+      "topic": "Engineering",
+      "reported": "The authors report that numerical results at 3 GHz with a 5λ aperture show 12--41% divergence reduction for OAM modes ℓ = 1--4, while modes ℓ ≥ 5 become fully center-peaked.",
+      "metrics": [
+        "12--41% divergence reduction",
+        "6.4--30.9 dB received SNR gain",
+        "2.1× (107%) capacity enhancement"
+      ],
+      "title": "Toroidal-OAM Hybrid Beam for Divergence-Suppressed OAM Wireless Communication",
+      "authors": "Runyu Lyu, Wenchi Cheng, Xiang Fang",
+      "takeaway": "The paper proposes a toroidal-OAM hybrid beam that combines toroidal electromagnetic pulses with a conventional OAM beam to lower angular spread and produce non-zero on-axis intensity.",
+      "brief": "The authors propose a toroidal-OAM hybrid beam that combines toroidal electromagnetic pulses with a conventional OAM beam to lower angular spread and produce non-zero on-axis intensity.\n\nNumerical results at 3 GHz with a 5λ aperture show 12--41% divergence reduction for OAM modes ℓ = 1--4, while modes ℓ ≥ 5 become fully center-peaked. Link evaluation shows 6.4--30.9 dB received SNR gain, over 108% extension in fixed-efficiency link-budget range, and up to five orders of magnitude reduction in multi-mode power imbalance. Full-wave simulation in ANSYS HFSS corroborates the model, confirming the hybrid launcher preserves the OAM vortex phase while reducing divergence compared with a UCA-only baseline.\n\nResearchers working on OAM wireless communication or beam engineering may find the model and simulation results relevant. Those not interested in OAM multiplexing or toroidal beam design may ignore it.",
+      "abstract": "Orbital angular momentum (OAM) beams offer spatially independent multiplexing in wireless communications, but their donut-shaped intensity diverges with mode order, causing power capture loss at finite apertures and unequal link budgets. We propose a toroidal-OAM hybrid beam that combines the angular confinement and strong longitudinal electric field of toroidal electromagnetic pulses from a coaxial horn with a conventional OAM beam, lowering angular spread and producing non-zero on-axis intensity. A far-field model is built as a weighted superposition of OAM uniform circular array (UCA) radiation, a super-Gaussian toroidal angular envelope, and a zeroth-order Bessel longitudinal field, controlled by three dimensionless parameters (toroidal confinement, coupling strength, longitudinal coefficient) tied to measurable hardware. Numerical results at 3 GHz with a $5\\lambda$ aperture show 12--41% divergence reduction for OAM modes $\\ell = 1$--$4$, while modes $\\ell \\geq 5$ become fully center-peaked. The suppression ratio stays unchanged for fixed $kR$, $\\kappa$, $\\alpha$, $\\beta$, and $\\ell$. Link evaluation shows 6.4--30.9 dB received SNR gain, over 108% extension in fixed-efficiency link-budget range, and up to five orders of magnitude reduction in multi-mode power imbalance. The central null is filled to 8--100% of the peak; the hybrid beam does not mix OAM modes, with intended-mode power fraction above $0.54$ where the ring is well-defined. OAM mode-division multiplexing capacity at $z=500\\lambda$ shows up to $2.1\\times$ ($107\\%$) capacity enhancement. Full-wave simulation in ANSYS HFSS corroborates the model, confirming the hybrid launcher preserves the OAM vortex phase while reducing divergence compared with a UCA-only baseline. These findings establish toroidal beam engineering as a practical tool for OAM-based wireless links.",
+      "takeaways": [
+        "The object is a toroidal-OAM hybrid beam model combining toroidal confinement with OAM radiation.",
+        "A visible limit is that the reported divergence reduction and SNR gains are based on numerical results and full-wave simulation, not experimental hardware validation.",
+        "The artifact status is not established in the listing; no code or dataset is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that computer simulations at 3 GHz with a 5-wavelength aperture show 12--41% reduction in beam spread for OAM modes ℓ = 1--4, while modes ℓ ≥ 5 become fully center-peaked.",
+        "brief": "The authors propose a hybrid beam that mixes a toroidal-shaped electromagnetic pulse with a standard orbital angular momentum (OAM) beam to reduce how much the beam spreads out and to create intensity on the center axis.\n\nComputer simulations at 3 GHz with a 5-wavelength aperture show 12--41% reduction in beam spread for OAM modes ℓ = 1--4, while modes ℓ ≥ 5 become fully center-peaked. Link evaluation shows 6.4--30.9 dB received signal-to-noise ratio gain, over 108% extension in fixed-efficiency link-budget range, and up to five orders of magnitude reduction in multi-mode power imbalance. Full-wave simulation in ANSYS HFSS corroborates the model, confirming the hybrid launcher preserves the OAM vortex phase while reducing divergence compared with a UCA-only baseline.\n\nResearchers working on OAM wireless communication or beam engineering may find the model and simulation results relevant. Those not interested in OAM multiplexing or toroidal beam design may ignore it.",
+        "takeaways": [
+          "The object is a hybrid beam model that combines toroidal confinement with OAM radiation.",
+          "A visible limit is that the reported divergence reduction and SNR gains are based on computer simulations, not experimental hardware validation.",
+          "The artifact status is not established in the listing; no code or dataset is declared."
+        ]
+      },
+      "actions": [
+        "Verify the numerical model parameters and ANSYS HFSS simulation setup by reading the full PDF.",
+        "Check whether the authors provide experimental validation or only simulation-based evidence in the full paper."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-10-21",
+        "publishedOn": "2026-10-21",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.26921"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-21T17:44:12.783Z"
+      }
+    },
+    {
+      "id": "2610.26934",
+      "arxivId": "2610.26934",
+      "url": "https://arxiv.org/abs/2610.26934",
+      "topic": "Stats",
+      "reported": "The authors report that the finite-sample performance of the proposed estimators is evaluated through extensive simulation studies, which yield satisfactory results across the scenarios considered.",
+      "metrics": [],
+      "title": "A parametric mixture cure rate model with competing risks",
+      "authors": "Carolyne Soares de Brito, Frederico Machado Almeida",
+      "takeaway": "The paper proposes an extension of the standard mixture cure model that incorporates a cure fraction and multiple competing risks within a unified framework.",
+      "brief": "The authors propose a parametric mixture cure rate model that jointly accounts for long-term survivors and multiple competing causes of failure. They estimate model parameters by maximum likelihood using augmented data and evaluate finite-sample performance through extensive simulation studies. The methodology is illustrated using melanoma patient data from the SEER database, which include long-term survivors and multiple competing causes of death.\n\nThe authors state that simulation studies yield satisfactory results across the scenarios considered, but they do not provide specific quantitative metrics or benchmark comparisons in the abstract. The listing does not establish whether the simulation scenarios cover all relevant clinical complexities or if the SEER illustration includes statistical significance tests.\n\nResearchers working on survival analysis with competing risks and cure fractions may find this model relevant for their specific data structures. Those requiring immediate quantitative performance benchmarks or code availability may need to consult the full text to verify the simulation details and estimator properties.",
+      "abstract": "The well-known standard mixture cure model is widely used to model long-term survivors by distinguishing cured from non-cured individuals in the study population. Since its seminal introduction by Berkson and Gage, numerous extensions have been proposed to enhance its flexibility and applicability across diverse clinical settings. However, most existing extensions focus on a single cause of failure among non-cured individuals, often treating events from alternative causes as censored observations. This limitation may inadequately represent the complexity of survival data in which individuals are exposed to multiple competing causes of failure. In particular, treating competing events as non-informative censoring when estimating the probability of a specific cause of failure may lead to biased estimates of cumulative incidence and potentially misleading clinical interpretations. These limitations motivate the development of flexible survival models that jointly account for long-term survivors and multiple competing causes of failure. In this study, we propose an extension of the standard mixture cure model that incorporates a cure fraction and multiple competing risks within a unified framework. Model parameters are estimated by maximum likelihood using augmented data. The finite-sample performance of the proposed estimators is evaluated through extensive simulation studies, which yield satisfactory results across the scenarios considered. Finally, the proposed methodology is illustrated using melanoma patient data from the Surveillance, Epidemiology, and End Results (SEER) database, which include long-term survivors and multiple competing causes of death.",
+      "takeaways": [
+        "The object is a parametric statistical model extending mixture cure models to handle competing risks.",
+        "A visible limit is the lack of specific quantitative performance metrics in the abstract, relying instead on qualitative 'satisfactory' simulation results.",
+        "No code or repository is declared in the listing, so artifact status is unverified."
+      ],
+      "plain": {
+        "reported": "The authors report that they tested how well their new statistical estimator works using computer-generated data, and they say the results were good across the different test cases they tried.",
+        "brief": "The authors created a new way to analyze survival data that handles two tricky problems at once: some people never get the disease (cured), and people who do get sick can die from different causes (competing risks). They use a mathematical method called maximum likelihood to find the best fit for their model. They tested this method with fake data and then applied it to real cancer patient records from a large US government database.\n\nThe authors say their tests worked well, but they do not give specific numbers in the summary to show how accurate the model is. It is not clear from the summary if the tests covered every possible real-world situation or if the real data analysis included detailed error measurements.\n\nPeople who study how long patients live and why they die might find this useful. People who need to see exact numbers or download the computer code to try it themselves should look at the full paper first.",
+        "takeaways": [
+          "The thing being studied is a new statistical formula for analyzing patient survival times.",
+          "A clear weakness is that the summary only says the tests were 'satisfactory' without giving specific accuracy numbers.",
+          "The listing does not say if the computer code is available for download."
+        ]
+      },
+      "actions": [
+        "Verify the specific simulation scenarios and quantitative estimator performance metrics in the full PDF.",
+        "Check the SEER data analysis section for detailed statistical outputs and model fit diagnostics."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-10-21",
+        "publishedOn": "2026-10-21",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.26934"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-21T17:44:12.783Z"
+      }
+    },
+    {
+      "id": "2610.27224",
+      "arxivId": "2610.27224",
+      "url": "https://arxiv.org/abs/2610.27224",
+      "topic": "Econ",
+      "reported": "The authors report developing estimation and inference methods for linear models of group means under quantile-only and mixed disclosure.",
+      "metrics": [],
+      "title": "Quantile-Only Regression: Inference and Partial Identification under Quantile Disclosure",
+      "authors": "Masamune Iwasawa, Hayato Nakanishi",
+      "takeaway": "The paper claims to develop estimation and inference methods for linear models of group means under quantile-only and mixed disclosure.",
+      "brief": "The authors propose methods to estimate linear models of group means when only group quantiles are observed, rather than group means. They establish conditions for consistent estimation and asymptotic normality, and characterize sharp identified sets under fixed disclosure. Applications to education, social care, and medical expenditure illustrate the methods, with an R package provided.\n\nThe listing states that the methods support conventional regression analysis under quantile-only and mixed disclosure. It does not specify the magnitude of estimation error, the size of the datasets used in the applications, or the specific performance gains over existing alternatives. The R package qonlyreg is mentioned as implementing the procedures.\n\nResearchers working with quantile-disclosed data who need to estimate group means may find this relevant. Those requiring mean-disclosed data or specific numerical benchmarks for their own datasets should verify the package and application details directly.",
+      "abstract": "Researchers often observe group quantiles but not group means, raising the question of whether these summaries alone support conventional regression analysis. We develop estimation and inference methods for linear models of group means under quantile-only and mixed disclosure. We establish conditions on disclosure design for consistent estimation and asymptotic normality at the parametric rate. Under fixed disclosure, we characterize sharp identified sets and construct simultaneous confidence regions, clarifying how informativeness depends on the number and placement of disclosed quantiles. Applications to education, social care, and medical expenditure illustrate the methods. The R package qonlyreg implements the proposed procedures.",
+      "takeaways": [
+        "The object is a statistical method for estimating linear models of group means from quantile-only data.",
+        "The visible limit is the absence of reported quantitative performance metrics or specific dataset sizes in the listing.",
+        "The artifact status is an R package named qonlyreg, with no repository URL provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report developing ways to estimate and test linear relationships for group averages when only specific data points (quantiles) are available, rather than the full average.",
+        "brief": "The authors propose ways to estimate linear relationships for group averages when only specific data points (quantiles) are observed, rather than the full average. They establish conditions for these estimates to be reliable and characterize the range of possible values under fixed disclosure. Applications to education, social care, and medical expenditure illustrate the methods, with an R package provided.\n\nThe listing states that the methods support regression analysis under quantile-only and mixed disclosure. It does not specify the magnitude of estimation error, the size of the datasets used in the applications, or the specific performance gains over existing alternatives. The R package qonlyreg is mentioned as implementing the procedures.\n\nResearchers working with quantile-disclosed data who need to estimate group means may find this relevant. Those requiring mean-disclosed data or specific numerical benchmarks for their own datasets should verify the package and application details directly.",
+        "takeaways": [
+          "The object is a statistical method for estimating linear models of group means from quantile-only data.",
+          "The visible limit is the absence of reported quantitative performance metrics or specific dataset sizes in the listing.",
+          "The artifact status is an R package named qonlyreg, with no repository URL provided in the listing."
+        ]
+      },
+      "actions": [
+        "Verify the specific conditions for consistent estimation and asymptotic normality in the full PDF.",
+        "Check the R package qonlyreg documentation for implementation details and example datasets."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.EM",
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-10-21",
+        "publishedOn": "2026-10-21",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.27224"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-21T17:44:12.783Z"
+      }
+    }
+  ]
+}
