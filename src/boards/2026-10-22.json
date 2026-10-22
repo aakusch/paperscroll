@@ -1,0 +1,677 @@
+{
+  "date": "2026-10-22",
+  "label": "Thu, Oct 22",
+  "minutes": 10,
+  "poolSize": 133,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-10-22T17:14:49.088Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2610.28402",
+      "arxivId": "2610.28402",
+      "url": "https://arxiv.org/abs/2610.28402",
+      "topic": "AI",
+      "reported": "The authors report that the highest task-specific scores are 36.90 for Following among seven avatar-performance models, 25.93 for Following in text-conditioned world generation, and 15.00 for Edit Success among three reported reference-editing models.",
+      "metrics": [
+        "36.90 for Following",
+        "25.93 for Following",
+        "15.00 for Edit Success"
+      ],
+      "title": "StreamEval: Evaluating Interactive Streaming Video Generation Models",
+      "authors": "StreamEval Team",
+      "takeaway": "The paper introduces StreamEval, a unified benchmark for interactive streaming video generation spanning five tasks with 300 scripted test cases.",
+      "brief": "The authors present StreamEval, a benchmark for interactive streaming video generation covering five tasks and 300 test cases. They evaluate 37 models using ten task-specific metrics on a 0-100 scale.\n\nThe strongest reported results show low scores for request execution, such as 36.90 for Following in avatar performance. The authors state that high visual quality does not necessarily coincide with reliable request execution. The listing does not establish specific limitations beyond these reported score gaps.\n\nResearchers working on real-time interactive video systems or benchmark design may find this relevant. Those not focused on streaming video generation or interactive evaluation may ignore it.",
+      "abstract": "As streaming video generation advances, enabling real-time interaction with generated video is becoming increasingly important. We introduce StreamEval, a unified benchmark for interactive streaming video generation spanning five tasks: avatar dialogue, avatar performance, world generation, instruction editing, and reference editing. StreamEval comprises 300 scripted test cases lasting 15-300s, each specifying initial assets, incrementally arriving multimodal requests, and explicit requirements for state changes and content preservation. Performance is assessed along four evaluation dimensions: task execution, state consistency, visual fidelity, and audiovisual coordination, instantiated through ten task-specific metrics on a 0-100 scale. Evaluating 37 distinct models across 300 test cases, we find that high visual quality and identity retention do not necessarily coincide with reliable request execution or sustained state consistency. In particular, request execution remains challenging: the highest task-specific scores are 36.90 for Following among seven avatar-performance models, 25.93 for Following in text-conditioned world generation, and 15.00 for Edit Success among three reported reference-editing models. These findings identify reliable request execution under timing and preservation constraints as a central challenge for advancing omni-modal real-time interactive systems. The leaderboard is available at https://streameval.ai",
+      "takeaways": [
+        "The object is a benchmark with 300 scripted test cases for interactive streaming video generation.",
+        "A visible limit is that request execution scores remain low, with the highest reported score being 36.90.",
+        "The artifact status includes a leaderboard at https://streameval.ai and code at https://github.com/StreamEval/StreamEval."
+      ],
+      "plain": {
+        "reported": "The authors report that the highest task-specific scores are 36.90 for Following among seven avatar-performance models, 25.93 for Following in text-conditioned world generation, and 15.00 for Edit Success among three reported reference-editing models.",
+        "brief": "The authors present StreamEval, a benchmark for interactive streaming video generation covering five tasks and 300 test cases. They evaluate 37 models using ten task-specific metrics on a 0-100 scale.\n\nThe strongest reported results show low scores for request execution, such as 36.90 for Following in avatar performance. The authors state that high visual quality does not necessarily coincide with reliable request execution. The listing does not establish specific limitations beyond these reported score gaps.\n\nResearchers working on real-time interactive video systems or benchmark design may find this relevant. Those not focused on streaming video generation or interactive evaluation may ignore it.",
+        "takeaways": [
+          "The object is a benchmark with 300 scripted test cases for interactive streaming video generation.",
+          "A visible limit is that request execution scores remain low, with the highest reported score being 36.90.",
+          "The artifact status includes a leaderboard at https://streameval.ai and code at https://github.com/StreamEval/StreamEval."
+        ]
+      },
+      "actions": [
+        "Verify the PDF to confirm the specific model names and metric definitions used in the evaluation.",
+        "Check the provided GitHub repository to confirm the availability and functionality of the benchmark code."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/StreamEval/StreamEval",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-22",
+        "publishedOn": "2026-10-20",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.28402",
+            "upvotes": 266
+          }
+        ]
+      },
+      "trend": {
+        "votes": 266,
+        "rank": 1,
+        "of": 49,
+        "perDay": 133
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 266,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-20"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-22T17:14:49.088Z"
+      }
+    },
+    {
+      "id": "2610.26659",
+      "arxivId": "2610.26659",
+      "url": "https://arxiv.org/abs/2610.26659",
+      "topic": "AI",
+      "reported": "The authors report that Claude Opus 5.5 achieves a mean overlap score of 41.71% on the SpatialScout benchmark.",
+      "metrics": [
+        "mean overlap score of 41.71%",
+        "47.23% of targets exceeding an intersection-over-union (IoU) threshold of 0.5",
+        "only 3.25% exceeding 0.9"
+      ],
+      "title": "SpatialScout: Can VLM Agents Actively Explore and Map 3D Scenes?",
+      "authors": "Zhaoxi Zhang, Hao Liang, Linxuan Wu, Yiming Wu, Yifu Yuan, Kun Liang, Chenming Tang, Meiyi Qiang, Wentao Zhang, Weikang Li",
+      "takeaway": "The paper introduces SpatialScout, a benchmark for evaluating vision-language model agents on active object-level 3D mapping.",
+      "brief": "The authors propose SpatialScout to test whether VLM agents can construct accurate metric maps through autonomous exploration of 3D scenes. The benchmark comprises 80 indoor scenes and 3,140 target objects, requiring agents to estimate object centers under bounded interaction budgets.\n\nExperiments with frontier VLMs show substantial limitations, with the strongest model achieving a mean overlap score of 41.71%. The authors note a gap between recovering coarse layouts and constructing precise metric maps, though specific failure modes are not detailed in the abstract.\n\nResearchers working on active perception, 3D scene understanding, or VLM agent evaluation may find this testbed relevant. Those focused solely on static image classification or non-spatial tasks may find the specific mapping constraints less applicable.",
+      "abstract": "Spatial intelligence requires agents to actively acquire visual evidence and integrate observations into a coherent representation of the three-dimensional world. Yet spatial question answering offers limited evidence of whether models can construct accurate metric maps through autonomous exploration. We introduce SpatialScout, a benchmark for evaluating vision-language model (VLM) agents on active object-level 3D mapping. SpatialScout comprises 80 diverse indoor scenes containing 3,140 target objects. Given an object inventory, RGB observations, camera calibration, and camera poses, agents control a camera to explore each scene and estimate object centers in a shared coordinate frame. The task requires coordinating viewpoint selection, cross-view association, geometric estimation, and map revision under bounded interaction budgets. Evaluation jointly measures localization accuracy and target coverage through object-scale overlap scores that penalize missing predictions. Experiments with frontier VLMs reveal substantial limitations: the strongest evaluated model, Claude Opus 5.5, achieves a mean overlap score of 41.71%, with 47.23% of targets exceeding an intersection-over-union (IoU) threshold of 0.5 and only 3.25% exceeding 0.9. These results reveal a substantial gap between recovering coarse object layouts and constructing complete, precise metric maps. SpatialScout provides a quantitative testbed for developing agents that build reliable 3D spatial representations through active perception. Code is available at https://github.com/JesseZZZZZ/SpatialScout.",
+      "takeaways": [
+        "The object is a benchmark for active 3D mapping, not a new model architecture.",
+        "The visible limit is the substantial gap between coarse layout recovery and precise metric map construction.",
+        "The artifact status is established as code is available at the provided GitHub repository."
+      ],
+      "plain": {
+        "reported": "The authors report that the model Claude Opus 5.5 gets an average score of 41.71% on their new test for mapping 3D rooms.",
+        "brief": "The creators made a new test called SpatialScout to see if AI agents can walk around a room and make a precise map of where objects are. The test uses 80 different indoor scenes and asks the AI to find 3,140 specific objects by controlling a camera.\n\nWhen they tested top AI models, the best one only got a 41.71% score. This shows that while AI can get a rough idea of where things are, it is still bad at making exact, detailed maps. The abstract does not explain exactly why the AI fails, only that it fails significantly.\n\nPeople who study how AI understands space or how to build AI that can explore environments might find this useful. People who only care about AI recognizing pictures in a single photo might not find this specific test very helpful.",
+        "takeaways": [
+          "This is a new test for AI mapping skills, not a new AI brain.",
+          "The main problem shown is that AI is bad at making exact maps, even if it can see the general layout.",
+          "The code for this test is available online for others to use."
+        ]
+      },
+      "actions": [
+        "Verify the specific evaluation protocol and interaction budget constraints in the PDF.",
+        "Check the GitHub repository for dataset availability and baseline implementation details."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/JesseZZZZZ/SpatialScout",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-22",
+        "publishedOn": "2026-10-19",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.26659",
+            "upvotes": 128
+          }
+        ]
+      },
+      "trend": {
+        "votes": 128,
+        "rank": 2,
+        "of": 49,
+        "perDay": 43
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 128,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-19"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-22T17:14:49.088Z"
+      }
+    },
+    {
+      "id": "2610.29997",
+      "arxivId": "2610.29997",
+      "url": "https://arxiv.org/abs/2610.29997",
+      "topic": "AI",
+      "reported": "The authors report that a single checkpoint achieves 86.79% success on unseen trajectories of training objects and 57.32% on held-out objects.",
+      "metrics": [
+        "86.79% success on unseen trajectories of training objects",
+        "57.32% on held-out objects",
+        "1,575 sequences spanning 229 objects"
+      ],
+      "title": "DONIC: Generalist Dexterous Bimanual Tracking Control from Human Demonstrations",
+      "authors": "Mingze Sun, Ziang Cao, Yuan Fei, Qiankuan Tao, Zihan Wang, Tianqi Liu, Junhao Chen, Haiwen Diao, Fangzhou Hong, Zhaoxi Chen, Ziwei Liu",
+      "takeaway": "DONIC is the first generalist bimanual tracker jointly trained across operation categories and human-motion sources, supported by the BiHOI dataset.",
+      "brief": "The authors present DONIC, a generalist bimanual tracker, and BiHOI, a multi-view dataset of 1,575 sequences spanning 229 objects. They report that a single checkpoint achieves 86.79% success on unseen trajectories of training objects and 57.32% on held-out objects. The listing does not establish specific failure modes or generalization limits beyond the reported held-out object performance.\n\nThe strongest reported result is the 86.79% success rate on unseen trajectories of training objects and 57.32% on held-out objects. The authors attribute these results to a feedback loop recycling verified successful executions and an object-centered per-hand reward. The listing does not specify the exact evaluation protocol or baseline comparison details beyond the stated percentage point improvements.\n\nResearchers working on dexterous manipulation or bimanual coordination may find the dataset and method relevant. Those focused on single-hand tasks or non-contact-rich interactions may find the specific bimanual focus less applicable. The provided code repository link allows for direct inspection of the implementation.",
+      "abstract": "Despite recent progress in dexterous reference tracking, existing models focus primarily on single-hand manipulation and a limited range of interactions, leaving the bimanual dexterous behaviors common in real life unaddressed. The scarcity of contact-rich bimanual manipulation data and the increased complexity of coordinating contacts make developing a generalist bimanual tracker particularly challenging. Therefore, we present 1) DONIC, the first generalist bimanual tracker jointly trained across operation categories and human-motion sources, together with 2) BiHOI, a multi-view dataset of 1,575 sequences spanning 229 objects and emphasizing sustained bimanual interaction, where reconstructed interactions are retargeted into robot references. DONIC combines proximal policy optimization with behavioral cloning in a feedback loop that recycles verified successful executions into training demonstrations. An object-centered per-hand reward maintains object-motion feedback while supervising each hand according to its reference contact role. Clip-Centered Advantages remove reference-dependent advantage offsets while preserving within-trajectory differences. Together, these designs enable one single policy to learn coordinated manipulation across heterogeneous references. Without finetuning, a single checkpoint achieves 86.79% success on unseen trajectories of training objects and 57.32% on held-out objects, surpassing the state-of-the-art bimanual tracking baselines by 77.36 and 45.73 percentage points.",
+      "takeaways": [
+        "The object is a generalist bimanual tracking policy and a corresponding multi-view dataset.",
+        "The visible limit is the 57.32% success rate on held-out objects, indicating a gap in generalization to novel objects.",
+        "The artifact status is established by the provided GitHub repository link, though the listing does not confirm code completeness or reproducibility."
+      ],
+      "plain": {
+        "reported": "The authors report that a single checkpoint achieves 86.79% success on unseen trajectories of training objects and 57.32% on held-out objects.",
+        "brief": "The authors present a robot control system called DONIC that can use two hands together to mimic human movements. They also created a dataset called BiHOI containing 1,575 video sequences of 229 different objects. They report that their system works correctly 86.79% of the time on new movements using objects it has seen before, and 57.32% of the time on objects it has never seen. The listing does not explain what specific situations cause the system to fail or how well it generalizes beyond the tested objects.\n\nThe best result reported is the 86.79% success rate on new movements with known objects and 57.32% on new objects. The authors say this is because their system learns from its own successful attempts and uses a reward system that focuses on the object's motion. The listing does not give enough detail about how the tests were conducted or exactly which other systems were compared against.\n\nPeople who study how robots can use two hands to manipulate objects might find this useful. People who only care about robots using one hand or simple interactions might not find it relevant. The authors provide a link to their code, which allows others to check the implementation directly.",
+        "takeaways": [
+          "The main contribution is a two-handed robot control method and a dataset of human manipulation videos.",
+          "A clear limitation is that the system only succeeds 57.32% of the time when handling objects it has not seen before.",
+          "The code is available at a provided link, but the listing does not confirm if the code is complete or easy to run."
+        ]
+      },
+      "actions": [
+        "Verify the reported success rates and baseline comparisons by examining the full PDF and supplementary materials.",
+        "Inspect the provided GitHub repository to assess code availability, documentation, and dataset access procedures."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Ropedia/DONIC",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-22",
+        "publishedOn": "2026-10-21",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.29997",
+            "upvotes": 106
+          }
+        ]
+      },
+      "trend": {
+        "votes": 106,
+        "rank": 4,
+        "of": 49,
+        "perDay": 106
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 106,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-22T17:14:49.088Z"
+      }
+    },
+    {
+      "id": "2610.28577",
+      "arxivId": "2610.28577",
+      "url": "https://arxiv.org/abs/2610.28577",
+      "topic": "AI",
+      "reported": "The authors report that a tool-response rolling-drop cache policy improves average benchmark scores by 1.7 points and reduces average cost by 27.7% compared with conventional threshold-triggered summarization.",
+      "metrics": [
+        "improves average benchmark scores by 1.7 points",
+        "reduces average cost by 27.7%",
+        "achieves up to 1.2x the output throughput"
+      ],
+      "title": "Cache Engineering for Agents",
+      "authors": "Tianyu Fu, Ruoxi Wang, Zihan Min, Zhongqi Ren, Zhihao Li, Tengxuan Liu, Shengxu Mu, Hanling Zhang, Yu Wang",
+      "takeaway": "The paper proposes cache engineering as a new scheme allowing agents to directly control their active KV cache without modifying the trajectory or re-prefilling retained context.",
+      "brief": "The authors introduce cache engineering, a method for agents to manage key-value cache states using drop and repos operations without altering the input trajectory. This approach aims to avoid the costly re-prefilling triggered by traditional context trimming or summarization methods.\n\nExperiments indicate that a tool-response rolling-drop policy improves average benchmark scores by 1.7 points and reduces average cost by 27.7% relative to threshold-triggered summarization. The AKV serving engine achieves up to 1.2x output throughput and a 1.5x speedup in P95 request latency. The listing does not specify the exact benchmarks used for the score improvement or the specific hardware environment for the latency measurements.\n\nResearchers working on LLM agent infrastructure or serving systems may find the AKV engine and cache operation formalization relevant. Those focused solely on prompt engineering without interest in low-level cache management may find the technical depth less applicable.",
+      "abstract": "Large Language Model (LLM) agents can handle increasingly complex tasks, navigating long trajectories of observations and actions. As these trajectories grow, key-value (KV) cache I/O and storage become the dominant cost. Trajectories can also exceed the LLM's maximum context length, requiring control over active cache growth. Prior work uses context engineering to reduce cache size by trimming or summarizing history. However, modifying the trajectory prefix invalidates subsequent cached states and triggers costly re-prefilling of retained context. Task accuracy can also suffer when too little context is retained to limit re-prefill costs. We propose cache engineering as a new scheme. It allows agents to directly control their active KV cache without modifying the trajectory or re-prefilling retained context. Specifically, agents can proactively use drop to exclude selected cache from future attention and repos to adjust retained keys' position encodings. We formalize these cache operations and identify history dependence as a serving challenge: identical token sequences can yield different cache states under different cache operation sequences, making prefix matching insufficient for correct cache reuse. Thus, we co-design the AKV serving engine. It provides a stateless interface compatible with existing serving APIs, while internally managing stateful cache reuse, eviction, and restoration. Experiments show that a tool-response rolling-drop cache policy improves average benchmark scores by 1.7 points and reduces average cost by 27.7%, compared with conventional threshold-triggered summarization. With AKV, it achieves up to 1.2x the output throughput and a 1.5x speedup in P95 request latency. Recursive self-improvement of cache policies further reduces cost by 7.1% over expert design. Our code is at https://github.com/thu-nics/AKV.",
+      "takeaways": [
+        "The core object is a serving engine and cache operation scheme that decouples cache state management from trajectory modification.",
+        "A visible limit is that identical token sequences can yield different cache states under different operation sequences, complicating standard prefix matching.",
+        "The artifact status is established by the provided GitHub repository URL, though the listing does not confirm the code's completeness or current maintenance status."
+      ],
+      "plain": {
+        "reported": "The authors report that a specific cache management strategy improves test scores by 1.7 points and lowers operational costs by 27.7% when compared to a standard method of shortening conversation history.",
+        "brief": "The authors propose a way for AI agents to manage their internal memory storage directly, rather than changing the conversation history. This avoids the expensive process of re-processing the conversation when the history is shortened.\n\nTests show that their method improves scores by 1.7 points and cuts costs by 27.7% compared to standard shortening techniques. Their system also speeds up data output by up to 1.2 times and reduces the slowest 5% of request times by 1.5 times. The text does not say which specific tests were used for the score improvement or what computer hardware was used for the speed tests.\n\nPeople building the software infrastructure for AI agents might find this useful. People who only care about how to write prompts for AI might not need this technical detail.",
+        "takeaways": [
+          "The main contribution is a system that manages AI memory storage separately from the conversation text.",
+          "A limitation is that the same conversation text can result in different memory states depending on how it was managed, which makes standard memory reuse difficult.",
+          "The authors provide a link to their code, but the listing does not confirm if the code is fully functional or up to date."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark names and hardware specifications in the PDF to contextualize the 1.7 point score improvement and 27.7% cost reduction.",
+        "Inspect the AKV repository to confirm the implementation details of the stateless interface and its compatibility with existing serving APIs."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/thu-nics/AKV",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-22",
+        "publishedOn": "2026-10-20",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.28577",
+            "upvotes": 106
+          }
+        ]
+      },
+      "trend": {
+        "votes": 106,
+        "rank": 3,
+        "of": 49,
+        "perDay": 53
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 106,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-20"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-22T17:14:49.088Z"
+      }
+    },
+    {
+      "id": "2610.28665",
+      "arxivId": "2610.28665",
+      "url": "https://arxiv.org/abs/2610.28665",
+      "topic": "Stats",
+      "reported": "The authors report that for a centered homogeneous generalized Gaussian field, multiplication by $\\lambda^{-\\gamma}$ recovers the prior covariance as $\\lambda\\downarrow0$ and $\\lambda\\uparrow\\infty$, uniformly on every fixed compact target set.",
+      "metrics": [
+        "$M\\geq1$ vanishing moments",
+        "$\\gamma<2M+1$",
+        "$O(\\lambda^{2m_\\psi+1-\\gamma})$"
+      ],
+      "title": "Wavelet covariances under fixed finite observations: dilation symmetry breaking and distinct endpoint limits",
+      "authors": "Jun Tsuzurugi",
+      "takeaway": "The paper proves two-endpoint recovery of normalized posterior wavelet covariances under fixed finite admissible observations for a centered homogeneous generalized Gaussian field.",
+      "brief": "The authors claim to prove two-endpoint recovery of normalized posterior wavelet covariances under fixed finite admissible observations. They state that global dilation symmetry holds if and only if all observation functions vanish. The results apply to real Schwartz functions with specific vanishing moments and Gaussian noise.\n\nThe authors report that multiplication by $\\lambda^{-\\gamma}$ recovers the prior covariance uniformly on every fixed compact target set. They provide compact-uniform recovery bounds with exact leading orders when coefficients are nonzero. The listing does not establish empirical validation or computational artifacts for these theoretical bounds.\n\nResearchers working on wavelet covariance estimation under finite observations may find the theoretical bounds relevant. Those requiring empirical datasets or code implementations should note the absence of declared code.",
+      "abstract": "For a centered homogeneous generalized Gaussian field with spectral weight $C|\\omega|^{-\\gamma}$, we prove two-endpoint recovery of normalized posterior wavelet covariances under fixed finite admissible observations. Global dilation symmetry holds if and only if all observation functions vanish. The nonzero wavelet and the observation functions are real Schwartz functions with $M\\geq1$ vanishing moments, with $C>0$ and $\\gamma<2M+1$. Noise is Gaussian and field-independent, and total observation covariance is positive definite. Under simultaneous dilation of target scales and positions, multiplication by $\\lambda^{-\\gamma}$ recovers the prior covariance as $\\lambda\\downarrow0$ and $\\lambda\\uparrow\\infty$, uniformly on every fixed compact target set. If a nonzero observation function exists, additional finite first nonzero Fourier orders $m_\\psi,m_i$ at zero of the wavelet and nonzero observation functions yield compact-uniform recovery bounds $O(\\lambda^{2m_\\psi+1-\\gamma})$ and $O(\\lambda^{-(2\\min_i m_i+1-\\gamma)})$, with leading coefficients and cancellation-dependent improvements. The bounds are exact leading orders when their coefficients are nonzero. For the Mat\\'ern-type spectrum $S(\\omega)=C(\\kappa^2+\\omega^2)^{-p}$, $\\kappa>0$, $1/2<p<M+1/2$, fixed finite noisy point observations yield distinct compact-uniform limits: the homogeneous $C|\\omega|^{-2p}$ kernel after multiplication by $\\lambda^{-2p}$ at small scales, and the constant-spectrum $S(0)$ kernel without normalization at large scales. A projection-norm criterion treats fixed closed observation subspaces; Mexican-hat formulas illustrate the finite-observation results.",
+      "takeaways": [
+        "The object is a theoretical proof of two-endpoint recovery for normalized posterior wavelet covariances under fixed finite observations.",
+        "A visible limit is that global dilation symmetry holds only if all observation functions vanish, restricting the symmetry conditions.",
+        "The artifact status is theoretical, with no declared code or empirical datasets provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that for a specific type of statistical field, a mathematical scaling operation recovers the original covariance structure at both very small and very large scales, uniformly across any fixed compact region.",
+        "brief": "The authors claim to prove a mathematical result about how wavelet covariances behave when observed with a fixed, finite number of measurements. They state that a specific symmetry property holds only when all observation functions are zero. The results apply to smooth functions with specific properties and Gaussian noise.\n\nThe authors report that a specific scaling operation recovers the original covariance structure uniformly across any fixed compact region. They provide mathematical bounds for the recovery error with exact leading orders when certain coefficients are nonzero. The listing does not establish empirical validation or computational artifacts for these theoretical bounds.\n\nResearchers working on wavelet covariance estimation with limited data may find the theoretical bounds relevant. Those requiring empirical datasets or code implementations should note the absence of declared code.",
+        "takeaways": [
+          "The object is a theoretical proof about the behavior of wavelet covariances under finite observations.",
+          "A visible limit is that the symmetry property only holds when observation functions are zero, which is a restrictive condition.",
+          "The artifact status is purely theoretical, with no code or data provided."
+        ]
+      },
+      "actions": [
+        "Verify the exact leading order bounds and cancellation-dependent improvements by examining the full PDF proofs.",
+        "Check the Matérn-type spectrum section for the distinct compact-uniform limits at small and large scales."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "math.ST",
+        "math.PR",
+        "stat.TH"
+      ],
+      "listing": {
+        "listedOn": "2026-10-22",
+        "publishedOn": "2026-10-22",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.28665"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-22"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-22T17:14:49.088Z"
+      }
+    },
+    {
+      "id": "2610.28705",
+      "arxivId": "2610.28705",
+      "url": "https://arxiv.org/abs/2610.28705",
+      "topic": "Physics",
+      "reported": "The authors report that for the primary echoed spectator observable, the latency-measurement coefficient is $b_{LM}=+0.0007$ with a nominal 95% bootstrap interval $[-0.0033,+0.0049]$ on three IBM dynamic circuits.",
+      "metrics": [
+        "$b_{LM}=+0.0007$",
+        "$[-0.0033,+0.0049]$",
+        "$\\pm0.005$"
+      ],
+      "title": "Separability does not certify zero-noise extrapolation: Factorial diagnostics in dynamic quantum circuits",
+      "authors": "Aryan Kumar",
+      "takeaway": "The paper claims that weak interaction between amplification knobs does not establish an accurate zero-noise limit, distinguishing observable separability, response-model adequacy, and calibration.",
+      "brief": "The authors argue that separate amplification of gate, latency, and measurement errors does not guarantee an accurate zero-noise limit. They distinguish observable separability, response-model adequacy, and calibration of that limit.\n\nThey tested these concepts in a pre-specified $2^3$ factorial experiment on three IBM dynamic circuits. For the primary echoed spectator observable, the latency-measurement coefficient was $b_{LM}=+0.0007$ with a nominal 95% bootstrap interval $[-0.0033,+0.0049]$. A follow-up met a $\\pm0.005$ equivalence criterion and recovered two injected interactions, though repeat runs triggered the drift rule. Multi-knob extrapolations had smaller median absolute errors than single-knob comparisons, yet all five original strategies excluded the known ideal value for three of six observables.\n\nResearchers investigating zero-noise extrapolation diagnostics in dynamic quantum circuits should open this paper. Those seeking certification of physical channel independence or mitigation accuracy should ignore it, as the experiment provides a diagnostic of the implemented response surface rather than such certification.",
+      "abstract": "Separately amplifying gate, latency, and mid-circuit measurement errors can simplify zero-noise extrapolation, but a weak interaction between amplification knobs does not establish an accurate zero-noise limit. We distinguish observable separability, response-model adequacy, and calibration of that limit, and test them in a pre-specified $2^3$ factorial experiment on three IBM dynamic circuits. For the primary echoed spectator observable, the latency-measurement coefficient is $b_{LM}=+0.0007$ with a nominal 95% bootstrap interval $[-0.0033,+0.0049]$. A separately planned follow-up meets a $\\pm0.005$ equivalence criterion and recovers two injected interactions; both repeat runs nevertheless trigger the drift rule. Multi-knob extrapolations have smaller median absolute errors than the single-knob comparisons, yet all five original strategies exclude the known ideal value for three of six observables. Duration controls support a model-dependent contribution to the spectator deficit from unequal decay rates in native padding and added delay. We give an explicit construction showing why measurements at two measurement-knob levels cannot identify the extrapolated limit without response assumptions. A post-hoc precision analysis and an additive full-factorial estimator expose a further bias-variance trade-off hidden by point-error comparisons. The experiment provides a diagnostic of the implemented response surface, not a certification of physical channel independence or mitigation accuracy.",
+      "takeaways": [
+        "The object is a factorial diagnostic framework for zero-noise extrapolation in dynamic quantum circuits.",
+        "A visible limit is that the experiment diagnoses the implemented response surface but does not certify physical channel independence or mitigation accuracy.",
+        "The artifact status is not established in the listing, as no code or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that for the main test signal, the effect of combining latency and measurement errors is $b_{LM}=+0.0007$ with a 95% confidence range of $[-0.0033,+0.0049]$ on three IBM quantum circuits.",
+        "brief": "The authors argue that increasing different types of errors separately does not guarantee that you can accurately predict the error-free result. They separate the idea that errors appear independent from the idea that the mathematical model fits the data and that the final prediction is calibrated.\n\nThey tested these ideas in a planned experiment with eight combinations of settings on three IBM quantum circuits. For the main test signal, the combined effect of latency and measurement errors was $b_{LM}=+0.0007$ with a 95% confidence range of $[-0.0033,+0.0049]$. A follow-up test met a $\\pm0.005$ accuracy standard and found two known error interactions, but repeated runs showed instability. Using multiple error settings at once gave smaller average errors than using one setting at a time, but all five original methods missed the correct error-free value for three of six test signals.\n\nPeople studying how to estimate error-free results in quantum computers should open this paper. People looking for proof that quantum hardware errors are independent or that error correction is accurate should ignore it, as the experiment only diagnoses the specific mathematical model used rather than proving physical independence or correction accuracy.",
+        "takeaways": [
+          "The object is a method for checking if error correction estimates are reliable in quantum circuits.",
+          "A visible limit is that the method checks the mathematical model used but does not prove the hardware errors are independent or that the correction is accurate.",
+          "The artifact status is not established in the listing, as no code or repository is declared."
+        ]
+      },
+      "actions": [
+        "Verify the specific IBM dynamic circuit configurations and the drift rule implementation in the full PDF.",
+        "Check the full PDF for the explicit construction showing why two measurement-knob levels cannot identify the extrapolated limit without response assumptions."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-10-22",
+        "publishedOn": "2026-10-22",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.28705"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-22"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-22T17:14:49.088Z"
+      }
+    },
+    {
+      "id": "2610.28794",
+      "arxivId": "2610.28794",
+      "url": "https://arxiv.org/abs/2610.28794",
+      "topic": "Security",
+      "reported": "The authors report that checking for a source has a success rate between 87.7 and 99.9 percent of preventing malware, measured on a dataset of 33,138 packages from npm and PyPI.",
+      "metrics": [
+        "87.7 and 99.9 percent",
+        "47,066 malicious packages",
+        "47.4 percent"
+      ],
+      "title": "Sign Here: Attributing a Source for a More Trustworthy Software Supply Chain",
+      "authors": "Derek Garcia",
+      "takeaway": "The paper claims that building packages directly from source, rather than using registries, can serve as a malware prevention strategy by removing an entire attack surface.",
+      "brief": "The authors propose that removing package registries from the developer workflow by building directly from source reduces malware risk. They hypothesize that malicious packages avoid source attribution to minimize visibility, while benign packages link to repositories for exposure.\n\nThe authors report that checking for a source prevents malware with a success rate between 87.7 and 99.9 percent, depending on vetting levels. They also note that only 47.4 percent of benign packages attribute a source an end user could build from. The listing does not establish specific limitations regarding the generalizability of these findings to other ecosystems or the long-term feasibility of source-building for all package types.\n\nResearchers investigating software supply chain security, specifically registry-based attacks and source attribution, should open this paper. Those focused on non-registry software distribution or unrelated security domains may ignore it.",
+      "abstract": "Software supply chain attacks continue to be on the rise, exploiting the trust that helps open source ecosystems thrive. Recent incidents like the Shai-Hulud worm and the Axios compromise demonstrate that a single malicious package can have wide reaching and devastating impacts overnight. These high profile attacks can be traced back to the same culprit: package registries. Although they are a useful convenience to pull prebuilt packages from, is such a commonly exploited component of the software supply chain worth the risk? In this paper, we investigate whether removing the registry from the developer workflow by building packages directly from source can serve as a malware prevention strategy - effectively removing an entire attack surface. Our hypothesis is that malicious packages avoid attributing a source to minimize visibility, while benign packages seek exposure and therefore link to their repositories. We evaluate this through three research questions: how effective is building from source at avoiding malware, how feasible is it to build from source in the current state of the supply chain, and how the building from source strategy compares to state-of-the-art security scanners. To do so, we (1) construct an aggregate dataset of 47,066 malicious packages from four academic and one industry malicious datasets source across npm and PyPI ecosystems, (2) build a snapshot index of all 3.9 million npm and 764 thousand PyPI packages, and (3) analyze all malicious samples alongside a statistically significant sample of 16,569 packages from each registry, totaling 33,138 packages. We find that simply checking for a source has a success rate between 87.7 and 99.9 percent of preventing malware, depending on the level of source vetting. Consequently, there is a significant lack of transparency within benign packages, with only 47.4 percent attributing a source an end user could build from.",
+      "takeaways": [
+        "The object is a comparative analysis of source-building versus registry usage for malware prevention in npm and PyPI ecosystems.",
+        "A visible limit is the significant lack of transparency in benign packages, with only 47.4 percent attributing a buildable source.",
+        "The artifact status is not established in the listing, as no code or dataset repository is provided."
+      ],
+      "plain": {
+        "reported": "The authors state that looking for a link to the original code stops malware in 87.7 to 99.9 percent of cases, based on testing 33,138 software packages from two major online libraries.",
+        "brief": "The authors suggest that downloading software from its original code repository instead of a central online store reduces the risk of getting infected with malware. They believe bad actors hide their code sources to stay hidden, while good developers share their sources openly.\n\nThe authors found that checking for a code source link stops malware in 87.7 to 99.9 percent of cases. However, they also found that only 47.4 percent of safe software packages actually include a link to a source that users can build from. The summary does not say if these results apply to other software types or if building from source is always practical.\n\nPeople studying how software is distributed and how to stop hackers from using online software stores should look at this paper. People working on other types of computer security or software distribution might not need to read it.",
+        "takeaways": [
+          "The paper compares using online software stores versus downloading code directly from developers to prevent malware.",
+          "A clear limitation is that many safe software packages do not provide a direct link to their source code.",
+          "The listing does not say if the authors shared their code or data for others to check."
+        ]
+      },
+      "actions": [
+        "Verify the specific methodology for 'source vetting' levels by reading the full PDF to understand how the 87.7 to 99.9 percent range is derived.",
+        "Check the full paper for details on the 'statistically significant sample' selection process to assess potential bias in the 33,138 package analysis."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.SE"
+      ],
+      "listing": {
+        "listedOn": "2026-10-22",
+        "publishedOn": "2026-10-22",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.28794"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-22"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-22T17:14:49.088Z"
+      }
+    },
+    {
+      "id": "2610.28816",
+      "arxivId": "2610.28816",
+      "url": "https://arxiv.org/abs/2610.28816",
+      "topic": "Engineering",
+      "reported": "The authors report that simulation results verify the location-dependent statistics of phase noise in shared-LO distributed architectures.",
+      "metrics": [],
+      "title": "Phase-Coherent Multistatic Sensing under Phase Noise in Distributed ISAC",
+      "authors": "Musa Furkan Keskin, Silan Karadag, Navid Amani, Nikita Lyamin, Annelie Wyholt, Henk Wymeersch",
+      "takeaway": "The paper claims to derive the joint statistics of phase noise across receive APs in distributed ISAC systems and analyze its impact on multistatic localization via Cramér-Rao bounds.",
+      "brief": "The authors derive the joint statistics of phase noise across receive APs in distributed ISAC systems and analyze its impact on multistatic localization via Cramér-Rao bounds.\n\nThey report that simulation results verify the location-dependent statistics of phase noise in shared-LO distributed architectures. The listing does not establish specific numerical performance gains or hardware testbed results.\n\nResearchers working on distributed ISAC, phase noise mitigation, or multistatic sensing may find the statistical characterization relevant. Those focused on single-AP systems or non-coherent sensing may find the scope limited.",
+      "abstract": "We investigate phase-coherent multistatic sensing in distributed ISAC systems where spatially separated access points (APs) share a common, non-ideal local oscillator (LO) impaired by phase noise (PN). In the presence of a single transmit AP and multiple receive APs with OFDM transmission, we derive the joint statistics of PN across receive APs and reveal its unique covariance structure that depends on target location through propagation delays of individual bistatic links. Based on this statistical characterization, we carry out a Cram\\'{e}r-Rao bound analysis of three receiver models, namely PN-free, PN-aware and PN-ignorant, for both isotropic and non-isotropic targets. Simulation results verify the location-dependent statistics of PN in shared-LO distributed architectures while demonstrating how transmit power, LO quality, AP deployment and scattering characteristics affect multistatic localization.",
+      "takeaways": [
+        "The object is the statistical characterization of phase noise in shared-LO distributed ISAC systems.",
+        "The visible limit is that the analysis relies on simulation results rather than experimental hardware validation.",
+        "The artifact status is not established in the listing, as no code or dataset is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that computer simulations confirm that the statistical properties of timing errors in the shared clock system change depending on where the target is located.",
+        "brief": "The authors calculate how timing errors in a shared clock system behave across multiple separated antennas in a communication-and-sensing network. They use these calculations to set theoretical limits on how accurately the network can locate a target.\n\nThey state that computer simulations confirm these timing error statistics depend on the target's location. The provided summary does not include specific numerical accuracy improvements or real-world hardware test results.\n\nEngineers designing networks that use multiple separated antennas for both communication and radar-like sensing may find the timing error analysis useful. Those working with single antennas or systems that do not require precise timing synchronization may find the topic less relevant.",
+        "takeaways": [
+          "The main subject is how timing errors in a shared clock system affect location accuracy in multi-antenna networks.",
+          "A clear limitation is that the findings are based on computer simulations, not physical hardware tests.",
+          "It is not stated in the summary whether the authors have released any code or data for others to use."
+        ]
+      },
+      "actions": [
+        "Verify the specific Cramér-Rao bound derivations and simulation parameters in the full PDF.",
+        "Check whether the authors provide open-source code or simulation scripts for the PN-aware receiver models."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-10-22",
+        "publishedOn": "2026-10-22",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.28816"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-22"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-22T17:14:49.088Z"
+      }
+    },
+    {
+      "id": "2610.28965",
+      "arxivId": "2610.28965",
+      "url": "https://arxiv.org/abs/2610.28965",
+      "topic": "Econ",
+      "reported": "The authors report sharp bunching of estimated values just below legal cutoffs, measuring 49,631 excess processes below the small-purchase threshold and 3,157 below the tender threshold using Colombian procurement records.",
+      "metrics": [
+        "49,631 excess processes below the small-purchase threshold",
+        "3,157 below the tender threshold",
+        "direct contracting falls by 95% during the ban"
+      ],
+      "title": "Discretion at the Margin: Threshold Manipulation and Electoral Bans in Colombian Public Procurement",
+      "authors": "Cristian Espinal Maya, Santiago Jim\\'enez Londo\\~no",
+      "takeaway": "The paper claims to measure how much buyers manipulate estimated values to stay below procurement thresholds and what it costs in Colombian public procurement.",
+      "brief": "The authors claim to measure threshold manipulation and its costs in Colombian public procurement using entity-specific legal cutoffs. They report sharp bunching below thresholds, with bunched processes attracting half as many bidders and smaller discounts, while direct contracting falls by 95% during election bans. The listing does not establish whether the bunching is causal or merely correlational, nor does it specify the statistical methods used to isolate the threshold effect from other confounders.\n\nResearchers studying procurement rules, electoral politics, or threshold manipulation should open this paper. Those not interested in Colombian institutional details or bunching analysis may ignore it. The paper’s value depends on the reader’s interest in how legal thresholds interact with political incentives.\n\nThe authors use the universe of Colombian procurement records from SECOP I and II, covering 2011-2026, with 8,569,218 SECOP II processes. They exploit the fact that thresholds move with the minimum wage while round numbers stay fixed, allowing them to isolate the threshold effect. The listing does not mention code availability or data access, so verification requires checking the PDF for supplementary materials.",
+      "abstract": "Public procurement laws trade rules against discretion with value thresholds: below them, buyers use faster and less competitive procedures. Colombia offers an unusually clean setting to measure how much buyers manipulate estimated values to stay below the line and what it costs. Thresholds are entity-specific (five budget bands set by law) and move every January with the minimum wage, while the round numbers that usually confound bunching estimates stay fixed. Using the universe of Colombian procurement records (SECOP I and II, 2011-2026; 8,569,218 SECOP II processes) and each entity-year's own threshold, we find sharp bunching of estimated values just below both legal cutoffs: 49,631 excess processes below the small-purchase threshold (86% of the mass observed in the last five percent below it) and 3,157 below the tender threshold. The spike tracks the threshold, not the round numbers: it moves with the minimum wage, appears only at each entity's own band, and is an order of magnitude smaller for procedures that carry no value cap. Territorial governments, run by elected mayors and governors, bunch more than appointed national agencies at the small-purchase threshold, even after reweighting for budget band, object and year. Processes bunched below the tender threshold attract half as many bidders as those just above it, obtain smaller discounts, and are more often enlarged after award. A second source of variation, the four-month ban on direct contracting before presidential elections, shows that buyers respond to rules on the timing margin: direct contracting falls by 95% during the ban and rises by 209% in the two weeks before it, in each of four electoral cycles, with a partial shift toward below-threshold procedures. Chile's fixed UTM thresholds display the same pattern, and a cutoff abolished in 2024 shows no bunching afterwards.",
+      "takeaways": [
+        "The object is threshold manipulation in Colombian public procurement, measured via bunching of estimated values below legal cutoffs.",
+        "A visible limit is the lack of explicit causal identification strategy in the abstract, leaving open whether bunching is driven by manipulation or other factors.",
+        "The artifact status is unclear: no code or data repository is mentioned in the listing, so reproducibility cannot be assessed without the PDF."
+      ],
+      "plain": {
+        "reported": "The authors report that many procurement estimates are clustered just below legal spending limits, counting 49,631 extra cases below the small-purchase limit and 3,157 below the tender limit, using Colombian government spending records.",
+        "brief": "The authors say they measure how much government buyers change their spending estimates to stay under legal limits, and what that costs. They find many estimates are clustered just below the limits, and these clustered cases get fewer bidders and smaller discounts. They also find that direct contracting drops by 95% during election bans. The abstract does not say if this clustering is caused by manipulation or just happens to coincide with the limits, and it does not explain the statistical methods used to separate the limit effect from other factors.\n\nPeople who study government spending rules, election politics, or how limits are manipulated should read this paper. People who are not interested in Colombian government details or statistical clustering analysis can skip it. The paper’s usefulness depends on whether the reader cares about how legal limits interact with political incentives.\n\nThe authors use all Colombian government spending records from two systems, covering 2011 to 2026, with 8,569,218 records from the second system. They use the fact that the limits change with the minimum wage while round numbers stay the same, which helps them isolate the limit effect. The abstract does not mention if code or data are available, so checking the full paper is needed to see if the work can be repeated.",
+        "takeaways": [
+          "The paper is about how government buyers in Colombia change spending estimates to stay under legal limits, measured by clustering of estimates below those limits.",
+          "A clear limitation is that the abstract does not explain how the authors prove the clustering is caused by manipulation rather than other factors.",
+          "It is not clear if the code or data are available, since the abstract does not mention them, so it is hard to check if the work can be repeated without the full paper."
+        ]
+      },
+      "actions": [
+        "Verify the causal identification strategy and statistical methods in the PDF, particularly how the authors isolate the threshold effect from round-number bunching.",
+        "Check the PDF for supplementary materials, code, or data access instructions to assess reproducibility."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-10-22",
+        "publishedOn": "2026-10-22",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.28965"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-22"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-22T17:14:49.088Z"
+      }
+    },
+    {
+      "id": "2610.29399",
+      "arxivId": "2610.29399",
+      "url": "https://arxiv.org/abs/2610.29399",
+      "topic": "Health",
+      "reported": "The authors report that across seven analytic-label benchmarks associated with ODE models, five-fold binary AUC was 0.999--1.000 and ordered-bracket accuracy was 0.951--0.998.",
+      "metrics": [
+        "five-fold binary AUC was 0.999--1.000",
+        "ordered-bracket accuracy was 0.951--0.998"
+      ],
+      "title": "Learning Epidemic Threshold Equations from Simulation: REEBLRA, an Interpretable Bayesian Classification Framework for Reproduction Numbers",
+      "authors": "Jomar F. Rabajante, Norvin P. Bansilan, Maria Czarina T. Lagura-Arreza, Destiny SM. Lutero, Emerson R. Rico",
+      "takeaway": "The paper introduces REEBLRA, an interpretable Bayesian framework that learns explicit surrogate equations for epidemic thresholds from parameter-response data.",
+      "brief": "The authors propose REEBLRA, a Bayesian logistic regression framework that estimates the probability of epidemic invasion and approximates the basic reproduction number using explicit surrogate equations. This approach is designed for high-dimensional or structurally complex models where analytic derivation is difficult.\n\nThe authors report high performance on seven analytic-label benchmarks, including a 15-compartment five-group SIR system, with five-fold binary AUC ranging from 0.999 to 1.000 and ordered-bracket accuracy from 0.951 to 0.998. The listing does not establish whether these results generalize to non-analytic or real-world simulation data beyond the specified benchmarks.\n\nResearchers working on infectious-disease modelling who require interpretable threshold equations for complex systems may find this relevant. Those seeking purely mechanistic derivations or non-Bayesian methods may ignore it.",
+      "abstract": "The basic reproduction number, $R_0$, is central to infectious-disease modelling, yet analytic expressions can be difficult to derive for high-dimensional, nonlinear, or structurally complex models. We introduce REEBLRA ($R_0$ Equation Estimation using Bayesian Logistic Regression Algorithm), an interpretable framework that learns explicit surrogate equations for epidemic thresholds from parameter--response data. Rather than directly regressing $R_0$, REEBLRA estimates $\\Pr\\{R_0(\\boldsymbol\\theta)>c\\}$ for parameter vector $\\boldsymbol\\theta$ and threshold $c$. It provides a binary equation for classifying epidemic invasion ($R_0>1$) and successive threshold equations defining ordered brackets that approximate $R_0$, the expected number of secondary infections caused by a typical case in a fully susceptible population. The resulting equations support parameter screening, sensitivity interpretation, threshold classification, and exploratory analysis when analytic derivation is cumbersome. Bayesian logistic regression using standardized polynomial-like features and proper weakly informative priors yields regularized estimates, posterior uncertainty, and finite coefficients under complete or quasi-complete separation. We establish a mechanistic--surrogate concordance principle linking the full fitted-score gradient to the local gradient of $\\log R_0$ under explicit regularity and tangency assumptions, allowing conditional interpretation of threshold directions. Across seven analytic-label benchmarks associated with ODE models, including a 15-compartment five-group SIR system, five-fold binary AUC was 0.999--1.000 and ordered-bracket accuracy was 0.951--0.998. REEBLRA complements rather than replaces mechanistic derivations, bridging simulation, machine learning, and reproduction-number analysis. An accompanying Shiny app supports implementation.",
+      "takeaways": [
+        "The object is a Bayesian logistic regression framework that produces explicit surrogate equations for epidemic thresholds rather than direct regression of the reproduction number.",
+        "A visible limit is that the reported performance is evaluated on analytic-label benchmarks associated with ODE models, and the listing does not confirm performance on empirical or non-analytic data.",
+        "The artifact status is an accompanying Shiny app, though no repository URL or code link is provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that across seven test cases based on mathematical disease models, the accuracy of their classification method was between 0.999 and 1.000, and the accuracy of their bracketing method was between 0.951 and 0.998.",
+        "brief": "The authors propose a tool called REEBLRA that uses a type of statistical model to create simple equations that predict whether an epidemic will spread. This is useful when the math is too complex to solve by hand.\n\nThe authors say their tool works very well on seven specific test cases, including a complex model with 15 parts. The listing does not say if it works as well on real-world data or other types of models.\n\nPeople who study how diseases spread and need simple, understandable equations for complex models might find this useful. People who only want traditional mathematical proofs or different statistical methods might not need it.",
+        "takeaways": [
+          "The tool creates simple equations to predict disease spread using a statistical method called Bayesian logistic regression.",
+          "The test results are only from specific mathematical models, and it is not known if they apply to real-world data.",
+          "There is a web-based app mentioned, but no link is provided in the listing to access it."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark definitions and data sources for the seven analytic-label models in the full PDF.",
+        "Check the Shiny app documentation to confirm the availability of the implementation and its compatibility with the described Bayesian logistic regression features."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "q-bio.PE"
+      ],
+      "listing": {
+        "listedOn": "2026-10-22",
+        "publishedOn": "2026-10-22",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.29399"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-22"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-22T17:14:49.088Z"
+      }
+    }
+  ]
+}
