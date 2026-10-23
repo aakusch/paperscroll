@@ -1,0 +1,673 @@
+{
+  "date": "2026-10-23",
+  "label": "Fri, Oct 23",
+  "minutes": 10,
+  "poolSize": 118,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-10-23T17:09:16.886Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2610.31329",
+      "arxivId": "2610.31329",
+      "url": "https://arxiv.org/abs/2610.31329",
+      "topic": "AI",
+      "reported": "The authors report that WeVisOne-VL demonstrates leading performance on both object-level and pixel-level tasks across over 30 benchmarks.",
+      "metrics": [
+        "over 30 benchmarks"
+      ],
+      "title": "WeVisOne-VL: Unified Visual Perception from Objects to Pixels",
+      "authors": "Tianming Liang, Junyi Pan, Yuxi Li, Canmiao Fu, Zhipeng Huang, Chong Sun, Chen Li, Jing Lyu",
+      "takeaway": "WeVisOne-VL unifies object-level and pixel-level visual perception through structured next-token prediction to support multiple visual tasks.",
+      "brief": "The authors present WeVisOne-VL, a vision-language model that integrates a lightweight pixel decoder via a special <OBJ> token to generate instance-level pixel outputs. They state the model supports object detection, referring localization, counting, OCR, segmentation, and matting, enabling localization from points and boxes to masks and alpha mattes.\n\nThe authors report leading performance on object-level and pixel-level tasks across over 30 benchmarks, trained via three-stage curriculum SFT and mixed-task RL. They claim robust rejection for object-absent queries. The listing does not specify which benchmarks constitute the strongest result or provide specific quantitative scores for individual tasks.\n\nResearchers working on fine-grained visual perception, multi-task VLMs, or pixel-level output generation may find this relevant. Those seeking specific benchmark scores or detailed ablation studies should verify the full paper, as the abstract lacks granular performance data.",
+      "abstract": "Existing vision-language models (VLMs) remain unreliable for fine-grained visual perception. In this report, we present WeVisOne-VL (WeChat Vision All-in-One), a powerful VLM that unifies object-level and pixel-level perception through structured next-token prediction. It supports multiple visual tasks including object detection, referring localization, counting, OCR, segmentation, and matting, enabling localization at any user-specific granularity, from points and boxes to masks and alpha mattes. Architecturally, we integrate a lightweight pixel decoder into the VLM via a special <OBJ> token to generate instance-level pixel outputs. We train the model with a three-stage curriculum SFT followed by mixed-task RL. Across over 30 benchmarks, WeVisOne-VL demonstrates leading performance on both object-level and pixel-level tasks, while maintaining robust rejection for object-absent queries. By releasing WeVisOne-VL to the open-source community, we hope to advance VLMs from broad visual understanding toward truly reliable perception systems for real-world deployment.",
+      "takeaways": [
+        "The object is a unified VLM combining object-level and pixel-level perception tasks in a single model.",
+        "A visible limit is the lack of specific quantitative scores or benchmark names in the abstract, making it hard to assess the magnitude of 'leading performance'.",
+        "The artifact status is open-source, with a GitHub repository provided for code access."
+      ],
+      "plain": {
+        "reported": "The authors say their model performs best in its class on more than 30 different tests for both recognizing objects and analyzing pixels.",
+        "brief": "The authors built a computer vision model called WeVisOne-VL that can both identify objects and analyze individual pixels. It uses a special token to connect a pixel-processing part to the main language model, allowing it to handle tasks like finding objects, reading text, and creating detailed outlines.\n\nThey say the model performs better than others on over 30 tests and can correctly say when an object is not present. The training involved a step-by-step learning process followed by reinforcement learning. The summary does not list the exact scores or the specific names of the tests used.\n\nPeople interested in advanced computer vision models that handle multiple tasks at once might find this useful. If you need exact performance numbers or want to see how the model compares on specific tasks, you should look at the full paper because the summary is too general.",
+        "takeaways": [
+          "The model combines two types of visual analysis: identifying whole objects and analyzing individual pixels.",
+          "The summary does not give specific scores, so it is unclear how much better the model is than others.",
+          "The code and model are available for free download from a public repository."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark names and quantitative scores in the full PDF to confirm the 'leading performance' claim.",
+        "Check the GitHub repository for model weights and evaluation scripts to reproduce the reported results."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Tencent/WeVisOne-VL",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-23",
+        "publishedOn": "2026-10-22",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.31329",
+            "upvotes": 220
+          }
+        ]
+      },
+      "trend": {
+        "votes": 220,
+        "rank": 1,
+        "of": 40,
+        "perDay": 220
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 220,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-22"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-23T17:09:16.886Z"
+      }
+    },
+    {
+      "id": "2610.30926",
+      "arxivId": "2610.30926",
+      "url": "https://arxiv.org/abs/2610.30926",
+      "topic": "AI",
+      "reported": "The authors report consistently better performance on three cinematic video generation tasks over baselines.",
+      "metrics": [],
+      "title": "Making MLLM Latents Matter: Factor-Aware Predictive Learning for Cinematic Video Generation",
+      "authors": "Songlin Yang, Zhe Wang, Xiaotong Zhao, Xi Wang, Ran Zhang, Shuai Li, Taiyi Wu, Songlian Li, Eric Liu, Alan Zhao, Anyi Rao",
+      "takeaway": "The paper proposes Factor-Aware Predictive Learning (FAPL) to establish effective MLLM latent use for cinematic video generation.",
+      "brief": "The authors propose Factor-Aware Predictive Learning (FAPL) to make MLLM latents actionable for video generation. They report consistently better performance on sparse-to-video, factor-aware editing, and multi-shot generation tasks compared to baselines. No specific quantitative metrics are provided in the abstract.\n\nThe listing states that extensive experiments demonstrate better performance but does not specify the exact benchmarks or numerical improvements. The method involves training a Video Diffusion Transformer with frozen MLLM components and optimizing MLLM representations through a frozen DiT. The abstract does not establish specific limitations or failure modes of the proposed approach.\n\nResearchers working on video diffusion transformers or multimodal latent integration may find the method relevant. Those seeking specific benchmark numbers or code verification should consult the full paper and repository.",
+      "abstract": "Cinematic video generation requires both temporal inference from limited inputs (i.e., sparse rather than frame-by-frame guidance) and factor-aware control of character, scene, action, and camera. Multimodal large language models (MLLMs) offer useful priors for both capabilities, but their representations are not automatically actionable for video generation: a Video Diffusion Transformer (DiT) may bypass them through native conditioning pathways, and using them does not ensure either factor-aware control or generation-compatible temporal prediction. We propose Factor-Aware Predictive Learning (FAPL), which establishes effective MLLM latent use as a shared prerequisite and then targets the two capabilities with complementary learning signals. First, latent-only generator grounding trains the DiT with a frozen MLLM and connector, strengthening the DiT's use of MLLM latents for generation. Second, for factor-aware control, paired videos specify a target-factor change and non-target preservation, and factor-span replacement trains the DiT to realize this relationship in its output. Third, for temporal inference, text-only and text-plus-complete-video observations share a video target, and the trained DiT is then frozen while the MLLM and connector are optimized through it. This final stage trains limited-input representations for generation while retaining complete-observation reconstruction as a complementary training mode. Extensive experiments demonstrate our consistently better performance on three cinematic video generation tasks (i.e., sparse-to-video, factor-aware editing, and multi-shot generation) over baselines and validate FAPL's contributions to MLLM feature use, temporal control, and factor coordination.",
+      "takeaways": [
+        "The object is a training framework for integrating MLLM latents into video diffusion models.",
+        "The visible limit is the absence of specific quantitative metrics in the provided abstract.",
+        "The artifact status is a declared GitHub repository, but its contents are not verified here."
+      ],
+      "plain": {
+        "reported": "The authors say their method works better than existing methods on three types of video creation tasks.",
+        "brief": "The authors created a new way to help AI models understand and generate movie-like videos. They say their method performs better than other methods on three specific video tasks. The summary does not include specific numbers showing how much better it is.\n\nThe summary says the tests were extensive but does not list the exact scores or the specific tests used. The method involves training one part of the AI system while keeping another part fixed. The summary does not mention any problems or weaknesses of the new method.\n\nPeople who build AI video generators might find this useful. People who need exact numbers or want to check the code should look at the full paper and the linked website.",
+        "takeaways": [
+          "This is a new training method for AI video generators.",
+          "The summary does not show specific performance numbers.",
+          "A code link is provided but not checked here."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark scores and task definitions in the full PDF.",
+        "Check the declared GitHub repository for code availability and reproducibility details."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Songlin1998/ShotVerse2.0",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-23",
+        "publishedOn": "2026-10-22",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.30926",
+            "upvotes": 162
+          }
+        ]
+      },
+      "trend": {
+        "votes": 162,
+        "rank": 2,
+        "of": 40,
+        "perDay": 162
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 162,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-22"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-23T17:09:16.886Z"
+      }
+    },
+    {
+      "id": "2610.30181",
+      "arxivId": "2610.30181",
+      "url": "https://arxiv.org/abs/2610.30181",
+      "topic": "AI",
+      "reported": "The authors report that the best-performing model achieves 39.0% accuracy on the OpenDS-World benchmark, which comprises 200 challenging tasks in live, open Web environments.",
+      "metrics": [
+        "39.0% accuracy",
+        "200 challenging tasks",
+        "21.1% accuracy"
+      ],
+      "title": "Deep Search in Real-World Web Environments",
+      "authors": "Xiaomin Yu, Hongliang Chen, Zhe Huang, Shilin Yan, Shao-Rong Su, Xuqiao Ma, Feiyang Wang, Jiayu Chen, Jiwei Fang, Yu Yan, Yini Huang, Chen Chen, Ruoxi Cheng, Yuzhi He, Yuhui Zhang, Xiaoxing Hu, Chen Liu, Jianbo Lin, Yijiang Li, Xiaobin Hu, Menglong Li, Zhuoran Lu, Weishi Wang, Zhongqi Yue, Chengwei Qin",
+      "takeaway": "The paper introduces the OpenDS task and the OpenDS-World benchmark to evaluate agents' ability to perform multi-step deep search in the live, open Web.",
+      "brief": "The authors propose OpenDS-World, a benchmark of 200 tasks requiring autonomous exploration of the live Web to find unique factual answers. They evaluate 12 frontier models under a unified tool environment and execution protocol. The best model achieves 39.0% accuracy, while human evaluation across 1,000 independent attempts yields 21.1% accuracy.\n\nThe authors report substantial differences in research strategies across models and persistent challenges in tool coordination and long-horizon search management. The listing does not specify the exact failure modes or the specific tools used in the unified environment beyond general categories. The benchmark relies on independent human verification for evidence validity and answer uniqueness.\n\nResearchers evaluating autonomous web agents or developing deep search systems may find the benchmark relevant. Those working on static retrieval or non-interactive web tasks may find the live Web focus less applicable. The provided code repository link is included in the listing for verification.",
+      "abstract": "Despite substantial progress in Deep Search agents, their ability to conduct end-to-end research in real-world open Web environments remains insufficiently evaluated. Unlike static retrieval settings, information on the real-world Web is distributed across diverse sources, modalities, and heterogeneous formats, often involving complex interaction mechanisms that require agents to autonomously search for, access, and integrate relevant evidence during execution. To address this gap, we introduce the OpenDS task, designed to evaluate agents' ability to perform multi-step deep search in the live, open Web. This task requires agents to autonomously explore the real Web, discover and connect relevant evidence from multiple independent sources through Web search, browser interaction, and evidence processing, and ultimately determine a unique factual answer. Building on this task formulation, we construct OpenDS-World, a benchmark comprising 200 challenging tasks spanning diverse information modalities, heterogeneous file formats, and interactive access requirements, with independent human verification to ensure evidence validity and answer uniqueness. We evaluate 12 frontier models under a unified tool environment and execution protocol. The best-performing model achieves 39.0% accuracy, while human evaluation across 1,000 independent attempts yields 21.1% accuracy. Further analyses of tool usage, search cost, termination behavior, and failure recovery reveal substantial differences in research strategies across models, as well as persistent challenges in tool coordination and long-horizon search management. OpenDS-World provides a unified evaluation platform for systematically assessing and advancing agents' autonomous deep search capabilities in real-world open Web environments.",
+      "takeaways": [
+        "The object is a benchmark for evaluating autonomous deep search agents in live, open Web environments.",
+        "A visible limit is the reliance on a fixed set of 200 tasks and a specific unified tool environment, which may not generalize to all web configurations.",
+        "The artifact status is established by the provided GitHub repository link, though the listing does not confirm the repository's current availability or completeness."
+      ],
+      "plain": {
+        "reported": "The authors report that the best-performing model achieves 39.0% accuracy on the OpenDS-World benchmark, which comprises 200 challenging tasks in live, open Web environments.",
+        "brief": "The authors propose OpenDS-World, a benchmark of 200 tasks requiring autonomous exploration of the live Web to find unique factual answers. They evaluate 12 frontier models under a unified tool environment and execution protocol. The best model achieves 39.0% accuracy, while human evaluation across 1,000 independent attempts yields 21.1% accuracy.\n\nThe authors report substantial differences in research strategies across models and persistent challenges in tool coordination and long-horizon search management. The listing does not specify the exact failure modes or the specific tools used in the unified environment beyond general categories. The benchmark relies on independent human verification for evidence validity and answer uniqueness.\n\nResearchers evaluating autonomous web agents or developing deep search systems may find the benchmark relevant. Those working on static retrieval or non-interactive web tasks may find the live Web focus less applicable. The provided code repository link is included in the listing for verification.",
+        "takeaways": [
+          "The object is a benchmark for evaluating autonomous deep search agents in live, open Web environments.",
+          "A visible limit is the reliance on a fixed set of 200 tasks and a specific unified tool environment, which may not generalize to all web configurations.",
+          "The artifact status is established by the provided GitHub repository link, though the listing does not confirm the repository's current availability or completeness."
+        ]
+      },
+      "actions": [
+        "Verify the existence and contents of the GitHub repository at https://github.com/Yu-xm/OpenDS to confirm the availability of the benchmark data and evaluation code.",
+        "Review the full PDF to identify the specific tool environment details and the breakdown of failure modes for the 12 evaluated models."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Yu-xm/OpenDS",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-23",
+        "publishedOn": "2026-10-19",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.30181",
+            "upvotes": 147
+          }
+        ]
+      },
+      "trend": {
+        "votes": 147,
+        "rank": 3,
+        "of": 40,
+        "perDay": 37
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 147,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-19"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-23T17:09:16.886Z"
+      }
+    },
+    {
+      "id": "2610.24738",
+      "arxivId": "2610.24738",
+      "url": "https://arxiv.org/abs/2610.24738",
+      "topic": "AI",
+      "reported": "The authors report that LayerEditor maintains strong editing fidelity while generating accurate RGBA layers, supporting both flexible layer-level manipulation and multi-layer decomposition.",
+      "metrics": [],
+      "title": "Editing Images into Reusable Layers via Compositional Edit-Prior Distillation",
+      "authors": "Wen Xue, Yong Liu, Xueheng Li, Si Wu, Yong Xu, Yipeng Sun, Yan Li, Simiu Gu",
+      "takeaway": "The paper introduces LayerEditor, a unified framework that couples instruction-guided image editing with controllable generation of reusable RGBA layers.",
+      "brief": "The authors propose LayerEditor to address the limitation of existing editing models that produce flattened outputs, which restricts precise local manipulation and layer reuse. The framework uses In-Context RGB-Alpha Token Modeling to represent the edited canvas and ordered RGB-Alpha layers within a single token sequence. It also employs Compositional Edit-Prior Distillation to transfer editing priors to both the edited canvas and the composed image from predicted layers.\n\nThe authors state that extensive experiments demonstrate LayerEditor maintains strong editing fidelity while generating accurate RGBA layers. They constructed LayerEditor-100K, a large-scale paired image-editing dataset with ordered RGBA layer annotations, and introduced dedicated benchmarks for layered editing. The abstract does not provide specific quantitative metrics, numerical scores, or named benchmark results for the reported fidelity and accuracy.\n\nResearchers working on image editing, layer decomposition, or compositional generation may find this relevant. Those requiring specific quantitative performance comparisons or immediate access to code may need to verify the full paper, as no code repository is declared in the listing.",
+      "abstract": "High-quality image editing requires precise modification of target regions while preserving the content of unrelated regions. Existing editing models produce flattened outputs that limit precise local manipulation and layer reuse, while decomposition methods typically optimize layer recovery separately from instruction-driven editing. To this end, we introduce LayerEditor, a unified framework that couples instruction-guided image editing with controllable generation of reusable RGBA layers. At its core, In-Context RGB-Alpha Token Modeling jointly represents the edited canvas and an ordered sequence of RGB-Alpha layers within a single token sequence, enabling semantic edits and explicit control over individual layer content. To retain the pretrained model's editing capability during adaptation to layered outputs, we propose Compositional Edit-Prior Distillation, which transfers its editing prior to both the edited canvas and the image composed from the predicted layers. To support training and evaluation, we construct LayerEditor-100K, a large-scale paired image-editing dataset with ordered RGBA layer annotations, and introduce dedicated benchmarks for layered editing. Extensive experiments demonstrate that LayerEditor maintains strong editing fidelity while generating accurate RGBA layers, supporting both flexible layer-level manipulation and multi-layer decomposition.",
+      "takeaways": [
+        "The object is a unified framework for instruction-guided image editing that simultaneously generates reusable RGBA layers.",
+        "A visible limit is the absence of specific quantitative metrics or benchmark scores in the provided abstract.",
+        "The artifact status is unclear regarding code availability, as no repository URL is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that their system, LayerEditor, keeps the quality of image edits high while also creating accurate layers with transparency, allowing users to manipulate individual layers and break images down into multiple layers.",
+        "brief": "The authors propose a system called LayerEditor to fix a problem where current image editing tools create flat images, making it hard to edit specific parts or reuse layers. The system uses a method called In-Context RGB-Alpha Token Modeling to handle the edited image and a list of layers with color and transparency in one go. It also uses a technique called Compositional Edit-Prior Distillation to help the system keep its original editing skills while learning to create layers.\n\nThe authors say that many tests show LayerEditor keeps edits looking good while making accurate layers with transparency. They created a large dataset called LayerEditor-100K with images and their corresponding layers, and made new tests for this type of editing. The summary does not give specific numbers, scores, or names of the tests used to measure this quality and accuracy.\n\nPeople who work on changing images, breaking images into layers, or creating images from parts might find this useful. People who need specific numbers to compare performance or want to use the code right away should check the full paper, because the summary does not list a website where the code can be found.",
+        "takeaways": [
+          "The thing being described is a system that edits images based on instructions and also makes separate layers that can be reused.",
+          "A clear limitation is that the summary does not include specific numbers or scores from tests.",
+          "It is not clear if the code is available for download because the summary does not list a website address for it."
+        ]
+      },
+      "actions": [
+        "Verify the full PDF to identify the specific benchmarks used and the quantitative scores reported for editing fidelity and layer accuracy.",
+        "Check the paper's supplementary materials or associated project page for the availability of the LayerEditor-100K dataset and model weights."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-23",
+        "publishedOn": "2026-10-17",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.24738",
+            "upvotes": 73
+          }
+        ]
+      },
+      "trend": {
+        "votes": 73,
+        "rank": 4,
+        "of": 40,
+        "perDay": 12
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 73,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-17"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-23T17:09:16.886Z"
+      }
+    },
+    {
+      "id": "2610.30949",
+      "arxivId": "2610.30949",
+      "url": "https://arxiv.org/abs/2610.30949",
+      "topic": "AI",
+      "reported": "The authors report that IQuest-Q1 demonstrates capabilities in both coding and general tasks, measured on unspecified benchmarks.",
+      "metrics": [
+        "320B total parameters",
+        "15B activated"
+      ],
+      "title": "IQuest-Q1: Advancing Foundation Capabilities for Agentic CLI Systems",
+      "authors": "A. Jian Yang, An Huang, Bo Dan, Chen Mu, Chengran Yang, Chuan Shi, Feng Chang, Hongxin Li, Hongyuan Tao, Jinxing Zhang, Jujie He, Kun Wang, Lin Jing, Ming Yang, Qicheng Hu, Renyuan Li, Shark Liu, Shawn Guo, Shi Qing, Shi Zhong, Tianyu Zheng, Wei Liu, Wei Zhang, Wenrui Cai, Wenxiao Chen, Xuxing Chen, Yan Xing, Yi Xing, Yifan Luo, Yiran Xing, Yizhi Li, Yongsheng Kang, Yucheng Ding, Yue Song, Yun Qing, Yunqi Liu, Zelong Huang, Zhengmao Ye, Zhentao Fan, Zhiteng Li, Ziling Huang, Bihong Tang, Bingli Wang, Ce Jun, Changhao Chen, Chen Hu, Chen Xiao, Chi Liu, Chunjiang Ge, Danyang Li, Deyang Kong, Dian Qi, Ding Tan, Evan Yang, Fanglin Xu, Fei Bai, Gang Liu, Guochang Li, Hao Tang, Haoran Feng, Haowen Wang, Huahao Hu, Huanjin Yao, Huatong Song, Jia Deng, Jiajun Wu, Jialiang Cheng, Jiayi Liang, Jiayi Wu, Jie Deng, Jiejun Tan, Jing Yang, Jingda Xu, Junhang Cheng, Junxiao Liu, Kai Lv, Kaixiang Pan, Kecheng Lu, Kun Zeng, Kun Zheng, Kunbo Ding, Liang Qiu, Lingyi Sun, Luan Zhang, Mengxiao Lv, Ning Dong, Pei Wang, Peng Zhang, Qingsong Cai, Qixiang Yin, Qiyao Wang, Renbiao Liu, Renfei Dang, Ruihang Li, Ruirui Huang, Shanhui Yin, Shen Jian, Shengjie Fang, Shikai Li, Shinan Zhang, Shiqi Chen, Shuai Liu, Shuangqi Li, Shuo Tang, Shuqing Deng, Sijin Hao, Siwei Wu, Siyue Wang, Tao Hai, Tao Ren, TingYang Chen, Wei Shao, Weicheng Gu, Weihan Peng, Wenlong Miao, Xavier Yu, Xiangyuan Ji, Xiaocheng Li, Xiaodong Huang, Xiaohan Ge, Xiaoxiang Shi, Xiaoyang Zhang, Xiaoyu Yang, Xidong Wang, Xin Li, Xinyu Tang, Xiyuan Yang, Xudong Ma, Ya Tong, Yachao Wang, Yang Tian, Yaxin Du, Yeli Ruan, Yi Wang, Yi Yu, Yibin Feng, Yibo Tan, Yihang Wang, Yiming Ju, Yinda Chen, Yinda Chen, Yingjie Du, Yiwei Liu, Yizhi Zhou, Yuan Wei, Yuli Chen, Yuqi Zhu, Yuwen Li, Yuxi Dong, Yuxuan Zhang, Yuyang Song, Zhange Zhang, Zhaohan Zhang, Zhaoyi Li, Zhen Zhang, Zhengbo Zhang, Zhihang Hu, Zhiwei Yu, Zhixin Xie, Zhiyu Chen, Zhizhao Luo, Zhongyuan Wu, Zhou Fang, Zhu Lin, Zhuocheng Gong, Zixi Zhao, Ziyang Zeng, Ziyi Wang, Ziyu Zhao, Ran Tao, Mingjie Tang, Chuan Hao, Peihao Wu, Jianzhou Wang, Nan Jiang, Yuan Zhi, Bryan Dai",
+      "takeaway": "The paper presents IQuest-Q1, a sparse Mixture-of-Experts agentic foundation model developed through a three-stage training process and model merging to strengthen agentic coding capabilities.",
+      "brief": "The authors claim to present IQuest-Q1, a sparse Mixture-of-Experts agentic foundation model with 320B total parameters and 15B activated parameters. They describe a three-stage development process involving pre-training, mid-training, and post-training, along with model merging to integrate complementary signals.\n\nThe authors state that the resulting model demonstrates capabilities in both coding and general tasks. The abstract does not specify the benchmarks used, quantitative performance scores, or specific limitations encountered during training or evaluation. It confirms the model is released as open-source.\n\nResearchers working on large-scale sparse MoE architectures or agentic coding systems may find the training methodology and open-source release relevant. Those seeking specific benchmark comparisons or detailed ablation studies should note that the abstract provides no such data.",
+      "abstract": "We present IQuest-Q1, a sparse Mixture-of-Experts (MoE) agentic foundation model with 320B total parameters (15B activated). IQuest-Q1 is developed through a three-stage process: (1) stable and efficient pre-training, combining Stable SplitNorm, Muon, and muP with a two-stage curriculum whose second stage increases the coding-data mixture, preserving a wide stability margin between safe and optimal learning rates; (2) fine-grained mid-training, expanding the data mixture across domains and formats and progressively extending the context; and (3) multi-scaffold with multi-version post-training, combining SFT, domain-specialized RL, and MOPD across various scaffolds to integrate complementary training signals and strengthen agentic coding capabilities. Furthermore, model merging combines different experts and checkpoints from different stages while mitigating conflicts among their parameter updates. The resulting IQuest-Q1 demonstrates capabilities in both coding and general tasks. We release IQuest-Q1 as an open-source model to support community research and development.",
+      "takeaways": [
+        "The object is a 320B-parameter sparse MoE model with 15B activated parameters, designed for agentic CLI systems.",
+        "A visible limit is the absence of specific benchmark names or quantitative performance metrics in the provided abstract.",
+        "The artifact status is confirmed as an open-source model release, though no repository URL is provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors say the model works well for writing code and general tasks, but they do not say which specific tests they used to measure this.",
+        "brief": "The authors say they built a large AI model called IQuest-Q1. It has 320 billion total parts, but only 15 billion are active at any time to save energy. They trained it in three steps and combined different versions to make it better at using command-line tools.\n\nThey say the model is good at coding and general tasks. However, they do not list the specific tests or scores in this summary. They also say the model is available for free for the public to use.\n\nPeople who build large AI models or tools that use command lines might find this useful. People who want to see exact test scores should know this summary does not have them.",
+        "takeaways": [
+          "The thing is a huge AI model with 320 billion parts, but only 15 billion work at once.",
+          "A clear missing piece is that the summary does not say which tests were used or what the scores were.",
+          "The model is said to be free to download, but the link is not in this text."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmarks and quantitative results by reading the full PDF, as the abstract only claims capabilities without numbers.",
+        "Check the official release channel for the open-source model to confirm availability and license terms, since no URL is listed."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-23",
+        "publishedOn": "2026-10-22",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.30949",
+            "upvotes": 53
+          }
+        ]
+      },
+      "trend": {
+        "votes": 53,
+        "rank": 5,
+        "of": 40,
+        "perDay": 53
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 53,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-22"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-23T17:09:16.886Z"
+      }
+    },
+    {
+      "id": "2610.30182",
+      "arxivId": "2610.30182",
+      "url": "https://arxiv.org/abs/2610.30182",
+      "topic": "Security",
+      "reported": "The authors report that their Viterbi tracker detects at least 96% of training runs against a declared inference workload on simulated datacentre power, measured at a 1% false-alarm rate.",
+      "metrics": [
+        "at least $96\\%$ of training runs",
+        "$1\\%$ false-alarm rate",
+        "$2$ Hz or faster"
+      ],
+      "title": "Detecting AI Training in Datacentre Power",
+      "authors": "Tom Kimpson, Mauricio Baker, Emlyn Graham",
+      "takeaway": "The paper claims to develop a method to detect synchronous model training in facility-level power using Viterbi tracking of the wandering iteration cadence.",
+      "brief": "The authors propose a power-metering method to detect AI training runs without trusting the cluster operator, using Viterbi tracking to identify synchronous training patterns in facility-level electricity data.\n\nOn simulated data, the method detects at least 96% of training runs at a 1% false-alarm rate when the operator does not hide. Against adversarial hiding strategies, the tracker still catches at least 87% of runs over a day, though extreme work variation can hide training in up to 73% of five-minute observations. The listing does not establish performance on real-world datacentre power or specific hardware configurations.\n\nResearchers in compute verification, AI governance, or datacenter security may find the method relevant for operator-independent monitoring. Those requiring real-world deployment metrics or non-simulated validation should note the current evidence is limited to simulated data.",
+      "abstract": "AI governance agreements require methods to detect large model training runs on a monitored computing cluster, without trusting the operator. We develop a method to detect synchronous model training in facility-level power by Viterbi tracking of the wandering iteration cadence. On simulated datacentre power, when the operator makes no attempt to hide, the Viterbi tracker detects at least $96\\%$ of training runs against a declared inference workload, at a $1\\%$ false-alarm rate and within $0.04$ of the Neyman--Pearson optimum, given a meter that samples at $2$ Hz or faster. Of eight adversarial strategies an operator might use to hide, only extreme variation of the work per iteration evades the tracker. Its strongest form hides training in up to $73\\%$ of five-minute observations, but over a day at least $87\\%$ of such runs are still caught, at a $0.1\\%$ false-alarm rate per run. This adversarial strategy costs no throughput, but in small-scale training the operator needs $93$--$267\\%$ more compute to reach the same loss. A modest passive meter is sufficient to make hidden training both detectable and expensive, which makes power metering a promising part of compute verification that does not depend on trusting the operator.",
+      "takeaways": [
+        "The object is a Viterbi-based detector for synchronous AI training in facility-level power signals, designed for operator-independent verification.",
+        "A visible limit is that the reported detection rates and adversarial robustness are evaluated on simulated datacentre power, not real-world measurements.",
+        "The artifact status is not established in the listing; no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their tracking method finds at least 96% of AI training sessions in fake power data, measured with a 1% error rate for false alarms.",
+        "brief": "The authors suggest a way to spot AI training by watching the building's electricity use, using a tracking algorithm to find the regular rhythm of training steps.\n\nIn their computer simulations, the method finds 96% of training sessions when the operator is not trying to hide them. Even when the operator tries to hide the training, the method still finds 87% of sessions over a full day, though it can miss up to 73% of short five-minute checks. The paper does not say how well this works on real buildings or real computers.\n\nPeople who check that AI companies are following rules, or who study datacenter security, might find this useful. People who need proof that this works in real life should note that the tests were only on fake data.",
+        "takeaways": [
+          "The tool is a computer algorithm that looks at electricity bills to find AI training, without needing to trust the company running the computers.",
+          "A clear limit is that the tests were done on made-up data, not real electricity readings from actual datacenters.",
+          "The listing does not say if the code is available or how to run it yourself."
+        ]
+      },
+      "actions": [
+        "Verify the simulation methodology and data generation process by reviewing the full PDF to assess the realism of the power traces.",
+        "Check the paper for any supplementary materials or code availability statements that might provide implementation details for the Viterbi tracker."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.AI",
+        "cs.CY",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-23",
+        "publishedOn": "2026-10-23",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.30182"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-23T17:09:16.886Z"
+      }
+    },
+    {
+      "id": "2610.30213",
+      "arxivId": "2610.30213",
+      "url": "https://arxiv.org/abs/2610.30213",
+      "topic": "Stats",
+      "reported": "The authors report that the bridge-based estimator matches the accuracy of crude Monte Carlo with orders of magnitude fewer sample paths on a range of benchmark processes.",
+      "metrics": [],
+      "title": "Bridge change-of-measure for propagator estimation of diffusions",
+      "authors": "Javier Aguilar, Riccardo Gatto",
+      "takeaway": "The paper claims to analyze an importance sampling strategy based on a bridge change of measure to estimate propagators of one-dimensional diffusions.",
+      "brief": "The authors propose an importance sampling strategy using a bridge change of measure to estimate propagators for one-dimensional diffusions. They state that this method overcomes the main limitations of the crude Monte Carlo estimator, which relies on binning in state space and introduces bias.\n\nThe authors report that the bridge-based estimator matches the accuracy of crude Monte Carlo with orders of magnitude fewer sample paths on a range of benchmark processes. The listing does not specify the exact numerical values for the accuracy or the specific benchmark processes used for this comparison.\n\nResearchers working on statistical inference for diffusion processes may find the method relevant. Those not interested in propagator estimation or importance sampling for diffusions may ignore it.",
+      "abstract": "The propagator of one-dimensional diffusions has relevant applications in statistical inference and across many disciplines. Yet it is obtained in closed form only for very few simple models. Here we analyze an importance sampling strategy based on a bridge change of measure to estimate propagators: paths are generated under an auxiliary diffusion whose bridge between the two fixed boundary points is easy to generate, and the target propagator is recovered through a Radon-Nikodym derivative or likelihood ratio correction derived from Girsanov's theorem. This method overcomes the main limitations of the crude Monte Carlo estimator, which relies on binning in state space, introducing bias and becoming inefficient with rare transitions. We apply the method to a range of benchmark processes and show that the bridge-based estimator matches the accuracy of crude Monte Carlo with orders of magnitude fewer sample paths. Finally, we elaborate on discretization schemes for the Radon-Nikodym derivative and on approximations to the best-in-class change of measure, both of which increase the efficiency of the method.",
+      "takeaways": [
+        "The object is an importance sampling strategy for estimating propagators of one-dimensional diffusions using a bridge change of measure.",
+        "A visible limit is that the listing does not provide specific numerical accuracy values or the exact benchmark processes used for the comparison.",
+        "The artifact status is not established in the listing, as no code or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that their new method is just as accurate as the standard method but uses far fewer simulated paths when tested on standard test cases.",
+        "brief": "The authors suggest a new way to calculate the probability of a system moving from one state to another over time, a calculation that is usually very hard to do exactly. They say their method fixes problems with the old way of doing this, which was inaccurate and slow when rare events happened.\n\nThe authors say their new method is just as accurate as the old method but uses far fewer simulated paths when tested on standard test cases. The summary does not say exactly how accurate it is or which specific test cases were used.\n\nPeople who study how systems change over time using statistics might find this useful. People who do not work on these specific types of probability calculations might not need it.",
+        "takeaways": [
+          "The thing being studied is a new calculation method for tracking how systems change over time.",
+          "A clear missing piece is the exact numbers showing how accurate the method is and which specific tests were run.",
+          "It is not stated whether the authors have shared their computer code for this method."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark processes and numerical accuracy values by reading the full PDF.",
+        "Check for any available code or implementation details in the full PDF or associated repositories."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME",
+        "math.PR",
+        "math.ST",
+        "physics.comp-ph",
+        "stat.CO",
+        "stat.TH"
+      ],
+      "listing": {
+        "listedOn": "2026-10-23",
+        "publishedOn": "2026-10-23",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.30213"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-23T17:09:16.886Z"
+      }
+    },
+    {
+      "id": "2610.30216",
+      "arxivId": "2610.30216",
+      "url": "https://arxiv.org/abs/2610.30216",
+      "topic": "Physics",
+      "reported": "The authors report that less than 1% of each algorithm's imported source code required statement-level human review across nine AI-formalized quantum algorithms.",
+      "metrics": [
+        "less than 1% of each algorithm's imported source code"
+      ],
+      "title": "Lean-QuantumAlg: A Framework for AI Agents to Produce Quantum Algorithms that Humans Can Trust",
+      "authors": "Lei Zhang, Mingrui Jing, Yusheng Zhao, Jiahong Liu, Xin Wang",
+      "takeaway": "The paper introduces Lean-QuantumAlg, a Lean 4 framework that binds correctness, success probability, state restoration, and resource bounds to a single execution for AI-assisted quantum algorithm development.",
+      "brief": "The authors present Lean-QuantumAlg, a Lean 4 framework designed to make AI-generated quantum algorithms trustworthy by linking formal verification to specific problem specifications and execution models.\n\nThey demonstrate the framework on nine AI-formalized quantum algorithms, including Grover search and attacks on RSA-2048 and P-256, reporting that less than 1% of imported source code required statement-level human review after auditing the shared framework. The listing does not establish whether the reported resource bounds or success probabilities were independently validated against physical hardware or specific execution environments beyond the formal model.\n\nResearchers working on formal verification of quantum computing or AI-assisted theorem proving may find the framework relevant. Those requiring empirical hardware validation of quantum resource claims without access to the full formal proofs may find the abstract insufficient for their needs.",
+      "abstract": "AI agents are increasingly capable of constructing quantum algorithms and proofs, yet machine-checked proofs alone cannot guarantee that the intended problem is solved or that resource claims match the verified computation.Here we introduce Lean-QuantumAlg, a Lean 4 framework for trustworthy AI-assisted development of quantum algorithms.Its Algorithm-Solves-Problem contract binds correctness, success probability, borrowed-state restoration and quantum and classical resource bounds to a single execution, while separating the guarantees that Lean checks from the problem specifications and execution models that humans review. We demonstrate the framework on nine AI-formalized quantum algorithms, from Grover search to quantum attacks on RSA-2048 and P-256, with less than 1% of each algorithm's imported source code requiring statement-level human review once the shared framework has been audited. By integrating reusable mathematical foundations, certified algorithmic primitives and execution-grounded verification, Lean-QuantumAlg provides a basis for AI agents to construct and certify quantum algorithms, opening a path toward scalable AI-driven discovery of quantum algorithms.",
+      "takeaways": [
+        "The object is a Lean 4 framework that formally connects algorithm correctness, resource bounds, and problem specifications in a single executable contract.",
+        "A visible limit is that the abstract claims machine-checked proofs do not guarantee the intended problem is solved, yet the listing does not specify how the human review of problem specifications was quantified or standardized.",
+        "The artifact status is unclear because no code repository or formal proof archive is provided in the listing, making independent reproduction of the nine algorithm formalizations impossible from this metadata alone."
+      ],
+      "plain": {
+        "reported": "The authors state that for nine quantum algorithms created with AI help, they only had to manually check less than 1% of the code after the main framework was reviewed.",
+        "brief": "The authors built a tool called Lean-QuantumAlg that uses a mathematical proof-checking system to verify that AI-created quantum algorithms work as intended and use the resources they claim to use.\n\nThey tested this tool on nine different quantum algorithms, including famous ones like Grover's search and methods for breaking encryption standards like RSA-2048. They say that once the main framework was checked by humans, they only needed to look at less than 1% of the code for each algorithm. However, the summary does not say if these algorithms were actually run on real quantum computers or if the resource estimates were checked against physical limits.\n\nPeople who study how to mathematically prove that quantum computers work correctly might find this useful. People who need to know if these algorithms work on real hardware without reading the full technical proofs might not get enough information from this summary.",
+        "takeaways": [
+          "The main thing they made is a software framework that connects the math proof of an algorithm to the specific problem it is supposed to solve.",
+          "One unclear point is how they measured the human review effort, and whether the proof of correctness actually guarantees the algorithm solves the real-world problem as intended.",
+          "It is not clear if the code or proofs are available to the public because the summary does not list any website or repository where they can be downloaded."
+        ]
+      },
+      "actions": [
+        "Verify the existence and accessibility of the Lean 4 formalizations for the nine cited algorithms by checking the full PDF for repository links or proof artifacts.",
+        "Examine the full paper to determine the specific criteria used to define 'statement-level human review' and whether the resource bounds were tested against any physical or simulated quantum execution environment."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-10-23",
+        "publishedOn": "2026-10-23",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.30216"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-23T17:09:16.886Z"
+      }
+    },
+    {
+      "id": "2610.30401",
+      "arxivId": "2610.30401",
+      "url": "https://arxiv.org/abs/2610.30401",
+      "topic": "Engineering",
+      "reported": "The authors report that their method identifies regions of low noise and strong coupling, with results that correlate with independent SNR and root mean square error (RMSE) metrics.",
+      "metrics": [
+        "2023 Turkish-Syrian earthquakes"
+      ],
+      "title": "Semblance Distance Analysis for Channel Quality Assessment in Distributed Acoustic Sensing",
+      "authors": "Reinhardt Rading, Markus Hoffmann, Norbert Meyners, Holger Schlarb, C\\'eline Hadziioannou, Oliver Gerberding, Katharina-Sophie Isleif",
+      "takeaway": "The paper introduces a statistical framework for DAS channel quality assessment based on a semblance distance metric that quantifies deviation from a locally coherent reference signal.",
+      "brief": "The authors propose a semblance distance metric to assess channel quality in Distributed Acoustic Sensing by measuring deviation from a locally coherent reference signal. They state this approach identifies incoherent noise and coupling-induced distortions without requiring prior knowledge of installation conditions or noise statistics.\n\nValidation used multiple independent datasets, including recordings of the 2023 Turkish-Syrian earthquakes, a controlled seismic source experiment, and long-term continuous measurements. The authors report that results correlate with independent SNR and RMSE metrics and that the method detects subtle sub-decibel temporal variations in coupling conditions over seasonal timescales. The listing does not specify the magnitude of the correlation or the exact sub-decibel threshold used.\n\nResearchers working on DAS channel selection, seismic imaging, or fiber health monitoring may find the framework relevant. Those relying solely on conventional SNR or correlation-based approaches in nonstationary noise environments may benefit from the proposed distance estimation formulation.",
+      "abstract": "Distributed Acoustic Sensing (DAS) enables dense, kilometer-scale measurements for seismic and environmental monitoring, but its performance is limited by spatially heterogeneous noise and fiber to ground coupling. Identifying high-quality sensing channels remains a challenge, particularly in nonstationary and complex noise environments where conventional signal to noise ratio (SNR) or correlation based approaches are insufficient. In this work, we introduce a statistical framework for DAS channel quality assessment based on a semblance distance metric, which quantifies the deviation of individual channels from a locally coherent reference signal. Unlike traditional pairwise similarity measures, the proposed method formulates channel selection as a distance estimation problem in a coherence enhanced signal space, enabling identification of incoherent noise and coupling induced distortions without requiring prior knowledge of installation conditions or noise statistics. The method is validated using multiple independent datasets, including recordings of the 2023 Turkish-Syrian earthquakes, a controlled seismic source experiment, and long-term continuous measurements. Across all scenarios, the approach identifies regions of low noise and strong coupling, with results that correlate with independent SNR and root mean square error (RMSE) metrics. Furthermore, the method detects subtle sub-decibel temporal variations in coupling conditions over seasonal timescales, demonstrating its capability for continuous fiber health monitoring. These results establish semblance distance analysis as a physically interpretable tool for DAS channel selection with direct applications in seismic imaging, structural health monitoring, and noise mitigation in high sensitivity systems such as gravitational wave detectors.",
+      "takeaways": [
+        "The object is a statistical framework for DAS channel quality assessment based on a semblance distance metric.",
+        "A visible limit is that the listing does not quantify the strength of correlation with independent SNR and RMSE metrics.",
+        "The artifact status is not established in the listing, as no code or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that their method identifies regions of low noise and strong coupling, with results that correlate with independent SNR and root mean square error (RMSE) metrics.",
+        "brief": "The authors propose a new way to measure the quality of sensors in a network of fiber optic cables used for detecting earthquakes and environmental changes. They use a mathematical measure called \"semblance distance\" to see how much each sensor's signal differs from a nearby, more reliable signal. They claim this works even when the background noise is changing and complex, without needing to know exactly how the cables were installed or what the noise looks like.\n\nThey tested this method on several different sets of data, including recordings from the 2023 earthquakes in Turkey and Syria, a controlled experiment with a known seismic source, and long-term continuous measurements. They say their results match up with other standard measures of signal quality, like signal-to-noise ratio (SNR) and root mean square error (RMSE). They also say the method can detect very small changes in how well the cable is coupled to the ground over the course of a season. The summary does not say how strong the match with the other measures was or exactly how small the detected changes were.\n\nPeople who work on selecting the best sensors in fiber optic networks, creating images of seismic activity, or monitoring the health of fiber cables might find this useful. People who currently use standard signal-to-noise ratio or correlation methods to pick sensors in noisy, changing environments might find this new approach helpful.",
+        "takeaways": [
+          "The main thing being introduced is a new mathematical method for checking the quality of sensors in a fiber optic sensing network.",
+          "One limitation is that the summary does not say how closely the new method's results match the results of standard quality measures.",
+          "It is not stated in the summary whether the code for this method is available to the public."
+        ]
+      },
+      "actions": [
+        "Verify the specific correlation coefficients and sub-decibel variation thresholds by reading the full PDF.",
+        "Check the supplementary materials or repository for the implementation of the semblance distance metric."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP",
+        "physics.app-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-10-23",
+        "publishedOn": "2026-10-23",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.30401"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-23T17:09:16.886Z"
+      }
+    },
+    {
+      "id": "2610.30487",
+      "arxivId": "2610.30487",
+      "url": "https://arxiv.org/abs/2610.30487",
+      "topic": "Econ",
+      "reported": "The authors report that a 10-basis-point forecast error is associated with 4.14 basis points less compensation repricing in the high-spread state than in the low-spread state at three years, measured using Tesouro Direto quotations and Focus forecasts.",
+      "metrics": [
+        "4.14 basis points",
+        "p-value of 0.1018",
+        "68 three-year"
+      ],
+      "title": "Monetary Policy Forecast Errors and Inflation Compensation under Sovereign Stress in Brazil",
+      "authors": "Giovana, Tommy",
+      "takeaway": "The paper claims to examine whether inflation compensation around Brazilian monetary policy decisions is associated differently with policy forecast errors when sovereign spreads are relatively elevated.",
+      "brief": "The authors investigate whether inflation compensation around Brazilian monetary policy decisions varies with policy forecast errors under elevated sovereign spreads. They use public Tesouro Direto quotations, meeting-specific Focus forecasts, and a lagged EMBI indicator to construct event observations.\n\nThe strongest reported result is a 4.14 basis point difference in compensation repricing at the three-year horizon, but the restricted wild cluster test yields a two-sided p-value of 0.1018. The five-year interaction changes sign when 2020 is excluded, and a common sample of 43 events does not establish a maturity gradient. The authors state the evidence is inconclusive about state dependence.\n\nResearchers studying Brazilian monetary policy, sovereign risk, or retail bond markets may find the event-study design and data construction relevant. Those seeking definitive causal identification of structural monetary shocks or fiscal dominance should note the authors' stated limitations regarding survey timing and sparse maturity support.",
+      "abstract": "This paper examines whether inflation compensation around Brazilian monetary policy decisions is associated differently with policy forecast errors when sovereign spreads are relatively elevated. Public Tesouro Direto quotations, meeting-specific Focus forecasts and a lagged EMBI indicator yield 68 three-year and 60 five-year event observations. The outcome is a matched-horizon retail yield proxy; the policy variable is the announced Selic target minus a preceding-week survey mean. At three years, a 10-basis-point forecast error is associated with 4.14 basis points less compensation repricing in the high-spread state than in the low-spread state, but the restricted wild cluster test gives a two-sided p-value of 0.1018. The estimated total high-state response is -0.42 basis points, with a pointwise 95 percent interval of [-2.25, 1.41]. The five-year interaction is sensitive to pandemic meetings and changes sign when 2020 is excluded. A common sample of 43 events does not establish a maturity gradient. A supplementary comparison on extended windows is also sensitive to the policy measure. The evidence is therefore inconclusive about state dependence. Survey timing, sparse maturity support and daily retail quotations prevent these associations from identifying a structural monetary shock, a pure inflation-risk premium or fiscal dominance.",
+      "takeaways": [
+        "The object is the association between policy forecast errors and inflation compensation in Brazilian retail bond yields under varying sovereign spread states.",
+        "A visible limit is the statistical insignificance of the primary three-year result and the sensitivity of the five-year result to the exclusion of pandemic-era meetings.",
+        "The artifact status is not established in the listing, as no code or data repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that a 10-basis-point error in predicting the interest rate target is linked to a 4.14 basis point smaller adjustment in the expected inflation component of bond yields when government debt risk is high, compared to when it is low, measured using retail bond prices and survey data.",
+        "brief": "The authors check if the part of bond yields that reflects expected inflation reacts differently to mistakes in predicting central bank interest rates when the risk of government default is high. They use data from Brazilian retail bonds, official survey forecasts, and a global risk indicator to create a set of specific policy events.\n\nThe main finding is a 4.14 basis point difference in how yields adjust at the three-year mark, but the statistical test shows a p-value of 0.1018, which is not conventionally significant. The result for five-year bonds changes direction if data from 2020 is removed, and a smaller shared sample of 43 events does not show a clear pattern across different bond maturities. The authors conclude the evidence is inconclusive about whether the state of risk matters.\n\nPeople studying Brazilian interest rates, government debt risk, or how retail investors price bonds might find the method useful. Those looking for a clear cause-and-effect link between monetary policy shocks and inflation risk should note the authors say the data cannot identify these structural factors due to timing issues and limited data points.",
+        "takeaways": [
+          "The study looks at how errors in predicting interest rates relate to inflation expectations in Brazilian bond prices when government debt risk is high.",
+          "A clear limitation is that the main statistical result is not significant, and the longer-term result depends heavily on including or excluding data from the pandemic year.",
+          "The listing does not state whether code or data is available, so the artifact status is unknown."
+        ]
+      },
+      "actions": [
+        "Verify the exact definition of the 'matched-horizon retail yield proxy' and the 'preceding-week survey mean' in the full PDF to assess measurement validity.",
+        "Check the full text for the specific robustness checks regarding the 'extended windows' and the 'policy measure' sensitivity mentioned in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.EM"
+      ],
+      "listing": {
+        "listedOn": "2026-10-23",
+        "publishedOn": "2026-10-23",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.30487"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-23T17:09:16.886Z"
+      }
+    }
+  ]
+}
