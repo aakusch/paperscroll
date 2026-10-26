@@ -1,0 +1,669 @@
+{
+  "date": "2026-10-26",
+  "label": "Mon, Oct 26",
+  "minutes": 10,
+  "poolSize": 118,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-10-26T18:45:54.073Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2610.31668",
+      "arxivId": "2610.31668",
+      "url": "https://arxiv.org/abs/2610.31668",
+      "topic": "AI",
+      "reported": "The authors report organizing the literature around four complementary operations: reading, writing, sharing, and interacting.",
+      "metrics": [],
+      "title": "Reading, Writing, Sharing, and Interacting with the World through Video",
+      "authors": "Shengqiong Wu, Meng Luo, Bobo Li, Ziwei Liu, Shuicheng Yan, Ming-Hsuan Yang, Philip Torr, Hao Fei",
+      "takeaway": "The paper claims to adopt world modeling as a unifying lens for examining video foundation models and video world models.",
+      "brief": "The authors propose a unifying framework that treats video as a projection of a latent temporal world. They organize the field into four operations: reading, writing, sharing, and interacting. This perspective distinguishes temporal coherence in sequences from consistency in the underlying world state.\n\nThe listing describes a shift in emphasis from clip-level recognition toward persistent state and physical validity. It mentions tracing developments across tasks, representations, models, datasets, and benchmarks. No specific experimental results, quantitative metrics, or benchmark scores are provided in the abstract. The authors state they distill open challenges that follow from this perspective.\n\nResearchers working on video generation, world models, or video understanding may find this survey useful for structuring the literature. Practitioners seeking specific model architectures or benchmark comparisons should note that the abstract does not list specific tools or performance figures. The paper is a survey, not a new model proposal.",
+      "abstract": "Video foundation models have advanced rapidly in understanding and generating visual sequences, while video world models seek to capture the underlying dynamics of the world they depict. Despite their different objectives, both concern the relationship between video observations and an evolving world. This survey adopts world modeling as a unifying lens for examining these developments. Viewing an observed video as a partial, lossy, and temporally ordered projection of a latent temporal world, we organize the literature around four complementary operations: reading infers world properties from observed video; writing synthesizes video from specified or learned world conditions; sharing integrates understanding and generation through common modeling mechanisms; and interacting predicts and updates world states under actions and evolving observations. This perspective distinguishes temporal coherence in observed or generated sequences from consistency in the underlying world state. Across tasks, representations, models, datasets, and benchmarks, we trace a shift in emphasis from clip-level recognition and perceptual fidelity toward persistent state, controllable evolution, physical and causal validity, and evaluation grounded in interaction and downstream decisions, and we distill the open challenges that follow.",
+      "takeaways": [
+        "The object is a survey that unifies video understanding and generation under a world modeling lens.",
+        "The visible limit is the absence of specific quantitative results or benchmark comparisons in the provided abstract.",
+        "The artifact status is a survey paper with a declared code repository for curated resources."
+      ],
+      "plain": {
+        "reported": "The authors report organizing the literature around four complementary operations: reading, writing, sharing, and interacting.",
+        "brief": "The authors propose a unifying framework that treats video as a projection of a latent temporal world. They organize the field into four operations: reading, writing, sharing, and interacting. This perspective distinguishes temporal coherence in sequences from consistency in the underlying world state.\n\nThe listing describes a shift in emphasis from clip-level recognition toward persistent state and physical validity. It mentions tracing developments across tasks, representations, models, datasets, and benchmarks. No specific experimental results, quantitative metrics, or benchmark scores are provided in the abstract. The authors state they distill open challenges that follow from this perspective.\n\nResearchers working on video generation, world models, or video understanding may find this survey useful for structuring the literature. Practitioners seeking specific model architectures or benchmark comparisons should note that the abstract does not list specific tools or performance figures. The paper is a survey, not a new model proposal.",
+        "takeaways": [
+          "The object is a survey that unifies video understanding and generation under a world modeling lens.",
+          "The visible limit is the absence of specific quantitative results or benchmark comparisons in the provided abstract.",
+          "The artifact status is a survey paper with a declared code repository for curated resources."
+        ]
+      },
+      "actions": [
+        "Verify the specific scope of the four operations by reading the full PDF to see how 'sharing' is technically defined.",
+        "Check the declared GitHub repository to confirm the current list of included datasets and benchmarks."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/vid-gen/awesome-video-world-model",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-26",
+        "publishedOn": "2026-10-22",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.31668",
+            "upvotes": 211
+          }
+        ]
+      },
+      "trend": {
+        "votes": 211,
+        "rank": 1,
+        "of": 34,
+        "perDay": 53
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 211,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-22"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-26T18:45:54.073Z"
+      }
+    },
+    {
+      "id": "2610.30932",
+      "arxivId": "2610.30932",
+      "url": "https://arxiv.org/abs/2610.30932",
+      "topic": "AI",
+      "reported": "The authors report that their proposed method, On-Policy Trajectory Distillation (OPTD), achieves the strongest overall fidelity among evaluated simulators and most closely reproduces the production policy effect in offline simulation.",
+      "metrics": [
+        "64,729 session trajectories",
+        "11,010 users",
+        "566,102 items"
+      ],
+      "title": "UserArena: Benchmarking Interactive User Simulation for Long-Horizon Shopping Agents",
+      "authors": "Jujia Zhao, Jiakai Tang, Jing Yu, Wen Chen, Jian Wu, Han Zhu, Fei Sun, Suzan Verberne, Zhaochun Ren",
+      "takeaway": "The paper introduces UserArena, a real-world e-commerce interactive benchmark with long-horizon trajectories and an offline validation protocol, along with a method called On-Policy Trajectory Distillation to improve simulator fidelity.",
+      "brief": "The authors present UserArena, a benchmark containing 64,729 session trajectories from 11,010 users, designed to evaluate interactive shopping agents over long horizons. They also propose On-Policy Trajectory Distillation (OPTD) to improve the fidelity of user simulators in this environment.\n\nThe authors state that OPTD achieves the strongest overall fidelity among evaluated simulators under their protocol and most closely reproduces the production policy effect in offline simulation. The listing does not specify the exact quantitative gap between OPTD and other simulators, nor does it detail the specific metrics used to define \"strongest overall fidelity\" beyond the general claim of closeness to production A/B outcomes.\n\nResearchers working on agentic recommendation systems, interactive user simulation, or offline evaluation of long-horizon decision policies may find this relevant. Those not focused on e-commerce agent evaluation or simulator fidelity may find the specific domain constraints limiting.",
+      "abstract": "Agentic recommendation pursues shopper goals through sequences of context-dependent decisions. Developing and evaluating such policies requires faithful recommendation world models that capture both the interactive shopping environment and users' behavioral responses over long interactions. Existing resources rarely provide long-horizon, fine-grained real-user trajectories or support trajectory-level evaluation and offline validation against production A/B results. We introduce UserArena, a real-world e-commerce interactive benchmark containing 64,729 session trajectories from 11,010 users, spanning 566,102 items and 13 action types. UserArena pairs these trajectories with an interactive environment and supports offline validation against outcomes from a controlled production A/B test, enabling five-level evaluation from output validity and local decisions to sequential behavior, personalization, and outcomes. To improve simulator fidelity over these long-horizon interactions, we further propose On-Policy Trajectory Distillation (OPTD), which uses trajectory-level intent to provide dense teacher targets on student-generated rollouts. Experiments show that OPTD achieves the strongest overall fidelity among the evaluated simulators under UserArena's evaluation protocol and most closely reproduces the production policy effect in offline simulation.",
+      "takeaways": [
+        "The object is a benchmark (UserArena) and a training method (OPTD) for user simulators in e-commerce.",
+        "The visible limit is that the abstract claims \"strongest overall fidelity\" but does not provide the specific numerical scores or confidence intervals for this comparison in the listing.",
+        "The artifact status is indicated by a declared GitHub repository URL, but the listing does not confirm if the code is complete, executable, or matches the paper's experimental setup."
+      ],
+      "plain": {
+        "reported": "The authors report that their new training technique, called On-Policy Trajectory Distillation, makes their computer model of a shopper behave most like real shoppers compared to other models, and it best matches the results seen in their actual online store tests.",
+        "brief": "The authors created a large dataset called UserArena, which contains records of 64,729 shopping sessions from 11,010 real people. This dataset is used to test AI systems that try to act like shoppers making a series of choices over time. They also created a new way to train AI models to better mimic these shoppers, called On-Policy Trajectory Distillation.\n\nThe authors say their new training method makes the AI shopper model the most accurate compared to other models they tested. They also say it best predicts the results of their real-world online store experiments. However, the summary does not give the specific numbers showing how much better their model is than the others, nor does it explain exactly how they measured \"accuracy.\"\n\nPeople who build AI systems for online shopping recommendations or who study how to test AI agents in complex, long-term scenarios might find this useful. People who do not work in these specific areas might find the details too specialized.",
+        "takeaways": [
+          "The main items are a new dataset for testing shopping AI and a new method for training AI to act like shoppers.",
+          "A limitation is that the summary claims the method is the \"strongest\" but does not show the specific scores or data points that prove this claim.",
+          "The authors provide a link to a code repository, but the summary does not confirm if the code works or includes all the data needed to reproduce the results."
+        ]
+      },
+      "actions": [
+        "Verify the GitHub repository to confirm the availability of the UserArena dataset and OPTD implementation code.",
+        "Check the full PDF for the specific quantitative metrics (e.g., accuracy, KL divergence, or A/B lift reproduction scores) used to substantiate the claim of \"strongest overall fidelity\"."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/RecGPT-Team/UserArena",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-26",
+        "publishedOn": "2026-10-22",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.30932",
+            "upvotes": 47
+          }
+        ]
+      },
+      "trend": {
+        "votes": 47,
+        "rank": 2,
+        "of": 34,
+        "perDay": 12
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 47,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-22"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-26T18:45:54.073Z"
+      }
+    },
+    {
+      "id": "2610.31162",
+      "arxivId": "2610.31162",
+      "url": "https://arxiv.org/abs/2610.31162",
+      "topic": "AI",
+      "reported": "The authors report that HiSTEVE achieves state-of-the-art atomic-task performance, scoring 85.0% on MineStudio Bench and a 37.4% average success rate on OpenHA.",
+      "metrics": [
+        "85.0% on MineStudio Bench",
+        "37.4% average success rate on OpenHA"
+      ],
+      "title": "HiSTEVE 1.0: Harnessing Human-Interface VLA Agents for Open-World Games",
+      "authors": "Zecong Tang, Zian Guan, Yuncheng Guo, Zhanqiu Zhang, Yiwen Guo, Bo Dai",
+      "takeaway": "The paper proposes HiSTEVE, a hierarchical VLA agent with a capability-aware harness designed to bridge the gap between native visuomotor control and long-horizon autonomy in open-world games.",
+      "brief": "The authors propose HiSTEVE, a hierarchical VLA agent with a capability-aware harness for open-world games. It combines a VLM planner with a single VLA executing subtasks via vision-only perception and native keyboard-and-mouse actions.\n\nThe authors report state-of-the-art atomic-task performance, scoring 85.0% on MineStudio Bench and a 37.4% average success rate on OpenHA. They state the agent completes long-horizon tasks like crafting an iron pickaxe from scratch. The listing does not establish specific failure modes or generalization limits beyond the reported benchmarks.\n\nResearchers working on embodied AI, VLA agents, or Minecraft-based benchmarks may find the hierarchical architecture and regime-specific normalization relevant. Those focused solely on high-level planning without native interface control may find the specific control-level details less applicable.",
+      "abstract": "Building virtual embodied agents that operate in open-ended games like human players is a long-standing goal requiring both long-horizon autonomy and reliable native-interface control. As a procedurally generated open world, Minecraft provides a natural testbed for studying the integration of these capabilities. Existing agents typically provide either native visuomotor control without long-horizon autonomy or high-level planning executed through environment APIs or predefined skills. To bridge this gap, we propose HiSTEVE, a hierarchical VLA agent with a capability-aware agent harness. At the orchestration level, we equip the harness with structured memory for tracking progress and a VLM planner for selecting subtasks within the VLA's capabilities. To reliably determine subtask completion, we further introduce a policy-coupled task completion state detector that conditions on VLA policy context to signal candidate completion. At the control level, a single VLA executes all subtasks with vision-only perception and native keyboard-and-mouse actions. To mitigate interference between heterogeneous GUI and non-GUI interactions, we introduce regime-specific RMSNorm branches and separate mouse-movement token embeddings. We also train the VLA through world knowledge injection, imitation learning, and reinforcement learning with environment feedback to improve reliability and recovery. HiSTEVE achieves state-of-the-art atomic-task performance, scoring 85.0% on MineStudio Bench and a 37.4% average success rate on OpenHA, while also completing long-horizon tasks such as crafting an iron pickaxe from scratch like human players.",
+      "takeaways": [
+        "The object is a hierarchical VLA agent integrating a VLM planner with a single VLA for native keyboard-and-mouse control in Minecraft.",
+        "The visible limit is that the reported success rate on OpenHA is 37.4%, indicating that long-horizon task completion remains challenging despite the hierarchical design.",
+        "The artifact status is not established in the listing, as no code repository or release link is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their system, HiSTEVE, performs better than previous systems on basic tasks, getting 85.0% on the MineStudio Bench and a 37.4% average success rate on the OpenHA benchmark.",
+        "brief": "The authors propose HiSTEVE, a computer program that acts like a player in the game Minecraft. It uses a planning module to break down big goals into smaller steps and a control module to press keys and move the mouse to do those steps.\n\nThe authors say their system gets 85.0% on the MineStudio Bench and 37.4% on the OpenHA benchmark. They also say it can complete complex tasks, like making an iron pickaxe from raw materials. The summary does not say what specific situations the system fails in or how well it works in other games.\n\nPeople who build AI that plays video games or controls computers using vision might find this useful. People who only care about high-level planning without direct control of the mouse and keyboard might not need this specific design.",
+        "takeaways": [
+          "The system is a two-part AI: one part plans the steps, and the other part controls the mouse and keyboard to execute them in Minecraft.",
+          "The system only succeeds 37.4% of the time on the OpenHA benchmark, showing it still struggles with long, complex tasks.",
+          "The listing does not say if the code is available for download or use."
+        ]
+      },
+      "actions": [
+        "Verify the specific implementation details of the regime-specific RMSNorm branches and mouse-movement token embeddings in the full PDF.",
+        "Check the full paper for the exact definitions of the MineStudio Bench and OpenHA benchmarks to confirm the scope of the reported metrics."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-26",
+        "publishedOn": "2026-10-22",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.31162",
+            "upvotes": 38
+          }
+        ]
+      },
+      "trend": {
+        "votes": 38,
+        "rank": 3,
+        "of": 34,
+        "perDay": 10
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 38,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-22"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-26T18:45:54.073Z"
+      }
+    },
+    {
+      "id": "2610.32253",
+      "arxivId": "2610.32253",
+      "url": "https://arxiv.org/abs/2610.32253",
+      "topic": "AI",
+      "reported": "The authors report that the largest observed overall pass@1 gain is 13.5 percentage points, measured on Terminal Bench 2 and τ^3 Banking under fixed model and evaluator configurations.",
+      "metrics": [
+        "13.5 percentage points"
+      ],
+      "title": "RSIHub: A Composable Framework for Agent-Evolution Methods",
+      "authors": "Zimu Wang, Xiaobo Wang, Siyu Ye, Jiaqi Li, Silin Chen, Yuling Shi, Ruobing Wang, Jingjing Zhang, Chaofan Wang, Kai Wu, Mengnan Qi, Kai Cai, Xiaodong Gu, Zilong Zheng",
+      "takeaway": "RSIHub is an open-source framework that provides shared infrastructure for building, comparing, and extending agent-evolution methods by composing reusable operators and declaring mutable resources.",
+      "brief": "The authors present RSIHub as a composable framework that separates evolution policy from evaluation and execution machinery. They state that recipes compose reusable operators while the framework supplies execution, evaluation, recovery, and lineage.\n\nThe authors report a largest observed overall pass@1 gain of 13.5 percentage points on Terminal Bench 2 and τ^3 Banking. They note that method rankings vary across settings and optimization gains do not always transfer to held-out tasks. The listing does not establish specific computational costs or failure modes beyond these general observations.\n\nResearchers working on agent evolution, prompt optimization, or tool orchestration may find the shared protocol and inspectable candidate histories relevant. Those not interested in comparing evolution policies on shared infrastructure may ignore it.",
+      "abstract": "Agent-evolution methods use execution feedback to improve prompts, skills, tools, and orchestration, but their implementations often rebuild the same experimental machinery. We present RSIHub, an open-source framework for building, comparing, and extending these methods on shared infrastructure. Recipes compose reusable operators and declare mutable resources; RSIHub supplies execution, evaluation, recovery, and lineage. Researchers can focus on evolution policy while evaluation stays outside the mutable surface and results remain tied to candidates and evaluation conditions. We instantiate AHE, Hyperagents, A-Evolve, and GEPA without modifying the framework core, keeping method-specific logic in recipes and operators. We evaluate them with MiniSWE and Codex on Terminal Bench 2 and τ^3 Banking under fixed model and evaluator configurations. The largest observed overall pass@1 gain is 13.5 percentage points, while method rankings vary across settings and optimization gains do not always transfer to held-out tasks. RSIHub provides a common protocol for comparing evolution policies, inspectable candidate histories, and reusable components for developing new methods.",
+      "takeaways": [
+        "The object is a software framework for standardizing agent-evolution experiments rather than a single new algorithm.",
+        "A visible limit is that optimization gains do not always transfer to held-out tasks, and method rankings vary across settings.",
+        "The artifact is declared as open-source code at a specific GitHub repository URL."
+      ],
+      "plain": {
+        "reported": "The authors report that the biggest improvement in the percentage of tasks solved correctly on the first try was 13.5 percentage points, measured on two specific test suites for coding and banking tasks.",
+        "brief": "The authors created a tool called RSIHub that helps researchers build and compare different ways to improve AI agents. It separates the logic for improving the agent from the logic for testing it, so tests stay consistent.\n\nThey found that the best improvement in success rate was 13.5 percentage points on specific tests. However, they note that what works well in one setup does not always work in another, and improvements do not always carry over to new, unseen tasks. The listing does not say how much computing power or time these methods require.\n\nPeople who study how to make AI agents better by changing their instructions or tools might find this useful. People who are not interested in comparing these specific improvement methods might not need to look at it.",
+        "takeaways": [
+          "This is a software tool for organizing experiments on improving AI agents, not a single new improvement technique.",
+          "A limitation is that improvements found in one test setup do not always work in other setups or on new tasks.",
+          "The authors say the code is available for free on a specific website."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark configurations and baseline comparisons in the PDF to confirm the 13.5 percentage point gain context.",
+        "Inspect the GitHub repository to check if the code matches the described composable operator architecture and recipe structure."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/simple-agent-lab/RSIHub",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-26",
+        "publishedOn": "2026-10-23",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.32253",
+            "upvotes": 33
+          }
+        ]
+      },
+      "trend": {
+        "votes": 33,
+        "rank": 4,
+        "of": 34,
+        "perDay": 11
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 33,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-26T18:45:54.073Z"
+      }
+    },
+    {
+      "id": "2610.31693",
+      "arxivId": "2610.31693",
+      "url": "https://arxiv.org/abs/2610.31693",
+      "topic": "Econ",
+      "reported": "The authors report that in the main setting with identical firms and falling costs, the estimated interaction between information delay and repricing frequency on consumer surplus is -0.00025 normalized units, with a 95% paired seed bootstrap interval of [-0.0402, 0.0393].",
+      "metrics": [
+        "-0.00025 normalized units",
+        "55.6% and 44.0% of the imposed cost reduction",
+        "960 training runs"
+      ],
+      "title": "When AI Gets Cheaper, Do Prices Follow? Information Delays and Algorithmic Pricing",
+      "authors": "Krish Tadigotla",
+      "takeaway": "The paper examines whether lower AI model costs lead to lower prices and how information delays and price change limits affect consumer benefits in a simulated market.",
+      "brief": "The authors model a market with two differentiated sellers using logit demand and tabular Q learning to test if AI cost reductions pass through to consumers. They vary information age, repricing frequency, and cost regimes across 16 conditions.\n\nThe strongest reported result is an interaction effect of -0.00025 normalized units on consumer surplus, with a bootstrap interval including zero. Average price reductions reach 55.6% and 44.0% of cost cuts under optimal conditions, yet learned policies yield lower surplus than static benchmarks in all 16 conditions.\n\nResearchers studying algorithmic pricing dynamics or simulated market equilibria may find the factorial design useful. Those seeking evidence of real-world collusion or actual provider pricing behavior should note the study explicitly does not establish these.",
+      "abstract": "We examine whether lower costs of running AI models lead to lower prices, and whether delays in observing competitors' prices and limits on price changes affect how much consumers benefit. We study a simulated market with two differentiated sellers, logit demand, and tabular Q learning. A factorial experiment varies the age of rival price information, how often sellers can revise prices, whether production costs fall, and differences in firm quality and costs. We evaluate policies trained on 60 paired market seeds in each of 16 conditions, for 960 training runs, and measure expected consumer surplus after learning ends. In the main setting with identical firms and falling costs, the estimated interaction between information delay and repricing frequency on consumer surplus is -0.00025 normalized units, with a 95% paired seed bootstrap interval of [-0.0402, 0.0393]. The interval includes zero, as do intervals for tests of whether the interaction changes with the cost regime or differences between firms. With the shortest information delay and the ability to revise prices every period, average price reductions equal 55.6% and 44.0% of the imposed cost reduction for the two firms. Mean consumer surplus under the learned policies is below the corresponding static grid Nash benchmark in all 16 conditions. The findings show that simulated cost savings need not be fully passed on to buyers. They do not establish collusion or describe pricing by actual AI providers.",
+      "takeaways": [
+        "The object is a simulated two-seller market with logit demand and tabular Q learning policies.",
+        "A visible limit is that the primary interaction interval includes zero, and learned policies underperform static Nash benchmarks in all conditions.",
+        "The artifact status is not established in the listing, as no code repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that in the main setting with identical firms and falling costs, the estimated interaction between information delay and repricing frequency on consumer surplus is -0.00025 normalized units, with a 95% paired seed bootstrap interval of [-0.0402, 0.0393].",
+        "brief": "The authors create a computer model of a market with two different sellers. They use a type of artificial intelligence called Q learning to see if cheaper AI tools lead to lower prices for buyers. They test different scenarios where sellers have different amounts of outdated information about competitors and different rules for changing prices.\n\nThe main finding is that the effect of outdated information and price change rules on buyer benefit is very small and not statistically significant. When sellers have the best information and can change prices often, they lower prices by 55.6% and 44.0% of the cost savings. However, the AI sellers do not do as well for buyers as a simpler, non-learning pricing strategy in any of the 16 scenarios tested.\n\nPeople who study how computer algorithms set prices might find this model helpful. People looking for proof that real AI companies are colluding or how they actually set prices should note that this study does not provide that evidence.",
+        "takeaways": [
+          "The study uses a computer simulation of a market with two sellers and a specific AI learning method.",
+          "A clear limitation is that the main statistical result is not significant, and the AI sellers perform worse than a basic pricing strategy in all cases.",
+          "It is not stated in the listing whether the computer code for this simulation is available to the public."
+        ]
+      },
+      "actions": [
+        "Verify the specific implementation details of the tabular Q learning and logit demand setup in the full PDF.",
+        "Check the supplementary materials for the full breakdown of the 16 factorial conditions and their individual surplus outcomes."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-10-26",
+        "publishedOn": "2026-10-26",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.31693"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-26T18:45:54.073Z"
+      }
+    },
+    {
+      "id": "2610.31694",
+      "arxivId": "2610.31694",
+      "url": "https://arxiv.org/abs/2610.31694",
+      "topic": "Physics",
+      "reported": "The authors report that verified fusion and scheduling reduce logical measurement depth by a median of 17.9% on QASMBench.",
+      "metrics": [
+        "median of 17.9%",
+        "all 35 valid selected small-suite inputs"
+      ],
+      "title": "Verified Pauli-Product Measurement Compilation for Fault-Tolerant Quantum Computation",
+      "authors": "John Zhuoyang Ye, Jens Palsberg",
+      "takeaway": "The paper introduces QPPM, a language for Pauli-product measurement programs with a weakest-precondition semantics, and verifies its compilation pipeline in Lean.",
+      "brief": "The authors present QPPM, a language for Pauli-product measurement programs, and verify its compilation pipeline in Lean. They claim that component specifications compose and that the Hoare logic is a syntactic presentation of weakest preconditions.\n\nThe strongest reported result is a median 17.9% reduction in logical measurement depth on QASMBench. The listing states that source-to-QPPM allowances are certified for all 35 valid selected small-suite inputs. It does not establish whether the verification covers all possible circuit structures or if the depth reduction holds for larger suites.\n\nResearchers working on fault-tolerant quantum compilers or formal verification of quantum software may find the mechanized Lean proofs and compositional specification approach relevant. Those not interested in formal methods for quantum compilation may ignore it.",
+      "abstract": "Fault-tolerant quantum compilers implement gates through Pauli-product measurements and classical feedback. Verifying such a compiler requires reasoning about the quantum state and the recorded outcomes together: a correction reads an outcome, a gate's internal outcomes must be hidden from its caller, and an application's outcomes must survive optimization. We introduce QPPM, a language for Pauli-product measurement programs, with a weakest-precondition semantics over store-indexed matrix assertions, following quantum Hoare logic with classical variables. Every program terminates, so the Hoare logic is a syntactic presentation of weakest preconditions whose soundness and relative completeness are immediate. Its value is that component specifications compose. All results are mechanized in Lean. We verify lowering of Clifford+$T$ circuits to QPPM with private outcomes and supplied magic states, and an optimizer that eliminates measurements, fuses and reorders rotations, and schedules logical rounds while preserving every outcome that subsequent code can read. A compositional approximation relation bounds the effect of synthesis error on specifications and on output trace distance, and a certificate-checked pipeline selects, among synthesized circuits that meet the user's error limit, the one with the lowest certified depth bound. On QASMBench, verified fusion and scheduling reduce logical measurement depth by a median of 17.9\\%, and complete source-to-QPPM allowances are certified for all 35 valid selected small-suite inputs.",
+      "takeaways": [
+        "The object is a formal verification framework for Pauli-product measurement compilation, not a new physical quantum algorithm.",
+        "The visible limit is that the reported depth reduction is measured on a specific benchmark suite (QASMBench) with 35 small-suite inputs, not on arbitrary or large-scale circuits.",
+        "The artifact status is that all results are mechanized in Lean, but no code repository URL is provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that their verified optimization methods cut the number of logical measurement steps by a median of 17.9% when tested on the QASMBench benchmark.",
+        "brief": "The authors created a new programming language called QPPM for controlling quantum computers using specific types of measurements. They used a formal mathematical method called Hoare logic to prove that their compiler works correctly, and they implemented these proofs in a software tool called Lean.\n\nThe main result they report is that their optimization techniques reduced the number of measurement steps by 17.9% on average in a specific test suite. They also confirmed that their method works for 35 specific small test cases. The listing does not say if this performance improvement holds for larger or more complex quantum programs.\n\nPeople who build software for quantum computers or who use formal math to prove software correctness might find this useful. People who are not interested in the mathematical proof of quantum software can likely skip it.",
+        "takeaways": [
+          "This is a tool for proving that quantum computer software works correctly, not a new way to run quantum calculations.",
+          "The performance improvement was only tested on a small set of 35 specific test cases, so it may not apply to all quantum programs.",
+          "The authors say their proofs are built in a tool called Lean, but they did not provide a link to the code in this summary."
+        ]
+      },
+      "actions": [
+        "Verify the Lean proof artifacts and the QASMBench subset definition by consulting the full PDF.",
+        "Check if the 17.9% depth reduction is statistically significant across different circuit types by reviewing the experimental section in the PDF."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-10-26",
+        "publishedOn": "2026-10-26",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.31694"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-26T18:45:54.073Z"
+      }
+    },
+    {
+      "id": "2610.31695",
+      "arxivId": "2610.31695",
+      "url": "https://arxiv.org/abs/2610.31695",
+      "topic": "Security",
+      "reported": "The authors report that training the guard to score content no lower than its most harmful part cuts attack success from 75% to 0.8-1.6% on attack families, decoys and forged queries held out of training.",
+      "metrics": [
+        "75 held-out AdvBench requests",
+        "at least 93% of its flagged items",
+        "from 75% to 0.8-1.6%"
+      ],
+      "title": "Fooling LLM Safety Guards into Judging the Wrong Text",
+      "authors": "Utkarsh Kanwat",
+      "takeaway": "The paper claims that LLM safety guards can be fooled into judging the wrong text via a mechanism called target rebinding, where appended forged structures cause the guard to evaluate a decoy instead of the harmful request.",
+      "brief": "The authors propose that safety guards fail because they grade the last complete task in their input, allowing appended forged queries to rebind the guard's attention away from the harmful request. This mechanism, termed target rebinding, explains why specific attack families succeed against multiple guard models.\n\nIn a pre-registered test, an appended forged query and decoy cleared all 75 held-out AdvBench requests flagged by Shieldstral-1.0-3B. A mitigation strategy involving training the guard to score content no lower than its most harmful part reduced attack success from 75% to 0.8-1.6% on held-out items. However, a score-guided search still beat this trained guard on 47 of 50 items, and the non-inferiority test for clean AUROC was inconclusive.\n\nResearchers working on LLM safety guard robustness or prompt injection defenses should examine the specific attack families and the GuardRebind benchmark. Those not focused on guard evaluation mechanisms or adversarial robustness may find the specific model interactions less relevant to their immediate work.",
+      "abstract": "Safety guards check content before an LLM application acts on it, and most paste that content into a plain-text prompt. Content that imitates the prompt can append a second task, and the guard answers that one instead. We call this target rebinding. Our explanation is that the guard grades the last complete task in its input, here a harmless decoy, so the harmful request goes through unchanged. In a pre-registered test, an appended forged query and decoy clear all 75 held-out AdvBench requests that Shieldstral-1.0-3B flags. The guard is not persuaded: a directive to ignore the text above clears none of them, and in a follow-up run a harmful decoy stops the attack. On our GuardRebind benchmark, each of five guards has an attack family, chosen per guard, that clears at least 93% of its flagged items. Rebinding explains this best on Shieldstral and gpt-oss-safeguard; on ShieldGemma and Llama Guard 3, generic evasion and trailing text respectively do part of the work, and Qwen3Guard falls mainly to a forgery of its whole task. Training the guard to score content no lower than its most harmful part cuts attack success from 75% to 0.8-1.6% on attack families, decoys and forged queries held out of training. All of these attacks append the forged structure after the request, and we added the held-out-decoy evaluation after a first round of test runs. Clean AUROC falls by at most 0.01, but our test of non-inferiority is inconclusive. A score-guided search still beats this trained guard on 47 of 50 items, usually by placing forged structure before the request. On about half of the items where the search wins, the same search also finds benign text, with no forged structure, that clears the guard.",
+      "takeaways": [
+        "The object is a specific adversarial attack mechanism, target rebinding, that exploits the sequential processing nature of LLM safety guards to bypass content checks.",
+        "A visible limit is that the proposed training mitigation is not fully robust, as a score-guided search still succeeds on 47 of 50 items, often by placing forged structure before the request.",
+        "The artifact status is unclear as no code repository is declared, and the listing notes that the held-out-decoy evaluation was added after initial test runs, suggesting the benchmark may still be evolving."
+      ],
+      "plain": {
+        "reported": "The authors report that training the safety checker to ensure it never rates content as safer than its most dangerous part reduced the success rate of attacks from 75% to between 0.8% and 1.6% on new, unseen attack types and fake texts.",
+        "brief": "The authors suggest that safety checkers for AI models fail because they look at the last instruction in a text block. Attackers can add a fake, harmless instruction at the end, causing the checker to ignore the actual harmful request. This trick is called target rebinding.\n\nIn a planned test, this trick worked on all 75 harmful requests that a specific safety model (Shieldstral-1.0-3B) was supposed to catch. A fix involving retraining the model to be stricter reduced the attack success rate significantly. However, a more advanced search method still managed to bypass the fixed model in 47 out of 50 cases, and the test to see if the fix harmed normal performance was inconclusive.\n\nPeople who build or test AI safety systems should look at how these specific attacks work and the new benchmark they created. People who do not work on AI safety or adversarial attacks may not find the technical details about specific model failures useful for their current projects.",
+        "takeaways": [
+          "The focus is on a specific way to trick AI safety checkers by adding fake instructions to the end of a text, making them ignore the real harmful content.",
+          "A clear weakness is that the proposed fix, which involves retraining the checker, is not perfect; a smarter search method can still find ways to bypass it in most cases.",
+          "It is not clear if the code or data is available, and the authors admit they changed their testing method after the first round of tests, which might affect the reliability of the results."
+        ]
+      },
+      "actions": [
+        "Verify the pre-registration details and the specific composition of the GuardRebind benchmark by reviewing the full PDF to ensure the held-out sets were not contaminated by the initial test runs.",
+        "Check the full paper for the specific implementation details of the 'score-guided search' to understand how it bypasses the trained guard, as the abstract only provides a high-level description of its success rate."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-26",
+        "publishedOn": "2026-10-26",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.31695"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-26T18:45:54.073Z"
+      }
+    },
+    {
+      "id": "2610.31706",
+      "arxivId": "2610.31706",
+      "url": "https://arxiv.org/abs/2610.31706",
+      "topic": "Stats",
+      "reported": "The authors report that in simulations based on an energy-balance model, the correction reduced the spread of estimates across four twins from 0.66 to 0.03 percentage points of weight loss with conservative coverage.",
+      "metrics": [
+        "0.66 to 0.03 percentage points of weight loss"
+      ],
+      "title": "Where the Data End and the Mechanism Begins: Doubly Robust Causal Digital Twins for Treatment Strategies",
+      "authors": "Cong Cao",
+      "takeaway": "The paper claims to provide doubly robust causal digital twins for treatment strategies that separate data-supported from unsupported counterfactual parts.",
+      "brief": "The authors propose a method that splits counterfactual means into parts supported by data and parts not, using a cross-fitted sequential doubly robust estimator. They report that in simulations, this correction reduced estimate spread from 0.66 to 0.03 percentage points of weight loss across four twins. The listing does not establish performance on real clinical data or specific software artifacts.\n\nThe strongest reported evidence comes from simulations using an energy-balance model of weight change under glucagon-like peptide-1 receptor agonist therapy. The authors state that the exact mechanism was rejected in every replicate for unsupported patients. The listing does not specify the sample size or the specific clinical population used in these simulations.\n\nResearchers working on causal inference with mechanistic models may find the sensitivity analysis framework relevant. Those requiring validated clinical decision support tools should note the absence of reported real-world validation in the abstract.",
+      "abstract": "Digital twins are increasingly used to ask how a patient's health would evolve under alternative treatment strategies. When a twin couples a mechanistic model with learned components and is fitted to observational records, its answer mixes information from the data with assumptions from the mechanism. For sustained strategies that begin at a clinical landmark, we split the counterfactual mean into a part the data support, where patients follow the strategy with probability bounded away from zero, and a part they do not. On the supported part, a cross-fitted sequential doubly robust estimator that uses the twin as its outcome model is consistent whenever the decision model is, so twins that fit equally well but disagree as plug-in estimators agree after correction. On the unsupported part, we characterize the values compatible with the data and with a residual of size at most epsilon around the mechanism. This set is nested in epsilon, reduces to a point when the mechanism is exact and identifiable, and recovers assumption-free bounds as epsilon grows, so the penalty weight of a physics-informed loss becomes a sensitivity parameter. Knowledge constraints on how covariates enter the mechanism shrink the set, and when support grows over time, back-testing gives a data-based lower bound on epsilon. In simulations based on an energy-balance model of weight change under glucagon-like peptide-1 receptor agonist therapy, the correction reduced the spread of estimates across four twins from 0.66 to 0.03 percentage points of weight loss with conservative coverage; on unsupported patients, the exact mechanism was rejected in every replicate, the bounds covered the truth at every residual size not rejected, and a mechanism-free extrapolation was biased by 0.5 points.",
+      "takeaways": [
+        "The object is a statistical estimator for counterfactual means in digital twins that distinguishes data-supported from unsupported regions.",
+        "A visible limit is that the reported evidence relies on simulations based on an energy-balance model rather than observational clinical records.",
+        "The artifact status is not established in the listing, as no code repository or software implementation is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that in computer simulations using a model of how weight changes with a specific diabetes drug, their correction method narrowed the difference between four different model versions from 0.66 to 0.03 percentage points of weight loss, while maintaining conservative coverage.",
+        "brief": "The authors suggest a way to separate predictions that are backed by actual patient data from those that rely on theoretical assumptions. They show that in their simulations, their method made the predictions from four different models much more consistent. The abstract does not say if this works on real hospital data or if the computer code is available.\n\nThe best proof they give comes from simulations using a mathematical model of weight change. They say that for patients where the data didn't support the prediction, their method correctly identified that the theoretical model was wrong. The abstract does not say how many patients were in these simulations or what kind of patients they were.\n\nPeople who study how to combine data with scientific models might find this useful. People who need tools for making medical decisions should note that the abstract does not mention testing on real patients.",
+        "takeaways": [
+          "The tool is a statistical method for making predictions about patient health that separates what the data says from what the theory says.",
+          "A clear limitation is that the results are from computer simulations, not from real medical records.",
+          "It is not stated in the listing whether the computer code for this method is available to download."
+        ]
+      },
+      "actions": [
+        "Verify the simulation setup and energy-balance model details in the full PDF to assess the realism of the test environment.",
+        "Check the full text for any mention of real-world data validation or code availability not included in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-10-26",
+        "publishedOn": "2026-10-26",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.31706"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-26T18:45:54.073Z"
+      }
+    },
+    {
+      "id": "2610.31788",
+      "arxivId": "2610.31788",
+      "url": "https://arxiv.org/abs/2610.31788",
+      "topic": "Health",
+      "reported": "The authors report that their derived closed form matches exact medians to within 2% in 19 of 25 parameter sets, with a worst case of about 6%.",
+      "metrics": [
+        "2% in 19 of 25 parameter sets",
+        "worst case of about 6%",
+        "up to 2900-fold"
+      ],
+      "title": "Kinetic Proofreading Activation Times Beyond the Weibull Limit",
+      "authors": "Thomas Mourier, Cameron Hopkinson, Kenny Wong",
+      "takeaway": "The paper claims to derive a closed-form expression for kinetic proofreading activation times that retains the dissociation rate, correcting the Weibull approximation's failure when repeated unbinding and rebinding dominate.",
+      "brief": "The authors propose a closed-form correction to the Weibull law for T-cell activation times that explicitly includes the ligand dissociation rate, which the standard approximation omits. They identify a dimensionless parameter, Lambda, that predicts when the Weibull law fails and when their new expression is required.\n\nThe authors state that their closed form matches exact medians to within 2% in 19 of 25 parameter sets, with a worst-case error of about 6%. They also report that the true activation time can exceed the Weibull prediction by up to 2900-fold on their parameter grid. The listing does not specify the biological validation or experimental context for these parameter sets.\n\nResearchers modeling T-cell receptor signaling kinetics or stochastic proofreading processes may find the closed-form correction useful for scenarios where the Weibull approximation is known to fail. Those relying on the Weibull law for short-time approximations where Lambda is less than 1 may not need the new expression.",
+      "abstract": "T cells can detect a few foreign peptide-major histocompatibility complexes (pMHCs) among a far larger number of self pMHCs. Kinetic proofreading explains this discrimination: a receptor that has bound its ligand must complete nKP signaling steps, each at rate kp, before it activates, and dissociation at any step resets its progress. When many receptors are engaged at once, the time to the first activation has been approximated by a Weibull law taken from the short-time limit of this process. The Weibull law is convenient, but it does not contain the dissociation rate koff, even though koff is what proofreading uses to tell ligands apart. Using the exact first- passage law of the underlying continuous-time Markov chain together with stochastic simulations, we show that the relative error of the Weibull law is set by a single dimensionless number {\\Lambda}, the Weibull-predicted activation time measured in units of nKP + 1 bound-state lifetimes. For {\\Lambda} < 1 the first receptor to activate does so before its ligand has ever dissociated, and the Weibull law holds. As {\\Lambda} grows, activation relies increasingly on repeated unbinding and rebinding. The true activation time then exceeds the Weibull prediction by up to 2900-fold on our parameter grid, and the effective Weibull shape falls to one, so activation becomes memoryless instead of timer-like. We derive a closed form that keeps koff by treating the successful pass through the proofreading chain separately from the time lost to failed attempts. It matches exact medians to within 2% in 19 of 25 parameter sets, with a worst case of about 6%, and reproduces the loss of timer-like behavior. Because {\\Lambda} is computed from the Weibull prediction itself, it shows in advance how far that formula can be trusted; where it cannot, the new expression requires only a one-dimensional root find.",
+      "takeaways": [
+        "The object is a mathematical correction to a stochastic activation time model, specifically addressing the omission of the dissociation rate in the Weibull approximation.",
+        "A visible limit is that the accuracy of the new closed form is reported only on a specific parameter grid, with a worst-case error of about 6%, and the biological relevance of these parameters is not detailed in the abstract.",
+        "The artifact status is not established in the listing; no code or data repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that their new mathematical formula matches the precise median activation times to within 2% in 19 out of 25 tested scenarios, with the largest error being about 6%.",
+        "brief": "The authors suggest a new mathematical formula to calculate how long it takes for T-cells to activate, fixing a previous shortcut that ignored how quickly the cell stops binding to a target. They identify a specific number, Lambda, that tells you when the old shortcut is wrong and when the new formula is needed.\n\nThe authors state that their new formula is very accurate, matching the precise median times to within 2% in most tested scenarios, with the worst error being about 6%. They also note that the old shortcut can be off by as much as 2900 times in some cases. The abstract does not say if these scenarios match real biological experiments.\n\nScientists studying how T-cells recognize foreign invaders might use this new formula when the old one is known to be inaccurate. Those using the old shortcut for quick estimates where the conditions are simple may not need the new formula.",
+        "takeaways": [
+          "The subject is a mathematical fix for a model of how T-cells decide to activate, specifically correcting a shortcut that missed a key binding detail.",
+          "A visible limit is that the accuracy is only reported for a specific set of test conditions, with a maximum error of about 6%, and it is unclear if these conditions reflect real biology.",
+          "It is not stated in the listing whether code or data is available for download."
+        ]
+      },
+      "actions": [
+        "Verify the parameter grid and the definition of the dimensionless number Lambda in the full PDF to assess the generalizability of the 2% and 6% error bounds.",
+        "Check the full PDF for any experimental or simulation data that validates the 2900-fold discrepancy claim against physical or biological constraints."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM"
+      ],
+      "listing": {
+        "listedOn": "2026-10-26",
+        "publishedOn": "2026-10-26",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.31788"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-26T18:45:54.073Z"
+      }
+    },
+    {
+      "id": "2610.31802",
+      "arxivId": "2610.31802",
+      "url": "https://arxiv.org/abs/2610.31802",
+      "topic": "Engineering",
+      "reported": "The authors report that their proposed framework requires about 31 ms, a factor of 2.5-6.8 lower than the 76, 180, and 210 ms required by FIFO, FSF, and Pure-TDMA.",
+      "metrics": [
+        "about 31 ms",
+        "factor of 2.5-6.8",
+        "76, 180, and 210 ms"
+      ],
+      "title": "Resource Slicing for Time-Sensitive Data Traffic in Non-Terrestrial Networks with FSO ISLs",
+      "authors": "Abid Afridi, Alexis A. Dowhuszko, Risto Wichman, Jyri H\\\"am\\\"al\\\"ainen",
+      "takeaway": "The paper presents a multi-hop slicing framework that reserves time-frequency resources for time-sensitive flows in LEO satellite networks to maintain end-to-end delay guarantees.",
+      "brief": "The authors propose a slicing framework that reserves time-frequency resources per hop based on arrival statistics, delay budgets, and reliability targets. They align reservations temporally to enable pipelined forwarding across inter-satellite links toward ground stations.\n\nThe authors state that under high arrival rates and high reliability targets, their scheme requires about 31 ms, which is a factor of 2.5-6.8 lower than the 76, 180, and 210 ms required by FIFO, FSF, and Pure-TDMA baselines. The listing does not specify the exact simulation parameters, satellite constellation details, or the specific definition of the high arrival rate used for this comparison.\n\nResearchers working on non-terrestrial network resource allocation, satellite queueing management, or time-sensitive communication protocols may find the slicing mechanism relevant. Those focused solely on terrestrial 5G slicing or optical fiber delay guarantees may find the specific LEO inter-satellite link context less applicable.",
+      "abstract": "In multi-hop Low Earth Orbit (LEO) satellite networks, time-sensitive packets experience queueing across multiple satellite hops, causing per-hop waiting times that accumulate and make the maximum end-to-end (E2E) delay difficult to guarantee. This paper presents a novel multi-hop slicing framework that reserves time-frequency resources for each time-sensitive flow of data originating at each satellite, aiming to maintain the reservation of communication resources along every inter-satellite link (ISL) on its route to the ground station (GS). The number of time-frequency resource blocks (RBs) reserved per-hop is determined from the data packet arrival statistics, E2E delay budget, and target level of reliability. Reservations on consecutive links are temporally aligned to enable pipelined forwarding of the time-sensitive data flows aggregated from terrestrial user terminals on the different LEO satellites. We evaluate the proposed framework against conventional scheduling and resource-allocation baselines, including pure time-division multiple access (Pure-TDMA), first-in-first-out (FIFO), and farthest-satellite-first (FSF), over the same multi-hop LEO satellite path. Under light traffic conditions, the baseline schemes provide comparable delay performance; however, their high-percentile delays increase sharply as data traffic load grows, whereas the proposed framework exhibits substantially slower delay growth. At the high arrival rate and high reliability target considered, the proposed scheme requires about 31 ms, a factor of 2.5-6.8 lower than the 76, 180, and 210 ms required by FIFO, FSF, and Pure-TDMA.",
+      "takeaways": [
+        "The object is a multi-hop resource slicing framework for LEO satellite inter-satellite links.",
+        "The visible limit is that the reported delay advantage is specific to high traffic loads and high reliability targets, with baseline performance being comparable under light traffic.",
+        "The artifact status is not established in the listing, as no code or dataset repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that their proposed framework requires about 31 milliseconds, a factor of 2.5-6.8 lower than the 76, 180, and 210 milliseconds required by FIFO, FSF, and Pure-TDMA.",
+        "brief": "The authors propose a system that sets aside specific communication resources for urgent data packets at each satellite hop. They use data arrival patterns, delay limits, and reliability goals to decide how much to reserve. They align these reservations in time so data can move smoothly through the satellite chain to the ground.\n\nThe authors state that when traffic is heavy and reliability requirements are high, their scheme takes about 31 milliseconds, which is 2.5 to 6.8 times faster than the 76, 180, and 210 milliseconds taken by standard methods like FIFO, FSF, and Pure-TDMA. The listing does not say exactly what simulation settings, satellite details, or specific traffic levels were used to get these numbers.\n\nPeople studying how to manage resources in satellite networks, how to handle queues in space, or how to send time-critical data might find this useful. People only interested in ground-based 5G networks or fiber optic delays might find the satellite-specific details less relevant.",
+        "takeaways": [
+          "The subject is a method for reserving communication resources in satellite networks.",
+          "The visible limit is that the speed advantage only appears when traffic is heavy and reliability demands are high; standard methods work just as well when traffic is light.",
+          "The listing does not say if the authors shared their code or data, so the artifact status is unknown."
+        ]
+      },
+      "actions": [
+        "Verify the specific simulation setup, including satellite orbit parameters and traffic models, by reading the full PDF.",
+        "Check the paper's methodology section to confirm how the 'high arrival rate' and 'high reliability target' were defined for the 31 ms result."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-10-26",
+        "publishedOn": "2026-10-26",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.31802"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-26T18:45:54.073Z"
+      }
+    }
+  ]
+}
