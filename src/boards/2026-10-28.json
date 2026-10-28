@@ -1,0 +1,659 @@
+{
+  "date": "2026-10-28",
+  "label": "Wed, Oct 28",
+  "minutes": 10,
+  "poolSize": 149,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-10-28T19:29:31.193Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2610.34283",
+      "arxivId": "2610.34283",
+      "url": "https://arxiv.org/abs/2610.34283",
+      "topic": "AI",
+      "reported": "The authors report that a single ChronoReplay checkpoint improves OVO-S-Bench, OST-Bench, and UCS-Bench together, including a 13.41-point gain on OST-Bench.",
+      "metrics": [
+        "13.41-point gain on OST-Bench",
+        "about 2.41 OST points across two paired seeds"
+      ],
+      "title": "ChronoReplay: One Answer Interface Is Not Enough for Streaming Spatial Intelligence",
+      "authors": "Yihao Hu, Yitong Lin, Pan Wang, Zhihao Wen, Hang Wang, Yiwen Zhao, Deyuan Liu, Yutong Li, Mingda Wan, Yuchen Mao, Tao Lin",
+      "takeaway": "ChronoReplay addresses interface lock-in by replaying heterogeneous spatial supervision as chronologically ordered episodes to improve transfer across multiple spatial benchmarks.",
+      "brief": "The authors propose ChronoReplay to counter interface lock-in, a phenomenon where post-training on one spatial readout degrades performance on others. The method replays heterogeneous supervision as chronologically ordered episodes while retaining source-native targets and balancing supervision across families.\n\nThe authors report that a single checkpoint improves OVO-S-Bench, OST-Bench, and UCS-Bench simultaneously, with a 13.41-point gain on OST-Bench. They attribute transfer gains to answer serialization, family-balanced learning, and chronological replay, noting that adaptive frame selection provides additional inference-time gains. The listing does not establish specific failure modes or unresolved limits beyond the initial observation of weak transfer.\n\nResearchers working on spatial vision-language models or multi-task post-training may find the specific benchmark comparisons and ablation controls relevant. Those not focused on streaming spatial intelligence or VLM supervision balancing may find the specific benchmark suite less applicable to their immediate work.",
+      "abstract": "Training a spatial VLM to answer which side an object lies on does not require it to preserve the metric displacement that determines that answer, while supervision for a distance estimate may leave categorical relations largely unconstrained. When post-training emphasizes one readout, improvements can therefore concentrate on that interface while transfer to others remains weak or even degrades; we call this observed specialization interface lock-in. ChronoReplay addresses it by replaying heterogeneous spatial supervision as chronologically ordered episodes, retaining source-native targets, and balancing supervision across families. Under the same observation access, a single ChronoReplay checkpoint improves OVO-S-Bench, OST-Bench, and UCS-Bench together, including a 13.41-point gain on OST-Bench, and achieves the highest three-benchmark mean among the supervision settings compared here. Same-data controls further separate the ingredients of this transfer: answer serialization redistributes gains across OST and UCS, family-balanced learning improves over ordinary joint SFT and natural turn weighting, and chronological replay exceeds a shifted-order control by about 2.41 OST points across two paired seeds. Adaptive frame selection then changes evidence access while keeping the trained model fixed, providing an additional inference-time gain at lower visual cost. Streaming spatial performance depends on what distinctions supervision preserves, how heterogeneous histories are organized during learning, and what causal evidence inference makes available at test time.",
+      "takeaways": [
+        "The object is a training method for spatial VLMs that organizes heterogeneous supervision into chronological episodes to prevent specialization on a single readout interface.",
+        "A visible limit is that the reported improvements are specific to the compared supervision settings and benchmarks, with the listing not establishing generalizability to other spatial tasks or model architectures.",
+        "The artifact status is indicated by a declared code repository URL, though the listing does not confirm the repository's completeness or current availability."
+      ],
+      "plain": {
+        "reported": "The authors state that their model improves scores on three specific spatial reasoning tests, with a 13.41-point increase on the OST-Bench test.",
+        "brief": "The authors suggest that training a visual language model to answer one type of spatial question can make it worse at answering other types. They propose a method called ChronoReplay that mixes different types of spatial training data in a specific time-ordered way to prevent this problem.\n\nThe authors show that their method improves scores on three different benchmarks at the same time. They break down the results to show that organizing the data by family and using chronological replay are the main factors behind the improvement. The provided text does not list specific situations where the method fails or other limitations.\n\nPeople who build or train visual language models for spatial tasks might find the detailed comparison of training strategies useful. People working in unrelated AI fields may not find the specific benchmark results relevant to their current projects.",
+        "takeaways": [
+          "The paper introduces a training technique for AI models that understand space, designed to stop the model from becoming too specialized in one area.",
+          "The results are limited to the specific benchmarks and training setups mentioned in the abstract, and the text does not say if the method works for other types of models or tasks.",
+          "The authors provide a link to a code repository, but the abstract does not confirm if the code is complete or currently working."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark scores and ablation results in the PDF to confirm the 13.41-point gain and the 2.41-point difference attributed to chronological replay.",
+        "Check the declared GitHub repository to confirm the availability of the ChronoReplay training code and evaluation scripts."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/yihaohu0118/ChronoReplay",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-28",
+        "publishedOn": "2026-10-25",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.34283",
+            "upvotes": 322
+          }
+        ]
+      },
+      "trend": {
+        "votes": 322,
+        "rank": 1,
+        "of": 42,
+        "perDay": 107
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 322,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-28T19:29:31.193Z"
+      }
+    },
+    {
+      "id": "2610.36077",
+      "arxivId": "2610.36077",
+      "url": "https://arxiv.org/abs/2610.36077",
+      "topic": "AI",
+      "reported": "The authors report that their evolved Harnesses improve mean performance by 34 points across 28 training benchmarks and 26 points across 18 unseen benchmarks.",
+      "metrics": [
+        "34 points across 28 training benchmarks",
+        "26 points across 18 unseen benchmarks"
+      ],
+      "title": "The Trinity:Capability-Driven Recursive Self-Improvement for Multimodal Agents",
+      "authors": "Weidong Tang, Ruiheng Wang, Jingxuan Zhang, Hexin Wang, Haoyuan Chen, Zhengfeiyang Zhang, Yixing Ma, Zichen Jiang, Ziyu Guo, Haodong Li, Zhengbo Jiao, Zhiqing Cui, Xinxiang Yin, Shuo Liang, Zhenglin Wan, Hongzhan Lin, Wangbo Zhao Kaipeng Zhang, Pengfei Zhou, Odin Zhang, Yang You",
+      "takeaway": "The paper introduces The Trinity, a recursive self-improvement framework that couples world generation with Harness evolution through Creator, Explorer, and Evolver roles to organize tasks by shared capability requirements.",
+      "brief": "The authors propose a framework that reorganizes task trees into a hierarchical capability tree, using simulated worlds for learning and original tasks for evaluation. They report mean performance improvements of 34 points on training benchmarks and 26 points on unseen benchmarks, including real-world embodied tasks. The listing does not specify the baseline models, the exact definition of the point scale, or the specific composition of the unseen benchmarks.\n\nThe strongest reported evidence is the quantitative gain on both training and unseen benchmarks, attributed to the authors. The listing does not establish whether the reported improvements are statistically significant or how the simulated worlds were verified against the original heterogeneous environments. The authors state that evaluation on original tasks measures transfer, but the specific metrics for those real-world tasks are not detailed in the abstract.\n\nResearchers working on multimodal agent training, environment generation, or capability-based task organization may find the framework relevant. Those focused on single-modality tasks or non-recursive improvement methods may find the specific recursive coupling and capability tree structure less directly applicable. The declared code repository is provided, but the listing does not confirm the completeness or reproducibility of the implementation.",
+      "abstract": "Multimodal intelligence can be viewed as human-guided co-evolution between worlds and agents through interaction. However, scaling this process faces two bottlenecks: constructing heterogeneous, verifiable environments is costly, and manual Harness iteration cannot keep pace with growing task diversity and complexity. A key insight is that tasks with different modalities and surface forms can share the same underlying capability requirements. We therefore introduce The Trinity, a recursive self-improvement framework coupling world generation with Harness evolution through three roles: Creator, Explorer, and Evolver. Drawing on verified execution trajectories, Evolver shifts the basis of task organization from surface categories to shared requirements, reorganizing the original task tree into a hierarchical capability tree. We introduce Capability-Driven Real2Sim2Real: for heterogeneous tasks at the same node, Creator abstracts their common requirements into simplified, verifiable simulated worlds for capability learning, while evaluation on original tasks measures transfer. Along this capability tree, Explorer progressively evolves reusable capability modules through selective inheritance, forming a Harness tree whose validated updates accumulate across iterations within a fixed topology. The resulting Harnesses specialize in different capabilities, motivating a Capability-Aware Harness Router that uses public task information to select compatible module configurations from the tree. Our evolved Harnesses improve mean performance by 34 points across 28 training benchmarks and 26 points across 18 unseen benchmarks, including two real-world embodied tasks.",
+      "takeaways": [
+        "The object is a recursive self-improvement framework for multimodal agents that uses a capability tree to guide world generation and Harness evolution.",
+        "A visible limit is the lack of detail in the listing regarding the baseline comparisons and the specific verification methods for the simulated worlds.",
+        "The artifact status is indicated by a declared GitHub repository, but the listing does not verify the code's functionality or completeness."
+      ],
+      "plain": {
+        "reported": "The authors state that their system improves average scores by 34 points on 28 practice tests and by 26 points on 18 new tests.",
+        "brief": "The authors suggest a system that groups tasks by the skills they require, rather than by their appearance. It creates simple practice environments to teach these skills and tests the agent on the original, more complex tasks. They claim the system improves average scores by 34 points on practice tests and 26 points on new tests. The summary does not say what the starting scores were or how the points are calculated.\n\nThe main proof given is the increase in scores on both practice and new tests. The summary does not say if these improvements are reliable or how the simple practice environments were checked to be accurate. The authors say the system is tested on real-world tasks, but they do not list the specific scores for those tasks.\n\nPeople who build AI agents that handle multiple types of data, like images and text, might find this useful. People who work with only one type of data or who do not use recursive learning might not find it relevant. The authors provide a link to their code, but the summary does not say if the code works completely.",
+        "takeaways": [
+          "The system is a method for improving AI agents by grouping tasks based on the skills needed to solve them.",
+          "A limitation is that the summary does not explain the starting performance levels or how the practice environments were verified.",
+          "The authors provide a link to their code, but the summary does not confirm that the code is complete or functional."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark names and baseline models used in the 28 training and 18 unseen benchmark evaluations by reading the full PDF.",
+        "Check the declared GitHub repository to confirm the availability of the Creator, Explorer, and Evolver implementations and the Capability-Aware Harness Router."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/InfRec-Cardinal/The-Trinity",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-28",
+        "publishedOn": "2026-10-26",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.36077",
+            "upvotes": 310
+          }
+        ]
+      },
+      "trend": {
+        "votes": 310,
+        "rank": 2,
+        "of": 42,
+        "perDay": 155
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 310,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-28T19:29:31.193Z"
+      }
+    },
+    {
+      "id": "2610.35013",
+      "arxivId": "2610.35013",
+      "url": "https://arxiv.org/abs/2610.35013",
+      "topic": "AI",
+      "reported": "The authors report consistent gains over strong RL baselines in experiments across search, tool-use, and automation tasks using 4B and 30B-A3B models.",
+      "metrics": [
+        "4B and 30B-A3B models"
+      ],
+      "title": "Multiscale Policy Optimization for Long-Horizon LLM Agents",
+      "authors": "Tao Ren, Hui Yang, Jia Deng, Tingyang Chen, Qiyao Wang, Shuo Tang, Ziyang Zeng, Yuhua Jiang, Guanghao Li, Huatong Song, Yining Li, Yifan Luo, Kunbao Ding, Feng Chang, Chuan Hao, Ran Tao, Bryan Dai, Jiafeng Liang, Jinyang Jiang",
+      "takeaway": "The paper proposes Multiscale Policy Optimization (MPO) to align credit assignment and policy updates at the turn scale for long-horizon LLM agents.",
+      "brief": "The authors propose Multiscale Policy Optimization (MPO), which combines Multiscale Advantage Estimation and turn-level importance sampling. This approach aims to anchor optimization at turns while allocating credit among tokens more finely.\n\nThe authors state that critic values vary primarily across turns, motivating their method. They report consistent gains over strong RL baselines on search, tool-use, and automation tasks with 4B and 30B-A3B models. The listing does not specify exact performance numbers, specific benchmarks, or failure modes.\n\nResearchers working on reinforcement learning for large language agents may find the turn-level credit assignment mechanism relevant. Those focused on single-turn tasks or non-LLM agents may find the specific application scope limited.",
+      "abstract": "Long-horizon LLM agents interact with their environments through complete assistant turns while generating each action token by token. We observe that critic values vary primarily across turns, motivating optimization anchored at turns with finer credit allocation among tokens. We propose Multiscale Policy Optimization (MPO), combining Multiscale Advantage Estimation (MAE) and turn-level importance sampling to align credit assignment and policy updates at the turn scale. Extensive experiments across search, tool-use, and automation tasks with 4B and 30B-A3B models demonstrate consistent gains over strong RL baselines.",
+      "takeaways": [
+        "The core object is a policy optimization method that separates turn-level and token-level credit assignment.",
+        "The listing does not establish specific quantitative improvements or identify unresolved limits beyond the general task scope.",
+        "No code repository or artifact is declared in the supplied metadata."
+      ],
+      "plain": {
+        "reported": "The authors say their method performs better than existing strong reinforcement learning methods in tests involving searching, using tools, and automating tasks, using models with 4 billion and 30 billion parameters.",
+        "brief": "The authors suggest a new way to train AI agents that makes long-term decisions. They noticed that the AI's internal estimates of success change mostly when it finishes a full response, not word by word. So, they designed a system that judges the whole response first, then fine-tunes the individual words.\n\nThey claim this method works better than other strong training methods. They tested it on tasks like searching for information, using digital tools, and automating processes. They used two sizes of AI models: one with 4 billion parameters and one with 30 billion. The summary does not give specific scores or say where the method fails.\n\nPeople who build AI systems that need to make many steps to finish a job might find this useful. People who only care about simple, single-step AI tasks might not find it relevant.",
+        "takeaways": [
+          "The main idea is a training method that looks at the whole AI response before looking at individual words.",
+          "The summary does not say exactly how much better the method is or what specific problems it cannot solve.",
+          "The authors did not provide a link to their code or software tools in this summary."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark names and numerical results by reading the full PDF.",
+        "Check the paper for details on the implementation of turn-level importance sampling."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-28",
+        "publishedOn": "2026-10-26",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.35013",
+            "upvotes": 244
+          }
+        ]
+      },
+      "trend": {
+        "votes": 244,
+        "rank": 3,
+        "of": 42,
+        "perDay": 122
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 244,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-28T19:29:31.193Z"
+      }
+    },
+    {
+      "id": "2610.37381",
+      "arxivId": "2610.37381",
+      "url": "https://arxiv.org/abs/2610.37381",
+      "topic": "AI",
+      "reported": "The authors report that PDRVLA achieves success rates of 99.3% on LIBERO, 89.9% on LIBERO-Plus, 93.6% on RoboTwin~2.0, and 81.5% on SimplerEnv.",
+      "metrics": [
+        "99.3% on LIBERO",
+        "89.9% on LIBERO-Plus",
+        "93.6% on RoboTwin~2.0"
+      ],
+      "title": "PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations",
+      "authors": "Hanqing Wang, Zhaotian Cai, Ruichuan An, Bohan Zeng, Tao Zhang, Yilin Chen, Xu Jiang, Kaiquan Chen, Chongyang Wu, Haoran Li, Fan Yang, Mingan Lin, Wentao Zhang, Zenan Zhou, Youzheng Wu",
+      "takeaway": "PDRVLA is a Vision-Language-Action model that uses a lightweight Physical Dynamics Module to condition action generation without online video generation.",
+      "brief": "The authors propose PDRVLA, a Vision-Language-Action model that extracts physical tokens from vision-language features to condition robot actions. This design avoids the high latency associated with generating future videos in the control loop.\n\nThe authors report success rates of 99.3% on LIBERO, 89.9% on LIBERO-Plus, 93.6% on RoboTwin~2.0, and 81.5% on SimplerEnv. They state that training relies entirely on publicly available data expanded through synthesis and annotation. The listing does not establish whether these results transfer to physical hardware or real-world environments.\n\nResearchers working on robot control, vision-language-action models, or physical dynamics representations may find the specific module architecture and simulation benchmarks relevant. Those focused solely on video generation latency or non-robotic applications may find the scope limited.",
+      "abstract": "Vision--Language--Action (VLA) models generate robot actions from visual observations and language instructions, but their understanding of physical dynamics remains limited. Video world models can capture scene dynamics, yet generating future videos introduces high latency into the control loop. We introduce PDRVLA, whose lightweight Physical Dynamics Module extracts physical tokens from vision--language features to condition action generation without online video generation. The module learns through direct prediction of future RGB, depth, and optical-flow features, with auxiliary supervision through a frozen pretrained video world model. Training relies entirely on publicly available data, expanded through human-to-robot synthesis, subtask annotation, and embodied chain-of-thought (ECoT) annotation. Across four simulation benchmarks, PDRVLA achieves success rates of 99.3% on LIBERO, 89.9% on LIBERO-Plus, 93.6% on RoboTwin~2.0, and 81.5% on SimplerEnv. Ablations show improved future prediction with world-model supervision and evaluate how subtask conditioning, future object-pose supervision, and ECoT training affect action success.",
+      "takeaways": [
+        "The object is a VLA model with a specific Physical Dynamics Module for action conditioning.",
+        "The visible limit is that reported results are confined to four simulation benchmarks.",
+        "The artifact status is not established in the listing, as no code repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that their model achieves success rates of 99.3% on LIBERO, 89.9% on LIBERO-Plus, 93.6% on RoboTwin~2.0, and 81.5% on SimplerEnv.",
+        "brief": "The authors propose a robot control model that uses visual and language inputs to predict actions. It includes a special component that understands physical movement without needing to generate video predictions in real-time, which can be slow.\n\nThe authors report high success rates on four computer simulation tests: 99.3% on LIBERO, 89.9% on LIBERO-Plus, 93.6% on RoboTwin~2.0, and 81.5% on SimplerEnv. They state the model was trained using public data and synthetic data. The listing does not say if the model works on real physical robots.\n\nPeople studying how robots use cameras and language to move might find the specific design and test results useful. People interested in video creation or non-robot topics might find the paper less relevant.",
+        "takeaways": [
+          "The paper describes a robot control model with a module for understanding physical dynamics.",
+          "The reported results are only from computer simulations, not real-world tests.",
+          "The listing does not provide a link to the code or software for the model."
+        ]
+      },
+      "actions": [
+        "Verify the specific implementation details of the Physical Dynamics Module in the full PDF.",
+        "Check the full PDF for details on the human-to-robot synthesis and ECoT annotation methods."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-28",
+        "publishedOn": "2026-10-27",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.37381",
+            "upvotes": 135
+          }
+        ]
+      },
+      "trend": {
+        "votes": 135,
+        "rank": 4,
+        "of": 42,
+        "perDay": 135
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 135,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-27"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-28T19:29:31.193Z"
+      }
+    },
+    {
+      "id": "2610.33139",
+      "arxivId": "2610.33139",
+      "url": "https://arxiv.org/abs/2610.33139",
+      "topic": "Physics",
+      "reported": "The authors report that a specialized Grover oracle for Minecraft 1.13.1 seed recovery uses 275 circuit qubits, 48,896 CX gates, and depth 4,482, measured against a baseline of 467 qubits, 2,038,804 CX gates, and depth 186,328 under Qiskit level-0 accounting.",
+      "metrics": [
+        "275 circuit qubits",
+        "48,896 CX gates",
+        "depth 4,482"
+      ],
+      "title": "The Cost of a Real Grover Oracle: Minecraft Seed Search from Software to Quantum Hardware",
+      "authors": "Evan M. Reeves, Elias Sopkin, Thomas A. Searles",
+      "takeaway": "The paper claims that specializing known-constant arithmetic in a Grover oracle for Minecraft seed recovery reduces qubit width and gate count compared to a register-to-register baseline.",
+      "brief": "The authors present a resource estimation for a Grover oracle targeting Minecraft 1.13.1 seed recovery, arguing that known-constant arithmetic reduces the placement-predicate width from 6n+3 to 4n+3 qubits and changes structural scaling from Theta(n^3) to O(n^2) for two-qubit gates.\n\nThey report that the specialized construction uses 275 qubits, 48,896 CX gates, and depth 4,482, versus 467 qubits, 2,038,804 CX gates, and depth 186,328 for the baseline. The authors state that reduced-width circuits were executed on IBM processors and Quantinuum H2-1, showing larger one-iteration increases in marked-state probability for the specialized construction, though they note substantial routing sensitivity in the IBM experiments.\n\nResearchers working on quantum search or procedural content generation may find the specific arithmetic specialization relevant. Those not interested in Minecraft seed recovery or Grover oracle optimization may ignore it. The listing does not provide code or a repository URL.",
+      "abstract": "We present the resource estimation of how known-constant arithmetic changes the cost of a Grover oracle for Minecraft 1.13.1 seed recovery, an application of quantum search to procedural content generation. The oracle developed here combines a structure-placement predicate with a reversible inverse transform of the linear congruential generator for the 32-bit residual search. Reduced-width arithmetic, phase marking, uncomputation, and complete Grover loops are verified against an independent Java reference, while production-width circuits are structurally audited. Direct Fourier-basis constant arithmetic reduces the placement-predicate width from 6n+3 to 4n+3 qubits and the structural scaling of the two-qubit gate counts from Theta(n^3) to O(n^2). Under backend-agnostic common-basis Qiskit level-0 {u, CX} accounting, the representative nonzero-r folded residual-search construction uses 275 circuit qubits, 48,896 CX gates, and depth 4,482, versus 467 qubits, 2,038,804 CX gates, and depth 186,328 for the original register-to-register baseline. Multi-placement conjunctions expose a width-recomputation tradeoff, and exact enumeration identifies a plateau in candidate reduction for the benchmark. We executed reduced-width placement circuits within complete Grover loops on IBM processors and Quantinuum H2-1 and show larger one-iteration increases in marked-state probability for the specialized construction than for the baseline. These results quantify the resource benefits of arithmetic specialization and show substantial routing sensitivity in the reduced-width IBM hardware experiments. Together, the results quantify the effect of specializing known-constant arithmetic within a PCG-derived oracle and show that its compiled hardware behavior strongly depends on routing and execution context.",
+      "takeaways": [
+        "The object is a Grover oracle for Minecraft 1.13.1 seed recovery using known-constant arithmetic.",
+        "A visible limit is the substantial routing sensitivity observed in the reduced-width IBM hardware experiments.",
+        "The artifact status is not established in the listing, as no code or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that a specialized quantum search circuit for finding Minecraft game seeds uses 275 quantum bits, 48,896 two-qubit logic gates, and a circuit depth of 4,482 steps, compared to a standard circuit using 467 quantum bits, 2,038,804 gates, and 186,328 steps.",
+        "brief": "The authors estimate the resources needed for a quantum search algorithm designed to find specific Minecraft game seeds. They argue that using specialized math for known constants reduces the number of quantum bits needed from 6n+3 to 4n+3 and improves the scaling of gate counts from cubic to quadratic.\n\nThey report that their specialized circuit uses 275 quantum bits, 48,896 gates, and depth 4,482, while the standard circuit uses 467 bits, 2,038,804 gates, and depth 186,328. The authors state they ran these circuits on IBM and Quantinuum quantum computers, finding that the specialized circuit showed larger probability increases in one iteration, but noted that performance on IBM hardware was highly sensitive to how the circuit was routed.\n\nPeople working on quantum search algorithms or game generation might find the math specialization useful. People not interested in Minecraft seeds or quantum search might ignore it. The listing does not include any code or link to a repository.",
+        "takeaways": [
+          "The object is a quantum search circuit for finding Minecraft game seeds using specialized math.",
+          "A visible limit is that the performance on IBM hardware was very sensitive to the routing of the circuit.",
+          "The artifact status is not established because the listing does not declare any code or repository."
+        ]
+      },
+      "actions": [
+        "Verify the specific gate counts and depth metrics by checking the full PDF for the Qiskit level-0 accounting details.",
+        "Check the full PDF for details on the Quantinuum H2-1 execution results and the specific routing sensitivity issues on IBM hardware."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-10-28",
+        "publishedOn": "2026-10-28",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.33139"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-28"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-28T19:29:31.193Z"
+      }
+    },
+    {
+      "id": "2610.35986",
+      "arxivId": "2610.35986",
+      "url": "https://arxiv.org/abs/2610.35986",
+      "topic": "Econ",
+      "reported": "The authors report that higher MFN protection simultaneously reduces imports and redirects trade toward preferential exporters, measured using a structural gravity model applied to recent US trade policy changes.",
+      "metrics": [],
+      "title": "Leveraging US Commercial Adjustments: MFN Tariffs and Trade Diversion",
+      "authors": "Maria Cipollina, Luca De Benedictis",
+      "takeaway": "The paper claims that MFN tariff increases amplify the competitive advantage of preferential partners, generating trade diversion by reshaping relative market access.",
+      "brief": "The authors argue that MFN tariff hikes do more than raise costs; they increase the value of existing trade preferences, thereby redirecting trade toward preferential partners.\n\nThey estimate a structural gravity model with CES-consistent bilateral tariff margins using domestic and international trade data. They report that these effects are highly heterogeneous, with the largest losses concentrated in intermediate and capital goods. The listing does not specify the exact datasets, sample period, or quantitative magnitude of the reported trade diversion.\n\nResearchers studying trade policy, gravity models, or US tariff impacts may find the structural approach relevant. Those seeking specific numerical estimates of trade diversion or non-US applications should verify the full text for details not present in the abstract.",
+      "abstract": "Most-favored-nation (MFN) tariff increases do more than raise trade costs. By changing the relative tariff treatment of competing exporters, they increase the value of existing trade preferences, reshaping relative market access and trade allocation. While the trade-reducing effects of higher tariffs are well established, much less is known about this mechanism. We investigate whether higher MFN tariffs amplify the competitive advantage of preferential partners, generating trade diversion. Using domestic and international trade data, we estimate a structural gravity model with CES-consistent bilateral tariff margins and examine recent changes in US trade policy as an empirical application. We find that higher MFN protection simultaneously reduces imports and redirects trade toward preferential exporters. These effects are highly heterogeneous across sectors and regions, with the largest losses concentrated in intermediate and capital goods, highlighting the role of MFN tariffs in reshaping relative market access and global trade patterns.",
+      "takeaways": [
+        "The object is a structural gravity model estimating bilateral tariff margins to isolate the trade diversion effect of MFN tariffs.",
+        "A visible limit is the lack of specific quantitative results or dataset details in the abstract, leaving the magnitude of the reported effects unverified from this listing.",
+        "No code or data repository is declared in the listing, so the artifact status is unknown."
+      ],
+      "plain": {
+        "reported": "The authors report that raising standard tariffs for all countries at once reduces total imports but shifts some of that trade to countries that already have special lower-tariff deals with the US, measured using a mathematical model of trade flows applied to recent US policy changes.",
+        "brief": "The authors argue that raising standard tariffs for all countries does not just make trade more expensive; it makes special trade deals with certain countries more valuable, which causes trade to shift toward those countries.\n\nThey use a mathematical model of trade flows that accounts for how different tariffs affect different pairs of countries, using data on domestic and international trade. They report that these effects vary widely by industry and region, with the biggest drops in trade happening in industries that sell parts and machinery. The summary does not say exactly which data they used, what time period they looked at, or how much trade actually shifted.\n\nPeople who study how trade rules affect business or how to model trade flows might find this useful. People looking for specific numbers on how much trade shifted or studies about countries other than the US should check the full paper for details not in the summary.",
+        "takeaways": [
+          "The main thing they studied is a mathematical model that calculates how different tariffs affect trade between specific pairs of countries to see if standard tariff hikes cause trade to shift to countries with special deals.",
+          "A clear limitation is that the summary does not give specific numbers on how much trade shifted or exactly which data was used, so the size of the effect cannot be confirmed from this text alone.",
+          "The listing does not say if the authors shared their code or data, so it is unknown if the work can be reproduced."
+        ]
+      },
+      "actions": [
+        "Verify the specific datasets and sample period used in the structural gravity model by reading the full PDF.",
+        "Check the results section for the quantitative magnitude of trade diversion and the specific sectoral breakdowns mentioned in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-10-28",
+        "publishedOn": "2026-10-28",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.35986"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-28"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-28T19:29:31.193Z"
+      }
+    },
+    {
+      "id": "2610.35996",
+      "arxivId": "2610.35996",
+      "url": "https://arxiv.org/abs/2610.35996",
+      "topic": "Security",
+      "reported": "The authors report that on AMLworld HI-Small, the observable baseline yields the largest gain and keeps it as fragmentation shrinks the visible slice.",
+      "metrics": [
+        "up to 32 silos"
+      ],
+      "title": "Pricing Cross-Bank Context in Federated Anti-Money Laundering",
+      "authors": "Lidia Losavio, Dario Fenoglio, Martin Gjoreski, Marc Langheinrich",
+      "takeaway": "The paper claims to enable multi-layer Graph Neural Network computation for cross-bank anti-money laundering without additional account-specific exchange by exploiting transactions already recorded by both endpoint banks.",
+      "brief": "The authors propose a method to approximate remote account states locally using transactions already recorded by both endpoint banks, enabling multi-layer Graph Neural Network computation without additional account-specific exchange. They test whether remaining context is worth sharing using a disclosure ladder that adds two transaction counts per remote account or the counterparty's own GNN states.\n\nOn AMLworld HI-Small, across six GNN backbones and up to 32 silos, the observable baseline yields the largest gain and keeps it as fragmentation shrinks the visible slice. Counts add a robust correction, while exact remote states help only in specific regimes. In controlled privacy-utility studies, the noise needed to protect shared states erases their detection value before it buys meaningful privacy, whereas counts stay useful even under strong privacy protection.\n\nResearchers working on federated learning for financial fraud detection or graph neural networks in privacy-constrained settings should open this paper. Those not focused on cross-institutional data sharing for anti-money laundering may ignore it.",
+      "abstract": "Most graph-based Anti-Money Laundering (AML) methods assume access to a pooled transaction graph containing all accounts and payments, which in reality does not exist. Federated learning offers the necessary privacy guarantees but it remains unclear how money laundering patterns spanning separate graphs can effectively be detected. We exploit transactions already recorded by both endpoint banks to approximate remote account states locally, enabling multi-layer Graph Neural Network (GNN) computation without additional account-specific exchange. Starting from this baseline, we test whether the remaining context is worth sharing, using a disclosure ladder that adds two transaction counts per remote account or the counterparty's own GNN states. On AMLworld HI-Small, across six GNN backbones and up to 32 silos, the observable baseline yields the largest gain and keeps it as fragmentation shrinks the visible slice; counts add a robust correction, while exact remote states help only in specific regimes. In controlled privacy--utility studies, the noise needed to protect shared states erases their detection value before it buys meaningful privacy, whereas counts stay useful even under strong privacy protection. These findings support a practical rule for banks: use what they already record, and formally protect the little that must move.",
+      "takeaways": [
+        "The object is a federated learning approach for anti-money laundering that approximates remote account states locally using existing transaction records.",
+        "A visible limit is that exact remote states help only in specific regimes, and the noise needed to protect shared states erases their detection value before it buys meaningful privacy.",
+        "The artifact status is not established in the listing; no code repository or dataset link is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that on the AMLworld HI-Small dataset, their basic method using only locally available data produced the best results and maintained that advantage even when the amount of visible data decreased due to system fragmentation.",
+        "brief": "The authors suggest a way for banks to detect money laundering patterns that span multiple banks without sharing sensitive customer account details. They do this by using transaction records that both banks already have to estimate the state of accounts at the other bank, allowing them to run complex graph analysis models locally. They then test if sharing a little extra information, like the number of transactions or the other bank's model outputs, improves detection.\n\nIn their tests on a specific dataset called AMLworld HI-Small, using six different model types and up to 32 separate bank systems, the basic local method worked best. Adding simple transaction counts helped consistently, but sharing the other bank's detailed model outputs only helped in certain situations. When they tried to protect the shared detailed outputs with privacy noise, the noise destroyed the usefulness of the data before it provided significant privacy protection. However, the simple transaction counts remained useful even with strong privacy protection.\n\nPeople who study how to detect financial fraud across different institutions using privacy-preserving machine learning should look at this paper. People who do not work on cross-bank data sharing or anti-money laundering systems can likely skip it.",
+        "takeaways": [
+          "The paper focuses on a method for detecting money laundering across different banks without sharing private customer data, using only transaction records that both banks already possess.",
+          "A clear limitation is that sharing detailed model outputs from other banks is not useful when privacy protections are applied, as the required noise destroys the data's value. Simple transaction counts are more robust to privacy protection.",
+          "The listing does not provide a link to code or data, so it is not established whether the authors have released their implementation or dataset."
+        ]
+      },
+      "actions": [
+        "Verify the specific performance metrics and privacy-utility trade-off curves by reading the full PDF, as the abstract only provides qualitative comparisons.",
+        "Check the AMLworld HI-Small dataset documentation to confirm the exact definition of 'fragmentation' and 'visible slice' used in the experiments."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "listing": {
+        "listedOn": "2026-10-28",
+        "publishedOn": "2026-10-28",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.35996"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-28"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-28T19:29:31.193Z"
+      }
+    },
+    {
+      "id": "2610.36012",
+      "arxivId": "2610.36012",
+      "url": "https://arxiv.org/abs/2610.36012",
+      "topic": "Stats",
+      "reported": "The authors report that in a four-factor example, worst-decile prediction standard error falls by about a quarter relative to the geometrically best candidate.",
+      "metrics": [],
+      "title": "A Sphericity Filter for Space-Filling Designs in Nondeterministic Experiments",
+      "authors": "Andrew T. Karl",
+      "takeaway": "The paper claims a sphericity-based filter selects space-filling designs to protect low-order effect estimation precision in noisy multi-response experiments.",
+      "brief": "The authors propose a filter that selects one complete design from a candidate pool by minimizing a geometric loss divided by sphericity. Sphericity measures the balance of the working-model confidence ellipsoid's principal-axis variances, independently of its volume.\n\nIn cube studies with quadratic least-squares and Gaussian-process fits, the filter gives modest average prediction gains over the geometrically best candidate at small geometric cost. Gains in working-model precision are largest near saturation, with worst-decile prediction standard error falling by about a quarter in a four-factor example. The listing does not establish whether these gains hold for non-cube regions or specific experimental noise structures beyond the stated fits.\n\nResearchers designing experiments for noisy multi-response settings with low-order working models may find the method relevant. Those relying solely on geometric optimality or unconstrained mixture designs may find the specific sphericity trade-off less applicable.",
+      "abstract": "Space-filling designs support flexible modeling in noisy multi-response experiments, but an individual design can give poor precision for low-order effects. We use a low-order working model to identify effects whose estimation precision we seek to protect, while allowing a more complex final response model. The filter selects one complete design from a candidate pool by minimizing a geometric loss divided by sphericity, without exchanging or altering its points. Sphericity measures the balance of the working-model confidence ellipsoid's principal-axis variances, independently of its volume. In a working-model basis orthonormal over the prediction region, sphericity is the shape factor of the I-criterion, which measures average prediction variance. In cube studies with quadratic least-squares and Gaussian-process fits, this target filter gives modest average prediction gains over the geometrically best candidate at small geometric cost. Gains in working-model precision are largest near saturation: in a four-factor example, worst-decile prediction standard error falls by about a quarter relative to the geometrically best candidate. In constrained mixtures, raw coefficient-based filtering and A-optimality can emphasize extrapolated Scheffe coefficients and yield poor regional prediction precision. Target filtering improves regional working-model precision in most settings studied, mirroring the advantage of I- over A-optimality for highly constrained mixture designs.",
+      "takeaways": [
+        "The object is a design selection filter that uses sphericity to balance geometric loss and working-model precision.",
+        "A visible limit is that reported gains are described as modest on average and largest near saturation, with specific results tied to cube studies and four-factor examples.",
+        "The artifact status is not established in the listing, as no code or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that in a four-factor example, the standard error for the worst 10% of predictions drops by about 25% compared to the best geometric design.",
+        "brief": "The authors suggest a way to pick an experimental design that protects the accuracy of simple model estimates in noisy tests. They use a measure called sphericity to check if the uncertainty in the model is balanced across different directions.\n\nIn tests using simple math models and Gaussian processes, this method offers small improvements in prediction accuracy compared to the best geometric design. The biggest improvements happen when the model is very confident, where the error for the worst predictions drops by about a quarter. The text does not say if this works for all types of experimental setups or noise levels.\n\nPeople setting up experiments with noisy data and simple models might find this useful. People who only care about the shape of the design or use specific mixture designs might not need this method.",
+        "takeaways": [
+          "The tool is a method for choosing experimental designs that balances shape and model accuracy.",
+          "A limit is that the improvements are small on average and depend on the model being very confident.",
+          "It is not known if the authors share code or data to repeat their tests."
+        ]
+      },
+      "actions": [
+        "Verify the specific numerical gains and the definition of 'saturation' by reading the full PDF.",
+        "Check whether the authors provide code or data to reproduce the four-factor example and mixture design results."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-10-28",
+        "publishedOn": "2026-10-28",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.36012"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-28"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-28T19:29:31.193Z"
+      }
+    },
+    {
+      "id": "2610.36122",
+      "arxivId": "2610.36122",
+      "url": "https://arxiv.org/abs/2610.36122",
+      "topic": "Engineering",
+      "reported": "The authors report that their method achieves 97.08 % classification accuracy in Monte Carlo simulations using a MATLAB-based multi-body vehicle model.",
+      "metrics": [
+        "97.08 % classification accuracy"
+      ],
+      "title": "Acceleration data-based robust on-board monitoring of hunting proximity in railway vehicles under uncertainty: A feasibility study",
+      "authors": "Kyriakos Kritikakos, Spilios D. Fassois, John S. Sakellariou",
+      "takeaway": "The paper introduces a novel method for on-board, real-time proximity assessment to railway hunting initiation using a grey nonlinear vehicle model and Maximum Lyapunov Exponent estimation.",
+      "brief": "The authors propose a method to classify hunting proximity into prespecified speed intervals using on-board acceleration data and a grey nonlinear vehicle model. They report 97.08 % classification accuracy in Monte Carlo simulations across four operating scenarios, noting robustness to faulty suspensions and hollow-worn wheels but performance compromise under worn-track conditions. The listing does not specify the exact alternative method compared or the specific operational parameters of the four scenarios.\n\nThe strongest reported result is the 97.08 % classification accuracy measured via Monte Carlo simulations. The authors attribute this to the use of a grey nonlinear vehicle model with parameters estimated from on-board acceleration measurements. They state that robustness is demonstrated against faulty suspensions and hollow-worn wheels, though they acknowledge a performance compromise under worn-track conditions. The listing does not provide details on the specific magnitude of this compromise or the exact definition of the speed proximity intervals.\n\nResearchers working on railway vehicle dynamics, on-board monitoring systems, or robust control under uncertainty may find this relevant. Those not interested in real-time hunting detection or grey system modeling may ignore it. The study is a feasibility assessment, so it may not cover full-scale field validation.",
+      "abstract": "The feasibility of on-board, real-time proximity assessment to railway hunting initiation under uncertainty arising from vehicle/track and other operational conditions is assessed. In this context, a novel method that classifies hunting proximity into one of several prespecified speed proximity intervals is introduced, based on a grey nonlinear vehicle model with parameters estimated from on-board acceleration measurements and model-based estimation of the Maximum Lyapunov Exponent (MLE) as a hunting proximity measure. The method's performance and robustness are assessed via Monte Carlo simulations using a MATLAB-based multi-body vehicle model and four operating scenarios. The method is shown to achieve excellent performance achieving 97.08 % classification accuracy, which marks a significant improvement over a potential alternative. Its robustness to faulty suspensions and hollow-worn wheels is also demonstrated, although certain performance compromise is observed under worn-track conditions.",
+      "takeaways": [
+        "The object is a feasibility study for on-board hunting proximity monitoring using acceleration data and MLE estimation.",
+        "A visible limit is the acknowledged performance compromise under worn-track conditions, though the specific magnitude is not detailed in the abstract.",
+        "The artifact status is not established in the listing; no code or dataset is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that their method correctly identifies the risk level of train wheel hunting in 97.08 % of simulated test cases.",
+        "brief": "The authors suggest a way to check in real-time how close a train is to developing a dangerous wheel wobble called hunting. They use sensors on the train to measure acceleration and a simplified mathematical model to estimate a stability metric. In computer simulations, their method correctly classified the risk level 97.08 % of the time. They say it works well even if some suspension parts are broken or wheels are worn, but it performs slightly worse if the track itself is worn. The summary does not say exactly how much worse it gets or what the other method was that they compared it to.\n\nThe best result they show is the 97.08 % accuracy in their simulations. They say this comes from using a flexible mathematical model that adjusts to the sensor data. They claim the system is robust to certain mechanical faults but admit it has a weakness when the track is in poor condition. The summary does not give numbers for how much the accuracy drops in that specific case.\n\nPeople who study train stability, build onboard safety sensors, or work with uncertain systems might find this useful. People who do not care about real-time train monitoring or mathematical modeling of train dynamics might skip it. This is a feasibility study, meaning it tests if the idea works in theory and simulation, not necessarily in real-world field tests.",
+        "takeaways": [
+          "The paper tests if a new sensor-based method can predict train wheel wobble risk in real-time.",
+          "The authors admit the method is less accurate when the track is worn, but they do not say by how much in the summary.",
+          "The summary does not say if the code or data is available for download."
+        ]
+      },
+      "actions": [
+        "Verify the specific definition of the 'prespecified speed proximity intervals' and the exact alternative method used for comparison in the full PDF.",
+        "Check the full PDF for details on the four operating scenarios and the quantitative extent of the performance compromise under worn-track conditions."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-10-28",
+        "publishedOn": "2026-10-28",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.36122"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-28"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-28T19:29:31.193Z"
+      }
+    },
+    {
+      "id": "2610.36226",
+      "arxivId": "2610.36226",
+      "url": "https://arxiv.org/abs/2610.36226",
+      "topic": "Health",
+      "reported": "The authors report that the sparse dictionaries they train capture the relational geometry the trunk computes beyond the sequence model, and their concept activations forecast the model's own fold quality.",
+      "metrics": [],
+      "title": "Structure, Not Sequence: Tracking and Validating Folding Mechanisms in ESMFold's Trunk with Sparse Autoencoders",
+      "authors": "Bohan Liu, Xiaohan Fan, Wenqian Ye, Aidong Zhang",
+      "takeaway": "The paper claims to interpret the folding trunk of ESMFold using sparse autoencoders to reveal a division of labor between single and pair representations and to verify the resulting circuit against known biochemistry.",
+      "brief": "The authors propose that sparse autoencoders can expose interpretable features within the ESMFold folding trunk, moving beyond dense sequence-model representations. They report a three-step interpretation: locating spatial computation across modules, identifying a division of labor where single representations carry semantics and pair representations compute geometry, and tracing concept composition to the folding output. The listing does not provide specific quantitative metrics, dataset sizes, or benchmark scores, leaving the scale of verification and the magnitude of the forecast accuracy unresolved.\n\nThe strongest reported result is that the trained sparse dictionaries capture relational geometry beyond the sequence model and that their concept activations forecast the model's own fold quality. The authors attribute this to a combination of pilot analysis, dictionary exposure, and gradient-based attribution traced to the model's output. No specific numerical performance, accuracy rate, or statistical significance is stated in the abstract, so the strength of the forecast and the extent of the biochemistry alignment are not quantified here.\n\nResearchers working on mechanistic interpretability of protein structure predictors or those interested in sparse autoencoder applications to biological models may find the described circuit analysis relevant. Those seeking immediate quantitative benchmarks or code for reproduction should note that no code is declared and no specific metrics are listed in this abstract.",
+      "abstract": "Structure predictors like ESMFold fold proteins using neural network computation and have transformed structural biology. However, the driving mechanism from amino-acid (AA) sequence to 3D structure is insufficiently understood, and biological meaning remains locked in the dense network. Sparse autoencoders (SAEs) have shown promising results in obtaining interpretable concept features over an overcomplete basis of intermediate protein sequence-model representations. Yet folding models, which predict physical shape from AA sequence semantics, have no such account. We hypothesize that the features carrying the folding computation evolve in the 3D structural regression process. In this paper, we interpret the folding trunk in three steps. First, a pilot analysis on the representation distribution across modules and recycles locates distinct spatial computation in the trunk. Second, the dictionaries expose a division of labor: the single representation carries inherited semantics, and the pair representation computes the pairwise geometry. Third, we interpret the dictionary at scale with a reasoning language model, trace how the concepts compose across blocks by gradient-based attribution, and follow the interpreted code to the model's folding output, verifying where the computation aligns with, or departs from, known biochemistry. Together, the sparse dictionaries we train capture the relational geometry the trunk computes beyond the sequence model, and their concept activations forecast the model's own fold quality, turning the black-box folding trunk into a sparse, interpretable, and scientifically verifiable circuit.",
+      "takeaways": [
+        "The object is the internal folding trunk of the ESMFold protein structure predictor, specifically the transition from amino-acid sequence to 3D structure.",
+        "A visible limit is the absence of quantitative metrics in the listing, meaning the accuracy of the fold quality forecast and the scale of the biochemistry verification are not established by the provided text.",
+        "The artifact status is unclear because no code repository or dataset link is declared in the metadata, and the abstract does not confirm the availability of the trained sparse dictionaries or the reasoning language model used."
+      ],
+      "plain": {
+        "reported": "The authors state that the simplified feature maps they created show the shape relationships the model calculates that are not in the original sequence data, and that these features predict how well the model folds the protein.",
+        "brief": "The authors suggest that a technique called sparse autoencoders can help explain how the ESMFold computer program turns a list of amino acids into a 3D protein shape. They describe a three-part process: finding where the calculation happens, showing that one part of the data handles meaning and another handles shape, and tracking how these parts combine to create the final shape. The summary does not give specific numbers, such as how accurate the prediction is or how many proteins were tested, so the exact strength of the result is not clear from this text.\n\nThe main result they report is that their simplified feature maps show shape details that the original sequence data does not have, and that these features can predict the quality of the fold. They say they used a step-by-step analysis and a method to trace the influence of each part to the final output. Because no specific numbers or scores are given in the summary, we do not know how accurate the prediction is or how well it matches known biological facts.\n\nPeople who study how computer models for biology work internally or who use these simplification techniques might find this interesting. People who need specific numbers or computer code to repeat the experiment should note that no code is mentioned and no specific scores are listed in this summary.",
+        "takeaways": [
+          "The subject is the internal part of the ESMFold program that calculates the 3D shape of a protein from its amino acid list.",
+          "A clear limitation is that the summary does not include any numbers, so we do not know how accurate the predictions are or how many examples were tested.",
+          "It is not clear if the computer code or data are available because no links are provided in the summary, and the text does not say if the tools can be downloaded."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative results and the extent of the biochemistry alignment by reading the full PDF, as the abstract lacks numerical metrics.",
+        "Check the paper's supplementary materials or associated repositories for the code and data required to reproduce the sparse autoencoder training and the gradient-based attribution analysis."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-28",
+        "publishedOn": "2026-10-28",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.36226"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-28"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-28T19:29:31.193Z"
+      }
+    }
+  ]
+}
