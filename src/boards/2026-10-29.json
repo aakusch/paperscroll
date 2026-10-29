@@ -1,0 +1,702 @@
+{
+  "date": "2026-10-29",
+  "label": "Thu, Oct 29",
+  "minutes": 10,
+  "poolSize": 10,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-10-29T20:53:29.877Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2610.32749",
+      "arxivId": "2610.32749",
+      "url": "https://arxiv.org/abs/2610.32749",
+      "topic": "AI",
+      "reported": "The authors report that Falcon cuts parameters by 91.9%, computation by 20.2 times, and GPU inference latency by 11.1 times compared with the causal AV-TFGridNet baseline.",
+      "metrics": [
+        "91.9%",
+        "20.2 times",
+        "11.1 times"
+      ],
+      "title": "Efficient Streaming Audio-Visual Target Speaker Extraction for Real-World Acoustic Scenes",
+      "authors": "Wendi Sang, Kai Li, Yifan Li, Jianqiang Huang, Xiaolin Hu",
+      "takeaway": "The paper claims to introduce RealSSA, a realistic audio-visual target speaker extraction benchmark, and Falcon, a lightweight causal method that improves efficiency and extraction quality.",
+      "brief": "The authors propose RealSSA, a benchmark with simulated and real-recorded scenes, and Falcon, a causal audio-visual target speaker extraction method. They state that Falcon achieves state-of-the-art extraction quality on RealSSA-Sim, LRS2-2Mix, LRS3-2Mix, and VoxCeleb2-2Mix. They report that Falcon cuts parameters by 91.9%, computation by 20.2 times, and GPU inference latency by 11.1 times compared with the causal AV-TFGridNet baseline.\n\nThe listing states that Falcon’s separator performs multi-scale time-frequency separation in a single encoder-decoder pass and uses an encoder-space speaker contrastive loss. It notes that this loss suppresses near-field leakage at zero inference cost and transfers across backbones. The listing does not establish specific unresolved limits beyond the stated gaps in current causal systems.\n\nResearchers working on low-latency audio-visual speaker extraction or edge deployment may find the benchmark and method relevant. Those focused solely on non-causal or high-compute server-side extraction may find the specific efficiency claims less central to their work.",
+      "abstract": "Streaming audio-visual target speaker extraction (AVTSE) is essential for latency-sensitive applications. However, current causal systems face two coupled gaps. First, standard benchmarks fix the number of speakers at two and ignore the near-/far-field interference, reverberation, and sudden noise of real scenes. Second, high-performance causal architectures are too heavy for edge deployment. Lightweight alternatives try to reclaim capacity by repeatedly invoking a small separator, which offsets the savings. To address the first gap, we release RealSSA, a realistic AVTSE benchmark consisting of RealSSA-Sim and RealSSA-Real. RealSSA-Sim provides controllable simulated scenes with 1--5 dynamic near-field interfering speakers; scenes with far-field interference additionally include 10--15 far-field interfering speakers. RealSSA-Real provides a held-out real-recorded evaluation set. To address the second gap, we propose Falcon, a causal AVTSE method. Its Separator performs multi-scale time-frequency separation in a single encoder--decoder pass. We train Falcon with an encoder-space speaker contrastive loss. This loss suppresses near-field leakage at zero inference cost and transfers across backbones. Falcon achieves state-of-the-art extraction quality on RealSSA-Sim, LRS2-2Mix, LRS3-2Mix, and VoxCeleb2-2Mix. Compared with the causal AV-TFGridNet baseline, it cuts parameters by 91.9%, computation by 20.2 times, and GPU inference latency by 11.1 times. Code and demo are available at https://cslikai.cn/Falcon/.",
+      "takeaways": [
+        "The object is a causal audio-visual target speaker extraction system and a corresponding realistic benchmark.",
+        "A visible limit is that the benchmark addresses near-/far-field interference, reverberation, and sudden noise, but the listing does not specify if all real-world acoustic artifacts are covered.",
+        "The artifact status is that code and a demo are available at the provided URL, and the benchmark includes both simulated and real-recorded sets."
+      ],
+      "plain": {
+        "reported": "The authors report that their new system, Falcon, uses 91.9% fewer parameters, requires 20.2 times less computation, and runs 11.1 times faster on a GPU compared to a specific existing baseline system.",
+        "brief": "The authors created a new test set called RealSSA that includes both computer-generated and real-world audio and video scenes with multiple speakers. They also built a new system called Falcon that extracts a specific speaker's voice from a mix in real-time. They state that their system performs best on their new test set and three other standard test sets. They report that their system is much smaller and faster than a previous leading system.\n\nThe listing explains that Falcon processes audio and video in a single pass to separate voices. It uses a specific training technique to reduce unwanted noise from nearby speakers without slowing down the system. The listing does not mention any specific limitations of the new system other than the general problems with existing systems.\n\nPeople who build voice assistants or real-time video processing tools might find this useful. People who only care about high-quality audio processing where speed and size do not matter might find this less relevant.",
+        "takeaways": [
+          "The main thing is a real-time system for picking out one voice from a mix, plus a new test set for it.",
+          "The test set includes various real-world noise types, but the listing does not say if every possible real-world sound is included.",
+          "The authors say the code and a demo are available online, and the test set has both fake and real recordings."
+        ]
+      },
+      "actions": [
+        "Verify the specific parameter, computation, and latency reductions by checking the PDF against the AV-TFGridNet baseline configuration.",
+        "Inspect the RealSSA-Sim and RealSSA-Real datasets to confirm the speaker counts and interference conditions match the abstract's description."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/JusperLee/Falcon",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-29",
+        "publishedOn": "2026-10-23",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.32749",
+            "upvotes": 147
+          }
+        ]
+      },
+      "trend": {
+        "votes": 147,
+        "rank": 1,
+        "of": 9,
+        "perDay": 25
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 147,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-29T20:53:29.877Z"
+      }
+    },
+    {
+      "id": "2610.35684",
+      "arxivId": "2610.35684",
+      "url": "https://arxiv.org/abs/2610.35684",
+      "topic": "AI",
+      "reported": "The authors report state-of-the-art subject identity and 3D consistency while maintaining competitive video quality and motion.",
+      "metrics": [
+        "88 trajectory configurations",
+        "360-degree orbits"
+      ],
+      "title": "OmniShowcase: Omnidirectional Subject-Consistent Video Generation from Multi-View Images",
+      "authors": "Junyeong Ahn, Geonwoo Kim, Kinam Kim, Gihwi Kim, Hoonjin Jung, Hyojin Jang, Jaegul Choo",
+      "takeaway": "The paper presents OmniShowcase, a method for omnidirectional subject-consistent video generation from multi-view images using automated data synthesis and geometry-conditioning.",
+      "brief": "The authors propose OmniShowcase to generate videos of a specific subject from multiple reference images, addressing limitations in existing subject-to-video methods that do not explicitly specify 3D structure. The system uses a fully automated data synthesis pipeline and a geometry-conditioning method based on surface-normal maps to ensure consistency across diverse camera trajectories, including full 360-degree orbits.\n\nThe authors report state-of-the-art subject identity and 3D consistency while maintaining competitive video quality and motion. They constructed Showcase-4K, a corpus of 3D-asset-based videos covering twelve camera motions across 88 trajectory configurations, and ShowcaseBench, a held-out evaluation set. The listing does not specify quantitative error rates or specific benchmark scores beyond the qualitative claim of state-of-the-art performance.\n\nResearchers working on subject-driven video generation or 3D-consistent rendering may find the geometry-conditioning approach relevant. Those focused solely on 2D image generation or non-omnidirectional video tasks may find the specific 360-degree orbit focus less applicable. The method relies on reconstructed surface-normal maps, which may introduce artifacts if the reconstruction is inaccurate.",
+      "abstract": "Generating videos of a specific subject from a few reference images remains challenging when the camera reveals surfaces that are not visible in the input. Early subject-to-video (S2V) methods condition on a single reference image and must therefore infer the subject's unseen appearance and geometry as the viewpoint changes. To address this limitation, recent methods extend S2V to multiple reference views, providing more information about the subject from different viewpoints. However, they do not explicitly specify the 3D structure that connects these observations. In addition, existing training data do not guarantee that viewpoint changes preserve the same underlying 3D subject. We present OmniShowcase, built on two components: (i) a fully automated data synthesis pipeline that produces training videos along diverse camera trajectories, with viewpoint variation driven by underlying subject geometry, even spanning full 360-degree orbits; and (ii) a geometry-conditioning method that provides the video model with a turntable of surface-normal maps reconstructed from the reference views without requiring temporal alignment with the generated frames. We construct Showcase-4K, a corpus of 3D-asset-based videos covering twelve camera motions across 88 trajectory configurations with reconstruction-derived surface-normal conditioning, and ShowcaseBench, a held-out evaluation set with the source meshes and camera parameters used to render each video. Experiments show state-of-the-art subject identity and 3D consistency while maintaining competitive video quality and motion. Project page: justin4ai.github.io/OmniShowcase",
+      "takeaways": [
+        "The core object is a video generation model conditioned on multi-view images and reconstructed surface-normal maps to enforce 3D consistency.",
+        "A visible limit is the reliance on a fully automated data synthesis pipeline and reconstruction-derived surface-normal conditioning, which may not generalize to all real-world subject geometries.",
+        "The artifact status is established by the provided project page and GitHub repository link, though the listing does not confirm the completeness or availability of the code and datasets."
+      ],
+      "plain": {
+        "reported": "The authors report that their method achieves the best-in-class performance for keeping the subject's identity and 3D shape consistent, while also producing videos with good quality and movement.",
+        "brief": "The authors created a tool called OmniShowcase to make videos of a specific object or person from several photos taken from different angles. This is difficult because the camera might see sides of the subject that were not in the original photos. Their method uses a computer-generated training dataset and a technique that uses maps of the subject's surface angles to help the video model keep the 3D shape consistent, even when the camera moves all the way around the subject.\n\nThe authors say their method performs better than existing methods in keeping the subject's identity and 3D shape consistent. They created a large dataset called Showcase-4K with videos from twelve different camera movements and 88 different path setups. They also created a test set called ShowcaseBench. The listing does not give specific numbers for how much better the performance is, only that it is state-of-the-art.\n\nPeople who work on making videos from photos or creating 3D-consistent images might be interested in this. People who only work on 2D images or videos that do not require 3D consistency might not find it useful. The method depends on creating maps of the subject's surface angles, which might have errors if the initial photos are not good enough.",
+        "takeaways": [
+          "The main thing they built is a video-making system that uses multiple photos and maps of surface angles to keep the 3D shape of the subject consistent.",
+          "A possible weakness is that the system relies on automatically generated training data and reconstructed surface maps, which might not work well for all types of real-world objects.",
+          "The authors provide a website and a code repository link, but the listing does not confirm if all the code and data are fully available and working."
+        ]
+      },
+      "actions": [
+        "Verify the availability and completeness of the Showcase-4K corpus and ShowcaseBench evaluation set by checking the provided GitHub repository.",
+        "Review the full PDF to confirm the specific quantitative metrics used to support the claim of state-of-the-art subject identity and 3D consistency."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/justin4ai/OmniShowcase",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-29",
+        "publishedOn": "2026-10-26",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.35684",
+            "upvotes": 41
+          }
+        ]
+      },
+      "trend": {
+        "votes": 41,
+        "rank": 2,
+        "of": 9,
+        "perDay": 14
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 41,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-29T20:53:29.877Z"
+      }
+    },
+    {
+      "id": "2610.31670",
+      "arxivId": "2610.31670",
+      "url": "https://arxiv.org/abs/2610.31670",
+      "topic": "AI",
+      "reported": "The authors report that their proposed metric, S^2, correlates positively with downstream robot task success across model families.",
+      "metrics": [
+        "S^2 correlates positively with downstream robot task success"
+      ],
+      "title": "Sensorimotor Alignment: A Platonic Proxy for Embodied Policy Success",
+      "authors": "Yunfei Xie, Howard H. Qian, Shiyi Lan, Kaiyu Hang, Chen Wei",
+      "takeaway": "The paper proposes Sensorimotor Alignment (S^2), a training-free offline metric that measures how well a model's sensory representation aligns with the geometry of physical motion.",
+      "brief": "The authors introduce S^2 as a low-cost offline proxy for evaluating robot foundation models without costly closed-loop rollouts. They argue that as embodied models improve, their sensory representations should converge toward the structure of physical motion, extending the Platonic Representation Hypothesis to robotics.\n\nThe strongest reported result is that S^2 correlates positively with downstream robot task success across model families. The authors also state that S^2 can identify promising vision-language model backbones before fine-tuning. The listing does not specify the exact magnitude of the correlation, the specific robot tasks used, or the number of model families tested.\n\nResearchers seeking cheap offline metrics for robot model selection may find this relevant. Those requiring precise quantitative benchmarks or specific task-level performance data should verify the full paper, as the abstract lacks detailed experimental statistics.",
+      "abstract": "Robot foundation models are typically evaluated through costly closed-loop rollouts, motivating low-cost offline proxies for model capability. The Platonic Representation Hypothesis (PRH) suggests that as representations improve, modalities such as vision and language converge toward a shared statistical model of reality. We ask whether motion trajectories form another such modality: as embodied models become more capable, should their sensory representations converge toward the structure of physical motion? To test this, we propose Sensorimotor Alignment (S^2), a training-free offline metric that measures how well a model's sensory representation aligns with the geometry of physical motion. We find that S^2 correlates positively with downstream robot task success across model families, making it a low-cost offline proxy for prioritizing models before closed-loop evaluation. S^2 can also identify promising vision-language model (VLM) backbones before costly fine-tuning into vision-language-action models (VLAs). Beyond this correlation, S^2 offers representation-level explanations for phenomena observed in VLAs and world action models (WAMs). With S^2, we extend PRH to robotics and make sensorimotor alignment measurable, offering a low-cost, representation-level view of robot foundation models that closed-loop success rates alone cannot reveal.",
+      "takeaways": [
+        "The object is a training-free metric called S^2 that aligns sensory representations with physical motion geometry.",
+        "A visible limit is the lack of specific correlation coefficients or task details in the abstract, making the strength of the proxy unclear without the full text.",
+        "The artifact status is indicated by a provided GitHub repository URL, suggesting code availability, though the listing does not confirm the repository's completeness or maintenance."
+      ],
+      "plain": {
+        "reported": "The authors report that their new measurement tool, S^2, shows a positive relationship with how well robots perform on actual tasks, tested across different types of AI models.",
+        "brief": "The authors created a new way to check if AI models for robots are good without having to run expensive real-world tests. They believe that as these models get better, their internal understanding of the world should match how physical objects actually move. They call this new check S^2.\n\nThe main result they share is that S^2 scores go up when the robot's actual success rate goes up. They also say this tool can help pick the best starting AI models before doing expensive training. However, the summary does not say how strong this relationship is or exactly which robot tasks were tested.\n\nPeople looking for a cheap way to screen robot AI models might find this useful. People who need exact numbers or specific test results should read the full paper, because the summary does not provide those details.",
+        "takeaways": [
+          "The tool is a simple check called S^2 that compares how the AI sees the world to how things physically move.",
+          "A limitation is that the summary does not give specific numbers showing how accurate this check is, so you cannot judge its reliability from the text alone.",
+          "The authors provide a link to a code repository, which suggests the tool is available to use, but the summary does not confirm if the code is complete or working."
+        ]
+      },
+      "actions": [
+        "Verify the specific correlation coefficients and the list of robot tasks used in the evaluation by reading the full PDF.",
+        "Check the provided GitHub repository to confirm if the S^2 implementation and evaluation scripts are included and functional."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/yunfeixie233/sensorimotor-alignment",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-29",
+        "publishedOn": "2026-10-23",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.31670",
+            "upvotes": 19
+          }
+        ]
+      },
+      "trend": {
+        "votes": 19,
+        "rank": 3,
+        "of": 9,
+        "perDay": 3
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 19,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-29T20:53:29.877Z"
+      }
+    },
+    {
+      "id": "2610.37230",
+      "arxivId": "2610.37230",
+      "url": "https://arxiv.org/abs/2610.37230",
+      "topic": "AI",
+      "reported": "TAO: Tool-Aware Joint Scheduling for LLM-Based Agentic Serving",
+      "metrics": [
+        "reduces latency by up to 26.8%",
+        "reduces mean time to first token (TTFT) by up to 36.3%",
+        "increases decode throughput by up to 29.5%"
+      ],
+      "title": "TAO: Tool-Aware Joint Scheduling for LLM-Based Agentic Serving",
+      "authors": "Shuhuai Li, Shengdong Ye, Dongdong Ge, Yinyu Ye, Jianghao Lin",
+      "takeaway": "The authors present TAO, a tool-aware joint scheduling framework for LLM-based agentic serving that combines tool readiness, cache credit, and token footprint to select and place sessions.",
+      "brief": "The authors propose TAO, a scheduling framework for LLM-based agentic serving that accounts for external tool readiness and GPU placement. They state that existing systems overlook tool-return readiness and use heuristic strategies for admission and placement.\n\nThe authors report that across 12 model-workload-concurrency settings, TAO reduces latency by up to 26.8%, reduces mean time to first token by up to 36.3%, and increases decode throughput by up to 29.5% relative to the best evaluated state-of-the-art baseline. The listing does not specify the exact baselines, workload characteristics, or hardware configurations used for these measurements.\n\nResearchers working on LLM inference scheduling, agentic system orchestration, or GPU resource management may find the joint scheduling approach relevant. Those focused solely on model architecture or without agentic tool dependencies may find the specific scheduling overheads less applicable.",
+      "abstract": "Agentic services alternate between model inference on clustered GPUs and external tools on distributed CPUs. In this scenario, existing systems (1) overlook tool-return readiness in service evaluation, wasting limited resources, and (2) use heuristic strategies to decide admission and placement on GPUs, resulting in suboptimal scheduling decisions. To bridge this gap, we present TAO, a tool-aware joint scheduling framework for LLM-based agentic serving. Its value interface combines near-term tool readiness, node-specific cache credit with time-aware decay, and token footprint; a dynamic program jointly selects and places waiting sessions under capacity constraints. Across the 12 reported model-workload-concurrency settings, TAO reduces latency by up to 26.8%, reduces mean time to first token (TTFT) by up to 36.3%, and increases decode throughput by up to 29.5% relative to the best evaluated state-of-the-art baseline for each metric.",
+      "takeaways": [
+        "The object is a scheduling framework that jointly selects and places waiting sessions under capacity constraints using a dynamic program.",
+        "The visible limit is that the reported gains are relative to the best evaluated state-of-the-art baseline for each metric, without specifying which baselines were compared.",
+        "The artifact status is not established in the listing, as no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "TAO: Tool-Aware Joint Scheduling for LLM-Based Agentic Serving",
+        "brief": "The authors propose a system called TAO that manages how large language models and external tools share computer resources. They argue that current systems waste resources by not checking if tools are ready and by using simple rules to decide where to run tasks.\n\nThe authors say that in 12 different test scenarios, their system made responses faster by up to 26.8%, reduced the wait time for the first word by up to 36.3%, and increased the speed of generating text by up to 29.5% compared to the best existing system they tested. The listing does not say exactly which existing systems were tested or what kind of hardware was used.\n\nPeople who build systems that use AI models and external tools together might find this useful. People who only care about the AI model itself and do not use external tools might not need this specific scheduling method.",
+        "takeaways": [
+          "The system is a manager that decides which tasks to run and where to run them on the computer, using a mathematical method to make the best choice.",
+          "A limitation is that the improvements are compared to the best existing system they tested, but the listing does not name those specific systems.",
+          "It is not stated in the listing whether the code for this system is available for download or use."
+        ]
+      },
+      "actions": [
+        "Verify the specific baselines and workload definitions in the PDF to confirm the comparability of the reported 26.8% latency reduction.",
+        "Check the PDF for the dynamic program formulation and capacity constraint definitions to assess the computational overhead of the scheduling decision."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-29",
+        "publishedOn": "2026-10-27",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.37230",
+            "upvotes": 15
+          }
+        ]
+      },
+      "trend": {
+        "votes": 15,
+        "rank": 5,
+        "of": 9,
+        "perDay": 8
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 15,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-27"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-29T20:53:29.877Z"
+      }
+    },
+    {
+      "id": "2610.22507",
+      "arxivId": "2610.22507",
+      "url": "https://arxiv.org/abs/2610.22507",
+      "topic": "AI",
+      "reported": "The authors report that the best configuration attains an average score of only 49.2% and the peak performance reaches merely 37.6% on the joint collaboration score.",
+      "metrics": [
+        "average score of only 49.2%",
+        "peak performance reaches merely 37.6%"
+      ],
+      "title": "RealCLI: Toward a Unified Evaluation of Human-Agent Collaboration for CLI Agents",
+      "authors": "Yunqi Liu, Peiyu Wang, Bingli Wang, Leo Luo, Xuanwu Song, Xudong Ma, Hongxin Li, Yaxin Du, Weicheng Gu, Fanglin Xu, Yi Xing, XiangLong Liu, Jujie He, Zhange Zhang, Huatong Song, Zhaoyi Li, Deyang Kong, Chuan Hao, Peihao Wu, Mingjie Tang, Ran Tao, Jian Yang, Wayne Xin Zhao, Bryan Dai",
+      "takeaway": "The paper presents REALCLI, a paired benchmark that unifies the evaluation of task execution and human-agent collaboration quality on realistic CLI tasks.",
+      "brief": "The authors introduce REALCLI, a benchmark designed to evaluate both task execution and collaboration quality for command-line interface agents. It uses a five-dimensional framework with 22 sub-dimensions and 51 interaction scenario templates to measure these aspects.\n\nThe authors report that the best configuration achieves an average score of 49.2% and a peak joint collaboration score of 37.6%. They state that models struggle with steerability, trust calibration, and safety boundary management. The listing does not specify the exact agent models tested or the specific CLI tasks used.\n\nResearchers developing or evaluating CLI agents may find this benchmark relevant for assessing collaboration dynamics. Those focused solely on static task completion without interactive user input may find the collaboration-specific metrics less applicable.",
+      "abstract": "Command-line interface (CLI) agents increasingly execute longer-horizon tasks, yet existing benchmarks either assume that user instructions remain fixed throughout execution or evaluate task outcomes without capturing runtime collaboration quality. In this paper, we present REALCLI, a paired benchmark that unifies the evaluation of task execution and human-agent collaboration quality on realistic CLI tasks. To comprehensively measure collaboration, REALCLI builds a five-dimensional framework, operationalized into 22 sub-dimensions and 51 interaction scenario templates. REALCLI provides two modes for paired comparison: REALCLI-EXEC supplies complete specifications upfront, whereas REALCLI-COLLAB introduces a scripted user that delivers progressive information, corrections, constraint revisions, and authorization decisions. Evaluations reveal profound capability gaps in frontier agents: the best configuration attains an average score of only 49.2%, and when evaluated by the joint collaboration score (J_{collab}), the peak performance reaches merely 37.6%. These results show that task effectiveness diverges sharply from collaboration quality, with models consistently struggling in steerability, trust calibration, and safety boundary management. REALCLI provides a rigorous, reproducible foundation for measuring and advancing collaborative CLI agents.",
+      "takeaways": [
+        "The object is a paired benchmark for evaluating CLI agents on both execution and collaboration.",
+        "A visible limit is that the listing does not identify the specific frontier agents or CLI tasks used in the evaluation.",
+        "The artifact status is not established in the listing, as no code repository or dataset link is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that the best setup gets an average score of only 49.2% and the highest score on the combined collaboration measure is only 37.6%.",
+        "brief": "The authors created a test suite called REALCLI to check how well AI agents can use command-line tools and work with humans. It looks at five different areas of interaction, broken down into 22 specific parts and 51 different scenarios.\n\nThe authors say the best AI setup only scored 49.2% on average and 37.6% on the combined collaboration measure. They note that the AI models have trouble when users change instructions or set safety limits. The summary does not say which specific AI models or command-line tasks were tested.\n\nPeople building or testing AI agents for command-line use might find this test useful for checking how well they handle human interaction. People only interested in AI completing fixed tasks without user input might not need this specific test.",
+        "takeaways": [
+          "The thing being described is a test suite for checking AI agents that use command-line tools and work with humans.",
+          "A clear gap is that the summary does not list the specific AI models or command-line tasks used in the tests.",
+          "It is not stated in the summary whether the test suite or data is available for download or use."
+        ]
+      },
+      "actions": [
+        "Verify the specific agent models and task sets used in the evaluation by reading the full PDF.",
+        "Check the paper for details on the five-dimensional framework and how the 51 interaction scenario templates are constructed."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-29",
+        "publishedOn": "2026-10-15",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.22507",
+            "upvotes": 15
+          }
+        ]
+      },
+      "trend": {
+        "votes": 15,
+        "rank": 4,
+        "of": 9,
+        "perDay": 1
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 15,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-15"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-29T20:53:29.877Z"
+      }
+    },
+    {
+      "id": "2610.30132",
+      "arxivId": "2610.30132",
+      "url": "https://arxiv.org/abs/2610.30132",
+      "topic": "AI",
+      "reported": "The authors report that LongZero outperforms both baselines on five long-context reasoning benchmarks.",
+      "metrics": [],
+      "title": "LongZero: Enhancing Long-Context Reasoning in LLMs from Zero Data",
+      "authors": "Zhennan Wan, Jianfei Chen",
+      "takeaway": "The paper proposes LongZero, a method that lets an LLM improve its own long-context reasoning without any external data.",
+      "brief": "The authors propose LongZero, a method that lets an LLM improve its own long-context reasoning without any external data. They state that LongZero outperforms both baselines on five long-context reasoning benchmarks, though specific numerical gains are not provided in the abstract. The method relies on self-synthesized multi-hop and multi-round retrieval tasks trained with GRPO.\n\nThe listing does not specify which two LLMs were evaluated or the exact performance margins over the baselines. It also does not detail the computational cost of the self-synthesis process or the specific nature of the 'external corpora' baselines. The claim of generalization to real tasks is asserted without quantitative evidence in the provided text.\n\nResearchers working on long-context LLMs or RL from zero data may find the self-synthesis approach relevant. Those requiring specific benchmark scores or comparisons to non-RL baselines should verify the full paper. Practitioners concerned with data efficiency in long-context training should examine the method's reliance on self-generated tasks.",
+      "abstract": "Reinforcement learning (RL) is an effective way to strengthen the long-context reasoning of large language models (LLMs), but it needs training data that are long, diverse, challenging, and verifiable. Human annotation of such data is expensive, naturally occurring data are too scarce to sustain RL, and existing synthesis methods depend on external corpora or stronger teacher models, which become harder to obtain as the trained models get stronger. Recently, RL from zero data, in which a model learns from tasks it proposes itself, has achieved excellent performance, but existing methods target short-context tasks. Therefore, we propose LongZero, a method that lets an LLM improve its own long-context reasoning without any external data. Instead of writing questions and answers over existing documents, LongZero first has the model synthesize the question and answer with its supporting evidence in a compact structured form, and only then separately expands the evidence into a long multi-document context. LongZero combines these self-written multi-hop reasoning tasks with self-written multi-round retrieval tasks and trains the model with GRPO. We evaluate LongZero on two LLMs across five long-context reasoning benchmarks and compare it with RL on data synthesized from external corpora. Experimental results show that LongZero can generalize to real tasks, and outperforms both baselines, suggesting a viable and promising path to improving long-context reasoning of LLMs.",
+      "takeaways": [
+        "The core object is a self-synthesis pipeline for long-context reasoning tasks that avoids external data sources.",
+        "A visible limit is the lack of specific numerical results or model names in the abstract, making direct comparison difficult.",
+        "The artifact status is indicated by a declared GitHub repository URL, but the code's completeness and reproducibility are not verified in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that their method, LongZero, performs better than two other comparison methods on five tests for long-context reasoning.",
+        "brief": "The authors propose a method called LongZero that allows a large language model to improve its ability to reason over long texts without using outside data. They state that this method performs better than two other comparison methods on five tests for long-context reasoning, but they do not provide specific numbers in the summary. The method uses tasks the model creates for itself, involving multi-step reasoning and retrieval, and trains the model using a specific reinforcement learning algorithm called GRPO.\n\nThe summary does not say which two specific language models were tested or how much better LongZero was compared to the other methods. It also does not explain how much computing power is needed to create these self-made tasks or what the other comparison methods specifically used. The claim that the method works on real-world tasks is stated but not supported by numbers in this text.\n\nPeople who work on making language models better at handling long texts or using reinforcement learning without outside data might find this useful. People who need exact test scores or comparisons to methods that do not use reinforcement learning should check the full paper. People who care about saving data in long-text training should look at how the method uses self-made tasks.",
+        "takeaways": [
+          "The main thing being proposed is a way for a model to make its own long-text reasoning tasks without needing outside data.",
+          "A clear limitation is that the summary does not give specific numbers or name the models used, making it hard to compare directly.",
+          "The status of the shared code is shown by a website link, but it is not confirmed if the code is complete or works as described."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark scores and model names in the full PDF to assess the magnitude of improvement.",
+        "Check the declared GitHub repository for code availability and documentation of the GRPO training setup."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/zhennan1/LongZero",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-29",
+        "publishedOn": "2026-10-21",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.30132",
+            "upvotes": 3
+          }
+        ]
+      },
+      "trend": {
+        "votes": 3,
+        "rank": 6,
+        "of": 9,
+        "perDay": 0
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 3,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-29T20:53:29.877Z"
+      }
+    },
+    {
+      "id": "2610.29702",
+      "arxivId": "2610.29702",
+      "url": "https://arxiv.org/abs/2610.29702",
+      "topic": "AI",
+      "reported": "The authors report that CausGround increases average task success from 24.9% to 53.3% on the VirtualHome benchmark.",
+      "metrics": [
+        "24.9% to 53.3% on VirtualHome",
+        "43.0% to 57.0% on RoboCasa",
+        "25.8% to 31.9% on SWITCH"
+      ],
+      "title": "CausGround: Causal Interaction Grounding for Adaptive Embodied Planning",
+      "authors": "Yijun Shen, Diqi He, Jinbang Guo, Wanyue Zhang, Jiaming Mi, Huan Yang, Zhongyuan Wang, Zhiwei Yu, Kai Zhang",
+      "takeaway": "CausGround is a non-parametric causal interaction grounding framework that distills interaction experience into reusable action-centered causal knowledge to support adaptive embodied planning.",
+      "brief": "The paper introduces CausGround, a non-parametric framework that organizes action preconditions and effects into a factorized world-state representation. This structure allows the system to ground task-relevant causal dependencies in current observations for backward and forward reasoning during planning.\n\nThe authors report improvements in vision-based high-level planning and interaction reasoning on simulated benchmarks and real-world robot manipulation. They state that the method supports long-horizon embodied planning across diverse environments without parameter updates, though the listing does not specify failure modes or generalization limits beyond the tested environments.\n\nResearchers working on embodied AI, multimodal large language models, or robot manipulation planning may find the causal grounding approach relevant. Those focused solely on parametric model training or non-embodied reasoning tasks may find the specific application scope limited.",
+      "abstract": "Multimodal large language models (MLLMs) show promising reasoning capabilities, but reliable physical interaction requires planning that accounts for when actions are executable and how they change the world. These preconditions and effects are environment-dependent and often not captured by MLLMs, making adaptation challenging. Yet existing approaches either require costly environment-specific training or rely on unstructured interaction experience that is difficult to reuse. Therefore, we introduce CausGround, a non-parametric causal interaction grounding framework that distills interaction experience into reusable action-centered causal knowledge. CausGround identifies action preconditions and effects and organizes them in a factorized world-state representation capturing object attributes and inter-object relations. At planning time, task-relevant causal dependencies are grounded in current observations to support backward reasoning over preconditions and forward reasoning over effects for action selection and multi-step planning. We evaluate CausGround on simulated high-level planning, interaction reasoning, and real-world robot manipulation. On adapted VirtualHome and RoboCasa benchmarks, CausGround improves vision-based high-level planning across MLLM backbones, increasing average task success from 24.9% to 53.3% on VirtualHome and closed-loop planning success from 43.0% to 57.0% on RoboCasa. On SWITCH, average interaction reasoning accuracy increases from 25.8% to 31.9%, indicating improved action selection, recovery, and verification. Moreover, real-world experiments show that CausGround reasons backward from MLLM-interpreted goals to derive executable high-level action sequences for sequential manipulation. These results demonstrate that reusable action preconditions and effects support long-horizon embodied planning across diverse environments without parameter updates.",
+      "takeaways": [
+        "The core object is a non-parametric causal knowledge structure for action preconditions and effects.",
+        "The listing reports performance gains on specific simulated and real-world benchmarks but does not detail robustness to unseen object types or environmental variations.",
+        "The authors provide a GitHub repository URL, suggesting the implementation is available for inspection, but the listing does not confirm code completeness or reproducibility."
+      ],
+      "plain": {
+        "reported": "The authors state that their system improved the success rate of completing tasks in a virtual home environment from 24.9% to 53.3%.",
+        "brief": "The paper presents a system called CausGround that helps robots plan actions by understanding what must be true before an action happens and what changes after it happens. It stores this information in a structured way that can be reused without retraining the main AI model.\n\nThe authors show that this system performs better at planning and reasoning in computer simulations and on a real robot. They claim it works in different environments without needing to update the model's internal parameters, but they do not explain how well it handles situations it has never seen before.\n\nPeople interested in teaching robots to plan complex tasks using AI models might find this useful. People who only care about training AI models on large datasets or non-physical reasoning tasks might not find it directly applicable.",
+        "takeaways": [
+          "The main contribution is a way to store and reuse knowledge about what actions require and what they cause.",
+          "The results are shown on specific test environments, but the paper does not say how well the system works in completely new or unpredictable settings.",
+          "The authors share a link to their code, but the summary does not say if the code is complete or easy to run."
+        ]
+      },
+      "actions": [
+        "Verify the reported benchmark improvements by examining the full PDF and comparing against baseline configurations.",
+        "Inspect the provided GitHub repository to assess code availability, documentation, and alignment with the described non-parametric framework."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Intelligent-Interaction/CausGround",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-29",
+        "publishedOn": "2026-10-21",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.29702",
+            "upvotes": 2
+          }
+        ]
+      },
+      "trend": {
+        "votes": 2,
+        "rank": 7,
+        "of": 9,
+        "perDay": 0
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 2,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-29T20:53:29.877Z"
+      }
+    },
+    {
+      "id": "2610.35671",
+      "arxivId": "2610.35671",
+      "url": "https://arxiv.org/abs/2610.35671",
+      "topic": "AI",
+      "reported": "The authors report that V4.1 Flash-1017 shows substantial safety improvements over the V4 generation and approaches or matches leading closed-source baselines on several dimensions.",
+      "metrics": [
+        "34 benchmarks",
+        "5 in-house suites"
+      ],
+      "title": "Evaluating DeepSeek V4.1 Flash-1017 for loss of control and harmful manipulation risks",
+      "authors": "Yao Huang, Zhiyuan Zeng, Yu Wang, Zhitong Zhu, Dingcheng Duan, Hao Li, Shangzhi Xu, Yifan Wang, Jinzhe Tu, Shukun Xiong, Yihe Zang, Han Yan, Hongchang Yang, Fuyu Gu, Wei Xu, Yinpeng Dong, Xiaojian Li",
+      "takeaway": "The paper presents an independent safety evaluation of DeepSeek V4.1 Flash-1017 across 34 benchmarks to characterize systemic safety risks.",
+      "brief": "The authors state they conducted an independent safety evaluation of DeepSeek V4.1 Flash-1017 using 34 benchmarks, including 5 in-house suites, to assess loss of control and harmful manipulation risks.\n\nThey report that the model shows substantial safety improvements over the V4 generation and approaches or matches leading closed-source baselines on several dimensions, while still exhibiting notable behaviors that warrant continued attention. The listing does not specify which exact benchmarks showed the strongest results or provide specific numerical scores for the comparisons.\n\nResearchers evaluating frontier model safety, particularly regarding open-weight models and agentic capabilities, may find the comparative framework and in-house suite methodology relevant. Those not focused on third-party safety audits or specific DeepSeek model versions may find the scope limited.",
+      "abstract": "As frontier language models grow increasingly capable and autonomous, independent third-party evaluations are critical for characterizing their systemic safety risks. While closed-source releases are routinely accompanied by comprehensive system cards, open-weight models receive less scrutiny regarding frontier risks. To address this gap, we present an independent safety evaluation of DeepSeek V4.1 Flash-1017, the latest version of V4.1 Flash that departs from V4 with a new architecture, scaled-up training, and strong agentic capabilities. Drawing on the EU General-Purpose AI Code of Practice, we evaluate the model across 34 benchmarks, including 5 in-house suites, spanning evaluation integrity, loss of control, and harmful manipulation. Conforming to the AEF-1 standard, we compare V4.1 Flash-1017 against V4.1 Flash, earlier DeepSeek V4 models, and leading closed-source systems (GPT-6 Astra, GPT-5.6 Sol, and Gemini 3.8 Flash). Overall, V4.1 Flash-1017 shows substantial safety improvements over the V4 generation and approaches or matches leading closed-source baselines on several dimensions, while still exhibiting notable behaviors that warrant continued attention. Building on our findings, we highlight three key observations and recommendations. First, because safety can shift and even regress across minor updates, developers should integrate safety evaluation into incremental releases. Second, as final-turn outputs and end-state checks alone cannot reliably detect loss-of-control behaviors, deployments require process-level observability across both reasoning traces and action logs. Third, because public benchmarks elicit strong evaluation awareness and face data contamination risks, developing private benchmarks is essential for trustworthy frontier evaluation.",
+      "takeaways": [
+        "The object is a third-party safety audit of a specific open-weight model version, DeepSeek V4.1 Flash-1017, focusing on loss of control and manipulation.",
+        "A visible limit is that the abstract mentions 'notable behaviors that warrant continued attention' but does not detail the specific failure modes or the magnitude of the safety improvements without reading the full text.",
+        "The artifact status is a research paper reporting on an evaluation; no code or dataset repository is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors say the new model version is much safer than the previous version and performs similarly to top commercial models in some safety tests.",
+        "brief": "The researchers tested a new AI model called DeepSeek V4.1 Flash-1017 to see if it could be controlled safely and if it might try to manipulate users. They used 34 different tests, including 5 tests they created themselves.\n\nThey found that this new model is much safer than the older version and performs as well as top commercial AI models in some areas. However, they also found some behaviors that still need to be watched closely. The summary does not list the exact scores or which specific tests showed the biggest improvements.\n\nPeople who study AI safety or work with open-source AI models might find this useful. People who do not work with AI safety or this specific model might not need to look at it.",
+        "takeaways": [
+          "This is a safety check of a specific open-source AI model, looking at whether it can be controlled and if it tries to manipulate people.",
+          "The summary says there are still some risky behaviors, but it does not explain exactly what those behaviors are or how much safer the model is without reading the full paper.",
+          "This is a research paper about a test; the listing does not say if the code or test data is available for download."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark names and the exact performance deltas between V4.1 Flash-1017 and the closed-source baselines in the PDF.",
+        "Check the methodology section for the definition of the '5 in-house suites' and how they mitigate data contamination risks."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-29",
+        "publishedOn": "2026-10-26",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.35671",
+            "upvotes": 1
+          }
+        ]
+      },
+      "trend": {
+        "votes": 1,
+        "rank": 9,
+        "of": 9,
+        "perDay": 0
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 1,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-29T20:53:29.877Z"
+      }
+    },
+    {
+      "id": "2610.34186",
+      "arxivId": "2610.34186",
+      "url": "https://arxiv.org/abs/2610.34186",
+      "topic": "AI",
+      "reported": "The authors report that HuGe achieves the state-of-the-art on the simulation benchmark HumanoidArena and that augmenting robot demonstrations with visually adapted egocentric demonstrations significantly increases success on a pick-and-drop task on the Unitree G1.",
+      "metrics": [
+        "over 2,000 hours of egocentric human and robot data"
+      ],
+      "title": "HuGe: Scaling Humanoid Generalist Vision-Language-Action Models with Egocentric Experience",
+      "authors": "Yang Liu, Jiacheng Liu, Hengtao Li, Yuheng Huang, Zijian Yang, Ji Dai, Maoxin Wang, Yi Gao, Qishen Wang, Baohua Yin, Peiyang Li, Shuanghao Bai, Mingyang Sun, Pengxiang Ding, Jianqin Yin, Lixin Yang, Donglin Wang",
+      "takeaway": "The paper introduces HuGe, a family of Humanoid Generalist Vision-Language-Action models pre-trained on egocentric human and robot data to enable coordinated whole-body control for humanoid robots.",
+      "brief": "The authors present HuGe, a set of Vision-Language-Action models designed for humanoid robots that use egocentric human and robot data to overcome the high cost of collecting real-world robot demonstrations. The system predicts latent motion tokens for a whole-body controller and hand-control signals using three existing VLA architectures.\n\nThe authors state that HuGe achieves state-of-the-art results on the HumanoidArena simulation benchmark and that adding visually adapted egocentric demonstrations to robot data increases success on a pick-and-drop task on the Unitree G1 robot. The listing does not specify the magnitude of the success rate increase or the specific simulation metrics used for the state-of-the-art claim.\n\nResearchers working on humanoid robot control, vision-language-action models, or cross-embodiment transfer may find the three-stage training pipeline and pseudo-proprioceptive state construction relevant. Those not working on humanoid robotics or egocentric data transfer may find the specific architectural details less applicable to their domain.",
+      "abstract": "Extending Vision-Language-Action models (VLAs) to humanoid robots requires coordinated whole-body control and diverse demonstrations that are costly to collect in real-world scenarios. Although egocentric human demonstrations provide a complementary source of task experience, differences in visual embodiment and missing robot proprioception complicate transfer to humanoid policies. To address these challenges, we introduce HuGe, a family of Humanoid Generalist VLAs pre-trained on over 2,000 hours of egocentric human and robot data. Specifically, HuGe employs three existing representative VLA architectures to predict latent motion tokens for a pretrained whole-body controller, together with hand-control signals. Based on this, we introduce a three-stage training pipeline that combines egocentric pre-training, humanoid adaptation, and downstream fine-tuning. To facilitate transfer across embodiments, we construct pseudo-proprioceptive states through simulation playback during pre-training and modify arm appearance in egocentric observations through re-rendering during downstream fine-tuning. With this pipeline, HuGe achieves the state-of-the-art on simulation benchmark HumanoidArena. Furthermore, real-world experiments on the Unitree G1 indicate that augmenting robot demonstrations with visually adapted egocentric demonstrations significantly increases success on a pick-and-drop task.",
+      "takeaways": [
+        "The object is a family of Vision-Language-Action models specifically adapted for humanoid whole-body control using egocentric data.",
+        "A visible limit is the reliance on simulation playback for pseudo-proproprioception and re-rendering for arm appearance, which may not fully capture real-world sensor noise or physical dynamics.",
+        "The artifact status is indicated by a declared GitHub repository URL, but the listing does not confirm the availability of code, weights, or data."
+      ],
+      "plain": {
+        "reported": "The authors say their model performs better than others on a computer-simulated test called HumanoidArena and that adding human video data to robot data helped the robot succeed more often at picking up and dropping objects on a real Unitree G1 robot.",
+        "brief": "The authors built a system called HuGe that helps humanoid robots learn by watching videos of humans and robots doing tasks. This is useful because filming real robots doing many tasks is expensive and time-consuming. The system uses three different existing AI designs to predict how the robot's body and hands should move.\n\nThe authors claim their system is the best on a simulated test and that mixing human video with robot video helped the real robot do a pick-and-drop task better. The text does not say exactly how much better the robot performed or what specific scores were achieved in the simulation.\n\nPeople who build or program humanoid robots or study how AI learns from video might find this useful. People who do not work with humanoid robots or video-based learning might not find the specific details helpful for their own work.",
+        "takeaways": [
+          "The thing being described is a set of AI models that help humanoid robots control their whole bodies by learning from human and robot videos.",
+          "A limitation is that the system uses computer simulations to fake the robot's sense of its own body position and changes how the robot's arms look in the video, which might not match real-world conditions perfectly.",
+          "The authors provide a link to a code repository, but the summary does not confirm if the code, model files, or data are actually there and working."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative improvements on HumanoidArena and the Unitree G1 pick-and-drop task by reading the full PDF, as the abstract only states 'state-of-the-art' and 'significantly increases success' without numbers.",
+        "Check the declared GitHub repository to confirm whether the code, pre-trained weights, or the 2,000-hour dataset are actually available for reproduction."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/yliu-cs/HuGe",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-29",
+        "publishedOn": "2026-10-25",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.34186",
+            "upvotes": 1
+          }
+        ]
+      },
+      "trend": {
+        "votes": 1,
+        "rank": 8,
+        "of": 9,
+        "perDay": 0
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 1,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-29T20:53:29.877Z"
+      }
+    },
+    {
+      "id": "2601.15351",
+      "arxivId": "2601.15351",
+      "url": "https://arxiv.org/abs/2601.15351",
+      "topic": "AI",
+      "reported": "The authors report that their model reaches state-of-the-art performance with only 12.2M parameters while outperforming substantially larger models.",
+      "metrics": [
+        "12.2M parameters"
+      ],
+      "title": "OmniSpectra: A Unified Foundation Model for Universal Spectra Representation Learning",
+      "authors": "Md Khairul Islam, Zeyu Xia, Adam S. Bolton, Judy Fox",
+      "takeaway": "The paper proposes OmniSpectra, a wavelength-native foundation model that uses continuous coordinates to address structural limitations in cross-instrument spectral representation learning.",
+      "brief": "The authors propose a continuous-coordinate masked autoencoder that discards integer pixel indexing to handle physical coordinates natively. They map physical coordinates to a logarithmic basis to transform multiplicative scaling into a uniform additive shift.\n\nThe authors report state-of-the-art performance with 12.2M parameters, outperforming substantially larger models. The listing does not specify the exact benchmark metrics or the specific datasets used for the final comparison beyond mentioning eight surveys and seven baselines.\n\nResearchers working on spectral data representation or cross-instrument model compatibility may find this relevant. Those requiring specific quantitative benchmark scores or code availability should verify the full paper before relying on these claims.",
+      "abstract": "Standard sequence models encode position by token rank rather than physical coordinate, typically forcing practitioners to destructively resample continuous physical signals such as spectra observed across heterogeneous instruments. We identify this coordinate mismatch as a structural limitation in cross-instrument representation learning, and propose OmniSpectra, a wavelength-native foundation model for spectral representation learning: a continuous-coordinate masked autoencoder that discards the integer pixel indexing of sequence modeling. Mapping physical coordinates to a logarithmic basis turns the multiplicative scaling induced by cosmological redshift into a uniform additive shift. In continuous rotary position embeddings, this shared shift cancels from relative token distances rather than producing grid-dependent positional distortion. We further counter the spectral bias inherent to implicit neural decoders with a physics-grounded, resolution-gated Fourier decoder that provides anti-aliasing. Pretrained on eight surveys and benchmarked against seven baselines, our model reaches state-of-the-art performance with only 12.2M parameters while outperforming substantially larger models, indicating that encoding physical structure can substitute for parameter scale.",
+      "takeaways": [
+        "The object is a foundation model for spectral representation learning that treats wavelength as a continuous physical coordinate rather than a discrete token rank.",
+        "The visible limit is that the abstract claims state-of-the-art performance but does not list specific benchmark scores, accuracy metrics, or the exact nature of the seven baselines compared.",
+        "The artifact status is unknown; the listing declares no code repository or public release, so the implementation is not confirmed as available."
+      ],
+      "plain": {
+        "reported": "The authors state that their model achieves the best performance compared to others, using only 12.2 million adjustable settings, and beats models with many more settings.",
+        "brief": "The authors suggest a new way to process spectral data that treats wavelength as a continuous physical measurement instead of a list of discrete numbers. This approach aims to fix issues when comparing data from different instruments.\n\nThey claim their model performs better than larger models while using fewer settings. However, the summary does not provide specific test scores or name the exact tests used to prove this claim.\n\nPeople studying how to combine data from different scientific instruments might find this useful. Anyone needing exact test results or access to the software should check the full document first.",
+        "takeaways": [
+          "The tool is a computer model designed to understand spectral data by using physical wavelength measurements directly.",
+          "The limitation is that the summary claims top performance but does not show the specific test scores or list the competing models by name.",
+          "It is not known if the software code is publicly available because the listing does not provide a link or repository."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark datasets and quantitative performance metrics by reading the full PDF, as the abstract only mentions 'eight surveys' and 'seven baselines' without naming them.",
+        "Check the paper's supplementary materials or linked resources for code availability, since the listing indicates no declared code repository."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-29",
+        "publishedOn": "2026-10-23",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2601.15351",
+            "upvotes": 0
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-29T20:53:29.877Z"
+      }
+    }
+  ]
+}
