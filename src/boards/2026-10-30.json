@@ -1,0 +1,679 @@
+{
+  "date": "2026-10-30",
+  "label": "Fri, Oct 30",
+  "minutes": 10,
+  "poolSize": 162,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-10-30T18:06:53.469Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2610.39633",
+      "arxivId": "2610.39633",
+      "url": "https://arxiv.org/abs/2610.39633",
+      "topic": "AI",
+      "reported": "The authors report that IDM reaches 94.25% and 90.20% on Chinese and English LongText-Bench, the highest scores among compared methods at this budget.",
+      "metrics": [
+        "94.25% on Chinese LongText-Bench",
+        "90.20% on English LongText-Bench"
+      ],
+      "title": "Intrinsic Distribution Matching",
+      "authors": "Deyuan Liu, Yansen Han, Kaiwen Zheng, Jun Xie, Jiacheng Liu, Zhenglin Cheng, Peng Sun, Jintao Zhang, Jianguo Li, Tao Lin",
+      "takeaway": "The paper introduces Intrinsic Distribution Matching (IDM), which retains full DMD correction and matches feature means and per-coordinate standard deviations using the generator's EMA copy without an external feature encoder.",
+      "brief": "The authors propose Intrinsic Distribution Matching (IDM) to improve one-step and few-step text-to-image generation by adding explicit moment constraints to distribution matching distillation. They decompose the reverse-KL field into Gaussian and non-Gaussian components to identify statistics that can be constrained explicitly.\n\nExperiments on Z-Image-Turbo 6B and Qwen-Image 20B show IDM achieving 94.25% and 90.20% on Chinese and English LongText-Bench respectively. The authors state these are the highest scores among compared methods at this budget, with ablations confirming gains from the added moment loss. The listing does not establish specific limitations or failure modes beyond the comparison context.\n\nResearchers working on efficient text-to-image generation or distribution matching distillation may find the specific moment constraint approach relevant. Those not focused on one-step generation or DMD variants may find the specialized scope less applicable.",
+      "abstract": "One-step and few-step text-to-image generation must accurately render the details specified in the prompt despite limited opportunities for refinement. Distribution matching distillation (DMD) uses score differences to bring the generated distribution closer to a reference distribution. Following prior work, we estimate this difference with internal velocity branches, avoiding a separate fake-score network. We ask whether an explicit moment constraint improves this learned score supervision. A decomposition of the reverse-KL field into a Gaussian moment component and a non-Gaussian residual identifies statistics that can be constrained explicitly. We introduce Intrinsic Distribution Matching (IDM), which retains the full DMD correction and matches feature means and per-coordinate standard deviations using the generator's exponential-moving-average (EMA) copy, requiring no external feature encoder. Experiments use full-parameter and low-rank adaptation (LoRA) tuning on Z-Image-Turbo 6B and Qwen-Image 20B. At two network evaluations, IDM reaches 94.25% and 90.20% on Chinese and English LongText-Bench, the highest scores among the compared methods at this budget. Controlled ablations show gains from the added moment loss, while generator EMA features perform competitively with an external DINOv2 encoder across the five reported metrics. Code is available at https://github.com/inclusionAI/IDM.",
+      "takeaways": [
+        "The method targets a specific niche in efficient image generation by modifying score supervision with moment constraints.",
+        "The listing reports competitive benchmark scores but does not detail qualitative failure cases or robustness limits.",
+        "Code is provided at the stated GitHub repository, allowing verification of the implementation details."
+      ],
+      "plain": {
+        "reported": "The authors state that their method achieved 94.25% and 90.20% on Chinese and English LongText-Bench, which they describe as the highest scores among the methods they compared at this compute budget.",
+        "brief": "The authors propose a method called Intrinsic Distribution Matching (IDM) to help AI models create images from text descriptions in just one or a few steps. They add a specific mathematical constraint to the training process to better match the statistical properties of the generated images to the target distribution.\n\nIn tests on two large image models, the method scored 94.25% and 90.20% on specific text-rendering benchmarks for Chinese and English. The authors claim these are the best scores among the methods they tested at this level of computational cost. The summary does not list specific weaknesses or scenarios where the method fails.\n\nPeople working on making AI image generation faster or more efficient might find this useful. People not interested in the specific technical details of one-step image generation might find it less relevant.",
+        "takeaways": [
+          "The method is designed for a specific type of fast image generation using a particular training technique.",
+          "The summary shows good test scores but does not explain where the method might struggle or fail.",
+          "The code is available online, so the technical details can be checked directly."
+        ]
+      },
+      "actions": [
+        "Verify the reported LongText-Bench scores by checking the evaluation protocol and baseline comparisons in the full PDF.",
+        "Inspect the GitHub repository to confirm the availability of the EMA feature matching implementation and training scripts."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/inclusionAI/IDM",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-30",
+        "publishedOn": "2026-10-29",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.39633",
+            "upvotes": 234
+          }
+        ]
+      },
+      "trend": {
+        "votes": 234,
+        "rank": 1,
+        "of": 36,
+        "perDay": 234
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 234,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-29"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-30T18:06:53.469Z"
+      }
+    },
+    {
+      "id": "2610.38568",
+      "arxivId": "2610.38568",
+      "url": "https://arxiv.org/abs/2610.38568",
+      "topic": "AI",
+      "reported": "The authors report that A-RSI raises the performance average from 57.77 to 61.05 on the primary eleven-benchmark suite with 800 fresh tasks.",
+      "metrics": [
+        "57.77",
+        "61.05",
+        "800 fresh tasks"
+      ],
+      "title": "A-RSI: Adaptive Task Refresh for Zero-Data Multimodal Self-Improvement",
+      "authors": "Yu Liu, Youxing Li, Yuedong Tan, Zhiwei Yang, Zihan Su, Hanqi Feng, Shaojie Zhang, Libin Liao, Zihao Wan, Chenxu Wu, Cong Cao, Fangfang Yuan, Yanbing Liu, Ziheng Chen, Pei Fu, Radu Timofte, Zongwei Wu, Nicu Sebe, Barnabas Poczos, Jian Luan",
+      "takeaway": "A-RSI addresses when to acquire new experience and how to generate independently checkable answers for zero-data multimodal self-improvement.",
+      "brief": "The paper proposes A-RSI, a method that monitors training logs to refresh a task pool when learning signals decline, using a static library of model-authored programs to generate multimodal questions and reference answers without external training examples or human-written labels.\n\nThe authors report an average performance increase from 57.77 to 61.05 across an eleven-benchmark suite using 800 fresh tasks. The listing does not specify the individual benchmark names, the baseline model used for comparison, or the specific properties of the reward and refresh rules that were automatically verified.\n\nResearchers working on recursive self-improvement, curriculum learning, or multimodal data generation may find the adaptive task refresh mechanism and the independent answer verification process relevant to their work.",
+      "abstract": "Recursive self-improvement requires models not only to acquire useful training experience, but also to decide when their current experience has ceased to be useful. Existing methods often focus on what experience to generate next, while paying less attention to when fresh experience should be introduced. Many also construct training targets through self-consistency or majority voting, making supervision depend on the model's own uncertain predictions. We address these two questions separately: training dynamics determine when to acquire new experience, while the answers to new tasks remain independently checkable. A-RSI monitors reward variation and accuracy in training logs to refresh a task pool when its learning signal declines, without consulting validation or test scores. A static library of model-authored programs produces multimodal questions and derives their reference answers; we specify the task-generation contract, automatically verify chosen properties of the reward and refresh rules, and separately audit the generated answers. The training loop uses no external training examples or human-written answer labels. On the primary eleven-benchmark suite, A-RSI raises the performance average from 57.77 to 61.05 with 800 fresh tasks.",
+      "takeaways": [
+        "The core object is an adaptive task refresh system that uses training dynamics to determine when to introduce new model-generated tasks.",
+        "The listing does not establish the specific baseline model, the individual benchmark identities, or the magnitude of variance in the reported average scores.",
+        "No code repository or dataset link is provided in the supplied metadata, so the implementation details and generated task library are not directly accessible for verification."
+      ],
+      "plain": {
+        "reported": "The authors state that their method, A-RSI, improved the average score from 57.77 to 61.05 across a set of eleven different tests when using 800 newly generated tasks.",
+        "brief": "The paper introduces A-RSI, a system that watches how a model learns to decide when to give it new practice problems. It creates these problems and their correct answers using the model itself, without needing any outside data or human-created answers.\n\nThe authors say the average score went up from 57.77 to 61.05 on eleven tests using 800 new tasks. The provided text does not list the names of the eleven tests, the starting model used for comparison, or the specific rules that were checked automatically.\n\nPeople studying how AI models can improve themselves, how to choose the right practice problems, or how to create data for multimodal AI might find the way this system updates its task list and checks its own answers useful.",
+        "takeaways": [
+          "The main idea is a system that updates its list of practice problems based on how well the model is currently learning.",
+          "The text does not say which specific tests were used, what the starting model was, or how much the scores varied between runs.",
+          "There is no link to the code or the data in the provided information, so you cannot check the actual implementation or the generated problems directly."
+        ]
+      },
+      "actions": [
+        "Verify the specific eleven benchmarks and the baseline model configuration by reviewing the full PDF to contextualize the 57.77 to 61.05 average improvement.",
+        "Examine the full paper to understand the specific properties of the reward and refresh rules that the authors claim to have automatically verified."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-30",
+        "publishedOn": "2026-10-28",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.38568",
+            "upvotes": 146
+          }
+        ]
+      },
+      "trend": {
+        "votes": 146,
+        "rank": 2,
+        "of": 36,
+        "perDay": 73
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 146,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-28"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-30T18:06:53.469Z"
+      }
+    },
+    {
+      "id": "2610.29927",
+      "arxivId": "2610.29927",
+      "url": "https://arxiv.org/abs/2610.29927",
+      "topic": "AI",
+      "reported": "The authors report that many benchmarks implicitly overweight certain difficulty regions, limiting their ability to monitor the model improvement process.",
+      "metrics": [
+        "25 popular benchmarks",
+        "7 domains"
+      ],
+      "title": "Your Benchmark Is an Empirical Measure Over Difficulty",
+      "authors": "Yifan Sun, Naicheng Yu, Jiawen Gong, Jingyan Shen, Huan Zhang",
+      "takeaway": "The paper develops a measure-based view of benchmark evaluation to formalize failure modes of measure mismatch and coverage gaps.",
+      "brief": "The authors propose a measure-based view of benchmark evaluation, formalizing two failure modes: measure mismatch and coverage gaps. They introduce diagnostic metrics with theoretical guarantees and a rewriting algorithm called BenchFill.\n\nThe authors state that they analyzed 25 popular benchmarks spanning 7 domains using estimated item difficulties. They report that many benchmarks overweight certain difficulty regions and others leave substantial portions of the difficulty axis uncovered. The listing does not specify the exact quantitative performance improvements of BenchFill or the specific benchmarks that failed the most.\n\nResearchers evaluating benchmark validity or designing new evaluation protocols may find the formalization of difficulty measures useful. Those focused solely on leaderboard rankings without interest in the underlying distribution of question difficulty may find the diagnostic framework less relevant.",
+      "abstract": "A benchmark is not merely a collection of test questions; it naturally induces an empirical measure over difficulty. In this work, we develop this measure-based view of benchmark evaluation. This perspective allows us to identify and formalize two central failure modes: measure mismatch, where the benchmark difficulty distribution differs from the intended difficulty distribution, and coverage gaps, where uncovered regions along the difficulty axis prevent benchmarks from detecting meaningful localized training progress. We propose two diagnostic metrics that capture these two failure modes and provide rigorous theoretical guarantees. Empirically, we analyze 25 popular benchmarks spanning 7 domains using carefully estimated item difficulties. Our results show that many benchmarks implicitly overweight certain difficulty regions, so their leaderboard conclusions should be interpreted with caution; others leave substantial portions of the difficulty axis uncovered, limiting their ability to monitor the model improvement process. Finally, we turn diagnosis into action by introducing BenchFill, a simple difficulty-targeted item rewriting algorithm that effectively reduces local coverage gaps.",
+      "takeaways": [
+        "The object is a theoretical and empirical framework for analyzing benchmark difficulty distributions rather than a new model or dataset.",
+        "A visible limit is that the analysis relies on carefully estimated item difficulties, which may introduce estimation error not detailed in the abstract.",
+        "The artifact status is established by the provided GitHub repository URL, though the listing does not confirm the code's completeness or current maintenance status."
+      ],
+      "plain": {
+        "reported": "The authors report that many benchmarks implicitly overweight certain difficulty regions, limiting their ability to monitor the model improvement process.",
+        "brief": "The authors propose a way to look at benchmarks as measuring the difficulty of questions, not just collecting them. They define two problems: when the difficulty mix is wrong, and when some difficulty levels are missing. They create tools to check for these problems and a method to fix missing levels.\n\nThe authors say they looked at 25 common benchmarks across 7 different fields. They found that many of these benchmarks focus too much on certain difficulty levels and ignore others. This means the scores might not show all the progress a model is making. The summary does not say exactly how much better the fixing method works or which specific benchmarks had the biggest problems.\n\nPeople who check if benchmarks are fair or are making new tests might find this useful. People who only care about the final scores on a list and not how the questions are chosen might not need this.",
+        "takeaways": [
+          "The main thing here is a way to check if a test covers all difficulty levels evenly, not a new AI model.",
+          "A limit is that they have to guess how hard each question is, and that guess might not be perfect.",
+          "There is a link to code, but the summary does not say if the code is complete or still being updated."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative results of the BenchFill algorithm in the full PDF to confirm the extent of coverage gap reduction.",
+        "Check the GitHub repository to ensure the code for the diagnostic metrics and BenchFill is functional and matches the described methodology."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/ASTRAL-Group/benchmark-difficulty-measure",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-30",
+        "publishedOn": "2026-10-21",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.29927",
+            "upvotes": 138
+          }
+        ]
+      },
+      "trend": {
+        "votes": 138,
+        "rank": 3,
+        "of": 36,
+        "perDay": 15
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 138,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-30T18:06:53.469Z"
+      }
+    },
+    {
+      "id": "2610.36671",
+      "arxivId": "2610.36671",
+      "url": "https://arxiv.org/abs/2610.36671",
+      "topic": "AI",
+      "reported": "The authors report that LOWN retains 99.6% of LLaDA-V's score on ten benchmarks at 35.3% of the decoding FLOPs on average.",
+      "metrics": [
+        "99.6% of LLaDA-V's score",
+        "35.3% of the decoding FLOPs",
+        "22.8% of steps"
+      ],
+      "title": "Look Only When Needed: Certificate-Guided Visual Routing for Efficient Diffusion VLMs",
+      "authors": "Donghyeon Cho, Joowon Kim, Seungho Shin, Eunho Yang",
+      "takeaway": "The paper proposes LOWN, a certificate-guided visual routing method that decides at every decoding step whether to process the image and how many tokens to unmask to improve efficiency in diffusion vision-language models.",
+      "brief": "The authors propose LOWN to reduce redundant image processing in diffusion vision-language models by using prediction agreement to certify token reuse. They report retaining 99.6% of LLaDA-V's score on ten benchmarks while using 35.3% of the decoding FLOPs on average. The listing does not establish specific failure modes or computational overheads beyond the reported FLOP reduction.\n\nThe method relies on comparing predictions with and without the image to determine when visual processing is necessary. The authors state that the adaptive decision is needed rather than a fixed schedule because image need differs across benchmarks. The listing does not specify the exact hardware or latency measurements associated with the FLOP savings.\n\nResearchers working on efficient inference for diffusion vision-language models may find the routing mechanism relevant. Those focused on fixed-schedule pruning or non-diffusion architectures may find the specific certificate-guided approach less applicable. The method is reported to generalize across LLaDA-based models and compose with visual token pruning.",
+      "abstract": "Diffusion vision-language models (DVLMs) process their entire input at every denoising step. Since visual tokens make up 89-97% of this input on the benchmarks we study, most of the decoding computation is spent repeatedly processing the same image. Visual token pruning methods partially relieve this burden by removing part of the visual tokens, but they lose the removed information and still process the remaining image at every step. To measure how often the image is actually needed, we compare LLaDA-V's predictions with and without the image at every decoding step and find that removing the image changes a token being unmasked at only 22.8% of steps on average and at as few as 7.9%. We therefore propose LOWN, a decoding method that decides at every step whether to process the image and how many tokens to unmask. LOWN predicts the masked tokens without the image and processes the image only when this prediction disagrees with the last image-conditioned prediction. Agreement certifies the earlier prediction for reuse, and the number of certified tokens sets how many are unmasked in that step. We further observe that the need for the image differs across benchmarks, so LOWN's adaptive decision is needed rather than a fixed schedule. Without training or a tuned threshold, LOWN retains 99.6% of LLaDA-V's score on ten benchmarks at 35.3% of the decoding FLOPs on average. LOWN also generalizes across LLaDA-based DVLMs, composes orthogonally with visual token pruning, and runs under key-value caching for further efficiency gains. Code and project page are available at https://hyeon9698.github.io/LOWN/",
+      "takeaways": [
+        "The object is a decoding method that uses prediction agreement to certify token reuse without requiring additional training.",
+        "A visible limit is that the method is evaluated primarily on LLaDA-based diffusion vision-language models and specific benchmarks.",
+        "The artifact status is established with a declared code repository and project page available for verification."
+      ],
+      "plain": {
+        "reported": "The authors report that their method keeps 99.6% of the original model's performance score on ten tests while using only 35.3% of the average calculation work for decoding.",
+        "brief": "The authors suggest a way to make AI models that use images and text work faster by only looking at the image when it is truly needed. They say their method keeps almost all of the original model's accuracy on ten different tests while using much less computer power. The text does not say if the method fails in specific situations or how much time it actually saves on a real computer.\n\nThe method works by checking if the model can guess the answer correctly without looking at the image. If the guess matches a previous guess that did use the image, the model skips looking at the image again. The authors say this flexible approach is better than using a fixed rule because different tests need the image at different times. The text does not give details about the speed of the method on specific hardware.\n\nPeople who build AI systems that use both images and text might find this useful. People who use different types of AI models or fixed rules for skipping information might not find it helpful. The authors say the method works with other ways of reducing image data and can be used with existing memory-saving techniques.",
+        "takeaways": [
+          "The main idea is a method that decides when to look at an image based on whether the model's guess is consistent with previous guesses.",
+          "A limitation is that the tests were done on a specific type of AI model called LLaDA and a specific set of ten tests.",
+          "The authors have shared their code and a website where you can see more details about the method."
+        ]
+      },
+      "actions": [
+        "Verify the reported FLOP reduction and score retention by inspecting the code repository and benchmark scripts.",
+        "Check the project page for detailed breakdowns of the ten benchmarks and specific model configurations used."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/hyeon9698/LOWN",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-30",
+        "publishedOn": "2026-10-27",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.36671",
+            "upvotes": 89
+          }
+        ]
+      },
+      "trend": {
+        "votes": 89,
+        "rank": 4,
+        "of": 36,
+        "perDay": 30
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 89,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-27"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-30T18:06:53.469Z"
+      }
+    },
+    {
+      "id": "2610.37675",
+      "arxivId": "2610.37675",
+      "url": "https://arxiv.org/abs/2610.37675",
+      "topic": "Health",
+      "reported": "The authors report that log-transformed SHBG was inversely associated with HbA1c (beta=-0.1454, P=0.00083) in NHANES 2021-2023 data for nonpregnant women aged 20-44 years.",
+      "metrics": [
+        "beta=-0.1454, P=0.00083",
+        "beta=-0.1062, P=0.00342",
+        "out-of-fold R^2 of 0.1298"
+      ],
+      "title": "Association of Sex Hormone-Binding Globulin with Glycated Hemoglobin and Multidimensional Biomarker Structure in Reproductive-Age Women: An Analysis Based on NHANES 2021--2023",
+      "authors": "Ruilin Miao",
+      "takeaway": "The paper claims to characterize the continuous, nonlinear association between sex hormone-binding globulin and glycated hemoglobin in a nationally representative sample of reproductive-age women.",
+      "brief": "The authors analyze NHANES 2021-2023 data to examine the relationship between SHBG and HbA1c in nonpregnant women aged 20-44. They use survey-weighted regression and multivariate biomarker methods to test for nonlinearity and age modification.\n\nThe strongest reported result is an inverse association between log-transformed SHBG and HbA1c, with evidence of a nonlinear pattern and a significant age interaction. The authors note that the association persisted after adjusting for adiposity and insulin resistance markers. They explicitly state that the cross-sectional design and limited fasting subsample preclude causal or clinical interpretation.\n\nResearchers studying metabolic biomarkers in women may find the multivariate structure analysis relevant. Those seeking causal evidence or clinical guidelines should note the stated design limitations.",
+      "abstract": "Background: Sex hormone-binding globulin (SHBG) is linked to adiposity, insulin resistance and type 2 diabetes, but nationally representative evidence on the shape of the continuous SHBG-HbA1c association in reproductive-age women remains limited. Methods: We analyzed NHANES August 2021-August 2023 data for nonpregnant women aged 20-44 years (n=843). Survey-weighted linear regression related log-transformed SHBG to continuous HbA1c, with quadratic and spline tests for nonlinearity and tests for age modification. Forty biomarkers in hormone, biochemical, hematologic and inflammation/lipid blocks were analyzed by multiple factor analysis, sparse PLS and LASSO with bootstrap stability selection, with nested cross-validation. Results: After adjustment for age, race/ethnicity, poverty-income ratio and BMI, ln(SHBG) was inversely associated with HbA1c (beta=-0.1454, P=0.00083). Quadratic (P=0.00386) and spline (P=0.00236) tests supported nonlinearity, with a steeper slope at lower SHBG. The ln(SHBG)-by-age interaction was significant (P=0.0169). Adjustment for BMI, waist circumference and HOMA-IR attenuated the coefficient by 43.7%, 48.1% and about 55%. SHBG remained associated with HbA1c after conditioning on leading biomarker axes (beta=-0.1062, P=0.00342) and was selected in 98.8% of 500 LASSO bootstrap resamples. Nested cross-validation gave out-of-fold R^2 of 0.1298, 0.2136 and 0.2392 for clinical, biomarker and combined models. Conclusions: Higher SHBG was associated with lower HbA1c in a nonlinear pattern among reproductive-age women. The association overlapped with adiposity and insulin resistance but persisted after adjustment. The cross-sectional design and limited fasting subsample preclude causal or clinical interpretation.",
+      "takeaways": [
+        "The object is the continuous SHBG-HbA1c association in a specific demographic cohort.",
+        "A visible limit is the cross-sectional design, which prevents causal inference.",
+        "No code or repository is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that a measure of a protein that carries sex hormones was linked to lower blood sugar levels in a large US health survey of women aged 20 to 44.",
+        "brief": "The authors looked at data from a national US health survey to see how a specific hormone-carrying protein relates to blood sugar levels in women of childbearing age. They used statistical methods to check if the relationship was straight or curved and if age changed the link.\n\nThe main finding was that higher levels of this protein were linked to lower blood sugar, but the relationship was not a simple straight line. The link remained even after accounting for body fat and insulin resistance. The authors clearly state that because the data was collected at one point in time, they cannot prove that the protein causes the blood sugar change.\n\nPeople studying how hormones affect metabolism might find the detailed breakdown of other biomarkers useful. People looking for proof that changing this protein will lower blood sugar should note the study's design limits.",
+        "takeaways": [
+          "The study focuses on the link between a hormone protein and blood sugar in a specific group of women.",
+          "A clear limit is that the study cannot prove cause and effect.",
+          "The listing does not mention any shared code or data repository."
+        ]
+      },
+      "actions": [
+        "Verify the specific NHANES variable definitions and weighting procedures in the PDF.",
+        "Check the supplementary materials for the full list of 40 biomarkers and bootstrap stability details."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM"
+      ],
+      "listing": {
+        "listedOn": "2026-10-30",
+        "publishedOn": "2026-10-30",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.37675"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-30"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-30T18:06:53.469Z"
+      }
+    },
+    {
+      "id": "2610.37716",
+      "arxivId": "2610.37716",
+      "url": "https://arxiv.org/abs/2610.37716",
+      "topic": "Security",
+      "reported": "The authors report that adding semantic proposal to a syntactic miner dominates it on ten of ten runs, with near-optimal policies of 9.2–9.6 rules against s*=9, versus 11.2–14.6 for the baseline.",
+      "metrics": [
+        "9.2–9.6 rules",
+        "s*=9",
+        "11.2–14.6"
+      ],
+      "title": "Generation, Not Selection: LLM Proposals for Certified Access-Control Policy Mining",
+      "authors": "Gautam Kumar (Indian Institute of Technology Kharagpur, India), Ravi Sundaram (Northeastern University, USA), Shamik Sural (Indian Institute of Technology Kharagpur, India)",
+      "takeaway": "The paper claims that replacing syntactic rule generators with language model proposals improves the mining of compact, auditable Attribute-Based Access Control policies from access logs.",
+      "brief": "The authors propose using large language models to semantically propose access control rules from attribute names, replacing purely syntactic generators that rely on log witnesses. This approach aims to address the failure of existing methods on rare exception rules in heavy-tailed policies while maintaining combinatorial soundness guarantees.\n\nThe strongest reported result is that the semantic proposal method dominates the syntactic baseline on ten of ten runs across two enterprise domains, producing policies with 9.2 to 9.6 rules compared to 11.2 to 14.6 for the baseline. The authors state that false grants are cut four- to sevenfold, and an ablation shows that opaque attribute names significantly reduce rule recovery for the model but not for syntactic baselines.\n\nResearchers working on access control policy mining or log analysis may find this relevant for improving policy compactness and auditability. Those focused solely on syntactic pattern matching or lacking access to enterprise-scale access logs may find the specific domain constraints limiting.",
+      "abstract": "Attribute-Based Access Control (ABAC) policy mining---recovering a compact, auditable policy from an access log---is posed as minimum set cover and solved greedily, which enjoys an $s^{*}(1+\\ln m)$ guarantee. That guarantee is \\emph{conditional} on a precondition the literature never states: the candidate pool handed to greedy must contain the optimal rules. Generation, not selection, is the binding constraint, and existing generators are purely \\emph{syntactic}---they surface a rule only when enough log records witness it, so they fail on precisely the rare exception rules that fill a heavy-tailed policy. We replace the generator with a language model proposing rules \\emph{semantically}, from attribute names, and keep the combinatorial selector to carry the guarantee: every proposal is filtered against the observed denials, so soundness is independent of the proposal mechanism and an unreliable proposer can only waste candidates, never grant access. Over five seeds on each of two enterprise domains, adding semantic proposal to a syntactic miner dominates it on \\emph{ten of ten} runs---strictly better on seven---with near-optimal policies ($9.2$--$9.6$ rules against $s^{*}=9$, versus $11.2$--$14.6$) and false grants cut four- to sevenfold. Replacing the syntactic miner rather than augmenting it wins only where witnesses are scarce. An anonymization ablation isolates the mechanism: opaque attribute names cost two thirds of the model's rule recovery while leaving the syntactic baselines provably unmoved, and cost nothing where witnesses are plentiful. Semantic knowledge and log evidence are substitutes.",
+      "takeaways": [
+        "The object is a hybrid mining pipeline that combines LLM semantic proposals with a greedy set cover selector to recover ABAC policies.",
+        "A visible limit is that the method's advantage depends on the scarcity of log witnesses; it wins primarily where syntactic generators fail due to rare exceptions.",
+        "The artifact status is not established in the listing, as no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their new method, which uses AI to suggest security rules, outperformed the old method in all ten tests, creating shorter security lists with 9.2 to 9.6 rules compared to 11.2 to 14.6 for the old method.",
+        "brief": "The authors suggest using AI to guess security rules based on the names of user attributes, instead of just looking for patterns in past access logs. This is meant to fix a problem where old methods miss rare but important security exceptions, while still keeping the system safe and reliable.\n\nThe best result they show is that their AI-assisted method beat the old method in every test on two company datasets. It created shorter, more efficient security lists and reduced the chance of accidentally allowing unauthorized access by a factor of four to seven. They also found that if the attribute names are hidden or unclear, the AI struggles to guess the rules, but the old pattern-matching method is unaffected.\n\nPeople who manage computer security policies or analyze user access logs might find this useful for making security rules easier to read and maintain. People who only care about simple pattern matching or do not have large company datasets might find this less applicable.",
+        "takeaways": [
+          "The tool combines AI guesses with a mathematical checker to build security rules from user activity logs.",
+          "The method is most helpful when the logs do not contain enough examples to find rare security exceptions using traditional methods.",
+          "The listing does not say whether the code or tools are available for download or use."
+        ]
+      },
+      "actions": [
+        "Verify the specific enterprise domains and access log characteristics used in the evaluation to assess generalizability beyond the two tested cases.",
+        "Check the full paper for details on the LLM prompting strategy and the exact filtering mechanism used to ensure soundness against observed denials."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-10-30",
+        "publishedOn": "2026-10-30",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.37716"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-30"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-30T18:06:53.469Z"
+      }
+    },
+    {
+      "id": "2610.37745",
+      "arxivId": "2610.37745",
+      "url": "https://arxiv.org/abs/2610.37745",
+      "topic": "Physics",
+      "reported": "The authors report constructing explicit qubit symmetry actions in d=1,2,3 spatial dimensions for a 2-group with G=\\Pi_2=\\mathbb{Z}_2, realizing every class in H^{d+2}(B\\mathcal G,U(1)).",
+      "metrics": [
+        "d=1,2,3",
+        "H^{d+2}(B\\mathcal G,U(1))",
+        "\\mathbb{Z}_2 \\times \\mathbb{Z}_2"
+      ],
+      "title": "Defining 2-group symmetries on lattices and extracting their anomalies",
+      "authors": "Yitao Feng, Yu-An Chen",
+      "takeaway": "The paper provides a concrete lattice definition for finite 2-group symmetries and a method to extract their anomalies in one spatial dimension.",
+      "brief": "The authors define finite 2-group symmetries on lattices using local relations among symmetry operators, identifying the Postnikov class that characterizes the mixing of 0-form and 1-form symmetries.\n\nThey report constructing explicit qubit symmetry actions in d=1,2,3 spatial dimensions for a 2-group with G=\\Pi_2=\\mathbb{Z}_2, realizing every class in H^{d+2}(B\\mathcal G,U(1)). The listing does not establish specific numerical performance metrics or experimental validation beyond the cohomological classification.\n\nResearchers working on lattice formulations of higher-form symmetries or anomaly inflow in condensed matter and quantum information contexts may find the specific qubit constructions and anomaly extraction method relevant.",
+      "abstract": "Ordinary $0$-form symmetries $G$ can mix with $1$-form symmetries $\\Pi_2$ to form a $2$-group $\\mathcal{G}$. We give a concrete lattice definition for a class of finite $2$-group symmetries in terms of local relations among symmetry operators. These relations identify the Postnikov class $[\\rho]\\in H^3(BG,\\Pi_2)$ that characterizes the mixing. We develop a method to extract anomalies of these symmetries in one spatial dimension by restricting symmetry operations to an interval and comparing their composition near its endpoints. We also construct explicit qubit symmetry actions in $d=1,2,3$ spatial dimensions for a $2$-group with $G=\\Pi_2=\\mathbb{Z}_2$. These actions share the same nontrivial Postnikov class but include both anomaly-free and anomalous realizations. Their cohomological anomalies are classified by $H^{d+2}(B\\mathcal G,U(1))$, which is $\\mathbb{Z}_2$ for $d=1,2$ and $\\mathbb{Z}_2\\times\\mathbb{Z}_2$ for $d=3$, and our constructions realize every class in these dimensions. Our results connect higher-group symmetry and its anomalies to concrete lattice operations, providing a microscopic framework for studying anomalous symmetries.",
+      "takeaways": [
+        "The object is a lattice definition of finite 2-group symmetries and a method for extracting their anomalies in one spatial dimension.",
+        "The visible limit is that the explicit constructions are restricted to the specific case of G=\\Pi_2=\\mathbb{Z}_2 and d=1,2,3 spatial dimensions.",
+        "The artifact status is not established in the listing, as no code or data repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report building specific quantum bit symmetry operations in 1, 2, and 3 spatial dimensions for a symmetry group where both components are Z2, covering all possible anomaly types in those dimensions.",
+        "brief": "The authors define a type of higher symmetry on a grid using local rules for how symmetry operators interact, identifying a mathematical class that describes how different symmetry types mix.\n\nThey report building specific quantum bit symmetry operations in 1, 2, and 3 spatial dimensions for a symmetry group where both components are Z2, covering all possible anomaly types in those dimensions. The listing does not provide specific numerical performance data or experimental results beyond the mathematical classification.\n\nScientists studying how higher symmetries work on grids or how anomalies appear in quantum systems may find the specific quantum bit constructions and the method for finding anomalies useful.",
+        "takeaways": [
+          "The main object is a grid-based definition of higher symmetries and a way to find their anomalies in one spatial dimension.",
+          "The visible limit is that the specific examples are only for a Z2 x Z2 symmetry group in 1, 2, and 3 dimensions.",
+          "The listing does not state whether code or data is available for the constructions."
+        ]
+      },
+      "actions": [
+        "Verify the specific lattice relations and qubit symmetry actions by reviewing the full PDF to ensure the local relations correctly identify the Postnikov class.",
+        "Check the full text for any supplementary data or code availability regarding the explicit qubit constructions in d=1,2,3 dimensions."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "cond-mat.str-el",
+        "math-ph",
+        "math.MP",
+        "math.QA"
+      ],
+      "listing": {
+        "listedOn": "2026-10-30",
+        "publishedOn": "2026-10-30",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.37745"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-30"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-30T18:06:53.469Z"
+      }
+    },
+    {
+      "id": "2610.37795",
+      "arxivId": "2610.37795",
+      "url": "https://arxiv.org/abs/2610.37795",
+      "topic": "Engineering",
+      "reported": "The authors report that evaluations on synthetic and marine bioacoustic signals demonstrate adaptive resolution tracking, enhanced spectral concentration, and exact time-domain invertibility.",
+      "metrics": [
+        "O((k+1)log M)",
+        "O(3^M)"
+      ],
+      "title": "Universal Short-Time Fourier Transform: Data-Adaptive Window-Length Selection for Time-Frequency Analysis",
+      "authors": "Manan Mittal, Kanad Sarkar, Ryan M. Corey, John R. Buck, Andrew C. Singer",
+      "takeaway": "The paper claims to resolve the STFT resolution trade-off by modeling window duration as a data-adaptive state variable using a trellis-based selection method.",
+      "brief": "The authors propose the Universal Short-Time Fourier Transform (U-STFT), which treats the analysis window length as a variable state rather than a fixed parameter. This approach aims to balance time and frequency resolution dynamically for each signal frame.\n\nEvidence comes from synthetic and marine bioacoustic signal evaluations showing improved spectral concentration and exact reconstruction. The method guarantees a specific regret bound relative to hindsight schedules, though the abstract does not specify computational latency or hardware constraints for real-time deployment.\n\nResearchers working on time-frequency analysis, signal processing, or bioacoustics may find the adaptive windowing mechanism relevant. Those requiring fixed-window STFT implementations or lacking access to the specific entropy scoring method may find the added complexity unnecessary.",
+      "abstract": "The short-time Fourier transform (STFT) characterizes the local frequency content of time-varying signals by evaluating the discrete Fourier transform over a sliding analysis window. The STFT is governed by a fundamental resolution trade-off: a short window localizes rapid transients in time at the cost of frequency resolution, whereas a long window resolves closely spaced harmonics at the expense of temporal resolution. The Universal Short-Time Fourier Transform (U-STFT) resolves this trade-off sequentially by modeling the analysis window duration as a data-adaptive state variable that indexes the number of hops included in the current observation interval. At each frame, a bank of candidate window durations is scored using normalized order-three R\\'enyi entropy to quantify joint time-frequency concentration. A window length trellis aggregates the resulting $\\mathcal{O}(3^M)$ candidate window schedules with linear complexity per frame, guaranteeing a cumulative mix-loss regret bound of $\\mathcal{O}((k+1)\\log M)$ relative to any hindsight window schedule with $k$ resolution changes over $M$ frames. By linearity of the Fourier transform, posterior expectation across the candidate bank yields a single spectrum equivalent to an STFT evaluated with a data-adaptive effective window, while an envelope-normalized synthesis stream guarantees exact overlap-add reconstruction. Evaluations on synthetic and marine bioacoustic signals demonstrate adaptive resolution tracking, enhanced spectral concentration, and exact time-domain invertibility.",
+      "takeaways": [
+        "The object is a sequential decision-making framework for selecting STFT window lengths based on data-adaptive entropy scores.",
+        "A visible limit is the reliance on a bank of candidate durations and a trellis aggregation, which may introduce overhead not detailed in the abstract.",
+        "The artifact status is unknown; no code repository or implementation details are provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors state that tests using computer-generated sounds and recorded whale or dolphin calls showed the system could adjust its focus, sharpen the sound details, and perfectly rebuild the original audio.",
+        "brief": "The authors suggest a new way to analyze sound waves that changes the size of the 'lens' used to look at the sound. Instead of using one fixed lens size, the system picks the best size for each moment based on the sound itself.\n\nThey tested this on made-up sounds and real ocean animal calls. The results showed the system could track changes in the sound well and rebuild the original audio without errors. However, the summary does not say how fast the system runs or if it works on standard computers.\n\nPeople who study how to break down sounds into their parts might find this useful. People who need simple, fast tools that do not change their settings might not need this complex approach.",
+        "takeaways": [
+          "The tool is a method for automatically choosing the best time window to analyze a sound signal.",
+          "A potential drawback is that the method uses a complex mathematical process to choose the window, which might be slow.",
+          "It is not known if the authors have shared the computer code for this method."
+        ]
+      },
+      "actions": [
+        "Verify the PDF to confirm the specific values of M and k used in the regret bound experiments.",
+        "Check the supplementary materials for the implementation of the normalized order-three Rényi entropy scoring function."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP",
+        "cs.IT",
+        "cs.SD",
+        "eess.AS",
+        "math.IT",
+        "stat.ML"
+      ],
+      "listing": {
+        "listedOn": "2026-10-30",
+        "publishedOn": "2026-10-30",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.37795"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-30"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-30T18:06:53.469Z"
+      }
+    },
+    {
+      "id": "2610.37837",
+      "arxivId": "2610.37837",
+      "url": "https://arxiv.org/abs/2610.37837",
+      "topic": "Stats",
+      "reported": "The authors report that they illustrate the procedure on a Gaussian location--scale family, the number of segregating sites under Kingman's coalescent, a Yule process, and an Ornstein--Uhlenbeck diffusion.",
+      "metrics": [],
+      "title": "Model Criticism via Stochastic Optimization",
+      "authors": "Ren-Yi Wang",
+      "takeaway": "The paper proposes a simulation-based procedure that tests whether a generative model fits data and locates failures without choosing a test statistic.",
+      "brief": "The authors propose a two-stage stochastic program that tests model fit and locates failures by comparing optimized weights on model atoms with theoretical weights under correct specification.\n\nThe authors report illustrating the procedure on a Gaussian location--scale family, the number of segregating sites under Kingman's coalescent, a Yule process, and an Ornstein--Uhlenbeck diffusion. The listing does not state quantitative results, error rates, or specific performance metrics for these illustrations.\n\nResearchers working with generative models where likelihoods are unavailable may find the method relevant. Those requiring specific benchmark comparisons or code availability should note that the listing provides neither.",
+      "abstract": "Many generative models are specified by how data are simulated. An observation is a deterministic transform $Y=G(\\theta,X)$ of a draw $X$ from an assumed noise law, indexed by a structural parameter $\\theta$. Such models cover discrete, continuous and functional data, as well as i.i.d. replicates of stochastic processes, but their likelihoods are often unavailable. We propose a simulation-based procedure that tests whether such a model fits the data and, when it does not, locates where it fails, without choosing a test statistic. The procedure splits the data in two and is formulated as a two-stage stochastic program. In the estimation stage, $\\theta$ is fitted on the first block by minimizing a Wasserstein distance between the data and simulations from the model. In the recourse stage, $\\theta$ is frozen at the fitted $\\tilde{\\theta}$, and a finite set of representative noise values $\\{\\bar x_j\\}$ is pushed through the fitted mechanism to give model atoms $G(\\tilde{\\theta},\\bar x_j)$. The held-out block optimizes weights $\\textbf{w}$ on the model atoms to best match its own distribution. The optimized weights are then compared with theoretical weights under correct specification. Since each model atom is the image of known noise values, the disagreement between optimal and theoretical weights points to the part of the noise law that is wrong. The split makes the scaled weights conditionally multinomial, yielding a calibrated Pearson test. We prove strong consistency of both stages under checkable assumptions and illustrate the procedure on a Gaussian location--scale family, the number of segregating sites under Kingman's coalescent, a Yule process, and an Ornstein--Uhlenbeck diffusion.",
+      "takeaways": [
+        "The method targets generative models specified by data simulation where likelihoods are often unavailable.",
+        "The listing does not establish quantitative performance limits or specific test power for the proposed procedure.",
+        "No code repository or implementation details are declared in the supplied metadata."
+      ],
+      "plain": {
+        "reported": "The authors say they showed how their method works on four specific types of statistical models: a simple normal distribution model, a model for genetic variation, a model for branching processes, and a model for continuous random fluctuations.",
+        "brief": "The authors suggest a new way to check if a statistical model matches real data. Instead of picking a specific test in advance, they use a two-step computer process to see if the model's predictions match the data and find exactly where the model goes wrong.\n\nThey say they tested this idea on four different mathematical models. However, the summary does not say how well the method worked, such as how often it correctly identified errors or how fast it ran. It only lists the models used for demonstration.\n\nPeople who build models where it is hard to calculate the probability of seeing the data might find this useful. People who need to know exactly how accurate the method is before using it should look for more details, as this summary does not provide them.",
+        "takeaways": [
+          "This method is for models where you generate fake data to match real data, but cannot easily calculate the probability of the real data.",
+          "The summary does not say how accurate or fast the method is, so its practical limits are not clear from this text.",
+          "The summary does not mention any computer code or software for running this method."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative results and assumptions in the full PDF, as the abstract only lists illustrative examples without metrics.",
+        "Check the paper's supplementary materials or repository for the implementation of the two-stage stochastic program and the Pearson test calibration."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME",
+        "stat.CO"
+      ],
+      "listing": {
+        "listedOn": "2026-10-30",
+        "publishedOn": "2026-10-30",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.37837"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-30"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-30T18:06:53.469Z"
+      }
+    },
+    {
+      "id": "2610.38365",
+      "arxivId": "2610.38365",
+      "url": "https://arxiv.org/abs/2610.38365",
+      "topic": "Econ",
+      "reported": "The authors report that public lending is negatively associated with theft and positively associated with fraud and extortion, whereas private lending is negatively associated with fraud and extortion as well as embezzlement, using ward-level panel data for 1927 to 1935.",
+      "metrics": [
+        "1927 to 1935"
+      ],
+      "title": "Pawnshops and Property-Related Crime: Lessons from Interwar Tokyo",
+      "authors": "Tatsuki Inoue",
+      "takeaway": "The paper claims to examine how pawnshops were related to property-related crime in interwar Tokyo by comparing public and private institutions.",
+      "brief": "The study analyzes ward-level panel data from 1927 to 1935 using fixed-effects models to compare public and private pawnshops. It reports that public lending correlates with less theft but more fraud and extortion, while private lending correlates with less fraud, extortion, and embezzlement. A monetization exercise indicates that offense counts and victim losses can produce different assessments of these relationships.\n\nThe evidence relies on observational panel data and fixed-effects estimation, which limits causal interpretation. The abstract does not specify the magnitude of the associations or the statistical significance of the reported links. It also does not clarify whether the monetization exercise uses specific monetary units or a defined benchmark for victim losses.\n\nResearchers studying historical credit markets or crime economics may find the institutional comparison relevant. Those requiring causal proof or specific quantitative magnitudes should verify the full methodology and results in the PDF.",
+      "abstract": "Using ward-level panel data for 1927 to 1935 and fixed-effects models, this study examines how pawnshops were related to property-related crime in interwar Tokyo. Accordingly, public pawnshops targeting low-income borrowers are compared with profit-oriented private pawnshops. The results reveal that public lending is negatively associated with theft and positively associated with fraud and extortion, whereas private lending is negatively associated with fraud and extortion as well as embezzlement. A simple monetization exercise shows that offense counts and victim losses can yield different assessments. Overall, the relationship between credit and crime depended on both institutional design and crime type.",
+      "takeaways": [
+        "The object is the relationship between pawnshop institutional design and property-related crime in interwar Tokyo.",
+        "A visible limit is the reliance on observational fixed-effects models without reported effect sizes or significance levels in the abstract.",
+        "The artifact status is unknown because no code or data repository is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that public lending is negatively associated with theft and positively associated with fraud and extortion, whereas private lending is negatively associated with fraud and extortion as well as embezzlement, using ward-level panel data for 1927 to 1935.",
+        "brief": "The study looks at data for Tokyo neighborhoods from 1927 to 1935. It compares government-run pawnshops for poor borrowers with private profit-making pawnshops. The authors say public lending was linked to less theft but more fraud and extortion, while private lending was linked to less fraud, extortion, and embezzlement. They also show that counting crimes and counting money lost can give different pictures of the problem.\n\nThe study uses historical data and statistical models that control for neighborhood differences. It does not prove that pawnshops caused the crime changes. The abstract does not say how strong these links were or if they were statistically significant. It also does not explain exactly how they calculated the money lost by victims.\n\nPeople studying old financial systems or crime history might find this useful. People who need to know exactly how much crime changed should read the full paper to see the detailed numbers and methods.",
+        "takeaways": [
+          "The paper studies how different types of pawnshops in old Tokyo were linked to property crimes.",
+          "The abstract does not show how big the effects were or if they were statistically certain.",
+          "It is not known if the authors shared their data or code because the listing does not say."
+        ]
+      },
+      "actions": [
+        "Verify the specific statistical tests and effect sizes reported in the full PDF to assess the strength of the associations.",
+        "Check the monetization exercise section in the PDF to determine the exact units and benchmarks used for victim losses."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-10-30",
+        "publishedOn": "2026-10-30",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.38365"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-30"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-10-30T18:06:53.469Z"
+      }
+    }
+  ]
+}
