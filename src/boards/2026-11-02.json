@@ -1,0 +1,660 @@
+{
+  "date": "2026-11-02",
+  "label": "Mon, Nov 2",
+  "minutes": 10,
+  "poolSize": 137,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-11-03T00:26:13.983Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2610.36545",
+      "arxivId": "2610.36545",
+      "url": "https://arxiv.org/abs/2610.36545",
+      "topic": "AI",
+      "reported": "The authors report that FrameForge achieves superior performance in subject-driven generation, canny-to-image generation, and image editing among the compared methods on DreamBench, COCO2017, and GEdit-Bench.",
+      "metrics": [
+        "COCO2017"
+      ],
+      "title": "FrameForge: Harnessing Priors of Video Foundation Models for Unified Image Generation",
+      "authors": "Yijing Lin, Zhendong Mao, Mengqi Huang, Yuxin Wang, Yongdong Zhang",
+      "takeaway": "FrameForge models conditional generation through input-adaptive virtual temporal relations using Mixture of Temporal Experts and Chain of Temporal Reasoning.",
+      "brief": "The paper proposes FrameForge, a method for unified conditional image generation that uses video foundation model priors. It introduces Mixture of Temporal Experts to select temporal RoPE experts and Chain of Temporal Reasoning to model transformations via a latent intermediate state.\n\nThe authors report superior performance in subject-driven generation, canny-to-image generation, and image editing on DreamBench, COCO2017, and GEdit-Bench. The abstract does not specify quantitative metric values, baseline comparisons, or ablation results, leaving the magnitude of improvement and specific failure modes unverified from the listing.\n\nResearchers working on unified image generation or video model adaptation may find the architectural approach relevant. Those requiring specific benchmark scores or code verification should consult the full paper and repository.",
+      "abstract": "Unified conditional image generation requires a single model to preserve different aspects of a visual input while producing a target image that follows textual guidance. Pretrained video models provide a promising foundation by encoding visual transformations across time, yet existing approaches typically assign the condition and target to fixed temporal positions. We observe that condition-target relationships vary substantially across generation tasks, while video models naturally encode visual transformations at different temporal scales. This motivates us to model conditional generation through input-adaptive virtual temporal relations. We propose FrameForge, which captures two complementary aspects of such relations. Mixture of Temporal Experts (MoTE) models how far the target lies from the condition by dynamically selecting temporal RoPE experts with different virtual intervals. Chain of Temporal Reasoning (CoTR) models how the condition is transformed into the target through a latent intermediate state, with a reasoning-bottleneck attention mask encouraging information propagation through this pathway. Experiments on DreamBench, COCO2017, and GEdit-Bench show that FrameForge achieves superior performance in subject-driven generation, canny-to-image generation, and image editing among the compared methods.",
+      "takeaways": [
+        "The core object is a unified image generation framework leveraging video model temporal priors via adaptive virtual temporal relations.",
+        "The listing lacks specific quantitative scores, making the claimed superiority in subject-driven and editing tasks unverifiable without the full text.",
+        "A code repository is declared, but its functionality and alignment with the reported results are not established in the provided metadata."
+      ],
+      "plain": {
+        "reported": "The authors state that their model performs better than other tested methods in creating images from subjects, turning edge maps into images, and editing existing images, using three specific test sets.",
+        "brief": "The paper presents a new way to generate images using a single model that can handle different types of visual inputs. It uses techniques borrowed from video models to understand how images change over time, adapting these changes to fit different image generation tasks.\n\nThe authors say their method works better than others in specific image creation and editing tasks, tested on three standard datasets. However, the summary does not provide exact numbers showing how much better it is, nor does it detail what specific problems the model still has.\n\nPeople interested in how to combine video and image AI models might find this useful. Those who need exact performance numbers or want to run the code should look at the full paper and the provided code link.",
+        "takeaways": [
+          "The main idea is using video AI techniques to help a single model handle many different image creation tasks.",
+          "The summary claims the model is better but does not give specific scores, so the exact level of improvement is unknown from this text.",
+          "A code link is provided, but it is not confirmed here that the code works exactly as described in the paper."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark scores and baseline comparisons in the full PDF to confirm the claimed superiority on DreamBench, COCO2017, and GEdit-Bench.",
+        "Inspect the declared GitHub repository to confirm code availability and reproducibility of the Mixture of Temporal Experts and Chain of Temporal Reasoning components."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Lyne1/FrameForge",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-02",
+        "publishedOn": "2026-10-27",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.36545",
+            "upvotes": 111
+          }
+        ]
+      },
+      "trend": {
+        "votes": 111,
+        "rank": 1,
+        "of": 35,
+        "perDay": 19
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 111,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-27"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-03T00:26:13.983Z"
+      }
+    },
+    {
+      "id": "2610.22740",
+      "arxivId": "2610.22740",
+      "url": "https://arxiv.org/abs/2610.22740",
+      "topic": "AI",
+      "reported": "The authors report that R^2Orch consistently outperforms baselines across question answering, math, code, and interactive tasks on twelve datasets.",
+      "metrics": [],
+      "title": "R^2Orch: Recursive Self-Improvement for Agent Orchestration via Self-Play within a Skill-Internalization Loop",
+      "authors": "Mingda Zhang, Yun Huang, Qiang Huang, Yanjin Li, Rui Qian, Qichao Zhao, Tiesunlong Shen, Na Zhao, Jian Wang, Xiaoying Tang",
+      "takeaway": "The paper proposes R^2Orch, a recursive self-play orchestration paradigm with a skill-internalization loop to address hand-designed curricula and unreliable evaluation signals.",
+      "brief": "The authors introduce R^2Orch, a recursive self-play orchestration paradigm featuring an inner loop for self-chosen tasks and an outer loop for improving the improvement process. They propose Recursive Learnability and Skill Withdrawal to manage task selection and skill removal based on controlled evaluations.\n\nExperimental results on twelve datasets show consistent outperformance over baselines in question answering, math, code, and interactive tasks. The listing does not specify the exact metrics, baseline names, or statistical significance of these improvements. It also does not detail the specific nature of the \"unreliable evaluation signals\" or how advantage collapse is quantitatively resolved.\n\nResearchers working on agent orchestration, multi-agent systems, or self-improving LLMs may find the recursive loop structure relevant. Those focused on static orchestration or non-recursive training paradigms may find the specific self-play mechanism less applicable.",
+      "abstract": "In recent years, agentic orchestration has been widely applied to solve complex human tasks. However, existing orchestration learning still faces key challenges, including hand-designed curricula, advantage collapse when a task's rollouts all reach the same outcome, and unreliable evaluation signals that judge each skill by one noisy score. To address these challenges, we propose R^2Orch, a new paradigm of Recursive Self-Play Orchestration: an inner loop of self-play that improves the orchestrator on self-chosen tasks, and an outer loop that improves how the inner loop improves. To support this paradigm, we introduce Recursive Learnability, a training objective that rewards a Proposer for choosing tasks whose rollouts keep reaching different outcomes as skills are withdrawn. Built on this objective, we further propose Skill Withdrawal, in which the outer loop withdraws each skill once a controlled evaluation within self-play shows that the orchestrator performs as well without it. Moreover, the two loops form one cycle: failures are distilled into skills, skills into parameters, and withdrawals lead the Proposer to new failures, so the orchestrator moves toward zero-skill deployment. Experimental results on twelve datasets show that R^2Orch consistently outperforms baselines across question answering, math, code, and interactive tasks. Our code is available at https://github.com/beita6969/R2Orch.",
+      "takeaways": [
+        "The core object is a two-loop recursive system where an outer loop modifies the inner self-play loop's behavior.",
+        "The listing claims consistent outperformance but does not provide specific numerical gains or identify the baselines used for comparison.",
+        "The code repository URL is provided in the abstract, but the listing does not confirm its current availability or completeness."
+      ],
+      "plain": {
+        "reported": "The authors state that their system, R^2Orch, performed better than existing comparison methods on twelve different sets of test problems covering questions, math, coding, and interactive tasks.",
+        "brief": "The authors created a system called R^2Orch that uses a two-stage learning process. The first stage involves the system practicing on tasks it chooses itself. The second stage improves how the first stage learns. They also created a method to remove skills the system no longer needs.\n\nThe authors say their system beat other methods on twelve different test sets. However, the summary does not say by how much it won or which specific other methods were compared. It also does not explain exactly how the system handles situations where all attempts at a task result in the same outcome.\n\nPeople who build AI systems that coordinate multiple steps or agents might find this useful. People who use fixed, pre-programmed workflows might not find this specific self-improving approach relevant to their work.",
+        "takeaways": [
+          "The main idea is a system that improves its own learning process in a continuous cycle.",
+          "The summary claims the system is better than others but does not give specific numbers or name the competitors.",
+          "A link to the code is given, but it is not confirmed if the code is complete or working."
+        ]
+      },
+      "actions": [
+        "Verify the specific performance metrics and baseline comparisons in the full PDF, as the abstract only states 'consistently outperforms'.",
+        "Check the provided GitHub repository to confirm the code matches the described Recursive Learnability and Skill Withdrawal mechanisms."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-02",
+        "publishedOn": "2026-10-22",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.22740",
+            "upvotes": 86
+          }
+        ]
+      },
+      "trend": {
+        "votes": 86,
+        "rank": 2,
+        "of": 35,
+        "perDay": 8
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 86,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-22"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-03T00:26:13.983Z"
+      }
+    },
+    {
+      "id": "2610.39497",
+      "arxivId": "2610.39497",
+      "url": "https://arxiv.org/abs/2610.39497",
+      "topic": "AI",
+      "reported": "The authors report that under ideal screening and equal execution costs, execution compute falls by a factor approaching 1/ρ_u, where ρ_u is the density of utility-relevant interactions.",
+      "metrics": [
+        "factor approaching 1/ρ_u"
+      ],
+      "title": "Does Scaling Toward AGI Depend on What System-1 Lets System-2 Execute?",
+      "authors": "Qi Wang, Yun Qu, Lizhou Cai, Heming Zou, Haoang Chi, Yiqin Lv, Xiang Li, Haiyan Feng, Mengyu Ge, Yize Geng, Yuhang Jiang, Yixiu Mao, Xiangyang Ji",
+      "takeaway": "The paper claims that co-designing a lightweight System-1 predictor with a resource-intensive System-2 executive can improve scaling efficiency by gating execution based on predicted utility.",
+      "brief": "The authors propose a conditional interaction loop where a lightweight predictor evaluates candidate interactions before a heavier executive system executes them. They argue this approach can reduce execution compute by filtering out low-utility actions, making informative compute a better metric for scaling than total compute.\n\nThe strongest reported result is a theoretical bound showing execution compute falls by a factor approaching 1/ρ_u under ideal screening conditions. The authors note that prediction errors, exploration, and distribution shift reduce this saving, but the listing does not provide empirical measurements or specific benchmark results to validate these theoretical bounds.\n\nResearchers interested in efficient reasoning architectures or compute-aware scaling laws may find the theoretical framework relevant. Those seeking empirical validation of these specific efficiency gains in real-world models should note the absence of reported experimental data in the abstract.",
+      "abstract": "Progress toward artificial general intelligence (AGI) has largely relied on scaling a resource-intensive executive, System-2, through larger models, more data and compute, longer reasoning, and more agents. We ask whether the next stage may come instead from co-designing it with System-1, a lightweight, semantically aware predictor that evaluates candidate interactions before execution, so that System-2 acts only on those worth their cost. Our answer is a qualified yes. We study conditional interaction, a predict--gate--execute--update loop: System-1 estimates each candidate's utility, System-2 executes those admitted by an adaptive threshold, and the outcomes update System-1. The loop spans training, test-time reasoning, adaptive decision-making, and agentic tool use, with utility and cost defined by the application. Under ideal screening and equal execution costs, execution compute falls by a factor approaching 1/ρ_u, where ρ_u is the density of utility-relevant interactions (cost-weighted when costs differ); prediction errors, exploration, and distribution shift reduce the saving. We bound selection regret by predictor error and the utility margin. These results motivate our central hypothesis: ρ_u is a measurable coordinate of scaling efficiency and makes informative compute a better description of scaling than total compute.",
+      "takeaways": [
+        "The object is a theoretical framework for conditional interaction loops that gate System-2 execution based on System-1 utility predictions.",
+        "A visible limit is that the reported compute savings rely on ideal screening and equal execution costs, with reductions expected to diminish under prediction errors or distribution shift.",
+        "The artifact status is theoretical; the listing provides no code, datasets, or empirical benchmarks to verify the claimed efficiency gains."
+      ],
+      "plain": {
+        "reported": "The authors report that under ideal screening and equal execution costs, execution compute falls by a factor approaching 1/ρ_u, where ρ_u is the density of utility-relevant interactions.",
+        "brief": "The authors propose a system where a fast, lightweight predictor checks if an action is worth doing before a slower, heavier system performs it. They argue this can save computing power by skipping actions that are not useful, suggesting that counting only useful compute is a better way to measure progress than counting all compute.\n\nThe main result is a mathematical limit showing that computing power can be reduced by a factor related to how often useful actions occur, assuming perfect prediction. The authors admit that mistakes in prediction or changes in the environment will reduce these savings, but the summary does not include any real-world tests or data to prove these savings actually happen.\n\nPeople studying how to make AI reasoning more efficient might find the mathematical ideas useful. People looking for proof that this method works in real AI models should note that the summary does not include any experimental results or data.",
+        "takeaways": [
+          "The paper presents a mathematical model for a system that filters actions before executing them to save energy.",
+          "The model assumes perfect prediction and equal costs for all actions, which may not hold in real-world scenarios.",
+          "The paper provides no code or real-world data to test the mathematical claims."
+        ]
+      },
+      "actions": [
+        "Verify the theoretical assumptions and bounds by reading the full PDF to check the definitions of utility and cost.",
+        "Search for external empirical studies that test similar predict-gate-execute loops to see if the theoretical savings hold in practice."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-02",
+        "publishedOn": "2026-10-29",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.39497",
+            "upvotes": 52
+          }
+        ]
+      },
+      "trend": {
+        "votes": 52,
+        "rank": 3,
+        "of": 35,
+        "perDay": 13
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 52,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-29"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-03T00:26:13.983Z"
+      }
+    },
+    {
+      "id": "2610.42053",
+      "arxivId": "2610.42053",
+      "url": "https://arxiv.org/abs/2610.42053",
+      "topic": "AI",
+      "reported": "The authors report that REA reaches 95.9% success on 3,000 test episodes across 60 LIBERO-Pro tasks, beating the best single-agent baseline in its own policy pool (94.7%) while reducing control steps by 25% and control time by 17%.",
+      "metrics": [
+        "95.9% success",
+        "94.7%",
+        "25%"
+      ],
+      "title": "REA: A Routed Embodied Agent Runtime for Asynchronous Brain-Cerebellum Control",
+      "authors": "Pengfei Zhou, Yixing Ma, Zhengfeiyang Zhang, Haoyuan Chen, Zhenglin Wan, Hexin Wang, Wangbo Zhao, Yang You",
+      "takeaway": "The paper proposes REA, a unified runtime where a deliberative System 2, an embodied router System 1, and reactive System 0 policies cooperate under a single golden rule that no running policy waits on the brain.",
+      "brief": "The authors propose REA, a routed embodied agent runtime designed to coordinate slow foundation models with fast reactive policies without stalling execution. They report that REA achieves 95.9% success on LIBERO-Pro tasks, outperforming the best single-agent baseline in its policy pool by 1.2 percentage points while reducing control steps by 25% and control time by 17%. The listing does not establish specific limitations regarding generalization beyond the tested benchmarks or the computational overhead of the route memory and judge gate mechanisms.\n\nThe strongest reported evidence is the 95.9% success rate on 3,000 test episodes across 60 LIBERO-Pro tasks, where REA beats the best single-agent baseline (94.7%) and reduces control steps by 25% and control time by 17%. A separate 100-episode RoboTwin 2.0 study reports 84% success with VLA policies and 86% with VLA+code, compared to 80% for the strongest single VLA baseline MEDex. The listing does not specify the exact configuration of the \"System 0\" policies or the detailed architecture of the \"route memory\" that stores measured success ahead of time.\n\nResearchers working on embodied AI runtimes, asynchronous control systems, or multi-agent coordination may find the specific routing and escalation mechanisms relevant. Those focused solely on single-model fine-tuning or static policy evaluation may find the runtime overhead and coordination complexity less applicable to their immediate workflows.",
+      "abstract": "Foundation models are becoming remarkably reliable at high-level reasoning, yet they remain too slow and costly to serve as fine-grained controllers. Conversely, fast policies like VLAs and whole-body controllers offer more efficient reflexes, but struggle to generalize. While pairing a deliberative brain (foundation models) with a reactive cerebellum (fast policies) seems natural for embodied systems, two obstacles remain: methods are built and scored on incompatible stacks, and their asynchronous coordination is difficult. For example, an agent that calls the VLA in the agentic loop can stall the fast execution, while a VLA that calls the agent on errors tends to re-trigger fallbacks repeatedly or completely miss silent failures. To address this, we propose REA (Routed Embodied Agent), a unified runtime where a deliberative System 2, an embodied router System 1 and reactive System 0 policies cooperate under a single golden rule - no running policy waits on the brain. Instead of querying the brain at each failure, REA employs a route memory that stores each policy's measured success ahead of time, a boundary-triggered judge gate that consults the brain on policy execution, and a shared-budget escalation ladder for bounded recovery. Evaluated on 3,000 test episodes across 60 LIBERO-Pro tasks, REA reaches 95.9% success and beats the best single-agent baseline in its own policy pool (94.7%) while reducing control steps by 25% and control time by 17%. In a separate 100-episode RoboTwin 2.0 study, REA achieves 84% success with VLA policies and 86% with VLA+code, compared with 80% for the strongest single VLA baseline MEDex. These results demonstrate learned and programmatic policies operating within the same runtime. REA also transfers to BEHAVIOR-1K and a real Unitree G1 humanoid, achieving the highest observed success among the compared methods.",
+      "takeaways": [
+        "The object is a runtime architecture that routes control between deliberative and reactive policies using a route memory and boundary-triggered judge gate.",
+        "The visible limit is that the reported success rates are measured on specific benchmarks (LIBERO-Pro, RoboTwin 2.0) and a real Unitree G1, with no established generalization to unseen environments or tasks in the listing.",
+        "The artifact status is not established in the listing, as no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their system, REA, succeeds in 95.9% of 3,000 test runs on 60 specific robot tasks, performing better than the best single-robot system in their group (94.7%) while using 25% fewer control steps and 17% less time.",
+        "brief": "The authors propose a system called REA that coordinates slow, smart AI models with fast, reflexive robot controllers so that the fast controllers never have to wait for the slow models to respond. They report that this system succeeds in 95.9% of 3,000 test runs on 60 specific robot tasks, performing better than the best single-robot system in their group (94.7%) while using 25% fewer control steps and 17% less time. The listing does not specify if this performance holds up in new, unseen environments or how much extra computing power the coordination system requires.\n\nThe strongest evidence is the 95.9% success rate on 3,000 test runs, where the system beats the best single-robot baseline (94.7%) and cuts control steps by 25% and time by 17%. In a separate test of 100 runs on a different robot platform, the system achieved 84% success with one type of controller and 86% with another, compared to 80% for the best single-controller baseline. The listing does not explain exactly how the system remembers which controllers work well or how it decides when to ask the slow model for help.\n\nPeople who build software for robots that need to coordinate different types of AI controllers might find this useful. People who only work on training single AI models or testing robots in fixed, simple environments might not find the added complexity of this coordination system helpful for their current work.",
+        "takeaways": [
+          "The system is a software framework that decides which robot controller to use at any given moment, using a memory of past successes and a gate that checks for errors.",
+          "The main limitation shown is that the results are only from specific test environments and one real robot, with no proof that it works in other situations.",
+          "It is not stated whether the code or detailed instructions for building this system are available to the public."
+        ]
+      },
+      "actions": [
+        "Verify the specific implementation details of the route memory and judge gate by reviewing the full PDF to understand how measured success is stored and updated.",
+        "Check the supplementary materials or repository for the exact configuration of the System 0 policies and the escalation ladder to assess reproducibility."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-02",
+        "publishedOn": "2026-10-30",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2610.42053",
+            "upvotes": 43
+          }
+        ]
+      },
+      "trend": {
+        "votes": 43,
+        "rank": 4,
+        "of": 35,
+        "perDay": 14
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 43,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-30"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-03T00:26:13.983Z"
+      }
+    },
+    {
+      "id": "2610.40662",
+      "arxivId": "2610.40662",
+      "url": "https://arxiv.org/abs/2610.40662",
+      "topic": "Health",
+      "reported": "The authors report that their deployed reader reaches AUC 0.82 on Yale-HER2, measured on external hospital data.",
+      "metrics": [
+        "AUC 0.812",
+        "AUC 0.82",
+        "5-6 s per slide"
+      ],
+      "title": "A small HER2 reader for routine H&E slides: real-world deployment",
+      "authors": "Thang Tran (CloudKites AI Lab, New South Wales, Australia), Lan Dang (Monash Business School, Monash University, Victoria, Australia)",
+      "takeaway": "The paper presents a 22M-parameter HER2 reader for routine H&E slides, owned end to end, as a baseline for pathologists.",
+      "brief": "The authors propose a self-supervised ViT-S/16 encoder and attention-based slide classifiers to estimate HER2 status from standard H&E images, aiming to assist pathologists in prioritizing in situ hybridization for equivocal cases. They report an AUC of 0.82 on the Yale-HER2 external dataset and 0.76 for ranking ISH-amplified cases among IHC 2+ tumors, noting that performance varies across different hospital cohorts and biopsy types. The listing does not establish whether the model has received regulatory clearance or if the reported external validation cohorts are representative of all clinical settings.\n\nThe strongest reported result is an AUC of 0.82 on Yale-HER2, with the authors stating their encoder ranks first of seven in their paired protocol. They also report that the system requires 5-6 seconds per slide without a GPU and that per-laboratory normalization improves performance on new sites. The abstract does not specify the exact composition of the three external hospitals or the total number of slides used for the final operating point selection.\n\nResearchers developing computational pathology tools for HER2 assessment or those interested in self-supervised vision transformer encoders for histopathology may find the public weights and predictions useful. Clinicians relying on current IHC and ISH workflows without access to the specific pathology platform described may find the deployment context less directly applicable.",
+      "abstract": "HER2 status decides who receives HER2-targeted therapy. Pathologists score HER2 protein by immunohistochemistry (IHC); equivocal IHC 2+ tumours, their hardest calls, wait for in situ hybridisation (ISH). We built a HER2 reader for routine H&E slides, owned end to end, as a baseline for pathologists. A 22M-parameter ViT-S/16 tile encoder was trained on public TCGA slides by self-supervision, distillation from H-optimus-0 and two rounds of JEPA refinement; five cross-validated attention-based slide classifiers average their probabilities; and an operating point is fixed on training data. Compared under one paired ten-seed protocol, readers on our encoder rank first of 7 on external validation from TCGA-BRCA to Yale-HER2 (AUC 0.812), level with readers on encoders 4 and 50 times larger. We also rebuilt PathBench's encoder benchmark on public cohorts; our replica reproduces its published order of reference encoders, and under it our encoder ranks first of 7 on TCGA-BRCA (0.689) and sits level with H-optimus-0 and Phikon on Yale-HER2 (0.897). On three external hospitals our deployed reader reaches AUC 0.82 on Yale-HER2 (about 0.81 with training slides balanced for tissue size), 0.75 on HEROHE and 0.63 on BCNB biopsies, and among HEROHE's 85 IHC 2+ cases it ranks ISH-amplified above non-amplified tumours at 0.76, best among our TCGA-trained readers. Per-laboratory score normalisation and a laboratory's own slides improve it further on a new site. Without a GPU our reader needs 5-6 s per slide. It serves as a research-use pre-read in a pathology platform, where it proposes a probability and a call beside IHC and helps prioritise ISH for equivocal cases. Weights, per-slide predictions and the data behind every figure are public at https://huggingface.co/cloudkites/her2-reader.",
+      "takeaways": [
+        "The object is a 22M-parameter ViT-S/16 tile encoder with five cross-validated attention-based slide classifiers designed to read HER2 status from H&E slides.",
+        "A visible limit is the variation in reported AUC across external datasets, ranging from 0.63 on BCNB biopsies to 0.82 on Yale-HER2, suggesting performance depends heavily on the specific cohort and biopsy type.",
+        "The artifact status is public, with weights, per-slide predictions, and data behind figures available at the provided Hugging Face URL, though the listing does not confirm if the code for the full pipeline is open-source."
+      ],
+      "plain": {
+        "reported": "The authors state that their software tool achieved a score of 0.82 on a specific test set of breast cancer images from Yale, which measures how well it distinguishes between different types of tumors.",
+        "brief": "The researchers created a computer program that looks at standard microscope images of breast tissue to guess whether a tumor has a specific protein called HER2. This helps doctors decide which patients need a specific type of cancer treatment. They say their tool works well on some test images, scoring 0.82 on one set and 0.76 on another, but it works less well on other types of tissue samples. The text does not say if this tool is approved for use in hospitals or if it works the same way in every clinic.\n\nThe best result they show is a score of 0.82 on the Yale test set. They also say the tool takes about 5 to 6 seconds to analyze one image if it is not using a special fast computer chip. They mention that adjusting the tool for a specific lab's own images makes it work better at new locations. The abstract does not explain exactly how many images were used in the final test or who the patients were.\n\nPeople who build computer tools for analyzing medical images might find the free download of the tool's settings and results helpful. Doctors who currently use standard lab tests to check for this protein and do not have access to this specific software platform might not find it immediately useful for their daily work.",
+        "takeaways": [
+          "The tool is a computer model with 22 million adjustable parts that looks at small pieces of tissue images to guess the HER2 status.",
+          "A clear weakness is that the tool's accuracy score changes a lot depending on the type of tissue sample, dropping from 0.82 on one test set to 0.63 on another.",
+          "The tool's settings and the results for each image are available for free download at a specific website, but it is not clear if the full code for running the tool is also free."
+        ]
+      },
+      "actions": [
+        "Verify the exact protocol for the 'paired ten-seed protocol' and the specific external hospital cohorts by reading the full PDF, as the abstract does not detail the sample sizes or demographic breakdowns.",
+        "Check the Hugging Face repository to confirm the availability of the specific 'per-slide predictions' and the data behind every figure, ensuring the artifacts match the claims in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "cs.CV",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "listing": {
+        "listedOn": "2026-11-02",
+        "publishedOn": "2026-11-02",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.40662"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-03T00:26:13.983Z"
+      }
+    },
+    {
+      "id": "2610.40693",
+      "arxivId": "2610.40693",
+      "url": "https://arxiv.org/abs/2610.40693",
+      "topic": "Physics",
+      "reported": "The authors report that relative errors in total radiated power and dissipated power were on the order of $10^{-3}$ compared to classical finite-element solutions for an axisymmetric coaxially fed monopole antenna.",
+      "metrics": [
+        "relative errors ... on the order of $10^{-3}$"
+      ],
+      "title": "Finite-Element Electromagnetic Analysis and Evaluation of Antenna Performance Metrics Using a Quantum Linear System Solver",
+      "authors": "Hiroaki Ominato, Takahiro Ohyama, Shiro Kawabata",
+      "takeaway": "The paper claims to formulate antenna performance metrics as quantum observables and develop a hybrid workflow for evaluating them without reconstructing the full classical solution vector.",
+      "brief": "The authors propose a method to evaluate antenna metrics like radiated power and losses directly from quantum states, avoiding the cost of full vector reconstruction. This addresses the computational bottleneck of finite-element electromagnetic analysis at high frequencies.\n\nValidation was performed on an axisymmetric coaxially fed monopole antenna under idealized conditions. The reported relative errors were on the order of $10^{-3}$ relative to classical solutions. The listing does not specify the quantum hardware used, the size of the linear systems, or the specific fault-tolerant assumptions beyond the general mention of fault-tolerant quantum computers.\n\nResearchers working on quantum algorithms for electromagnetic simulation or antenna design may find the observable formulation relevant. Those seeking immediate practical acceleration on current noisy hardware should note the idealized validation conditions and the lack of reported wall-clock time comparisons.",
+      "abstract": "Electromagnetic analysis based on the finite element method is widely used in antenna design. At higher frequencies, however, the required mesh refinement makes solving large sparse linear systems the main contributor to computational cost. Quantum linear system solvers offer a potential means of accelerating this step, but their output is a superposition state: reconstructing all components of the classical solution vector would forfeit the quantum speedup. Prior studies have proposed methods for obtaining physical quantities such as scattering cross sections and scattering parameters from the solution state. To support antenna design using fault-tolerant quantum computers, we formulate the total radiated power, the radiated power within a prescribed solid angle, and the dielectric and conductive losses as observables for efficient evaluation from a quantum solution state. These observables avoid the measurement cost of reconstructing all components of the output quantum state. We develop an end-to-end hybrid quantum--classical workflow that combines finite-element electromagnetic analysis, matrix preconditioning, a quantum linear system solver, and the evaluation of antenna design metrics. To validate the workflow, we performed numerical experiments evaluating these observables for an axisymmetric coaxially fed monopole antenna. Under idealized conditions, the relative errors in the total radiated power and the dissipated power with respect to the classical finite-element solution were on the order of $10^{-3}$, confirming the consistency of the workflow. The proposed method is expected to provide a basis for using quantum linear system solvers to evaluate antenna performance and, in the future, to design high-frequency wireless devices.",
+      "takeaways": [
+        "The object is a hybrid quantum-classical workflow for antenna metric evaluation using quantum linear system solvers.",
+        "A visible limit is that validation was conducted under idealized conditions for a specific antenna geometry, with no reported comparison to classical runtime or resource overhead.",
+        "The artifact status is not established in the listing; no code or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors state that their calculated values for power emitted by the antenna and power lost as heat differed from standard computer simulation results by about one thousandth of the value, tested on a simple rod antenna.",
+        "brief": "The authors suggest a way to use quantum computers to check antenna performance without calculating every single detail of the electromagnetic field, which is usually very slow. This could help design antennas for high-frequency signals.\n\nThey tested this idea on a simple antenna shape using perfect, error-free quantum computer assumptions. The results were very close to standard methods, with small differences. The text does not say what kind of real-world quantum computer was used or how long the calculations took compared to normal computers.\n\nPeople interested in using quantum computers for physics simulations might find this useful. People looking for a ready-to-use tool for current quantum devices should be cautious because the tests were done under perfect theoretical conditions.",
+        "takeaways": [
+          "The work is a step-by-step process combining classical antenna math with quantum computer steps to measure antenna performance.",
+          "A clear limitation is that the test was done on a simple antenna shape with perfect quantum computer assumptions, and no timing comparison with normal computers is given.",
+          "It is not stated in the listing whether the code or data is available for download."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantum circuit depth, gate counts, and error model assumptions in the PDF to assess the 'idealized conditions' claim.",
+        "Check the PDF for details on the preconditioning method and the specific linear system sizes tested to determine scalability."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "cs.CE"
+      ],
+      "listing": {
+        "listedOn": "2026-11-02",
+        "publishedOn": "2026-11-02",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.40693"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-03T00:26:13.983Z"
+      }
+    },
+    {
+      "id": "2610.40701",
+      "arxivId": "2610.40701",
+      "url": "https://arxiv.org/abs/2610.40701",
+      "topic": "Security",
+      "reported": "The authors report that a model deciding with little confidence loses half its detections to a very small change in the input, measured on the Friday DDoS subset of CICIDS2017.",
+      "metrics": [
+        "15% of attack labels are changed"
+      ],
+      "title": "FGSM Attack Transferability from Simulation to Quantum Hardware in Network Intrusion Detection",
+      "authors": "Zeeshan Ajmal, Kimmo Halunen, Marc Mau{\\ss}ner, Volker Reers, Arif Ali Khan",
+      "takeaway": "The paper claims that device noise does not act as a defense against FGSM attacks and that classifier vulnerabilities depend partly on training confidence.",
+      "brief": "The authors state that hybrid variational quantum classifiers for network intrusion detection remain vulnerable to FGSM evasion and label flipping, with vulnerability levels varying by training confidence.\n\nThey report that attacks built in simulation transfer to the IBM Fez superconducting processor, and that simulated noise reduces model confidence rather than accuracy. The listing does not establish whether these findings generalize beyond the specific Friday DDoS subset or the tested hardware configuration.\n\nResearchers evaluating quantum machine learning security should examine the confidence-accuracy tradeoff described. Those not working on quantum intrusion detection systems may find the specific hardware transfer results less relevant.",
+      "abstract": "Quantum computers are now available through cloud platforms, and recent work has proposed using them to detect network intrusions. It is not yet clear how easily such systems can be attacked. We train a hybrid variational quantum classifier (VQC) on the Friday DDoS subset of CICIDS2017 and test it against two attacks: label flipping during training and FGSM evasion at prediction time. We run the tests in simulation and on IBM hardware, the Fez superconducting processor (Heron r2). We find that two models with similar accuracy can differ greatly in how easily they are attacked. A model that decides with little confidence loses half its detections to a very small change in the input, while a model trained to decide with more confidence needs a much larger change before it fails. Attacks built in simulation against the more confident model also work on real hardware, and the device classifies every unaltered attack sample correctly. Simulated device noise does not reduce accuracy, but it does reduce the model's confidence and makes attacks easier, so accuracy alone does not show how exposed a model is. Label flipping has no measurable effect until 15% of attack labels are changed. These results show that device noise should not be treated as a defense and that reported weaknesses in these classifiers depend partly on how they were trained.",
+      "takeaways": [
+        "The object is a hybrid variational quantum classifier trained on the Friday DDoS subset of CICIDS2017.",
+        "A visible limit is that the study focuses on two specific attack types and one specific hardware processor.",
+        "The artifact status is not established in the listing, as no code repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that a model making decisions with low certainty misses half of the intrusions when the input data is slightly altered, measured on a specific dataset of distributed denial-of-service attacks.",
+        "brief": "The authors state that quantum-based systems for spotting network attacks can be tricked by small data changes, and that how easily they are tricked depends on how certain the model is when making decisions.\n\nThey report that tricks designed on a computer simulation also work on real quantum hardware, and that adding simulated noise to the model makes it less certain but does not make it less accurate. The listing does not say if these results apply to other types of network attacks or other quantum computers.\n\nPeople studying the security of quantum computing systems should look at the relationship between model certainty and vulnerability. People not working on quantum security may find the specific hardware details less useful.",
+        "takeaways": [
+          "The object is a quantum computer program trained to spot a specific type of network attack.",
+          "A visible limit is that the study only tested two kinds of attacks and one specific quantum computer.",
+          "The artifact status is not established in the listing, as no computer code is provided."
+        ]
+      },
+      "actions": [
+        "Verify the specific accuracy and confidence values for the low-confidence versus high-confidence models in the PDF.",
+        "Check the PDF for details on the exact FGSM epsilon values used to achieve the reported detection loss."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.ET",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-02",
+        "publishedOn": "2026-11-02",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.40701"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-03T00:26:13.983Z"
+      }
+    },
+    {
+      "id": "2610.40719",
+      "arxivId": "2610.40719",
+      "url": "https://arxiv.org/abs/2610.40719",
+      "topic": "Econ",
+      "reported": "The authors report that structural Monte Carlo experiments document both coverage protection and its cost in set length.",
+      "metrics": [
+        "rate is $\\min\\{1,\\sqrt{(\\gamma+d)/(nd^2)}+d^s\\}$"
+      ],
+      "title": "Weak Identification in Bunching Designs: Rare Events and Counterfactual Uncertainty",
+      "authors": "Kun Huang",
+      "takeaway": "The paper establishes matching minimax bounds for elasticity estimation and honest confidence-set diameter in bunching designs with rare events and counterfactual uncertainty.",
+      "brief": "The paper studies shrinking tax kinks under local Hölder continuity and a possible known background atom at the threshold. It addresses obstacles created by few behavioral bunchers and an unobserved relocation interval.\n\nThe authors derive minimax rates and finite-sample confidence sets using exact binomial inversion with a deterministic smoothness allowance. They show a coverage failure of the Wald interval for a conventional bunching ratio. The results apply to a stated exact-atom observation model, while general rounding and optimization frictions require additional assumptions.\n\nResearchers working on bunching designs with rare events or weak signals may find the bounds and confidence-set construction relevant. Those relying on standard Wald intervals or assuming no background atom may need to check the model assumptions before applying the results.",
+      "abstract": "We study shrinking tax kinks when the counterfactual density is locally H\\\"older continuous and may be accompanied by a known background atom at the threshold. Small policy incentives create two distinct obstacles: few behavioral bunchers and an unobserved relocation interval. For the complete observed distribution, we establish matching minimax bounds for elasticity estimation and honest confidence-set diameter. With kink size $d$, background mass $\\gamma$, and smoothness $0<s\\leq1$, the rate is $\\min\\{1,\\sqrt{(\\gamma+d)/(nd^2)}+d^s\\}$. The stochastic component has a rare-event scale when the background mass is of the kink order or smaller and a conventional weak-signal scale when it remains positive. The extrapolation component follows from observationally equivalent counterfactual densities, rather than sampling error. We derive normal and Poisson limits for a conventional bunching ratio, show a coverage failure of its Wald interval, and give finite-sample confidence sets by exact binomial inversion with a deterministic smoothness allowance. The procedure estimates the counterfactual density from an unaffected bin and covers the entire population identified set uniformly, including zero policy incentives. A likelihood-ratio calculation establishes a finite-parameter Poisson limit for a smooth, known counterfactual submodel. Structural Monte Carlo experiments document both coverage protection and its cost in set length. The results apply to the stated exact-atom observation model; general rounding and optimization frictions require additional assumptions.",
+      "takeaways": [
+        "The object is elasticity estimation and confidence-set diameter in bunching designs with shrinking kinks and a possible background atom.",
+        "A visible limit is that the results apply to a stated exact-atom observation model, and general rounding or optimization frictions require additional assumptions.",
+        "No code or repository is declared in the listing, so artifact status is not established."
+      ],
+      "plain": {
+        "reported": "The authors report that computer simulations using a structural model show that their method protects coverage probability but at the cost of wider confidence intervals.",
+        "brief": "The paper looks at small tax changes (kinks) where the underlying distribution of behavior is smooth but may have a known lump of mass right at the threshold. Small policy changes create two problems: very few people bunch at the kink, and there is an unobserved range of relocation.\n\nThe authors derive mathematical limits on how well elasticity can be estimated and how wide confidence sets must be. They show that a common statistical interval (Wald) fails to cover the true value. They provide a method for building confidence sets that works for small samples. The results only apply to a specific model where the atom is exact; other real-world frictions like rounding need extra assumptions.\n\nPeople studying bunching designs with rare events or weak signals may find the bounds and confidence-set method useful. People using standard Wald intervals or assuming no background atom should check the model assumptions before using these results.",
+        "takeaways": [
+          "The object is estimating elasticity and the width of confidence sets in bunching designs with small kinks and a possible background atom.",
+          "A visible limit is that the results only apply to a specific exact-atom model, and other frictions like rounding need extra assumptions.",
+          "No code or repository is listed, so it is not established whether an artifact exists."
+        ]
+      },
+      "actions": [
+        "Verify the exact-atom observation model and the smoothness assumptions in the PDF to confirm applicability to your data.",
+        "Check the structural Monte Carlo setup in the PDF to understand the specific conditions under which coverage protection and set length costs are documented."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.EM"
+      ],
+      "listing": {
+        "listedOn": "2026-11-02",
+        "publishedOn": "2026-11-02",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.40719"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-03T00:26:13.983Z"
+      }
+    },
+    {
+      "id": "2610.40826",
+      "arxivId": "2610.40826",
+      "url": "https://arxiv.org/abs/2610.40826",
+      "topic": "Engineering",
+      "reported": "The authors report that their method reduces estimation error while maintaining fewer links and allocating moderate link rates in a short time, measured on various test cases.",
+      "metrics": [],
+      "title": "Joint Estimation and Network Configuration in Multi-Agent Systems",
+      "authors": "Mohammadreza Barzegaran, Hamid Jafarkhani",
+      "takeaway": "The paper claims to develop a sampled consensus-plus-innovations framework that jointly accounts for inter-agent disagreement and estimation inaccuracy under realistic wireless network constraints.",
+      "brief": "The authors propose a semi-distributed auction-based algorithm that jointly modifies the communication graph and link-rate allocation to minimize a derived upper bound on worst-case steady-state estimation error.\n\nThe reported evidence comes from various test cases showing reduced estimation error with fewer links and moderate rates. The listing does not specify the exact test case parameters, the magnitude of error reduction, or the specific wireless channel models used.\n\nResearchers working on multi-agent estimation over constrained wireless networks may find the joint optimization approach relevant. Those focused solely on static network topology or high-rate communication assumptions may find the specific constraints limiting.",
+      "abstract": "Distributed consensus-based sensing enables a multi-agent system to collaboratively estimate an unknown state by combining local measurements with information received from neighboring agents. In practice, however, the communication network, transmission delays, and finite-rate communication directly affect the disagreement among agents. On the other hand, agreement among agents does not ensure accuracy, particularly when sensors have different measurement uncertainties. We develop a sampled consensus-plus-innovations framework under realistic wireless network constraints that jointly accounts for inter-agent disagreement and estimation inaccuracy. We derive a computable upper bound on the worst-case steady-state estimation error that captures consensus disagreement due to the communication graph, quantization error, and transmission delay, together with estimation inaccuracy, which accounts for measurement uncertainty against the true state. We then use this bound as a network design objective and propose a semi-distributed auction-based algorithm that jointly modifies the communication graph and link-rate allocation. The proposed method preserves connectivity, converges in finite time to a locally auction-stable network configuration, and reduces the bound on the estimation error at every accepted change. The proposed method has been evaluated on various test cases, and the results show that it reduces the estimation error while maintaining fewer links and allocating moderate link rates in a short time.",
+      "takeaways": [
+        "The object is a joint optimization algorithm for communication graph and link-rate allocation in multi-agent systems.",
+        "The visible limit is the reliance on a derived upper bound as the design objective, which may not reflect actual performance in all scenarios.",
+        "The artifact status is not established; no code or dataset is provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors state that their method lowers the error in estimating a shared value while using fewer communication links and moderate data speeds, based on tests they ran.",
+        "brief": "The authors suggest a method where agents in a group decide how to talk to each other and how much data to send, aiming to keep their estimates of a shared value as accurate as possible.\n\nThey say their method works in tests by lowering errors and using fewer connections. However, the summary does not say how big the error reduction was or what specific conditions the tests used.\n\nPeople studying how groups of robots or sensors share information over wireless networks might find this useful. People who assume fast, reliable connections or only care about fixed network setups might find it less applicable.",
+        "takeaways": [
+          "The main thing is a method for deciding how sensors talk to each other and how much data they send.",
+          "A limitation is that the method optimizes a theoretical limit on error, which might not match real-world performance exactly.",
+          "It is not stated whether the code or data used in the tests is available to others."
+        ]
+      },
+      "actions": [
+        "Verify the specific test case configurations and baseline comparisons in the full PDF.",
+        "Check the derivation of the upper bound to assess its tightness relative to actual estimation error."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-11-02",
+        "publishedOn": "2026-11-02",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.40826"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-03T00:26:13.983Z"
+      }
+    },
+    {
+      "id": "2610.40899",
+      "arxivId": "2610.40899",
+      "url": "https://arxiv.org/abs/2610.40899",
+      "topic": "Stats",
+      "reported": "The authors report evaluating the power of the proposed test through simulations and comparing its performance with existing global tests.",
+      "metrics": [],
+      "title": "Global Testing of Gaussian Means by Combining Marginal and Conditional Evidence",
+      "authors": "Deepra Ghosh, Edgar Dobriban, Sanat K. Sarkar",
+      "takeaway": "The paper proposes a test for the global null hypothesis of zero means in correlated multivariate Gaussian data by combining marginal and conditional evidence at each coordinate.",
+      "brief": "The authors propose a global test for zero means in correlated multivariate Gaussian data that combines marginal and conditional evidence at each coordinate. They state that the procedure adapts to the relative strengths of marginal and conditional testing while retaining the simplicity of minimum-type global testing.\n\nThe authors establish finite-sample control of the global Type-I error under known covariance and covariance estimated from an independent sample. They evaluate power through simulations and illustrate practical utility using a TCGA carcinoma dataset. The listing does not specify the magnitude of power gains or the exact performance differences compared to existing tests.\n\nResearchers working on multivariate hypothesis testing with correlated Gaussian data may find the method relevant. Those requiring specific quantitative power comparisons or code access should verify the full paper, as the listing provides no numerical results or repository link.",
+      "abstract": "We propose a test of the global null hypothesis of zero means in correlated multivariate Gaussian data by combining marginal and conditional evidence at each coordinate. The conditional tests are based on the distribution of each coordinate given the remaining coordinates. At each coordinate, the corresponding two-sided $p$-values are combined using the Simes method, followed by a Bonferroni correction across coordinates. Because conditioning can either strengthen or weaken evidence against the null, neither marginal nor conditional testing is uniformly preferable. The proposed procedure adapts to their relative strengths while retaining the simplicity of minimum-type global testing. We establish finite-sample control of the global Type-I error under both known covariance and covariance estimated from an independent sample. The latter setting requires a careful analysis of the dependence between studentized marginal and conditional statistics. We evaluate the power of the proposed test through simulations, compare its performance with existing global tests, and illustrate its practical utility using a TCGA carcinoma dataset.",
+      "takeaways": [
+        "The object is a global test for zero means in correlated multivariate Gaussian data that combines marginal and conditional p-values using Simes and Bonferroni corrections.",
+        "The visible limit is that the abstract states neither marginal nor conditional testing is uniformly preferable, and the procedure adapts to their relative strengths without specifying the adaptation mechanism in detail.",
+        "The artifact status is unclear because no code repository is declared and the listing does not confirm the availability of simulation scripts or the TCGA analysis code."
+      ],
+      "plain": {
+        "reported": "The authors say they checked how well their new test works by running computer simulations and comparing it to other existing tests.",
+        "brief": "The authors created a new way to check if the average values in a set of related measurements are all zero. They do this by looking at each measurement separately and also by looking at each measurement while accounting for the others. They combine these two types of checks using a specific statistical method.\n\nThey prove that their method correctly controls the chance of making a false positive error, even when the data is limited. They show this works in computer simulations and on a real cancer dataset. However, the summary does not say exactly how much better their method is than the old ones, or by how much.\n\nPeople who study statistics for medical or biological data might find this useful. If you need to see the actual numbers or use the code, you should look at the full paper because this summary does not include them.",
+        "takeaways": [
+          "The tool is a statistical test that checks if a group of related numbers has an average of zero by combining two different types of evidence.",
+          "A limitation is that the method has to adjust to which type of evidence is stronger, and the summary does not explain exactly how it makes that adjustment.",
+          "It is not clear if the code is available because the summary does not list a website or repository where you can download it."
+        ]
+      },
+      "actions": [
+        "Verify the finite-sample Type-I error control claims and power comparisons by reading the full PDF, as the abstract lacks specific numerical results.",
+        "Check the paper’s supplementary materials or author websites for code availability, since no repository URL is provided in the listing."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME",
+        "math.ST",
+        "stat.TH"
+      ],
+      "listing": {
+        "listedOn": "2026-11-02",
+        "publishedOn": "2026-11-02",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2610.40899"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-03T00:26:13.983Z"
+      }
+    }
+  ]
+}
