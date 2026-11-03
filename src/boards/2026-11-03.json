@@ -1,0 +1,663 @@
+{
+  "date": "2026-11-03",
+  "label": "Tue, Nov 3",
+  "minutes": 10,
+  "poolSize": 173,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-11-03T20:47:51.891Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2611.00859",
+      "arxivId": "2611.00859",
+      "url": "https://arxiv.org/abs/2611.00859",
+      "topic": "AI",
+      "reported": "The authors report that 4-step Wave Forcing achieves 147.6 DiT FPS and 134.8 end-to-end FPS on eight H200 GPUs.",
+      "metrics": [
+        "147.6 DiT FPS",
+        "134.8 end-to-end FPS",
+        "7.07x the single-GPU end-to-end throughput"
+      ],
+      "title": "Wave Forcing: Towards Speed-of-Light Streaming Video Generation",
+      "authors": "Yijie Jin, Yuxuan Liu, Jiajun Xu, Ye Huang, Chuzhi Wang, Jiayang Li, Ruiyang Chen, Chenling Hong, Xu Wang, Zhijie Deng",
+      "takeaway": "The paper claims to propose Wave Forcing, a system that co-designs generation, training, and execution for continuous video output with multi-step denoising.",
+      "brief": "The authors introduce Wave Forcing to address efficiency and quality challenges in real-time long-video generation, specifically targeting serialized denoising and history-cache refresh bottlenecks. They report that their system achieves 147.6 DiT FPS and 134.8 end-to-end FPS on eight H200 GPUs, with Wave Parallelism delivering up to 2.53x the throughput of context-parallel baselines across six model scales. The listing does not establish specific qualitative limits or artifacts beyond the reported quantitative throughput and quality comparisons on the Wan2.1-T2V-1.3B model.\n\nThe strongest reported result is the system efficiency on eight H200 GPUs, where 4-step Wave Forcing yields 7.07x the single-GPU end-to-end throughput. The authors also state that 5-step Wave Forcing maintains overall quality comparable to Rolling Forcing while achieving higher Dynamic Degree on both short and long videos. The listing does not provide details on the specific metrics used to define \"overall quality\" or the exact conditions under which the Dynamic Degree was measured.\n\nResearchers working on real-time video generation systems or distributed inference optimization may find the co-design of generation and execution relevant. Those focused solely on model architecture without interest in system-level parallelism or runtime optimization may find the specific hardware and pipeline details less applicable.",
+      "abstract": "Real-time long-video generation requires continuous output with consistent appearance and natural motion. Existing chunk-wise autoregressive methods face challenges in both generation efficiency and long-video quality: serialized denoising and history-cache refresh require two forward passes even with one-step denoising, and longer rollouts can degrade quality and cause camera drift. We propose Wave Forcing (WF), which co-designs generation, training, and execution for continuous video output with multi-step denoising. WF uses chunk-wise causal attention to access earlier, cleaner chunks before their denoising is complete, and distributes staggered denoising and cache-refresh stages across full-model replicas to achieve 1F1C: one output chunk per concurrent forward round after pipeline fill. To adapt the model to this continuous generation process, we develop a three-stage training procedure that successively introduces mixed-noise denoising, motion supervision, and causal adaptation using self-generated history. To execute this process efficiently, Wave Runtime (WaveRT) uses Wave Parallelism (WP) for early K/V delivery and communication-computation overlap, together with optimized kernels and pipelined VAE decoding. Experiments on Wan2.1-T2V-1.3B show that 5-step WF maintains overall quality comparable to Rolling Forcing while achieving higher Dynamic Degree on both short and long videos. Our system efficiency experiments show that 4-step WF achieves 147.6 DiT FPS and 134.8 end-to-end FPS on eight H200 GPUs, yielding 7.07x the single-GPU end-to-end throughput. In DiT-only tests with matched SageAttention+W8A8 backends, denoising steps, and GPU counts, WP delivers up to 2.53x the throughput of the faster of the Ulysses and Ring context-parallel baselines across six model scales (1.3B-14B).",
+      "takeaways": [
+        "The object is a co-designed system for continuous video generation that integrates model training, causal attention mechanisms, and a specialized runtime for parallel execution.",
+        "A visible limit is that the reported efficiency gains are specific to eight H200 GPUs and the Wan2.1-T2V-1.3B model, with no established generalization to other hardware configurations or model sizes in the listing.",
+        "The artifact status is indicated by a declared code repository URL, but the listing does not confirm the availability of pre-trained weights or specific benchmark scripts."
+      ],
+      "plain": {
+        "reported": "The authors state that their four-step video generation method runs at 147.6 frames per second for the core model and 134.8 frames per second for the whole process on a cluster of eight high-end H200 graphics cards.",
+        "brief": "The authors created a new system called Wave Forcing to make real-time video generation faster and more consistent. They say their method solves problems where previous methods had to do extra work to keep the video looking right over time. They report that their system runs at 147.6 frames per second for the main part and 134.8 frames per second for the entire process on eight H200 graphics cards. The listing does not say what specific visual quality measures were used or if there are other limitations not mentioned.\n\nThe best result they report is that their system is 7.07 times faster than using just one graphics card. They also say their five-step version looks as good as a competing method called Rolling Forcing but has more motion. The listing does not explain exactly how they measured \"overall quality\" or the specific conditions for the motion measurement.\n\nPeople who build systems that generate video in real time or who optimize how computer programs run on many graphics cards might find this useful. People who only care about the design of the AI model itself and not how it runs on hardware might find the technical details about parallel processing less relevant.",
+        "takeaways": [
+          "The main thing being described is a complete system that combines the AI model, how it is trained, and how it runs on computers to make video continuously.",
+          "A clear limitation is that the speed results are only shown for eight specific high-end graphics cards and one specific AI model size, so it is not known if it works as well on other setups.",
+          "The authors provide a link to their code, but the listing does not say if the trained AI models or specific test scripts are included in that link."
+        ]
+      },
+      "actions": [
+        "Verify the specific hardware requirements and software dependencies by inspecting the declared GitHub repository to confirm if the reported 147.6 DiT FPS is reproducible on available infrastructure.",
+        "Check the PDF for the definition of \"Dynamic Degree\" and the specific quality metrics used to compare against Rolling Forcing, as these are not detailed in the abstract."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/SJTU-DENG-Lab/WaveForcing",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-03",
+        "publishedOn": "2026-10-31",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.00859",
+            "upvotes": 101
+          }
+        ]
+      },
+      "trend": {
+        "votes": 101,
+        "rank": 1,
+        "of": 41,
+        "perDay": 34
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 101,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-31"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-03T20:47:51.891Z"
+      }
+    },
+    {
+      "id": "2611.03126",
+      "arxivId": "2611.03126",
+      "url": "https://arxiv.org/abs/2611.03126",
+      "topic": "AI",
+      "reported": "The authors report that CUA-Master-27B scores 80.2 on OSWorld Verified, 36.9 on OSWorld 2.0, 43.9 on WeaveBench, and 25.0 on Agents' Last Exam.",
+      "metrics": [
+        "80.2 on OSWorld Verified",
+        "36.9 on OSWorld 2.0",
+        "43.9 on WeaveBench"
+      ],
+      "title": "CUA-Master: Scaling Computer-use Agents through Open-World Recursive Improvements",
+      "authors": "Xinlei Yu, Gen Li, Ji Zhao, Zhangquan Chen, Congcong Wang, Shuai Dong, Zelin Peng, Yuqi Xu, Hongrui Wu, Kaiwen Tuo, Cheng Yang, Kaituo Feng, Yifan Wu, Jiayi Zhang, Dongming Wu, Wenqi Shao, Jiaqi Wang, Xiangyu Yue",
+      "takeaway": "The paper introduces CUA-Master, a nested double-loop recursive improvement framework for computer-use agents that uses open-world data and feedback-guided retries to expand task diversity and reliability.",
+      "brief": "The authors propose a system that combines an outer loop for data-model alignment with an inner loop for task synthesis from instructional videos. They report benchmark scores for a 27B parameter model, including 80.2 on OSWorld Verified and 36.9 on OSWorld 2.0. The listing does not establish whether the reported gains are statistically significant or if the framework generalizes beyond the specific benchmarks named.\n\nThe strongest evidence is the set of benchmark scores attributed to the CUA-Master-27B model. The authors state that the framework exhibits continuous gains across recursive iterations, but the listing does not provide the baseline numbers or the specific iteration counts used to derive these results. The reliability of the snapshot-rollback retry mechanism in real environments is claimed but not quantified in the abstract.\n\nResearchers working on computer-use agents or data synthesis pipelines may find the recursive framework details relevant. Those focused solely on static model evaluation without iterative data generation may find the specific implementation details less directly applicable. The provided code repository link allows for inspection of the implementation.",
+      "abstract": "Despite recent advances in CUAs, their development remains constrained by the limited diversity, controllability, and reliability of interaction data. Moreover, conventional optimization pipelines lack iterative feedback, while existing recursive improvement approaches often rely on self-generated experiences, limiting ability expansion and yielding diminishing returns. To address these challenges, we introduce CUA-Master, a nested double-loop recursive improvement framework. At the system level, an outer world-data-model flywheel continuously incorporates open-world corpus and leverages evolving model weaknesses to guide subsequent data construction and optimization iterations. At the data level, an inner flywheel couples open-world seeding and autocatalytic propagation. The former mines authentic workflows as seed tasks from instructional videos, and employs visual-semantic dual-path trajectory reconstruction; The latter transforms these seeds into reusable primitives for controllable synthesis of diverse, complex, and verifiable tasks. To enable efficient and reliable trajectory collection, we further introduce a feedback-guided snapshot-rollback retry mechanism in various real environments. Extensive experiments demonstrate that CUA-Master-27B achieves competitive performance across GUI-only and GUI-CLI hybrid benchmarks, scoring 80.2 on OSWorld Verified, 36.9 on OSWorld 2.0, 43.9 on WeaveBench, and 25.0 on Agents' Last Exam. Our framework also substantially improves the quality and efficiency of data synthesis, and exhibits continuous gains across recursive iterations.",
+      "takeaways": [
+        "The object is a recursive data synthesis and optimization framework for computer-use agents, not a single static model.",
+        "A visible limit is the reliance on self-generated experiences in prior approaches, which the authors claim their method overcomes, but the listing does not quantify the degree of improvement over those baselines.",
+        "The artifact status is indicated by a provided GitHub repository URL, though the listing does not confirm the completeness or reproducibility of the code."
+      ],
+      "plain": {
+        "reported": "The authors state that their 27-billion parameter model achieved a score of 80.2 on the OSWorld Verified test, 36.9 on OSWorld 2.0, 43.9 on WeaveBench, and 25.0 on Agents' Last Exam.",
+        "brief": "The researchers created a system that improves computer-using AI agents by repeatedly generating new training data from real-world videos and using feedback to fix errors. They report that their model performed well on several standard tests, such as OSWorld Verified where it scored 80.2. The text does not say if these scores are significantly better than other models or if the method works in all situations.\n\nThe main proof provided is the list of test scores for their specific model. The authors claim the system gets better with each round of improvement, but they do not show the starting scores or how many rounds were needed. They also claim their error-fixing method works in real environments, but they do not give numbers to prove how reliable it is.\n\nPeople who build AI agents that use computers or create training data might find this useful. People who only care about testing finished models might not need the details of how the data was made. A link to the code is provided so anyone can look at how it works.",
+        "takeaways": [
+          "The thing being described is a process for making better AI agents by constantly creating new practice tasks, not just a single finished AI.",
+          "One limitation is that previous methods relied on the AI making up its own practice, which the authors say is not enough, but they do not show exactly how much better their method is compared to those old ways.",
+          "The status of the tool is that a link to the code is given, but the text does not say if the code is complete or if it will work for everyone."
+        ]
+      },
+      "actions": [
+        "Verify the benchmark scores and baseline comparisons by reading the full PDF, as the abstract does not list the specific baseline models or their scores.",
+        "Inspect the provided GitHub repository to confirm the availability of the data synthesis tools and the snapshot-rollback mechanism implementation."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/xlyu0106/CUA-Master",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-03",
+        "publishedOn": "2026-11-02",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.03126",
+            "upvotes": 90
+          }
+        ]
+      },
+      "trend": {
+        "votes": 90,
+        "rank": 2,
+        "of": 41,
+        "perDay": 90
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 90,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-03T20:47:51.891Z"
+      }
+    },
+    {
+      "id": "2611.03178",
+      "arxivId": "2611.03178",
+      "url": "https://arxiv.org/abs/2611.03178",
+      "topic": "AI",
+      "reported": "The authors report that CoworkOS is highly competitive with frontier agent applications such as Codex and DeepSeek Harness across 12 benchmarks and 6 categories of real-world applications.",
+      "metrics": [
+        "12 benchmarks",
+        "6 categories of real-world applications",
+        "average score across eight benchmarks rose from 33.19 to 42.95 (+9.76)"
+      ],
+      "title": "CoworkOS:Scaling Agent Coworkers for Real-world Automation",
+      "authors": "Jiajie Jin, Guanting Dong, Chengjun Pan, Xin Deng, Zhuohui Sheng, Guoqiang Wang, Tao Gui, Yutao Zhu, Yujia Chen, Shihong Yi, Binze Hu, Zhixiong Yang, Zhichao Sun, Rui Wang, Han Han, Mingyu Ma, Junhao Huang, Xiaotao Wang, Huicheng Jiang, Yuyang Hu, Xinyu Yang, Wanghan Xu, Yajie Yang, Zhecan Wang, Honglin Guo, Xiaoyu Xing, Xiaoqian Zhang, Yulun Zhu, Xiaoxi Li, Jiahang Lin, Shaofan Liu, Shihan Dou, Zhiheng Xi, Qi Zhang, Yu-Gang Jiang, See-Kiong Ng, Yang Zhang, Tat-Seng Chua, Ji-Rong Wen, Zhicheng Dou",
+      "takeaway": "CoworkOS is a general-purpose harness for long-horizon work that separates task strategy from execution management to enable real-world automation.",
+      "brief": "The authors present CoworkOS, a system designed to manage long-horizon tasks by separating strategic decision-making from execution management. It features a three-layer architecture that allows for direct execution or delegation to subagents, supporting both synchronous and asynchronous workflows. The system includes a shared application layer where humans and agents can inspect and revise the same evolving documents, presentations, CAD models, and Blender scenes. This design allows human-in-the-loop participation through both conversation and direct modification of the work itself. To maintain continuity across agents and sessions, CoworkOS introduces hierarchical workspaces and persistent semantic memory. This ensures that working files, key decisions, and long-running job logs remain shareable, reusable, and resumable after interruption.\n\nThe authors state that CoworkOS is highly competitive with frontier agent applications such as Codex and DeepSeek Harness across 12 benchmarks and 6 categories of real-world applications. As a sustained-work case study, they report using GLM-5.3 as the backbone to conduct RSI-driven automated post-training on Qwen3.6-35B-A3B. Over five rounds, the model's average score across eight benchmarks rose from 33.19 to 42.95, an increase of 9.76. The listing does not specify the exact benchmarks used for the competitive comparison or the specific metrics for the eight benchmarks in the post-training case study.\n\nResearchers and practitioners working on agent-based automation, multi-agent systems, or human-AI collaboration in productivity tasks may find this relevant. Those focused on specific software development tools or non-agent-based automation may find the scope less applicable. The system's reliance on specific backbone models and its performance on undefined benchmarks limit immediate generalizability without further verification.",
+      "abstract": "Rapid advances in cowork agents are shifting human-AI collaboration toward real-world automation, delivering software, designs, and other artifacts. However, such productivity work demands both high-quality delivery on complex productivity tasks and continued monitoring and decision-making over long horizons, a combination that remains an open challenge. We introduce CoworkOS, a general-purpose harness for long-horizon work that separates task strategy from execution management: the model decides actions, delegation, and acceptance, while the runtime maintains state and feedback. Its three-layer architecture enables direct execution or delegation to Subagents, synchronously or asynchronously, under stable responsibilities. Through a shared application layer, humans and agents inspect and revise the same evolving documents, presentations, CAD models, and Blender scenes, so human-in-the-loop participation can enter both through conversation and through direct modification of the work itself. To sustain continuity across agents and sessions, CoworkOS further introduces hierarchical workspaces and persistent semantic memory, so working files, key decisions, and long-running Job logs remain shareable, reusable, and resumable after interruption. Across 12 benchmarks and 6 categories of real-world applications, CoworkOS proves highly competitive with frontier agent applications such as Codex and DeepSeek Harness. As a sustained-work case study, CoworkOS uses GLM-5.3 as its backbone to conduct RSI-driven automated post-training on Qwen3.6-35B-A3B. Over five rounds, the model's average score across eight benchmarks rose from 33.19 to 42.95 (+9.76). Looking ahead, we believe CoworkOS opens a meaningful path toward general cowork-agent intelligence.",
+      "takeaways": [
+        "The object is a general-purpose harness for long-horizon agent work that separates strategy from execution and supports human-in-the-loop modification of artifacts.",
+        "A visible limit is that the listing does not specify the exact benchmarks used for the competitive comparison or the specific metrics for the eight benchmarks in the post-training case study.",
+        "The artifact status is indicated by a declared code repository URL, but the listing does not confirm the availability or completeness of the code."
+      ],
+      "plain": {
+        "reported": "The authors say their system performs as well as top AI tools like Codex and DeepSeek Harness on 12 different tests and 6 types of real-world jobs.",
+        "brief": "The authors built a system called CoworkOS to help AI agents handle long, complex tasks. It splits the work into two parts: deciding what to do and actually doing it. The system can do tasks itself or ask other AI helpers to do them, either at the same time or one after another. It also lets people and AI look at and change the same files, like documents or 3D models, at the same time. This means people can help by talking to the AI or by directly editing the files. To keep track of everything over long periods, the system uses organized folders and a memory that remembers important decisions and logs, so work can be picked up again if it stops.\n\nThe authors say their system is as good as top AI tools on 12 tests and 6 types of jobs. They also show an example where they used their system to improve another AI model. Over five tries, the model's average score on 8 tests went up from 33.19 to 42.95, a gain of 9.76. The listing does not say which specific tests were used for the comparison or the details of the 8 tests in the example.\n\nPeople who work on AI systems that do long tasks, or who study how people and AI can work together on jobs, might find this useful. People who focus on specific software tools or non-AI automation might not find it as relevant. The system's performance depends on specific AI models, and the exact tests used are not listed, so it is hard to know how well it will work in other situations without more information.",
+        "takeaways": [
+          "The system is a tool for managing long AI tasks that splits planning from doing and lets people edit the same files as the AI.",
+          "A limit is that the listing does not say which specific tests were used for the comparison or the details of the 8 tests in the example.",
+          "The code is said to be available at a specific website, but the listing does not confirm if the code is complete or works as described."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmarks and metrics used in the competitive comparison and the post-training case study by reviewing the full PDF.",
+        "Check the declared code repository for the availability and completeness of the CoworkOS implementation and any associated documentation."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/RUC-NLPIR/CoworkOS",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-03",
+        "publishedOn": "2026-11-02",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.03178",
+            "upvotes": 86
+          }
+        ]
+      },
+      "trend": {
+        "votes": 86,
+        "rank": 3,
+        "of": 41,
+        "perDay": 86
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 86,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-03T20:47:51.891Z"
+      }
+    },
+    {
+      "id": "2611.01860",
+      "arxivId": "2611.01860",
+      "url": "https://arxiv.org/abs/2611.01860",
+      "topic": "AI",
+      "reported": "The authors report developing an agentic literature system to assist human researchers in analyzing existing and newly published papers at scale.",
+      "metrics": [],
+      "title": "Advances in Agentic Computer Graphics",
+      "authors": "Hengyu Liu, Jihyeon Je, Ruiqi Wang, Mingxuan Wu, Haven Feng, Qixing Huang, Georgios Pavlakos, Hao Zhang, Jiajun Wu, Maneesh Agrawala, Leonidas Guibas, R. Kenny Jones, Shangzhe Wu, Guandao Yang",
+      "takeaway": "The paper introduces a unified taxonomy for agentic computer graphics and an agentic literature system to analyze research trends.",
+      "brief": "The authors propose a unified taxonomy for agentic systems in computer graphics and an automated literature analysis tool. They state that this addresses the difficulty of manual reviews and inconsistent terminology across diverse graphics tasks. The listing does not provide quantitative performance metrics or specific experimental benchmarks for these contributions.\n\nThe reported evidence consists of the development of the taxonomy and the literature system. The authors identify open challenges in agent coordination, human-agent interfaces, long-horizon planning, and evaluation of interactive systems. No specific dataset, code repository, or numerical result is established in the supplied abstract.\n\nResearchers working on agentic graphics pipelines or automated literature review may find the taxonomy useful. Those seeking specific algorithmic benchmarks or code implementations should note the absence of these details in the listing.",
+      "abstract": "Computer graphics is built on code. Large language model (LLM) agents can now generate graphics code and iteratively refine it through various feedback. This capability opens the door to a potentially new paradigm of computer graphics, with graphics algorithms increasingly built around agentic systems to automate progressively complex tasks. Over the past years, research on agentic graphics has expanded rapidly across a diverse range of tasks. This rapid growth makes it increasingly difficult for manual literature reviews to keep pace with new developments. At the same time, similar ideas are often described using different terminology across these tasks, further complicating efforts to develop a systematic understanding of the field. In this report, we address these challenges through two contributions. First, we introduce a unified taxonomy for characterizing agentic systems across diverse computer graphics tasks. Second, we develop an agentic literature system that can assist human researchers in analyzing existing and newly published papers at scale. Building on these contributions, we analyze emerging research trends and discuss open challenges in coordinating agents and tools across graphics tasks, designing interfaces and representations for human-agent collaboration, sustaining long-horizon planning and refinement, and reliably evaluating interactive graphics systems.",
+      "takeaways": [
+        "The object is a survey-style report providing a taxonomy and a literature analysis system for agentic graphics.",
+        "A visible limit is the lack of quantitative metrics or specific experimental results in the provided abstract.",
+        "The artifact status is unclear because no code repository or dataset link is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report building a computer system that helps researchers read and organize many papers about AI graphics tools automatically.",
+        "brief": "The authors created a new way to categorize AI systems that make computer graphics. They also built a tool that reads research papers to help humans keep up with new ideas. The text does not say how well this tool works compared to other methods or give any numbers.\n\nThe main proof they offer is that they built these two things. They also list problems that are still hard to solve, like making AI agents work together well and letting humans control them easily. The text does not mention any specific data sets or computer programs you can download.\n\nPeople who study how AI makes graphics might find the new categories helpful. People who want to test a specific AI program should know that the text does not say if one is available or how good it is.",
+        "takeaways": [
+          "The paper is a report that sorts AI graphics tools into groups and describes a tool for reading papers.",
+          "A clear limitation is that the text does not show any numbers proving the tool works well.",
+          "It is not clear if the authors released any computer code or data because the text does not say so."
+        ]
+      },
+      "actions": [
+        "Verify the existence and functionality of the agentic literature system by checking the full PDF for implementation details.",
+        "Search for the specific taxonomy definitions to assess their applicability to your current agentic graphics project."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-03",
+        "publishedOn": "2026-11-01",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.01860",
+            "upvotes": 85
+          }
+        ]
+      },
+      "trend": {
+        "votes": 85,
+        "rank": 4,
+        "of": 41,
+        "perDay": 43
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 85,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-01"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-03T20:47:51.891Z"
+      }
+    },
+    {
+      "id": "2611.00011",
+      "arxivId": "2611.00011",
+      "url": "https://arxiv.org/abs/2611.00011",
+      "topic": "Engineering",
+      "reported": "The authors report that ARTA achieved an HR mean absolute error of 1.79 beats per minute on the IEEE Signal Processing Cup exercise dataset.",
+      "metrics": [
+        "HR mean absolute error of 1.79 beats per minute",
+        "92.38% of windows within +/-5 beats per minute",
+        "R-peak F1 score of 0.95"
+      ],
+      "title": "ARTA: Graph Combinatorial Optimization for Robust Interbeat Interval Estimation from Wearable Electrocardiogram Signals",
+      "authors": "Shovito Barua Soumma, Asiful Arefeen, Hassan Ghasemzadeh",
+      "takeaway": "The paper presents ARTA, a graph-based combinatorial framework that estimates the heartbeat sequence through constrained temporal optimization to improve robustness against motion artifacts in wearable ECG signals.",
+      "brief": "The authors propose ARTA, a training-free method that uses a directed acyclic graph and beam-search dynamic programming to select a coherent heartbeat sequence from multiple detector candidates. This approach aims to suppress false detections and recover missed beats when conventional local repair rules fail due to consecutive corrupted beats.\n\nThe strongest reported result is an HR mean absolute error of 1.79 beats per minute on the IEEE Signal Processing Cup exercise dataset, which the authors state is 54% lower than the strongest single-detector baseline. They also report an R-peak F1 score of 0.95 and an IBI mean absolute error of 6.52 ms on this dataset. The listing does not establish whether the method generalizes to other artifact types or signal qualities beyond the specified electrode-motion range.\n\nResearchers working on wearable ECG signal processing, specifically those addressing motion artifact rejection and interbeat interval estimation, should open this paper. Those focused on multi-lead clinical ECG analysis or deep learning-based detector training may ignore it, as the method is single-channel and training-free.",
+      "abstract": "Accurate heart rate (HR) and interbeat interval (IBI) estimation from wearable electrocardiogram (ECG) is essential for continuous physiological monitoring, but motion artifacts can create false QRS-like peaks and obscure true R-peaks. Conventional detectors and local interval-repair rules process detections independently and may become unreliable when several consecutive beats are corrupted. We present ARTA (Artifact-Robust Temporal Alignment), a graph-based combinatorial framework that estimates the heartbeat sequence through constrained temporal optimization. ARTA combines candidates from multiple ECG detectors, represents them as nodes in a directed acyclic graph and connects candidates through physiologically plausible RR intervals. Candidate confidence uses detector agreement and local ECG quality, while history-dependent transition costs capture recent IBI consistency and a soft heart-rate prior. Beam-search dynamic programming selects a coherent low-cost path across the recording, suppressing false detections and recovering missed beats when plausible auxiliary candidates are available. On the IEEE Signal Processing Cup exercise dataset with electrode-motion artifacts from -2 to 12 dB, ARTA achieved an HR mean absolute error of 1.79 beats per minute, 54% lower than the strongest single-detector baseline, with 92.38% of windows within +/-5 beats per minute, an R-peak F1 score of 0.95, and an IBI mean absolute error of 6.52 ms. Cross-dataset evaluation on the European ST-T Database further assessed transfer to long clinical ambulatory recordings and a label-free reliability analysis examined conditional performance without using reference annotations for segment selection. ARTA is single-channel, training-free, interpretable and computationally lightweight, operating approximately 27 times faster than real time with peak memory below 2.1 MB in a single-thread CPU simulation.",
+      "takeaways": [
+        "The object is a single-channel, training-free graph optimization algorithm for estimating heart rate and interbeat intervals from wearable ECG signals.",
+        "A visible limit is that the reported robustness is evaluated specifically against electrode-motion artifacts ranging from -2 to 12 dB, with no stated performance for other artifact types.",
+        "The artifact status is not established in the listing, as no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their method, ARTA, had an average heart rate error of 1.79 beats per minute on a specific test dataset called the IEEE Signal Processing Cup exercise dataset.",
+        "brief": "The authors created a new method called ARTA that uses a mathematical structure called a graph to pick the most likely heartbeats from a wearable heart monitor. It does this by looking at multiple possible heartbeat locations and choosing a path that makes sense over time, which helps ignore false signals caused by movement.\n\nThe best result they show is that their method was much more accurate than the best single method they compared it to, with an average heart rate error of 1.79 beats per minute. They also say it was very fast and used very little computer memory. The text does not say if it works well for other kinds of signal noise besides movement.\n\nPeople who work on making wearable heart monitors more accurate should look at this paper. People who use hospital-grade multi-lead heart monitors or who train complex AI models to find heartbeats might not need to, because this method is simple and uses only one channel of data.",
+        "takeaways": [
+          "The thing being described is a simple, fast computer program that finds heartbeats in a single-channel wearable heart monitor signal without needing to be trained on data.",
+          "A clear limitation is that the tests only used noise from movement, so it is unknown if it works well for other types of signal interference.",
+          "The listing does not say if the computer code for this method is available for others to use or check."
+        ]
+      },
+      "actions": [
+        "Verify the exact definition of the 'strongest single-detector baseline' and the specific artifact simulation parameters in the PDF to confirm the 54% improvement claim.",
+        "Check the PDF for the specific implementation details of the 'soft heart-rate prior' and 'history-dependent transition costs' to assess the method's interpretability claims."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP",
+        "cs.CL",
+        "cs.MS"
+      ],
+      "listing": {
+        "listedOn": "2026-11-03",
+        "publishedOn": "2026-11-03",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.00011"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-03T20:47:51.891Z"
+      }
+    },
+    {
+      "id": "2611.00138",
+      "arxivId": "2611.00138",
+      "url": "https://arxiv.org/abs/2611.00138",
+      "topic": "Security",
+      "reported": "The authors report that the attack reaches success rates of up to 96.2% on modern, heavily post-trained open-weight models.",
+      "metrics": [
+        "success rates of up to 96.2%"
+      ],
+      "title": "Kerkoporta: Injecting Structured-Output Backdoors in Reasoning Coding Agents",
+      "authors": "Georgios Syros, Blake Bullwinkel, Alina Oprea, Cristina Nita-Rotaru, Amanda Minnich, Xiaodong Liu, Giorgio Severi",
+      "takeaway": "The paper introduces Kerkoporta, a methodology for injecting structured-output backdoors into reasoning coding agents that causes them to emit attacker-chosen tool calls.",
+      "brief": "The authors propose a backdoor attack methodology for agentic coding systems that triggers the execution of malicious tool calls. They report high attack success rates and claim the poisoned models can outperform clean baselines on utility benchmarks.\n\nThe evidence comes from evaluations on open-weight models across various harnesses. The listing does not specify the exact utility benchmarks used or the magnitude of the performance gain over the clean baseline.\n\nResearchers studying LLM security in agentic environments may find the poisoning methodology relevant. Those focused solely on chat-based LLM safety may find the specific coding-agent context less applicable.",
+      "abstract": "Existing large language model (LLM) backdoor attacks operate primarily in chat settings, where the risk is bounded by free-form text outputs. AI agents remove that bound by performing actions and executing commands on the user's machine. We introduce structured-output backdoor attacks against reasoning models in agentic coding settings. A trigger placed anywhere in the agent's context causes the model to emit an attacker-chosen tool call, which the harness executes, directly compromising the system's confidentiality, integrity, or availability. We present Kerkoporta, a methodology that constructs high-quality poison samples, injects the backdoor via supervised fine-tuning, and recovers utility loss with lightweight reinforcement learning. We evaluate on modern, heavily post-trained open-weight models across proprietary and open-source harnesses, focusing on coding for its wide adoption and long-horizon task structure. The attack reaches success rates of up to 96.2% and can be configured to generalize across harnesses or bind to a single target. The resulting models can outperform the clean baseline on standard utility benchmarks, giving victims a direct incentive to adopt them. Overall, we demonstrate that LLM backdoors can have critical security impacts in the context of modern coding agents, and we characterize the poisoning methodology required to insert backdoors that are both effective and stealthy in this setting.",
+      "takeaways": [
+        "The object is a backdoor injection method for reasoning coding agents that targets structured tool-call outputs.",
+        "A visible limit is the lack of specific details on the utility benchmarks used to demonstrate that poisoned models outperform clean baselines.",
+        "No code repository is declared in the listing, so the artifact status is unverified."
+      ],
+      "plain": {
+        "reported": "The authors report that their attack works correctly in 96.2% of attempts when tested on modern, open-source AI models.",
+        "brief": "The authors describe a way to secretly program AI coding assistants to perform harmful actions when a specific trigger is present. They claim this method is highly effective and that the modified AI models still perform well on standard tasks.\n\nThe evidence is based on tests of open-source AI models in different software environments. The listing does not say which specific standard tasks were used to prove the models still work well.\n\nPeople who study the security of AI assistants that can run code might find this useful. People who only care about basic chatbots might find it less relevant.",
+        "takeaways": [
+          "The subject is a method for secretly making AI coding assistants perform bad actions.",
+          "A limit is that the specific tests used to prove the AI still works well are not named in the summary.",
+          "The summary does not say if the code for this method is available to the public."
+        ]
+      },
+      "actions": [
+        "Verify the specific utility benchmarks and performance comparisons in the full PDF.",
+        "Check the paper for details on the reinforcement learning method used to recover utility loss."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "listing": {
+        "listedOn": "2026-11-03",
+        "publishedOn": "2026-11-03",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.00138"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-03T20:47:51.891Z"
+      }
+    },
+    {
+      "id": "2611.00144",
+      "arxivId": "2611.00144",
+      "url": "https://arxiv.org/abs/2611.00144",
+      "topic": "Physics",
+      "reported": "The authors report an exact formula for the R’enyi-2 entanglement of purification of the normalized symmetric Werner state in every local dimension $d\\ge2$.",
+      "metrics": [
+        "$d\\ge2$"
+      ],
+      "title": "R\\'enyi-2 entanglement of purification of the symmetric Werner state",
+      "authors": "Shokoufe Faraji",
+      "takeaway": "The paper determines the exact R’enyi-2 entanglement of purification for the normalized symmetric Werner state and establishes additivity for tensor powers and finite products.",
+      "brief": "The authors claim to determine the exact R’enyi-2 entanglement of purification for the normalized symmetric Werner state in every local dimension $d\\ge2$. They also establish additivity for tensor powers and finite products of symmetric Werner states with different local dimensions.\n\nThe authors state that a canonical purification achieves these values globally, even when arbitrary joint purifications with unrestricted finite dimensional auxiliary systems are allowed. They further examine perturbations away from the symmetric endpoint and prove the continuity of the optimal value at this endpoint. The listing does not establish specific experimental limits or computational artifacts beyond the stated mathematical scope.\n\nResearchers working on quantum information theory, specifically entanglement measures and symmetric states, may find the exact formula and additivity results relevant. Those not interested in the specific mathematical properties of the symmetric Werner state may ignore it.",
+      "abstract": "This paper determines exactly the R\\'enyi-2 entanglement of purification of the normalized symmetric Werner state in every local dimension $d\\ge2$ \\begin{equation*} \\mathrm{EoP}_2(W_{+,d})=\\log_2\\frac{4d(d+1)}{d^2+3d+4}. \\end{equation*} We establish additivity for tensor power and, more generally, additivity for finite products of symmetric Werner states with different local dimensions. A canonical purification and its products achieve these values globally, even when arbitrary joint purifications with unrestricted finite dimensional auxiliary systems are allowed. We further examine perturbations away from the symmetric endpoint, and prove the continuity of the optimal value at this endpoint; moreover, we show a sharp square root order of variation in the optimal purity, while the canonical purification remains asymptotically optimal in the achieved entropy as this weight goes to zero.",
+      "takeaways": [
+        "The object is the normalized symmetric Werner state in local dimension $d\\ge2$.",
+        "The visible limit is the restriction to the symmetric endpoint and its perturbations, with continuity proven at that endpoint.",
+        "The artifact status is not established in the listing, as no code or dataset is declared."
+      ],
+      "plain": {
+        "reported": "The authors report an exact mathematical formula for a specific measure of quantum entanglement called the R’enyi-2 entanglement of purification for a type of quantum state known as the normalized symmetric Werner state, valid for any system size of 2 or larger.",
+        "brief": "The authors claim to find the exact value of a specific quantum entanglement measure for a particular type of quantum state. They also show that this measure adds up correctly when multiple copies of the state are combined.\n\nThe authors state that a specific way of purifying the state achieves these values in all possible scenarios, even when using extra quantum systems. They also study what happens when the state is slightly changed from its symmetric form and show that the value changes smoothly. The listing does not mention any experimental constraints or software artifacts.\n\nScientists studying quantum information theory, especially those interested in how entanglement is measured in symmetric quantum states, may find this useful. People not interested in this specific mathematical aspect of quantum physics may not need to read it.",
+        "takeaways": [
+          "The subject is a specific type of quantum state called the normalized symmetric Werner state.",
+          "The limitation is that the results focus on the symmetric case and small changes from it, with smoothness proven at that point.",
+          "It is not stated whether any code or data files are available, as none are listed."
+        ]
+      },
+      "actions": [
+        "Verify the exact formula and additivity proofs in the full PDF.",
+        "Check the perturbative analysis and continuity proofs for the symmetric endpoint in the full PDF."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-11-03",
+        "publishedOn": "2026-11-03",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.00144"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-03T20:47:51.891Z"
+      }
+    },
+    {
+      "id": "2611.00152",
+      "arxivId": "2611.00152",
+      "url": "https://arxiv.org/abs/2611.00152",
+      "topic": "Stats",
+      "reported": "The authors report studying statistical inference for a high-dimensional stochastic interaction model observed only through low-dimensional aggregate data.",
+      "metrics": [],
+      "title": "Inference in an interactive multi-type branching network",
+      "authors": "Gunay Hasanli, Michel Mandjes, Jiesen Wang",
+      "takeaway": "The paper claims to address statistical inference for a high-dimensional stochastic interaction model where latent pairwise dynamics are recovered from compressed aggregate observations.",
+      "brief": "The authors propose a framework for inferring parameters of a multi-type branching network from aggregate message counts rather than individual pairwise interactions. The model treats communication between individuals as mutually interacting branching processes with immigration, where activity in one direction can trigger activity in the reverse direction. The core challenge is an inverse problem: the latent interaction counts are unobserved, and only the total messages sent and received per individual per time slot are available.\n\nThe listing describes the model structure and the nature of the observation compression but does not report specific numerical results, benchmark comparisons, or quantitative performance metrics. It does not state whether the inference method is computationally feasible for large $d$ or how well it recovers parameters in practice. The abstract frames the problem as a high-dimensional statistical challenge but provides no evidence of empirical validation or theoretical guarantees on estimation error.\n\nResearchers working on stochastic network models, branching processes, or inverse problems in communication networks may find the formulation relevant. Those seeking a ready-to-use algorithm with proven performance on real-world data should note the absence of reported results in this listing.",
+      "abstract": "We study statistical inference for a high-dimensional stochastic interaction model observed only through low-dimensional aggregate data. The model describes pairwise communication between $d$ individuals as a collection of mutually interacting branching processes with immigration, where activity on one directed pair may trigger subsequent activity in the reverse direction. The latent interaction counts are not observed. Instead, for each individual, only the total number of messages sent and received in each time slot is available. This aggregation gives rise to an inverse problem in which the parameters governing the latent pairwise dynamics must be recovered from substantially compressed observations.",
+      "takeaways": [
+        "The object is a statistical inference method for a high-dimensional branching network model with latent pairwise interactions.",
+        "A visible limit is that the abstract does not establish whether the inference procedure is computationally tractable or accurate for large network sizes.",
+        "The artifact status is unclear; no code, dataset, or numerical results are mentioned in the supplied listing."
+      ],
+      "plain": {
+        "reported": "The authors report studying how to estimate the rules of a complex communication network using only summary data, not detailed individual records.",
+        "brief": "The authors describe a way to figure out how people in a group communicate with each other, but they only have access to total counts of messages sent and received, not who talked to whom. They model this communication as a system where one person's message can trigger a reply, creating a chain of interactions. The main difficulty is that the detailed back-and-forth is hidden, and the researchers must guess the underlying rules from the limited summary numbers.\n\nThe text explains the setup of the problem but does not say how well their method works. It does not give any numbers showing accuracy or speed, nor does it say if the method has been tested on real data. It is unclear if the method can handle very large groups or if it is just a theoretical idea.\n\nPeople who study how networks of interactions work, or who deal with problems where you have to guess hidden details from limited data, might find this interesting. People looking for a tested tool with known performance should note that this summary does not provide that information.",
+        "takeaways": [
+          "The paper is about estimating hidden communication patterns in a network from limited summary data.",
+          "It is not clear from the summary if the method is fast or accurate for large networks.",
+          "There is no mention of code, datasets, or test results in the provided text."
+        ]
+      },
+      "actions": [
+        "Verify the PDF to check for theoretical guarantees on parameter recovery and computational complexity.",
+        "Check if the authors provide simulation results or real-data applications to assess practical performance."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "math.ST",
+        "math.PR",
+        "stat.TH"
+      ],
+      "listing": {
+        "listedOn": "2026-11-03",
+        "publishedOn": "2026-11-03",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.00152"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-03T20:47:51.891Z"
+      }
+    },
+    {
+      "id": "2611.00256",
+      "arxivId": "2611.00256",
+      "url": "https://arxiv.org/abs/2611.00256",
+      "topic": "Econ",
+      "reported": "The authors report that some LLM-generated samples preserve meaningful marginal heterogeneity, demographic ordering, cross-country variation, and predictor structure despite imperfect respondent-level correspondence.",
+      "metrics": [],
+      "title": "Validating LLM-Generated Synthetic Survey Samples: A Use-Dependent Multi-Dimensional Framework for Social-Science Applications",
+      "authors": "Enrico Angelo Raffaele D'Ecclesiis, Fulvio Castellacci, Arash Ahmadi",
+      "takeaway": "The paper claims to develop a use-dependent, multi-dimensional validation framework distinguishing predictive, distributional, and substantive validity for synthetic survey samples.",
+      "brief": "The authors propose a framework to evaluate synthetic survey data generated by large language models, arguing that single-metric accuracy is insufficient for social science applications. They distinguish between predictive, distributional, and substantive validity to assess how well synthetic respondents match real-world patterns.\n\nThe authors illustrate the framework using Eurobarometer data on attitudes toward artificial intelligence, comparing four off-the-shelf LLMs against supervised machine learning references. They report that performance varies across models and outcomes, with some samples preserving key structural relationships even when individual respondent predictions are weak. The listing does not provide specific quantitative error rates or statistical significance values for these comparisons.\n\nResearchers generating synthetic social science data may find the framework useful for defining evaluation criteria. Those requiring strict respondent-level accuracy or specific numerical benchmarks for model selection should note the absence of detailed quantitative metrics in the abstract.",
+      "abstract": "Large language models (LLMs) make it increasingly feasible to generate synthetic survey respondents, but their empirical usefulness cannot be judged by a single notion of accuracy. A synthetic sample may perform weakly at the respondent level while still preserving distributional or substantive relationships relevant to social-science analysis. We develop a use-dependent, multi-dimensional validation framework distinguishing predictive, distributional, and substantive validity, and illustrate it using Eurobarometer data on attitudes toward artificial intelligence. Four off-the-shelf LLMs generate responses conditional on observed respondent profiles, while supervised machine learning provides a predictive reference for interpreting their performance. The results reveal substantial differences across validation dimensions: some LLM-generated samples preserve meaningful marginal heterogeneity, demographic ordering, cross-country variation, and predictor structure despite imperfect respondent-level correspondence. Performance varies across models and outcomes, but the broader picture is cautiously constructive. Synthetic samples should therefore be evaluated against the empirical properties required by their intended use.",
+      "takeaways": [
+        "The object is a validation framework for synthetic survey samples, not a new data generation model.",
+        "The visible limit is the lack of specific quantitative metrics in the abstract, making it difficult to gauge the magnitude of performance differences.",
+        "No code repository is declared in the listing, so the artifact status is unverified."
+      ],
+      "plain": {
+        "reported": "The authors state that some computer-generated survey responses kept the overall patterns of the real data, such as differences between countries and groups, even though the individual answers did not always match the real people's answers exactly.",
+        "brief": "The authors suggest a new way to check if fake survey data made by AI is good enough for social science research. They argue that you cannot just look at one score to decide if the data is accurate. Instead, they look at three different types of accuracy: how well it predicts individual answers, how well it matches the overall distribution of answers, and how well it keeps the important relationships between different variables.\n\nThey tested this method using real survey data about people's views on AI. They used four different AI models to create fake survey responses and compared them to a standard statistical method. They found that the results were mixed. Some AI models did a good job keeping the big-picture patterns of the data, even if they were not perfect at predicting what any single person would say. The abstract does not give specific numbers showing how much better or worse the AI models were compared to the standard method.\n\nPeople who create fake data for social science studies might find this framework helpful for deciding what kind of accuracy they need. People who need very precise numbers to choose the best AI model should know that the abstract does not list specific error rates or scores.",
+        "takeaways": [
+          "The paper is about a checklist for checking AI-made survey data, not about creating the data itself.",
+          "The main limitation visible in the summary is that it does not show specific numbers, so you cannot tell how big the differences are between the models.",
+          "The listing does not say if the code or data is available for download, so it is unclear if you can reproduce the work."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative results and statistical tests by reading the full PDF, as the abstract only provides qualitative descriptions of performance.",
+        "Check the paper's methodology section to confirm how the 'substantive validity' dimension is operationalized and measured against the Eurobarometer data."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-11-03",
+        "publishedOn": "2026-11-03",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.00256"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-03T20:47:51.891Z"
+      }
+    },
+    {
+      "id": "2611.00360",
+      "arxivId": "2611.00360",
+      "url": "https://arxiv.org/abs/2611.00360",
+      "topic": "Health",
+      "reported": "The authors report that the logarithmic mean recurrence time grows linearly with the intrinsic dimension, measured in a solvable Ising-like model and a real protein family using Potts models and Markov chain Monte Carlo.",
+      "metrics": [],
+      "title": "Recurrence in Sequence Space: How Epistasis Mimics Shared Ancestry",
+      "authors": "Pietro Chiarantoni, Mina Mahboubi, Jason Lamanna, Vincenzo Carnevale",
+      "takeaway": "The paper claims that epistatic correlations lower the intrinsic dimension of sequence space, causing independently evolving lineages to recur and generate sequence similarity that carries no genealogical signal.",
+      "brief": "The authors argue that epistasis lowers the intrinsic dimension of sequence space, making it likely that independently evolving lineages recur and approach one another by chance long after they last shared an ancestor. They establish this in a solvable Ising-like model and a real protein family, showing that intrinsic dimension remains predictive of recurrence even in multi-basins landscapes. The listing does not establish specific quantitative limits on the recoverability of deep history, only that recurrence bounds it for distance-based and likelihood methods alike.\n\nThe strongest reported result is that the logarithmic mean recurrence time grows linearly with the intrinsic dimension for typical sequences, measured in a solvable Ising-like model and a real protein family using Potts models and Markov chain Monte Carlo. The authors state that strongly constrained, low-dimensional families recur often and generate sequence similarity that carries no genealogical signal. The listing does not specify the exact protein family used or the magnitude of the recurrence effect in empirical data.\n\nResearchers studying protein evolution, sequence space geometry, or phylogenetic inference may find the theoretical framework and model-based evidence relevant. Those working on specific empirical phylogenetic datasets without a focus on sequence space dimensionality may find the abstract's theoretical focus less directly applicable.",
+      "abstract": "Sequences in a protein family do not explore the sequence space freely: folding, packing, and binding couple residues, so the set of viable sequences is irreducibly correlated, a phenomenon referred to as epistasis. We show that such correlations lower the \\emph{intrinsic dimension} $d_{\\rm IN}$ of sequence space, counteracting the concentration of measure and broadening the distribution of pairwise distances. Consequentially, they make it likely that independently evolving lineages \\emph{recur}, approaching one another by chance long after they last shared an ancestor. Using Kac's lemma we show that the logarithmic mean recurrence time grows linearly with the intrinsic dimension, $\\log \\tau_{\\rm rec} \\propto {d_{\\rm IN}}$ for typical sequences, so strongly constrained (low-dimensional) families recur often and generate sequence similarity that carries no genealogical signal. We establish this first in a solvable Ising-like model with tunable correlation, then in a real protein family using Potts models and Markov chain Monte Carlo, where $d_{\\rm IN}$ remains predictive of recurrence even in multi-basins landscapes. Because recurrence is a property of the evolutionary process rather than of any estimator, it bounds the recoverability of deep history for distance-based and likelihood methods alike.",
+      "takeaways": [
+        "The object is the geometric structure of viable sequence space in protein families, specifically how epistatic correlations reduce its intrinsic dimension.",
+        "A visible limit is that the listing does not specify the exact protein family or the empirical magnitude of recurrence, only that intrinsic dimension remains predictive in multi-basins landscapes.",
+        "The artifact status is not established in the listing; no code or dataset is declared, and the evidence relies on a solvable model and Potts model simulations."
+      ],
+      "plain": {
+        "reported": "The authors report that the average time it takes for two independently evolving protein sequences to become similar again increases in a straight line as the number of independent ways the sequence can vary increases, measured in a simple mathematical model and a real protein family using statistical simulations.",
+        "brief": "The authors argue that because protein sequences must fold and bind correctly, the parts of the sequence that can change are linked together. This linking reduces the number of independent ways the sequence can vary. Because of this reduction, two lineages that evolved separately are more likely to accidentally end up looking similar to each other, even if they are not closely related. The authors show this in a simple mathematical model and a real protein family, finding that the number of independent ways the sequence can vary predicts how often this accidental similarity happens. The listing does not give specific numbers for how much this limits our ability to reconstruct ancient evolutionary history, only that it does limit it.\n\nThe strongest result the authors report is that the average time for accidental similarity to occur increases in a straight line as the number of independent ways the sequence can vary increases. They measured this in a simple mathematical model and a real protein family using statistical simulations. The authors state that protein families with many constraints, meaning fewer independent ways to vary, will have accidental similarities happen more often. These accidental similarities do not reflect true evolutionary relationships. The listing does not say which specific protein family was used or how large the effect was in real data.\n\nScientists who study how proteins evolve, the shape of the space of possible protein sequences, or how to build family trees from sequences may find the theory and model-based evidence useful. Scientists who work with specific family tree datasets and are not focused on the geometry of sequence space may find the abstract's theoretical focus less directly useful.",
+        "takeaways": [
+          "The subject is the shape of the space of possible protein sequences in a family, specifically how the linking of sequence parts reduces the number of independent ways the sequence can vary.",
+          "A visible limit is that the listing does not say which specific protein family was used or how large the effect of accidental similarity was in real data, only that the number of independent ways to vary predicts recurrence in complex landscapes.",
+          "The status of the software or data is not established in the listing; no code or dataset is declared, and the evidence relies on a simple mathematical model and statistical simulations."
+        ]
+      },
+      "actions": [
+        "Verify the specific protein family and the quantitative recurrence rates reported in the full PDF to assess the empirical strength of the claim.",
+        "Check whether the authors provide code or data for the Potts model and Markov chain Monte Carlo simulations to reproduce the intrinsic dimension estimates."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "cond-mat.stat-mech"
+      ],
+      "listing": {
+        "listedOn": "2026-11-03",
+        "publishedOn": "2026-11-03",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.00360"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-03T20:47:51.891Z"
+      }
+    }
+  ]
+}
