@@ -1,0 +1,670 @@
+{
+  "date": "2026-11-04",
+  "label": "Wed, Nov 4",
+  "minutes": 10,
+  "poolSize": 135,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-11-04T21:12:21.490Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2611.05275",
+      "arxivId": "2611.05275",
+      "url": "https://arxiv.org/abs/2611.05275",
+      "topic": "AI",
+      "reported": "The authors report that per-input oracle routing outperforms the best fixed candidate by 5.4 points across their constructed evaluation matrix.",
+      "metrics": [
+        "5.4 points",
+        "24% less policy time",
+        "8.82x on average"
+      ],
+      "title": "Route Anything: A Study of Model and Policy Routing for General-Purpose AI Systems",
+      "authors": "Pengfei Zhou, Yixing Ma, Hexin Wang, Weidong Tang, Zhenglin Wan, Wangbo Zhao, Yang You",
+      "takeaway": "The paper presents Route Anything, a unified framework for studying model and policy routing across general-purpose AI systems to balance performance and computational cost.",
+      "brief": "The authors propose a unified framework and theoretical foundation for routing tasks to specialized models or policies, aiming to optimize quality-cost trade-offs in general-purpose AI systems.\n\nThey report that learned routers outperform the best fixed candidate by 0.3 points across 16 benchmarks and improve efficiency by 8.82x on average, based on 374,401 scored runs from 452 candidate configurations. The listing does not specify the baseline reference model used for the efficiency comparison or the specific cost metrics beyond policy time.\n\nResearchers working on multi-agent orchestration, model routing, or heterogeneous AI system design may find the framework and empirical results relevant. Those focused on single-model optimization or domains outside the tested modalities may find the scope limited.",
+      "abstract": "Artificial general intelligence (AGI) requires a method that can understand, generate, reason, and act across diverse domains and modalities. Rather than relying on a single model to master every capability, a promising path toward AGI now is to orchestrate a heterogeneous ecosystem of specialized models, tools, and policies (candidates) into a unified AI system. At the heart of this vision lies a fundamental question: how can an AI system dynamically select and coordinate the most capable candidate for each task while balancing performance and computational cost? In this work, we present Route Anything, a unified framework for studying model and policy routing across general-purpose AI systems. We develop a unified theoretical foundation that characterizes optimal routing under quality--cost trade-offs and establishes how the information available to a router determines its attainable performance. To systematically investigate routing across diverse capabilities, we first construct an omni-modal trajectory matrix spanning 25 benchmarks across language understanding, image, video, and speech generation, coding and workplace agents, and robotic manipulation, comprising 374,401 scored runs from 452 candidate configurations. Building on this framework, we train and test different routers to investigate the potential of omni-modal model routing, the capabilities of learned routers, and the conditions under which routing improves efficiency. Our results reveal substantial opportunities for capability orchestration: per-input oracle routing outperforms the best fixed candidate by 5.4 points, and learned routers outperform it by 0.3 points across 16 benchmarks, by 2.1 points on video generation, and by 1.1 points on robot manipulation while using 24% less policy time. More importantly, routing raises efficiency by 8.82x on average compared with the reference model.",
+      "takeaways": [
+        "The object is a routing framework and theoretical foundation for coordinating heterogeneous AI candidates across diverse tasks.",
+        "A visible limit is that the reported efficiency gains are relative to an unspecified reference model, and the absolute cost savings depend on the specific candidate configurations used.",
+        "The artifact status is indicated by a declared GitHub repository URL, but the listing does not confirm whether the code, data, or models are fully released or reproducible."
+      ],
+      "plain": {
+        "reported": "The authors state that their best routing method beats the single best fixed model by 5.4 points on their test set.",
+        "brief": "The paper introduces a system called Route Anything that decides which specialized AI model or tool should handle a specific task, aiming to get good results without using too much computing power.\n\nThe authors say their system beats the best single model by 0.3 points on 16 different tests and is 8.82 times more efficient on average. They tested this using 374,401 examples from 452 different model setups. The text does not say which specific model was used as the baseline for the efficiency comparison or exactly how 'efficiency' was calculated beyond time.\n\nPeople who build systems that use multiple AI models together might find this useful. People who only work with one type of AI model or in areas not tested here might not find it relevant.",
+        "takeaways": [
+          "The main thing being studied is a system that picks the right AI tool for each job to save resources.",
+          "A limitation is that the efficiency gain is compared to a model that is not clearly named in the summary, making it hard to judge the real-world impact.",
+          "The authors provide a link to a code repository, but it is not confirmed in the summary if all the data and models are actually available there."
+        ]
+      },
+      "actions": [
+        "Verify the specific definition of the 'reference model' and the exact cost metrics used for the 8.82x efficiency claim in the full PDF.",
+        "Check the declared GitHub repository to confirm the availability of the 374,401 scored runs and the 452 candidate configurations for independent reproduction."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/InfRec-Cardinal/route-anything",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-04",
+        "publishedOn": "2026-11-03",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.05275",
+            "upvotes": 83
+          }
+        ]
+      },
+      "trend": {
+        "votes": 83,
+        "rank": 1,
+        "of": 46,
+        "perDay": 83
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 83,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-04T21:12:21.490Z"
+      }
+    },
+    {
+      "id": "2611.00617",
+      "arxivId": "2611.00617",
+      "url": "https://arxiv.org/abs/2611.00617",
+      "topic": "AI",
+      "reported": "The authors report that Pandora achieves the highest expression similarity and overall disclosure-alignment score among the compared systems on 115 cases from four counseling and motivational interviewing datasets.",
+      "metrics": [
+        "7.2% of ratings",
+        "43.3--67.2% for the baselines",
+        "35.6% without expression planning"
+      ],
+      "title": "Words Caught in the Heart: Simulating Person-Specific Expression for Self-Opaque Clients in Psychotherapy",
+      "authors": "Mengxi Xiao, Jingjing Chen, Ziyan Kuang, Jiarong Song, Wenhao Zhao, Zuchen Han, Yihuai Xu, Xiyang Huang, Jie Gong, Yuechen Jiang, Xueqing Peng, Yankai Chen, Xiaoyan Qu, Min Peng, Qianqian Xie",
+      "takeaway": "The paper proposes Pandora, a psychotherapy client simulation framework that models how psychological experience becomes situated, individual expression by updating psychological and relational states and planning response content and strategy.",
+      "brief": "Pandora is a simulation framework designed to model how psychological experience becomes situated, individual expression in psychotherapy clients. It updates psychological and relational states in response to therapist interventions and constructs subjective appraisals and attributions to plan response content and strategy. A separate expression planner combines these decisions with language patterns distilled from the client's utterances to guide linguistic realization.\n\nThe authors report that Pandora achieves the highest expression similarity and overall disclosure-alignment score among the compared systems on 115 cases from four counseling and motivational interviewing datasets. In a four-evaluator study of 45 matched disclosure items, Pandora receives AI-like judgments in 7.2% of ratings, compared with 43.3--67.2% for the baselines and 35.6% without expression planning. The listing does not establish whether the expression planner reduces expression similarity in all ablation conditions or if the 115 cases represent a generalizable sample of clinical presentations.\n\nResearchers working on client simulation, expressive language modeling, or psychotherapy dialogue systems may find the framework relevant. Those focused on clinical validation, therapeutic efficacy, or general-purpose LLM capabilities without a specific interest in expression planning may find the scope limited.",
+      "abstract": "Psychotherapy clients may experience distress before they can coherently describe it, and their expression changes with emotion, perceived safety, and trust. Large language model-based client simulators often rely on clinically organized case descriptions, which can encourage responses explaining the client's difficulties more clearly than their current understanding warrants. We propose Pandora, a psychotherapy client simulation framework that models how psychological experience becomes situated, individual expression. Pandora updates psychological and relational states in response to therapist interventions, constructs subjective appraisals and attributions, and plans response content and strategy. A separate expression planner combines these decisions with language patterns distilled from the client's utterances to guide linguistic realization. We evaluate Pandora against five baselines on 115 cases from four counseling and motivational interviewing datasets. It achieves the highest expression similarity and overall disclosure-alignment score among the compared systems. In a four-evaluator study of 45 matched disclosure items, Pandora receives AI-like judgments in 7.2% of ratings, compared with 43.3--67.2% for the baselines and 35.6% without expression planning. The ablation also reduces expression similarity. These results support explicit expression planning in client simulation to improve alignment with individual language patterns and reduce perceived AI-like expression in the evaluated setting.",
+      "takeaways": [
+        "The object is a simulation framework that models psychological experience as situated, individual expression through state updates and expression planning.",
+        "A visible limit is that the evaluation relies on 115 cases from four datasets and a four-evaluator study of 45 items, which may not capture the full range of clinical complexity or evaluator consensus.",
+        "The artifact status is established by the declared code repository URL, but the listing does not confirm whether the code includes the full evaluation pipeline or the specific datasets used."
+      ],
+      "plain": {
+        "reported": "The authors report that their system, Pandora, scores highest on how well it matches the client's language style and how accurately it reveals information, when tested on 115 examples from four therapy conversation datasets.",
+        "brief": "Pandora is a computer program designed to act like a therapy client. It tries to mimic how a person's feelings and trust level change during a session and how that affects what they say. It has a special part that looks at the client's past words to make sure the new words sound like that specific person, not just a generic AI.\n\nThe authors say their system is the best at sounding like the specific client and revealing the right amount of information, based on 115 test cases. In a test where four people judged if the responses sounded like an AI, only 7.2% of Pandora's responses were flagged as AI-like, while the other systems were flagged 43.3% to 67.2% of the time. The listing does not say if this small test group represents all types of therapy clients or if the results hold up with more judges.\n\nPeople who build AI that talks like specific humans or study how therapy conversations work might find this useful. People who care about whether the AI actually helps patients get better, or who use general AI tools, might not find this specific to their needs.",
+        "takeaways": [
+          "The thing being built is a program that tries to act like a specific therapy client by tracking their feelings and trust, and then choosing words that match their personal style.",
+          "A clear limitation is that the tests were done on only 115 examples and judged by only four people, so it is not clear if this works for all kinds of clients or if the judges agreed with each other.",
+          "The authors say they have put the code online, but the short description does not say if the code includes all the tools needed to run the tests or the specific data used."
+        ]
+      },
+      "actions": [
+        "Verify the declared code repository to confirm the availability of the expression planner module and the evaluation scripts for the 115-case benchmark.",
+        "Review the full PDF to determine the specific composition of the four counseling and motivational interviewing datasets and the criteria used for the four-evaluator study."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/whunextgen/Pandora",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-04",
+        "publishedOn": "2026-10-31",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.00617",
+            "upvotes": 67
+          }
+        ]
+      },
+      "trend": {
+        "votes": 67,
+        "rank": 2,
+        "of": 46,
+        "perDay": 17
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 67,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-31"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-04T21:12:21.490Z"
+      }
+    },
+    {
+      "id": "2611.04814",
+      "arxivId": "2611.04814",
+      "url": "https://arxiv.org/abs/2611.04814",
+      "topic": "AI",
+      "reported": "The authors report that LoCo reduces completion length by 41.7%--45.4% on mathematics and 23.4%--36.3% on code while maintaining or improving accuracy.",
+      "metrics": [
+        "41.7%--45.4% on mathematics",
+        "23.4%--36.3% on code"
+      ],
+      "title": "Think Less, Locally: Local Preference Learning for Reasoning Compression",
+      "authors": "Muyao Yuan, Liyan Xu, Weizhan Zhang, Muyan Jiao, Jiangnan Li, Jinchao Zhang, Jie Zhou",
+      "takeaway": "The paper proposes LoCo, a local preference learning method that teaches models when to continue reasoning and when to conclude to compress reasoning trajectories.",
+      "brief": "The authors introduce LoCo, a method using local preference learning to detect overthinking states and train models to stop reasoning when sufficient information is obtained. This approach aims to reduce inference costs without sacrificing accuracy on challenging tasks.\n\nThe authors report completion length reductions of 41.7%--45.4% on mathematics and 23.4%--36.3% on code, while maintaining or improving accuracy. They state that LoCo achieves the best AUC across all code benchmarks and transfers effectively to code generation despite math-only training. The listing does not specify the exact baseline models or the specific AUC values achieved.\n\nResearchers working on reasoning model efficiency or preference learning may find this relevant. Those focused solely on non-reasoning tasks or models without chain-of-thought capabilities may find it less applicable. The method relies on self-generated mathematical traces for training data construction.",
+      "abstract": "Large reasoning models achieve strong performance on challenging tasks, but their long chain-of-thought often incurs substantial inference costs by continuing to deliberate after sufficient information has been obtained. Existing reasoning compression methods primarily operate on reasoning trajectories, paying less attention to the local decision of whether further reasoning is necessary given the current state. We propose LoCo, a local preference learning method for reasoning compression. LoCo detects candidate overthinking states from the model's own traces, freezes the corresponding reasoning prefixes, regenerates shorter verified continuations from the same states, and trains on the resulting state-conditioned preference pairs with DPO. This formulation teaches the model when to continue reasoning and when to conclude, rather than simply encouraging shorter trajectories overall. We construct training data entirely from self-generated mathematical traces and evaluate LoCo on five mathematical and three code generation benchmarks. LoCo reduces completion length by 41.7\\%--45.4\\% on mathematics and 23.4\\%--36.3\\% on code, while maintaining or improving accuracy and achieving the best AUC across all code benchmarks. LoCo consistently improves the accuracy-efficiency trade-off on mathematics and transfers effectively to code generation despite math-only training, demonstrating the cross-domain generality of local preference learning for reasoning compression. The code and model will be publicly released at https://github.com/MuyaoYuan/LoCo.",
+      "takeaways": [
+        "The object is a local preference learning method for reasoning compression in large reasoning models.",
+        "A visible limit is that training data is constructed entirely from self-generated mathematical traces, which may constrain generalization beyond math and code.",
+        "The artifact status is declared as publicly released code and models at the provided GitHub URL, though the listing does not confirm repository availability or completeness."
+      ],
+      "plain": {
+        "reported": "The authors state that their method, LoCo, makes the model's internal reasoning steps shorter by 41.7% to 45.4% for math problems and 23.4% to 36.3% for coding tasks, without making the answers less correct.",
+        "brief": "The authors created a method called LoCo that helps AI models stop thinking when they already have enough information to answer a question. This is meant to save time and computing power without making the AI less accurate.\n\nThe authors say their method makes the AI's thought process much shorter for math and coding tasks. They also say it works well for coding even though it was only trained on math problems. The abstract does not say which other AI models they compared it to or give the exact scores for how well it judged when to stop.\n\nPeople who build AI systems that need to think step-by-step might find this useful. People who use AI for simple tasks that do not require step-by-step thinking might not need it. The method uses math problems the AI created itself to learn how to stop thinking.",
+        "takeaways": [
+          "The main thing being studied is a way to make AI models stop their internal thinking process earlier when they have enough information.",
+          "One limitation is that the AI only learned from math problems it made itself, so it might not work as well for other types of problems.",
+          "The authors say they will share the code and the trained AI models online, but the listing does not prove that the link works or that everything is included."
+        ]
+      },
+      "actions": [
+        "Verify the GitHub repository at https://github.com/MuyaoYuan/LoCo to confirm code and model availability and check for additional experimental details not in the abstract.",
+        "Examine the full PDF to identify the specific baseline models used for comparison and the exact AUC values reported for the code benchmarks."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/MuyaoYuan/LoCo",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-04",
+        "publishedOn": "2026-11-03",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.04814",
+            "upvotes": 64
+          }
+        ]
+      },
+      "trend": {
+        "votes": 64,
+        "rank": 3,
+        "of": 46,
+        "perDay": 64
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 64,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-04T21:12:21.490Z"
+      }
+    },
+    {
+      "id": "2611.02737",
+      "arxivId": "2611.02737",
+      "url": "https://arxiv.org/abs/2611.02737",
+      "topic": "AI",
+      "reported": "The authors report that MoviEdit substantially outperforms existing open-source models and performs on par with industry frontier models across text-guided and image-guided editing.",
+      "metrics": [
+        "87K paired editing videos"
+      ],
+      "title": "MoviEdit: Long-form Multi-Shot Video Editing Made Easy",
+      "authors": "Suhyeon Lee, Zhengang Li, Soo Ye Kim, Peihao Zhu, Jong Chul Ye, Chun-Hao Paul Huang, Duygu Ceylan, Yan Kang, Hyeonho Jeong",
+      "takeaway": "The paper introduces MoviEdit, an end-to-end framework for scalable long-form multi-shot video editing that jointly addresses data, modeling, and evaluation challenges.",
+      "brief": "The authors propose MoviEdit, a cascaded bidirectional-autoregressive framework designed to maintain edit coherence across abrupt scene and viewpoint changes in long-form multi-shot videos. They state that the system uses a lightweight bidirectional stage for global coherence followed by autoregressive refinement over the full video.\n\nThe authors report that MoviEdit substantially outperforms existing open-source models and performs on par with industry frontier models across text-guided and image-guided editing. They also state that their data-generation pipelines yielded 87K paired editing videos without manual annotation. The listing does not specify the exact quantitative benchmarks or error rates used to measure this performance parity.\n\nResearchers working on long-form video generation or multi-shot consistency may find the architectural design and benchmark relevant. Those focused solely on single-shot video editing or non-generative video processing may find the specific multi-shot coherence focus less applicable.",
+      "abstract": "Long-form multi-shot video editing requires an intended edit to remain coherent across abrupt changes in scene, viewpoint, and subject appearance, while processing substantially longer visual context than conventional single-shot editors. We introduce MoviEdit, an end-to-end framework for scalable long-form multi-shot video editing that jointly addresses the challenges of data, modeling, and evaluation. To provide cross-shot supervision data at scale, we develop automatic data-generation pipelines spanning synchronized multi-view footage, real-world multi-shot videos, and generated multi-shot content, yielding 87K paired editing videos without manual annotation. Architecturally, MoviEdit employs a cascaded bidirectional-autoregressive design: a lightweight bidirectional stage first establishes a globally coherent editing draft over a spatiotemporally compressed representation, which is then autoregressively propagated and refined over the full video. We further introduce MoviEdit-Bench, a dedicated benchmark for systematic evaluation of long-form multi-shot video editing. Extensive experiments show that MoviEdit substantially outperforms existing open-source models and performs on par with industry frontier models across text-guided and image-guided editing. Visit our project page for complete results and to access the benchmark: https://multi-shot-edit.github.io/",
+      "takeaways": [
+        "The object is an end-to-end framework for long-form multi-shot video editing that uses a cascaded bidirectional-autoregressive design.",
+        "A visible limit is that the abstract claims performance parity with industry frontier models but does not provide specific quantitative metrics or benchmark scores in the text.",
+        "The artifact status includes a dedicated benchmark called MoviEdit-Bench and a project page for accessing complete results and the benchmark."
+      ],
+      "plain": {
+        "reported": "The authors state that their system performs better than publicly available models and matches the performance of top commercial models for editing videos with multiple scenes.",
+        "brief": "The authors created a tool called MoviEdit to edit long videos that contain many different scenes. They say the tool keeps the edits consistent even when the camera angle or subject changes suddenly. The system works in two steps: first creating a rough edit, then refining it across the whole video.\n\nThe authors claim their tool is better than free models and matches top paid models. They also say they automatically created 87,000 pairs of edited videos for training without human help. The text does not list the specific numbers or tests used to prove these performance claims.\n\nPeople who work on making long videos with AI might find this useful. People who only edit short, single-scene clips might not need this specific tool.",
+        "takeaways": [
+          "The tool is a system for editing long videos with multiple scenes using a two-step AI process.",
+          "The text claims the tool matches top commercial models but does not show the specific test scores or numbers.",
+          "The authors provide a test set called MoviEdit-Bench and a website to see more results."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative metrics and benchmark scores by reviewing the full PDF or the provided project page.",
+        "Check the declared code repository to confirm the availability of the MoviEdit-Bench evaluation scripts and data."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/adobe-research/MoviEdit-Bench",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-04",
+        "publishedOn": "2026-11-02",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.02737",
+            "upvotes": 61
+          }
+        ]
+      },
+      "trend": {
+        "votes": 61,
+        "rank": 4,
+        "of": 46,
+        "perDay": 31
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 61,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-02"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-04T21:12:21.490Z"
+      }
+    },
+    {
+      "id": "2611.03706",
+      "arxivId": "2611.03706",
+      "url": "https://arxiv.org/abs/2611.03706",
+      "topic": "Physics",
+      "reported": "The authors report that the protocol mitigates card cloning, credential theft, and counterfeiting.",
+      "metrics": [],
+      "title": "Quantum banking system for secure cash withdrawal",
+      "authors": "Vineet Kumar",
+      "takeaway": "The paper presents a quantum-secure withdrawal framework that replaces classical credentials with quantum tokens for authentication.",
+      "brief": "The authors propose a banking authentication protocol using quantum tokens instead of reproducible classical credentials. They state that the system integrates token generation, authentication, and verification into existing banking workflows using experimentally motivated quantum control techniques. The listing does not provide experimental data, specific performance metrics, or a defined test environment for these claims.\n\nThe strongest reported result is the mitigation of card cloning, credential theft, and counterfeiting. No quantitative measurements, benchmarks, or specific security proofs are included in the supplied abstract. The abstract does not establish whether the quantum control techniques are currently implementable in standard banking hardware or if the protocol has been tested against specific attack vectors.\n\nResearchers in quantum cryptography or secure financial systems may find the conceptual framework relevant. Those requiring verified experimental results or specific implementation details should note the absence of quantitative evidence in this listing.",
+      "abstract": "A quantum-secure withdrawal framework is presented by replacing reproducible classical credentials with quantum tokens for authentication. The protocol integrates token generation, authentication, and verification into the existing banking workflow using experimentally motivated quantum control techniques. This mitigates card cloning, credential theft, and counterfeiting.",
+      "takeaways": [
+        "The object is a conceptual protocol for quantum-based banking authentication.",
+        "The visible limit is the lack of quantitative security metrics or experimental validation in the abstract.",
+        "The artifact status is a theoretical proposal without declared code or public datasets."
+      ],
+      "plain": {
+        "reported": "The authors say their system reduces the risk of fake cards, stolen login details, and forged money.",
+        "brief": "The authors suggest a new way for banks to verify customers using quantum physics instead of standard digital codes. They claim this system fits into current bank processes and uses techniques inspired by lab experiments. The summary does not show any test results, numbers, or proof that the system works in a real bank.\n\nThe main claim is that this method stops people from copying cards or stealing identity information. There are no numbers or tests shown in the summary to prove how well it works. It is not clear if the technology is ready for real-world use or if it has been tested against specific hackers.\n\nPeople studying secure money systems or quantum physics might find the idea interesting. People who need proof that the system works with real data should note that the summary lacks these details.",
+        "takeaways": [
+          "The paper describes a new idea for secure bank logins using quantum physics.",
+          "The main gap is that there are no numbers or tests shown to prove it works.",
+          "There is no code or public data provided for this idea."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantum control techniques and their experimental basis in the full PDF.",
+        "Check for any omitted security proofs or implementation constraints in the main text."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-11-04",
+        "publishedOn": "2026-11-04",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.03706"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-04"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-04T21:12:21.490Z"
+      }
+    },
+    {
+      "id": "2611.03709",
+      "arxivId": "2611.03709",
+      "url": "https://arxiv.org/abs/2611.03709",
+      "topic": "Security",
+      "reported": "The authors report that InterceptFuzz covers significantly more branches than both baselines on OpenThread and ns-3 Wi-Fi.",
+      "metrics": [],
+      "title": "InterceptFuzz: Interception-based Stateful Fuzzing of Single-Process Targets",
+      "authors": "Ilja Siro\\v{s}, Dave Singel\\'ee, Bart Preneel",
+      "takeaway": "The paper presents InterceptFuzz, a middleware enabling stateful fuzzing of single-process targets on unmodified stateless engines.",
+      "brief": "The authors propose InterceptFuzz, a middleware that enables stateful fuzzing of single-process targets on top of an unmodified stateless fuzzing engine. It requires only a hook where the target passes packets between nodes, recording benign traffic and injecting fuzzed packets. The tool organizes observed packet sequences in a Prefix Tree, where each seed carries a State ID to select a node and deterministically replays the recorded prefix before delivering the mutated packet.\n\nThe authors evaluated InterceptFuzz powered by AFL++ on the Nexus test framework of OpenThread and on the LTE and Wi-Fi models of ns-3. They measured branch coverage against an interception-based adaptation of AFLNet and against Concat, an AFL++-based baseline. On OpenThread and ns-3 Wi-Fi, InterceptFuzz covers significantly more branches than both baselines, and seven previously unknown crash signatures were found in OpenThread. The listing does not establish specific limits or artifacts beyond the reported evaluation scope.\n\nResearchers working on stateful protocol fuzzing or single-process simulation platforms may find the middleware approach relevant. Those focused solely on network-socket-based fuzzing or stateless engines may find the specific hook-based interception mechanism less applicable. The paper targets a niche of deterministic, in-memory simulation environments that lack standard socket interfaces for existing stateful fuzzers.",
+      "abstract": "Stateful protocol implementations are commonly fuzzed by tools that act as a network client and exchange messages with the target over sockets. Some wireless and IoT protocol stacks instead provide a single-process simulation platform, in which all nodes run in one binary and exchange packets in memory. Such simulations are deterministic and fast, which suits fuzzing, but offer no socket to which existing stateful fuzzers can attach. Meanwhile, fuzzing infrastructure such as Google's OSS-Fuzz supports only stateless engines. This paper presents InterceptFuzz, a middleware that enables stateful fuzzing of single-process targets on top of an unmodified stateless fuzzing engine. InterceptFuzz requires only a hook where the target passes packets between nodes. Through this hook, it records benign traffic and injects fuzzed packets. It organizes the observed packet sequences in a Prefix Tree. Each seed carries a State ID that selects a node of this tree, and InterceptFuzz deterministically replays the recorded prefix before delivering the mutated packet. The tree grows with newly discovered sequences, while redundant states are pruned to keep its growth in check. InterceptFuzz powered by AFL++ is evaluated on the Nexus test framework of OpenThread and on the LTE and Wi-Fi models of ns-3, against an interception-based adaptation of AFLNet and against Concat, an AFL++-based baseline that mutates a whole message sequence as one input. On OpenThread and ns-3 Wi-Fi, InterceptFuzz covers significantly more branches than both baselines. Seven previously unknown crash signatures were found in OpenThread. Concat, despite its simplicity, covers more branches than AFLNet in every campaign on OpenThread and ns-3 Wi-Fi, and on OpenThread it exposes the same crash signatures as InterceptFuzz, although some of them in fewer campaigns.",
+      "takeaways": [
+        "The object is a middleware layer that bridges stateless fuzzing engines with stateful single-process targets via packet interception.",
+        "A visible limit is the requirement for a specific hook where the target passes packets between nodes, which may not exist in all simulation platforms.",
+        "The artifact status is not established in the listing, as no code repository or release information is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their tool covers significantly more code paths than two comparison tools on two specific simulation frameworks.",
+        "brief": "The authors propose a software layer called InterceptFuzz that allows standard, simple fuzzing tools to test complex, stateful protocols running inside a single computer process. It works by intercepting messages as they pass between simulated nodes, recording normal traffic, and then injecting mutated messages. It uses a tree structure to remember the sequence of messages that led to a specific state, ensuring that mutated messages are sent in the correct context.\n\nThe authors tested their tool, powered by a standard fuzzer called AFL++, on two simulation frameworks: OpenThread and ns-3. They measured how many different code paths the tool could reach, comparing it to two other methods. On OpenThread and the Wi-Fi model of ns-3, their tool reached significantly more code paths than the other methods. They also found seven previously unknown crashes in the OpenThread software. The listing does not specify any limitations or provide a link to the code.\n\nPeople who test security in network protocols that run in simulated environments may find this useful. People who only test protocols that communicate over actual network cables or wireless signals may not find it directly applicable. The tool is designed for a specific type of testing environment where all simulated devices run in one program and talk to each other in memory.",
+        "takeaways": [
+          "The tool is a middle layer that connects simple fuzzing tools to complex, stateful protocol simulations.",
+          "A limitation is that it needs a specific point in the code where messages are passed between simulated devices to work.",
+          "The listing does not say whether the code is available for download or use."
+        ]
+      },
+      "actions": [
+        "Verify the specific hook implementation requirements and compatibility with target simulation platforms by reviewing the full PDF.",
+        "Check the evaluation methodology and baseline configurations in the PDF to confirm the branch coverage and crash signature results."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR"
+      ],
+      "listing": {
+        "listedOn": "2026-11-04",
+        "publishedOn": "2026-11-04",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.03709"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-04"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-04T21:12:21.490Z"
+      }
+    },
+    {
+      "id": "2611.03722",
+      "arxivId": "2611.03722",
+      "url": "https://arxiv.org/abs/2611.03722",
+      "topic": "Engineering",
+      "reported": "The authors report 94.58% three-class accuracy on the Quiroga Difficult-1 benchmark for their spike-sorting module.",
+      "metrics": [
+        "94.58% three-class accuracy",
+        "1.6 $\\mu$W/channel",
+        "0.4% reduction"
+      ],
+      "title": "A Neuroprosthetic SoC Featuring Rapid Local Sensory Feedback with On-Chip Unsupervised Multi-Class Spike Sorting",
+      "authors": "Bowen Liu, Yuhan Hou, Yu Huang, Jianxiong Xu, Hao You, Ashley Hung, Naize Yang, Junyu Ma, Laura Kondrataviciute, Suneil K. Kalia, Andrew G. Richardson, Roman Genov, Xilin Liu",
+      "takeaway": "The paper presents a 65 nm neuroprosthetic SoC that integrates on-chip unsupervised multi-class spike sorting with a rapid local sensory feedback pathway.",
+      "brief": "The authors describe a 65 nm neuroprosthetic system-on-chip designed to provide rapid feedback from motor recording to sensory stimulation. The chip integrates a mixed-signal unsupervised spike-sorting module, a firing-rate calculator, and a closed-loop controller to enable low-latency sensory mapping modulated by individual-neuron firing rates.\n\nThe authors report 94.58% three-class accuracy on the Quiroga Difficult-1 benchmark, noting a 0.4% reduction in accuracy when stimulation artifacts are introduced at 20% of the spike count. The spike-sorting module consumes 1.6 $\\mu$W per channel. The abstract states the SoC is fully characterized on the bench and in vivo, but does not specify the experimental conditions, sample sizes, or statistical significance of the in vivo results.\n\nResearchers working on neuroprosthetic hardware, mixed-signal integrated circuits, or on-chip neural signal processing may find the architectural details and power consumption figures relevant. Those focused solely on algorithmic spike sorting without hardware implementation constraints may find the specific SoC integration details less directly applicable.",
+      "abstract": "This letter presents a 65 nm neuroprosthetic system-on-chip (SoC) featuring a rapid feedback pathway from motor recording to sensory stimulation. To enable low-latency sensory mapping modulated by individual-neuron firing rates, the SoC integrates a mixed-signal unsupervised spike-sorting module with stimulation-artifact rejection, a programmable sliding-window firing-rate calculator, and a closed-loop controller for adapting stimulation parameters. The spike-sorting module combines event-driven analog feature extraction with Manhattan-distance-based digital clustering while consuming 1.6 $\\mu$W/channel. On the Quiroga Difficult-1 benchmark, it achieves 94.58% three-class accuracy, with only a 0.4% reduction when stimulation artifacts are introduced at 20% of the spike count. The closed-loop controller supports polynomial and logarithmic mapping functions and incorporates Mitchell's approximation for power saving. The SoC is fully characterized on the bench and in vivo.",
+      "takeaways": [
+        "The object is a 65 nm neuroprosthetic SoC featuring an integrated unsupervised spike-sorting module and closed-loop sensory stimulation controller.",
+        "A visible limit is that the abstract reports benchmark accuracy on a specific dataset (Quiroga Difficult-1) but does not detail the in vivo characterization conditions or generalizability to other neural recording scenarios.",
+        "The artifact status is not established in the listing; no code, dataset, or repository URL is provided, and the abstract does not confirm public availability of the design files or characterization data."
+      ],
+      "plain": {
+        "reported": "The authors report that their chip's spike-sorting module achieved 94.58% accuracy in correctly identifying three types of nerve signals on a standard test dataset called Quiroga Difficult-1.",
+        "brief": "The authors describe a small computer chip made for medical devices that help people with nerve damage. This chip can listen to nerve signals and quickly send electrical pulses back to the nerves to provide feedback. It includes a built-in system that automatically sorts different nerve signals without needing pre-labeled data, and it can ignore electrical noise caused by its own stimulation pulses.\n\nThe authors say their sorting system got 94.58% of the answers right on a difficult test set. When they added electrical noise to the test, the accuracy dropped by only 0.4%. The sorting part of the chip uses very little power, just 1.6 microwatts per channel. The authors state they tested the chip in a lab and inside a living body, but they do not explain exactly how the body tests were done or how many subjects were involved.\n\nEngineers designing medical chips or people interested in how computers can process nerve signals in real-time might find this useful. People who only care about the math of sorting signals and not the physical chip design might not need this specific paper.",
+        "takeaways": [
+          "The thing being described is a tiny computer chip for medical implants that can sort nerve signals and send feedback pulses.",
+          "A limitation is that we only know how well it worked on one specific test dataset, and the details of the tests done in living animals are not given in this summary.",
+          "It is not stated whether the design files or test data are available for others to download or use."
+        ]
+      },
+      "actions": [
+        "Verify the in vivo characterization details, including animal model, electrode configuration, and statistical analysis, by reading the full PDF.",
+        "Check the supplementary materials or associated repository for the specific implementation details of the Manhattan-distance-based digital clustering and the Mitchell's approximation power-saving technique."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-11-04",
+        "publishedOn": "2026-11-04",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.03722"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-04"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-04T21:12:21.490Z"
+      }
+    },
+    {
+      "id": "2611.03773",
+      "arxivId": "2611.03773",
+      "url": "https://arxiv.org/abs/2611.03773",
+      "topic": "Stats",
+      "reported": "The authors report deriving explicit, non-asymptotic bounds on the Hellinger distance between the multi-modal Laplace approximation and the concentrating posterior.",
+      "metrics": [
+        "decays like $n^{-1/2}$ with $n$"
+      ],
+      "title": "Multi-modal Laplace-based sampling",
+      "authors": "Maxime Eg\\'ea, Hanyue Gu, Daniel Rudolf, Bj\\\"orn Sprungk",
+      "takeaway": "The paper claims to derive explicit, non-asymptotic bounds on the Hellinger distance between a multi-modal Laplace approximation and a concentrating posterior, and to analyze the approximation as a proposal for importance sampling and Metropolis-Hastings.",
+      "brief": "The authors study a weighted Gaussian mixture centered at local minima of the negative log-density for sampling from multi-modal distributions that concentrate as an inverse-temperature parameter grows. They derive explicit, non-asymptotic bounds on the Hellinger distance between this approximation and the posterior, with the bound decaying like $n^{-1/2}$ and constants depending polynomially on dimension. They also analyze the mixture as a proposal for self-normalised importance sampling and independent Metropolis-Hastings, deriving asymptotic results for effective sample size, acceptance probability, autocorrelation, and spectral gap.\n\nThe authors state that numerical experiments illustrate and verify their theoretical findings. The listing does not specify the exact datasets, dimensions, or modalities used in these experiments, nor does it provide specific numerical values for the bounds or performance metrics beyond the stated decay rate. The theoretical results are framed for distributions concentrating around finitely many modes as $n$ grows.\n\nResearchers working on asymptotic approximations for Bayesian inference in high-dimensional or small-noise regimes may find the explicit non-asymptotic bounds and MCMC proposal analysis relevant. Those seeking empirical benchmarks on specific real-world datasets or code implementations should note that the listing does not confirm the availability of code or specific experimental configurations.",
+      "abstract": "We study the multi-modal Laplace approximation, given by a weighted Gaussian mixture centred at the local minima of the negative log-density, for sampling from probability measures that concentrate around finitely many modes as an inverse-temperature parameter $n$ grows. Such distributions occur in Bayesian inference in the small noise or large data regime. We derive explicit, non-asymptotic bounds on the Hellinger distance between the multi-modal Laplace approximation and the concentrating posterior. The bound decays like $n^{-1/2}$ with $n$ and the constants depend only polynomially on the dimension $d$. Moreover, we analyse the Laplace mixture as a proposal distribution for self-normalised importance sampling and independent Metropolis--Hastings (IMH) targeting concentration multimodal distributions. We derive asymptotic results, as $n\\to\\infty$, on the effective sample size in case of importance sampling as well as on the average acceptance probability, lag-one autocorrelation, and spectral gap in case of IMH. Numerical experiments illustrate and verify our theoretical findings.",
+      "takeaways": [
+        "The object is a theoretical analysis of a multi-modal Laplace approximation as a sampling proposal, providing explicit non-asymptotic error bounds and asymptotic MCMC diagnostics.",
+        "A visible limit is that the theoretical guarantees apply to distributions concentrating around finitely many modes as an inverse-temperature parameter grows, and the listing does not detail the specific numerical settings used for verification.",
+        "The artifact status is unclear because the listing does not declare code availability, and the numerical experiments are described only as illustrating theoretical findings without specific dataset or metric values."
+      ],
+      "plain": {
+        "reported": "The authors report deriving explicit, non-asymptotic bounds on the Hellinger distance between the multi-modal Laplace approximation and the concentrating posterior.",
+        "brief": "The authors study a weighted Gaussian mixture centered at local minima of the negative log-density for sampling from multi-modal distributions that concentrate as an inverse-temperature parameter grows. They derive explicit, non-asymptotic bounds on the Hellinger distance between this approximation and the posterior, with the bound decaying like $n^{-1/2}$ and constants depending polynomially on dimension. They also analyze the mixture as a proposal for self-normalised importance sampling and independent Metropolis-Hastings, deriving asymptotic results for effective sample size, acceptance probability, autocorrelation, and spectral gap.\n\nThe authors state that numerical experiments illustrate and verify their theoretical findings. The listing does not specify the exact datasets, dimensions, or modalities used in these experiments, nor does it provide specific numerical values for the bounds or performance metrics beyond the stated decay rate. The theoretical results are framed for distributions concentrating around finitely many modes as $n$ grows.\n\nResearchers working on asymptotic approximations for Bayesian inference in high-dimensional or small-noise regimes may find the explicit non-asymptotic bounds and MCMC proposal analysis relevant. Those seeking empirical benchmarks on specific real-world datasets or code implementations should note that the listing does not confirm the availability of code or specific experimental configurations.",
+        "takeaways": [
+          "The object is a theoretical analysis of a multi-modal Laplace approximation as a sampling proposal, providing explicit non-asymptotic error bounds and asymptotic MCMC diagnostics.",
+          "A visible limit is that the theoretical guarantees apply to distributions concentrating around finitely many modes as an inverse-temperature parameter grows, and the listing does not detail the specific numerical settings used for verification.",
+          "The artifact status is unclear because the listing does not declare code availability, and the numerical experiments are described only as illustrating theoretical findings without specific dataset or metric values."
+        ]
+      },
+      "actions": [
+        "Verify the specific numerical experiments and datasets used to illustrate the theoretical findings by consulting the full PDF.",
+        "Check the full PDF for details on the polynomial dependence of constants on dimension $d$ and the specific asymptotic rates for IMH diagnostics."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "math.ST",
+        "cs.NA",
+        "math.NA",
+        "math.PR",
+        "stat.CO",
+        "stat.TH"
+      ],
+      "listing": {
+        "listedOn": "2026-11-04",
+        "publishedOn": "2026-11-04",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.03773"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-04"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-04T21:12:21.490Z"
+      }
+    },
+    {
+      "id": "2611.03938",
+      "arxivId": "2611.03938",
+      "url": "https://arxiv.org/abs/2611.03938",
+      "topic": "Econ",
+      "reported": "The authors report that their machine learning estimates closely match RCT estimates, with root mean squared error (RMSE) comparable to that of the RCTs themselves.",
+      "metrics": [
+        "reduces RMSE by 60% relative to parametric estimators",
+        "37 RCTs to estimate the distribution of their bias"
+      ],
+      "title": "Experimentally Validated Digital Twins: Evaluating Workforce Training Programs in the Age of Big Data",
+      "authors": "Raj Chetty, Jamie Fogel, Lawrence F. Katz, Kadeem Noray, Sonya Porter, James Reisinger",
+      "takeaway": "The paper claims to provide a scalable approach to program evaluation using observational data to construct experimentally validated digital twins for workforce training programs.",
+      "brief": "The authors propose using machine learning on large administrative tax records to estimate workforce training impacts, validating the method against 37 randomized controlled trials. They report that their machine learning estimates closely match the RCT estimates, with root mean squared error (RMSE) comparable to that of the RCTs themselves. The listing does not specify the exact sample size of the tax records or the specific demographic breakdowns used in the counterfactual models.\n\nThe strongest reported result is that the method reduces RMSE by 60% relative to parametric estimators used in prior work. The authors state that treatment effects on earnings vary substantially across locations and over time, even within a given program. The listing does not establish whether the digital twin framework has been independently replicated or if the administrative data access is reproducible by other researchers.\n\nResearchers evaluating workforce training programs or developing causal inference methods using administrative data may find this relevant. Those focused on small-sample experimental design or non-earnings outcomes may find the specific application less directly applicable.",
+      "abstract": "Modern program evaluation prioritizes evidence from randomized controlled trials (RCTs) because prior research found that observational estimates of program impacts often diverge substantially from experimental benchmarks. We revisit this finding --- which was based on small survey datasets --- in the era of large-scale administrative data. Using anonymized income tax records covering all American adults between 1999 and 2025, we estimate the effects of workforce training programs on earnings by using machine learning models to predict counterfactuals from rich data on prior work histories, demographics, and residential locations. Rather than testing whether our observational estimates are unbiased, we use 37 RCTs to estimate the distribution of their bias. We find that our machine learning estimates closely match the RCT estimates, with root mean squared error (RMSE) comparable to that of the RCTs themselves. Our method reduces RMSE by 60% relative to parametric estimators used in prior work because our larger samples and richer covariates permit more flexible, higher-dimensional models of the counterfactual. Applying our method to a broader set of sites and enrollment years beyond the experimental sample, we find that treatment effects on earnings vary substantially across locations and over time, even within a given program. Programs that place more participants into target-sector jobs generate the largest earnings gains, with impacts that persist even after participants leave their initial jobs. These findings provide guidance for improving job training programs and, more broadly, illustrate a scalable approach to program evaluation that uses observational data to construct experimentally validated ``digital twins.''",
+      "takeaways": [
+        "The object is a machine learning method for estimating program impacts using administrative tax data, validated against RCTs.",
+        "A visible limit is that the validation relies on 37 RCTs, which may not cover all program types or geographic contexts.",
+        "The artifact status is not established in the listing; no code or data repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that their computer-based predictions of earnings closely match the results from 37 random experiments, with the average error being similar to the error in the experiments themselves.",
+        "brief": "The authors suggest using computer algorithms on large government tax records to measure how job training programs affect income. They check their method against 37 random experiments and say their predictions are as accurate as the experiments. The text does not say how many people are in the tax records or exactly what personal details the computer uses.\n\nThe main result is that their method cuts the prediction error by 60% compared to older statistical methods. They also say that the effect of training on income changes a lot depending on where and when it happens. The text does not say if other researchers can repeat their work or if the data is available to the public.\n\nPeople studying job training or using computer methods to analyze government data might find this useful. People studying small experiments or outcomes other than income might not find it directly useful.",
+        "takeaways": [
+          "The main thing is a computer method for measuring job training effects using tax data, checked against random experiments.",
+          "A limit is that the check uses only 37 experiments, which might not cover all types of training or places.",
+          "It is not stated in the listing if the code or data is available for others to use."
+        ]
+      },
+      "actions": [
+        "Verify the specific administrative data sources and machine learning model architecture in the full PDF.",
+        "Check the supplementary materials for the detailed breakdown of the 37 RCTs used for validation."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC",
+        "stat.AP"
+      ],
+      "listing": {
+        "listedOn": "2026-11-04",
+        "publishedOn": "2026-11-04",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.03938"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-04"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-04T21:12:21.490Z"
+      }
+    },
+    {
+      "id": "2611.05374",
+      "arxivId": "2611.05374",
+      "url": "https://arxiv.org/abs/2611.05374",
+      "topic": "Health",
+      "reported": "The authors report that their model achieved matched or better performance than four comparison models at a fraction of the calibration time on EEG data from 20 healthy subjects.",
+      "metrics": [
+        "N=20 healthy subjects"
+      ],
+      "title": "A Bayesian Optimized Biquad Filter-Burg Model for Real-Time EEG Phase Estimation",
+      "authors": "Ivan Martinez-Kay, Tatiana Kardashina, ShiNung Ching, Eric C. Leuthardt, Benjamin T. Acland",
+      "takeaway": "The paper presents a Bayesian-Optimized Biquad Filter-Burg model for real-time EEG phase estimation that outperforms deep learning baselines with less calibration time.",
+      "brief": "The authors propose a Bayesian-Optimized Biquad Filter-Burg model for real-time EEG phase estimation, arguing that individualized classical filter tuning is underexplored compared to deep learning approaches. They report that this model achieved matched or better performance than four neural network baselines at a fraction of the calibration time, measured on EEG from 20 healthy subjects during vibrotactile stimulation and resting-state recordings. The listing does not specify the exact numerical performance gap or the specific calibration time reduction, leaving the magnitude of the improvement unresolved.\n\nThis work is relevant to researchers developing closed-loop neuromodulation systems who require low-latency phase estimation from transient EEG signals. It may be less relevant to those exclusively focused on deep learning architectures or resting-state alpha-band analysis without individualized tuning. The authors do not provide code or a repository link in the listing.\n\nThe packet is based solely on the provided title and abstract. The specific quantitative improvements in phase estimation accuracy and calibration time are not detailed in the text. Readers should verify the exact benchmark results and implementation details in the full paper.",
+      "abstract": "Real-time phase estimation on stimulus-aligned transient EEG is critical for closed-loop neuromodulation systems targeting the theta-band, yet most real-time phase estimation methods have been developed and validated on resting-state, high-fidelity signals in the alpha band. Recent work has pursued deep learning architectures, while individualized classical bandpass filter tuning remains underexplored. This study characterizes the spectral and temporal properties of non-anticipative bandpass filtering and demonstrates the performance gains achieved through individualized tuning. We present a Bayesian-Optimized Biquad Filter-Burg (BOB) model evaluated on EEG recorded during peripheral vibrotactile stimulation of the left median nerve (theta, N=20 healthy subjects) and on resting-state recordings from the Max Planck Institute's LEMON dataset (alpha, N=20 healthy subjects). BOB was benchmarked against the Deep Dual-Branch Complex Neural Network (DBCNN), EEG Phase Prediction Network (EPN), Phastimate, and Phase Estimation with Autoregressive Padding (PEAP) under matched testing conditions: channel selection, individualized optimization, evaluation time points, and an offline reference phase obtained through zero-phase filtering and the Hilbert transform. Under these testing conditions, BOB achieved matched or better performance than these models at a fraction of the calibration time.",
+      "takeaways": [
+        "The object is a Bayesian-Optimized Biquad Filter-Burg model designed for real-time EEG phase estimation in the theta and alpha bands.",
+        "A visible limit is the lack of specific numerical performance metrics in the abstract, such as exact accuracy scores or calibration time values.",
+        "The artifact status is unclear because the listing does not declare code availability or provide a repository URL."
+      ],
+      "plain": {
+        "reported": "The authors report that their model performed as well as or better than four other models while taking less time to set up, based on brainwave data from 20 healthy people.",
+        "brief": "The authors suggest a new way to estimate brainwave phases in real-time using a specific type of filter that is tuned for each individual. They claim this method works as well as or better than newer deep learning methods but requires less time to calibrate. The abstract does not say exactly how much better it is or how much time is saved, so the exact scale of the improvement is not known from this text.\n\nThis is useful for people building systems that adjust brain stimulation in real-time based on brainwaves. It may not be as useful for people who only care about deep learning methods or who do not need individualized tuning. The listing does not say if the code is available for download.\n\nThis summary is based only on the title and abstract. The exact numbers for performance and time savings are missing. You should read the full paper to see the detailed results and check if the code is available.",
+        "takeaways": [
+          "The thing being studied is a filter model for estimating brainwave phases in real-time.",
+          "A limit is that the abstract does not give specific numbers for how much better the model is or how much time it saves.",
+          "It is not clear if the code is available because the listing does not mention a code repository."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative performance gains and calibration time reductions by reading the full PDF.",
+        "Check the paper's supplementary materials or associated repository for code availability and implementation details."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "eess.SP",
+        "q-bio.NC"
+      ],
+      "listing": {
+        "listedOn": "2026-11-04",
+        "publishedOn": "2026-11-04",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.05374"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-04"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-04T21:12:21.490Z"
+      }
+    }
+  ]
+}
