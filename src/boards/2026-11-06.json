@@ -1,0 +1,652 @@
+{
+  "date": "2026-11-06",
+  "label": "Fri, Nov 6",
+  "minutes": 10,
+  "poolSize": 120,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-11-06T20:42:16.080Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2611.08449",
+      "arxivId": "2611.08449",
+      "url": "https://arxiv.org/abs/2611.08449",
+      "topic": "AI",
+      "reported": "The authors report that a world action model conditioned on VFlash plans achieves 70.2% average success across four MolmoSpaces task suites, compared with 62.6% for the baseline.",
+      "metrics": [
+        "70.2% average success",
+        "62.6% for the baseline",
+        "25x faster generation"
+      ],
+      "title": "VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding",
+      "authors": "Yu-Cheng Chou, Shihao Wang, Jin Huang, Chi-Pin Huang, Chiao-An Yang, Xianzhe Fan, Jing Wang, Zhiqi Li, Yuanguo Kuang, Ruijie Zheng, Johan Bjorck, Sifei Liu, Hang Su, Abhishek Badki, Lei Zhang, Alan Yuille, Linxi &#34;Jim&#39;&#39; Fan, Jan Kautz, Zhiding Yu",
+      "takeaway": "VFlash introduces Flash Primitive Decoding to predict visual primitive coordinates jointly in one forward pass, enabling faster and more accurate visual planning than autoregressive decoding.",
+      "brief": "The paper claims that VFlash uses a lightweight drafter to generate entire visual primitives, such as boxes and trajectories, in a single forward pass rather than token-by-token. This approach adapts to different primitive types and allows direct acceptance of structurally valid predictions without requiring exact token sequence agreement.\n\nThe authors report that VFlash consistently reduces prediction errors on 2D and 3D robot trajectory tasks relative to autoregressive decoding. They also state that preliminary single-rollout measurements indicate approximately 25x faster generation for 3D point motion forecasting. A world action model conditioned on VFlash plans achieved 70.2% average success across four MolmoSpaces task suites, compared with 62.6% for the baseline. The listing does not specify the exact hardware or computational setup used for the speed measurements.\n\nResearchers working on visual planning, robotics, or autonomous driving may find the method relevant. Those focused solely on language-based reasoning without spatial planning components may find the specific primitive decoding mechanism less applicable.",
+      "abstract": "Models for physical AI tasks, such as robotics and autonomous driving, need not reason solely in language. They can use visual plans--points, bounding boxes, and trajectories--to represent spatial goals and anticipate motion. However, autoregressive vision-language models generate these plans one coordinate token at a time, making richer predictions increasingly costly. We introduce VFlash, a method for fast, accurate visual planning through Flash Primitive Decoding. VFlash exploits the known structure of visual primitives to predict their coordinates jointly, using a lightweight drafter that generates an entire primitive in one forward pass. The layout adapts to the primitive's type, dimensionality, and length, supporting compact boxes and long, variable-length trajectories. Crucially, spatial accuracy need not require reproducing an autoregressive model's exact token sequence. VFlash therefore trains on annotated primitives and directly accepts structurally valid predictions without target-token agreement. Across the evaluated 2D and 3D robot trajectory tasks, VFlash consistently reduces prediction errors relative to autoregressive decoding. Preliminary single-rollout measurements indicate approximately 25x faster generation for 3D point motion forecasting. A world action model conditioned on VFlash plans achieves 70.2% average success across four MolmoSpaces task suites, compared with 62.6% for the baseline.",
+      "takeaways": [
+        "The object is a decoding method for visual primitives that predicts coordinates jointly rather than sequentially.",
+        "A visible limit is that the speed claim is based on preliminary single-rollout measurements, and the listing does not detail the evaluation hardware.",
+        "The artifact status is not established in the listing, as no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that a world action model using VFlash plans achieved 70.2% average success across four MolmoSpaces task suites, compared with 62.6% for the baseline.",
+        "brief": "The paper claims that VFlash uses a lightweight tool to generate entire visual shapes, like boxes and paths, in one step rather than one piece at a time. This method adjusts to different shape types and allows direct acceptance of valid shapes without needing to match a specific sequence of tokens.\n\nThe authors report that VFlash consistently reduces prediction errors on 2D and 3D robot path tasks compared to step-by-step decoding. They also state that early single-run measurements show about 25 times faster generation for 3D point movement prediction. A world action model using VFlash plans achieved 70.2% average success across four MolmoSpaces task suites, compared with 62.6% for the baseline. The listing does not specify the exact computer or setup used for the speed tests.\n\nPeople working on visual planning, robotics, or self-driving cars may find the method useful. Those focused only on language reasoning without spatial planning may find the specific shape decoding method less useful.",
+        "takeaways": [
+          "The object is a method for decoding visual shapes that predicts coordinates all at once instead of in order.",
+          "A visible limit is that the speed claim is based on early single-run measurements, and the listing does not detail the test computer.",
+          "The artifact status is not established in the listing, as no code or implementation details are provided."
+        ]
+      },
+      "actions": [
+        "Verify the 25x speedup claim by checking the full PDF for the specific hardware and rollout conditions used in the preliminary measurements.",
+        "Confirm the availability of the VFlash implementation and the MolmoSpaces task suites by checking the paper's supplementary materials or associated project page."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-06",
+        "publishedOn": "2026-11-05",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.08449",
+            "upvotes": 82
+          }
+        ]
+      },
+      "trend": {
+        "votes": 82,
+        "rank": 1,
+        "of": 30,
+        "perDay": 82
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 82,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-05"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-06T20:42:16.080Z"
+      }
+    },
+    {
+      "id": "2611.04277",
+      "arxivId": "2611.04277",
+      "url": "https://arxiv.org/abs/2611.04277",
+      "topic": "AI",
+      "reported": "The authors report that the trained policy substantially outperforms policy-only training when returned to the original base harness across AppWorld, SWE-Gym, and DBBench.",
+      "metrics": [],
+      "title": "Harness-S: Learning from Sibling Harnesses for Generalizable Agent Training",
+      "authors": "Kangning Zhang, Wenxiang Jiao, Bowen Fang, Shuai Shao, Jiachen Zhu, Rong Shan, Shijian Wang, Hao Wang, Yuan Lu, Weiwen Liu, Weinan Zhang",
+      "takeaway": "The paper introduces Harness-S to selectively rescue failures of a base execution system through sibling harnesses and transfer capabilities into a single policy.",
+      "brief": "The authors propose a method to repair agent failures using specialized sibling harnesses and transfer those capabilities into a single policy that works under the original harness. They report that the trained policy substantially outperforms policy-only training when returned to the original base harness across AppWorld, SWE-Gym, and DBBench. The listing does not provide specific numerical performance values or statistical significance for these comparisons.\n\nThe method relies on a fixed Sibling Harness Pool and an Adaptive Harness Router that selects variants using profiles and voting across multiple LLMs. The authors state that behavioral analyses and held-out cases support the transfer of harness-elicited behaviors into the policy itself. The listing does not specify the exact size of the sibling pool, the number of LLMs used for voting, or the specific metrics used for the behavioral analyses.\n\nResearchers working on agent training, reinforcement learning, or execution system repair may find the selective rescue mechanism relevant. Those seeking specific benchmark scores or code implementation details should verify the provided repository and full paper. The listing confirms a code repository exists but does not detail its contents or usability.",
+      "abstract": "Harness evolution from a common base exhibits Locality, Complementarity, and Nonstationarity: variants repair different failures, and their utility changes as the policy learns. Rather than seeking a universally superior harness, we introduce Harness-S to selectively rescue failures of a base execution system through sibling harnesses and transfer the resulting capabilities into a single policy that remains effective under the original harness. Directional Harness Evolution develops specialized sibling harnesses along distinct repair directions, forming a reusable Sibling Harness Pool that remains fixed during policy training. Complementary Harness Rescue Training invokes this pool only when all initial attempts under the base harness fail. The same policy generates fresh rollouts under selected auxiliary harnesses, and these trajectories replace the failed group for reinforcement learning. An Adaptive Harness Router selects the Top-k variants using Harness Behavior Profiles and voting across multiple LLMs. Policy-aware profile re-anchoring refreshes this evidence as the policy learns. Across AppWorld, SWE-Gym, and DBBench, the trained policy substantially outperforms policy-only training when returned to the original base harness. Behavioral analyses and held-out cases support the transfer of harness-elicited behaviors into the policy itself. Reusing the router for Rank-1 inference provides additional gains at the same executor rollout count.",
+      "takeaways": [
+        "The core object is a training framework that uses sibling harnesses to rescue failures and transfer capabilities to a single policy.",
+        "The listing lacks specific quantitative metrics, such as accuracy percentages or success rates, for the reported improvements across the three benchmarks.",
+        "A code repository is declared at https://github.com/DeepExperience/Harness-S, but the listing does not confirm its completeness, documentation, or current status."
+      ],
+      "plain": {
+        "reported": "The authors report that their trained system performs much better than a system trained without the special repair tools when tested on three specific software and database tasks.",
+        "brief": "The authors suggest a way to fix mistakes made by AI agents by using different versions of the tool that handle different types of errors. They claim that after training with these helpers, the main AI agent becomes better at doing the job even when using the original, unmodified tool. They tested this on three sets of tasks called AppWorld, SWE-Gym, and DBBench, but did not give exact scores in the summary.\n\nThe system uses a pool of different helper tools and a router that picks the best ones based on how the AI behaves. The authors say that tests show the AI actually learns from the helpers and keeps the skills even when the helpers are removed. However, the summary does not say how many helper tools were used or exactly how the 'behavioral analyses' were measured.\n\nPeople who build AI agents or work on making them learn from mistakes might find this useful. People who need exact numbers to compare with other methods should look at the full paper. The authors say they have code available online, but the summary does not say if it is ready to use or well-documented.",
+        "takeaways": [
+          "The main idea is a training method that uses different helper tools to fix errors and then teaches the main AI to do better on its own.",
+          "The summary does not include specific numbers, like percentages or scores, to show exactly how much better the new method is.",
+          "The authors say they have shared their code on a website, but the summary does not confirm if the code works or is complete."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark scores and statistical significance in the full PDF, as the abstract only states 'substantially outperforms' without numbers.",
+        "Check the declared GitHub repository to confirm the availability of code, data, and instructions for reproducing the Adaptive Harness Router and training pipeline."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/DeepExperience/Harness-S",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-06",
+        "publishedOn": "2026-11-03",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.04277",
+            "upvotes": 54
+          }
+        ]
+      },
+      "trend": {
+        "votes": 54,
+        "rank": 2,
+        "of": 30,
+        "perDay": 18
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 54,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-03"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-06T20:42:16.080Z"
+      }
+    },
+    {
+      "id": "2611.00883",
+      "arxivId": "2611.00883",
+      "url": "https://arxiv.org/abs/2611.00883",
+      "topic": "AI",
+      "reported": "The authors report that BestRand reduces high-error risk by 50.2% and estimation error by 16.4% on average across 70+ text, multimodal, and agent benchmarks.",
+      "metrics": [
+        "50.2%",
+        "16.4%",
+        "51.3%"
+      ],
+      "title": "Random Is Almost Enough? Stable and Low-Cost Benchmark Compression via BestRand",
+      "authors": "George Ling, Shanshan Zhong, Lijin Yang, Hao Yang, Nanxiang Li, Zhongzhan Huang",
+      "takeaway": "The paper claims to introduce BestRand, a stable and low-cost benchmark compression method that preserves the efficiency of random sampling while substantially reducing its high-error tail.",
+      "brief": "The authors propose BestRand to compress benchmarks by selecting small subsets that match full-benchmark results, aiming to reduce evaluation time and cost. They derive an analytical approximation to the error distribution, showing that random sampling is often strong but unstable due to rare large errors inherent to modern foundation models.\n\nValidation on over 70 text, multimodal, and agent benchmarks shows BestRand reduces high-error risk by 50.2% and estimation error by 16.4% on average. It requires only 51.3% of the construction cost of competitive methods and reduces out-of-distribution estimation error by 21.8% across score-range, model-family, and temporal shifts. The listing does not specify the exact baseline methods used for these comparisons.\n\nResearchers evaluating large foundation models who need to reduce benchmark costs may find this relevant. Those requiring guaranteed error bounds for specific proprietary models or non-standard evaluation protocols should verify the method's applicability before adoption.",
+      "abstract": "Benchmark compression reduces the often prohibitive time and cost of model evaluation by evaluating models on a small benchmark subset that closely matches full-benchmark results. To quantify estimation error, we derive an accurate analytical approximation to the error distribution when estimating full-benchmark scores from a subset, showing that most subsets yield small errors, while a few produce much larger errors, resulting in a long-tailed distribution. This means random sampling alone can achieve surprisingly strong performance with high probability, but remains unstable due to rare large errors. We further show that this instability is inherent to modern foundation models and persists even as more models are evaluated. Based on these findings, we introduce BestRand, a stable and low-cost benchmark compression method that preserves the efficiency of random sampling while substantially reducing its high-error tail. We validate BestRand on 70+ text, multimodal, and agent benchmarks, and further extend it to VLA evaluation. Compared with competitive methods, BestRand reduces high-error risk by 50.2% and estimation error by 16.4% on average, while requiring only 51.3% of the construction cost. It further reduces OOD estimation error by 21.8% on average across score-range, model-family, and temporal shifts. Together, our theory provides practical guidance for understanding and predicting the accuracy and reliability of benchmark compression, while BestRand enables stable and accurate compression at low cost. The code and data are publicly available onhttps://github.com/George-Ling3/BestRand.",
+      "takeaways": [
+        "The object is a benchmark compression method that selects subsets to approximate full-benchmark scores with reduced cost.",
+        "A visible limit is the reliance on average reductions across diverse benchmarks, without specifying worst-case performance for individual model families.",
+        "The artifact status is established as publicly available code and data on GitHub, though the listing does not confirm version stability or documentation quality."
+      ],
+      "plain": {
+        "reported": "The authors state that their method, BestRand, cuts the chance of large scoring mistakes by 50.2% and the average scoring error by 16.4% when tested on more than 70 different AI test sets.",
+        "brief": "The paper introduces a way to test AI models using a smaller set of questions instead of the full test, saving time and money. The authors show that picking questions randomly usually works well but can occasionally fail badly, and their method fixes this instability.\n\nThey tested this on over 70 different AI tests, including text, images, and agent tasks. Their method cut the risk of big errors by 50.2% and the average error by 16.4% compared to other methods. It also used only 51.3% of the setup cost of competing approaches. The text does not list exactly which other methods were used for comparison.\n\nPeople who test many AI models and want to save money might find this useful. Those who need perfect accuracy for specific, unique AI models should check if this method works for their specific case first.",
+        "takeaways": [
+          "The tool helps pick a smaller, cheaper set of test questions that still gives accurate results for AI models.",
+          "The results are averages across many tests, so it is unclear how well it works for any single specific AI model or test type.",
+          "The code is available online, but the listing does not say if the instructions are clear or if the software is fully maintained."
+        ]
+      },
+      "actions": [
+        "Verify the specific baseline methods and benchmark configurations used in the 50.2% and 16.4% reduction claims by reviewing the full PDF.",
+        "Check the GitHub repository for documentation on how to apply BestRand to custom or proprietary benchmark suites."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/George-Ling3/BestRand",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-06",
+        "publishedOn": "2026-10-31",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.00883",
+            "upvotes": 50
+          }
+        ]
+      },
+      "trend": {
+        "votes": 50,
+        "rank": 3,
+        "of": 30,
+        "perDay": 8
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 50,
+          "sourceCount": 1,
+          "publishedOn": "2026-10-31"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-06T20:42:16.080Z"
+      }
+    },
+    {
+      "id": "2611.08373",
+      "arxivId": "2611.08373",
+      "url": "https://arxiv.org/abs/2611.08373",
+      "topic": "AI",
+      "reported": "The authors report that SLA scales implicit spatial alignment to continual pre-training and maintains it during downstream post-training.",
+      "metrics": [],
+      "title": "SLA: Scaling Spatial-Language-Action Model via Continual Pre-training",
+      "authors": "Fuhao Li, Wenxuan Song, Qizhou Huang, Ziyang Zhou, Jingbo Wang, Junwu E, Pengwei Wang, Yan Wang, Shunbo Zhou, Haoang Li",
+      "takeaway": "The paper presents SLA, a Spatial-Language-Action Model that scales implicit spatial alignment to continual pre-training and maintains it during downstream post-training.",
+      "brief": "The authors propose SLA, a model that initializes from a pretrained pi05 policy and jointly optimizes action prediction with alignment between visual embeddings and spatial representations from a frozen 3D perception model. They curate heterogeneous robot datasets and introduce feature-dependent gates to aggregate visual embeddings for spatial supervision, using partially available depth and camera calibration alongside RGB observations. All auxiliary components are used only during training, allowing direct reuse of pretrained VLA weights and preserving the original inference architecture.\n\nThe abstract states that the method enables effective use of heterogeneous geometric annotations and encourages reliance on visual cues via probabilistic state dropout. It does not provide quantitative benchmarks, specific dataset sizes, or comparative performance numbers against other models. The listing does not establish specific limitations or failure modes beyond the general need for reliable robotic manipulation.\n\nResearchers working on vision-language-action models, spatial understanding in robotics, or continual pre-training of foundation models may find this relevant. Those seeking immediate quantitative performance comparisons or specific dataset availability details should note the absence of such metrics in the abstract.",
+      "abstract": "Reliable robotic manipulation requires both semantic understanding and precise control in three-dimensional space. However, vision-language-action (VLA) foundations largely inherit visual representations from 2D vision-language pre-training, while spatial supervision is often introduced only during task-specific adaptation. Developing spatial understanding as a transferable foundation-model capability therefore calls for learning from broader robot experience. We present SLA, a Spatial-Language-Action Model that scales implicit spatial alignment to continual pre-training and maintains it during downstream post-training. Initialized from a pretrained pi05 policy, SLA jointly optimizes action prediction and alignment between intermediate visual embeddings and spatial representations from a frozen 3D perception model. We curate and unify heterogeneous robot datasets to support spatial learning across diverse embodiments, tasks, and scenes. To accommodate this diversity, we introduce feature-dependent gates that adaptively aggregate visual embeddings from multiple VLA layers for spatial supervision. The teacher further exploits partially available depth and camera calibration alongside RGB observations, enabling effective use of heterogeneous geometric annotations. Probabilistic state dropout encourages reliance on visual cues and mitigates overfitting to demonstration trajectories. All auxiliary components are used only during training, allowing direct reuse of pretrained VLA weights and preserving the original inference architecture.",
+      "takeaways": [
+        "The object is a Spatial-Language-Action Model (SLA) that integrates spatial supervision into VLA pre-training using a frozen 3D perception model.",
+        "A visible limit is the lack of quantitative performance metrics or specific dataset statistics in the provided abstract, making it difficult to assess the magnitude of improvement.",
+        "The artifact status is unclear as no code repository or dataset link is provided in the listing, though the authors state that auxiliary components are training-only."
+      ],
+      "plain": {
+        "reported": "The authors report that their model, SLA, improves the connection between visual data and spatial understanding during the initial training phase and keeps this connection strong during later task-specific training.",
+        "brief": "The authors created a model called SLA that starts with an existing robot control policy and improves it by linking visual data with 3D spatial data from a separate, fixed perception model. They combined various robot datasets and added a mechanism to selectively use visual data from different layers of the model for this spatial training. They also used depth information and camera settings when available, along with standard color images. All these extra training tools are removed after training, so the final model uses the same structure as the original policy.\n\nThe abstract says this method helps the model use varied geometric data and rely more on visual cues. It does not give specific numbers showing how much better the model is compared to others, nor does it list the exact size of the datasets used. The text does not mention specific problems or failures the model might have.\n\nPeople working on robot AI that combines vision, language, and action, or those interested in teaching robots to understand 3D space, might find this useful. People looking for specific performance scores or immediate access to the data should note that these details are not in the abstract.",
+        "takeaways": [
+          "The main thing being described is a robot AI model that learns to understand 3D space by connecting visual data with spatial data during training.",
+          "A clear gap is that the abstract does not include specific numbers showing how well the model performs or how large the training data is.",
+          "It is not clear if the code or data is available because no links are provided, although the authors say the extra training parts are not needed for running the model."
+        ]
+      },
+      "actions": [
+        "Verify the specific datasets curated and unified by the authors by checking the full PDF for dataset names, sizes, and licensing terms.",
+        "Check the full PDF for quantitative evaluation results, such as success rates or error metrics, to assess the practical impact of the spatial alignment."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-06",
+        "publishedOn": "2026-11-05",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.08373",
+            "upvotes": 48
+          }
+        ]
+      },
+      "trend": {
+        "votes": 48,
+        "rank": 4,
+        "of": 30,
+        "perDay": 48
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 48,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-05"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-06T20:42:16.080Z"
+      }
+    },
+    {
+      "id": "2611.06975",
+      "arxivId": "2611.06975",
+      "url": "https://arxiv.org/abs/2611.06975",
+      "topic": "Physics",
+      "reported": "The authors report that for continuum elastic dynamics at fixed volume with spatial convergence order $m$, the end-to-end speedup is of order $(m+4)/(m+1)$ in the simulation time, and $4/(m+1)$ in the accuracy, with exponential memory advantage.",
+      "metrics": [
+        "order $(m+4)/(m+1)$ in the simulation time",
+        "$4/(m+1)$ in the accuracy"
+      ],
+      "title": "Physical regimes of quartic quantum advantage in elastic media simulation",
+      "authors": "David Jennings, Kamil Korzekwa, Matteo Lostaglio, Tam\\'as Vaszary",
+      "takeaway": "The paper determines key physical conditions under which a quartic quantum advantage over classical methods could be achieved in elastic media simulation.",
+      "brief": "The authors determine physical conditions for quartic quantum advantage in elastic media simulation. They report specific speedup orders for continuum dynamics and define microscopically resolved bulk observables as candidates for quartic advantage in problem size. The listing does not establish whether these conditions are experimentally realized or if the proposed encodings are computationally feasible in practice.\n\nResearchers working on quantum algorithms for physical simulation or quantum complexity theory may find the defined conditions relevant. Those focused on experimental quantum hardware or classical numerical methods without quantum interest may find the theoretical constraints less applicable. The paper addresses the gap between conjectured advantages and specific physical regimes.\n\nThe contribution is theoretical, focusing on the interplay between regularity, physical scale, observable sensitivity, and quantum encodability. It does not provide experimental validation or code implementations. The analysis relies on specific assumptions about spatial convergence order and material properties.",
+      "abstract": "Quantum algorithms for elastic media simulation have been conjectured to offer up to a quartic quantum advantage over classical methods; however, the devil is always in the details. Here, we determine key physical conditions under which this quartic separation could be achieved in the relevant parameters. For continuum elastic dynamics at fixed volume with spatial convergence order $m$, we find that the end-to-end speedup is of order $(m+4)/(m+1)$ in the simulation time, and $4/(m+1)$ in the accuracy, with exponential memory advantage. For elastic lattice systems, we define microscopically resolved bulk observables (MRBOs) as those that can be efficiently extracted from a quantum state, but cannot be resolved by a known continuum model with fewer degrees of freedom than the lattice. We then argue that the estimation of MRBOs is a candidate problem for quartic quantum advantage in problem size. We propose MRBOs for pseudorandom heterogeneous materials as an explicit end-to-end application where this occurs, while admitting efficient `quantum cheese' encodings of the material properties. We thus demonstrate how the interplay between regularity, physical scale, observable sensitivity and quantum encodability constrains the relation between classical and quantum complexity.",
+      "takeaways": [
+        "The paper identifies specific physical conditions, such as spatial convergence order and material heterogeneity, required for quartic quantum advantage in elastic media simulation.",
+        "The listing does not specify the computational cost of the proposed 'quantum cheese' encodings or the practical difficulty of extracting the defined microscopically resolved bulk observables.",
+        "No code or experimental data is provided in the listing, so the results remain theoretical conjectures supported by analytical arguments."
+      ],
+      "plain": {
+        "reported": "The authors report that for continuous elastic materials at a fixed size with a specific level of spatial detail, the quantum computer is faster by a factor related to the detail level, and more accurate by a similar factor, while using exponentially less memory.",
+        "brief": "The authors figure out the specific physical situations where quantum computers could be much faster than classical computers for simulating elastic materials. They report specific speedup factors for continuous materials and define a type of measurement that could show a large quantum advantage. The listing does not say if these situations can actually be built or tested in a lab.\n\nPeople who study how to use quantum computers to simulate physics or how to compare quantum and classical computer power might find this useful. People who build quantum computers or use classical simulations without an interest in quantum theory might not find it directly useful. The paper looks at the gap between what is theoretically possible and what physical conditions allow.\n\nThe work is theoretical, looking at how material smoothness, scale, measurement sensitivity, and how well the material can be represented on a quantum computer affect the comparison between classical and quantum difficulty. It does not show real experiments or provide computer code. The analysis depends on specific assumptions about how detailed the simulation is and what the material is like.",
+        "takeaways": [
+          "The paper lists specific physical requirements, like the level of detail in the simulation and the type of material, needed for a large quantum speedup in simulating elastic materials.",
+          "The listing does not say how hard it is to create the specific quantum representations of the materials or how difficult it is to get the specific measurements defined.",
+          "There is no code or experimental data in the listing, so the results are theoretical ideas supported by mathematical arguments."
+        ]
+      },
+      "actions": [
+        "Verify the analytical derivations of the speedup orders by checking the full PDF for the assumptions regarding spatial convergence order $m$ and fixed volume.",
+        "Check the full PDF for the specific definitions and extraction protocols of microscopically resolved bulk observables to assess their practical feasibility."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-11-06",
+        "publishedOn": "2026-11-06",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.06975"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-06"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-06T20:42:16.080Z"
+      }
+    },
+    {
+      "id": "2611.07158",
+      "arxivId": "2611.07158",
+      "url": "https://arxiv.org/abs/2611.07158",
+      "topic": "Stats",
+      "reported": "The authors report that the performance of the proposed Weighted Relative Time method is compared to the Max-Combo method under different weighting schemes, and its operation characteristics are studied via simulations.",
+      "metrics": [],
+      "title": "Sample size calculation comparing two survival curves in the presence of nonproportional hazards utilizing the concept of Weighted Relative Time using two different Weibull distributions",
+      "authors": "Milind A. Phadnis, Md Robiul Islam Talukder, Geethanjalee Mudunkotuwa, Matthew S. Mayo",
+      "takeaway": "The paper claims to extend the Relative Time method by utilizing Weighted Relative Time to allow comparison of full survival curves in the presence of nonproportional hazards.",
+      "brief": "The authors propose a sample size calculation method using Weighted Relative Time with two Weibull distributions to handle nonproportional hazards without relying on a single effect size at a specific survival percentile.\n\nThe listing states that performance is compared to the Max-Combo method and operation characteristics are studied via simulations, but it does not report specific quantitative results, effect sizes, or power values from those simulations.\n\nResearchers designing survival trials with nonproportional hazards who require parametric sample size calculations may find the method relevant, while those seeking established nonparametric approaches or specific simulation benchmarks may find the listing insufficient for immediate application.",
+      "abstract": "Sample size calculations in two-arm clinical trials with survival endpoint often utilize the proportional hazards (PH) assumption. In case of nonproportional hazards (NPH), much research is ongoing with some newer methods developed that work well in specific scenarios. Recent developments have considered the nonparametric Max-Combo logrank test for both design and analysis of survival data with NPH. Although many approaches have been proposed for analyzing time-to-event data with NPH such as Restricted Mean Survival Time, Average Hazard Ratios, and piecewise exponential model with hazard ratios changing over time, translation into sample size calculation is not obvious and relies on simulations for very specific scenarios of NPH. In the parametric setting, accelerated failure time models that allow NPH but require a constant time ratio assumption (PT assumption) have been proposed. Recently, a parametric approach that simultaneously allows both nonproportional hazards (NPH) and nonproportional time (NPT) has been proposed. It utilizes the concept of Relative Time (RT) with two different Weibull distributions for the two trial arms in the case of monotonically increasing/decreasing time ratios. A key limitation is that the hypotheses leading to the sample size calculation rely on a single effect size defined at a specific survival percentile. In our current work, we extend the parent RT method by utilizing the concept of Weighted Relative Time (WRT) that allows us comparison of the full survival curves. Performance of the proposed method is compared to the Max-Combo method under different weighting schemes, and its operation characteristics are studied via simulations.",
+      "takeaways": [
+        "The object is a parametric sample size calculation method extending Relative Time to Weighted Relative Time for nonproportional hazards.",
+        "A visible limit is that the listing does not provide specific simulation results, power values, or effect sizes to evaluate the method's performance against Max-Combo.",
+        "The artifact status is not established in the listing, as no code, repository, or software implementation is mentioned."
+      ],
+      "plain": {
+        "reported": "The authors state that they tested how well their new method works compared to a method called Max-Combo by running computer simulations, but they do not list the specific numbers from those tests in this summary.",
+        "brief": "The authors created a new way to calculate how many patients are needed for a clinical trial when the risk of an event changes over time in different ways for two groups. They used a mathematical model called Weighted Relative Time to look at the entire timeline of survival, not just one specific point in time.\n\nThe summary says they tested their method against another method called Max-Combo using computer simulations, but it does not say what the results of those tests were. It does not give specific numbers for how well the method worked or how many patients it would require in different scenarios.\n\nPeople who are planning clinical trials where the risk of an event is not constant over time might find this useful. People who need specific numbers or proven results from previous studies might need to look at the full paper to see if it meets their needs.",
+        "takeaways": [
+          "The main thing being discussed is a new mathematical method for calculating patient numbers in medical trials where risks change over time.",
+          "A clear limitation is that the summary does not show the actual results of the computer tests, so we do not know how well the method performed.",
+          "It is not stated in the summary whether the authors have made their code or tools available for others to use."
+        ]
+      },
+      "actions": [
+        "Verify the specific simulation scenarios, weighting schemes, and resulting power or sample size comparisons in the full PDF.",
+        "Check the full PDF for any availability of code or implementation details for the Weighted Relative Time method."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-11-06",
+        "publishedOn": "2026-11-06",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.07158"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-06"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-06T20:42:16.080Z"
+      }
+    },
+    {
+      "id": "2611.07159",
+      "arxivId": "2611.07159",
+      "url": "https://arxiv.org/abs/2611.07159",
+      "topic": "Security",
+      "reported": "The authors report proving dual monotonicity, combined closure, and origin relational closure within their proposed relational theory of authority.",
+      "metrics": [],
+      "title": "Beyond Proof of Possession: A Relational Theory of Authority",
+      "authors": "Nicola Gallo",
+      "takeaway": "The paper claims to establish a relational theory of authority that separates Proof-of-Possession from Proof-of-Relationship and authorization, shifting the semantic domain to execution occurrences situated in causal histories.",
+      "brief": "The authors propose a semantic framework where authorization depends on execution occurrences and causal histories rather than solely on artifact possession. They define Proof of Relationship (PoR) and authorization as occurrence-sensitive, introducing observation-based verdicts and transition-admissibility relations.\n\nThe strongest reported evidence consists of proofs for dual monotonicity, combined closure, and origin relational closure. The listing does not establish empirical benchmarks, dataset performance, or real-world deployment limits. It states that successor-side PoP is a possible evidence mechanism, not a necessary premise, under explicit Witness Assumptions.\n\nResearchers working on formal security models, provenance, or authorization semantics may find the theoretical distinctions relevant. Those seeking empirical performance metrics or implemented system evaluations should note the absence of such data in the listing.",
+      "abstract": "Proof-of-Possession (PoP) establishes that an executor controls an artifact (key, token, credential, or capability), but such control alone determines neither the executor's relational profile nor the causal history of an execution occurrence. We separate PoP from Proof of Relationship (PoR), the semantic property that one execution occurrence validly continues another, and from authorization, which is occurrence-sensitive. The foundational change is in the semantic domain of authorization: from holders and authority-bearing artifacts to execution occurrences situated in causal histories. We give authorization models an observation-based occurrence verdict and a separate transition-admissibility relation; kernel inclusion yields a partial order on observation-kernel classes. Building on Provenance Identity Continuity (PIC) and Proof-of-Continuity (PoC), we classify executors by authorization-relevant equivalence relations whose quotients form relational profile spaces, with positive predicates over profile transitions forming a distributive lattice. This adds relational attenuation to authority attenuation: along a valid causal history, $C_{i+1}\\subseteq C_i$ and $\\rho_{i+1}\\Rightarrow\\rho_i$. We prove dual monotonicity, combined closure, and origin relational closure. Two occurrences of the same authenticated executor, with the same profile and possession evidence, need not be authorization-equivalent, and within a valid PIC lineage a deputy's independent authority cannot be imported outside the origin context. Finally, we prove that the executor-dependent decision factors through the relational profile and is invariant under sound mechanisms establishing it: successor-side PoP is a possible evidence mechanism, not a necessary premise of authorization. Under explicit Witness Assumptions, a boundary-witnessed checkpoint construction realizes the premises without successor-side PoP.",
+      "takeaways": [
+        "The object is a formal semantic model distinguishing possession, relationship, and authorization via causal histories.",
+        "A visible limit is the reliance on explicit Witness Assumptions for the boundary-witnessed checkpoint construction.",
+        "The artifact status is theoretical, with no code or empirical results provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors state they have mathematically proven three specific properties: dual monotonicity, combined closure, and origin relational closure, within their new theoretical model.",
+        "brief": "The authors suggest that simply proving you own a digital key is not enough to determine if you are allowed to perform an action. They propose a new way to look at permissions that tracks the history of actions and how they relate to each other, rather than just checking who holds the key.\n\nThe main evidence they provide is mathematical proofs showing their model behaves consistently in specific ways. The summary does not mention any real-world tests, speed measurements, or practical limitations of using this system in actual software.\n\nPeople who study the mathematical rules of computer security might find this interesting. People looking for a ready-to-use tool or data on how fast it runs should know this is a theoretical paper without those details.",
+        "takeaways": [
+          "The paper creates a new set of mathematical rules for deciding who is allowed to do what in a system.",
+          "The model only works if certain specific conditions, called Witness Assumptions, are met.",
+          "There is no software code or real-world test data included in the summary."
+        ]
+      },
+      "actions": [
+        "Verify the formal definitions of Proof of Relationship and authorization in the full PDF.",
+        "Check the specific conditions of the Witness Assumptions required for the checkpoint construction."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.DC"
+      ],
+      "listing": {
+        "listedOn": "2026-11-06",
+        "publishedOn": "2026-11-06",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.07159"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-06"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-06T20:42:16.080Z"
+      }
+    },
+    {
+      "id": "2611.07171",
+      "arxivId": "2611.07171",
+      "url": "https://arxiv.org/abs/2611.07171",
+      "topic": "Engineering",
+      "reported": "The authors report that the minimum particle budget grows quadratically with the number of transmitters when symbol duration and target error probability are fixed.",
+      "metrics": [],
+      "title": "A Particle-Based Multiuser Communication with a Budget Limit",
+      "authors": "Shaojie Zhang, Ozgur B. Akan",
+      "takeaway": "The paper claims to characterize the minimum particle budget required to recover exact sums of binary inputs in a multiuser network and proposes a groupwise OOK counting scheme to reduce this budget.",
+      "brief": "The authors analyze the particle budget needed to recover exact sums of binary inputs in a multiuser network. They show that the minimum budget grows quadratically with the number of transmitters under fixed symbol duration and target error probability, even when the receiver observes all particle arrival times. Simultaneous on-off keying achieves this quadratic scaling, while slower budget growth causes the error probability to approach one.\n\nThe authors develop a groupwise OOK counting (GOC) scheme with staggered group releases and sequential estimation of group input sums. Their bounds indicate that reducing the quadratic scaling requires both the symbol duration and the number of counting intervals to grow with network size. When both grow in proportion to network size, the minimum budget becomes proportional to the number of transmitters times its logarithm. The listing does not specify experimental validation or real-world implementation details.\n\nResearchers working on molecular communication or particle-based multiuser networks may find the theoretical bounds and the GOC scheme relevant. Those focused on conventional radio-frequency multiuser communication or systems without particle-based transmission may find the specific model and constraints less applicable.",
+      "abstract": "Multiuser networks can aggregate local observations through a shared receiver. In this paper, we study the particle budget required to recover the exact sum of binary inputs in a multiuser network. We show that, for the considered model, the minimum budget grows quadratically with the number of transmitters when the symbol duration and target error probability are fixed, even when the receiver observes all particle arrival times. Simultaneous on-off keying (OOK) achieves this quadratic scaling, while any slower budget growth makes the error probability approach one at a fixed symbol duration, regardless of the transmission and decoding scheme. We then examine how this particle requirement can be reduced by allowing longer symbol durations and more counting intervals. We develop a groupwise OOK counting (GOC) scheme with staggered group releases and sequential estimation of group input sums, accounting for delayed arrivals. Our bounds show that, when reception is based on interval counts, reducing the quadratic scaling requires both the symbol duration and the number of counting intervals to grow with network size. When both grow in proportion to network size, the minimum budget becomes proportional to the number of transmitters times its logarithm.",
+      "takeaways": [
+        "The object is a theoretical model for particle-based multiuser communication focusing on budget limits for sum recovery.",
+        "A visible limit is the reliance on fixed symbol duration and target error probability for the quadratic scaling result, with reductions requiring proportional growth in duration and counting intervals.",
+        "The artifact status is not established in the listing; no code, dataset, or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that the minimum number of particles needed grows in a square-like way with the number of senders when the time per signal and the allowed error rate are kept constant.",
+        "brief": "The authors look at how many tiny particles are needed to correctly add up binary signals from many users in a network. They find that if the time for each signal and the allowed error rate stay the same, the number of particles needed goes up by the square of the number of users. A simple on-off signaling method matches this square growth, but using fewer particles makes errors almost certain.\n\nThe authors create a new method called groupwise OOK counting that sends particles in staggered groups and estimates sums step by step. Their math shows that to get below the square growth, both the signal time and the number of counting periods must increase as the network gets bigger. If both increase in line with the number of users, the particle need drops to a level proportional to the number of users times the log of that number. The summary does not say if this was tested in real experiments or simulations.\n\nPeople studying communication using molecules or particles may find these math rules and the new method useful. People working on standard radio or wireless networks that do not use particles may not find this specific model helpful.",
+        "takeaways": [
+          "The paper is about a math model for sending information using particles in a multi-user network.",
+          "A limit is that the square growth result assumes fixed signal time and error rate, and reducing it requires increasing signal time and counting periods.",
+          "It is not stated in the summary if there is any code, data, or software available."
+        ]
+      },
+      "actions": [
+        "Verify the mathematical derivations and assumptions of the GOC scheme by reading the full PDF.",
+        "Check if the authors provide simulation results or experimental data supporting the theoretical bounds in the full paper."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-11-06",
+        "publishedOn": "2026-11-06",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.07171"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-06"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-06T20:42:16.080Z"
+      }
+    },
+    {
+      "id": "2611.07240",
+      "arxivId": "2611.07240",
+      "url": "https://arxiv.org/abs/2611.07240",
+      "topic": "Econ",
+      "reported": "The authors report establishing a variance bound, uniform convergence rates in probability, and pointwise asymptotic normality for the subgraph analogue of the Nadaraya-Watson kernel regression estimator.",
+      "metrics": [],
+      "title": "Nonparametric Subgraph Regression",
+      "authors": "Wenxuan Ding",
+      "takeaway": "The paper claims to develop nonparametric regression methods for outcomes defined on groups of agents in a single large network, termed subgraph regression.",
+      "brief": "The author proposes a framework for estimating nonparametric regression on group-level outcomes within a single network, where outcomes on groups sharing an agent are dependent. This generalizes dyadic regression to groups of size p, with the primary application being subgraphs of a network.\n\nThe reported evidence consists of theoretical results, specifically a variance bound, uniform convergence rates in probability, and pointwise asymptotic normality for the Nadaraya-Watson estimator. The listing does not report empirical results on specific datasets or numerical performance metrics. A stated limit is that the number of observations overstates the effective sample size, which is N rather than N^p.\n\nResearchers working on network econometrics or nonparametric inference with dependent data may find the theoretical framework relevant. Those seeking applied empirical results or code implementations should note the listing provides no such artifacts.",
+      "abstract": "Estimation and inference on a single large network are challenging due to dependence among observations. This paper studies nonparametric regression for outcomes defined on groups of $p$ agents, such as the indicator that three agents in a network form a triangle. Outcomes on groups that share an agent may be dependent, while outcomes on disjoint groups are independent. I call this problem subgraph regression; it nests dyadic regression as the special case $p=2$. Its leading application concerns subgraphs of a network, but the methods apply to any outcome defined on groups of agents. I establish a variance bound, uniform convergence rates in probability, and pointwise asymptotic normality for the subgraph analogue of the Nadaraya-Watson kernel regression estimator. The setting differs from regression with i.i.d. data in two ways: (i) the number of observations, of order $N^p$, overstates the effective sample size, which is $N$, and (ii) the rate of convergence depends on the dimension of the covariates of a single agent rather than of all $p$ agents, which mitigates the curse of dimensionality.",
+      "takeaways": [
+        "The object is a theoretical extension of kernel regression to group-level network outcomes with specific dependence structures.",
+        "A visible limit is the discrepancy between the nominal observation count of order N^p and the effective sample size of N.",
+        "No code or empirical dataset is declared in the listing, so the artifact status is theoretical only."
+      ],
+      "plain": {
+        "reported": "The authors report proving mathematical properties, including a limit on variance, how quickly estimates converge, and the distribution shape of the estimator, for a specific type of regression model applied to network groups.",
+        "brief": "The author creates a method to analyze data where the outcome depends on a group of people in a network, such as whether three people form a triangle. This method handles the fact that groups sharing a person are not independent. It is a generalization of methods used for pairs of people.\n\nThe evidence provided is mathematical proofs showing the method works under certain conditions. There are no results from real-world data or specific numerical scores in the listing. One limitation noted is that the total number of possible groups is much larger than the number of independent pieces of information.\n\nPeople studying economic networks or statistical methods for dependent data might find this useful. People looking for ready-to-use software or real-world case studies should note that none are mentioned in the listing.",
+        "takeaways": [
+          "The work is a mathematical extension of existing regression tools to handle groups in networks.",
+          "A limitation is that the count of possible groups does not equal the count of independent data points.",
+          "No software code or real data examples are mentioned in the provided information."
+        ]
+      },
+      "actions": [
+        "Verify the theoretical proofs and assumptions in the PDF to confirm the validity of the convergence rates.",
+        "Check if the author has released any supplementary materials or code repositories not listed in the metadata."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.EM"
+      ],
+      "listing": {
+        "listedOn": "2026-11-06",
+        "publishedOn": "2026-11-06",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.07240"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-06"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-06T20:42:16.080Z"
+      }
+    },
+    {
+      "id": "2611.07995",
+      "arxivId": "2611.07995",
+      "url": "https://arxiv.org/abs/2611.07995",
+      "topic": "Health",
+      "reported": "The authors report that replacing road traffic injury modelling with conditional tabular generative adversarial networks improves simulation run-time by 86.6% (95% bootstrap confidence interval [85.2, 88.1]) while recovering cause-specific mean disability adjusted life years with a 13% error in the Thanzi La Onse agent",
+      "metrics": [
+        "86.6% (95% bootstrap confidence interval [85.2, 88.1])",
+        "13% error",
+        "~2%"
+      ],
+      "title": "Leveraging deep generative modelling at the agent level in discrete-event simulations",
+      "authors": "Margherita Molaro, Matthew M. Graham, Oliver Watson, Rachel E. Murray-Watson, Martin Chalkley, Joseph H. Collins, Bingling She, Asif U. Tamuri, Timothy B. Hallett",
+      "takeaway": "The paper claims a new approach to leverage emulators at the agent level in event-based agent-based simulations to reduce the computational requirements of the simulation itself.",
+      "brief": "The authors propose using conditional tabular generative adversarial networks to replace specific agent-level modelling components within event-based agent-based simulations. This aims to reduce the computational cost of generating training samples for traditional emulators.\n\nThey demonstrate this in the Thanzi La Onse multi-disease simulation, reporting an 86.6% run-time improvement and 13% error in disability adjusted life years. The listing notes the low assumed incidence of fatal road traffic injuries but does not establish other generalization limits or artifacts.\n\nResearchers working on computationally intensive agent-based simulations or parameter inference may find this relevant. Those not dealing with high-cost simulation workloads may ignore it.",
+      "abstract": "Emulators are often invoked to facilitate parameter inference in computationally intensive agent-based simulations (ABSs). Most approaches, however, require a large sample of pre-existing outputs on which such emulators can be trained. For computationally intensive simulations, this sample can be prohibitively expensive to generate. We propose a new approach to leverage emulators at the agent level in event-based ABSs to reduce the computational requirements of the simulation itself. We demonstrate this in a computationally intensive ``multi-disease'' ABS, Thanzi La Onse, which self-consistently simulates a wide range of medical conditions in a population. By applying conditional tabular generative adversarial networks to replace the modelling of one of the simulated causes of ill health, road traffic injuries (RTIs), we are able to improve its simulation run-time by 86.6% (95% bootstrap confidence interval [85.2, 88.1]), while recovering the evolution of cause-specific mean disability adjusted life years with a 13% error, despite the low assumed incidence of fatal RTIs (~2%). Crucially, we do so while retaining the full ABS framework, and correctly recovering multi-disease dynamics. This represents a crucial step towards enabling full-model emulators for very computationally intensive simulations, and making large ABS amenable to rigorous parameter inference and a full understanding of parameter sensitivity.",
+      "takeaways": [
+        "The object is an agent-level emulator strategy for discrete-event simulations.",
+        "The visible limit is the reliance on a specific multi-disease simulation and low-incidence injury modelling.",
+        "The artifact status is not established in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that swapping out the road traffic injury model with a specific type of AI generator made the simulation run 86.6% faster, with a 13% error in health outcome measurements in their test simulation.",
+        "brief": "The authors suggest using AI tools to simulate individual agents within larger population models. This reduces the need for massive amounts of pre-computed data to train standard approximators.\n\nThey tested this in a complex health simulation, showing significant speed gains and acceptable error rates. The listing mentions the low frequency of fatal injuries in their test case but does not specify other limitations or provide code.\n\nPeople who build or run very slow computer simulations of populations might find this useful. Others without that specific technical need can likely skip it.",
+        "takeaways": [
+          "The focus is on speeding up complex population simulations using AI at the individual level.",
+          "A visible limit is that the test case involved a specific health model and rare fatal events.",
+          "It is not stated whether code or data is available."
+        ]
+      },
+      "actions": [
+        "Verify the 86.6% run-time improvement and 13% error metrics against the full PDF.",
+        "Check the PDF for details on the conditional tabular generative adversarial network implementation and data requirements."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "q-bio.PE"
+      ],
+      "listing": {
+        "listedOn": "2026-11-06",
+        "publishedOn": "2026-11-06",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.07995"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-06"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-06T20:42:16.080Z"
+      }
+    }
+  ]
+}
