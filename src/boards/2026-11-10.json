@@ -1,0 +1,663 @@
+{
+  "date": "2026-11-10",
+  "label": "Tue, Nov 10",
+  "minutes": 10,
+  "poolSize": 147,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-11-10T21:58:32.386Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2611.12806",
+      "arxivId": "2611.12806",
+      "url": "https://arxiv.org/abs/2611.12806",
+      "topic": "AI",
+      "reported": "The authors report that their tactile representation substantially benefits complex manipulation tasks while maintaining strong computational efficiency across simulation and real-robot deployments.",
+      "metrics": [],
+      "title": "Learning Heterogeneous Tactile Representation for General Dexterous Manipulation",
+      "authors": "Bing Han, Yichuan Peng, Haoyu Dong, Yuanmeng Hu, Yongyi Jia, Fangjing Wang, Kecheng Zheng, Yiming Zhang, Yanhong Zeng, Xiaoqing Zhang, Chen Song, Rundong Zou, Anqi Dong, Yuan Guan, Ka Leong Cheng, Xing Zhu, Yujun Shen, Nan Xue, Wei Ning",
+      "takeaway": "The paper claims to develop LingBot-Touch, a tactile foundation model that yields a unified representation across different tactile sensors and integrates plug-and-play tokens into policy models.",
+      "brief": "The authors propose LingBot-Touch, a tactile foundation model designed to unify representations from piezoresistive, magnetic, and visuotactile sensors. They state that the resulting tactile tokens are plug-and-play and can be integrated into policy models ranging from diffusion policies to vision-language-action models.\n\nThe authors report that extensive experiments spanning simulation and real-robot deployments demonstrate that the tactile representation substantially benefits complex manipulation tasks while maintaining strong computational efficiency. The listing does not provide specific quantitative metrics, benchmark scores, or named datasets to verify the magnitude of these improvements.\n\nResearchers working on embodied intelligence, dexterous manipulation, or multi-modal sensor fusion may find the unified representation approach relevant. Those requiring specific numerical benchmarks or code verification before adoption should note that the abstract lacks quantitative performance figures.",
+      "abstract": "Tactile sensing is an indispensable modality for contact-rich dexterous manipulation, a capability that hints at the ultimate frontiers of embodied intelligence. However, commercially available tactile sensors are still at a relatively early stage of development, with each type of sensor offering irreplaceable strengths alongside its own drawbacks. A key challenge is thus to free tactile understanding from sensor-specific physics, so that embodied models can effectively leverage heterogeneous tactile data. To this end, we develop LingBot-Touch, a tactile foundation model characterized by the following properties. (i) Our model yields a unified representation across different tactile sensors (i.e., piezoresistive, magnetic, and visuotactile sensors), and is easily extensible to new sensor types. (ii) The resulting tactile tokens are plug-and-play: they can be seamlessly integrated into policy models across paradigms, from diffusion policy to vision-language-action (VLA) models such as π_{0.5} and LingBot-VLA, consistently enhancing manipulation dexterity. (iii) Extensive experiments, spanning simulation and real-robot deployments across multiple hardware platforms, demonstrate that our tactile representation substantially benefits complex manipulation tasks while maintaining strong computational efficiency. We believe the findings in this work demonstrate the potential of leveraging cross-sensor data to scale tactile learning, and offer encouraging insights for the design of future hardware and embodied models.",
+      "takeaways": [
+        "The object is a tactile foundation model that unifies data from heterogeneous sensor types into a single representation.",
+        "A visible limit is the absence of specific quantitative metrics or benchmark names in the provided abstract to substantiate the claimed efficiency and dexterity gains.",
+        "The artifact status is indicated by a declared GitHub repository URL, but the abstract does not confirm the completeness or availability of the code."
+      ],
+      "plain": {
+        "reported": "The authors say their system works well in computer simulations and on real robots, making complex hand movements better and using less computer power, but they do not list specific numbers in the summary.",
+        "brief": "The researchers created a computer model called LingBot-Touch that can understand touch data from different kinds of sensors, such as pressure sensors and cameras that see touch. They claim this model creates a standard format for touch information that can be easily added to other AI systems that control robot arms.\n\nThey say they tested this in virtual environments and on physical robots, and it helped the robots perform difficult tasks better while using less processing power. However, the summary does not give specific scores, percentages, or names of the tests used to prove these improvements.\n\nPeople who build robots that need to touch and grasp objects might be interested in this standard touch format. People who need exact performance numbers to decide if the system is good enough for their specific project should look for more detailed data elsewhere.",
+        "takeaways": [
+          "The main thing they built is a computer model that combines touch information from different types of sensors into one common format.",
+          "A clear missing piece is that the summary does not show specific numbers or test results to prove how much better the system is.",
+          "They provided a link to a code repository, but the summary does not say if the code is complete or ready to use."
+        ]
+      },
+      "actions": [
+        "Verify the existence and functionality of the code at the declared GitHub repository URL to confirm the implementation of the unified tactile representation.",
+        "Review the full PDF to identify specific quantitative metrics, benchmark datasets, and ablation studies that support the claims of enhanced manipulation dexterity and computational efficiency."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Robbyant/lingbot-touch",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-10",
+        "publishedOn": "2026-11-09",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.12806",
+            "upvotes": 92
+          }
+        ]
+      },
+      "trend": {
+        "votes": 92,
+        "rank": 1,
+        "of": 33,
+        "perDay": 92
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 92,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-09"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-10T21:58:32.386Z"
+      }
+    },
+    {
+      "id": "2611.10771",
+      "arxivId": "2611.10771",
+      "url": "https://arxiv.org/abs/2611.10771",
+      "topic": "AI",
+      "reported": "The authors report that the WorldFoundry catalog contains 270 model entries, 74 benchmarks, and 62 registered metric entries, with readiness and execution evidence recorded separately.",
+      "metrics": [
+        "270 model entries",
+        "74 benchmarks",
+        "62 registered metric entries"
+      ],
+      "title": "WorldFoundry: Towards Unified Infrastructure for World Intelligence",
+      "authors": "Juanxi Tian, Jiadong Hou, Baiang Li, Xin Lin, Zhengbo Jiao, Weijia Zhang, Yeying Jin, Truong Nguyen, Haitian Zheng, Zhifei Zhang, Jianfei Yang, Ming-Hsuan Yang, Felix Heide, Wei Xiong, Enze Xie, Wanhua Li",
+      "takeaway": "The paper presents WorldFoundry, an open-source infrastructure for reproducible inference and evaluation across video, 3D, 4D, embodied action, and interactive world systems.",
+      "brief": "The authors define a generative world model as a predictive dynamical system maintaining persistent, history-conditioned representations and present WorldFoundry as open-source infrastructure for reproducible inference and evaluation. They report a catalog containing 270 model entries, 74 benchmarks, and 62 registered metric entries, with readiness and execution evidence recorded separately. The listing does not establish specific performance improvements or comparative results against baseline systems, only the scope of the catalog and the separation of execution readiness from evaluative claims.\n\nThe strongest reported evidence is the inventory of 270 model entries, 74 benchmarks, and 62 registered metric entries within the WorldFoundry catalog. The authors state that explicit manifests and durable artifact contracts separate execution readiness from evaluative claims, making each claim traceable to supporting artifacts. No quantitative performance metrics, such as accuracy or speedup, are provided in the abstract to demonstrate the effectiveness of the infrastructure itself.\n\nResearchers working on world models, video generation, or 3D/4D simulation who require a unified evaluation framework may find this relevant. Those seeking specific algorithmic improvements in generation quality or dynamics prediction without a focus on infrastructure standardization may find the listing insufficient for their immediate needs.",
+      "abstract": "Visual generative models increasingly blur the line between synthesizing observations and simulating environments. Yet visual plausibility alone does not constitute successful world modeling: compelling outputs may lack persistent state, physical dynamics, or causally consistent responses to interactions. We define a generative world model as a predictive dynamical system that maintains a persistent, history-conditioned representation of an environment, updates that representation in response to actions or interventions, and generates temporally coherent trajectories that reflect outcomes under observed and counterfactual interventions. From this definition, we derive an intelligence-oriented framework spanning perceptual grounding, persistent state modeling, controllable transformation, dynamics-aware prediction, and closed-loop interaction. We present WorldFoundry, open-source infrastructure for reproducible inference and evaluation across video, 3D and 4D, embodied action, and interactive world systems. WorldFoundry unifies model and benchmark discovery, runtime and asset preparation, execution orchestration, artifact management, and interactive visualization, while modality-specific adapters preserve native inputs, execution semantics, output representations, and evaluation protocols. Explicit manifests, durable artifact contracts, and evidence-aware scorecards separate execution readiness from evaluative claims, making each claim traceable to its supporting artifacts. The catalog contains 270 model entries, 74 benchmarks, and 62 registered metric entries, with readiness and execution evidence recorded separately. WorldFoundry enables reproducible comparison of persistent, controllable dynamics across heterogeneous systems, advancing the field from perceptual synthesis toward measurable world intelligence.",
+      "takeaways": [
+        "The object is an open-source infrastructure named WorldFoundry that unifies model discovery, runtime preparation, execution orchestration, and artifact management for world intelligence systems.",
+        "A visible limit is that the abstract provides no quantitative evidence of performance gains or comparative advantages over existing evaluation tools, only the count of cataloged items.",
+        "The artifact status is declared as open-source with a provided GitHub repository URL, but the listing does not confirm the availability of the specific 270 models or 74 benchmarks within that repository."
+      ],
+      "plain": {
+        "reported": "The authors state that their software system, WorldFoundry, lists 270 different AI models, 74 standard tests, and 62 specific measurement tools, keeping records of whether each item is ready to run separate from how well it performs.",
+        "brief": "The authors describe a type of AI that predicts how an environment changes over time and introduce WorldFoundry, a free software tool for testing these AI systems consistently. They say their tool includes a list of 270 models, 74 tests, and 62 measurement tools, and it keeps track of whether a model can actually run separately from whether it gives good results. The text does not say if this tool makes the AI models work better or faster than other tools, only that it organizes them in a specific way.\n\nThe main fact given is the number of items in the list: 270 models, 74 tests, and 62 measurement tools. The authors explain that their system uses clear records to show if a model is ready to run, which is different from saying the model is accurate. There are no numbers showing how well the models perform, such as scores or error rates, in this summary.\n\nPeople who build AI systems that simulate physical worlds or generate video might find this useful if they need a standard way to test their work. People who are only interested in making a specific AI model produce better images or videos, and do not care about the testing infrastructure, might not find this summary helpful for their specific goal.",
+        "takeaways": [
+          "The main thing described is a free software tool called WorldFoundry that helps organize and test AI systems that simulate environments.",
+          "A clear limitation is that the summary does not show any data proving the tool improves the quality or speed of the AI models it tests.",
+          "The tool is said to be free and available online, but the summary does not prove that all the listed models and tests are actually downloadable and working in the provided link."
+        ]
+      },
+      "actions": [
+        "Verify the GitHub repository to confirm the presence of the 270 model entries, 74 benchmarks, and 62 metric entries cited in the abstract.",
+        "Check the repository documentation to determine if the 'evidence-aware scorecards' and 'durable artifact contracts' are implemented as functional tools or merely conceptual descriptions."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/OpenEnvision/WorldFoundry",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-10",
+        "publishedOn": "2026-11-07",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.10771",
+            "upvotes": 52
+          }
+        ]
+      },
+      "trend": {
+        "votes": 52,
+        "rank": 2,
+        "of": 33,
+        "perDay": 17
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 52,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-07"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-10T21:58:32.386Z"
+      }
+    },
+    {
+      "id": "2611.12762",
+      "arxivId": "2611.12762",
+      "url": "https://arxiv.org/abs/2611.12762",
+      "topic": "AI",
+      "reported": "The authors report that Sage-Taiyi ranks first on all eight metrics of historical rediscovery and open-ended ideation on Taiyi-Bench, achieving an Overall score of 54.0 compared with 47.9 for the strongest baseline, AI Scientist-v2.",
+      "metrics": [
+        "Overall score of 54.0",
+        "47.9 for the strongest baseline",
+        "yield of cobalt-catalyzed carbonylation from trace amounts to 84%"
+      ],
+      "title": "Sage-Taiyi: A Metacognitive Architecture for Scientific Discovery",
+      "authors": "Weida Wang, Benteng Chen, Yigeng Jiang, Shuchen Pu, Weiping Shen, Zichao Liu, Yulin Su, Zitong Wang, Siyu Zhou, Zifu Wang, Yizhi Li, Xin Zong, Yuning Yang, Jixiang Bi, Yuan Wang, Chuyi Peng, Shiyao Geng, Qi Zhang, Kuan Lu, Mengzhu Li, Weiwang Xu, Peishan Xiang, Chengjun Liu, Chengrui Wei, Fangchen Yu, Shengji Tang, Yichen Jiang, Jingqi Ye, Cheng Yang, Tao Hu, Jianbiao Mei, Qinglong Cao, Kun Li, Yixin Chen, Shengyuan Xu, Juncheng Xiao, Yiheng Wang, Ruizhe Chen, Shiyang Feng, Runmin Ma, Xiangchao Yan, Zongsheng Cao, Haomeng Hu, Yu Ke, Taihui Wu, Meng Dai, Xu Guo, Haoyang Peng, Yinglong Ni, Pingsen Shi, Xiaosong Wang, Shuyue Hu, Haijun Li, Sherry Dongqi Bao, Yang Yang, Chao Yang, Jie Hou, Tianfan Fu, Yi Gong, Jin Zeng, Mao Su, Hongxia Hao, Fanyang Mo, Fenghua Ling, Tianshu Yu, Yunqi Cai, Baihong Chi, Jingwei Wang, Lei Wang, Chuncheng Bu, Shide Lv, Guangyu Wang, Yuqiang Li, Chunfeng Song, Lei Bai, Hui Wang, Xujun Fu, Li Cao, Lei Chen, Dahua Lin, Xing Xie, Bowen Zhou, Wenlong Zhang, Pinlong Cai, Peng Ye, Aiwen Lei, Jie Li, Shengchun Wang, Bo Zhang, Shufei Zhang",
+      "takeaway": "Sage-Taiyi is a metacognition-inspired architecture that uses accumulated scientific understanding to guide what to investigate next and how to investigate it.",
+      "brief": "The authors propose a metacognitive architecture that monitors and controls scientific reasoning to adapt research targets and select reusable methods. They report top rankings on eight metrics of Taiyi-Bench and specific yield improvements in chemistry experiments, though the listing does not establish whether these results generalize beyond the tested disciplines or if the benchmark tasks are representative of broader scientific discovery. The paper is relevant to researchers interested in AI co-scientist systems and metacognitive control in scientific ideation, while those focused on non-scientific domains or purely theoretical AI may find it less applicable.\n\nThe strongest reported evidence is the Overall score of 54.0 on Taiyi-Bench, outperforming the strongest baseline by 6.1 points. The authors also report raising the yield of cobalt-catalyzed carbonylation from trace amounts to 84% and photocatalytic allylic amination from 13% to 69%. However, the listing does not specify the statistical significance of these improvements or the number of independent trials conducted for the experimental validations.\n\nThis work is suitable for readers working on AI-driven scientific discovery, benchmarking for ideation systems, or metacognitive AI architectures. It may be less relevant for those focused on general-purpose LLM capabilities or domains outside of chemistry, materials science, and engineering.",
+      "abstract": "We introduce Sage-Taiyi, a metacognition-inspired architecture that uses accumulated scientific understanding to guide what to investigate next and how to investigate it. Through explicit monitoring and control, the system revises its understanding of evidence, assumptions, and unresolved questions, then uses these assessments to adapt research targets and select reusable reasoning methods. On Taiyi-Bench, an AI co-scientist ideation benchmark comprising 265 tasks from 50 papers across ten disciplines, Sage-Taiyi ranks first on all eight metrics of historical rediscovery and open-ended ideation, achieving an Overall score of 54.0 compared with 47.9 for the strongest baseline, AI Scientist-v2. It also performs well on two external scientific ideation benchmarks. Five expert-guided collaborations further connect its proposals to experimental and computational validation across chemistry, materials science, and engineering. In chemistry, reaction-condition optimization raises the yield of cobalt-catalyzed carbonylation from trace amounts to 84% and photocatalytic allylic amination from 13% to 69%. These results support metacognitive regulation as an approach to scientific ideation and its progression toward practical validation.",
+      "takeaways": [
+        "The object is a metacognitive architecture designed to guide scientific investigation through explicit monitoring and control of understanding.",
+        "A visible limit is that the reported experimental validations are confined to specific chemistry and materials science tasks, with no indication of performance on broader or unrelated scientific domains.",
+        "The artifact status is indicated by a declared code repository URL, but the listing does not confirm whether the code is fully functional, documented, or reproducible."
+      ],
+      "plain": {
+        "reported": "The authors state that their system, Sage-Taiyi, achieved the highest scores on all eight measures of a test suite called Taiyi-Bench, which includes 265 tasks from 50 scientific papers. They report an overall score of 54.0, which is higher than the 47.9 score of the best competing system they tested, AI Scientist-v2.",
+        "brief": "The authors describe a computer system that mimics human self-reflection to decide what scientific questions to ask and how to answer them. They claim it performed best on a specific test of scientific idea generation and helped improve chemical reaction yields in lab experiments. However, the summary does not say if these results hold true in other scientific fields or if the test tasks are typical of real-world research. This is useful for people building AI tools for science, but less so for those working in other areas of computer science.\n\nThe best result they show is a score of 54.0 on their main test, beating the next best system by 6.1 points. They also say their system helped increase the amount of product made in two chemical reactions: one went from almost nothing to 84% yield, and another went from 13% to 69%. The summary does not explain how many times they repeated these experiments or if the differences are statistically reliable.\n\nThis paper is for people interested in AI that helps scientists generate new ideas, especially in chemistry and materials. It is less relevant for people who study general AI language models or work in fields like biology or physics that are not mentioned in the results.",
+        "takeaways": [
+          "The system is designed to think about its own thinking to better guide scientific research.",
+          "The results are only shown for specific chemistry and materials tasks, so it is unclear if it works in other scientific areas.",
+          "The authors provide a link to their code, but the summary does not say if the code is complete or easy to use."
+        ]
+      },
+      "actions": [
+        "Verify the claimed Overall score of 54.0 and the specific yield improvements by checking the full PDF and any associated experimental protocols.",
+        "Inspect the declared code repository to assess the completeness and reproducibility of the Sage-Taiyi implementation and its evaluation scripts."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Alpha-Innovator/Sage-Taiyi",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-10",
+        "publishedOn": "2026-11-09",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.12762",
+            "upvotes": 49
+          }
+        ]
+      },
+      "trend": {
+        "votes": 49,
+        "rank": 3,
+        "of": 33,
+        "perDay": 49
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 49,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-09"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-10T21:58:32.386Z"
+      }
+    },
+    {
+      "id": "2611.12886",
+      "arxivId": "2611.12886",
+      "url": "https://arxiv.org/abs/2611.12886",
+      "topic": "AI",
+      "reported": "The authors report that Reframe outperforms both Mix-RL and vanilla MOPD over 14 image and video benchmarks.",
+      "metrics": [
+        "14 image and video benchmarks"
+      ],
+      "title": "Reframe: Observation-Aligned Multi-Teacher On-Policy Distillation for Agentic Visual Reasoning",
+      "authors": "Haozhi Yuan, Handong Li, Yifan Zhang, Qianshan Wei",
+      "takeaway": "Reframe is a post-training framework that aligns the observation state, not just the output distribution, for agentic visual reasoning.",
+      "brief": "The authors propose Reframe, a two-stage post-training framework for visual agents. It uses Ground-Drop-GRPO to train specialists with evidence-aware rewards and Observation-Gated-MOPD to repair deficient tool actions mid-rollout. The framework aims to make models rely on tool-returned observations rather than ignoring them.\n\nThe authors state that extensive experiments over 14 image and video benchmarks show Reframe outperforms Mix-RL and vanilla MOPD. Ablations indicate GD-GRPO increases observation dependence and tool gain compared with outcome-based GRPO. The listing does not specify the magnitude of performance gains or the specific benchmark names.\n\nResearchers working on agentic visual reasoning or multi-teacher distillation may find the observation-alignment approach relevant. Those focused solely on standard language model fine-tuning without tool-use components may find the specific visual-agent context less applicable.",
+      "abstract": "Agentic reinforcement learning (RL) and multi-teacher on-policy distillation (MOPD) offer complementary routes to post-training. For visual agents, however, tool use presents two related challenges. Models may overlook useful tool-returned observations, while poorly grounded actions can limit the evidence available for subsequent distillation. We introduce Reframe, a post-training framework that treats the observation state, rather than only the output distribution, as an object of alignment. First, Ground-Drop-GRPO (GD-GRPO) trains spatial and temporal specialists with evidence-aware rewards and stochastic removal of the original visual input, encouraging them to acquire grounded evidence and use the returned observations. Second, Observation-Gated-MOPD (OG-MOPD) replaces deficient tool actions with canonical ones mid-rollout and resumes distillation from the repaired observation. The two stages complement each other, as learning to rely on tool-returned observations can help the policy benefit from observation repair. Neither stage requires a task-specific SFT cold start. Extensive experiments over 14 image and video benchmarks demonstrate that Reframe outperforms both Mix-RL and vanilla MOPD. Ablation results show that GD-GRPO increases observation dependence and tool gain compared with outcome-based GRPO.",
+      "takeaways": [
+        "The core object is a post-training framework that treats observation state as an alignment target for visual agents.",
+        "The listing does not establish specific quantitative performance margins or identify the exact 14 benchmarks used.",
+        "The authors declare a code repository at https://github.com/EliYuan30/Reframe, but the listing does not confirm its completeness or functionality."
+      ],
+      "plain": {
+        "reported": "The authors report that their method, Reframe, performs better than two other training methods (Mix-RL and vanilla MOPD) across 14 different image and video test sets.",
+        "brief": "The authors created a training method called Reframe for AI systems that use tools to look at images and videos. It has two parts: one trains the AI to pay attention to the information returned by tools, and the other fixes mistakes in the AI's actions during training. The goal is to make the AI better at using the data it gets from tools.\n\nThe authors say they tested this on 14 different image and video tasks and found it worked better than two other methods. They also say one part of their method makes the AI rely more on tool data. The listing does not say by how much it was better or list the specific names of the 14 tasks.\n\nPeople who build AI systems that use tools to analyze pictures or videos might find this useful. People who only work on text-based AI without tool usage might not find it directly relevant.",
+        "takeaways": [
+          "The main thing is a training method that teaches AI to focus on the data returned by tools when analyzing images and videos.",
+          "The listing does not say exactly how much better the method is or list the specific names of the 14 test sets.",
+          "The authors provide a link to their code, but the listing does not confirm if the code is complete or works as described."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark names and performance deltas by reading the full PDF.",
+        "Check the declared GitHub repository to confirm code availability and reproducibility details."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/EliYuan30/Reframe",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-10",
+        "publishedOn": "2026-11-09",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.12886",
+            "upvotes": 37
+          }
+        ]
+      },
+      "trend": {
+        "votes": 37,
+        "rank": 4,
+        "of": 33,
+        "perDay": 37
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 37,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-09"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-10T21:58:32.386Z"
+      }
+    },
+    {
+      "id": "2611.09992",
+      "arxivId": "2611.09992",
+      "url": "https://arxiv.org/abs/2611.09992",
+      "topic": "Security",
+      "reported": "The authors report an overall accuracy of 94.89 % and a macro-F1 score of 81.09 % on the NetsLab 5G O-RAN intrusion-detection dataset.",
+      "metrics": [
+        "overall accuracy of 94.89 %",
+        "macro-F1 score of 81.09 %"
+      ],
+      "title": "Federated Lightweight Transformer for Network-Layer Cyberattack Detection in O-RAN",
+      "authors": "Hong Nhung Nguyen, Abdulahi Badrudeen, Yekaterina Kim, Truong Thu Huong, Sunwoo Kim",
+      "takeaway": "The paper presents a federated lightweight Transformer framework for privacy-preserving network-layer cyberattack detection in O-RAN.",
+      "brief": "The authors propose a federated lightweight Transformer that trains locally on network-flow records and shares only model parameters with a coordinator. The system targets five network-layer attack categories in O-RAN environments.\n\nExperiments on the NetsLab 5G O-RAN intrusion-detection dataset report an overall accuracy of 94.89 % and a macro-F1 score of 81.09 %. The listing states that client datasets are partitioned according to a Dirichlet distribution to model non-IID data, but it does not specify the exact Dirichlet parameter or the number of participating sites.\n\nResearchers working on federated learning for network security or O-RAN intrusion detection may find the architecture and dataset application relevant. Those requiring details on specific hyperparameters or broader generalizability beyond the stated dataset should verify the full text.",
+      "abstract": "Open Radio Access Network (O-RAN) improves radio access network flexibility through disaggregation, open interfaces, and programmable RAN Intelligent Controllers (RICs). However, the same openness and distribution increase the attack surface and make centralized intrusion detection difficult to scale across heterogeneous RAN sites. This paper presents a federated lightweight Transformer framework for privacy-preserving network-layer cyberattack detection in O-RAN. Each participating site trains a compact Transformer locally on temporally ordered network-flow records, while only model parameters are shared with a federated coordinator. To model realistic site heterogeneity, the client datasets are partitioned according to a Dirichlet distribution, resulting in non-independent and identically distributed (non-IID) local data. The local detector uses feature projection, positional encoding, multi-head self-attention, feed-forward layers, and temporal pooling to classify five network-layer attack categories: ICMP, Slowloris, SYN, TCP-ACK, and UDP. Experiments on the NetsLab 5G O-RAN intrusion-detection dataset show an overall accuracy of 94.89 % and a macro-F1 score of 81.09 %.",
+      "takeaways": [
+        "The object is a federated lightweight Transformer designed for O-RAN network-layer attack detection.",
+        "The listing does not establish the specific Dirichlet distribution parameter used for data partitioning.",
+        "No code repository is declared in the supplied metadata."
+      ],
+      "plain": {
+        "reported": "The authors report an overall accuracy of 94.89 % and a macro-F1 score of 81.09 % on the NetsLab 5G O-RAN intrusion-detection dataset.",
+        "brief": "The authors propose a system where multiple network sites train a small AI model locally on their own traffic data. They only share the model's settings with a central server, keeping the raw data private. This system is designed to detect five specific types of network attacks in Open Radio Access Networks.\n\nTests on a specific 5G network security dataset show the system correctly identified attacks 94.89 % of the time. The authors also report a balance score of 81.09 % across different attack types. The listing mentions that the data at each site is unevenly distributed to mimic real-world conditions, but it does not say exactly how uneven or how many sites were involved.\n\nPeople studying how to use AI for network security in modern radio systems might find this useful. Those who need to know the exact technical settings or how well it works in other environments should read the full paper.",
+        "takeaways": [
+          "The system is a small AI model that learns from multiple network sites without sharing raw data.",
+          "The listing does not say exactly how the data was unevenly distributed across the sites.",
+          "The authors did not provide a link to the code in the supplied information."
+        ]
+      },
+      "actions": [
+        "Verify the exact Dirichlet distribution parameter and number of clients in the full PDF.",
+        "Check the full PDF for details on the specific hardware or simulation environment used for the experiments."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "listing": {
+        "listedOn": "2026-11-10",
+        "publishedOn": "2026-11-10",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.09992"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-10"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-10T21:58:32.386Z"
+      }
+    },
+    {
+      "id": "2611.10080",
+      "arxivId": "2611.10080",
+      "url": "https://arxiv.org/abs/2611.10080",
+      "topic": "Engineering",
+      "reported": "The authors report demonstrating real-time network-integrated bi-directional fiber sensing over a 4400-km subsea cable.",
+      "metrics": [
+        "4400-km subsea cable",
+        "130Gbaud coherent link",
+        "~10m to ~100m"
+      ],
+      "title": "Real-Time Trans-Oceanic Fiber Sensing via Convergence of Long-Reach OFDR, High-Speed Optical Networking, and RDMA-Capable Edge-GPUs",
+      "authors": "Mikael Mazur, Nicolas K. Fontaine, Roland Ryf, Sarvesh Bidkar, Tracy Chodkiewicz, Kristopher M. McBrian, Keigh L. McLaughlin, Brian J. Sperry, James Rottman, Anuar G. Butler, Martin Karrenbach, Bobby Nguyen, Lauren Dallachiesa, Ells Burrows, David Winter, Haoshuo Chen, Jeewan Naik, Ajay Mistry, Jim Sandoz, Martin Peterson, Michael Libeskind, Binh Le, Jesse Simsarian, David T. Neilson",
+      "takeaway": "The paper claims to demonstrate real-time network-integrated bi-directional fiber sensing over a 4400-km subsea cable using converged OFDR, optical networking, and edge-GPUs.",
+      "brief": "The authors state they demonstrate real-time network-integrated bi-directional fiber sensing over a 4400-km subsea cable. They report streaming and fusing two OFDR instruments via RDMA over a live transoceanic 130Gbaud coherent link. They state GPU edge-compute enables parallel capture of multiple spatial resolutions from ~10m to ~100m.\n\nThe listing provides no quantitative performance metrics, error rates, or latency figures beyond the stated distances and data rates. It does not establish specific artifacts, code availability, or detailed experimental conditions beyond the described hardware setup. The claim of real-time operation is asserted without defined thresholds in the abstract.\n\nResearchers working on long-haul fiber sensing, optical networking integration, or edge computing for infrastructure monitoring may find the system architecture relevant. Those seeking specific algorithmic details or reproducible code should note the absence of declared code in the listing.",
+      "abstract": "We demonstrate real-time network-integrated bi-directional fiber sensing over a 4400-km subsea cable. Streaming and fusing two OFDR instruments via RDMA over a live transoceanic 130Gbaud coherent link and GPU edge-compute enabling parallel capture of multiple spatial resolutions from ~10m to ~100m.",
+      "takeaways": [
+        "The object is a physical system integrating long-reach OFDR, high-speed optical networking, and RDMA-capable edge-GPUs for subsea cable sensing.",
+        "A visible limit is the lack of reported quantitative performance metrics such as latency, accuracy, or throughput in the supplied abstract.",
+        "The artifact status is not established; no code repository or dataset URL is provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report demonstrating real-time network-integrated bi-directional fiber sensing over a 4400-km subsea cable.",
+        "brief": "The authors state they demonstrate real-time network-integrated bi-directional fiber sensing over a 4400-km subsea cable. They report streaming and fusing two OFDR instruments via RDMA over a live transoceanic 130Gbaud coherent link. They state GPU edge-compute enables parallel capture of multiple spatial resolutions from ~10m to ~100m.\n\nThe listing provides no quantitative performance metrics, error rates, or latency figures beyond the stated distances and data rates. It does not establish specific artifacts, code availability, or detailed experimental conditions beyond the described hardware setup. The claim of real-time operation is asserted without defined thresholds in the abstract.\n\nResearchers working on long-haul fiber sensing, optical networking integration, or edge computing for infrastructure monitoring may find the system architecture relevant. Those seeking specific algorithmic details or reproducible code should note the absence of declared code in the listing.",
+        "takeaways": [
+          "The object is a physical system integrating long-reach OFDR, high-speed optical networking, and RDMA-capable edge-GPUs for subsea cable sensing.",
+          "A visible limit is the lack of reported quantitative performance metrics such as latency, accuracy, or throughput in the supplied abstract.",
+          "The artifact status is not established; no code repository or dataset URL is provided in the listing."
+        ]
+      },
+      "actions": [
+        "Verify the specific definition of 'real-time' and the experimental setup details by reading the full PDF.",
+        "Check the paper's supplementary materials or author contact information for any available code or data, as none is declared in the listing."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-11-10",
+        "publishedOn": "2026-11-10",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.10080"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-10"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-10T21:58:32.386Z"
+      }
+    },
+    {
+      "id": "2611.10094",
+      "arxivId": "2611.10094",
+      "url": "https://arxiv.org/abs/2611.10094",
+      "topic": "Stats",
+      "reported": "The authors report that in the hyperplane case with Gaussian densities, the optimal importance sampling density considerably improves consistency compared to the standard Monte Carlo estimator.",
+      "metrics": [],
+      "title": "Consistency considerations for rare-event importance sampling",
+      "authors": "Jason Beh, Emilien Flayac, Jerome Morio, Florian Simatos",
+      "takeaway": "The paper establishes a necessary and sufficient condition for the consistency of importance sampling estimators in triangular schemes where dimension, densities, and target sets may evolve.",
+      "brief": "The authors derive a condition for consistency in importance sampling for rare events, refining prior work by specifying the exact minimal sample size required.\n\nThey report that optimal importance sampling improves consistency over standard Monte Carlo in a Gaussian hyperplane case, but note that moment considerations suggest Monte Carlo may converge faster when both estimators converge. The listing does not establish specific numerical performance limits or computational artifacts.\n\nResearchers working on rare-event estimation or high-dimensional probability may find the theoretical condition relevant. Those seeking immediate numerical benchmarks or code implementations should note the listing provides no such artifacts.",
+      "abstract": "We consider the problem of estimating a small probability $p = P(X \\in A)$ by importance sampling with auxiliary density $g$, where $X$ is drawn according to some density $f$. We establish a simple necessary and sufficient condition for the consistency of the importance sampling estimator in triangular schemes where the dimension, the densities $f$ and $g$ and the set $A$ may evolve. It allows to refine the results of Chatterjee and Diaconis [Ann. Appl. Probab. 28 (2018), no. 2, 1099-1135] by establishing the exact minimal sample size required for consistency. Moreover, it allows to study the regime $p \\to 0$ which, despite being the relevant mathematical regime for rare-event estimations, has received very little attention so far. We perform an in-depth study of the hyperplane case $A = \\{x: x^\\top u \\geq \\alpha\\}$ with Gaussian densities, showing that in this case, the optimal importance sampling density considerably improves consistency compared to the standard Monte Carlo estimator. However, we conclude the paper with moment considerations which suggest that, whenever the Monte Carlo and optimal importance sampling estimators both converge, convergence may occur faster for the Monte Carlo estimator.",
+      "takeaways": [
+        "The object is a theoretical consistency condition for importance sampling in evolving triangular schemes.",
+        "A visible limit is the suggestion that standard Monte Carlo may converge faster than optimal importance sampling when both converge, based on moment considerations.",
+        "No code or dataset is declared in the listing, so artifact status is absent."
+      ],
+      "plain": {
+        "reported": "The authors state that in a specific mathematical setup involving Gaussian distributions and a flat boundary, their improved sampling method is more reliable than the standard random sampling method.",
+        "brief": "The authors create a rule to determine when a specific statistical estimation method works correctly as the problem size grows. This rule improves on previous work by giving the exact number of samples needed.\n\nThey show that their method is more reliable than the standard method in a specific test case. However, they also note that the standard method might actually reach the correct answer faster in some situations. The provided summary does not include specific numbers or computer code.\n\nPeople studying how to estimate very unlikely events might find this useful. People looking for ready-to-use software or specific performance numbers should note that this summary does not provide them.",
+        "takeaways": [
+          "The main contribution is a mathematical rule for when a statistical estimation technique is valid.",
+          "A limitation is that the standard method might be faster in some cases, even if the new method is more reliable.",
+          "There is no mention of downloadable code or data files in the listing."
+        ]
+      },
+      "actions": [
+        "Verify the exact minimal sample size formula and the moment-based convergence comparison by reading the full PDF.",
+        "Check the authors' cited reference to Chatterjee and Diaconis to confirm the specific refinement claimed in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "math.ST",
+        "math.PR",
+        "stat.TH"
+      ],
+      "listing": {
+        "listedOn": "2026-11-10",
+        "publishedOn": "2026-11-10",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.10094"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-10"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-10T21:58:32.386Z"
+      }
+    },
+    {
+      "id": "2611.10119",
+      "arxivId": "2611.10119",
+      "url": "https://arxiv.org/abs/2611.10119",
+      "topic": "Physics",
+      "reported": "The authors report that the protocol reduces the entanglement resources needed to establish quantum communication.",
+      "metrics": [],
+      "title": "Entanglement percolation enhanced by the power of choice",
+      "authors": "Yanxuan Shao, Adilson E. Motter",
+      "takeaway": "The paper introduces a power-of-choice protocol that anticipates the entanglement percolation transition to reduce required entanglement resources.",
+      "brief": "The authors propose a power-of-choice protocol derived from reversing selection criteria in the Achlioptas process. This approach aims to lower the entanglement resources required for quantum communication networks.\n\nThe listing states that the protocol anticipates the entanglement percolation transition and admits implementation using local information. No specific quantitative performance metrics or benchmark comparisons are provided in the abstract.\n\nResearchers working on quantum network protocols or percolation theory may find this relevant. Those seeking immediate quantitative benchmarks for specific hardware implementations may find the abstract insufficient.",
+      "abstract": "Quantum communication networks are best supported by maximally entangled states, but imperfections in entanglement generation and distribution generally limit the distributed states to being only partially entangled. Therefore, protocols typically consisting of local operations and classical communication are required to create suitably entangled networks. Here, we introduce a power-of-choice (PoC) protocol based on reversing the selection criteria in the Achlioptas process previously considered in classical explosive percolation. The resulting PoC protocol anticipates the entanglement percolation transition, thereby reducing the entanglement resources needed to establish quantum communication. Notably, in contrast to explosive percolation, the PoC protocol admits an implementation using local information with no appreciable loss of performance.",
+      "takeaways": [
+        "The object is a protocol for quantum communication networks based on modified percolation dynamics.",
+        "The visible limit is the absence of quantitative performance data in the provided listing.",
+        "The artifact status is unknown as no code or dataset is declared in the metadata."
+      ],
+      "plain": {
+        "reported": "The authors report that their method uses less entangled material to set up quantum communication links.",
+        "brief": "The authors suggest a new way to organize quantum connections by changing how choices are made in a known mathematical process. This method is designed to save on the quantum resources needed to build communication networks.\n\nThe text says this method predicts when the network will successfully connect and can be run using only local data. The abstract does not list any specific numbers showing how much it improves performance.\n\nPeople studying how to build quantum internet connections might find this useful. People looking for exact numbers on how fast or reliable this is for specific machines might not get enough information here.",
+        "takeaways": [
+          "The subject is a method for organizing quantum communication links.",
+          "The main gap is that the summary does not include specific performance numbers.",
+          "It is not stated whether the authors have shared any computer code or data files."
+        ]
+      },
+      "actions": [
+        "Verify the specific performance gains and implementation details by reading the full PDF.",
+        "Check the authors' publication history for related works on explosive percolation in quantum contexts."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "cond-mat.dis-nn"
+      ],
+      "listing": {
+        "listedOn": "2026-11-10",
+        "publishedOn": "2026-11-10",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.10119"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-10"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-10T21:58:32.386Z"
+      }
+    },
+    {
+      "id": "2611.10155",
+      "arxivId": "2611.10155",
+      "url": "https://arxiv.org/abs/2611.10155",
+      "topic": "Econ",
+      "reported": "The authors report that perspective taking significantly moderates the association between response time and prosociality in a laboratory experiment with 652 participants.",
+      "metrics": [
+        "652 participants"
+      ],
+      "title": "When Is Prosocial Behavior Intuitive? The Moderating Role of Empathic Perspective Taking",
+      "authors": "Enrico D'Ecclesiis, Francesca Pancotto, Barbara Luppi, Simone Righi",
+      "takeaway": "The paper claims that empathic perspective taking moderates the association between reflective processing and prosocial choice.",
+      "brief": "The authors propose that empathic perspective taking changes how decision time relates to prosocial behavior. They test this using a laboratory experiment and specific psychological measures.\n\nThe strongest reported result is a significant moderation effect where high perspective taking links longer response times to lower prosociality. The listing does not establish whether this effect holds outside the specific laboratory game or with other measurement tools.\n\nResearchers studying the cognitive mechanisms of prosocial decision-making may find the specific moderation analysis relevant. Those focused on domain-general analytic reflection may find the null result for the Cognitive Reflection Test informative.",
+      "abstract": "Why is prosocial behavior intuitive for some individuals but deliberative for others? We examine whether empathic perspective taking moderates the association between reflective processing and prosocial choice. We run a laboratory experiment with 652 participants, where we measure prosociality using a four-player Distribution Game that holds aggregate payoffs constant and orders allocations from self-regarding to egalitarian. We combine participants' choices with the Perspective Taking subscale of the Interpersonal Reactivity Index, a five-item Cognitive Reflection Test, and choice-stage response time in the allocation decision. Perspective taking significantly moderates the association between response time and prosociality. At high levels of perspective taking, longer response times are associated with modestly lower prosociality; at low levels, the association is positive but not statistically significant. No comparable moderation emerges for Cognitive Reflection Test performance. These results are consistent with the possibility that, when others' outcomes are readily represented (high perspective taking), prosocial choices may arise relatively quickly, while additional decision-specific processing may be associated with greater attention to their private cost. When others' outcomes are less salient (low perspective taking), additional processing may instead help bring them into consideration. The findings highlight the importance of distinguishing processing proximal to the specific decision from domain-general analytic reflection when explaining whether prosocial behavior appears intuitive.",
+      "takeaways": [
+        "The object is the interaction between empathic perspective taking and decision-stage response time in prosocial allocation.",
+        "A visible limit is that the study relies on a specific four-player Distribution Game and self-report subscales, which may not generalize to all prosocial contexts.",
+        "The artifact status is not established in the listing, as no code or data repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that a person's ability to see things from another's viewpoint changes how their decision speed relates to fair behavior in a lab study with 652 people.",
+        "brief": "The authors suggest that being able to imagine another person's feelings changes how quickly or slowly people make fair choices. They tested this in a controlled lab setting using specific questionnaires and a game.\n\nThe main finding is that for people who are good at imagining others' feelings, taking more time to decide was linked to slightly less fair behavior. The listing does not say if this pattern would happen in real-world situations or with different types of games.\n\nPeople studying how the brain decides to be fair might find the detailed breakdown of decision time useful. People interested in general intelligence or logic tests might note that those tests did not show a similar effect.",
+        "takeaways": [
+          "The focus is on how empathy and decision speed work together to influence fair choices.",
+          "A limitation is that the study used a specific lab game and self-reported empathy scores, which might not apply to all real-life fair decisions.",
+          "It is not stated in the listing whether the data or code for the study is publicly available."
+        ]
+      },
+      "actions": [
+        "Verify the exact statistical model and effect sizes by reading the full PDF, as the abstract only reports significance and direction.",
+        "Check the supplementary materials for the specific items of the Perspective Taking subscale and the Cognitive Reflection Test used."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-11-10",
+        "publishedOn": "2026-11-10",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.10155"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-10"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-10T21:58:32.386Z"
+      }
+    },
+    {
+      "id": "2611.12228",
+      "arxivId": "2611.12228",
+      "url": "https://arxiv.org/abs/2611.12228",
+      "topic": "Health",
+      "reported": "The authors report that stMIND leads in expression prediction, anatomical consistency and spatial coherence on axolotl and zebrafish benchmarks.",
+      "metrics": [
+        "10 to 15 days after injury"
+      ],
+      "title": "stMIND: Learning multiscale interaction dynamics from spatial-temporal transcriptomics",
+      "authors": "Longquan Li, Lin Wan",
+      "takeaway": "The paper presents stMIND, a continuous-time generative framework that infers coupled molecular, spatial, and proliferation dynamics from unmatched spatiotemporal snapshots.",
+      "brief": "The authors propose stMIND to infer multiscale cellular dynamics from spatial transcriptomics data where intermediate trajectories are unobserved. The framework decomposes expression velocity into cell-intrinsic, local graph-difference, and nonlocal mean-field operators.\n\nThe authors report that stMIND leads in expression prediction, anatomical consistency, and spatial coherence on axolotl and zebrafish benchmarks. They state that ablations confirm the need to combine disjoint local and nonlocal operators. The listing does not specify the exact quantitative values for these benchmark leads.\n\nResearchers working on spatial transcriptomics, developmental biology, or regenerative medicine may find this relevant. Those not interested in multiscale cellular interaction modeling or specific axolotl/zebrafish developmental contexts may ignore it.",
+      "abstract": "Interactions within local cellular neighborhoods and across broader tissue scales jointly govern molecular state transitions and morphogenesis during development and regeneration. While time-resolved spatial transcriptomics simultaneously profiles gene expression and spatial coordinates, destructive sequencing samples distinct cells at each time point, leaving intermediate trajectories and multiscale intercellular interactions unobserved. Building upon our interacting mean-field neural stochastic differential equation framework, we present stMIND (Spatiotemporal Multiscale Interaction Neural Dynamics), a continuous-time generative framework that infers coupled molecular, spatial, and proliferation dynamics from unmatched spatiotemporal snapshots. stMIND decomposes cellular expression velocity vector/drift into three interpretable operators: a cell-intrinsic program, a local graph-difference attention operator that aggregates relative expression differences and spatial geometry within a co-evolving physical radius, and a nonlocal mean-field attention operator that captures long-range population context beyond the immediate neighborhood. By evolving dynamic spatial neighborhoods alongside cellular migration and enforcing orthogonality between intrinsic and interaction-driven drifts, stMIND resolves scale-specific intercellular influences through optimal transport in joint expression-position space. In axolotl and zebrafish benchmarks, stMIND leads in expression prediction, anatomical consistency and spatial coherence. Ablations confirm the need to combine disjoint local and nonlocal operators. It reveals a regenerative transition in axolotl telencephalon 10 to 15 days after injury, with a drift energy surge followed by nonlocal dominance and local counterbalance varying by cell type in reactive ependymoglial niches. It tracks developmental vector fields across zebrafish stages.",
+      "takeaways": [
+        "The object is a continuous-time generative framework for inferring cellular dynamics from unmatched spatiotemporal snapshots.",
+        "A visible limit is that destructive sequencing leaves intermediate trajectories unobserved, which the model attempts to infer rather than directly measure.",
+        "The artifact status is not established in the listing, as no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their model performs best in predicting gene expression, matching anatomical structures, and maintaining spatial consistency when tested on axolotl and zebrafish data.",
+        "brief": "The authors created a computer model called stMIND to understand how cells change and interact in tissues over time. This is difficult because standard lab methods destroy cells at each time point, so the model has to guess the missing steps between snapshots. The model breaks down cell changes into three parts: internal cell processes, interactions with nearby cells, and interactions with distant cells.\n\nThe authors say their model is the best at predicting gene expression and matching tissue structures in tests using axolotl and zebrafish. They also say that removing either the nearby or distant interaction parts makes the model worse. The provided text does not give the specific scores or numbers for how much better the model is.\n\nScientists studying how tissues develop or heal, especially in axolotls or zebrafish, might find this useful. People not interested in these specific animals or in modeling cell interactions can skip it.",
+        "takeaways": [
+          "The main thing described is a computer model that guesses how cells change and interact using incomplete time-series data.",
+          "A clear limitation is that the lab method used destroys cells, so the model has to infer what happened between the measured time points.",
+          "It is not stated in the provided text whether the code or data is available for others to use."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark metrics and baseline comparisons by reading the full PDF.",
+        "Check the supplementary materials for the exact definition of the 'drift energy surge' and the cell-type-specific variations mentioned."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM"
+      ],
+      "listing": {
+        "listedOn": "2026-11-10",
+        "publishedOn": "2026-11-10",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.12228"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-10"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-10T21:58:32.386Z"
+      }
+    }
+  ]
+}
