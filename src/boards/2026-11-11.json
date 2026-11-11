@@ -1,0 +1,681 @@
+{
+  "date": "2026-11-11",
+  "label": "Wed, Nov 11",
+  "minutes": 10,
+  "poolSize": 135,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-11-11T20:59:24.830Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2611.14210",
+      "arxivId": "2611.14210",
+      "url": "https://arxiv.org/abs/2611.14210",
+      "topic": "AI",
+      "reported": "The authors report that Tree-Ising achieves 54.6% on MATH-500, outperforming the agent's edit (51.7%) under the same evaluation protocol.",
+      "metrics": [
+        "54.6% on MATH-500",
+        "51.7%",
+        "7.9%"
+      ],
+      "title": "Tree-Ising: Repairing Language Models with Bit-Level Ising Edits",
+      "authors": "Hadi Salloum, Ammar Ali",
+      "takeaway": "Tree-Ising casts LLM weight repair as a sparse discrete optimization problem over BF16 weights, decomposed into independent QUBO problems solved via simulated annealing or quantum-inspired simulated bifurcation.",
+      "brief": "The paper claims to repair language model reasoning loops by casting weight edits as a sparse discrete optimization problem over BF16 weights, decomposed into independent QUBO problems. The authors report that their method achieves 54.6% on MATH-500, outperforming a prior agent-based edit (51.7%) and the base model (7.9%), while modifying 13% to 17% fewer weights and requiring only four forward-pass requests. The listing does not establish whether the reported improvements generalize beyond the specific Qwen3.5 models and math benchmarks tested, nor does it detail the full computational cost of the optimization beyond the stated GPU time for the annealing recipe.\n\nThis work is relevant to researchers investigating weight-space programming, discrete optimization for neural network repair, or quantum-inspired solvers for machine learning tasks. It may be of interest to those working on efficient model editing without gradient-based methods. Readers should note that the results are reported on specific model sizes and benchmarks, and the quantum processor experiment is described as a proof of concept.\n\nThe paper presents a specific optimization framework for weight editing, with reported improvements on math reasoning benchmarks. The authors attribute the results to their Tree-Ising method and compare it against a prior agent-based approach and the base model. The listing includes a code repository URL, but the reader should verify the implementation and results independently.",
+      "abstract": "Weight-space programming, introduced in recent MIT work by Takehi et al., enables a frontier LLM agent to read a network's weights and write a repair. Their GPT-6 Astra agent corrected the reasoning loops of Qwen3.5-0.8B without gradients, using 158 agent turns, 89.7 million tokens, and 50 forward-pass requests. Our method, Tree-Ising, casts this repair as a sparse discrete optimization problem over the model's own BF16 weights. Forward statistics define an objective that weakens a loop direction, strengthens a concluding direction, and preserves the layer's output on productive tokens. Within a state-tree representation, where lossless BF16 storage acts as a special case, the admissible edits are sign flips and exponent shifts that preserve all shared group exponents and mantissas. We decompose this objective exactly into independent QUBO (Ising) problems, one per output row, which we solve on a GPU using simulated annealing or quantum-inspired simulated bifurcation. On the agent's two layers, Tree-Ising achieves 54.6% on MATH-500, outperforming the agent's edit (51.7%) under the same evaluation protocol, while the base model scores 7.9% as reported. The simulated bifurcation solver yields a statistically indistinguishable repair at 55.1%. Both solvers outperform the agent edit across all five math benchmarks, with statistically significant improvements on MATH-500 and GSM8K after correcting for multiple comparisons. Our approach modifies 13% to 17% fewer weights and reduces BF16 bit flips by a factor of 2.2 to 2.3. It requires only four forward-pass requests and zero LLM tokens, with the annealing recipe costing about $0.90 in GPU time. On Qwen3.5-2B, with layers and dose selected using only the base model, the same recipe increases greedy GSM8K accuracy from 21.6% to 69.4%. As a proof of concept, we execute an eight-variable repair subproblem using QAOA on an IBM Heron processor.",
+      "takeaways": [
+        "The object is a discrete optimization framework for BF16 weight edits, decomposed into QUBO problems.",
+        "A visible limit is that results are reported on specific Qwen3.5 models and math benchmarks, with no evidence of generalization to other model families or tasks.",
+        "The artifact status is indicated by a declared code repository URL, but the listing does not confirm the completeness or reproducibility of the implementation."
+      ],
+      "plain": {
+        "reported": "The authors report that their method, Tree-Ising, scores 54.6% on the MATH-500 benchmark, which is higher than the 51.7% score of a previous agent-based method and the 7.9% score of the original unmodified model.",
+        "brief": "The paper claims to fix errors in how large language models reason by adjusting the model's internal weights using a specific mathematical optimization method. The authors report that their method improves performance on math problems compared to a previous method and the original model, while changing fewer weights and using fewer computational steps. The listing does not say whether this improvement works for other types of models or tasks, or what the total cost of the optimization process is.\n\nThis work is relevant to people who study how to modify the internal weights of language models, or who use mathematical optimization methods to improve machine learning models. It may be of interest to those looking for ways to edit models without using traditional training methods. Readers should note that the results are based on specific models and math problems, and the quantum computer experiment is just a small test.\n\nThe paper describes a method for editing model weights using optimization. The authors say their method performs better on math benchmarks than a previous method and the original model. The listing includes a link to the code, but the reader should check the code and results themselves to confirm they are correct.",
+        "takeaways": [
+          "The main thing being studied is a mathematical method for changing the internal weights of a language model to fix reasoning errors.",
+          "A clear limitation is that the results are only shown for specific models and math problems, with no proof that it works for other models or tasks.",
+          "The code is available at a given link, but the listing does not say if the code is complete or if the results can be reproduced exactly."
+        ]
+      },
+      "actions": [
+        "Verify the reported MATH-500 and GSM8K results by reproducing the experiments using the provided code repository.",
+        "Check the full paper for details on the computational cost of the optimization and the generalization of the method to other model sizes and tasks."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/TheQuantumGOAT/Tree-Ising",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-11",
+        "publishedOn": "2026-11-10",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.14210",
+            "upvotes": 71
+          }
+        ]
+      },
+      "trend": {
+        "votes": 71,
+        "rank": 1,
+        "of": 35,
+        "perDay": 71
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 71,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-10"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-11T20:59:24.830Z"
+      }
+    },
+    {
+      "id": "2611.12885",
+      "arxivId": "2611.12885",
+      "url": "https://arxiv.org/abs/2611.12885",
+      "topic": "AI",
+      "reported": "The authors report that RoboScript reaches 83.4% mean success on all 50 tasks of RoboTwin 2.0 using one demonstration per task and no gradient updates.",
+      "metrics": [
+        "83.4% mean success",
+        "50 tasks"
+      ],
+      "title": "World In-Context Learning for Agentic Robot Manipulation",
+      "authors": "Heng Fang, Zehui Guo, Yuehan Zhang, Mingyang Du, Dingkang Liang, Xiang Bai",
+      "takeaway": "The paper claims to propose World In-Context Learning (WICL), a paradigm where a frozen model rehearses tasks in a simulator and writes feedback into its context rather than its weights.",
+      "brief": "The authors propose World In-Context Learning (WICL) and build RoboScript, a modular infrastructure for agentic manipulation. This approach uses a frozen model that starts from a demonstration, rehearses the task in a world such as a simulator, and writes the feedback into its context rather than its weights.\n\nThe authors report that RoboScript reaches 83.4% mean success across clean and randomized settings on all 50 tasks of RoboTwin 2.0 with one demonstration per task and no gradient updates. They state this exceeds the strongest trained action policy by over 20 points. The listing does not establish specific failure modes or computational costs for the rehearsal process.\n\nResearchers working on robot manipulation, in-context learning, or foundation model integration may find this relevant. Those focused exclusively on gradient-based policy training or non-simulated environments may find the reliance on simulation rehearsal less applicable.",
+      "abstract": "Trained action policies write manipulation skill into network weights, tying what is learned to the distribution it is learned from. In-context learning (ICL) avoids this coupling but has not matched trained policies, because a demonstration recorded in another scene carries no feedback from the world the robot currently faces. We observe that what an agent learns in context is semantic, recording task steps and object roles rather than visual appearance, so experience gathered in one world transfers to another. Based on this insight, we propose World In-Context Learning (WICL), a paradigm in which a frozen model starts from a demonstration, rehearses the task in a world such as a simulator, and writes the feedback into its context rather than its weights. We build RoboScript, a modular infrastructure that implements WICL for agentic manipulation. From a single demonstration, RoboScript learns each task through rehearsal in simulation, freezes the learned knowledge as a Task Memory, and deploys the frozen memory on new scenes with data isolation that ensures every deployment input is available on a real robot. On all 50 tasks of RoboTwin 2.0, RoboScript reaches 83.4% mean success across clean and randomized settings with one demonstration per task and no gradient updates, exceeding the strongest trained action policy by over 20 points. The method generalizes across visual distributions, improves through reflection, scales with the foundation model, and transfers to a physical dual-arm robot through cross-embodiment memory adaptation. With a world in the loop, a robot can learn a manipulation task in its context as well as it learns one in its weights. All code is available at https://github.com/ArcheOne-AI/RoboScript",
+      "takeaways": [
+        "The object is a modular infrastructure called RoboScript that implements a World In-Context Learning paradigm for agentic robot manipulation.",
+        "A visible limit is the reliance on a simulator for rehearsal, which may not fully capture all physical dynamics of real-world deployment.",
+        "The artifact status is established as available code at the provided GitHub repository URL."
+      ],
+      "plain": {
+        "reported": "The authors state that their system, RoboScript, achieved an average success rate of 83.4% on 50 specific robot tasks in a simulation environment, using only one example per task and without adjusting the model's internal parameters.",
+        "brief": "The authors suggest a new way for robots to learn called World In-Context Learning. Instead of changing the robot's core software (weights), the robot watches one example, practices in a virtual world, and stores the lessons in a temporary memory (context). They built a tool called RoboScript to do this.\n\nThey claim this method worked well in tests. It got an 83.4% success rate on 50 tasks in a simulation called RoboTwin 2.0. This was better than the best traditional methods by more than 20 percentage points. The text does not say how much time or computer power the virtual practice takes, or if it fails in certain real-world situations.\n\nPeople who study how robots learn from examples or use virtual practice to improve real-world skills might find this useful. People who only care about traditional robot programming or do not use virtual simulations might not find it relevant.",
+        "takeaways": [
+          "The main thing they made is a software tool called RoboScript that helps robots learn by practicing in a virtual world and remembering lessons without changing their core code.",
+          "A clear limitation is that the robot needs to practice in a computer simulation first, which might not perfectly match the real physical world.",
+          "The authors say the code is available for download at a specific website address."
+        ]
+      },
+      "actions": [
+        "Verify the 83.4% mean success rate and the 20-point margin against the strongest trained action policy by reviewing the full PDF and experimental setup.",
+        "Inspect the RoboScript repository to confirm the implementation details of the Task Memory and cross-embodiment memory adaptation."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/ArcheOne-AI/RoboScript",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-11",
+        "publishedOn": "2026-11-09",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.12885",
+            "upvotes": 62
+          }
+        ]
+      },
+      "trend": {
+        "votes": 62,
+        "rank": 2,
+        "of": 35,
+        "perDay": 31
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 62,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-09"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-11T20:59:24.830Z"
+      }
+    },
+    {
+      "id": "2611.14033",
+      "arxivId": "2611.14033",
+      "url": "https://arxiv.org/abs/2611.14033",
+      "topic": "AI",
+      "reported": "The authors report that APEX achieves higher video instruction fulfillment on the Progressive track (3.856 versus 3.831) and higher visual aesthetics across both tracks (0.641898 versus 0.632606) compared with S2-Avatar, measured on a 320-case StreamAV-Bench comparison.",
+      "metrics": [
+        "3.856 versus 3.831",
+        "0.641898 versus 0.632606",
+        "+30.0% net preference"
+      ],
+      "title": "Few-Step Streaming Video Generation via Condition Shifting",
+      "authors": "Deyuan Liu, Jungang Li, Kaiwen Zheng, Kai Jiang, Jintao Chen, Yaole Wang, Ming Lin, Tao Lin, Jianfei Chen, Jun Zhu, Jintao Zhang",
+      "takeaway": "The paper claims to extend APEX to streaming video by using condition shifting to estimate the velocity field of the generated distribution within the generator, removing the independent fake network while retaining S2-Avatar's frozen reference teacher, Self-Replay Forcing, and perceptual regularization.",
+      "brief": "The authors propose a method that uses condition shifting to estimate the velocity field of the generated distribution within the generator, removing the independent fake network while retaining S2-Avatar's frozen reference teacher, Self-Replay Forcing, and perceptual regularization.\n\nThe authors report higher video instruction fulfillment on the Progressive track (3.856 versus 3.831) and higher visual aesthetics across both tracks (0.641898 versus 0.632606) compared with S2-Avatar, measured on a 320-case StreamAV-Bench comparison. Human raters favor APEX most strongly on instruction following, with +30.0% net preference, followed by consistency and video quality at +4.3% each. Motion quality favors S2-Avatar, audiovisual synchronization is predominantly tied, and usability is unchanged. Separate measurements under matched training settings show 4.4% lower peak allocated GPU memory per GPU and 9.2% shorter mean iteration time than DMD.\n\nResearchers working on few-step sampling for streaming video generation or distribution matching distillation may find the condition shifting approach relevant. Those not focused on streaming video generation or the specific architectural modifications described may find the paper less directly applicable.",
+      "abstract": "Few-step sampling reduces the cost of streaming video generation. Distribution Matching Distillation (DMD) supervises few-step generators with a separate fake-score network, which adds training memory and computation and must track the evolving generator. We extend APEX to streaming video by using condition shifting to estimate the velocity field of the generated distribution within the generator. The original text condition selects generation, while a shifted condition selects fake estimation using the same parameters. This removes the independent fake network while retaining S2-Avatar's frozen reference teacher, Self-Replay Forcing, and perceptual regularization. We evaluate APEX on 180-second videos using three backbone evaluations per block and a one-step spatial Refiner, with a 70-case human study and a 320-case StreamAV-Bench comparison. Compared with S2-Avatar, APEX achieves higher video instruction fulfillment on the Progressive track (3.856 versus 3.831) and higher visual aesthetics across both tracks (0.641898 versus 0.632606). Human raters favor APEX most strongly on instruction following, with +30.0% net preference, followed by consistency and video quality at +4.3% each. Motion quality favors S2-Avatar, audiovisual synchronization is predominantly tied, and usability is unchanged. Separate measurements under matched training settings show 4.4% lower peak allocated GPU memory per GPU and 9.2% shorter mean iteration time than DMD.",
+      "takeaways": [
+        "The object is a method for few-step streaming video generation that uses condition shifting to estimate the velocity field of the generated distribution within the generator, removing the independent fake network.",
+        "A visible limit is that motion quality favors S2-Avatar, and audiovisual synchronization is predominantly tied, indicating that the proposed method does not uniformly outperform the baseline across all metrics.",
+        "The artifact status is not established in the listing, as no code or repository URL is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their method, APEX, scores higher on video instruction fulfillment (3.856 versus 3.831) and visual aesthetics (0.641898 versus 0.632606) compared to a previous method, S2-Avatar, when tested on a set of 320 video samples from a benchmark called StreamAV-Bench.",
+        "brief": "The authors suggest a new way to make video generation faster by using a technique called condition shifting to estimate how the generated video should change, without needing a separate network to check the quality of the generated video. This method keeps some parts of a previous method, S2-Avatar, that help with consistency and quality.\n\nThe authors say their method, APEX, does better than S2-Avatar on how well it follows instructions (3.856 versus 3.831) and how good the videos look (0.641898 versus 0.632606) when tested on 320 video samples. People who watched the videos liked APEX more for following instructions, with a 30% preference, and slightly more for consistency and video quality, with a 4.3% preference each. However, S2-Avatar was better at making the motion look good, and both methods were about the same at syncing sound and video. The new method also used less computer memory and was faster to train.\n\nPeople who work on making videos faster to generate or on improving how well generated videos match instructions might find this useful. People who are not interested in these specific technical improvements might not find it relevant.",
+        "takeaways": [
+          "The thing being studied is a new way to make video generation faster by using a technique called condition shifting to estimate how the generated video should change, without needing a separate network to check the quality of the generated video.",
+          "One clear limitation is that the new method does not do better than the old method on making the motion look good, and both methods are about the same at syncing sound and video.",
+          "It is not known if the code for this method is available, because the listing does not say where to find it."
+        ]
+      },
+      "actions": [
+        "Verify the specific implementation details of condition shifting and its impact on training memory and computation by reviewing the full PDF.",
+        "Check the StreamAV-Bench comparison results and the 70-case human study to confirm the reported metrics and their statistical significance."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-11",
+        "publishedOn": "2026-11-10",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.14033",
+            "upvotes": 47
+          }
+        ]
+      },
+      "trend": {
+        "votes": 47,
+        "rank": 3,
+        "of": 35,
+        "perDay": 47
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 47,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-10"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-11T20:59:24.830Z"
+      }
+    },
+    {
+      "id": "2611.14320",
+      "arxivId": "2611.14320",
+      "url": "https://arxiv.org/abs/2611.14320",
+      "topic": "AI",
+      "reported": "The authors report that WikiTrace consistently outperforms existing memory approaches and a baseline given the same insights alone, while also reducing memory-induced degradation on five agentic benchmarks.",
+      "metrics": [],
+      "title": "Don't Just Trust Your Memory: Evidence-Linked Memory Reduces Memory-Induced Degradation in LLM Agents",
+      "authors": "Yukyeong Lee, Yumin Choi, Jinheon Baek, Sung Ju Hwang",
+      "takeaway": "The paper introduces WikiTrace, an evidence-linked memory system that allows LLM agents to verify lessons against original trajectories to reduce memory-induced degradation.",
+      "brief": "The authors propose WikiTrace, a memory system that links concise lessons to their source trajectories and summaries of success or failure. This design allows agents to check insights against original evidence before acting on new tasks.\n\nThe authors state that WikiTrace outperforms existing memory approaches and a baseline with the same insights on five agentic benchmarks. They also report a reduction in memory-induced degradation. The listing does not specify the magnitude of these improvements or the specific benchmark names.\n\nResearchers working on LLM agent memory architectures or trajectory-based learning may find this relevant. Those not interested in agent memory systems or evidence-linked retrieval may ignore it.",
+      "abstract": "External memory enables LLM agents to improve from experience by distilling trajectories of past tasks into concise lessons for new tasks. However, memory can also lead to memory-induced degradation, where an agent fails on tasks it would solve without memory, often because it follows a lesson that is incorrect, or misapplies or misreads a valid one. This is because lessons are inferred from trajectories labeled only with task success or failure, yet are typically provided without the trajectories they came from, leaving the agent no way to check them. To address this, we introduce WikiTrace, an evidence-linked memory system designed to let agents check each lesson against its original trajectory. Specifically, motivated by the finding that a trajectory often still holds the evidence needed to catch an erroneous lesson, WikiTrace stores each lesson as a concise insight linked to a summary of why its trajectory succeeded or failed and to the raw trajectory itself. Then, on a new task, the agent starts from all insights and, whenever one lacks details needed to act, conflicts with another, or comes from a failed task, descends through its links with terminal tools to fill in missing details or correct the insight before acting. We validate WikiTrace on five agentic benchmarks, showing that it consistently outperforms existing memory approaches and a baseline given the same insights alone, while also reducing memory-induced degradation. Our code is available at https://github.com/yukyeongleee/wikitrace",
+      "takeaways": [
+        "The core object is a memory system that links lessons to raw trajectories and success/failure summaries.",
+        "The listing does not establish specific quantitative limits or failure rates for the proposed system.",
+        "The authors state that code is available at a specific GitHub repository URL."
+      ],
+      "plain": {
+        "reported": "The authors say their system, called WikiTrace, works better than other memory methods and a basic version without extra evidence on five different test tasks for AI agents.",
+        "brief": "The authors created a system called WikiTrace. It helps AI agents remember past experiences by saving short lessons along with the original data and reasons why those past tasks succeeded or failed. This lets the agent double-check the lessons before using them.\n\nThe authors say this system performs better than other memory methods and a simpler version that only has the lessons. They tested it on five different sets of tasks for AI agents. They also say it reduces errors caused by bad memories. The summary does not say how much better it is or list the specific test names.\n\nPeople who build AI agents that learn from past experiences might want to look at this. People who do not work on AI memory systems can probably skip it.",
+        "takeaways": [
+          "The main thing they built is a memory system that connects short lessons to the original data and reasons for success or failure.",
+          "The summary does not say how much the system improves performance or if it has specific weaknesses.",
+          "The authors say the computer code for this system is available on a website called GitHub."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark names and quantitative performance gains by reading the full PDF.",
+        "Check the provided GitHub repository to confirm the code matches the described WikiTrace implementation."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/yukyeongleee/wikitrace",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-11",
+        "publishedOn": "2026-11-10",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.14320",
+            "upvotes": 45
+          }
+        ]
+      },
+      "trend": {
+        "votes": 45,
+        "rank": 4,
+        "of": 35,
+        "perDay": 45
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 45,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-10"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-11T20:59:24.830Z"
+      }
+    },
+    {
+      "id": "2611.14083",
+      "arxivId": "2611.14083",
+      "url": "https://arxiv.org/abs/2611.14083",
+      "topic": "Security",
+      "reported": "The authors report that Sable proves all 64 layers of Qwen2.5-32B in 92.5 s for 4,096 tokens on one NVIDIA RTX PRO 6000 Blackwell GPU.",
+      "metrics": [
+        "92.5 s for 4,096 tokens",
+        "86.3% of positions",
+        "2^-103"
+      ],
+      "title": "Sable: A Small-Field Sumcheck Argument for Bit-Exact Inference of Large Language Models",
+      "authors": "Tomer Solberg",
+      "takeaway": "Sable is an argument system and single-GPU prover for bit-exact inference of integer-quantized large language models.",
+      "brief": "The paper presents Sable, an argument system and single-GPU prover for the statement that a committed, integer-quantized transformer produced a given token sequence from a given prompt, bit for bit. The authors report that Sable proves all 64 layers of Qwen2.5-32B in 92.5 s for 4,096 tokens on one NVIDIA RTX PRO 6000 Blackwell GPU, and that F_O's greedy token matches the BF16 model's at 86.3% of positions on WikiText-2. The listing states that the proof is not zero-knowledge, so the system targets open-weight models, and that the interactive proof has round-by-round soundness error 2^-103 in the random-oracle model.\n\nThe strongest reported result is the 92.5 s proof time for 4,096 tokens on Qwen2.5-32B, measured on a single NVIDIA RTX PRO 6000 Blackwell GPU. The authors also report that F_O is within 1.6 points of BF16 on MMLU and 1.7 points on GSM8K for Qwen3. The listing does not establish whether the 86.3% match rate on WikiText-2 is a limit or an artifact of the integer-quantized function F_O, nor does it specify the exact hardware configuration beyond the GPU model for the verifier.\n\nResearchers working on zero-knowledge proofs for machine learning inference, particularly those interested in bit-exact verification of quantized models, may find this relevant. Those requiring zero-knowledge properties or closed-source model verification should note the explicit limitation that the proof is not zero-knowledge and targets open-weight models.",
+      "abstract": "We present Sable, an argument system and single-GPU prover for the statement that a committed, integer-quantized transformer produced a given token sequence from a given prompt, bit for bit. Sable fixes an integer function F_O with no floating-point step, in which every rounding, normalization, softmax and sampling decision is determined by its inputs, and proves it with a constraint system whose relations provably never wrap modulo the 31-bit KoalaBear prime. The proof batches zerochecks and LogUp-GKR lookups into one sumcheck per domain, and commits to every witness tensor and weight in one multilinear commitment built from Reed-Solomon codes, BLAKE3 Merkle trees and a mixed-length BaseFold opening. The prover streams the model layer by layer on one GPU. On one NVIDIA RTX PRO 6000 Blackwell GPU, Sable proves all 64 layers of Qwen2.5-32B in 92.5 s for 4,096 tokens and 398 s for 16,384 tokens, and covers Qwen3-32B and the mixture-of-experts Qwen3-30B-A3B (4,096 tokens in 121.8 and 84.7 s). A proof costs 41 to 50 times the serving time, or 6.4 cents per 4,096-token request at public GPU prices, and 40 to 64 times less time per parameter and token than zkLLM. On WikiText-2, F_O's greedy token matches the BF16 model's at 86.3% of positions; on Qwen3, F_O is within 1.6 points of BF16 on MMLU and 1.7 points on GSM8K. A verifier with a compiled core checks a proof on one CPU core in 19 to 56 s. In the random-oracle model, the interactive proof has round-by-round soundness error 2^-103. The proof is not zero-knowledge, so the system targets open-weight models. Code: https://github.com/moonmath-ai/Sable",
+      "takeaways": [
+        "The object is a single-GPU prover for bit-exact inference of integer-quantized transformers, not a general-purpose ZK proof system for all model types.",
+        "A visible limit is that the proof is not zero-knowledge, restricting the system to open-weight models as stated by the authors.",
+        "The artifact status is established by the provided code repository URL, but the listing does not confirm whether the repository contains the full prover implementation or only partial components."
+      ],
+      "plain": {
+        "reported": "The authors report that their system, Sable, takes 92.5 seconds to prove that a specific AI model (Qwen2.5-32B) produced a specific sequence of 4,096 words, using one high-end graphics card.",
+        "brief": "The paper introduces Sable, a tool that can prove, with mathematical certainty, that a specific AI model generated a specific output from a specific input, without any rounding errors. The authors say that on one powerful graphics card, this proof takes 92.5 seconds for a sequence of 4,096 words. They also note that their simplified version of the model matches the original model's word choices 86.3% of the time on a standard test set.\n\nThe best result they report is the 92.5-second proof time for the Qwen2.5-32B model. They also say their simplified model performs within 1.6 points of the original on a multiple-choice test (MMLU) and within 1.7 points on a math test (GSM8K). The listing does not say if the 86.3% match rate is a flaw in their method or just a side effect of simplifying the model. It also does not give full details about the computer setup used to check the proofs.\n\nPeople who study how to prove AI models work correctly, especially those focused on simplified models, might find this useful. People who need the proof to hide the model's internal workings or who work with private models should note that the authors say the proof does not hide information and only works for models whose code is public.",
+        "takeaways": [
+          "The tool is designed to prove that simplified AI models produce exact outputs, not to prove anything about all types of AI models.",
+          "A clear limitation is that the proof does not hide the model's internal data, so it only works for models whose code is publicly available.",
+          "The authors provide a link to their code, but the listing does not confirm if the code is complete or if it includes all the parts needed to run the proof."
+        ]
+      },
+      "actions": [
+        "Verify the 92.5 s proof time for Qwen2.5-32B by reproducing the experiment on an NVIDIA RTX PRO 6000 Blackwell GPU using the provided code.",
+        "Check the code repository to confirm whether the single-GPU prover implementation is complete and matches the described layer-by-layer streaming approach."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/moonmath-ai/Sable",
+      "tags": [
+        "cs.CR",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-11",
+        "publishedOn": "2026-11-10",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.14083",
+            "upvotes": 2
+          },
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.14083"
+          }
+        ]
+      },
+      "trend": {
+        "votes": 2,
+        "rank": 33,
+        "of": 35,
+        "perDay": 2
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 2,
+          "sourceCount": 2,
+          "publishedOn": "2026-11-10"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-11T20:59:24.830Z"
+      }
+    },
+    {
+      "id": "2611.12971",
+      "arxivId": "2611.12971",
+      "url": "https://arxiv.org/abs/2611.12971",
+      "topic": "Physics",
+      "reported": "The authors report that the witness holds only while the decay is younger than the memory time of the environment, after which the emission becomes Markovian.",
+      "metrics": [],
+      "title": "Time Running Backwards, and Where It Stops: Superoscillations of Proper Time and the Memory of the Environment",
+      "authors": "Yakir Aharonov, Avshalom C. Elitzur",
+      "takeaway": "The paper claims to determine how far back a quantum time-translation machine can run an irreversible process, showing the limit is set by bandwidth rather than entropy.",
+      "brief": "The authors propose a test using a sealed cell containing excited atoms, radiation, and absorbing walls to probe the limits of reversing decay via post-selection. They report that the witness holds only while the decay is younger than the memory time of the environment, after which the emission becomes Markovian.\n\nThe listing states that reversing a decay past the memory time requires many branches, an environment with a strictly bounded spectrum, and a post-selection probability that falls exponentially with the number of environmental oscillations to be undone. The authors identify the obstacle to reversal as bandwidth, the same bandwidth that makes the emission irreversible in the first place.\n\nResearchers working on quantum thermodynamics, weak values, or the thermodynamic arrow of time may find the bandwidth argument relevant. Those not interested in the specific mechanism of superoscillations of proper time or the memory time of environments may ignore it.",
+      "abstract": "A quantum system prepared in a superposition of proper times - a clock whose worldline is superposed, or a clock at rest in a superposed gravitational potential - evolves, in each branch, by the same dynamics for a different duration. Post-selecting the control that sets the proper time turns the superposition into a superoscillation of the time-dilation factor: the system is found to have evolved for a proper time $\\alpha_w t$, where the weak value $\\alpha_w$ may exceed unity, vanish, or be negative - the quantum time-translation machine of Aharonov, Anandan, Popescu and Vaidman. We ask how far back such a machine can run an irreversible process. The test system is a sealed cell - excited atoms, the radiation field they emit into, and the absorbing walls, carried as one quantum object - and the witness is projective: atoms that had begun to decay before the run are found, in the post-selected sub-ensemble, more excited than when inserted. The answer is exact and depends only on the atoms' survival amplitude. With two branches the witness holds only while the decay is younger than the memory time of the environment, after which the emission becomes Markovian. Beyond it, the post-selection amplifies the minute difference between the contents of the cell in the two branches, set by the full energy spread of the atoms and their field rather than by the linewidth, and the witness fails. Reversing a decay past the memory time requires many branches, an environment with a strictly bounded spectrum, and a post-selection probability that falls exponentially with the number of environmental oscillations to be undone. The obstacle to reversal is therefore not entropy but bandwidth - the same bandwidth that makes the emission irreversible in the first place. We give four ways to superpose a clock rate, from hollow massive shells to inertial velocities.",
+      "takeaways": [
+        "The object is a sealed cell containing excited atoms, the radiation field they emit into, and the absorbing walls, carried as one quantum object.",
+        "The visible limit is that the witness fails beyond the memory time of the environment, where the post-selection amplifies the minute difference between the contents of the cell in the two branches.",
+        "The artifact status is not established in the listing; no code, dataset, or repository is mentioned."
+      ],
+      "plain": {
+        "reported": "The authors report that the witness holds only while the decay is younger than the memory time of the environment, after which the emission becomes Markovian.",
+        "brief": "The authors propose a test using a sealed cell containing excited atoms, radiation, and absorbing walls to probe the limits of reversing decay via post-selection. They report that the witness holds only while the decay is younger than the memory time of the environment, after which the emission becomes Markovian.\n\nThe listing states that reversing a decay past the memory time requires many branches, an environment with a strictly bounded spectrum, and a post-selection probability that falls exponentially with the number of environmental oscillations to be undone. The authors identify the obstacle to reversal as bandwidth, the same bandwidth that makes the emission irreversible in the first place.\n\nResearchers working on quantum thermodynamics, weak values, or the thermodynamic arrow of time may find the bandwidth argument relevant. Those not interested in the specific mechanism of superoscillations of proper time or the memory time of environments may ignore it.",
+        "takeaways": [
+          "The object is a sealed cell containing excited atoms, the radiation field they emit into, and the absorbing walls, carried as one quantum object.",
+          "The visible limit is that the witness fails beyond the memory time of the environment, where the post-selection amplifies the minute difference between the contents of the cell in the two branches.",
+          "The artifact status is not established in the listing; no code, dataset, or repository is mentioned."
+        ]
+      },
+      "actions": [
+        "Verify the exact mathematical form of the survival amplitude and the memory time definition in the full PDF.",
+        "Check the four proposed methods for superposing a clock rate, from hollow massive shells to inertial velocities, for experimental feasibility."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "gr-qc"
+      ],
+      "listing": {
+        "listedOn": "2026-11-11",
+        "publishedOn": "2026-11-11",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.12971"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-11"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-11T20:59:24.830Z"
+      }
+    },
+    {
+      "id": "2611.12987",
+      "arxivId": "2611.12987",
+      "url": "https://arxiv.org/abs/2611.12987",
+      "topic": "Econ",
+      "reported": "The authors report that global MANS has increased substantially in aggregate, measured using World Bank World Development Indicators data from 1990 to 2021.",
+      "metrics": [
+        "1990-2021"
+      ],
+      "title": "Global Trends and Heterogeneity in Modified Adjusted Net Savings",
+      "authors": "Xin Xiao",
+      "takeaway": "The paper documents the global distribution, long-run trends, and cross-country heterogeneity of Modified Adjusted Net Savings excluding particulate emission damage.",
+      "brief": "The paper documents global distribution, long-run trends, and cross-country heterogeneity of Modified Adjusted Net Savings excluding particulate emission damage. The authors report that global MANS increased substantially in aggregate, though its share of nominal GDP was more volatile and uneven across countries. Per capita MANS and totals remain concentrated in high-income and large economies, while low-income groups display persistently lower and more volatile outcomes.\n\nThe study uses the World Bank World Development Indicators series NY.ADJ.SVNX.CD as the accounting base. The authors state that country rankings are highly persistent and that some populous countries exhibit pronounced fluctuations associated with natural-resource dependence and structural change. The listing does not establish specific statistical significance levels or error margins for the reported trends.\n\nResearchers studying natural-capital accounting, macroeconomic policy, or sustainability-oriented investment strategies may find the descriptive benchmark relevant. Those requiring granular microeconomic analysis or specific causal mechanisms for MANS fluctuations should note the descriptive nature of the findings.",
+      "abstract": "Modified adjusted net savings is a derived weak sustainability indicator obtained by subtracting education expenditure from adjusted net savings (ANS). Because ANS equals net national savings plus education expenditure minus natural-resource depletion and carbon dioxide damage, MANS isolates the savings and depletion components and is useful when education expenditure would otherwise dominate cross-country comparisons. This study documents the global distribution, long-run trends, and cross-country heterogeneity of MANS excluding particulate emission damage over 1990-2021. The accounting base is the World Bank World Development Indicators series NY.ADJ.SVNX.CD, and MANS is constructed by subtracting education expenditure from this series. We combine global maps, aggregate time series, country-level heatmaps, distributional statistics, and income group comparisons. The results show that global MANS has increased substantially in aggregate, but its evolution as a share of nominal GDP has been more volatile and uneven across countries. Per capita MANS and global MANS totals remain concentrated in high-income and large economies, whereas low-income and lower-middle-income groups display persistently lower and more volatile outcomes. Country rankings are highly persistent, and some populous countries exhibit pronounced fluctuations associated with natural-resource dependence and structural change. The study provides a reproducible descriptive benchmark for monitoring sustainable development and highlights the need to interpret MANS in current US dollars alongside income-group and country-specific contexts. The findings are relevant for macroeconomic policy, natural-capital accounting, and the design of sustainability-oriented investment strategies.",
+      "takeaways": [
+        "The object is a descriptive benchmark for Modified Adjusted Net Savings constructed by subtracting education expenditure from adjusted net savings.",
+        "A visible limit is the exclusion of particulate emission damage from the MANS calculation, which may affect cross-country comparisons.",
+        "The artifact status is a reproducible descriptive benchmark based on World Bank data, with no code repository provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that the total amount of Modified Adjusted Net Savings worldwide went up significantly, measured using World Bank data from 1990 to 2021.",
+        "brief": "The paper looks at how a specific economic measure, called Modified Adjusted Net Savings, changes across different countries and over time. This measure is calculated by taking standard savings figures and subtracting spending on education. The authors say that while the total amount of this savings measure went up globally, the changes were not smooth and varied a lot between different countries. Wealthier and larger countries tend to have higher amounts of this savings, while poorer countries have lower and more unstable amounts.\n\nThe study uses data from the World Bank to calculate these numbers. The authors note that the ranking of countries by this measure stays very similar over time. Some large countries show big ups and downs in their numbers, which the authors link to their reliance on natural resources and changes in their economy. The listing does not say how statistically certain these trends are or provide specific error ranges.\n\nPeople who study how to account for natural resources in economics, or who make policies about sustainable development, might find this useful. People who need to know exactly why specific countries' numbers changed, or who need very detailed local data, should note that this is a broad overview rather than a detailed cause-and-effect study.",
+        "takeaways": [
+          "The main thing being studied is a way to measure savings that accounts for education spending and natural resource use.",
+          "One limitation is that the measure does not include damage from air pollution particles, which might change the results.",
+          "The output is a set of charts and statistics based on World Bank data, and no computer code is provided in the summary."
+        ]
+      },
+      "actions": [
+        "Verify the exact construction formula for MANS by checking the PDF against the stated World Bank series NY.ADJ.SVNX.CD.",
+        "Confirm whether the 'substantial increase' in aggregate MANS is quantified with specific percentage changes or absolute values in the full text."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC",
+        "stat.AP"
+      ],
+      "listing": {
+        "listedOn": "2026-11-11",
+        "publishedOn": "2026-11-11",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.12987"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-11"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-11T20:59:24.830Z"
+      }
+    },
+    {
+      "id": "2611.13021",
+      "arxivId": "2611.13021",
+      "url": "https://arxiv.org/abs/2611.13021",
+      "topic": "Stats",
+      "reported": "The authors report improved regression coefficient estimation and clustering performance relative to the Poisson counterpart under within-component overdispersion.",
+      "metrics": [],
+      "title": "Cluster-weighted modeling for count data with excess zeros and mixed-type covariates",
+      "authors": "Jongik Park, Geoffrey J. McLachlan, Sangkon Oh",
+      "takeaway": "The paper proposes a zero-inflated negative binomial cluster-weighted model that jointly models count responses with excess zeros and mixed-type covariates.",
+      "brief": "The authors propose a zero-inflated negative binomial cluster-weighted model to handle count data with excess zeros, within-group overdispersion, and heterogeneous covariate relationships. They establish sufficient conditions for identifiability and develop an expectation-maximization algorithm for estimation.\n\nNumerical studies demonstrate improved regression coefficient estimation and clustering performance relative to the Poisson counterpart under within-component overdispersion. The listing does not specify the datasets, sample sizes, or quantitative effect sizes used in these numerical studies.\n\nResearchers working with count data exhibiting overdispersion and mixed covariates may find the model structure relevant. Those requiring specific benchmark comparisons or code availability should verify the full text before relying on the reported improvements.",
+      "abstract": "Count data may exhibit excess zeros, within-group overdispersion, and heterogeneous relationships between the response and its covariates. Conventional zero-inflated regression models typically impose a single count-regression structure, whereas Poisson count components cannot accommodate residual within-component overdispersion. We propose a zero-inflated negative binomial cluster-weighted model that combines a structural-zero component with multiple negative binomial regression components and jointly models the response and mixed-type covariates.We establish sufficient conditions for identifiability of the proposed model and its Poisson counterpart and develop an expectation-maximization algorithm for estimation. Numerical studies demonstrate improved regression coefficient estimation and clustering performance relative to the Poisson counterpart under within-component overdispersion.",
+      "takeaways": [
+        "The model targets count data with excess zeros and within-component overdispersion using a negative binomial mixture.",
+        "The listing reports improved estimation and clustering but provides no specific quantitative metrics or dataset details.",
+        "No code repository or supplementary material is declared in the supplied metadata."
+      ],
+      "plain": {
+        "reported": "The authors state that their model produced better estimates of regression coefficients and better grouping of data points compared to a standard Poisson model when the data had extra variability within groups.",
+        "brief": "The authors created a new statistical model for data that counts things, where many counts are zero and the remaining counts vary more than expected. The model also handles different types of input variables at the same time. They proved the model can be uniquely identified and created a step-by-step method to calculate its parameters.\n\nComputer simulations showed the new model estimated coefficients and grouped data better than a simpler Poisson model when the data had extra variability within groups. The summary does not say which specific datasets were used or how much better the new model was in numerical terms.\n\nPeople analyzing count data with many zeros and extra variability might find this model useful. People who need to see specific numbers or use the code should check the full paper first.",
+        "takeaways": [
+          "The model is designed for count data with many zeros and extra variability within groups.",
+          "The summary says the model performed better but does not give specific numbers or dataset names.",
+          "The summary does not mention any available computer code for the model."
+        ]
+      },
+      "actions": [
+        "Verify the specific datasets and quantitative performance metrics in the full PDF.",
+        "Check the paper for the availability of the expectation-maximization algorithm implementation."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-11-11",
+        "publishedOn": "2026-11-11",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.13021"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-11"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-11T20:59:24.830Z"
+      }
+    },
+    {
+      "id": "2611.13190",
+      "arxivId": "2611.13190",
+      "url": "https://arxiv.org/abs/2611.13190",
+      "topic": "Health",
+      "reported": "The authors report that EvoSurv achieved the highest mean concordance index (C-index) in all six cancers, averaging 0.663, across six TCGA cancer cohorts comprising 2,782 patients.",
+      "metrics": [
+        "38-dimensional evolutionary representation",
+        "2,782 patients",
+        "averaging 0.663"
+      ],
+      "title": "EvoSurv: Evolution-Aware Multimodal Survival Modeling Reveals Complementary Prognostic Signals",
+      "authors": "Wei Wang, Po-Yu Liang, Jun Bai",
+      "takeaway": "The paper claims to develop EvoSurv, a multimodal survival framework integrating a 38-dimensional evolutionary representation with clinical variables and RNA expression to capture survival-associated evolutionary information beyond standard predictors.",
+      "brief": "The authors propose EvoSurv, a framework that integrates a 38-dimensional evolutionary representation called eTime with clinical variables and RNA expression for cancer survival prediction. The representation comprises eight feature groups characterizing clonal and subclonal mutation burden, mutational spectra, functional consequences, copy-number alterations, and anoikis-related genomic changes.\n\nThe authors report that EvoSurv achieved the highest mean concordance index (C-index) in all six TCGA cancer cohorts, averaging 0.663 across 2,782 patients. They state that eTime remained significantly associated with survival in head and neck squamous cell carcinoma and liver hepatocellular carcinoma after adjustment for clinical variables and RNA-derived risk scores. The listing does not establish external validation beyond the mentioned independent CPTAC-HNSCC cohort for specific substitution patterns.\n\nResearchers working on multimodal cancer survival prediction or genomic evolutionary features may find the specific feature construction and cohort comparisons relevant. Those focused solely on clinical-only models or non-genomic prognostic factors may find the molecular and evolutionary components less directly applicable.",
+      "abstract": "Accurate cancer survival prediction remains challenging due to tumor heterogeneity. Although multimodal survival models integrate clinical and molecular data, they often overlook evolutionary information encoded in genomic alterations. To address this gap, we developed eTime, a 38-dimensional evolutionary representation comprising eight feature groups that characterize clonal and subclonal mutation burden, mutational spectra, functional consequences, copy-number alterations, and anoikis-related genomic changes. We further developed EvoSurv, a multimodal survival framework integrating eTime with clinical variables and RNA expression. Across six TCGA cancer cohorts comprising 2,782 patients, EvoSurv achieved the highest mean concordance index (C-index) in all six cancers, averaging 0.663 and outperforming three state-of-the-art survival prediction methods. More importantly, we assessed whether evolutionary features provide additional prognostic information beyond clinical and transcriptomic predictors. eTime remained significantly associated with survival in head and neck squamous cell carcinoma (HNSC) and liver hepatocellular carcinoma (LIHC) after adjustment for clinical variables and RNA-derived risk scores. Feature-group analyses further revealed cancer-specific prognostic patterns. In HNSC, T>G substitutions were associated with increased mortality risk after clinical and molecular adjustment, including in HPV-negative patients, with supporting evidence from an independent CPTAC-HNSCC cohort. Overall, these findings demonstrate that eTime captures survival-associated evolutionary information and highlight its potential to provide prognostic value beyond clinical and transcriptomic predictors.",
+      "takeaways": [
+        "The object is a multimodal survival framework integrating a 38-dimensional evolutionary representation with clinical and transcriptomic data.",
+        "A visible limit is that the reported significance of evolutionary features beyond clinical and transcriptomic predictors is established in specific cancer types (HNSC and LIHC) rather than uniformly across all six cohorts.",
+        "The artifact status is not established in the listing, as no code repository or software availability is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that their model, EvoSurv, had the best average accuracy score, called the concordance index, in all six types of cancer tested, with an average score of 0.663, using data from 2,782 patients in the TCGA database.",
+        "brief": "The authors created a tool called EvoSurv that combines information about how cancer cells evolve over time with standard patient medical records and gene activity data to predict how long cancer patients might live. They built a specific set of 38 measurements, called eTime, that describes various genetic changes in the tumor, such as the number of mutations and changes in DNA copies.\n\nThe authors say their model performed better than three other existing prediction methods across six different cancer types. They also found that their evolutionary measurements still helped predict survival in head and neck cancer and liver cancer, even after accounting for standard medical and gene activity factors. The text does not clearly state if the model was tested on completely separate patient groups outside of the main study, except for one specific genetic pattern in head and neck cancer.\n\nPeople who study how to predict cancer outcomes using genetic data might find the way the authors built their evolutionary measurements useful. People who only use standard medical records for prediction, or who do not work with genetic data, might not find the specific technical details relevant to their work.",
+        "takeaways": [
+          "The main thing being studied is a computer model that mixes genetic evolution data with medical records and gene activity to predict cancer survival.",
+          "A clear limitation is that the extra value of the genetic evolution data was only proven for two specific cancer types, not for all six types tested.",
+          "It is not stated in the provided text whether the computer code for this model is available for others to download or use."
+        ]
+      },
+      "actions": [
+        "Verify the specific feature definitions of the eight eTime groups and the exact statistical adjustment methods used in the survival models by reviewing the full PDF.",
+        "Check the full PDF for details on the independent CPTAC-HNSCC cohort validation to confirm the generalizability of the T>G substitution findings."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-11",
+        "publishedOn": "2026-11-11",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.13190"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-11"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-11T20:59:24.830Z"
+      }
+    },
+    {
+      "id": "2611.13238",
+      "arxivId": "2611.13238",
+      "url": "https://arxiv.org/abs/2611.13238",
+      "topic": "Engineering",
+      "reported": "The authors report that STAR reduces the resource elements of robust coded transmission by 59.5% and 91.5% on factory- and vehicle-monitoring datasets, respectively, at comparable semantic reliability.",
+      "metrics": [
+        "semantic accuracy of at least 0.98",
+        "reduces the REs of robust coded transmission by 59.5%",
+        "reduces the REs of robust coded transmission by 91.5%"
+      ],
+      "title": "STAR: Semantic-Criticality Tiered Allocation of Radio Resources via Zero-Shot Learning",
+      "authors": "Albert Shaju, Christo Kurisummoottil Thomas, Mingzhe Chen",
+      "takeaway": "The paper proposes STAR, a zero-shot, domain-agnostic framework that allocates radio resources based on per-pixel semantic criticality derived from a frozen vision-language model's attention.",
+      "brief": "The authors propose STAR, a zero-shot framework that allocates radio resources by deriving a per-pixel semantic-criticality indicator from the attention of a frozen vision-language model. This allows new tasks and domains to be handled by changing only the prompt, without retraining the model.\n\nSimulations over a 5G New Radio link show STAR attains a semantic accuracy of at least 0.98 for $E_s/N_0 \\geq -4$ dB. It reduces the resource elements of robust coded transmission by 59.5% and 91.5% on factory- and vehicle-monitoring datasets, respectively. A deep joint source-channel coding baseline uses fewer resource elements but requires retraining with labeled data for every new task or domain.\n\nResearchers working on semantic communication, edge inference, or 5G resource allocation may find this relevant. Those not focused on wireless transmission of AI-inference data may ignore it.",
+      "abstract": "In remote inference, edge devices transmit high-resolution images over wireless links to a receiver, where an artificial intelligence (AI) model answers task-specific questions about these images to enable reliable decisions. These answers are often determined by a small set of task-causal pixels, such as those of text, whose corruption changes the answer, so these pixels must be delivered with high fidelity. Conventional transmission protects every pixel equally, so it either consumes many resource elements (REs) or corrupts these regions at low signal-to-noise ratio (SNR). To overcome these limitations, in this paper, a zero-shot, domain-agnostic framework, termed semantic-criticality tiered allocation of resources (STAR), is proposed. In particular, a per-pixel semantic-criticality indicator (SCI) is derived from the attention of a frozen vision-language model, so new tasks and domains are handled by changing only the prompt, without retraining. The resulting task causality-aware resource allocation problem over protection tiers is solved exactly by a threshold rule on the SCI, realized by a coded tier for the task-causal pixels and an uncoded, downsampled base layer for the full image. Simulations over a 5G New Radio link demonstrate that STAR attains a semantic accuracy of at least 0.98 for $E_s/N_0 \\geq -4$ dB and, at comparable semantic reliability, reduces the REs of robust coded transmission by 59.5% and 91.5% on factory- and vehicle-monitoring datasets, respectively, the latter without any change to the models. Although a deep joint source-channel coding baseline uses fewer REs at comparable semantic accuracy, it must be retrained with labeled data for every new task or domain.",
+      "takeaways": [
+        "The object is a resource allocation framework for wireless transmission of images to remote AI inference systems.",
+        "A visible limit is that a deep joint source-channel coding baseline uses fewer resource elements at comparable semantic accuracy, though it requires retraining for new tasks.",
+        "The artifact status is not established in the listing; no code or dataset is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that their method uses 59.5% and 91.5% fewer radio resource units than a standard robust transmission method on factory and vehicle monitoring test images, while keeping the AI answer accuracy the same.",
+        "brief": "The authors propose a method called STAR that decides which parts of an image to send with high quality over a wireless link. It uses an AI model's attention to figure out which pixels are critical for answering a specific question, and only those pixels get high-fidelity transmission. This works for new tasks without retraining the AI model.\n\nTests on a simulated 5G wireless link show the method keeps AI answer accuracy at least 0.98 when the signal is weak. It uses 59.5% and 91.5% fewer radio resource units than a standard method on factory and vehicle test images, respectively. Another method uses even fewer units but needs retraining for every new task.\n\nPeople working on sending images over wireless networks for AI analysis might find this useful. People not working on wireless AI data transmission might not need it.",
+        "takeaways": [
+          "The thing being studied is a way to send images over wireless networks so that AI systems can answer questions about them accurately.",
+          "A limit is that another method uses even fewer radio units but needs retraining for each new task, while this method does not.",
+          "It is not stated in the listing whether code or data is available."
+        ]
+      },
+      "actions": [
+        "Verify the simulation setup and the 5G New Radio link parameters in the PDF to confirm the reported resource element reductions.",
+        "Check the PDF for details on the frozen vision-language model used and the specific prompts for the factory- and vehicle-monitoring datasets."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP",
+        "cs.AI",
+        "eess.IV"
+      ],
+      "listing": {
+        "listedOn": "2026-11-11",
+        "publishedOn": "2026-11-11",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.13238"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-11"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-11T20:59:24.830Z"
+      }
+    }
+  ]
+}
