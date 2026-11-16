@@ -1,0 +1,665 @@
+{
+  "date": "2026-11-16",
+  "label": "Mon, Nov 16",
+  "minutes": 10,
+  "poolSize": 123,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-11-16T23:28:05.925Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2611.18359",
+      "arxivId": "2611.18359",
+      "url": "https://arxiv.org/abs/2611.18359",
+      "topic": "AI",
+      "reported": "The authors report that frontier models with agentic harnesses matched or exceeded task-specific policies on many embodied benchmarks.",
+      "metrics": [
+        "GPT-6 Astra"
+      ],
+      "title": "Envisioning Agentic Robotics: A New Era of Robotic Systems",
+      "authors": "Grid Robotics, Qingfeng Lan, Duo Li, Siyao Li, Yiheng Lyu, Shijian Lu, Zhenghao Qi, Shizun Wang, Xinchao Wang, Ming Yang, Zhiqin Yang, Zuhao Yang, Tao Yu",
+      "takeaway": "The paper proposes that Embodied System 2, combining a foundation model with an embodied harness, forms the decision-making core of agentic robotics and requires a new evaluation framework for closed-loop system performance.",
+      "brief": "The authors argue that agentic robotics represents a new paradigm where foundation models replace dedicated policies for open-world embodied tasks. They define Embodied System 2 as the core architecture and propose an evaluation framework measuring both model capabilities and closed-loop performance.\n\nThe listing states that frontier models matched or exceeded task-specific policies on many embodied benchmarks. It does not specify which benchmarks, the magnitude of improvement, or the exact physical constraints tested. The authors identify a lack of shared definitions and reliable evaluation frameworks in the community.\n\nResearchers working on embodied AI, robotic control, or foundation model integration may find the proposed framework and roadmap relevant. Those seeking specific quantitative benchmarks or code implementations should note that the listing provides no repository or detailed experimental data.",
+      "abstract": "The release of GPT-6 Astra marks the emergence of a new paradigm in robotics: agentic robotics. Within weeks, frontier models with agentic harnesses matched or exceeded task-specific policies on many embodied benchmarks. Instead of training a dedicated policy for each family of tasks, an agentic robotic system applies a foundation model to open-world embodied tasks. It operates in a closed loop: observing the environment, interpreting user intent, reasoning about the task, invoking skills and tools, verifying outcomes, and adapting its strategy. Despite these advances, the community has yet to converge on a shared definition, a reliable evaluation framework, or a research roadmap. We argue that Embodied System 2, realized by a foundation model together with an embodied harness, forms the decision-making core of agentic robotics. Its central challenge is to translate general-purpose reasoning into effective and verifiable actions under physical constraints such as limited reaction time, mechanical limits, unpredictable environment changes, and irreversible consequences. Motivated by this perspective, we propose an evaluation framework that measures both model capabilities and closed-loop system performance. Furthermore, we identify the principles that carry over from digital to physical agents and the challenges that must be addressed to achieve reliable physical autonomy. On top of the Embodied System 2 and the evaluation framework, we envision a research roadmap toward sustained autonomy: the ability to perform work safely and reliably with progressively broader responsibility, from executing individual primitives to fulfilling standing roles.",
+      "takeaways": [
+        "The object is a conceptual framework and research roadmap for agentic robotics, not a new algorithm or dataset.",
+        "A visible limit is the absence of specific benchmark names or quantitative performance deltas in the abstract.",
+        "The artifact status is unclear; no code, dataset, or model weights are declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that advanced AI models with tool-using capabilities performed as well as or better than specialized robot controllers on many robot task tests.",
+        "brief": "The authors suggest that using general-purpose AI models to control robots is a new approach called agentic robotics. They propose a system design called Embodied System 2 and a way to test how well these systems work in real-world loops.\n\nThe text says these new systems performed well on many robot tests compared to older specialized methods. However, it does not list the specific tests or how much better the new systems were. The authors also note that the field lacks standard definitions and testing methods.\n\nPeople studying how to use AI to control physical robots might find this useful. People looking for specific numbers or downloadable code should know that this summary does not provide them.",
+        "takeaways": [
+          "This is a proposal for how to structure and test AI-controlled robots, not a new robot or software tool.",
+          "The summary does not say which specific tests were used or how much better the new method was.",
+          "It is not stated whether any code or data is available for download."
+        ]
+      },
+      "actions": [
+        "Verify the specific embodied benchmarks and quantitative results by reading the full PDF.",
+        "Check if the proposed evaluation framework is implemented in code or remains a theoretical proposal."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-16",
+        "publishedOn": "2026-11-13",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.18359",
+            "upvotes": 107
+          }
+        ]
+      },
+      "trend": {
+        "votes": 107,
+        "rank": 1,
+        "of": 35,
+        "perDay": 36
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 107,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-13"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-16T23:28:05.925Z"
+      }
+    },
+    {
+      "id": "2611.18397",
+      "arxivId": "2611.18397",
+      "url": "https://arxiv.org/abs/2611.18397",
+      "topic": "AI",
+      "reported": "The authors report that Gamer demonstrates solid generalization and operational efficiency comparable to skilled players across multiple challenging 3D open-world games.",
+      "metrics": [],
+      "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
+      "authors": "Run Luo, Kuan Zhang, Qi Deng, Yukun Chen, Zhihao Yang, Yufei Zhang, Renrong Hu, Yi Zhang, Guiyu Ma, Tianyu Fan, Longze Chen, Hao Sun, Jiaming Li, Jiaming Yang, Xiaohao Liu, Tao Tan, Minzheng Wang, Hangtian Jia, Shuai Yuan, Lvdi Wang, Xiao Liu, Chao Ma, Yuting Zou, Yinhe Zheng, Xiaobo Xia, Dawei Jiang, Shaoqing Ren",
+      "takeaway": "The paper introduces Gamer, a generalist vision-language-action foundation model designed for long-horizon real-time game agents.",
+      "brief": "The authors propose a generalist agent framework combining perception, memory, and reasoning for long-horizon interactive tasks. They state the model is trained on device-level keyboard and mouse trajectories from simulated games and embodied environments.\n\nThe authors report solid generalization and operational efficiency comparable to skilled players in 3D open-world games. They also claim competitive results on conventional 2D game benchmarks. The listing does not specify quantitative metrics, exact benchmark names, or statistical significance for these claims.\n\nResearchers working on vision-language-action models, long-horizon reinforcement learning, or interactive game agents may find this relevant. Those requiring specific quantitative benchmarks or code verification should note the listing lacks detailed numerical results.",
+      "abstract": "We introduce Gamer, a generalist agent framework built for long-horizon tasks in complex interactive environments. Its end-to-end architecture combines perception, memory management, and multi-step reasoning. A shared training and deployment pipeline supports interaction with both conventional 2D graphical interfaces and complex 3D simulated worlds. We first continue pre-training on a dataset constructed from tens of thousands of hours of device-level keyboard and mouse interaction. These trajectories span simulated games and embodied environments, allowing the model to learn environmental dynamics across both physical and virtual domains. Sparse-thinking instruction tuning then substantially reduces redundant computation while preserving the reasoning needed for complex decisions. We train the policy for long-horizon interaction with a stable multi-turn reinforcement learning method that addresses finite context windows, accumulated rollout errors, and sparse rewards. For real-time interaction, a cloud-edge inference engine serves numerous simulated game environments concurrently, supports unbounded-context execution, and keeps online inference latency low. Across multiple challenging 3D open-world games, Gamer demonstrates solid generalization and operational efficiency comparable to skilled players. It also achieves competitive results on a range of conventional 2D game benchmarks. These results suggest that even repetitive keyboard and mouse trajectories can support substantial gains from scaling data and learning algorithms. Training on these trajectories helps Gamer learn complex skills more steadily in environments with both physical and digital properties. This approach offers a path toward generalist agents that can interact across digital and physical worlds.",
+      "takeaways": [
+        "The object is a generalist agent framework for long-horizon tasks in 2D and 3D interactive environments.",
+        "A visible limit is the absence of specific quantitative metrics or benchmark names in the provided abstract.",
+        "The artifact status is indicated by a declared GitHub repository URL, but the listing does not confirm code availability or completeness."
+      ],
+      "plain": {
+        "reported": "The authors report that their system performs well in complex 3D video games, matching the skill level of human experts.",
+        "brief": "The authors describe a computer program that can play video games by seeing the screen and controlling the mouse and keyboard. They trained it using data from many hours of human-like interactions in both virtual and simulated physical worlds.\n\nThey claim the system works well in difficult 3D games and performs competitively in standard 2D games. However, the summary does not provide specific scores or numbers to prove these claims. It also does not explain how much better or worse it is compared to other methods.\n\nPeople interested in building AI that can play games or interact with complex digital environments might find this useful. People who need exact performance numbers or verified code should be cautious because the summary lacks detailed data.",
+        "takeaways": [
+          "The system is designed to play games and interact with digital environments over long periods.",
+          "The summary does not include specific performance scores or detailed test results.",
+          "A code link is provided, but it is not confirmed if the code is complete or working."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative results and benchmark names by reading the full PDF.",
+        "Check the declared GitHub repository to confirm the availability and functionality of the code."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/RainBowLuoCS/Gamer",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-16",
+        "publishedOn": "2026-11-13",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.18397",
+            "upvotes": 87
+          }
+        ]
+      },
+      "trend": {
+        "votes": 87,
+        "rank": 2,
+        "of": 35,
+        "perDay": 29
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 87,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-13"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-16T23:28:05.925Z"
+      }
+    },
+    {
+      "id": "2611.15789",
+      "arxivId": "2611.15789",
+      "url": "https://arxiv.org/abs/2611.15789",
+      "topic": "AI",
+      "reported": "The authors report that 11 frontier coding agents were analyzed, with findings that multimodal understanding separates agents and that agents fail to correct their own errors after inspecting renders.",
+      "metrics": [
+        "242 tasks",
+        "11 frontier coding agents"
+      ],
+      "title": "VibePrevisBench: Evaluating Agentic Coding for 4D Scene Generation in Blender",
+      "authors": "Yuzhe Chen, Muxi Diao, Lele Yang, Wenbin Xu, Xuyang Liu, Qile Su, Changyi Liu, Jiankang Chen, Kaiyu Jiang, Haoyu Zhang, Hongyi Fu, Jianxiong Wang, Tianke Zhang, Haonan Fan, Yingxin Li, Bingyi Li, Xu Wang, Xuanyu Zheng, Bin Wen, Tingting Gao, Wentao Zhang, Jiale Cao",
+      "takeaway": "The paper introduces VibePrevisBench, a benchmark for evaluating agentic coding in 4D scene reconstruction and proxy video generation within Blender.",
+      "brief": "The authors propose VibePrevisBench to evaluate coding agents that reconstruct 4D scenes in Blender from various inputs, scoring both the exported scene and the rendered proxy video. They report analyzing 11 frontier agents, finding that multimodal understanding differentiates performance and that agents fail to correct errors despite inspecting their own renders. The listing does not specify quantitative performance scores for the agents, only the number of tasks and agents evaluated.\n\nThe benchmark includes 242 tasks spanning scripts, photos, continuations, and reference videos, using rule-based scene checks and VLM-based screen checks. A visible limit is that the abstract reports qualitative observations about agent failures rather than specific accuracy metrics or success rates for the 11 agents. The artifact status is indicated by a declared GitHub repository URL, but the listing does not confirm the availability of the code or data.\n\nResearchers working on agentic coding for 3D/4D scene generation or video proxy creation may find this relevant. Those not interested in Blender-based scene reconstruction or coding agent evaluation for visual media may ignore it.",
+      "abstract": "Controllable real-world video generation models can condition on a rendered graybox proxy video, which fixes layout, motion and camera. Coding agents can build such videos by reconstructing a 4D scene in Blender, yet no benchmark checks both these videos and the long, multi-shot scenes behind them. We introduce VibePrevisBench, a benchmark for 4D scene reconstruction: an agent turns a brief into an executable 4D scene and renders its proxy video. Its 242 tasks span four input kinds, including scripts, photos, continuations, and reference videos. Each delivery is scored along two evaluation dimensions. Rule-based Scene Check re-runs the code and compares the exported 4D scene with hidden ground truth facts in nine dimensions. VLM-based Screen Check asks a VLM judge whether the facts that pass can be recognized in the proxy video. We analyze the evaluation results and trajectories of 11 frontier coding agents and identify three key observations. First, multimodal understanding separates the agents, especially in understanding space and camera motion. Second, all agents seem to already master basic camera work and staging, and fail at challenging requests. Third, agents inspect their own renders but fail to correct their errors. Agents thus need better visual understanding of space and camera, explicit checks for challenging requests, and item-by-item verification of renders against the brief.",
+      "takeaways": [
+        "The object is a benchmark for 4D scene reconstruction and proxy video generation using coding agents in Blender.",
+        "A visible limit is the lack of reported quantitative success rates or accuracy scores for the evaluated agents in the abstract.",
+        "The artifact status is suggested by a declared GitHub URL, but the listing does not verify the repository's content or accessibility."
+      ],
+      "plain": {
+        "reported": "The authors report that they tested 11 advanced AI coding programs, finding that these programs struggle with understanding space and camera movement and do not fix their own mistakes even when they look at the results.",
+        "brief": "The authors created a test set called VibePrevisBench to check if AI coding agents can build 3D scenes in a software called Blender and create preview videos from them. They tested 11 top AI agents and found that the agents' ability to understand visual space and camera motion was a key difference in their performance. The abstract does not give specific scores or percentages for how well the agents did, only describing their general failures.\n\nThe test set has 242 different tasks, including writing scripts, using photos, continuing scenes, and using reference videos. The evaluation uses automated rules to check the 3D scene and an AI judge to check the video. A limitation is that the abstract describes the agents' weaknesses in general terms without providing specific numbers on their success rates. The paper mentions a GitHub link, but the listing does not confirm if the code is actually available there.\n\nPeople who work on AI systems that build 3D scenes or videos might find this useful. People who are not interested in AI coding for 3D graphics or video production might not need to look at this paper.",
+        "takeaways": [
+          "The paper is about a test set for AI agents that build 3D scenes and videos in Blender.",
+          "The abstract does not provide specific numbers on how well the AI agents performed, only general observations about their failures.",
+          "The paper lists a GitHub link, but it is not confirmed in the listing that the code is available."
+        ]
+      },
+      "actions": [
+        "Verify the declared GitHub repository URL to confirm the availability of the benchmark code and data.",
+        "Check the full PDF for specific quantitative results or success rates of the 11 frontier coding agents on the 242 tasks."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/vibeprevisbench/vibeprevisbench",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-16",
+        "publishedOn": "2026-11-11",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.15789",
+            "upvotes": 83
+          }
+        ]
+      },
+      "trend": {
+        "votes": 83,
+        "rank": 3,
+        "of": 35,
+        "perDay": 17
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 83,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-11"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-16T23:28:05.925Z"
+      }
+    },
+    {
+      "id": "2611.12068",
+      "arxivId": "2611.12068",
+      "url": "https://arxiv.org/abs/2611.12068",
+      "topic": "AI",
+      "reported": "The authors report that MIRIX-2.0 reaches 91.4% on LoCoMo and 72.6% on LongMemEval-S, where it leads the strongest baseline by 14.3 points.",
+      "metrics": [
+        "91.4% on LoCoMo",
+        "72.6% on LongMemEval-S",
+        "14.3 points"
+      ],
+      "title": "MIRIX-2.0: Multi-Agent Memory System",
+      "authors": "Wei-Chieh Huang, Weizhi Zhang, Jiayan Nan, Peng Xia, Yu Wang",
+      "takeaway": "MIRIX-2.0 is a multi-agent memory system designed to be practical, accurate, and efficient at once for LLM agents.",
+      "brief": "The authors present MIRIX-2.0, a multi-agent memory system intended to balance practicality, accuracy, and efficiency for long-term LLM agent memory. They report it is the most accurate of compared systems on four of five QA benchmarks, reaching 91.4% on LoCoMo and 72.6% on LongMemEval-S, and achieving the highest mean success on ALFWorld and WebShop. The listing states the code is public and the system requires no fine-tuning, but does not specify the exact baseline configurations or the specific QA benchmarks where it did not lead.\n\nThe strongest reported evidence is the 14.3-point lead over the strongest baseline on LongMemEval-S and the 49.2% score on MetaClaw-Bench against 44.0% for MetaClaw's skill library. The authors state that with AutoDream disabled, the system answers faster than HyperMem on all five timed benchmarks. The listing does not establish the computational cost of the provenance hypergraph indexing or the specific failure modes of the six typed memory agents.\n\nResearchers working on LLM agent memory architectures, specifically those interested in multi-agent coordination and retrieval efficiency, should open this paper. Those focused solely on parametric memory consolidation or single-agent fine-tuning strategies may ignore it, as the system explicitly avoids fine-tuning and uses non-parametric records.",
+      "abstract": "Long-term memory lets LLM agents personalize, stay consistent, and reuse what worked before. Parametric memories need training, consolidation can lose details for good, and keeping every record leaves a growing store to search. We present MIRIX-2.0, a multi-agent memory system designed to be practical, accurate, and efficient at once. It is the most accurate of the compared systems on four of five QA benchmarks. It reaches 91.4% on LoCoMo and 72.6% on LongMemEval-S, where it leads the strongest baseline by 14.3 points, and with AutoDream disabled it gains 31.0 and 22.0 points over HyperMem on single-hop and multi-hop document QA. As procedural memory, it yields the highest mean success among the compared memory methods on ALFWorld and WebShop and reaches 49.2% on MetaClaw-Bench, against 44.0% for MetaClaw's skill library. Six typed memory agents keep complete records as the system of record, and a provenance hypergraph indexes episodic and semantic records with n-ary frames that cite their rows. Retrieval runs under explicit budgets, so the evidence a question inspects does not grow with the history. AutoDream merges duplicate anchors outside the write path without rewriting any record, and it distills task sessions into skills. With AutoDream disabled, MIRIX-2.0 answers faster than HyperMem on all five timed benchmarks. It needs no fine-tuning, runs with closed and open models, and its code is public.",
+      "takeaways": [
+        "The object is a non-parametric, multi-agent memory system that uses a provenance hypergraph to index episodic and semantic records without rewriting existing data.",
+        "A visible limit is that the system is reported as most accurate on only four of five QA benchmarks, implying a specific benchmark where it does not lead, though the listing does not name it.",
+        "The artifact status is established as public code, with the repository URL provided in the listing, and the system is stated to run with both closed and open models."
+      ],
+      "plain": {
+        "reported": "The authors report that their system scores 91.4 percent on the LoCoMo test and 72.6 percent on the LongMemEval-S test, beating the best competing system by 14.3 points on the latter.",
+        "brief": "The authors introduce a computer system called MIRIX-2.0 that helps artificial intelligence programs remember information over long periods. They claim it is better than other systems at answering questions, scoring 91.4 percent on one test and 72.6 percent on another. They also say it is good at completing tasks in simulated environments like a virtual house or online store. The listing says the computer code is available to the public and the system does not need special training to work.\n\nThe best proof they give is that their system beat the next best system by 14.3 points on a specific memory test. They also say their system is faster than a competitor when a specific feature is turned off. The listing does not explain how much computer power the system uses to organize its memory or what happens when it fails to find the right information.\n\nPeople who build AI systems that need to remember past interactions should look at this paper. People who only care about training AI models from scratch or who do not use AI agents may not find this relevant, as the system does not involve training the core AI model.",
+        "takeaways": [
+          "The system is a tool that helps AI remember things by using multiple smaller AI agents and a map that connects memories to their sources.",
+          "A limitation is that the system is not the best on every single test, as it only leads on four out of five question-answering tests, though the listing does not say which one it loses on.",
+          "The computer code for this system is available for anyone to download and use, and it works with both private and public AI models."
+        ]
+      },
+      "actions": [
+        "Verify the specific QA benchmark where MIRIX-2.0 is not the most accurate by checking the full results table in the PDF.",
+        "Inspect the public code repository to confirm the implementation details of the AutoDream module and the provenance hypergraph indexing mechanism."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Mirix-AI/MIRIX",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-16",
+        "publishedOn": "2026-11-09",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.12068",
+            "upvotes": 45
+          }
+        ]
+      },
+      "trend": {
+        "votes": 45,
+        "rank": 4,
+        "of": 35,
+        "perDay": 6
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 45,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-09"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-16T23:28:05.925Z"
+      }
+    },
+    {
+      "id": "2611.17377",
+      "arxivId": "2611.17377",
+      "url": "https://arxiv.org/abs/2611.17377",
+      "topic": "Security",
+      "reported": "The authors report that uncalibrated SGA achieves 83.72% average pairwise agreement across eight public-probe conditions, outperforming the strongest overall baseline in all eight by 9.38 percentage points on average.",
+      "metrics": [
+        "83.72% average pairwise agreement",
+        "9.38 percentage points",
+        "85.36%"
+      ],
+      "title": "Beyond Attack-Based Accuracy: Rethinking Adversarial Robustness Evaluation Through Structural Gradient Alignment",
+      "authors": "Hanrui Wang, Yu Luo, Shuo Wang, Xingbo Dong, Zhe Jin, Isao Echizen",
+      "takeaway": "The paper introduces Structural Gradient Alignment (SGA), a complementary robustness metric measuring structural alignment between input content and objective-conditioned local model sensitivity.",
+      "brief": "The authors propose Structural Gradient Alignment (SGA) as an attack-agnostic metric for evaluating adversarial robustness in DNNs, VLMs, and LVLMs. It measures alignment between input content and local model sensitivity using unlabeled public probes and a single gradient computation per model-probe pair.\n\nThe authors report that SGA produces rankings consistent with attack-based references across 38 distinct models. Uncalibrated SGA achieves 83.72% average pairwise agreement, outperforming the strongest baseline by 9.38 percentage points on average. Calibrated SGA increases agreement to 85.36% when known robustness orders of anchor models are available.\n\nResearchers evaluating robustness without prescribed attacks or extensive probing may find this metric relevant. Those requiring classifier-specific formulations or in-distribution data for their specific auditing workflow may find the approach less applicable.",
+      "abstract": "Visual adversarial robustness remains a fundamental security property as vision systems evolve from conventional classifiers to vision-language models (VLMs) and large vision-language models (LVLMs), with visual inputs remaining an attack surface across generations. Yet existing evaluation methods often depend on prescribed attacks, in-distribution data, extensive probing, or classifier-specific formulations, limiting external auditing of diverse models. We introduce Structural Gradient Alignment (SGA), a complementary robustness metric measuring the structural alignment between input content and objective-conditioned local model sensitivity. SGA uses a few randomly sampled, unlabeled public probes that need not follow the downstream task distribution and only one input-gradient computation per model--probe pair. Across 38 distinct DNNs, VLMs, and LVLMs, SGA produces rankings consistent with attack-based references. Without robustness references, uncalibrated SGA achieves $83.72\\%$ average pairwise agreement across eight public-probe conditions, outperforming the strongest overall baseline in all eight by $9.38$ percentage points on average. With known robustness orders of anchor models, calibrated SGA increases agreement to $85.36\\%$. These results demonstrate an attack-agnostic, computationally efficient robustness signal across conventional DNNs, VLMs, and autoregressive LVLMs, downstream tasks, threat norms, probe distributions, and evaluator-knowledge settings. Our implementation is available at https://github.com/azrealwang/SGA.",
+      "takeaways": [
+        "The object is a gradient-based metric for robustness evaluation that does not require prescribed attacks or in-distribution data.",
+        "The visible limit is that the metric relies on randomly sampled, unlabeled public probes that need not follow the downstream task distribution.",
+        "The artifact status is that the authors state their implementation is available at a specific GitHub repository URL."
+      ],
+      "plain": {
+        "reported": "The authors report that their uncalibrated method achieves 83.72% average pairwise agreement across eight public-probe conditions, outperforming the strongest overall baseline in all eight by 9.38 percentage points on average.",
+        "brief": "The authors propose a new way to measure how well computer vision models resist maliciously altered images, called Structural Gradient Alignment (SGA). This method checks if the model's internal reactions to an image match the image's content, using a few random, unlabeled test images and one calculation of how the model changes with respect to the input.\n\nThe authors say their method works across 38 different types of vision models. Without any prior knowledge of which models are more robust, their method agrees with standard attack-based evaluations 83.72% of the time, beating the best existing method by 9.38 percentage points on average. If they know the relative robustness of some reference models, their method's agreement improves to 85.36%.\n\nPeople who need to check if vision models are secure against tampered images without running specific attacks or using task-specific data might find this useful. People who need evaluations based on specific attack types or data that matches their exact task might not find this method suitable.",
+        "takeaways": [
+          "The thing being evaluated is a new measurement tool for checking if vision models can handle tampered images without needing specific attack examples.",
+          "A visible limitation is that the tool uses random, unlabeled test images that do not need to match the specific task the model is doing.",
+          "The authors say their code is available for download at a specific website address."
+        ]
+      },
+      "actions": [
+        "Verify the reported 83.72% average pairwise agreement and 9.38 percentage point improvement by examining the experimental setup and baseline comparisons in the full PDF.",
+        "Check the GitHub repository to confirm the availability and functionality of the SGA implementation for independent testing."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.CV"
+      ],
+      "listing": {
+        "listedOn": "2026-11-16",
+        "publishedOn": "2026-11-16",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.17377"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-16T23:28:05.925Z"
+      }
+    },
+    {
+      "id": "2611.17417",
+      "arxivId": "2611.17417",
+      "url": "https://arxiv.org/abs/2611.17417",
+      "topic": "Physics",
+      "reported": "The authors report deriving exact results for spread complexity, Krylov variance, and Krylov entropy in three-level systems, with universal late-time values and algebraic relaxation exponents set by the Dyson index.",
+      "metrics": [
+        "$(d-2)$-dimensional integral"
+      ],
+      "title": "Analytic spread complexity in three-level systems and the spacing-ratio distribution",
+      "authors": "Pratik Nandy",
+      "takeaway": "The paper claims to derive exact analytic results for spread complexity, Krylov variance, and Krylov entropy in three-level quantum systems, establishing universal late-time values and algebraic relaxation exponents set by the Dyson index.",
+      "brief": "The authors claim exact analytic derivations for spread complexity, Krylov variance, and Krylov entropy in three-level systems, the smallest setting with spacing correlations. They report that at infinite temperature, the Krylov basis depends on the spectrum only through the ratio of consecutive level spacings, and for Gaussian ensembles, averaged quantities reduce to one-dimensional integrals over the spacing-ratio distribution. They establish universal late-time values and algebraic relaxation with exponents set by the Dyson index, and outline an extension to $d$ levels expressed as a $(d-2)$-dimensional integral.\n\nThe strongest reported result is the derivation of exact results for the spread complexity, Krylov variance, and Krylov entropy in three-level systems, with universal late-time values and algebraic relaxation exponents set by the Dyson index. The listing does not specify a numerical benchmark or dataset for validation; it states that prior studies of such correlations in dynamics have been mainly numerical for large matrices. The extension to $d$ levels is outlined but not fully derived in the abstract.\n\nResearchers working on quantum chaos, Krylov basis dynamics, or random matrix theory in small systems may find the exact analytic results relevant. Those focused on large-matrix numerical simulations or systems beyond three levels without analytic tractability may find the scope limited.",
+      "abstract": "The spread complexity characterizes the spreading of a quantum state over the Krylov basis and has been proposed to capture the correlations between energy levels. How such correlations manifest in the dynamics has been studied mainly numerically for large matrices. Here we consider three-level systems, the smallest setting with spacing correlations, and derive exact results for the spread complexity, the Krylov variance, and the Krylov entropy. At infinite temperature, the Krylov basis depends on the spectrum only through the ratio of consecutive level spacings, and the spectral variance enters only as an overall time scale. For Gaussian ensembles, these variables are statistically independent, and the averaged spread complexity and variance reduce to one-dimensional integrals over the spacing-ratio distribution encoding the level statistics. We establish universal late-time values of the complexity and variance, and an algebraic relaxation with exponents set by the Dyson index. We also outline the extension to $d$ levels, with the ensemble-averaged spread complexity expressed as a $(d-2)$-dimensional integral over the joint distribution of consecutive spacing ratios.",
+      "takeaways": [
+        "The object is the spread complexity, Krylov variance, and Krylov entropy in three-level quantum systems, derived exactly for Gaussian ensembles at infinite temperature.",
+        "A visible limit is that the exact results are restricted to three-level systems, the smallest setting with spacing correlations, and the extension to $d$ levels is only outlined.",
+        "The artifact status is not established in the listing; no code, dataset, or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report deriving exact mathematical formulas for how quantum states spread in a three-level system, including how this spreading behaves at long times and how it relaxes, with the relaxation rate determined by a parameter called the Dyson index.",
+        "brief": "The authors claim to have found exact mathematical formulas for how quantum states spread in a three-level system, which is the smallest system where energy level spacing correlations matter. They report that at infinite temperature, the way the state spreads depends only on the ratio of consecutive energy level spacings, and for certain random matrix models, the averaged spreading measures can be calculated using one-dimensional integrals over the distribution of these spacing ratios. They establish that at long times, the spreading measures reach universal values and relax algebraically, with the relaxation exponents determined by the Dyson index, and they outline how to extend this to systems with $d$ levels.\n\nThe strongest reported result is the derivation of exact formulas for the spreading measures in three-level systems, with universal long-time values and algebraic relaxation exponents set by the Dyson index. The listing does not specify a numerical benchmark or dataset for validation; it states that prior studies of such correlations in dynamics have been mainly numerical for large matrices. The extension to $d$ levels is outlined but not fully derived in the abstract.\n\nResearchers working on quantum chaos, how quantum states spread in a basis called the Krylov basis, or random matrix theory in small systems may find the exact analytic results relevant. Those focused on large-matrix numerical simulations or systems beyond three levels without analytic tractability may find the scope limited.",
+        "takeaways": [
+          "The object is the mathematical description of how quantum states spread in a three-level system, derived exactly for certain random matrix models at infinite temperature.",
+          "A visible limit is that the exact results are restricted to three-level systems, the smallest system where energy level spacing correlations matter, and the extension to larger systems is only outlined.",
+          "The artifact status is not established in the listing; no code, dataset, or repository is declared."
+        ]
+      },
+      "actions": [
+        "Verify the exact analytic derivations and the claimed universal late-time values by reading the full PDF, as the abstract does not provide numerical validation details.",
+        "Check whether the outlined extension to $d$ levels includes full derivations or remains a sketch, by examining the relevant sections of the paper."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "cond-mat.dis-nn",
+        "cond-mat.stat-mech",
+        "cond-mat.str-el",
+        "hep-th"
+      ],
+      "listing": {
+        "listedOn": "2026-11-16",
+        "publishedOn": "2026-11-16",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.17417"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-16T23:28:05.925Z"
+      }
+    },
+    {
+      "id": "2611.17456",
+      "arxivId": "2611.17456",
+      "url": "https://arxiv.org/abs/2611.17456",
+      "topic": "Engineering",
+      "reported": "The authors report that PA-STGAT meets nominal empirical communication requirements across all five seeds under filtered execution.",
+      "metrics": [],
+      "title": "Physical-Risk-Aware Decentralized Agents for Constrained Vehicle Communications",
+      "authors": "Haoran Peng, William Weijia Zheng, Hang Liu, Ying-Jun Angela Zhang",
+      "takeaway": "The paper claims to develop a physical-risk-aware spatio-temporal graph attention framework for agentic V2X control that independently selects PC5 resources and power.",
+      "brief": "The authors propose a decentralized framework where vehicles use local graph observations to select communication resources and power levels. They state that network outcomes refine the shared policy during centralized training, while transmitter-specific credits map reliability failures to individual vehicles.\n\nThe authors report that the framework meets nominal empirical communication requirements across all five seeds under filtered execution. They note tradeoffs among utility, delivery reliability, resource occupancy, and filter-induced repair, with lower utility and mean delivery reliability compared to GNN+MATD3. The listing does not establish specific numerical performance values or external benchmark comparisons beyond the named baselines.\n\nResearchers working on decentralized vehicular network resource allocation may find the framework relevant. Those requiring strict utility maximization or specific numerical reliability guarantees without filtered execution may find the reported tradeoffs limiting.",
+      "abstract": "Decentralized V2X resource control is challenging because each vehicle has only local observations, while reliability depends on network-wide interactions. We develop a physical-risk-aware spatio-temporal graph attention (PA-STGAT) framework for agentic V2X control. Each vehicle perceives its local interaction graph, retains short-term temporal context, and independently selects its PC5 resource and power. Network outcomes are used during centralized training to refine the shared policy. Transmitter-specific credits map reliability failures to individual vehicles. A dual-priced graph term further converts network violations into coordination signals for discrete resource selection, with higher priority on short time-to-collision links. Experiments show higher raw-policy reliability than the tested graph-based baselines. Under filtered execution, PA-STGAT meets the nominal empirical communication requirements across all five seeds, with tradeoffs among utility, delivery reliability, resource occupancy, and filter-induced repair. Compared with GNN+MATD3, it requires fewer resource repairs but achieves lower utility and mean delivery reliability. Mechanism ablations show that removing dual-priced graph coordination causes resource-selection collapse. Density and mobility tests characterize the operating limits of empirical constraint satisfaction.",
+      "takeaways": [
+        "The object is a decentralized V2X control framework using spatio-temporal graph attention for resource and power selection.",
+        "A visible limit is the reported lower utility and mean delivery reliability compared to GNN+MATD3 under filtered execution.",
+        "The artifact status is not established in the listing, as no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their system meets the stated communication goals in five separate test runs when a filtering process is applied.",
+        "brief": "The authors suggest a system where each car makes its own decisions about communication resources and power based on nearby cars. They say that the system is trained using overall network results to improve the shared decision-making rules.\n\nThe authors say the system meets the communication goals in five test runs when a filtering step is used. They mention that the system uses fewer resource fixes but has lower overall usefulness and reliability than a comparison system. The listing does not give specific numbers for how well the system performs or how it compares to other standard tests.\n\nPeople studying how cars share communication resources without a central controller might find this useful. People who need the highest possible data delivery rates or specific numerical guarantees might find the reported downsides important to consider.",
+        "takeaways": [
+          "The system is a decentralized method for cars to choose communication resources and power levels.",
+          "A visible limit is that the system has lower usefulness and reliability than a comparison method when filtering is used.",
+          "The listing does not say if the code or software for the system is available for download or use."
+        ]
+      },
+      "actions": [
+        "Verify the specific numerical values for utility and delivery reliability in the full PDF to assess the magnitude of the reported tradeoffs.",
+        "Check the full paper for the definition of 'filtered execution' and the specific empirical communication requirements used in the evaluation."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP",
+        "cs.MA"
+      ],
+      "listing": {
+        "listedOn": "2026-11-16",
+        "publishedOn": "2026-11-16",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.17456"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-16T23:28:05.925Z"
+      }
+    },
+    {
+      "id": "2611.17507",
+      "arxivId": "2611.17507",
+      "url": "https://arxiv.org/abs/2611.17507",
+      "topic": "Stats",
+      "reported": "The authors report that the modal estimator of dynamic coefficients is 1.2 to 2.6 times more efficient under asymmetry or heavy tails in Monte Carlo experiments.",
+      "metrics": [
+        "1.2 to 2.6 times more efficient",
+        "from about 200 observations"
+      ],
+      "title": "Parametric Modal SARIMA Models with Skewed Distributions",
+      "authors": "Christian E. Galarza, Sergio Luis Mercado Londo\\~no, V\\'ictor H. Lachos",
+      "takeaway": "The paper proposes a Modal SARIMA model linking the conditional mode to a multiplicative seasonal ARIMA structure with skewed innovations.",
+      "brief": "The authors propose a Modal SARIMA model that links the conditional mode, rather than the mean, to a multiplicative seasonal ARIMA structure using skewed innovations. They report Monte Carlo evidence that the modal estimator is 1.2 to 2.6 times more efficient than Gaussian least squares under asymmetry or heavy tails. They also report that the test of symmetry holds its level from about 200 observations and that nearly cancelling seasonal factors amplify the effect of starting values.\n\nThe listing states that the methods are implemented in the R package ModalForecast. It does not establish specific limitations regarding real-world data performance beyond the stated Monte Carlo conditions. The abstract notes that the conditional mean may be inadequate when innovations are asymmetric.\n\nResearchers working with time series exhibiting asymmetric innovations or heavy tails may find the modal approach relevant. Those relying strictly on Gaussian conditional mean models may ignore it if their data fits that assumption.",
+      "abstract": "Seasonal autoregressive integrated moving-average (SARIMA) models typically target the conditional mean of a time series under a Gaussian error assumption. This approach may be inadequate when the innovations are asymmetric because the conditional mean no longer represents the most likely outcome. We propose the Modal SARIMA$(p,d,q)\\times(P,D,Q)_s$ model, which links the conditional mode, rather than the conditional mean, to a multiplicative seasonal ARIMA structure. The innovations follow the Fernandez-Steel class of skewed distributions (SKD), whose location parameter is the mode, and the non-seasonal Modal ARIMA$(p,d,q)$ model is the special case without seasonal terms. We give the conditional log-likelihood for the Skew-Normal, Skewed Student-$t$, and Skewed Laplace members, establish the stationarity and invertibility conditions on the product polynomials, show that the recursive modal forecast is the joint mode of the future trajectory, and characterize the correction that yields the marginal $h$-step conditional mode. Monte Carlo experiments show that conditional maximum likelihood and its Wald inference are reliable when the seasonal factors are well separated, that the test of symmetry holds its level from about 200 observations, and that the modal estimator of the dynamic coefficients is as efficient as Gaussian least squares under symmetry and 1.2 to 2.6 times more efficient under asymmetry or heavy tails. We also show, analytically and by simulation, that nearly cancelling seasonal factors amplify the effect of the starting values, and that beyond one step the recursive forecast must be corrected to remain a forecast of the most probable value. In an application to the Canadian lynx trappings, a seasonal component for the ten-year cycle improves the non-seasonal fit for every member of the SKD family. The methods are implemented in the R package ModalForecast.",
+      "takeaways": [
+        "The object is a parametric Modal SARIMA model using Fernandez-Steel skewed distributions for innovations.",
+        "A visible limit is that the reliability of Wald inference depends on seasonal factors being well separated.",
+        "The artifact status is established as an R package named ModalForecast."
+      ],
+      "plain": {
+        "reported": "The authors report that their new estimation method is 1.2 to 2.6 times more efficient than the standard Gaussian method when data is skewed or has heavy tails, based on computer simulations.",
+        "brief": "The authors propose a new statistical model called Modal SARIMA. Instead of predicting the average value of a time series, it predicts the most likely value (the mode). This is useful when the errors in the data are not symmetric. They show in computer simulations that this method is 1.2 to 2.6 times more efficient than the standard method when the data is skewed or has heavy tails. They also show that a test for symmetry works well with about 200 data points.\n\nThe authors state that their methods are available in an R software package called ModalForecast. The listing does not specify limitations for real-world data beyond the simulation conditions. The abstract notes that standard average-based models can fail when data errors are asymmetric.\n\nPeople analyzing time series data with asymmetric errors or heavy tails might find this useful. People whose data fits standard symmetric assumptions might not need this specific model.",
+        "takeaways": [
+          "The object is a statistical model that predicts the most likely value instead of the average value for time series data.",
+          "A visible limit is that the statistical tests are reliable only when the seasonal patterns are distinct enough.",
+          "The software artifact is an R package named ModalForecast."
+        ]
+      },
+      "actions": [
+        "Verify the specific conditions for 'well separated' seasonal factors in the full PDF.",
+        "Check the R package ModalForecast documentation for implementation details and dependencies."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-11-16",
+        "publishedOn": "2026-11-16",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.17507"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-16T23:28:05.925Z"
+      }
+    },
+    {
+      "id": "2611.17530",
+      "arxivId": "2611.17530",
+      "url": "https://arxiv.org/abs/2611.17530",
+      "topic": "Econ",
+      "reported": "The authors report that establishment job flows through the first quarter of 2026 show no gradient on language-model exposure on either margin.",
+      "metrics": [
+        "42 percent of payroll by 1998",
+        "about 80 percent of their payroll after five years",
+        "entry rising 10 to 20 percent"
+      ],
+      "title": "AI and the Two Margins of Work: Why Job Losses Show Up Before Job Creation",
+      "authors": "Mark Esposito, Liu Zhang",
+      "takeaway": "The paper claims that technological change acts on labor demand at two margins, with payroll statistics recording adjustment within established activities promptly and the creation of additional activities late.",
+      "brief": "The authors argue that job losses appear before job creation because payroll data captures internal adjustments quickly but delays recording new firm entry. They develop a model where AI lowers output costs and enables new projects, predicting that hours fall first if re-scaling takes time. The model suggests that current lack of observed effects in 2026 data is consistent with slow adoption or no effect.\n\nThe strongest reported result is the absence of a gradient in establishment job flows through Q1 2026 regarding language-model exposure. The authors note that studies with founding-task exposure find entry rising 10 to 20 percent, but they state that the observed 2026 data is also what no effect would look like. The listing does not establish a definitive causal link between AI and the specific 2026 job flow patterns, only that the data is consistent with the model's predictions under observed adoption.\n\nResearchers studying labor economics, automation, or AI adoption should open this to examine the proposed net reinstatement ratio and the two-margin framework. Those not interested in the timing of labor market adjustments or the specific modeling of founder effort versus hired hours may ignore it.",
+      "abstract": "Technological change acts on labor demand at two margins: adjustment within established activities and the creation of additional activities, often by new firms. Payroll statistics record the first promptly and the second late. In the computing era, firms that entered in 1978 or later held 42 percent of payroll by 1998 and entering cohorts kept about 80 percent of their payroll after five years; in the industries most exposed to automation, incumbents contracted before entrants accumulated, a sequence that is precise early in the period and suggestive by its end. We develop a model in which one AI capability lowers the full cost of acceptable output in existing production and makes additional projects worth attempting, with founder effort separate from hired hours. If operating products re-scale instantly, automation displaces no aggregate hours; if they take time, hours fall first and recover as incumbents re-expand and new products arrive, with the long-run sign set by income effects. Establishment job flows through the first quarter of 2026 show no gradient on language-model exposure on either margin, which is what the model predicts under the observed adoption path and also what no effect on payroll would look like; studies with founding-task exposure find entry rising 10 to 20 percent. We propose a net reinstatement ratio and show that statistics which record new work late overstate displacement for years.",
+      "takeaways": [
+        "The object is a theoretical model and empirical analysis of labor demand at two margins: adjustment within existing activities and creation of new activities.",
+        "A visible limit is that the 2026 job flow data showing no gradient is ambiguous, as it is consistent with both the model's prediction under slow adoption and a scenario with no effect on payroll.",
+        "The artifact status is not established in the listing; no code or dataset repository is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that data on business hiring and firing through the first quarter of 2026 does not show a clear pattern related to how much jobs rely on language models.",
+        "brief": "The authors suggest that when new technology changes work, we see job cuts in existing companies before we see new jobs created by new companies. This is because official records update quickly for existing companies but slowly for new ones. They created a mathematical model showing that if AI makes existing products cheaper but takes time to create new ones, total hours worked might drop at first and then recover. They found that recent data from 2026 does not show a clear link between AI exposure and job changes, which matches their model if AI adoption is slow, but it also looks like what would happen if AI had no effect at all.\n\nThe main finding is that 2026 data does not show a clear trend in job flows based on AI exposure. The authors mention that other studies found new business entry increased by 10 to 20 percent in some contexts, but they caution that the 2026 data is ambiguous. The listing does not prove that AI caused the specific job patterns seen in 2026, only that the data fits their model's predictions given the current rate of AI adoption.\n\nPeople studying how technology affects jobs, specifically the timing of job losses versus job creation, should look at this paper to see their new measurement tool called the net reinstatement ratio. People who are not interested in the detailed mechanics of how labor markets adjust to automation or the specific role of new business formation may find this less relevant.",
+        "takeaways": [
+          "The paper focuses on a model and data analysis of how labor demand changes in two ways: within existing jobs and through new job creation.",
+          "A limitation is that the 2026 data is unclear; it could mean AI is having an effect that is just slow to show up, or it could mean AI is having no effect at all.",
+          "The listing does not say if the authors have shared their code or data files publicly."
+        ]
+      },
+      "actions": [
+        "Verify the specific establishment job flow data sources and the definition of 'language-model exposure' used in the 2026 analysis by reading the full PDF.",
+        "Check the full paper for the derivation of the 'net reinstatement ratio' and how it is applied to historical payroll statistics to quantify the overstatement of displacement."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-11-16",
+        "publishedOn": "2026-11-16",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.17530"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-16T23:28:05.925Z"
+      }
+    },
+    {
+      "id": "2611.18115",
+      "arxivId": "2611.18115",
+      "url": "https://arxiv.org/abs/2611.18115",
+      "topic": "Health",
+      "reported": "The authors report that the collection is released under a two-clause BSD license from a GitHub repository.",
+      "metrics": [],
+      "title": "COPASI Skills: Agent Skills for COPASI analyses through Basico",
+      "authors": "Frank T. Bergmann, Sven Sahle",
+      "takeaway": "The paper presents COPASI Skills, a set of instruction files that guide an assistant to drive Basico for specific biochemical model analyses.",
+      "brief": "The authors introduce a collection of instruction files designed to help an assistant perform specific analyses using the Basico Python interface for COPASI. Each skill is a directory containing a `SKILL.md` file that specifies when the skill applies and which calls to make. The system allows a researcher to request analyses like time courses or fits in ordinary language.\n\nThe authors state that the assistant follows the matching skill and leaves tables or a report next to the model. The listing does not provide quantitative performance metrics, accuracy benchmarks, or comparative results against other methods. The primary evidence is the description of the file structure and the stated licensing terms.\n\nResearchers working with COPASI models who use Python and want to integrate assistant-driven analysis workflows may find this relevant. Those not using COPASI, Basico, or assistant-based tooling for biochemical modeling may ignore it.",
+      "abstract": "Biochemical models represent biological systems as networks of reactions that describe the production, consumption, and transformation of molecular species over time. These models provide a quantitative framework for analyzing system dynamics and enable computational experiments that complement traditional wet-lab approaches, helping researchers gain mechanistic insight and make predictive assessments of biological behavior. COPASI is a widely used program for simulating and analyzing those models. These tasks are made availabe to Python through Basico. COPASI Skills is a set of instruction files that tell an assistant how to drive Basico for one analysis at a time. Each skill is a directory containing a `SKILL.md` file. A short description at the top tells the assistant when the skill applies, and the rest of the file states which calls to make, which files to write, and which potential neighboring skill to choose additionally. A researcher can ask for example, in ordinary language, for a time course, a fit, or a published model. The assistant follows the matching skill and leaves tables or a report next to the model. The collection is released under a two-clause BSD license from [https://github.com/fbergmann/copasi-skills](https://github.com/fbergmann/copasi-skills).",
+      "takeaways": [
+        "The object is a set of Markdown instruction files for driving the Basico Python library, not a new simulation algorithm or model.",
+        "The listing does not establish any performance limits, error rates, or success rates for the assistant following these skills.",
+        "The artifact is a GitHub repository released under a two-clause BSD license, but the listing does not confirm the repository's current status or content beyond the description."
+      ],
+      "plain": {
+        "reported": "The authors report that the collection is released under a two-clause BSD license from a GitHub repository.",
+        "brief": "The authors introduce a collection of instruction files designed to help an assistant perform specific analyses using the Basico Python interface for COPASI. Each skill is a directory containing a `SKILL.md` file that specifies when the skill applies and which calls to make. The system allows a researcher to request analyses like time courses or fits in ordinary language.\n\nThe authors state that the assistant follows the matching skill and leaves tables or a report next to the model. The listing does not provide quantitative performance metrics, accuracy benchmarks, or comparative results against other methods. The primary evidence is the description of the file structure and the stated licensing terms.\n\nResearchers working with COPASI models who use Python and want to integrate assistant-driven analysis workflows may find this relevant. Those not using COPASI, Basico, or assistant-based tooling for biochemical modeling may ignore it.",
+        "takeaways": [
+          "The object is a set of Markdown instruction files for driving the Basico Python library, not a new simulation algorithm or model.",
+          "The listing does not establish any performance limits, error rates, or success rates for the assistant following these skills.",
+          "The artifact is a GitHub repository released under a two-clause BSD license, but the listing does not confirm the repository's current status or content beyond the description."
+        ]
+      },
+      "actions": [
+        "Verify the existence and content of the GitHub repository at the provided URL to confirm the `SKILL.md` files and their structure.",
+        "Check the Basico documentation to confirm that the specific calls and file outputs described in the skills are supported by the current version of the library."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM"
+      ],
+      "listing": {
+        "listedOn": "2026-11-16",
+        "publishedOn": "2026-11-16",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.18115"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-16T23:28:05.925Z"
+      }
+    }
+  ]
+}
