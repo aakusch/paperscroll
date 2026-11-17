@@ -1,0 +1,679 @@
+{
+  "date": "2026-11-17",
+  "label": "Tue, Nov 17",
+  "minutes": 10,
+  "poolSize": 164,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-11-17T21:52:10.825Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2611.21072",
+      "arxivId": "2611.21072",
+      "url": "https://arxiv.org/abs/2611.21072",
+      "topic": "AI",
+      "reported": "The authors report that Sage S1.5 Flash ranks first on OfficeQA Pro (72.2), MLE-bench Lite (90.3 HumanRank), Harvey LAB, and SpreadsheetBench~2, and second on OSWorld-Verified (85.2), WebArena-Verified (67.6), and DeepResearch Bench~II (54.2).",
+      "metrics": [
+        "OfficeQA Pro (72.2)",
+        "MLE-bench Lite (90.3 HumanRank)",
+        "OSWorld-Verified (85.2)"
+      ],
+      "title": "Sage S2.1 Flash Technical Report",
+      "authors": "Kun Cai, Haodong Chen, Guangran Cheng, Qingxiu Cheng, Xu Dai, Guanting Dong, Qiming Ge, Lixin Gu, Tao Gui, Honglin Guo, Yuyang Hu, Zixian Huang, Jiajie Jin, Alexander Lam, Jiaqiang Li, Yining Li, Jiahang Lin, Yanjiang Liu, Xinyu Lu, Haijun Lv, Ningsheng Ma, Zerun Ma, Minlong Peng, Jianmin Qian, Huayu Sha, Junlin Shang, Shuo Shen, Qisheng Su, Jiajun Sun, Yanan Sun, Zhichao Sun, Ran Tao, Zhongbo Tian, Guoqiang Wang, Hui Wang, Rui Wang, Yiding Wang, Zhecan Wang, Hao Xiang, Xinchen Xie, Shuhao Xing, Xiaoyu Xing, Wanghan Xu, Xinyu Yang, Yajie Yang, Dingbo Yuan, Yuhang Zang, Hongjie Zhang, Chengfeng Zhao, Haoran Zhao, Penghao Zhao, Ruojun Zhou, Dongsheng Zhu, Yicheng Zou, Qiye Cai, Yifei Cao, Xinmeng Che, Hongji Chen, Jiabei Chen, Jiadong Chen, Jiahao Chen, Jiayi Chen, Xinjie Chen, Yujia Chen, Xin Deng, Yi Dong, Yichen Dong, Wenjie Fu, Jianing Geng, Chenyang Gu, Ding Han, Han Han, Feiyang Hao, Haotan He, Qiushi He, Xufeng He, Xin Hong, Jie Hou, Binze Hu, Yongkang Hu, Zijian Hu, Enfu Huang, Junhao Huang, Changhao Jiang, Huicheng Jiang, Jiazhen Jiang, Shufan Jiang, Wenqing Jing, Jiahao Kuang, Bowen Lai, Bo Li, Qi Li, Qilong Li, Zhuoqun Li, Tianhao Liang, Jiaxiang Liu, Junzhang Liu, Shaofan Liu, Shuainan Liu, Tong Liu, Yi Liu, Ziyu Liu, Zhonghang Lu, Jianwen Luo, Xuan Luo, Yanyi Luo, Huijie Lv, Mingyu Ma, Houcheng Min, Hongjun Mo, Songhao Ni, Chengjun Pan, Qiyuan Peng, Xiaoxuan Peng, Wanying Ren, Runhui Ruan, Jifei Shan, Zixin Shang, Bing Shao, Zhuohui Sheng, Jiayang Shi, Qingyun Shi, Yang Shu, Aierpanjiang Simayi, Sirui Song, Yuxiao Song, Jiahao Sun, Zhe Sun, Wenzhe Tan, Guoxiang Wang, Hanchen Wang, Jie Wang, Pengbo Wang, Qing Wang, Rui Wang, Weihang Wang, Xiaotao Wang, Yuhui Wang, Zhekai Wang, Zihan Wang, Zile Wang, Jinke Wu, Liwei Wu, Xuansheng Wu, Yida Wu, Yihao Wu, Yinqi Wu, Yue Wu, Yuhan Wu, Yuwa Wu, Zhiheng Xi, Ying Xiao, Zhide Xie, Caijun Xu, Xingle Xu, Yichen Xu, Yongfeng Xu, Xiaolei Yang, Zhixiong Yang, Jiacheng Yao, Dingcheng Yi, Shihong Yi, Jinhui Yin, Peizhou Yu, Shan Yu, Hao Yuan, Junjie Yuan, Xiongyao Zha, Bo Zhang, Caixian Zhang, Kaicheng Zhang, Pengxiang Zhang, Qiuyinzhe Zhang, Wei Zhang, Xiaoqian Zhang, Xinsen Zhang, Jiyuan Zhao, Shuyu Zhao, Pujun Zheng, Zheyu Zheng, Xiaoxue Zhong, Peiheng Zhou, Xiaohao Zhou, Xinyu Zhou, Fangyi Zhu, Guanru Zhu, Yulun Zhu, Jiabao Zhuang, Pengfei Cao, Zhicheng Dou, Xianpei Han, Ben He, Guoxiu He, Xuanjing Huang, Tao Ji, Yu-Gang Jiang, Dahua Lin, Hongyu Lin, Kang Liu, Yaojie Lu, Le Sun, Ji-Rong Wen, Jun Zhao, Yutao Zhu, Qi Zhang, Bowen Zhou",
+      "takeaway": "The paper introduces Sage S1.5 Flash, a 320-billion-parameter general-purpose mixture-of-experts model designed to reason over scientific evidence and act in interactive environments.",
+      "brief": "The authors present Sage S1.5 Flash, a 320-billion-parameter mixture-of-experts model with dedicated encoders for molecular graphs, biological sequences, and spectra, alongside modality-specific projectors for a shared backbone.\n\nThe authors report first-place rankings on OfficeQA Pro, MLE-bench Lite, Harvey LAB, and SpreadsheetBench~2, and second-place rankings on OSWorld-Verified, WebArena-Verified, and DeepResearch Bench~II across 33 benchmarks. The listing does not establish specific limitations or artifacts beyond the reported benchmark comparisons.\n\nResearchers working on multimodal scientific reasoning, agent-based tool use, or mixture-of-experts architectures may find the technical details relevant. Those not focused on these specific model capabilities or benchmark domains may find the report less applicable.",
+      "abstract": "We introduce Sage S1.5 Flash, a 320-billion-parameter general-purpose mixture-of-experts model designed to reason over scientific evidence and act in interactive environments. Sage Sci-Perception uses dedicated encoders for molecular graphs and biological sequences and represents spectra as ordered patches of measurements. Modality-specific projectors map these representations into the input space of a shared backbone, which processes them alongside text and images. To develop the model's agent capabilities, we construct verifiable environments for tool use, search, and coding, as well as specialized workflows involving machine learning experiments and scientific software. Task completion is checked against execution results, changes in environment state, or submitted artifacts. We evaluate Sage S1.5 Flash on 33 benchmarks across seven domains. In the primary comparison against five baselines, it ranks first on OfficeQA Pro (72.2), MLE-bench Lite (90.3 HumanRank), Harvey LAB, and SpreadsheetBench~2, and second on OSWorld-Verified (85.2), WebArena-Verified (67.6), and DeepResearch Bench~II (54.2). These results show particular strengths in using documentary evidence, producing verifiable workbooks, and carrying out machine learning tasks, alongside competitive performance in desktop and browser workflows that require the model to act on visual feedback.",
+      "takeaways": [
+        "The object is a 320-billion-parameter mixture-of-experts model with specialized encoders for scientific data modalities.",
+        "The visible limit is that the listing only provides comparative rankings on specific benchmarks without detailing failure modes or ablation studies.",
+        "The artifact status is indicated by a declared GitHub repository URL, but the listing does not confirm the availability of model weights or code."
+      ],
+      "plain": {
+        "reported": "The authors report that their model, Sage S1.5 Flash, achieved the highest scores on four specific tests (OfficeQA Pro, MLE-bench Lite, Harvey LAB, and SpreadsheetBench~2) and the second-highest scores on three other tests (OSWorld-Verified, WebArena-Verified, and DeepResearch Bench~II).",
+        "brief": "The authors describe a large artificial intelligence model called Sage S1.5 Flash. It has 320 billion parameters and is designed to understand scientific data like molecules and biological sequences, as well as text and images. It uses special tools to process different types of data and combine them into one system.\n\nThe authors state that their model performed better than five other models on several standard tests. It got the best score on tests related to office work, machine learning experiments, and spreadsheet creation. It got the second-best score on tests involving computer desktop use, web browsing, and deep research. The provided summary does not explain what the model does poorly or what specific problems it has.\n\nPeople who build AI systems that need to handle scientific data or use computer tools might find this report useful. People who do not work with these specific types of AI models or tests might not find it relevant to their work.",
+        "takeaways": [
+          "The main subject is a very large AI model that can process different kinds of scientific and visual data.",
+          "The summary only shows how the model compared to others on specific tests, without explaining where it fails or what its weaknesses are.",
+          "The authors provide a link to a code repository, but the summary does not confirm if the actual model files or full code are available there."
+        ]
+      },
+      "actions": [
+        "Verify the existence and contents of the declared GitHub repository to confirm code and weight availability.",
+        "Review the full PDF to examine the specific evaluation protocols and baseline comparisons for the reported benchmark results."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/InternLM/Sage-S2.1-Flash",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-17",
+        "publishedOn": "2026-11-16",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.21072",
+            "upvotes": 85
+          }
+        ]
+      },
+      "trend": {
+        "votes": 85,
+        "rank": 1,
+        "of": 34,
+        "perDay": 85
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 85,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-17T21:52:10.825Z"
+      }
+    },
+    {
+      "id": "2611.21003",
+      "arxivId": "2611.21003",
+      "url": "https://arxiv.org/abs/2611.21003",
+      "topic": "AI",
+      "reported": "The authors report that their 36B-A4B model nearly matches a 32B dense model trained on the same data, with one-seventh the active parameters.",
+      "metrics": [
+        "0.9B dense model",
+        "375B-A23B MoE",
+        "2.2x"
+      ],
+      "title": "K2-Horizon: A Frontier Fleet of Open Source Language Models",
+      "authors": "K2 Team, Zhengzhong Liu, Haonan Li, Xuezhe Ma, Alexander Moreno, Subham Sekhar Sahoo, Rupesh Kumar Srivastava, Mikhail Yurochkin, Hadi Abdine, Yash Akhauri, Adharsh Babu, David Bellamy, Jalaj Bhandari, Dani Bouch, Wail Bouhedja, Weili Cao, Ahmad Chamma, Po-Chun Chang, Junlin Chen, Lingjie Chen, Zhoujun Cheng, Kyle Chickering, Ryandito Diandaru, Evan Dufraisse, Chaitanya Dwivedi, Bilal El Bouardi, Desai Fan, Richard Fan, Chengqian Gao, Rifo Ahmad Genadi, Jonathan Geuter, Charles Guille-Escuret, Willis Guo, Dhawal Gupta, Seungwook Han, Tingxu Han, Shibo Hao, Besher Hassan, Guowei He, Ming Shan Hee, Joel Hestness, Yu Huang, Yuan Huang, Haolong Jia, Linghao Jin, Junu Kim, Lingjing Kong, Nurkhan Laiyk, Andrej Leban, Liqun Ma, John Maggs, Amr Mohamed, Mukhesh Narra, Omkar Pangarkar, Aldo Pareja, Khiem Pham, Varad Pimpalkhute, Nikhil Ranjan, Elizaveta Rebrova, Hector Ren, Shaurya Rohatgi, Guokan Shang, Jianshu She, Chufan Shi, Aaryamonvikram Singh, Daria Soboleva, Kartik Sreenivasan, Suqi Sun, Yuekai Sun, Bowen Tan, Liping Tang, Shengkun Tang, Muzi Tao, Mallikarjuna Tupakula, Micah Villmow, Hongyi Wang, Huijuan Wang, Renxi Wang, Yongxin Wang, Yuqi Wang, Zhenting Wang, Shicheng Wen, Yingquan Wu, Anze Xie, Andrew Xing, Matthew Yang, Shuanghai Yu, Kerem Zaman, Zenan Zhai, Hongli Zhan, Xuezhou Zhang, Anshun Asher Zheng, Zhe Zhou, Richard Zhuang, Eric P. Xing",
+      "takeaway": "The paper presents K2-Horizon, a fleet of six fully open language models built for general-purpose reasoning and agentic work, introducing Mixture-of-Value Attention and Uno diffusion adapters.",
+      "brief": "The authors claim to release a fleet of six open models ranging from 0.9B to 375B-A23B parameters, designed for reasoning and agentic tasks. They introduce Mixture-of-Value Attention and softplus attention gating to strengthen reasoning capabilities.\n\nThe authors state that their 36B-A4B model nearly matches a 32B dense model with one-seventh the active parameters. They also report that Uno adapters speed up decoding by up to 2.2x. The listing does not specify the exact benchmark scores or the specific agentic benchmarks used for the competitive comparisons.\n\nResearchers interested in open-source model architectures, mixture-of-experts efficiency, or diffusion-based decoding acceleration may find the technical details relevant. Those requiring specific benchmark comparisons against closed-source frontier models may need to verify the detailed evaluation tables in the full paper.",
+      "abstract": "We present K2-Horizon, a fleet of six fully open language models, from a 0.9B dense model to a 375B-A23B MoE, built for general-purpose reasoning and agentic work across math and science, software engineering, deep research, office automation, and beyond. The models lead or are competitive with strong open models of their size on agentic and coding benchmarks. On the modeling side, to strengthen reasoning, we introduce Mixture-of-Value Attention (MoVA), applying MoE to attention value projections, and softplus attention gating, a more flexible, theoretically motivated gate. Our 36B-A4B model uses both and nearly matches a 32B dense model trained on the same data, with one-seventh the active parameters. We also introduce Uno, lossless diffusion adapters that speed up decoding by up to 2.2x without a separate draft model. Our release follows the LLM360 definition of open source for transparency and reproducibility: the full development history, including intermediate checkpoints from every training stage, pre-training data, training logs, and all training, evaluation, and infrastructure code, notably our production-scale xLLM framework for dense and MoE training and the RL360 reinforcement-learning stack. Beyond the data itself, we release and document in detail every pipeline that built it, the part of model development that open releases most rarely disclose. These pipelines produced roughly 10T synthetic pre-training tokens, showing that synthetic data can be a major ingredient of pre-training at scale. Four of the models share one 22T-token pre-training corpus and recipe, revealing consistent scaling behavior and enabling controlled studies of scale and sparsity. All artifacts are available at https://ifm.ai/k2/",
+      "takeaways": [
+        "The object is a fleet of six open-source language models, including dense and mixture-of-experts variants, with a focus on agentic and coding capabilities.",
+        "A visible limit is the lack of specific benchmark names or numerical scores in the abstract for the claimed competitive performance against strong open models.",
+        "The artifact status is described as fully open source, including intermediate checkpoints, pre-training data, training logs, and infrastructure code, with a provided URL for access."
+      ],
+      "plain": {
+        "reported": "The authors report that their 36B-A4B model performs almost as well as a 32B dense model trained on the same data, while using only one-seventh of the active parameters.",
+        "brief": "The authors claim to release a group of six open language models, ranging from a small 0.9 billion parameter model to a large 375 billion parameter mixture-of-experts model. These models are designed for general reasoning and tasks like software engineering and office automation. They introduce new attention mechanisms to improve reasoning.\n\nThe authors state that their 36B-A4B model performs almost as well as a 32B dense model but uses significantly fewer active parameters. They also report that their Uno adapters speed up the text generation process by up to 2.2 times. The abstract does not list the specific test scores or the names of the benchmarks used to compare these models against other open models.\n\nPeople working on open-source AI models, efficient model architectures, or faster text generation might find this useful. Those who need to compare these models against specific closed-source AI systems should look at the detailed results in the full paper.",
+        "takeaways": [
+          "The main subject is a set of six open-source AI models, including both standard and mixture-of-experts types, focused on reasoning and coding tasks.",
+          "A limitation is that the abstract does not provide the specific test scores or the names of the benchmarks used to show the models are competitive.",
+          "The authors state that all model components, data, and code are released openly, with a link provided for access."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark names and numerical scores for the 36B-A4B model comparison against the 32B dense model in the full PDF.",
+        "Check the provided URL to confirm the availability and completeness of the released artifacts, including the xLLM framework and RL360 stack."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-17",
+        "publishedOn": "2026-11-16",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.21003",
+            "upvotes": 67
+          }
+        ]
+      },
+      "trend": {
+        "votes": 67,
+        "rank": 3,
+        "of": 34,
+        "perDay": 67
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 67,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-17T21:52:10.825Z"
+      }
+    },
+    {
+      "id": "2611.19937",
+      "arxivId": "2611.19937",
+      "url": "https://arxiv.org/abs/2611.19937",
+      "topic": "AI",
+      "reported": "The authors report that on hourly cryptocurrency perpetual futures, RL refinement raises the annualized net return of the imitation policy from 27.79% to 51.38% and its Calmar ratio from 0.955 to 4.043, surpassing the teacher strategy on every metric, and AllocFlow reaches a Calmar ratio of 4.90 on six further months",
+      "metrics": [
+        "annualized net return of the imitation policy from 27.79% to 51.38%",
+        "Calmar ratio from 0.955 to 4.043",
+        "Calmar ratio of 4.90 on six further months"
+      ],
+      "title": "AllocFlow: End-to-End Portfolio Trading Action Generation from Raw Market Data",
+      "authors": "Annan Wang, Yuchen Xie, Yu Cen, Leon Liangyu Chen, Qianyu Julie Zhu, Xin Li, Tianyi Wei, Weisi Lin",
+      "takeaway": "AllocFlow is an end-to-end flow-matching framework that directly generates joint portfolio allocations from raw multi-asset market histories using a cross-asset flow Transformer and a two-stage training scheme.",
+      "brief": "The authors propose AllocFlow, an end-to-end framework that generates joint portfolio allocations directly from raw market data using flow matching and a cross-asset Transformer. They report that reinforcement learning refinement improves annualized net return and Calmar ratio on hourly cryptocurrency perpetual futures, with the model reaching a Calmar ratio of 4.90 on unseen 2026 data without retraining.\n\nThe listing specifies results on hourly cryptocurrency perpetual futures and mentions a two-stage training scheme involving imitation and group-relative reinforcement learning. It does not establish generalizability to other asset classes, transaction cost sensitivity, or out-of-sample performance beyond the specified six months of 2026 data.\n\nResearchers working on end-to-end portfolio construction, flow matching for financial time series, or reinforcement learning for trading may find the specific architecture and training scheme relevant. Those focused on traditional decoupled forecasting pipelines or non-cryptocurrency asset classes should verify the applicability of the reported metrics to their specific constraints.",
+      "abstract": "Real-world portfolio management requires converting noisy market observations into coordinated, simultaneous allocations across multiple assets under shared capital constraints. Advances in forecasting models and alpha discovery help identify opportunities. However, traditional pipelines often decouple signal forecasting from portfolio construction, potentially misaligning learning with allocation and execution objectives. We present AllocFlow, an end-to-end flow-matching framework that directly generates joint portfolio allocations from raw multi-asset market histories. To capture dependencies among portfolio positions, AllocFlow employs a cross-asset flow Transformer conditioned on temporal market representations to generate continuous, signed position weights across all instruments jointly. To address the sample inefficiency and instability of learning continuous allocation policies from scratch, we establish a two-stage training scheme: strategy-supervised imitation shapes a structured distribution of candidate portfolios, followed by group-relative reinforcement learning (RL) that refines joint decisions using portfolio-level financial rewards and a frozen policy reference. On hourly cryptocurrency perpetual futures, RL refinement raises the annualized net return of the imitation policy from 27.79% to 51.38% and its Calmar ratio from 0.955 to 4.043, surpassing the teacher strategy on every metric, and AllocFlow reaches a Calmar ratio of 4.90 on six further months of unseen 2026 data without retraining.",
+      "takeaways": [
+        "The object is an end-to-end flow-matching framework for joint portfolio allocation generation from raw market histories.",
+        "A visible limit is that reported results are specific to hourly cryptocurrency perpetual futures and a defined period of unseen 2026 data.",
+        "The artifact status is indicated by a declared GitHub repository URL, though the listing does not confirm code completeness or reproducibility."
+      ],
+      "plain": {
+        "reported": "The authors report that on hourly cryptocurrency perpetual futures, RL refinement raises the annualized net return of the imitation policy from 27.79% to 51.38% and its Calmar ratio from 0.955 to 4.043, surpassing the teacher strategy on every metric, and AllocFlow reaches a Calmar ratio of 4.90 on six further months",
+        "brief": "The authors propose AllocFlow, a system that creates investment plans for multiple assets at once using raw market data. It uses a specific type of AI model called flow matching and a Transformer architecture to decide how much to invest in each asset. They report that a training method called reinforcement learning improved the system's profit and risk-adjusted return on cryptocurrency futures, with the model achieving a specific risk-adjusted score on new data from 2026.\n\nThe listing only shows results for cryptocurrency futures traded hourly. It mentions a two-step training process but does not explain how well the system works with other types of investments like stocks or bonds. It also does not detail how the system handles trading fees or the cost of buying and selling assets.\n\nPeople who build AI systems for managing money or who study how to use flow matching in finance might find this useful. People who invest in traditional markets or who rely on separate forecasting and trading steps should check if this method fits their needs before considering it.",
+        "takeaways": [
+          "The system creates investment plans for multiple assets at once using raw market data.",
+          "The results are only shown for cryptocurrency futures and a specific time period.",
+          "A link to a code repository is provided, but it is not confirmed if the code is complete or works as described."
+        ]
+      },
+      "actions": [
+        "Verify the declared GitHub repository URL to confirm the availability of code, data, and training scripts.",
+        "Review the full PDF to check for details on transaction costs, slippage assumptions, and the specific definition of the 'teacher strategy' used for comparison."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/allocflow/AllocFlow",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-17",
+        "publishedOn": "2026-11-15",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.19937",
+            "upvotes": 67
+          }
+        ]
+      },
+      "trend": {
+        "votes": 67,
+        "rank": 2,
+        "of": 34,
+        "perDay": 34
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 67,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-15"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-17T21:52:10.825Z"
+      }
+    },
+    {
+      "id": "2611.21218",
+      "arxivId": "2611.21218",
+      "url": "https://arxiv.org/abs/2611.21218",
+      "topic": "AI",
+      "reported": "The authors report that overall scores for frontier large language models on the InclusionMed Index ranged from 17.5 to 49.1 out of 100.",
+      "metrics": [
+        "17.5 to 49.1 out of 100",
+        "four public benchmarks from 388 candidates"
+      ],
+      "title": "InclusionMed: Benchmarking AI for Inclusive Healthcare",
+      "authors": "The InclusionMed Collaboration",
+      "takeaway": "The paper introduces InclusionMed, an open medical AI evaluation initiative that organizes benchmarks across healthcare roles and AI capabilities to assess inclusive healthcare performance.",
+      "brief": "The authors present InclusionMed as an open evaluation initiative for inclusive healthcare, featuring an Atlas that organizes benchmarks across three healthcare roles and three AI capabilities. For the first release, they selected four public benchmarks from 388 candidates and added a private diagnostic reasoning benchmark, covering three of nine role-capability cells.\n\nThe authors evaluated frontier large language models, aggregating results into the InclusionMed Index with scores ranging from 17.5 to 49.1 out of 100. They report that model ranks varied by role or capability, and that the ten highest-ranked models scored higher on patient communication than clinical decision-making. The listing does not establish specific limitations regarding the generalizability of these four benchmarks to all healthcare settings.\n\nResearchers evaluating medical AI across diverse roles and capabilities may find this structured benchmarking approach relevant. Those focused solely on single-task clinical decision-making without interest in cross-role comparisons may find the scope less applicable.",
+      "abstract": "Advancing medical AI for inclusive healthcare requires evaluation across diverse healthcare roles, tasks, and care settings, but benchmark coverage remains uneven. We introduce InclusionMed, an open medical AI evaluation initiative for inclusive healthcare. The InclusionMed Atlas organizes benchmarks across three healthcare roles and three AI capabilities. For the first release, we selected four public benchmarks from 388 candidates through structured audits and independent reproduction. With InclusionMed-DxFiles, our private diagnostic reasoning benchmark, the Atlas contains five benchmarks covering three of its nine role--capability cells. We evaluated frontier large language models on the Atlas and aggregated their results into the InclusionMed Index, with overall scores ranging from 17.5 to 49.1 out of 100. The Index also reports scores by healthcare role and AI capability, showing that a model's rank varied with the role or capability considered. A within-benchmark analysis using task-level tags showed that the ten highest-ranked models in the Index all scored higher on patient communication than on clinical decision-making. Models with similar Index scores also differed substantially in estimated inference cost. These findings highlight the need for evaluation covering more diverse healthcare needs and for context-specific model selection. Through open collaboration and community contributions, InclusionMed seeks to ensure that diverse healthcare needs worldwide shape how medical AI progress is defined and measured.",
+      "takeaways": [
+        "The object is an open evaluation initiative and index for medical AI, not a single new model or dataset.",
+        "The visible limit is that the first release covers only three of nine role-capability cells, leaving significant gaps in benchmark coverage.",
+        "The artifact status is declared as open with a provided GitHub repository URL, though the private diagnostic benchmark is not publicly accessible."
+      ],
+      "plain": {
+        "reported": "The authors state that the top-performing AI models they tested got scores between 17.5 and 49.1 on a scale of 100.",
+        "brief": "The creators built a new testing system called InclusionMed to check how well AI works in different medical jobs and settings. They picked four existing public tests from a list of 388 and added one private test for diagnosing diseases. This first version only covers three out of nine possible combinations of medical roles and AI skills.\n\nThey tested leading AI models and combined the results into a single score called the InclusionMed Index. The scores ranged from 17.5 to 49.1 out of 100. They found that the best models were better at talking to patients than at making medical decisions. The text does not say if these results apply to all types of medical care.\n\nPeople who want to test AI across many different medical jobs might find this useful. People who only care about one specific medical task might not need this broad testing system.",
+        "takeaways": [
+          "This is a new testing framework for medical AI, not a new AI model itself.",
+          "The current version only tests three out of nine possible medical role and skill combinations.",
+          "The project is open-source with a code link, but one of the tests is private and not available to everyone."
+        ]
+      },
+      "actions": [
+        "Verify the specific task-level tags and scoring methodology for the InclusionMed Index by reviewing the full PDF.",
+        "Check the GitHub repository to confirm the availability and reproducibility of the four selected public benchmarks."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/panuvi/inclusionmed",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-17",
+        "publishedOn": "2026-11-16",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.21218",
+            "upvotes": 62
+          }
+        ]
+      },
+      "trend": {
+        "votes": 62,
+        "rank": 4,
+        "of": 34,
+        "perDay": 62
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 62,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-17T21:52:10.825Z"
+      }
+    },
+    {
+      "id": "2611.20986",
+      "arxivId": "2611.20986",
+      "url": "https://arxiv.org/abs/2611.20986",
+      "topic": "Health",
+      "reported": "The authors report that their model achieves mean TM-scores of 0.808 on the FoldBench-334 development set, 0.635 on CASP16 domains, and 0.900 on a CAMEO-style PDB set.",
+      "metrics": [
+        "mean TM-scores of 0.808 on the FoldBench-334 development set",
+        "0.635 on CASP16 domains",
+        "0.900 on a CAMEO-style PDB set"
+      ],
+      "title": "Calpha: Toward Native Biomolecular Intelligence in a General-Purpose Language Model",
+      "authors": "Yong Liu, Zhanpeng Shi, Peicong Lin, Zhenyi Zhong, Yizhou Dang, Wendi Wu, Haoling Li, Shuangjia Zheng",
+      "takeaway": "Calpha aims to create a general-purpose language model that folds proteins and complexes, understands protein sequence and structure, and allows language reasoning to influence predicted structures.",
+      "brief": "The authors propose Calpha, a general-purpose language model designed to integrate biomolecular structure prediction with natural language reasoning. The current report details the first step, where an LLM outputs single-chain protein structures by invoking a pretrained structure head.\n\nThe authors report mean TM-scores of 0.808 on FoldBench-334, 0.635 on CASP16 domains, and 0.900 on a CAMEO-style PDB set. They note that for chains of 100--299 residues, confidence intervals include zero compared to a baseline, while long-chain scores are lower. Protein training reduced accuracy on a 350-item MMLU-Pro subset from 77.4% to 70.3%.\n\nResearchers working on integrating language models with structural biology may find the architecture relevant. Those requiring complex prediction or verified long-chain performance should note these are stated as future work or unresolved limits in the listing.",
+      "abstract": "Biomolecular foundation models predict the structures of proteins and their complexes accurately, and large language models (LLMs) reason in natural language, but the two remain separate: the abilities of the former are not part of a general-purpose LLM, and the reasoning of the latter does not enter a structure prediction. Calpha aims at one general model that folds proteins and complexes, understands protein sequence and structure, and lets its language reasoning influence the structures it predicts. This report covers the first step, in which an LLM outputs single-chain protein structures. Qwen3.5-9B reads a sequence enriched with ESM2 residue features. It can respond in text or emit a token that invokes a pretrained SimpleFold structure head, which receives information about the protein only through Qwen's residue states. Under a fixed folding request, the head achieves mean TM-scores of 0.808 on the FoldBench-334 development set, 0.635 on CASP16 domains and 0.900 on a CAMEO-style PDB set. We compare these predictions with a baseline in which ESM2-3B encodes the sequence and a fine-tuned SimpleFold-3B head predicts the coordinates. The two systems also differ in trainable weights, training duration and crop length. For chains of 100--299 residues, all three paired confidence intervals include zero. At 300--600 residues, the mean differences are -0.044, -0.160 and -0.025, respectively. In a separate test, four English request types triggered folding on every evaluated example. Protein training reduced accuracy on a 350-item MMLU-Pro subset from 77.4% to 70.3%. An LLM can therefore output single-chain structures from its own states, with lower long-chain scores in the current comparisons and reduced accuracy on the evaluated MMLU-Pro subset. Complex prediction, structure understanding and the effect of language reasoning on the predicted coordinates remain future work.",
+      "takeaways": [
+        "The object is a general-purpose LLM that outputs single-chain protein structures via a structure head.",
+        "A visible limit is the reduced accuracy on the evaluated MMLU-Pro subset and lower long-chain scores in current comparisons.",
+        "The artifact status is a report covering the first step, with complex prediction and structure understanding remaining future work."
+      ],
+      "plain": {
+        "reported": "The authors state that their system gets average structural similarity scores of 0.808 on a test set of 334 proteins, 0.635 on a specific competition set, and 0.900 on another standard test set.",
+        "brief": "The researchers created a system called Calpha that tries to combine a text-based AI with the ability to predict the 3D shapes of proteins. This report focuses on the first version, which can predict the shape of a single protein chain.\n\nThe authors say their system gets good scores on standard tests, but it performs worse than a simpler baseline method for longer proteins. They also note that training the system to predict protein shapes made it slightly worse at answering general knowledge questions.\n\nPeople interested in how AI can handle both text and scientific data might find this useful. However, the system cannot yet predict complex protein interactions, and its performance on long proteins is currently lower than other methods.",
+        "takeaways": [
+          "The system is a text AI that can predict the 3D shape of single protein chains.",
+          "A clear limitation is that it performs worse than other methods on long proteins and loses some general knowledge ability.",
+          "The current version only handles single chains; predicting complex interactions is planned for later."
+        ]
+      },
+      "actions": [
+        "Verify the specific TM-score values and MMLU-Pro accuracy drops by checking the full PDF against the abstract claims.",
+        "Inspect the provided GitHub repository to confirm the availability of the Qwen3.5-9B and SimpleFold components mentioned in the abstract."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/yliust/Calpha",
+      "tags": [
+        "q-bio.QM",
+        "cs.AI"
+      ],
+      "listing": {
+        "listedOn": "2026-11-17",
+        "publishedOn": "2026-11-16",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.20986",
+            "upvotes": 11
+          },
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.20986"
+          }
+        ]
+      },
+      "trend": {
+        "votes": 11,
+        "rank": 12,
+        "of": 34,
+        "perDay": 11
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 11,
+          "sourceCount": 2,
+          "publishedOn": "2026-11-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-17T21:52:10.825Z"
+      }
+    },
+    {
+      "id": "2611.18738",
+      "arxivId": "2611.18738",
+      "url": "https://arxiv.org/abs/2611.18738",
+      "topic": "Stats",
+      "reported": "The authors report that diffusion models under the manifold hypothesis exactly recover the support or data manifold, even when relative score estimation error is fixed and not necessarily vanishing.",
+      "metrics": [],
+      "title": "Support recovery of diffusion models under the manifold hypothesis",
+      "authors": "Ayya Alieva, Gautam Iyer, Alexei Novikov, Lenya Ryzhik",
+      "takeaway": "Diffusion models under the manifold hypothesis exactly recover the support of the data distribution despite possibly large score estimation and discretization errors.",
+      "brief": "The paper claims that diffusion models, when operating under the manifold hypothesis, will exactly recover the support or data manifold even if they do not exactly recover the full data distribution. This holds despite the presence of possibly large score estimation and discretization errors.\n\nThe authors report that in continuous time, the process approaches the support at a rate of $O(\\sqrt{(T-t)|\\log(T-t)|})$ as $t \\to T$, even with a fixed relative score estimation error. In discrete time, using geometric time steps, the process approaches the data manifold exponentially with the number of iterations. The proof relies on controlling a Gaussian measure of a neighborhood of the cut-locus, using polynomial approximation and quantitative semi-algebraic estimates. The listing does not specify empirical benchmarks or datasets used to validate these theoretical rates.\n\nResearchers working on the theoretical foundations of diffusion models, particularly those interested in the relationship between score estimation errors and data manifold recovery, may find this relevant. Those seeking empirical performance comparisons on specific image or audio datasets may find the listing insufficient for their needs.",
+      "abstract": "We study diffusion models under the manifold hypothesis with possibly large score estimation and discretization errors, and show that while they may not exactly recover the data distribution, they will exactly recover the support (or data manifold). In continuous time, we use a Lyapunov function to show that even if the relative score estimation error is fixed (and not necessarily vanishing), then the rate at which the process approaches the support is $O(\\sqrt{(T-t)|\\log(T-t)|})$ as $t \\to T$, where $T$ is the final time. In discrete time, we use geometric time steps with a fixed (non-vanishing) ratio and show that with a fixed (also not small) relative score estimation error, the process approaches the data manifold exponentially with the number of iterations. The proof relies on controlling a Gaussian measure of a neighborhood of the cut-locus of the data manifold, using a polynomial approximation argument combined with quantitative semi-algebraic estimates.",
+      "takeaways": [
+        "The object is the theoretical recovery of the data support by diffusion models under the manifold hypothesis, not the recovery of the full probability density.",
+        "A visible limit is the reliance on the manifold hypothesis and the specific geometric conditions on the cut-locus, which may not hold for all data distributions.",
+        "The artifact status is theoretical; the listing provides no code, datasets, or empirical results, only mathematical proofs and rate bounds."
+      ],
+      "plain": {
+        "reported": "The authors report that diffusion models under the manifold hypothesis exactly recover the support or data manifold, even when relative score estimation error is fixed and not necessarily vanishing.",
+        "brief": "The paper claims that diffusion models, when operating under the manifold hypothesis, will exactly recover the support or data manifold even if they do not exactly recover the full data distribution. This holds despite the presence of possibly large score estimation and discretization errors.\n\nThe authors report that in continuous time, the process approaches the support at a rate of $O(\\sqrt{(T-t)|\\log(T-t)|})$ as $t \\to T$, even with a fixed relative score estimation error. In discrete time, using geometric time steps, the process approaches the data manifold exponentially with the number of iterations. The proof relies on controlling a Gaussian measure of a neighborhood of the cut-locus, using polynomial approximation and quantitative semi-algebraic estimates. The listing does not specify empirical benchmarks or datasets used to validate these theoretical rates.\n\nResearchers working on the theoretical foundations of diffusion models, particularly those interested in the relationship between score estimation errors and data manifold recovery, may find this relevant. Those seeking empirical performance comparisons on specific image or audio datasets may find the listing insufficient for their needs.",
+        "takeaways": [
+          "The object is the theoretical recovery of the data support by diffusion models under the manifold hypothesis, not the recovery of the full probability density.",
+          "A visible limit is the reliance on the manifold hypothesis and the specific geometric conditions on the cut-locus, which may not hold for all data distributions.",
+          "The artifact status is theoretical; the listing provides no code, datasets, or empirical results, only mathematical proofs and rate bounds."
+        ]
+      },
+      "actions": [
+        "Verify the specific assumptions on the data manifold and cut-locus in the PDF to determine if they apply to your target data distribution.",
+        "Check the PDF for any empirical validation or simulation results that demonstrate the claimed convergence rates in practice."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "math.ST",
+        "math.PR",
+        "stat.TH"
+      ],
+      "listing": {
+        "listedOn": "2026-11-17",
+        "publishedOn": "2026-11-17",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.18738"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-17"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-17T21:52:10.825Z"
+      }
+    },
+    {
+      "id": "2611.18755",
+      "arxivId": "2611.18755",
+      "url": "https://arxiv.org/abs/2611.18755",
+      "topic": "Physics",
+      "reported": "The authors report that longitudinal T1 relaxation induces a 12.23 : 1 directional survival-error split on a standard polar sqrt{X} gate.",
+      "metrics": [
+        "12.23 : 1 directional survival-error split",
+        "0.081767",
+        "0.052456"
+      ],
+      "title": "Directional gate-error asymmetry and universal selectivity bounds in non-unital open quantum systems",
+      "authors": "Amritash Patra",
+      "takeaway": "The paper claims to provide a trajectory-level analytical framework that bounds directional transition selectivity across arbitrary pulse shapes and Markovian environments.",
+      "brief": "The authors propose a first-order toggling-frame perturbation theory framework for two-level qubits coupled to Markovian baths. They argue this approach reveals state-dependent transition-error asymmetries concealed by standard randomized benchmarking metrics.\n\nThe strongest reported result is a 12.23 : 1 directional survival-error split on a standard polar sqrt{X} gate under longitudinal T1 relaxation. The authors also derive a universal selectivity bound of approximately 0.052456 for time-independent single-qubit pi swaps. The listing does not specify experimental validation or hardware-specific performance metrics beyond the theoretical derivations.\n\nResearchers working on open quantum systems, error characterization, or pulse optimization may find the analytical bounds useful. Those relying solely on standard benchmarking averages without interest in trajectory-level asymmetries may find the specific directional metrics less relevant.",
+      "abstract": "Clifford randomized benchmarking and average gate fidelity assign a single trajectory-independent decay rate to a noisy quantum gate at leading order in the dimensionless damping exposure \\varepsilon = \\gamma T, concealing state-dependent transition-error asymmetries in untwirled quantum circuits. While state-dependent amplitude-damping errors are well known in open quantum systems, a trajectory-level analytical framework that bounds directional transition selectivity across arbitrary pulse shapes and Markovian environments has been lacking. Using first-order toggling-frame perturbation theory for a two-level qubit coupled to a Markovian bath, we show that the antipodal survival-error slopes \\chi_+ and \\chi_- along any piecewise-continuous control path depend exclusively on its time-averaged Bloch vector m and transverse residence covariance matrix G, obeying the complete-positivity cofactor bound \\beta(r) \\le 1. On a standard polar \\sqrt{X} gate, longitudinal T_1 relaxation induces a 12.23 : 1 directional survival-error split (\\kappa_{T_1} = (3\\pi - 8)/(3\\pi + 8) \\approx 0.081767), whereas time-symmetric X rotations maintain an exact 1 : 1 balance (\\kappa_{T_1} = 1). Across all completely positive Markovian generators, coupling between non-unital drift and unital diffusion enforces a selectivity bound \\kappa_\\star = (\\pi - 2\\sqrt{2})/(\\pi + 2\\sqrt{2}) \\approx 0.052456 (19.06 : 1) for time-independent single-qubit \\pi swaps. We apply this framework to Gaussian and derivative-removal-by-adiabatic-gate (DRAG) waveforms on superconducting transmons and trapped-ion qubits, extend the analysis to finite damping, pulse dwell, colored thermal baths, and qutrit leakage, and construct two-branch differential lock-in protocols that isolate directional error splits immune to first-order state-preparation and measurement errors.",
+      "takeaways": [
+        "The object is a theoretical analytical framework for bounding directional transition selectivity in non-unital open quantum systems.",
+        "A visible limit is that the framework relies on first-order perturbation theory and specific assumptions about Markovian environments and two-level qubits.",
+        "The artifact status is theoretical; no code or experimental dataset is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that a specific type of energy loss causes a 12.23 to 1 difference in error rates between two opposite directions on a standard quantum gate.",
+        "brief": "The authors create a mathematical model to predict how quantum errors vary depending on the specific path a quantum bit takes during an operation. They argue that standard testing methods hide these specific directional differences.\n\nThe main result is a calculated 12.23 to 1 error difference for a specific gate operation. They also calculate a minimum possible error ratio of about 0.052456 for certain operations. The text does not say if these predictions were tested on real physical hardware.\n\nPeople studying how quantum computers lose information or how to design better control pulses might find this useful. People who only care about average error rates and not the specific direction of errors might not need this detail.",
+        "takeaways": [
+          "The paper provides a mathematical tool to predict directional error differences in quantum systems.",
+          "The model assumes a simple environment and uses an approximation method, which may limit its accuracy for complex real-world systems.",
+          "The paper presents theoretical results and does not include code or experimental data in the listing."
+        ]
+      },
+      "actions": [
+        "Verify the derivation of the complete-positivity cofactor bound in the full PDF to ensure the mathematical assumptions hold for the target hardware.",
+        "Check the application section for specific parameter values used in the Gaussian and DRAG waveform simulations to assess practical applicability."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-11-17",
+        "publishedOn": "2026-11-17",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.18755"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-17"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-17T21:52:10.825Z"
+      }
+    },
+    {
+      "id": "2611.18767",
+      "arxivId": "2611.18767",
+      "url": "https://arxiv.org/abs/2611.18767",
+      "topic": "Econ",
+      "reported": "The authors report that reproducible numerical illustrations and channel-removal exercises show that opposite outcomes are compatible with the same assumed fiscal stress.",
+      "metrics": [],
+      "title": "China's Local Government Debt, Strategic Competition, and Bitcoin Demand: A Conditional Transmission Framework",
+      "authors": "Bit Sun",
+      "takeaway": "The paper develops a conditional framework connecting debt accounting, bank balance-sheet adjustment, public spending priorities, and constrained portfolio substitution to evaluate transmission claims.",
+      "brief": "The paper develops a conditional framework connecting debt accounting, bank balance-sheet adjustment, public spending priorities, and constrained portfolio substitution to evaluate transmission claims.\n\nThe authors report that reproducible numerical illustrations and channel-removal exercises show that opposite outcomes are compatible with the same assumed fiscal stress. The analysis uses dated primary sources to establish institutional context, but estimates neither a debt-to-Bitcoin causal coefficient nor a price-impact scale.\n\nResearchers evaluating transmission claims in macro-finance may find the measurement distinctions useful. Those seeking unconditional price forecasts or causal coefficients should note the explicit absence of such estimates.",
+      "abstract": "How might the resolution of China's local-government debt affect strategic competition and Bitcoin demand? This paper develops a conditional framework connecting debt accounting, bank balance-sheet adjustment, public spending priorities, and constrained portfolio substitution. A debt swap can increase recognized government debt without increasing consolidated principal, while its effect on credit capacity depends on capital relief, loss recognition, and recapitalization. A protected strategic-spending floor can preserve current effort while shifting adjustment toward civilian productive services. In the asset block, stronger relative preference for Bitcoin does not ensure greater effective demand: access constraints and global funding conditions can reverse the sign. We derive a finite-shock threshold and deterministic sign bounds, and distinguish Bitcoin demand from demand for dollar stablecoins. Reproducible numerical illustrations and channel-removal exercises show that opposite outcomes are compatible with the same assumed fiscal stress. The analysis uses dated primary sources to establish institutional context, but estimates neither a debt-to-Bitcoin causal coefficient nor a price-impact scale. Its contribution is a compact set of conditions and measurement distinctions for evaluating transmission claims, rather than an unconditional price forecast or an inference about conflict probabilities.",
+      "takeaways": [
+        "The object is a conditional transmission framework linking Chinese local-government debt resolution to Bitcoin demand via specific accounting and portfolio channels.",
+        "A visible limit is the explicit exclusion of causal coefficients and price-impact scale estimates, relying instead on institutional context and numerical illustrations.",
+        "The artifact status is a theoretical and illustrative framework, not an empirical estimation model or predictive tool."
+      ],
+      "plain": {
+        "reported": "The authors report that reproducible numerical illustrations and channel-removal exercises show that opposite outcomes are compatible with the same assumed fiscal stress.",
+        "brief": "The paper builds a set of rules to see how fixing China's local government debt might change competition and how much people want Bitcoin.\n\nThe authors show that their math examples can lead to different results depending on which parts of the system you change. They use official documents to set the background but do not calculate a direct cause-and-effect number between debt and Bitcoin prices.\n\nPeople studying how money moves between governments and markets might find the rules helpful. People looking for a prediction of Bitcoin's future price should note that the paper does not provide one.",
+        "takeaways": [
+          "The paper is a set of rules connecting Chinese debt fixes to Bitcoin interest.",
+          "The main limit is that it does not calculate a direct cause-and-effect number or price impact.",
+          "It is a theoretical model with examples, not a tool for predicting prices."
+        ]
+      },
+      "actions": [
+        "Verify the specific conditions and measurement distinctions in the full PDF to assess their applicability to your research context.",
+        "Check the cited primary sources to confirm the institutional context assumptions used in the numerical illustrations."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-11-17",
+        "publishedOn": "2026-11-17",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.18767"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-17"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-17T21:52:10.825Z"
+      }
+    },
+    {
+      "id": "2611.18874",
+      "arxivId": "2611.18874",
+      "url": "https://arxiv.org/abs/2611.18874",
+      "topic": "Security",
+      "reported": "The authors report that Stargate blocks all 11 representative attacks across four attack classes while introducing only 1.42 ms of additional median round-trip latency on a virtual testbed based on a real-world CubeSat mission and flight software.",
+      "metrics": [
+        "11 representative attacks",
+        "1.42 ms of additional median round-trip latency"
+      ],
+      "title": "Stargate: Security Analysis and Mission-Aware Firewall for the CubeSat Space Protocol",
+      "authors": "Owen Ramsey, Carlos Gonzalez-Cortes, Efren Lopez-Morales",
+      "takeaway": "The paper presents a systematic security analysis of the CubeSat Space Protocol and introduces Stargate, a modular, mission-aware firewall that enforces CSP-specific policies derived from a taxonomy of four attack classes.",
+      "brief": "The authors claim to identify fundamental limitations in CSP trust assumptions and introduce Stargate, a firewall enforcing node authorization, command filtering, and mission-context constraints.\n\nThey report blocking 11 representative attacks with 1.42 ms median latency overhead on a virtual testbed using real-world mission data. The listing does not establish whether the virtual testbed fully replicates physical hardware constraints or long-term operational stability.\n\nResearchers working on satellite network security or protocol design may find the taxonomy and firewall implementation relevant. Those focused solely on terrestrial network security or hardware-level cryptography may find the specific CSP context less applicable.",
+      "abstract": "The CubeSat Space Protocol (CSP) is widely used for communication in CubeSat missions, yet its security model and attack surface remain largely unexplored. In this work, we present a systematic security analysis of CSP and identify fundamental limitations in its trust assumptions, coarse-grained network abstractions, privileged management services, application command semantics, and lack of mission-context awareness. Based on these findings, we develop a taxonomy of CSP attacks spanning four classes: network identity abuse, management service abuse, application semantic abuse, and mission context abuse. We then introduce Stargate, a modular, mission-aware firewall that enforces CSP-specific policies derived from this taxonomy, including node and service authorization, command-level filtering, and mission-context constraints. We implement Stargate and evaluate it on a virtual testbed based on a real-world CubeSat mission and flight software. Stargate successfully blocks all 11 representative attacks across the four attack classes while introducing only 1.42 ms of additional median round-trip latency. Our results demonstrate that protocol- and mission-aware policy enforcement provides a practical approach for securing CSP-based spacecraft networks.",
+      "takeaways": [
+        "The object is a software firewall module designed specifically for the CubeSat Space Protocol, not a general-purpose network security tool.",
+        "A visible limit is the reliance on a virtual testbed, which may not capture all physical layer or timing artifacts of actual space hardware.",
+        "The artifact status is an implemented system evaluated in simulation, with no declared public code repository provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors state that their firewall stopped 11 specific types of simulated attacks and added only 1.42 milliseconds to the average time it took for a message to go back and forth, tested on a computer simulation of a real satellite mission.",
+        "brief": "The authors say they found weak spots in how small satellites talk to each other and built a digital gatekeeper called Stargate that checks messages against specific rules.\n\nThey show that this gatekeeper stopped 11 simulated attacks and slowed down communication by a tiny amount, 1.42 milliseconds, in a computer model. It is not yet clear if this performance holds up on actual physical hardware in space.\n\nPeople who design or secure communication for small satellites might find this useful. People who work on regular internet security or physical hardware encryption might not find it directly relevant.",
+        "takeaways": [
+          "This is a software tool made specifically for a particular type of satellite communication protocol, not a general security app.",
+          "The test was done on a computer simulation, so it might not show all the problems that happen with real physical equipment in space.",
+          "The authors built and tested the system, but the listing does not say if the code is available for others to download and check."
+        ]
+      },
+      "actions": [
+        "Verify the specific flight software version and testbed configuration details in the full PDF to assess reproducibility.",
+        "Check the paper’s discussion of threat models to confirm whether physical layer attacks are excluded from the scope."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.NI"
+      ],
+      "listing": {
+        "listedOn": "2026-11-17",
+        "publishedOn": "2026-11-17",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.18874"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-17"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-17T21:52:10.825Z"
+      }
+    },
+    {
+      "id": "2611.19057",
+      "arxivId": "2611.19057",
+      "url": "https://arxiv.org/abs/2611.19057",
+      "topic": "Engineering",
+      "reported": "The authors report that their proposed non-uniform array design outperforms fixed uniform and non-uniform array benchmarks in simulation, requiring fewer active antennas to achieve a required sensing performance.",
+      "metrics": [],
+      "title": "Non-Uniform Array Configuration and Antenna Deactivation for Energy-Efficient Sensing",
+      "authors": "Parisa Ramezani, Meesam Jafri, Marina Petrova, Emil Bj{\\\"o}rnson",
+      "takeaway": "The paper proposes a non-uniform array design framework for energy-efficient multi-target sensing by jointly optimizing antenna configuration and the transmit covariance matrix.",
+      "brief": "The authors propose a framework that jointly optimizes antenna selection and transmit covariance to improve energy efficiency in multi-target sensing. They use simulated annealing for antenna placement and convex semidefinite programming for the transmit covariance matrix.\n\nThe authors state that simulation results show the design outperforms fixed uniform and non-uniform benchmarks while using fewer active antennas. The listing does not specify the exact quantitative performance gap, the specific simulation environment, or the computational cost of the simulated annealing search.\n\nResearchers working on radar array design, energy-efficient sensing, or convex optimization for antenna configuration may find the methodological combination relevant. Those seeking specific hardware implementation details or large-scale experimental validation may find the listing insufficient.",
+      "abstract": "This paper proposes a non-uniform array design framework for energy-efficient multi-target sensing by jointly optimizing the antenna configuration and the transmit covariance matrix (TCM). To begin with, a limited number of antennas are selected from a set of antenna locations to maximize the minimum mainlobe-to-peak-sidelobe-level ratio (MMPSR) over a sensing region. Next, the antenna configuration is optimized using a simulated annealing (SA)-based search, while a TCM optimization problem is formulated using Charnes-Cooper transformation and solved as a convex semidefinite program for each fixed configuration. Subsequently, an adaptive antenna deactivation strategy is developed to determine the maximum number of antennas that can be switched off while satisfying an MMPSR requirement. Finally, simulation results demonstrate that the proposed non-uniform array design outperforms fixed uniform and non-uniform array benchmarks and requires fewer active antennas to achieve a required sensing performance, thereby supporting energy-efficient sensing.",
+      "takeaways": [
+        "The core object is a joint optimization framework combining discrete antenna selection via simulated annealing with continuous transmit covariance optimization via semidefinite programming.",
+        "A visible limit is the reliance on simulation results without specified quantitative benchmarks or hardware validation in the provided abstract.",
+        "The artifact status is not established in the listing, as no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors say their computer model shows their antenna setup works better than standard setups and uses fewer active antennas to get the same sensing results.",
+        "brief": "The authors suggest a way to arrange antennas unevenly to save energy while still detecting multiple targets. They use a computer search method to pick antenna positions and a mathematical optimization method to control how signals are sent.\n\nThe authors claim their computer tests show their method beats standard even or uneven antenna setups and uses fewer active antennas. The summary does not say exactly how much better it is, what kind of computer tests were run, or how long the computer search takes.\n\nPeople who design radar systems or want to save energy in sensing technology might find this useful. People who need real-world hardware proof or specific numbers might not find enough information here.",
+        "takeaways": [
+          "The main idea is a computer method that picks antenna positions and controls signal strength together to save energy.",
+          "A clear limitation is that the results are only from computer simulations, and the summary does not give specific numbers or real-world tests.",
+          "It is not stated whether the authors have shared their computer code or detailed instructions for using the method."
+        ]
+      },
+      "actions": [
+        "Verify the specific simulation parameters and quantitative performance metrics by reading the full PDF.",
+        "Check the paper's references and methodology section to assess the computational complexity of the simulated annealing component."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-11-17",
+        "publishedOn": "2026-11-17",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.19057"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-17"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-17T21:52:10.825Z"
+      }
+    }
+  ]
+}
