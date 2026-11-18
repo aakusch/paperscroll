@@ -1,0 +1,665 @@
+{
+  "date": "2026-11-18",
+  "label": "Wed, Nov 18",
+  "minutes": 10,
+  "poolSize": 127,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-11-18T22:32:24.809Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2611.22115",
+      "arxivId": "2611.22115",
+      "url": "https://arxiv.org/abs/2611.22115",
+      "topic": "AI",
+      "reported": "The authors report that their infrastructure supports the pretraining of a 285B-parameter model on 8,192 Ascend 910C cards.",
+      "metrics": [
+        "285B-parameter model",
+        "8,192 Ascend 910C cards"
+      ],
+      "title": "TeleChat to Xing4: Advancing Frontier Agentic Models on Domestic Chips and Frameworks",
+      "authors": "Xingchen AGI Lab, Baotian Hu, Bingkai Yang, Boyang Wang, Changzai Pan, Chao Lyu, Chao Wang, Chen Li, Chenshuo Pan, Chenyu Lin, Chenyuan Zhang, Chongming Liu, Dawei Fan, Di Wu, Dong Guo, Dong Li, Dongfang Li, Enlin Liu, Fanye Xiao, Fengkai Li, Fubei Yao, Gang Lin, Han Gao, Hanming Wu, Haowei He, Huapeng Liu, Hua Wang, Huinan Xu, Jiahong Xiong, Jiaxin Peng, Jianxiang Ma, Jianxing Zhuge, Jie Zhang, Ji Xiong, Jinglin Chen, Jingqi Li, Jingxuan Li, Jiwang Ye, Junchen Li, Junbiao Li, Junyang Wu, Kaidong Yu, Kaipeng Jia, Kehai Chen, Kuai Li, Laobin Liu, Lei Li, Libo Qin, Lingling Shi, Luwen Pu, Menghao Xu, Mengjiao Bao, Mengqi Chen, Min Zhang, Mingrui Wang, Naying Wang, Peicong Han, Peiming Guo, Pengfei Li, Qiang Feng, Qi Wang, Qingjun Zhu, Qingli Li, Qitai Ding, Qiyi Xie, Quanchao Zhao, Rongbao Han, Rui Xue, Ruiyu Fang, Ruiting Song, Shijie Li, Shiquan Wang, Shuangyong Song, Sishi Xiong, Teng Su, Wankang Bao, Weijie Zhang, Wei Mao, Weiwei Fu, Weiyang Huang, Wenmin Deng, Wenqing Hu, Wujie Zhong, Xi Yu, Xiaohui Hu, Xiaomin Fang, Xiaomeng Huang, Xiaoqiong Shi, Xiaotong Shang, Xiaoyu Li, Xinglei Xu, Xin Jiang, Xin Wang, Xin Zhang, Xinzhang Liu, Xue Liu, Xuefeng Bai, Xuewei He, Yahan Li, Yanhan Zhang, Yanlei Xue, Yanzhang Wu, Yang Yu, Yi Liu, Yin Zhang, Yingyan Li, Yitong Yao, Yixuan Li, Yongqiang Xia, Yongxiang Li, Yinzhou Zhu, Yu Zhao, Yuhao Jiang, Yunpeng Zhang, Yuting Lin, Yuxuan Wu, Yuyao Huang, Yuyi Wang, Zebo Peng, Zhenwu Pei, Zhenxiong Li, Zhao Wang, Zhaoxi Zhang, Zhihao Yang, Zhiqiang Dong, Zhiwei Yan, Zhilong Lu, Zhonghao Guo, Zhongheng Wu, Zhongjiang He, Zhongqiu Li, Zhu Yuan, Zhuoru Jiang, Zhuoyi Wei, Zijia Guo, Zilu Huang, Zhipeng Guo, Zirui Li, Zihan Wang",
+      "takeaway": "The paper presents Xing 4, a series of large language models extending the TeleChat lineage through coordinated advances in architecture and training infrastructure on Ascend chips.",
+      "brief": "The authors describe the design principles and systems engineering behind the Xing 4 series, spanning architecture selection, large-scale pretraining, and reasoning and agentic post-training. They study how sparse activation, attention design, model depth and width, and speculative decoding balance model capacity with computation, memory access, and execution overhead.\n\nThe strongest reported result is the pretraining of a 285B-parameter model on 8,192 Ascend 910C cards, providing a concrete setting for the architectural and systems studies. The abstract does not provide quantitative benchmarks for model quality, such as accuracy or loss, nor does it specify the performance gains from the proposed architectural changes compared to baselines. It also does not detail the specific metrics used to evaluate the agentic post-training platform, TeleGym.\n\nResearchers working on large-scale model training on domestic hardware, specifically Ascend chips, or those interested in the systems engineering of sparse activation and hybrid sharding may find this relevant. Those seeking detailed comparative benchmarks against other frontier models or specific architectural ablation studies may need to consult the full paper to determine if the reported systems-level results suffice for their needs.",
+      "abstract": "We present Xing 4, a series of large language models that extends the TeleChat lineage through coordinated advances in model architecture and training infrastructure on Ascend. This report describes the design principles and systems engineering behind the series, spanning architecture selection, large-scale pretraining, and reasoning and agentic post-training. We study how sparse activation, attention design, model depth and width, and speculative decoding balance model capacity with computation, memory access, and execution overhead. Our pretraining infrastructure builds on MindSpore HyperParallel, combining topology-aware hybrid sharding, efficient distributed optimizer execution, and coordinated management of long-sequence workloads and activation memory. CPU affinity and core isolation further reduce host scheduling interference. Together, these mechanisms support the pretraining of a 285B-parameter model on 8,192 Ascend 910C cards, providing a concrete setting for the architectural and systems studies. For post-training, we introduce TeleGym, a unified agent execution platform that connects execution, evaluation, and trajectory construction to policy optimization. Disaggregated asynchronous execution, bounded oversampling, and partial rollout accommodate heterogeneous task durations while preserving trajectory continuity across policy updates. Together, these advances establish an Ascend-oriented training foundation for the continued development of Xing 4 across model scales and increasingly demanding reasoning and agent workloads.",
+      "takeaways": [
+        "The object is a series of large language models, Xing 4, developed on Ascend hardware with specific architectural and infrastructure choices.",
+        "A visible limit is the absence of reported model quality metrics or comparative benchmarks in the abstract, leaving the effectiveness of the architectural choices unquantified in this listing.",
+        "The artifact status is not established in the listing; no code, dataset, or model weights are declared as available."
+      ],
+      "plain": {
+        "reported": "The authors state that their computer setup allowed them to train a very large AI model with 285 billion adjustable parts using 8,192 specific types of computer chips made in China.",
+        "brief": "The authors explain how they built a new family of AI models called Xing 4. They focused on two main things: the internal design of the AI and the computer systems used to train it. They looked at how to make the AI use less memory and compute power while still being smart enough to handle complex tasks.\n\nThe biggest fact they share is that they successfully trained a huge model on a large cluster of Chinese-made chips. However, they do not say how well this model performs compared to other top AI models. They also do not give specific scores or test results to prove that their design choices made the AI better or faster in a measurable way.\n\nPeople who are interested in how to build and train AI models on specific types of computer hardware might find this useful. People who want to know exactly how smart or accurate this new AI is compared to others will need to look at the full document to see if that information is there.",
+        "takeaways": [
+          "The subject is a new set of AI models built using specific computer chips and software systems.",
+          "A clear gap is that the summary does not include test scores or comparisons showing how well the AI actually works.",
+          "It is not stated in the summary whether the code or the AI model itself is available for download or use."
+        ]
+      },
+      "actions": [
+        "Verify the specific architectural ablation results and model quality benchmarks by reading the full PDF, as the abstract only reports infrastructure scale.",
+        "Check the paper for details on the TeleGym platform's evaluation metrics and whether any code or model artifacts are released."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-18",
+        "publishedOn": "2026-11-17",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.22115",
+            "upvotes": 149
+          }
+        ]
+      },
+      "trend": {
+        "votes": 149,
+        "rank": 1,
+        "of": 36,
+        "perDay": 149
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 149,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-17"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-18T22:32:24.809Z"
+      }
+    },
+    {
+      "id": "2611.17621",
+      "arxivId": "2611.17621",
+      "url": "https://arxiv.org/abs/2611.17621",
+      "topic": "AI",
+      "reported": "The authors report that AscendGYM comprises 48 kernels across three difficulty levels, with test cases derived from real-world training and inference tasks.",
+      "metrics": [
+        "48 kernels"
+      ],
+      "title": "AscendGYM: A Cost-Aware Kernel Optimization Benchmark for Real-World Workloads on Ascend NPUs",
+      "authors": "AI Training Platform Team, Bingwei Zhang, Jing Li, Amir Abdullin, Sihang Chen, Xin Chen, Liangjun Feng, Yingmeng Gao, Tao Guo, Junjie Huang, Dongfang Li, Zhanglian Lin, Jiajun Liu, Zekun Liu, Zhengxuan Lu, Xiaodong Luo, Jian Meng, Ivan Nosov, Linyuan Qiu, Weijian Sun, Wanrui Yan, Binfan Zheng, Zhicheng Zhou, Baotian Hu, Min Zhang, Haizhou Li, Zhiquan Luo",
+      "takeaway": "The paper introduces AscendGYM, a cost-aware benchmark for optimizing existing Ascend NPU kernels using real-world workload configurations and a new Speedup-Token Score metric.",
+      "brief": "The authors propose AscendGYM to evaluate kernel optimization agents on Ascend NPUs using 48 kernels with real-world tensor shapes. They introduce the Speedup-Token Score to balance performance gains against token costs in a reproducible execution environment.\n\nThe listing states the benchmark includes 48 kernels and two evaluation modes but does not report specific performance results or baseline comparisons. The abstract does not establish whether the proposed metric outperforms existing evaluation methods or if the benchmark is fully validated against external standards.\n\nResearchers working on NPU kernel optimization or LLM inference efficiency may find the benchmark and metric relevant. Those focused on other hardware architectures or purely theoretical kernel generation may find the specific Ascend NPU focus limiting.",
+      "abstract": "Kernel optimization is essential for efficient large language model (LLM) training and inference on Ascend NPUs. Existing Ascend kernel benchmarks primarily focus on kernel generation, with less emphasis on the ability of agents to optimize existing implementations under input configurations drawn from real workloads. To address this requirement, we introduce AscendGYM, a benchmark whose initial suite comprises 48 kernels across three difficulty levels. Each kernel is paired with test cases whose data types and tensor shapes are collected from real-world training and inference tasks. Consequently, performance improvements on AscendGYM map directly to the corresponding workloads. In terms of usability, two evaluation modes are supported in AscendGYM: model evaluation and model-harness evaluation. The kernel optimization capabilities of both trained models and custom agents are allowed to be measured. It provides a complete execution environment that closely reproduces how Ascend kernels are invoked in practical pipelines. For model evaluation, it additionally includes a built-in harness equipped with search orchestration and experience accumulation. Finally, we propose a new metric, the Speedup-Token Score (STS), which quantifies performance gains relative to token cost. By jointly considering speedup and cost, STS enables the assessment of practical kernel optimization capability of a model or harness under an acceptable budget. AscendGYM is available at https://github.com/SLAI-AITP/AscendGYM.",
+      "takeaways": [
+        "The object is a benchmark suite of 48 kernels designed for Ascend NPU kernel optimization evaluation.",
+        "A visible limit is the lack of reported quantitative performance results or comparative baselines in the provided abstract.",
+        "The artifact status is a public GitHub repository, but the listing does not confirm the completeness or stability of the code."
+      ],
+      "plain": {
+        "reported": "The authors state that their new test set contains 48 specific code routines for a type of AI chip, organized into three levels of complexity, using data patterns taken from actual AI training jobs.",
+        "brief": "The creators built a testing tool called AscendGYM to check how well AI systems can improve existing code for specific AI chips. They created a new score that looks at both speed improvements and the cost of running the tests.\n\nThe summary mentions the number of tests and the types of evaluations but does not show how well the tool actually works compared to other methods. It is not clear from this text if the new score is better than older ways of measuring performance.\n\nPeople who build software for these specific AI chips might find this useful. People who work with different types of computer hardware or who only care about creating new code from scratch might not need this specific tool.",
+        "takeaways": [
+          "The main item is a collection of 48 code tests for a specific brand of AI processor.",
+          "A limitation is that the text does not show any actual test results or comparisons with other tools.",
+          "The code is available online, but the text does not say if the code is finished or reliable."
+        ]
+      },
+      "actions": [
+        "Verify the GitHub repository to confirm the availability of the 48 kernels and the Speedup-Token Score implementation.",
+        "Check the full paper for baseline comparisons and specific performance metrics to assess the benchmark's practical utility."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/SLAI-AITP/AscendGYM",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-18",
+        "publishedOn": "2026-11-13",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.17621",
+            "upvotes": 91
+          }
+        ]
+      },
+      "trend": {
+        "votes": 91,
+        "rank": 2,
+        "of": 36,
+        "perDay": 18
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 91,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-13"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-18T22:32:24.809Z"
+      }
+    },
+    {
+      "id": "2611.22055",
+      "arxivId": "2611.22055",
+      "url": "https://arxiv.org/abs/2611.22055",
+      "topic": "AI",
+      "reported": "The authors report that an LLM-designed model achieves higher test accuracy than the most accurate released Transformer that the same LLM wrote while using about 1,800x fewer parameters.",
+      "metrics": [
+        "up to 54.4% test accuracy",
+        "about 1,800x fewer parameters",
+        "up to 17x faster on GPUs"
+      ],
+      "title": "Weight-Space Programming Doesn't Need Transformers",
+      "authors": "Hyunjong Ok, Jaeho Lee",
+      "takeaway": "The paper claims that weight-space programming does not require Transformers, as LLMs can design non-Transformer architectures that outperform LLM-written Transformers in accuracy and efficiency.",
+      "brief": "The authors argue that standard neural architectures like Transformers are unnecessary when Large Language Models write target weights directly without gradient-based training. They propose that LLMs can design alternative structures, such as sparse tables, that are more efficient and interpretable in this specific weight-writing context.\n\nThe strongest reported result is that an LLM-designed model achieved higher test accuracy than the best Transformer written by the same LLM, while using about 1,800x fewer parameters. The authors note that pretrained LLMs remain more accurate overall, and the claim is limited to the structure chosen when writing weights from scratch with minimal guidance.\n\nResearchers exploring non-gradient-based model construction or LLM-generated weights should open this paper. Those focused on standard gradient-trained Transformer optimization or general LLM performance benchmarks may ignore it, as the results are specific to the weight-space programming task.",
+      "abstract": "Standard neural architectures such as the Transformer were chosen because they train well with gradient descent and run fast on GPUs. In weight-space programming, a large language model (LLM) writes target weights by hand without gradient-based training, so those reasons no longer apply. Should we keep the Transformer? Given minimal guidance, ten labeled examples, and a sandbox, mainly on multiple-choice questions, we task three frontier LLMs with either generating the weights of a fixed architecture or designing the architecture themselves. When free to design, all three compile plain-text facts into a sparse table queried by a fixed procedure, reaching up to 54.4% test accuracy. An LLM-designed model achieves higher test accuracy than the most accurate released Transformer that the same LLM wrote while using about 1,800x fewer parameters. Without gradients, they choose a table, in which the LLM can state what each weight means and can find and rewrite a wrong one. Each wrong answer points to one row, and removing a row changes about one other answer. From this, we propose an associative-memory-based model up to 17x faster on GPUs than a same-sized Transformer. We also test pretrained weights, other benchmarks, and tasks where models generate answers. Pretrained LLMs remain more accurate; the claim concerns which structure to build when writing weights.",
+      "takeaways": [
+        "The object is a comparison of LLM-designed architectures versus LLM-written Transformers in a weight-space programming setting.",
+        "A visible limit is that the evaluation relies on minimal guidance and ten labeled examples, primarily on multiple-choice questions, which may not generalize to complex tasks.",
+        "The artifact status is established by the provided GitHub repository URL, though the listing does not confirm the completeness or reproducibility of the code."
+      ],
+      "plain": {
+        "reported": "The authors report that a model designed by an AI achieved better test scores than the best Transformer model written by that same AI, while using about 1,800 times fewer parameters.",
+        "brief": "The authors suggest that standard AI building blocks like Transformers are not needed when an AI writes the internal numbers of a model directly, without using the usual training process. They propose that AIs can design different structures, like simple lookup tables, that work better and are easier to understand in this specific direct-writing context.\n\nThe best result they report is that an AI-designed model got higher test scores than the best Transformer written by that same AI, while using about 1,800 times fewer parameters. The authors note that pre-trained AIs are still more accurate overall, and their claim is limited to the structure chosen when writing numbers from scratch with very little help.\n\nPeople studying how to build AI models without standard training methods or how AIs can generate model numbers should open this paper. People focused on improving standard Transformer training or general AI performance tests may ignore it, as the results apply only to the specific task of writing model numbers directly.",
+        "takeaways": [
+          "The subject is a comparison of AI-designed structures versus AI-written Transformers in a direct number-writing setting.",
+          "A visible limit is that the tests used very little help and only ten examples, mostly multiple-choice questions, which may not work for harder tasks.",
+          "The artifact status is indicated by a provided website link for the code, though the listing does not confirm if the code is complete or works as described."
+        ]
+      },
+      "actions": [
+        "Verify the specific test accuracy and parameter counts by examining the experimental setup and results tables in the PDF.",
+        "Check the GitHub repository to confirm the availability of the LLM-designed model code and the comparison scripts."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/effl-lab/Weight-Space-Programming",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-18",
+        "publishedOn": "2026-11-17",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.22055",
+            "upvotes": 47
+          }
+        ]
+      },
+      "trend": {
+        "votes": 47,
+        "rank": 3,
+        "of": 36,
+        "perDay": 47
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 47,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-17"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-18T22:32:24.809Z"
+      }
+    },
+    {
+      "id": "2611.19800",
+      "arxivId": "2611.19800",
+      "url": "https://arxiv.org/abs/2611.19800",
+      "topic": "AI",
+      "reported": "The authors report that 2-branch Wide-Shallow MBTs consistently outperform sequential Transformers under matched parameter and training-compute budgets in controlled pretraining experiments at four mixture-of-experts scales (0.8B to 2.1B total parameters).",
+      "metrics": [
+        "0.8B to 2.1B total parameters",
+        "1.26x as much training body compute",
+        "34% and deliver up to 51.4% higher decoding throughput"
+      ],
+      "title": "Multi-Branch Transformer",
+      "authors": "Gaotang Li, Lingjie Chen, Chunyuan Deng, Zhiwei Xu, Hongzheng Chen, Christopher De Sa, Jingrui He, Yingheng Wang, Hanghang Tong",
+      "takeaway": "The paper introduces the Multi-Branch Transformer (MBT), which processes input through shared initial layers, executes independently parameterized branches of sequential blocks in parallel, and fuses their outputs before shared final layers.",
+      "brief": "The authors propose a branching architecture for Transformer language models that composes full blocks in parallel rather than solely increasing width or depth. They report that their final recipe, combining Balanced MBTs with a Joint-KV cache strategy, reduces KV-cache storage by up to 34% and increases decoding throughput by up to 51.4% on a single H200 GPU. The listing does not specify the exact dataset, context length, or hardware configuration for the throughput measurements, nor does it detail the specific validation loss values used for the scaling curve comparisons.\n\nThe strongest reported result is that 2-branch Wide-Shallow MBTs consistently outperform sequential Transformers under matched parameter and training-compute budgets across scales from 0.8B to 2.1B total parameters. The authors state that fitted scaling curves indicate standard Transformers require up to 1.26x as much training body compute to match the final models' validation loss. However, the abstract does not clarify whether the 'consistently outperform' claim holds across all four mixture-of-experts scales or only specific configurations, nor does it provide the absolute loss values for the baseline models.\n\nResearchers working on Transformer architecture scaling, inference optimization, or mixture-of-experts systems may find the branching approach and Joint-KV cache strategy relevant. Those focused on small-scale language models or specific hardware constraints other than H200 GPUs should verify the generalizability of the reported efficiency gains, as the listing only cites performance on a single H200 GPU.",
+      "abstract": "Transformer language models are commonly scaled by making their blocks wider or stacking them deeper. In this work, we explore a complementary path: branching, the parallel composition of full Transformer blocks. We introduce the Multi-Branch Transformer (MBT), which processes the input through shared initial layers, executes independently parameterized branches of sequential blocks in parallel, and fuses their outputs before shared final layers. At comparable training compute, we study three MBT variants: Wide-Shallow preserves block width, Narrow-Deep preserves sequential depth, and Balanced interpolates between them. In controlled pretraining experiments at four mixture-of-experts scales (0.8B to 2.1B total parameters), 2-branch Wide-Shallow MBTs consistently outperform sequential Transformers under matched parameter and training-compute budgets. Balanced MBTs improve further and retain comparable quality as the number of branches increases. To improve inference efficiency at long contexts, we introduce Joint-KV, which constructs a shared KV cache from branch representations at each depth. Our final recipe combines Balanced MBTs with Joint-KV, supported by an inference engine that exploits branch grouping and shared-cache reuse. Fitted scaling curves indicate that standard Transformers require up to 1.26x as much training body compute to match our final models' validation loss. These models reduce full-model KV-cache storage by up to 34% and deliver up to 51.4% higher decoding throughput on a single H200 GPU. Ablation studies show that branching yields gains beyond changes in width and depth, enables an effective KV-sharing strategy (Joint-KV), remains robust across fusion functions, and performs best in the middle layers. These findings show that branching offers a practical path for scaling language models toward both better modeling quality and faster inference.",
+      "takeaways": [
+        "The object is a parallel branching architecture for Transformer blocks that aims to improve both modeling quality and inference efficiency.",
+        "A visible limit is that the reported efficiency gains are measured on a single H200 GPU, and the abstract does not specify the context lengths or datasets used for the throughput and storage reduction claims.",
+        "The artifact status is indicated by a declared code repository URL, but the listing does not confirm whether the code includes the specific inference engine or Joint-KV implementation details."
+      ],
+      "plain": {
+        "reported": "The authors report that their 2-branch Wide-Shallow model design performs better than standard sequential Transformer models when both use the same number of parameters and the same amount of training computation, tested on models ranging from 0.8 billion to 2.1 billion parameters.",
+        "brief": "The authors suggest a new way to build Transformer language models by running multiple separate paths of processing blocks in parallel instead of just making the model wider or deeper. They claim that their best design, which uses a shared memory cache strategy called Joint-KV, uses 34% less memory for storing context and processes text 51.4% faster on a specific high-end Nvidia GPU. The summary does not say what specific texts or sentence lengths were used to measure these speed and memory improvements, nor does it give the exact error scores for the comparison models.\n\nThe main result is that their parallel design beats standard models when given the same resources, across model sizes from 0.8 billion to 2.1 billion parameters. They also state that standard models would need 1.26 times more training computation to reach the same error level as their final model. However, it is not clear if the parallel design wins in every single test case or just on average, and the actual error numbers for the standard models are not provided in the summary.\n\nPeople who study how to make Transformer models bigger or faster, or who work with mixture-of-experts systems, might find this useful. If you are working with smaller models or using different types of hardware, you should check if these speed and memory benefits apply to your setup, since the results are only shown for one specific type of GPU.",
+        "takeaways": [
+          "The subject is a new model structure that runs multiple processing paths in parallel to try to make language models both smarter and faster.",
+          "A clear limitation is that the speed and memory savings are only reported for one specific high-end GPU, and the summary does not say what kind of text or how long the text was when these measurements were taken.",
+          "The authors provide a link to their code, but the summary does not confirm if that code includes all the specific tools needed to reproduce the speed improvements."
+        ]
+      },
+      "actions": [
+        "Verify the specific context lengths, datasets, and hardware configurations used for the 34% KV-cache reduction and 51.4% throughput improvement by reading the full PDF.",
+        "Check the declared code repository to confirm if the Joint-KV inference engine and branch grouping logic are fully implemented and available for reproduction."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/GaotangLi/Multi-Branch-Transformer",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-18",
+        "publishedOn": "2026-11-15",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.19800",
+            "upvotes": 43
+          }
+        ]
+      },
+      "trend": {
+        "votes": 43,
+        "rank": 4,
+        "of": 36,
+        "perDay": 14
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 43,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-15"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-18T22:32:24.809Z"
+      }
+    },
+    {
+      "id": "2611.21672",
+      "arxivId": "2611.21672",
+      "url": "https://arxiv.org/abs/2611.21672",
+      "topic": "Econ",
+      "reported": "The authors report that 52 % of buildings see some sea from their top floor and 36 % have an open view (20{\\deg} or more) across 158,060 buildings in 21 municipalities on Spain's Costa del Sol.",
+      "metrics": [
+        "52 % of buildings see some sea",
+        "36 % have an open view (20{\\deg} or more)",
+        "AUC of 0.80 (95 % CI 0.70--0.89)"
+      ],
+      "title": "Who sees the sea? Sea-view potential by fa\\c{c}ade and floor from cadastral LoD1 models on the Costa del Sol",
+      "authors": "Gabriel Rojo (CASAS.ES)",
+      "takeaway": "The paper presents an open-data method to estimate sea-view potential for residential building facades and floors using cadastral footprints and a national terrain model.",
+      "brief": "The authors propose a method to estimate sea-view potential for every free facade of residential buildings at three floor levels using cadastral data and terrain models. They report that 52% of buildings in the Costa del Sol see some sea from the top floor, with 36% having an open view of 20 degrees or more. The method runs in under an hour on two cores for 158,060 buildings.\n\nEvidence includes agreement with LiDAR surfaces (96.7% of viewpoints in the same class) and an AUC of 0.80 against AI-labelled photographs of 93 homes. However, unrecorded structures lower the sea view by 6.1–9.0 degrees on average, and the method is sensitive but not specific at the 20-degree threshold. Dwelling-level figures vary significantly depending on allocation rules, ranging from 12% to 45% across scenarios.\n\nResearchers studying housing attributes, urban economics, or geospatial data may find the open-data method and facade-level data useful for replication. Those requiring precise dwelling-level view metrics or high specificity in view classification should note the reported limitations and scenario-dependent variability.",
+      "abstract": "Views are among the most valued and least measured attributes of a home. We present an open-data method that estimates the sea-view potential of every free fa\\c{c}ade of every residential building at three floors (ground, middle and top; other floors take the nearest of them), from cadastral footprints with floor counts and a national terrain model. Run for 158,060 buildings of 21 municipalities on Spain's Costa del Sol in under an hour on two cores, it finds that 52 % of buildings see some sea from their top floor and 36 % have an open view (20{\\deg} or more). Traced over a LiDAR surface in a pilot, scores agree with the model's inside cadastral footprints (96.7 % of viewpoints in the same class at 20{\\deg}), but structures the cadastre does not record lower the sea seen from the top floor by 6.1--9.0{\\deg} on average. Against the photographs of 93 homes for sale, labelled blind by AI models of two developers with ties decided by the author, the score has an AUC of 0.80 (95 % CI 0.70--0.89; 0.81 against the first-round labels); at 20{\\deg} it is sensitive (0.90) but not specific (0.45). Dwelling figures depend on how dwellings are allocated to fa\\c{c}ades and floors: 42 % of dwellings are on a floor with open-view potential under the main rule, and 12--45 % across the allocation, geometry and vegetation scenarios tested. As an application, higher-income census sections tend to have more modelled view potential within municipalities, with uncertain size and fragile inference (about two effective clusters); on terrain alone the difference largely disappears. Code and fa\\c{c}ade-level data reproduce the main results.",
+      "takeaways": [
+        "The object is a computational method for estimating sea-view potential from cadastral and terrain data, applied to residential buildings in Spain's Costa del Sol.",
+        "A visible limit is that structures not recorded in the cadastre lower the estimated sea view by 6.1–9.0 degrees on average, and the method lacks specificity at the 20-degree threshold.",
+        "The artifact status is that code and facade-level data are stated to reproduce the main results, but no repository URL is provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that 52 percent of buildings in the study area have a view of the sea from the top floor, and 36 percent have a wide, unobstructed view of at least 20 degrees, based on data from 158,060 buildings in 21 towns on Spain's Costa del Sol.",
+        "brief": "The authors created a computer method to guess how much sea view each side of a residential building has, using official land records and a map of the ground's height. They found that about half of the buildings in the test area have some sea view from the top floor, and over a third have a wide view. The method is fast, taking less than an hour to process all buildings.\n\nThe method's accuracy was checked against laser-scanned ground data and photos of houses for sale. It matched the laser data well, but buildings not listed in the official records blocked the view more than expected. When compared to photos, the method was good at finding houses with views but poor at correctly identifying houses without views. The results for individual apartments change a lot depending on how you assign apartments to floors and sides of the building.\n\nPeople studying house prices, city planning, or using geographic data might find this method and its data helpful. People who need exact information about which specific apartments have views, or who need a method that is very accurate at saying a house has no view, should be careful because the method has known weaknesses and results vary with assumptions.",
+        "takeaways": [
+          "The thing being studied is a computer program that calculates how much sea is visible from the sides and floors of apartment buildings, using official land maps and ground height data.",
+          "A clear weakness is that buildings not included in the official land records block the sea view more than the program expects, and the program is not very good at correctly saying a building has no wide view.",
+          "The authors say they have the computer code and detailed data that can recreate their main results, but the listing does not give a web address to find them."
+        ]
+      },
+      "actions": [
+        "Verify the code and facade-level data availability by checking the paper's supplementary materials or author contact for the stated reproduction resources.",
+        "Examine the full PDF to confirm the exact allocation rules for dwellings to facades and floors, as the listing indicates dwelling figures depend heavily on these assumptions."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "physics.soc-ph",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-11-18",
+        "publishedOn": "2026-11-18",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.21672"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-18"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-18T22:32:24.809Z"
+      }
+    },
+    {
+      "id": "2611.21681",
+      "arxivId": "2611.21681",
+      "url": "https://arxiv.org/abs/2611.21681",
+      "topic": "Physics",
+      "reported": "The authors report an order of magnitude estimation for a threshold qubit number, finding $N_c\\approx \\ln(\\tau_r/T)$, based on the scaling of the intrinsic Heisenberg time with system size.",
+      "metrics": [],
+      "title": "Remark on internal relaxation in large number qubit systems",
+      "authors": "Martin Jan{\\ss}en",
+      "takeaway": "The paper claims that for large qubit systems where the calculation time is shorter than the intrinsic Heisenberg time but longer than the relaxation time, intrinsic relaxation causes exponential loss of quantum coherence.",
+      "brief": "The author argues that in large qubit systems, the dynamics become effectively irreversible when the calculation time is much shorter than the intrinsic Heisenberg time. This irreversibility introduces a relaxation time scale that can lead to exponential loss of quantum coherence if the calculation time exceeds this scale.\n\nThe strongest reported result is an order of magnitude estimation for a critical qubit number $N_c$, defined as $N_c\\approx \\ln(\\tau_r/T)$. The listing does not provide experimental data, specific benchmark values, or a numerical value for $N_c$ in a concrete system, leaving the practical threshold unresolved.\n\nResearchers working on large-scale quantum computing architectures may find the scaling argument relevant for assessing coherence limits. Those focused on small-scale systems or specific error correction protocols may find the general scaling argument less directly applicable without specific system parameters.",
+      "abstract": "For a time $t_{c}$ of calculation in an $N$ qubit quantum computer that is much shorter than the intrinsic Heisenberg time $t_H$, $t_c\\ll t_H$, the dynamics of the system is effectively irreversible and the couplings between the qubits give rise to a relaxation time scale $\\tau_r$. If $t_H\\gg t_c >\\sim \\tau_r$ one looses quantum coherence exponentially fast. Since $t_H$ scales exponentially with $N$ there is a threshold $N_c$ such that for $N\\gg N_c$ one must be aware of possible intrinsic relaxation during calculation. As an order of magnitude estimation we find $N_c\\approx \\ln(\\tau_r/T)$ where $T$ is a typical system specific oscillation time of a single qubit. $\\tau_r$ can be estimated as the typical inverse transition rate between two parts of the system, one of which is treated as an environment of the other.",
+      "takeaways": [
+        "The object is a theoretical scaling argument for intrinsic relaxation in large qubit systems, linking the Heisenberg time to a critical system size.",
+        "A visible limit is that the result is an order of magnitude estimation dependent on system-specific parameters like $\\tau_r$ and $T$, which are not quantified for any specific hardware in the listing.",
+        "The artifact status is a theoretical note or remark, as indicated by the title, with no code or experimental dataset provided."
+      ],
+      "plain": {
+        "reported": "The authors provide a rough calculation for the number of qubits needed before internal relaxation becomes a problem, estimating this number as the natural log of the ratio of relaxation time to single-qubit oscillation time.",
+        "brief": "The author suggests that in very large quantum computers, the internal interactions between qubits can cause the system to lose its quantum properties faster than the calculation finishes. This happens when the calculation time is long enough compared to the internal relaxation time but short compared to the fundamental quantum limit.\n\nThe main result is a formula for the critical number of qubits where this effect starts to matter. The listing does not give a specific number for this threshold or test it on real hardware, so it remains a theoretical estimate.\n\nPeople designing large quantum computers might want to check this scaling to see if their systems are at risk. People working with small quantum systems or specific error correction methods might not find this general formula immediately useful without more specific details.",
+        "takeaways": [
+          "The paper is a theoretical note about how large quantum systems might lose coherence due to internal interactions.",
+          "The main limitation is that the result is a rough estimate that depends on specific system parameters not provided in the summary.",
+          "It is a theoretical paper with no code or experimental data attached."
+        ]
+      },
+      "actions": [
+        "Verify the derivation of the threshold $N_c$ and the definition of the relaxation time $\\tau_r$ in the full PDF to assess the robustness of the scaling argument.",
+        "Check if the author provides specific numerical examples or parameter ranges for $\\tau_r$ and $T$ that would allow the threshold to be applied to existing quantum hardware."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "cond-mat.stat-mech"
+      ],
+      "listing": {
+        "listedOn": "2026-11-18",
+        "publishedOn": "2026-11-18",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.21681"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-18"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-18T22:32:24.809Z"
+      }
+    },
+    {
+      "id": "2611.21689",
+      "arxivId": "2611.21689",
+      "url": "https://arxiv.org/abs/2611.21689",
+      "topic": "Security",
+      "reported": "The authors report a re-identification rate of 0.094% across 98,501 individuals in six countries, measured against a 0.47% per-team threshold.",
+      "metrics": [
+        "re-identification rate of 0.094%",
+        "0.47% per-team threshold",
+        "minimum defensible recall was 0.88"
+      ],
+      "title": "A Critical Appraisal and Motivated Intruder Test of A Search Dataset Anonymised for the Purposes of the EU Digital Markets Act",
+      "authors": "Ghislain d'Entremont, Lisa Pilgram, Sophie Stalla-Bourdillon, Renee Gil, Lucy Mosquera, Olga Vovk, Khaled El Emam",
+      "takeaway": "The study appraises EU Digital Markets Act search-data anonymisation and assesses re-identification risk via motivated intruder testing.",
+      "brief": "The authors claim to evaluate European Commission anonymisation measures for Alphabet search data against EDPB guidance and contemporary practice, specifically assessing re-identification through motivated intruder testing.\n\nThey report a 0.094% re-identification rate below a 0.47% threshold, noting that one region exceeded the threshold and that inference risks for other individuals remain unaddressed. The listing states that results may not generalise beyond the targeted population and that ethics requirements constrained the attacks.\n\nSecurity researchers and data protection officers should open this to review the motivated intruder methodology and threshold derivation. Those seeking generalisable re-identification rates for non-search datasets should ignore it, as the listing notes the results may not generalise beyond the targeted population.",
+      "abstract": "This study evaluated the European Commission's anonymisation measures for Alphabet's search-data sharing under Article 6(11) of the Digital Markets Act against European Data Protection Board guidance and contemporary practice, and assessed re-identification through motivated intruder testing. The measures focus on search end-users, leaving other individuals mentioned in queries insufficiently protected, and do not explicitly address inference. The accompanying controls and safeguards reflect good practice for managing residual risk. Motivated intruder testing targeted 98,501 individuals across six countries using publicly available profiles. Google-verified matches yielded a re-identification rate of 0.094%, below the study's 0.47% per-team threshold. Each verified match required about three hours (Euro 105), excluding Google verification and Gemini costs, suggesting limited cost deterrence. All country-level rates were below the threshold, but one region exceeded it. The threshold drew on conservative precedents, adjusted for data quality, verification, controls and safeguards, assuming five independent attack teams. Some sensitivity scenarios exceeded the threshold, but relied on strong assumptions, such as treating all uncertain matches as correct. Results may not generalise beyond the targeted population, and ethics requirements constrained the attacks. Personal data detection recall was assumed rather than tested: the minimum defensible recall was 0.88, with 0.976 recommended. However, missed identifiers outside the allow-list would remain in the dataset. Under the study's contextual framework, assumptions and testing limitations, identity-disclosure risk was considered insignificant. This finding does not resolve the gaps concerning inference and other individuals' information; safeguards remain necessary.",
+      "takeaways": [
+        "The object is a critical appraisal of specific EU DMA anonymisation measures for Alphabet search data, not a general anonymisation framework.",
+        "A visible limit is that the study leaves other individuals mentioned in queries insufficiently protected and does not explicitly address inference risks.",
+        "The artifact status is a study report; no code or dataset is declared in the listing, and the authors note that missed identifiers outside the allow-list would remain in the dataset."
+      ],
+      "plain": {
+        "reported": "The authors report that 0.094% of 98,501 people across six countries were re-identified, which is lower than their safety limit of 0.47%.",
+        "brief": "The authors say they checked how well the EU's rules protect search data from Google, comparing it to privacy guidelines and testing if hackers could find people's identities.\n\nThey found that only 0.094% of people were re-identified, which is below their safety limit of 0.47%. However, one specific region had a higher rate, and the rules do not protect people mentioned in searches or stop hackers from guessing identities. The authors note that their results might not apply to other groups of people and that ethical rules limited how they tested.\n\nPeople who study computer security or privacy laws should look at this to see how they tested the safety. People who want to know if this works for other types of data should ignore it, because the authors say the results might not apply to other groups.",
+        "takeaways": [
+          "This is a specific check of EU rules for Google search data, not a general guide for making data safe.",
+          "A clear weakness is that the rules do not protect people mentioned in searches or stop hackers from guessing identities.",
+          "This is a written report; no computer code or data files are provided, and the authors admit some personal details might still be in the data."
+        ]
+      },
+      "actions": [
+        "Verify the full PDF to confirm the specific assumptions behind the 0.47% threshold and the sensitivity scenarios that exceeded it.",
+        "Check the PDF for the detailed breakdown of the one region that exceeded the threshold and the specific ethical constraints applied to the motivated intruder attacks."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR"
+      ],
+      "listing": {
+        "listedOn": "2026-11-18",
+        "publishedOn": "2026-11-18",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.21689"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-18"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-18T22:32:24.809Z"
+      }
+    },
+    {
+      "id": "2611.21781",
+      "arxivId": "2611.21781",
+      "url": "https://arxiv.org/abs/2611.21781",
+      "topic": "Engineering",
+      "reported": "The authors report that reconstruction metrics alone are insufficient for trustworthy denoiser assessment, measured across nine published neural denoisers on three public benchmarks.",
+      "metrics": [
+        "BCI Competition IV-2a"
+      ],
+      "title": "Beyond Reconstruction: A Unified Framework for Trustworthy and Explainable EEG Artifact Removal Evaluation",
+      "authors": "Phat Lam, Hung Nguyen, Lam Pham, Huy Phan, Dat Tran, Ian McLoughlin, Roozbeh Razavi-Far, Hung Cao",
+      "takeaway": "The paper proposes TriX-EEG, a three-level framework for trustworthy and explainable EEG artifact removal evaluation.",
+      "brief": "The authors propose TriX-EEG, a three-level framework for trustworthy and explainable EEG artifact removal evaluation. The framework includes Signal Validity, Removal Faithfulness, and Explanation Reliability levels.\n\nThe authors report that reconstruction metrics alone are insufficient for trustworthy denoiser assessment. They measured this across nine published neural denoisers on three public benchmarks. External validation on an independent EEG/EOG dataset and the BCI Competition IV-2a motor-imagery dataset further demonstrates broadly consistent rankings under dataset shift.\n\nResearchers evaluating EEG artifact removal methods may find the framework relevant. Those relying solely on reconstruction metrics may want to consider the additional levels. The listing does not establish specific quantitative performance improvements or code availability.",
+      "abstract": "Deep-learning methods have achieved strong performance in EEG artifact removal, but evaluation remains dominated by reconstruction metrics such as error, correlation, and signal-to-noise ratio. Although these metrics assess similarity to clean EEG, they do not establish whether models effectively suppress artifacts, preserve neural activity, or provide reliable explanations. To address these limitations, we propose TriX-EEG, a three-level framework for trustworthy and explainable EEG artifact removal. Level 1, Signal Validity (SV), evaluates reconstruction quality and neural band-power preservation. Level 2, Removal Faithfulness (RF), assesses the removed component through artifact error and residual artifact/neural leakage. Level 3, Explanation Reliability (ER), examines model behavior through temporal alignment, causal relevance, and stability. We evaluate TriX-EEG using nine published neural denoisers across three public benchmarks derived from EEGDenoiseNet and the PhysioNet Motion Artifact Contaminated EEG Dataset, covering EOG, EMG, and motion artifacts. Results show that reconstruction metrics alone are insufficient for trustworthy denoiser assessment: RF complements it by revealing whether errors stem from residual artifact or suppressed neural activity, while ER captures distinct aspects of explanation behavior, supporting joint evaluation of three aspects within a unified framework rather than reliance on any single factor. External validation on an independent EEG/EOG dataset and the BCI Competition IV-2a motor-imagery dataset further demonstrates broadly consistent rankings under dataset shift. Higher-ranked denoisers generally preserve more task-relevant information or cause less downstream performance degradation. Overall, TriX-EEG provides a comprehensive basis for EEG denoiser assessment, encouraging models that are not only accurate but also faithful and explainable.",
+      "takeaways": [
+        "The object is a three-level evaluation framework for EEG artifact removal, not a new denoising model.",
+        "The visible limit is that the framework relies on existing benchmarks and published denoisers, with no new data collection or model training described in the listing.",
+        "The artifact status is unclear: the listing does not mention code, datasets, or supplementary materials, so availability of the framework implementation is not established."
+      ],
+      "plain": {
+        "reported": "The authors report that standard similarity measures are not enough to judge how well EEG noise removal works, tested on nine existing noise-removal models using three public data sets.",
+        "brief": "The authors suggest a new way to check if EEG noise removal tools work well and can be trusted. This method has three parts: checking if the signal looks right, checking if the noise is actually gone, and checking if the tool's explanations make sense.\n\nThe authors say that just looking at how similar the cleaned signal is to the original is not enough. They tested nine existing tools on three public data sets. They also tested on two other data sets to see if the results held up when the data changed.\n\nPeople who check how well EEG noise removal tools work might find this useful. People who only use standard similarity checks might want to look at the extra checks. The summary does not say if the new method is faster or more accurate, or if the code is available.",
+        "takeaways": [
+          "This is a new checklist for testing EEG noise removal tools, not a new tool itself.",
+          "The test uses existing data sets and existing tools, so it does not show how well it works on new or private data.",
+          "It is not clear if the authors have shared the code or data for this checklist, so it may not be easy to use right away."
+        ]
+      },
+      "actions": [
+        "Verify the PDF to confirm the specific benchmarks used and whether the TriX-EEG framework code is released.",
+        "Check the supplementary materials or repository for the independent EEG/EOG dataset and BCI Competition IV-2a results to validate the reported consistent rankings."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP",
+        "cs.AI"
+      ],
+      "listing": {
+        "listedOn": "2026-11-18",
+        "publishedOn": "2026-11-18",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.21781"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-18"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-18T22:32:24.809Z"
+      }
+    },
+    {
+      "id": "2611.21854",
+      "arxivId": "2611.21854",
+      "url": "https://arxiv.org/abs/2611.21854",
+      "topic": "Stats",
+      "reported": "The authors report that their proposed scaling strategy is effective on linear and nonlinear test problems, including models with correlated inputs.",
+      "metrics": [],
+      "title": "Kernel Tuning for the HSIC-Based Global Sensitivity Analysis of High-Dimensional Models",
+      "authors": "Troy Larsen, Alen Alexanderian",
+      "takeaway": "The paper introduces a dimension-aware bandwidth formula for HSIC-based global sensitivity analysis to prevent estimator breakdown in high-dimensional models.",
+      "brief": "The authors propose a dimension-aware bandwidth formula to stabilize HSIC-based global sensitivity analysis for models with high-dimensional input parameters. They state that without proper kernel tuning, the standard estimator can become unstable and break down.\n\nThe authors demonstrate the effectiveness of the proposed scaling strategy on linear and nonlinear test problems, including models with correlated inputs. They show that unless kernel bandwidth parameters explicitly scale with the input dimension, the corresponding sensitivity indices return uninformative rankings of parameter influence. The listing does not specify quantitative error rates or benchmark scores for these test problems.\n\nResearchers working on kernel-based sensitivity analysis for high-dimensional models may find the theoretical analysis and bandwidth formula relevant. Those not using HSIC-based indices or dealing with low-dimensional inputs may find the specific tuning strategy less applicable.",
+      "abstract": "We consider global sensitivity analysis of models with high-dimensional input parameters using HSIC-based indices. The numerical estimation of these kernel-based indices is known to be challenging for such models. Without proper kernel tuning, the standard estimator for the HSIC can become unstable and break down. Focusing on models with independent parameters, we introduce a dimension-aware bandwidth formula and provide theoretical analysis justifying the proposed approach. In particular, we show that unless kernel bandwidth parameters explicitly scale with the input dimension, the corresponding sensitivity indices return uninformative rankings of parameter influence. Further, we demonstrate the effectiveness of the proposed scaling strategy on linear and nonlinear test problems, including models with correlated inputs.",
+      "takeaways": [
+        "The object is a dimension-aware bandwidth formula for HSIC-based global sensitivity analysis.",
+        "A visible limit is that the theoretical analysis focuses on models with independent parameters, while the demonstration includes correlated inputs.",
+        "The artifact status is not established in the listing, as no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors say their new method works well on simple and complex test models, including ones where the inputs are related to each other.",
+        "brief": "The authors suggest a new way to adjust a mathematical setting called the 'bandwidth' when using a specific statistical tool called HSIC to analyze complex models with many inputs. They say that if this setting is not adjusted correctly, the tool can fail or give unreliable results.\n\nThey show that their new adjustment method works on various test models. They also prove that if the adjustment does not change based on how many inputs the model has, the tool will not correctly rank which inputs are most important. The abstract does not give specific numbers showing how much better the new method is compared to the old one.\n\nPeople who use this specific statistical tool for complex models might find this useful. People who do not use this tool or work with simple models might not need it.",
+        "takeaways": [
+          "The main thing being proposed is a new formula for adjusting a setting in a statistical tool.",
+          "One limitation is that the math proof assumes the inputs are not related, but the tests include related inputs.",
+          "It is not known if the authors have shared their computer code or data, as the listing does not say."
+        ]
+      },
+      "actions": [
+        "Verify the theoretical analysis and test problem results by reading the full PDF.",
+        "Check for any supplementary material or code availability not mentioned in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-11-18",
+        "publishedOn": "2026-11-18",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.21854"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-18"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-18T22:32:24.809Z"
+      }
+    },
+    {
+      "id": "2611.21959",
+      "arxivId": "2611.21959",
+      "url": "https://arxiv.org/abs/2611.21959",
+      "topic": "Health",
+      "reported": "The authors report that Occam achieves the highest aggregate representation scores for perturbation information and cell-type preservation with batch integration.",
+      "metrics": [],
+      "title": "OCCAM: Improved Single-Cell Representation Learning and Perturbation Effect Prediction",
+      "authors": "Ihab Bendidi, Kian Kenyon-Dean, Alisandra K. Denton, Auguste Genovesio, Emmanuel Noutahi",
+      "takeaway": "Occam is an MLP framework that combines denoised cell representations with gene, text, and protein features to predict perturbation effects across unobserved cell contexts and gene combinations.",
+      "brief": "The authors present Occam, a multilayer perceptron framework designed for single-cell representation learning and perturbation-effect prediction. It integrates cell representations learned through denoising with gene interaction, text, and protein-sequence features to model genetic perturbations.\n\nThe authors report that Occam achieves the highest aggregate representation scores for perturbation information and cell-type preservation with batch integration. In cross-context few-shot prediction, it better captures measured response patterns for unobserved combinations than four retrained competitors or direct transfer of measured effects. For double perturbations, it composes learned single-gene responses to reduce expression error compared with competing models and summed single-gene effects. The authors state that predicting expression levels accurately in these settings remains challenging.\n\nResearchers working on single-cell genomics, perturbation prediction, or representation learning may find the framework relevant. Those requiring precise expression-level predictions or specific code availability should note the stated challenges and the absence of declared code in the listing.",
+      "abstract": "Predicting the effects of genetic perturbations requires models that generalize beyond observed cell contexts and gene combinations. We introduce Occam, a multilayer perceptron (MLP) framework for representation learning and perturbation-effect prediction. Occam combines cell representations learned through denoising with gene interaction, text, and protein-sequence features. It achieves the highest aggregate representation scores for perturbation information and cell-type preservation with batch integration. In cross-context few-shot prediction, a perturbation and a cell context are each observed during training, but never together. Occam better captures the measured response patterns for these unobserved combinations than four retrained competitors or direct transfer of the same perturbation's measured effects from other training cell lines. Without fine-tuning, Occam best distinguishes perturbations among the evaluated models and simple baselines in cell lines held out from predictor training, across seen and unseen assays. Predicting expression levels accurately in these settings remains challenging. For double perturbations, which target two genes simultaneously, Occam composes learned single-gene responses to better capture the combined response and reduce expression error compared with competing models and summed single-gene effects. These gains extend to both strongly additive and weakly additive responses. Together, these results support simple MLPs for cell representation learning and perturbation-effect prediction across contexts and gene combinations.",
+      "takeaways": [
+        "The object is a multilayer perceptron framework for representation learning and perturbation-effect prediction.",
+        "A visible limit is that predicting expression levels accurately in cross-context settings remains challenging according to the authors.",
+        "The artifact status is not established in the listing, as no code repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that their model, Occam, gets the best overall scores for keeping useful information about genetic changes and cell types when combining data from different batches.",
+        "brief": "The authors introduce a computer model called Occam that helps predict how changing genes affects cells. It uses a type of neural network to learn from cell data, cleaning up noise and adding information about genes, text descriptions, and protein structures.\n\nThe authors say their model gets the best overall scores for keeping useful information about genetic changes and cell types when combining data from different batches. When predicting effects of gene changes in cell types it has not seen before, it does better than four other models or simply copying results from other cell lines. For changes involving two genes at once, it combines the effects of each single gene to get a more accurate result than other models. The authors note that getting the exact levels of gene activity right is still difficult.\n\nScientists studying how genes affect cells or building models for genetic experiments might find this useful. People who need exact numbers for gene activity or want to download the code should check the full paper, as the summary says exact prediction is hard and no code link is provided.",
+        "takeaways": [
+          "The thing being described is a computer model for learning from cell data and predicting genetic effects.",
+          "A clear limitation is that the model still struggles to predict the exact levels of gene activity accurately.",
+          "It is not stated in the summary whether the code for the model is available for download."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark names and numerical values for the 'highest aggregate representation scores' by reading the full PDF.",
+        "Check the full paper for details on the 'four retrained competitors' and the specific 'seen and unseen assays' used for evaluation."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-18",
+        "publishedOn": "2026-11-18",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.21959"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-18"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-18T22:32:24.809Z"
+      }
+    }
+  ]
+}
