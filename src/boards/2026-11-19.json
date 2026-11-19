@@ -1,0 +1,665 @@
+{
+  "date": "2026-11-19",
+  "label": "Thu, Nov 19",
+  "minutes": 10,
+  "poolSize": 135,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-11-19T21:40:03.216Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2611.24738",
+      "arxivId": "2611.24738",
+      "url": "https://arxiv.org/abs/2611.24738",
+      "topic": "AI",
+      "reported": "The authors report that Jeveration generates a 512x512 image in 78 ms, up to 122x faster than existing unified models, while maintaining competitive image quality and dense prediction performance.",
+      "metrics": [
+        "512x512 image in 78 ms",
+        "up to 122x faster"
+      ],
+      "title": "Jeveration: System One Models Now Generate",
+      "authors": "Yuhe Liu, Qi Li, Shihua Zhang, Xinchao Wang",
+      "takeaway": "Jeveration enables a frozen vision-language model to generate high-quality images, perform image-to-image generation, and execute dense prediction in a single forward pass by conditioning parallel predictions on a shared random state.",
+      "brief": "The authors propose Jeveration, a system that repurposes a frozen vision-language model for holistic image generation and dense prediction in a single forward pass. They address the challenge of global consistency in parallel predictions by conditioning all positions on a shared random state and learning a distribution over discrete image codes.\n\nThe authors report that the model generates a 512x512 image in 78 ms, claiming this is up to 122x faster than existing unified models. They state that image quality and dense prediction performance remain competitive, though specific benchmark scores or qualitative comparisons are not detailed in the abstract. The listing does not establish whether the speed advantage holds across all hardware configurations or prompt complexities.\n\nResearchers working on fast diffusion or autoregressive image generation may find the single-pass architecture relevant. Those focused on high-fidelity text-to-image synthesis without speed constraints may find the competitive quality claim insufficient without detailed benchmark data.",
+      "abstract": "System One models such as Jev return decisions through fast, parallel prediction. In this paper, we introduce Jeveration, showing that the same decision paradigm can also generate high-quality images in a single forward pass. Jeveration builds on a frozen vision-language model, repurposing its visual-semantic knowledge for holistic image generation. The key challenge is to maintain global consistency. A single prompt admits many valid images, yet parallel predictions must converge on a coherent whole. We therefore condition all positions on a shared random state to coordinate parallel predictions, so that each draw yields a different but coherent image. Since the model tends to ignore this state under direct image supervision, we first learn a distribution over discrete image codes to guide single-pass generation. Beyond text-to-image generation, we further unify image-to-image generation and dense prediction within the same architecture, so that one checkpoint supports all three tasks, each in one forward pass. Experiments show that Jeveration generates a 512x512 image in 78 ms, up to 122x faster than existing unified models, while maintaining competitive image quality and dense prediction performance.",
+      "takeaways": [
+        "The object is a unified architecture supporting text-to-image, image-to-image, and dense prediction tasks within a single checkpoint.",
+        "A visible limit is the reliance on a frozen vision-language model, which may constrain the model's ability to learn new visual concepts beyond its pre-trained knowledge.",
+        "The artifact status is indicated by a declared GitHub repository URL, but the listing does not confirm the availability of weights or code."
+      ],
+      "plain": {
+        "reported": "The authors state that their model creates a 512x512 pixel picture in 78 milliseconds, which they say is up to 122 times quicker than other models that handle multiple tasks, while keeping picture quality and detailed prediction results at a competitive level.",
+        "brief": "The authors suggest a method called Jeveration that uses a fixed, pre-trained visual language model to create images and make detailed predictions in one quick step. They solve the problem of keeping the whole image consistent by using a shared random signal to guide the parallel parts of the generation process.\n\nThe authors say the model makes a 512x512 pixel image in 78 milliseconds, claiming it is up to 122 times faster than other unified models. They mention that image quality and prediction performance are competitive, but the abstract does not list specific test scores or show examples. It is not clear from the listing if this speed works on all computer types or for all kinds of prompts.\n\nPeople studying fast image creation might find this one-step design useful. People who need the highest possible image detail and do not care about speed might want more detailed test results before deciding if it is useful for them.",
+        "takeaways": [
+          "The tool is a single system that can do text-to-image, image editing, and detailed prediction tasks all at once.",
+          "A visible limit is that the base model is frozen, meaning it cannot learn new visual ideas beyond what it already knows.",
+          "The status of the software is shown by a provided website link, but the listing does not say if the actual model files or code are available there."
+        ]
+      },
+      "actions": [
+        "Verify the 78 ms latency and 122x speedup claims by checking the experimental setup and hardware specifications in the full PDF.",
+        "Inspect the declared GitHub repository to confirm the availability of model weights and code for reproduction."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Carol-lyh/Jeveration",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-19",
+        "publishedOn": "2026-11-18",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.24738",
+            "upvotes": 110
+          }
+        ]
+      },
+      "trend": {
+        "votes": 110,
+        "rank": 1,
+        "of": 45,
+        "perDay": 110
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 110,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-18"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-19T21:40:03.216Z"
+      }
+    },
+    {
+      "id": "2611.23068",
+      "arxivId": "2611.23068",
+      "url": "https://arxiv.org/abs/2611.23068",
+      "topic": "AI",
+      "reported": "The authors report that across seven evolution methods and six models, selection is no better than random at telling helpful candidate artifacts from harmful ones.",
+      "metrics": [
+        "over 10M LLM calls"
+      ],
+      "title": "The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements",
+      "authors": "Yuanhao Zeng, Shaocheng Lan, Ao Lu, Kuang Yan, Heng Lin, Xinang Xu, Yuan Luo, Yueting Wang, Yexin Li, Ruo Shan, Kan Ren",
+      "takeaway": "The paper claims that agent evolution stalls because noisy evaluations cannot reliably identify improvements, rather than because methods fail to propose better artifacts.",
+      "brief": "The authors propose the Resolution Hypothesis, arguing that agent evolution fails because evaluation noise prevents reliable identification of better artifacts. They report that across seven methods and six models, selection is no better than random at distinguishing helpful from harmful candidates, and method rankings often rest on luck. The listing does not establish specific task-level performance gains or a released code repository.\n\nThe strongest reported evidence is that typical method-level margins are smaller than the difference between two independent runs of the same method. The authors state that errors accumulate across rounds because selection cannot reliably identify improvements. The listing does not specify which tasks failed to bootstrap or provide a quantitative measure of the evaluation noise itself.\n\nResearchers working on self-improving agents or LLM-based evolution loops may find the diagnostic framework relevant. Practitioners seeking immediate performance improvements for specific tasks should note that the paper focuses on evaluation reliability rather than proposing a new optimization algorithm.",
+      "abstract": "Agent evolution follows a simple loop: a proposer writes candidate artifacts (prompts, skills, memories) and selection accepts those that score higher. This loop has shown promise, yet practitioners face a puzzle: methods trade wins across papers, and evolution often fails to bootstrap on certain tasks. We trace this puzzle to the Resolution Hypothesis: agent evolution stalls not because methods fail to propose better artifacts, but because noisy evaluations cannot reliably identify them. Across seven evolution methods and six models (over 10M LLM calls), we find support for the hypothesis at both levels where evaluation scores are used. At the candidate level (choosing artifacts), helpful candidate artifacts exist, but selection is no better than random at telling them from harmful ones, so errors accumulate across rounds. At the method level (ranking methods), typical margins of a few percentage points are smaller than the difference between two independent runs of the same method, so published rankings often rest on luck. Together, these findings indicate that agent evolution is often bottlenecked by reliably identifying improvements. This calls for a shift in how we develop and evaluate self-improving agents, from designing ever more candidate improvement systems to making true improvements detectable and accumulable.",
+      "takeaways": [
+        "The object is the evaluation process in agent evolution, specifically the reliability of selection signals.",
+        "A visible limit is that the reported findings are based on a specific set of seven methods and six models, which may not generalize to all agent architectures.",
+        "The artifact status is unclear because no code or dataset is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that in their tests of seven different improvement methods and six different AI models, the system for choosing the best improvements was no better than guessing at random.",
+        "brief": "The authors suggest that AI systems that try to improve themselves often fail not because they can't come up with good ideas, but because the tests used to judge those ideas are too noisy to tell good ideas from bad ones. They say that in their experiments, the system for picking the best ideas was no better than a coin flip, and that comparing different methods is often just luck. The listing does not say if this fixes specific tasks or if the code is available.\n\nThe main evidence they give is that the small differences between methods are smaller than the natural variation you get if you just run the same method twice. They say that because the selection process is unreliable, mistakes build up over time. The listing does not say which specific tasks were difficult or how much noise was in the tests.\n\nPeople who build AI systems that learn from their own mistakes might find this useful. People who just want to make an AI better at a specific job should know this paper is about fixing the testing process, not giving a new way to make the AI smarter.",
+        "takeaways": [
+          "The paper is about the testing process used to judge if an AI improvement is actually good.",
+          "A limit is that the results are based on a specific set of methods and models, so they might not apply to all AI systems.",
+          "It is not clear if the code or data used in the study is available because the listing does not mention it."
+        ]
+      },
+      "actions": [
+        "Verify the specific evaluation metrics and noise quantification by reading the full PDF.",
+        "Check if the authors have released code or data to reproduce the seven-method comparison."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-19",
+        "publishedOn": "2026-11-17",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.23068",
+            "upvotes": 35
+          }
+        ]
+      },
+      "trend": {
+        "votes": 35,
+        "rank": 2,
+        "of": 45,
+        "perDay": 18
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 35,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-17"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-19T21:40:03.216Z"
+      }
+    },
+    {
+      "id": "2611.21366",
+      "arxivId": "2611.21366",
+      "url": "https://arxiv.org/abs/2611.21366",
+      "topic": "AI",
+      "reported": "The authors report that ALIVE achieves the highest overall scores among compared models on four public benchmarks and FSI-Bench.",
+      "metrics": [
+        "ALIVE-SFT-288K",
+        "ALIVE-RL-3K"
+      ],
+      "title": "ALIVE: Making Streaming Video Models Interactive",
+      "authors": "Jinzhao Li, Yuan Xu, Jinxuan Wu, Yukun Wang, Yijia Lei, Hanyu Ji, Yinuo Chen, Zining Huang, Chi Zhang, Hang Ye, Yiwu Zhong, Honglei Yan, Panwang Pan, Yizhou Wang, Yin Li, Miao Liu",
+      "takeaway": "ALIVE is an interactive streaming video model supporting proactive monitoring, streaming task coordination, and feedback-seeking interaction.",
+      "brief": "The authors introduce ALIVE, a streaming video model designed for proactive monitoring, task coordination, and feedback-seeking interaction. They construct ALIVE-SFT-288K and ALIVE-RL-3K for two-stage training, using contrastive supervised fine-tuning and reinforcement learning with Behavior-Aligned Credit Assignment.\n\nThe authors report that ALIVE achieves the highest overall scores among compared models on four public benchmarks and FSI-Bench. They state this demonstrates strong streaming understanding and interactive capabilities. The listing does not specify the exact benchmark names or numerical score values.\n\nResearchers working on interactive video models or streaming LLMs may find the training methodology relevant. Those requiring specific benchmark comparisons or numerical performance data should verify the full paper. The listing does not establish limitations or failure modes.",
+      "abstract": "Streaming video LLMs can continuously observe the world, yet often handle user requests in isolation. We introduce ALIVE, an interactive streaming video model supporting proactive monitoring, streaming task coordination, and feedback-seeking interaction. We construct ALIVE-SFT-288K and ALIVE-RL-3K for two-stage training. Contrastive supervised fine-tuning teaches when and how to respond, while reinforcement learning with Behavior-Aligned Credit Assignment (BACA) combines trajectory-level and local advantages to refine decisions, responses, and silence across multi-turn interactions. We also introduce FSI-Bench to evaluate feedback seeking and subsequent task completion. ALIVE achieves the highest overall scores among the compared models on four public benchmarks and FSI-Bench, demonstrating strong streaming understanding and interactive capabilities.",
+      "takeaways": [
+        "The object is an interactive streaming video model with specific training datasets and a new benchmark.",
+        "The visible limit is the absence of specific benchmark names and numerical scores in the listing.",
+        "The artifact status is a declared GitHub repository URL, but its contents are not verified here."
+      ],
+      "plain": {
+        "reported": "The authors state that their model, ALIVE, got the best total scores compared to other models on four public tests and a new test they created called FSI-Bench.",
+        "brief": "The authors created a new type of AI model called ALIVE that can watch video continuously and interact with users. They built two large sets of training data, named ALIVE-SFT-288K and ALIVE-RL-3K, to teach the model how to respond or stay silent. They used a method called reinforcement learning to improve its decision-making.\n\nThe authors say their model scored higher than others on four public tests and their new FSI-Bench test. They claim this shows the model understands streaming video well and can interact effectively. The summary does not list the specific names of the four public tests or the exact numerical scores.\n\nPeople studying AI models that watch video in real-time might find the training method useful. People who need exact numbers or specific test names should check the full document. The summary does not mention any weaknesses or problems with the model.",
+        "takeaways": [
+          "The main item is a new AI model for watching video and talking to users, with specific training data and a new test.",
+          "A clear gap is that the summary does not name the four public tests or give the actual score numbers.",
+          "The authors provided a link to a code repository, but this summary does not confirm if the code works or is complete."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmark names and numerical scores in the full PDF.",
+        "Check the declared GitHub repository for code availability and documentation."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/lijinzhao30/ALIVE",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-19",
+        "publishedOn": "2026-11-16",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.21366",
+            "upvotes": 31
+          }
+        ]
+      },
+      "trend": {
+        "votes": 31,
+        "rank": 3,
+        "of": 45,
+        "perDay": 10
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 31,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-16"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-19T21:40:03.216Z"
+      }
+    },
+    {
+      "id": "2611.11318",
+      "arxivId": "2611.11318",
+      "url": "https://arxiv.org/abs/2611.11318",
+      "topic": "AI",
+      "reported": "The authors report that PROLA outperforms representative low-rank adaptation baselines in the PSWD setting.",
+      "metrics": [],
+      "title": "PROLA: Principal-Orthogonal Low-rank Adaptation for Predictive Spatiotemporal Weather Downscaling",
+      "authors": "Minseo Yoon, Minseong Bae, Sojin Lee, Hyunwoo J. Kim",
+      "takeaway": "The paper proposes PROLA, a low-rank adaptation method that allocates rank between principal and orthogonal directions of pretrained weights to improve predictive spatiotemporal weather downscaling.",
+      "brief": "The authors introduce PROLA to adapt large pretrained weather backbones for a task they define as Predictive Spatiotemporal Weather Downscaling, which jointly refines spatial and temporal resolution while predicting future high-resolution trajectories.\n\nThey state that PROLA outperforms representative low-rank adaptation baselines in this setting and that further experiments across diverse datasets and tasks support broader applicability. The listing does not specify the exact datasets, metrics, or numerical values used for these comparisons, nor does it establish specific computational limits or failure modes.\n\nResearchers working on parameter-efficient fine-tuning of large pretrained models for spatiotemporal prediction may find the method relevant. Those seeking specific quantitative benchmarks for weather downscaling accuracy or computational cost comparisons should note that these details are absent from the provided abstract.",
+      "abstract": "High-resolution weather prediction is important for resolving local atmospheric patterns missed by coarse global forecasts. Large pretrained weather backbones have improved global forecasting, but adapting them to produce future high-resolution fields from recent coarse states remains challenging and costly. We formulate this setting as Predictive Spatiotemporal Weather Downscaling (PSWD), a task that jointly refines spatial and temporal resolution while predicting future high-resolution trajectories. To this end, we propose a framework that decomposes prediction into spatial and temporal stages using a shared pretrained backbone, fixed numerical scaffolds, and lightweight residual heads. For backbone adaptation, we introduce PROLA (PRincipal-Orthogonal Low-rank Adaptation), which allocates a fixed low-rank budget between pretrained weights' principal directions and their orthogonal complement. PROLA further rescales rank-1 optimizer updates using gradient signals, improving adaptation without increasing trainable rank. Experiments in the PSWD setting show that PROLA outperforms representative low-rank adaptation baselines. Further experiments across diverse datasets and tasks support the broader applicability of PROLA, showing that its benefits extend beyond the primary weather downscaling setting.",
+      "takeaways": [
+        "The core object is a low-rank adaptation technique that splits a fixed rank budget between principal and orthogonal subspaces of pretrained weights.",
+        "A visible limit is the absence of specific quantitative results, dataset names, or metric values in the supplied abstract, making it impossible to verify the magnitude of reported improvements.",
+        "The artifact status is indicated by a declared GitHub repository URL, but the listing does not confirm whether the code is complete, executable, or matches the paper's experimental setup."
+      ],
+      "plain": {
+        "reported": "The authors state that their method, PROLA, performs better than other similar low-complexity adjustment methods when tested on the specific weather prediction task they defined.",
+        "brief": "The researchers created a new way to adjust large, pre-trained computer models that predict weather. They call the specific problem they are solving Predictive Spatiotemporal Weather Downscaling, which means making low-detail weather forecasts into high-detail forecasts for future times.\n\nThey claim their method works better than other standard adjustment techniques for this task. They also say it works well on other types of data and tasks. However, the summary does not list the specific numbers showing how much better it is, nor does it name the specific weather datasets used for testing.\n\nPeople who work on making large AI models more efficient for predicting changing patterns over time might find this useful. People who need exact numbers on how accurate the weather predictions are should know that this summary does not provide them.",
+        "takeaways": [
+          "The main idea is a technique that divides a limited amount of adjustable parameters between the most important parts of a model and the less important parts.",
+          "A clear limitation is that the summary lacks specific numbers, so we cannot see how much better the new method is compared to others.",
+          "The authors provide a link to a code repository, but the summary does not say if the code is fully working or if it exactly matches the experiments in the paper."
+        ]
+      },
+      "actions": [
+        "Verify the specific datasets, evaluation metrics, and numerical performance gains by reading the full PDF, as the abstract only provides qualitative comparisons.",
+        "Check the declared GitHub repository to confirm if the code implementation is available and matches the described PROLA method and experimental protocols."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/yms020615/PROLA",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-19",
+        "publishedOn": "2026-11-08",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.11318",
+            "upvotes": 27
+          }
+        ]
+      },
+      "trend": {
+        "votes": 27,
+        "rank": 4,
+        "of": 45,
+        "perDay": 2
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 27,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-08"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-19T21:40:03.216Z"
+      }
+    },
+    {
+      "id": "2611.23269",
+      "arxivId": "2611.23269",
+      "url": "https://arxiv.org/abs/2611.23269",
+      "topic": "Physics",
+      "reported": "The authors report disproving Drury's conjecture using a rank-4, 32x32 integer Gram matrix and an integer vector whose Rayleigh quotient exceeds the permanent of A.",
+      "metrics": [
+        "rank-$4$, $32\\times32$ integer Gram matrix",
+        "every order $n\\ge32$",
+        "$36$-mode orthogonal interferometer"
+      ],
+      "title": "The Bapat-Sunder eigenvalue conjecture fails over the reals",
+      "authors": "Logan R. Chalmers",
+      "takeaway": "The paper claims to disprove Drury's conjecture that the Bapat-Sunder eigenvalue property holds for real positive semidefinite matrices.",
+      "brief": "The author presents a counterexample to Drury's conjecture regarding the Bapat-Sunder eigenvalue property for real positive semidefinite matrices. The specific counterexample is a rank-4, 32x32 integer Gram matrix with an integer vector whose Rayleigh quotient exceeds the permanent of the matrix.\n\nThe authors state that verification uses integer arithmetic and that counterexamples exist for every order n greater than or equal to 32. The abstract does not establish computational limits or specific software artifacts beyond the integer arithmetic verification method.\n\nResearchers working on matrix theory, specifically eigenvalue properties of permanents, or quantum optics applications involving photon detection probabilities may find this relevant. Those not interested in these specific mathematical or physical applications may ignore it.",
+      "abstract": "In 1986 Bapat and Sunder asked whether $\\operatorname{per}(A)$ is the largest eigenvalue of $F_A=[a_{i,j}\\operatorname{per}(A(i,j))]$ for every positive semidefinite Hermitian $A$, where $A(i,j)$ deletes row $i$ and column $j$. Drury disproved this over the complex field in 2018 and conjectured that the property holds for real positive semidefinite matrices. We disprove Drury's conjecture with a rank-$4$, $32\\times32$ integer Gram matrix and an integer vector whose Rayleigh quotient exceeds $\\operatorname{per}(A)$; verification uses integer arithmetic. Together, the two counterexamples resolve the Bapat-Sunder eigenvalue conjecture negatively over both fields. Counterexamples exist of every order $n\\ge32$. As an application to quantum optics, the violation yields a $36$-mode orthogonal interferometer and a direction of relative arrival-time delays among $32$ photons with identical-variance Gaussian wave packets along which every sufficiently small nonzero delay increases the probability that all photons are detected within four designated output modes.",
+      "takeaways": [
+        "The object is a rank-4, 32x32 integer Gram matrix serving as a counterexample to a specific matrix conjecture.",
+        "The visible limit is that the counterexample requires a matrix order of at least 32, as stated in the abstract.",
+        "The artifact status is not established in the listing, though the authors state verification uses integer arithmetic."
+      ],
+      "plain": {
+        "reported": "The authors report disproving a mathematical conjecture by providing a specific 32 by 32 grid of numbers (a matrix) and a list of numbers (a vector) that breaks the expected rule.",
+        "brief": "The author shows that a long-standing mathematical guess about certain types of number grids is wrong for real numbers. They provide a specific 32 by 32 grid of whole numbers and a matching list of whole numbers that proves the guess is incorrect.\n\nThe authors say they checked their work using whole number math and that similar examples exist for any grid size of 32 or larger. The summary does not say if there are limits to how this can be calculated or if any specific computer programs are available.\n\nPeople studying how numbers in grids relate to each other, or scientists studying how light particles behave in specific setups, might find this useful. People not working in these areas might not need to look at it.",
+        "takeaways": [
+          "The main item is a 32 by 32 grid of whole numbers that acts as a counterexample to a mathematical rule.",
+          "A visible limit is that the grid must be at least 32 by 32 to work as a counterexample, according to the text.",
+          "It is not stated in the summary whether any computer code or data files are available, though the authors mention using whole number math to check their work."
+        ]
+      },
+      "actions": [
+        "Verify the integer Gram matrix and vector details in the full PDF to confirm the rank and size specifications.",
+        "Check the full text for the specific integer arithmetic verification method and the quantum optics application details."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "math.CO",
+        "math.RA"
+      ],
+      "listing": {
+        "listedOn": "2026-11-19",
+        "publishedOn": "2026-11-19",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.23269"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-19"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-19T21:40:03.216Z"
+      }
+    },
+    {
+      "id": "2611.23346",
+      "arxivId": "2611.23346",
+      "url": "https://arxiv.org/abs/2611.23346",
+      "topic": "Security",
+      "reported": "The authors report that their reference harness middleware localizes root causes and catches cross-transfer violations missed by lifecycle and tool-only logs across 240 multi-step fault-injection trajectories.",
+      "metrics": [
+        "240 multi-step fault-injection trajectories"
+      ],
+      "title": "Securing and Auditing Long-Horizon LLM Agents: State-Transfer Auditing and Controls in the Agent Harness",
+      "authors": "Deep Shah, Nehal Kathrotia",
+      "takeaway": "The paper presents a state-transfer audit architecture for the agent harness that defines audit points at transfer boundaries to emit hash-chained records for failure attribution and runtime security controls.",
+      "brief": "The authors propose a state-transfer audit architecture that inserts audit points at boundaries between working context, session history, persistent memory, and external environments. They define minimal hash-chained records to separate deterministic checks from semantic checks, binding internal state to external actions.\n\nThe authors state that their reference harness middleware was implemented and evaluated across 240 multi-step fault-injection trajectories. They report that these records localize root causes and catch cross-transfer violations missed by lifecycle and tool-only logs, with microsecond deterministic overhead. The listing does not specify the exact magnitude of the microsecond overhead or the specific failure rates compared against baselines.\n\nResearchers working on LLM agent security, execution harness design, or runtime monitoring for multi-step trajectories may find the audit point definitions relevant. Those focused solely on model training or high-level prompt engineering without infrastructure concerns may find the low-level harness details less applicable.",
+      "abstract": "Long-horizon LLM agents across codebases, web browsers, and enterprise infrastructure rely on an execution harness to move state between the working context, session history, persistent memory, and external environment. While conventional execution traces log model prompts and tool calls, critical security and reliability failures occur during state transfers: a transfer can admit unchecked content (indirect prompt injections, unverified memory writes), rewrite state lossily (context compaction dropping user constraints, memory consolidation stripping source authority), or restore state incompletely (workspace rollbacks leaving aborted KV state active on the inference server). Because current traces omit what crosses these boundaries, failure attribution and runtime monitors fail on multi-step trajectories. We present a state-transfer audit architecture for the agent harness. At each transfer boundary, we define an audit point specifying the minimal hash-chained record the harness emits, separating low-overhead deterministic checks from model-based semantic checks and binding internal context, memory, and inference-server cache state to external actions. We show that the same transfer records required for causal failure attribution supply the durable state needed by runtime security controls, including least-privilege capabilities, replay-resistant authorization outside the prompt, information flow control, obligation monitors, and transactional recovery across multi-agent and infrastructure pipelines. Finally, we analyze multimodal GUI adaptations and implement and evaluate a reference harness middleware across 240 multi-step fault-injection trajectories, showing that transfer records localize root causes and catch cross-transfer violations missed by lifecycle and tool-only logs at microsecond deterministic overhead.",
+      "takeaways": [
+        "The object is a middleware layer for agent harnesses that audits state transfers between context, memory, and external environments.",
+        "The visible limit is that the evaluation relies on fault-injection trajectories, which may not capture all real-world failure modes or adversarial conditions.",
+        "The artifact status is a reference harness middleware implementation, with no declared code repository provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that their software tool for monitoring agent state changes found errors that standard logging missed in 240 simulated multi-step scenarios.",
+        "brief": "The authors suggest a way to check how information moves between different parts of an AI agent system, such as its short-term memory and external tools. They create a system that logs these movements with digital fingerprints to ensure nothing is lost or tampered with.\n\nThe authors say they tested this system in 240 simulated scenarios where errors were deliberately introduced. They claim their system found the source of these errors and caught mistakes that normal logs missed, with very small performance costs. The listing does not say exactly how small the performance cost was or how often errors were caught compared to other methods.\n\nPeople who build the infrastructure for AI agents or worry about security in these systems might find this useful. People who only care about how the AI thinks or writes code might not need these low-level technical details.",
+        "takeaways": [
+          "The main thing is a software layer that watches how data moves between an AI agent's memory and its tools.",
+          "A limitation is that the tests used simulated errors, which might not cover all real-world problems.",
+          "The authors mention a reference implementation, but the listing does not provide a link to the code."
+        ]
+      },
+      "actions": [
+        "Verify the specific microsecond overhead values and baseline comparison metrics by reading the full PDF.",
+        "Check the implementation details of the hash-chained records to assess the practical integration cost into existing agent harnesses."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR"
+      ],
+      "listing": {
+        "listedOn": "2026-11-19",
+        "publishedOn": "2026-11-19",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.23346"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-19"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-19T21:40:03.216Z"
+      }
+    },
+    {
+      "id": "2611.23354",
+      "arxivId": "2611.23354",
+      "url": "https://arxiv.org/abs/2611.23354",
+      "topic": "Econ",
+      "reported": "The authors report a 6.6-percentage-point increase in non-prisoner self-representation relative to prisoner petitions by fiscal 2025, measured across 89 federal districts using a difference-in-differences analysis.",
+      "metrics": [
+        "6.6-percentage-point increase",
+        "89 federal districts",
+        "13% revenue growth"
+      ],
+      "title": "AI, Specialization, and the Organization of Knowledge Work: Evidence from Legal Services",
+      "authors": "Liu Zhang, Mark Esposito, Isabel Yang",
+      "takeaway": "The paper claims to develop a framework linking individual self-provision, enterprise make-or-buy decisions, and pricing by specialist firms to explain how AI affects professional-service organizations.",
+      "brief": "The authors propose a theoretical framework connecting individual self-provision, enterprise make-or-buy decisions, and specialist firm pricing to analyze AI's impact on legal services. They argue that as AI improves lower-priced alternatives, clients may reallocate work across outside providers without internalizing it, potentially allowing premium firms to raise markups even as their work share declines.\n\nThe strongest reported evidence is a 6.6-percentage-point increase in non-prisoner self-representation relative to prisoner petitions by fiscal 2025 across 89 federal districts, which remains substantial after adjusting for pre-existing trends. The authors note that lawyer employment shows no clear post-2022 shift toward client firms and that legal-AI benchmarks reveal continuing limitations in completing complex, multi-step work. They also report that the largest law firms achieved 13% revenue growth in 2025 despite nearly flat billable hours, while lower-priced firms experienced stronger demand growth. The listing does not establish whether the observed patterns are causally driven by AI or if much of the underlying reallocation predates generative AI.\n\nResearchers studying labor economics, professional services, or AI adoption in knowledge work may find the framework and empirical patterns relevant. Those seeking direct causal evidence of AI's impact on firm-level pricing or employment structures may find the listing insufficient, as the authors acknowledge that much of the reallocation predates generative AI and that AI benchmarks show limitations in complex work.",
+      "abstract": "Artificial intelligence makes specialized knowledge cheaper to use, but its effects on professional-service firms depend on how clients reallocate work and how suppliers respond. We develop a framework linking individual self-provision, enterprise make-or-buy decisions, and pricing by specialist firms. As AI improves lower-priced alternatives, clients may reallocate work across outside providers without bringing it in-house. If the departing work is more price-sensitive than the work that remains, premium firms may raise their optimal markups even as their share of work declines. We examine these margins in U.S. legal services. Across 89 federal districts, a difference-in-differences analysis finds a 6.6-percentage-point increase in non-prisoner self-representation relative to prisoner petitions by fiscal 2025, remaining substantial after adjusting for pre-existing trends. In contrast, lawyer employment shows no clear post-2022 shift toward client firms. Legal-AI benchmarks reveal continuing limitations in reliably completing complex, multi-step work, offering one possible explanation. Meanwhile, the largest law firms reported 13% revenue growth in 2025 despite nearly flat billable hours, while lower-priced firms experienced stronger demand growth. Reported AI integration is also stronger among firms with lower revenue per lawyer. These patterns highlight the importance of changes in work allocation and supplier competition, even as much of the underlying reallocation predates generative AI. The findings illustrate why cheaper expertise need not produce either widespread internalization or declining prices for premium professional services.",
+      "takeaways": [
+        "The object is a theoretical framework and empirical analysis of AI's impact on legal services work allocation and pricing.",
+        "A visible limit is that the authors state much of the underlying reallocation predates generative AI, and legal-AI benchmarks reveal continuing limitations in reliably completing complex, multi-step work.",
+        "The artifact status is not established in the listing; no code, dataset, or repository URL is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that non-prisoner self-representation increased by 6.6 percentage points compared to prisoner petitions by fiscal 2025, measured across 89 federal court districts using a statistical method that compares changes over time between groups.",
+        "brief": "The authors create a model connecting how individuals handle their own legal issues, how companies decide to hire outside help or handle work internally, and how specialist law firms set prices. They suggest that as AI makes cheaper legal options better, clients might shift work to different outside providers instead of bringing it in-house. This could allow high-end law firms to charge higher prices even if they handle less work overall.\n\nThe main evidence they present is a 6.6 percentage point rise in non-prisoner self-representation compared to prisoner petitions by 2025, found across 89 federal districts. This increase stayed significant even after accounting for trends that existed before AI became widespread. They also note that lawyer employment did not clearly shift toward client companies after 2022, and that AI tools for legal work still struggle with complex, multi-step tasks. Additionally, the biggest law firms saw 13% revenue growth in 2025 even though billable hours stayed roughly the same, while cheaper firms saw stronger demand growth. The listing does not confirm whether these changes are directly caused by AI or if they were already happening before generative AI emerged.\n\nPeople studying how AI affects jobs in professional fields, how law firms operate, or how AI is adopted in knowledge work might find this useful. Those looking for clear proof that AI directly changed law firm pricing or hiring might find the information incomplete, since the authors admit that much of the work shift happened before generative AI and that AI tools still have limits in handling complex legal tasks.",
+        "takeaways": [
+          "The paper focuses on a model and data analysis of how AI affects how legal work is distributed and priced.",
+          "A clear limitation is that the authors say much of the work shift happened before generative AI, and AI tools still can't reliably handle complex, multi-step legal tasks.",
+          "The listing does not say whether code, data, or a repository is available for this work."
+        ]
+      },
+      "actions": [
+        "Verify the difference-in-differences methodology and the 6.6-percentage-point finding by examining the full PDF, particularly the robustness checks for pre-existing trends.",
+        "Check the full PDF for details on the legal-AI benchmarks cited and the specific revenue and billable hours data for law firms to assess the strength of the evidence."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-11-19",
+        "publishedOn": "2026-11-19",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.23354"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-19"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-19T21:40:03.216Z"
+      }
+    },
+    {
+      "id": "2611.23436",
+      "arxivId": "2611.23436",
+      "url": "https://arxiv.org/abs/2611.23436",
+      "topic": "Engineering",
+      "reported": "The authors report that their proposed analog combiner achieves an SNR gap below 0.006 dB compared to theoretically optimal analog equal-gain combining in line-of-sight channels with antenna array misalignment.",
+      "metrics": [
+        "SNR gap below 0.006 dB",
+        "within 0.84 dB of its fully digital MRC-equivalent counterpart"
+      ],
+      "title": "How to Receive Focused Beams in Near-Field MIMO? Analytical Combiners and Array Size Optimization",
+      "authors": "Phinehas Chinthalagattu, Vitaly Petrov, Emil Bj\\\"ornson",
+      "takeaway": "The paper proposes analytical analog and digital combiners for near-field beamfocusing and derives a closed-form expression for optimal array-size trade-offs to maximize received SNR.",
+      "brief": "The authors propose two analytical combiners, analog ANF-AC and digital ANF-DC, for near-field beamfocusing in line-of-sight channels with antenna array misalignment. They report that ANF-AC closely matches theoretically optimal analog equal-gain combining with an SNR gap below 0.006 dB, and that the optimized analog receiver performs within 0.84 dB of its fully digital MRC-equivalent counterpart. The listing does not specify the simulation parameters, channel models, or hardware constraints used to generate these numerical results, leaving the practical implementation complexity and cost claims unverified by the provided text.\n\nThe reported evidence consists of theoretical derivations and link-level evaluations showing that the proposed combiners match optimal combining performance. The authors state that the optimized analog receiver performs within 0.84 dB of its fully digital MRC-equivalent counterpart, demonstrating that optimized analog combining can get close to fully digital performance. However, the abstract does not detail the specific array sizes, frequencies, or misalignment angles tested, nor does it provide data on implementation complexity or cost, which are mentioned as potential benefits but not quantified.\n\nResearchers working on near-field MIMO systems, analog beamforming, or 6G+ communication architectures may find the analytical tractability and closed-form expressions useful for network-level studies. Those focused on hardware implementation details, specific frequency bands, or experimental validation of the combiners should note that the abstract lacks these specifics and may need to consult the full paper for practical applicability.",
+      "abstract": "This paper investigates receive combining for near-field beamfocusing in line-of-sight channels with antenna array misalignment. We propose and evaluate two analytical combiners: analog ANF-AC and digital ANF-DC. Beyond focusing the beam toward the transmitter, ANF-AC benefits from the proposed phase-flip corrections (PFCs), while ANF-DC additionally exploits Dirichlet-kernel-based amplitude tapering. ANF-AC closely matches theoretically optimal analog equal-gain combining (EGC), with an SNR gap below 0.006 dB. Similarly, ANF-DC matches optimal digital maximum-ratio combining (MRC). We then leverage the analytical properties of these combiners for link-level evaluation and optimization, deriving a closed-form expression for the optimal transmitter-receiver array-size trade-off that maximizes received SNR with analog combining. We also show that the optimized analog receiver performs within 0.84 dB of its fully digital MRC-equivalent counterpart. These results demonstrate that optimized analog combining (with potentially lower implementation complexity and cost, particularly at higher frequencies) can get close to the fully digital performance. Beyond the theoretical insights presented, the analytical tractability and EGC-like / MRC-like performance of our combiners enable accurate network-level mathematical studies of beamfocusing, such as coverage, capacity, and interference analysis and optimization toward efficient 6G+ near-field MIMO communication systems.",
+      "takeaways": [
+        "The paper provides analytical combiners for near-field beamfocusing that match optimal combining performance with minimal SNR gaps.",
+        "The abstract does not specify the simulation parameters, channel models, or hardware constraints used to generate the reported numerical results.",
+        "The listing does not establish the practical implementation complexity or cost of the proposed combiners, only suggesting they may be lower than fully digital counterparts."
+      ],
+      "plain": {
+        "reported": "The authors report that their proposed analog signal-combining method achieves a signal-to-noise ratio gap of less than 0.006 decibels compared to the theoretically best analog method in direct-line-of-sight channels where the antenna arrays are not perfectly aligned.",
+        "brief": "The authors propose two analytical methods for combining signals in near-field beamfocusing, one analog and one digital, for direct-line-of-sight channels where the antenna arrays are not perfectly aligned. They report that the analog method closely matches the theoretically best analog method with a signal-to-noise ratio gap of less than 0.006 decibels, and that the optimized analog receiver performs within 0.84 decibels of its fully digital counterpart. The listing does not specify the simulation parameters, channel models, or hardware constraints used to generate these numerical results, leaving the practical implementation complexity and cost claims unverified by the provided text.\n\nThe reported evidence consists of theoretical derivations and link-level evaluations showing that the proposed methods match optimal combining performance. The authors state that the optimized analog receiver performs within 0.84 decibels of its fully digital counterpart, demonstrating that optimized analog combining can get close to fully digital performance. However, the abstract does not detail the specific array sizes, frequencies, or misalignment angles tested, nor does it provide data on implementation complexity or cost, which are mentioned as potential benefits but not quantified.\n\nResearchers working on near-field multiple-input multiple-output systems, analog beamforming, or sixth-generation and beyond communication architectures may find the analytical tractability and closed-form expressions useful for network-level studies. Those focused on hardware implementation details, specific frequency bands, or experimental validation of the combiners should note that the abstract lacks these specifics and may need to consult the full paper for practical applicability.",
+        "takeaways": [
+          "The paper provides analytical signal-combining methods for near-field beamfocusing that match optimal combining performance with minimal signal-to-noise ratio gaps.",
+          "The abstract does not specify the simulation parameters, channel models, or hardware constraints used to generate the reported numerical results.",
+          "The listing does not establish the practical implementation complexity or cost of the proposed combiners, only suggesting they may be lower than fully digital counterparts."
+        ]
+      },
+      "actions": [
+        "Verify the simulation parameters, channel models, and array sizes used in the link-level evaluations by reading the full paper.",
+        "Check the full paper for quantitative data on implementation complexity and cost to assess the practical benefits of the proposed analog combiners."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-11-19",
+        "publishedOn": "2026-11-19",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.23436"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-19"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-19T21:40:03.216Z"
+      }
+    },
+    {
+      "id": "2611.23439",
+      "arxivId": "2611.23439",
+      "url": "https://arxiv.org/abs/2611.23439",
+      "topic": "Stats",
+      "reported": "The authors report that wavelet hard-thresholding estimators achieve asymptotically near-optimal convergence rates for the $L^2$-risk when the response function belongs to Besov space under both $i.i.d.$ errors and homoskedastic, long-memory errors.",
+      "metrics": [
+        "asymptotically near-optimal convergence rates for the $L^2$-risk"
+      ],
+      "title": "Minimax estimation for simultaneous deconvolution model in random design using wavelets",
+      "authors": "Rida Benhaddou",
+      "takeaway": "The paper proposes wavelet hard-thresholding estimators for simultaneous deconvolution models with random design and bounded densities, claiming near-optimal convergence rates under specific error structures.",
+      "brief": "The authors propose wavelet hard-thresholding estimators for simultaneous deconvolution models where design points are random and follow bounded densities. They claim these estimators achieve asymptotically near-optimal convergence rates for the $L^2$-risk when the response function belongs to Besov space under both $i.i.d.$ errors and homoskedastic, long-memory errors.\n\nThe authors state that under heteroskedastic, long-memory errors the estimator is not optimal. They note that for $i.i.d.$ errors, convergence rates are identical to those in simultaneous deconvolution under regular design and $i.i.d.$ errors, while for long-memory dependent errors, the rates are new and completely different from those in simultaneous deconvolution under regular design and long-memory errors.\n\nResearchers working on nonparametric deconvolution with random designs or long-memory dependent errors should examine the specific Besov space conditions and error assumptions. Those focused on heteroskedastic long-memory settings or regular design comparisons may find the stated non-optimality and rate differences relevant to their model selection.",
+      "abstract": "Simultaneous deconvolution model is investigated when the design points are random and follow bounded densities and errors are either $i.i.d.$ or long-memory dependent. We propose wavelet hard-thresholding estimators, and show that they achieve asymptotically near-optimal convergence rates for the $L^2$-risk when the response function belongs to Besov space under both $i.i.d.$ errors and homoskedastic, long-memory errors. However, under heteroskedastic, long-memory errors the estimator is not optimal. For the $i.i.d.$ errors, the convergence rates are {identical} to those found in simultaneous deconvolution under regular design {and $i.i.d.$ errors}. However, for long-memory dependent errors, the convergence rates are new {and completely different from those in simultaneous deconvolution under regular design and long-memory errors}.",
+      "takeaways": [
+        "The object is a wavelet hard-thresholding estimator for simultaneous deconvolution with random design and bounded densities.",
+        "A visible limit is that the estimator is not optimal under heteroskedastic, long-memory errors, as stated by the authors.",
+        "The artifact status is not established in the listing, as no code or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that their wavelet-based estimation method achieves nearly the best possible speed of accuracy improvement for the mean squared error when the target function is in a specific smoothness class, under both independent errors and a specific type of correlated errors.",
+        "brief": "The authors propose a wavelet-based estimation method for a statistical model where the input data points are random and have bounded probability densities. They claim this method achieves nearly the best possible speed of accuracy improvement for the mean squared error when the target function is in a specific smoothness class, under both independent errors and a specific type of correlated errors.\n\nThe authors state that under a different type of correlated errors where the error variance changes, the method is not optimal. They note that for independent errors, the speed of accuracy improvement is the same as in a similar model with fixed input points and independent errors, while for the correlated errors, the speed is new and completely different from the fixed input point case.\n\nResearchers working on statistical deconvolution with random input data or correlated errors should examine the specific smoothness conditions and error assumptions. Those focused on the changing variance correlated error case or fixed input point comparisons may find the stated non-optimality and speed differences relevant to their model selection.",
+        "takeaways": [
+          "The object is a wavelet-based estimation method for statistical deconvolution with random input data and bounded probability densities.",
+          "A visible limit is that the method is not optimal under changing variance correlated errors, as stated by the authors.",
+          "The artifact status is not established in the listing, as no code or repository is declared."
+        ]
+      },
+      "actions": [
+        "Verify the exact Besov space conditions and error distribution assumptions in the PDF to confirm the scope of the near-optimality claim.",
+        "Check the PDF for the specific mathematical derivation of the convergence rates under long-memory dependent errors to assess the novelty claim."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "math.ST",
+        "stat.ME",
+        "stat.TH"
+      ],
+      "listing": {
+        "listedOn": "2026-11-19",
+        "publishedOn": "2026-11-19",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.23439"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-19"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-19T21:40:03.216Z"
+      }
+    },
+    {
+      "id": "2611.23777",
+      "arxivId": "2611.23777",
+      "url": "https://arxiv.org/abs/2611.23777",
+      "topic": "Health",
+      "reported": "The authors report that STORM matches or exceeds the accuracy of Boltz-2 on multiple evaluation datasets while delivering a speed improvement of over five orders of magnitude for both inference and training.",
+      "metrics": [],
+      "title": "STORM: A Lightweight Structure-Free Model for Binding Affinity Prediction",
+      "authors": "Ayush Pandit (Stanford University), Rohan V. Koodli (Stanford University), Wei Deng (Stanford University), Roxana Daneshjou (Stanford University), Ron O. Dror (Stanford University)",
+      "takeaway": "STORM is a fast, simple machine learning model that ensembles many small model fusions of diverse protein and molecule representations for binding affinity prediction.",
+      "brief": "The authors present STORM as a lightweight structure-free model designed to predict small molecule binding affinity to proteins. It ensembles small model fusions of diverse protein and molecule representations to address the high computational costs of physics-based and recent cofolding approaches.\n\nThe authors state that STORM matches or exceeds the accuracy of Boltz-2 on multiple evaluation datasets. They also report a speed improvement of over five orders of magnitude for both inference and training. The listing does not specify the exact datasets, baseline configurations, or statistical significance of these comparisons.\n\nResearchers working on computational drug discovery or molecular affinity prediction may find this relevant. Those requiring detailed experimental protocols or specific dataset breakdowns should verify the full paper before relying on these claims.",
+      "abstract": "Accurately predicting a small molecule's binding affinity to a protein, a critical task in drug discovery, remains challenging. Physics-based approaches like free-energy perturbation (FEP) have very high computational costs and require expert setup. Recent machine learning--based cofolding models have reported accuracy approaching that of FEP---and at least one of them, Boltz-2, has already been widely adopted for affinity prediction---but they remain expensive for large computational screens and even more expensive for retraining on newly collected experimental data. To address these challenges, we introduce STORM: Similarity Transfer from Observed Reference Molecules. STORM is a fast, simple machine learning model that ensembles many small model fusions of diverse protein and molecule representations for binding affinity prediction. Trained on the same data, STORM matches or exceeds the accuracy of Boltz-2 on multiple evaluation datasets, while delivering a speed improvement of over five orders of magnitude for both inference and training. Our results also suggest opportunities to substantially improve affinity prediction accuracy by integrating historical experimental affinity data with structural and biophysical information.",
+      "takeaways": [
+        "The object is a machine learning ensemble model for binding affinity prediction that does not require explicit structural inputs.",
+        "A visible limit is the lack of specific dataset names or detailed benchmark comparisons in the provided abstract.",
+        "No code repository or artifact is declared in the listing, so the implementation status is not established."
+      ],
+      "plain": {
+        "reported": "The authors report that their model, STORM, performs as well as or better than a previous model called Boltz-2 on several test sets, while being much faster to run and train.",
+        "brief": "The authors introduce a new computer program called STORM that predicts how strongly a drug molecule sticks to a protein. This is a key step in finding new medicines. The program uses a simple combination of smaller computer models to make these predictions quickly.\n\nThe authors say their program is just as accurate as a popular existing program called Boltz-2. They also claim it is more than 100,000 times faster to use and to update with new data. The short summary does not list the specific test sets used or how the accuracy was measured.\n\nPeople who use computers to help design drugs might find this useful. People who need to know exactly how the tests were set up should read the full paper to see the details.",
+        "takeaways": [
+          "The tool is a computer program that predicts drug-protein interactions without needing a 3D shape of the protein.",
+          "The summary does not say which specific tests were used to prove the accuracy claims.",
+          "The summary does not say if the computer code is available for others to download and use."
+        ]
+      },
+      "actions": [
+        "Verify the specific evaluation datasets and baseline comparison details in the full PDF.",
+        "Check the paper for any released code or model weights to assess reproducibility."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-19",
+        "publishedOn": "2026-11-19",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.23777"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-19"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-19T21:40:03.216Z"
+      }
+    }
+  ]
+}
