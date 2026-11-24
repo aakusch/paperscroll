@@ -1,0 +1,666 @@
+{
+  "date": "2026-11-24",
+  "label": "Tue, Nov 24",
+  "minutes": 10,
+  "poolSize": 161,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-11-24T23:38:56.649Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2611.29897",
+      "arxivId": "2611.29897",
+      "url": "https://arxiv.org/abs/2611.29897",
+      "topic": "AI",
+      "reported": "The authors report that on an RTX 4090, the optimized execution reduces median complete-window latency from 1685.35 to 276.14 ms, achieving a median paired speedup of 6.138times while preserving identical outputs and committed states in the tested rollouts.",
+      "metrics": [
+        "median complete-window latency from 1685.35 to 276.14 ms",
+        "median paired speedup of 6.138times",
+        "rollouts of up to 39.52 s"
+      ],
+      "title": "Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control",
+      "authors": "Yue Huang, Tianshan Zhang, Zeyu Zhang, Jayeon Kang, Akide Liu, Sungjoon Choi, Dacheng Tao, Hao Tang",
+      "takeaway": "The paper presents Motion Mamba 2.0, a Mamba-based root-body diffusion architecture integrating local attention, resumable recurrent states, and persistent content memory for long-horizon controllable motion generation.",
+      "brief": "The authors propose a Mamba-based diffusion architecture designed to overcome bounded attention caches and repeated denoising overhead in autoregressive motion generation. They introduce persistent content memory to transform compressed motion history into dynamically updated content slots accessible to local attention.\n\nEvaluations on retargeted HiPHI demonstrate accurate terminal control over rollouts of up to 39.52 s, while short-horizon comparisons on BONES Seed and retargeted HumanML3D show retained spatial control and text-motion matching. The authors report a median paired speedup of 6.138times on an RTX 4090, reducing median complete-window latency from 1685.35 to 276.14 ms while preserving identical outputs and committed states in the tested rollouts. Real-world evaluation on the Unitree G1 demonstrates sequential text-guided action composition and interactive locomotion through keyboard and mouse control.\n\nResearchers working on long-horizon humanoid control or efficient autoregressive diffusion inference may find the architecture and execution scheme relevant. Those focused solely on short-horizon static pose estimation or non-Mamba based diffusion models may find the specific recurrent state mechanisms less applicable.",
+      "abstract": "Long-horizon, real-time controllable motion generation is essential for interactive animation and humanoid robotics, where an agent must respond to changing instructions and spatial goals while moving. Existing autoregressive diffusion methods generate motion incrementally, but bounded attention caches limit access to distant history, while repeated denoising introduces substantial inference overhead. We present Motion Mamba 2.0, a Mamba-based root-body diffusion architecture that integrates local attention, resumable recurrent states, and persistent content memory (PCM) for long-horizon controllable motion generation. PCM transforms compressed motion history from Mamba recurrent states, together with state changes and text-conditioned features, into dynamically updated content slots accessible to local attention. To enable efficient inference, we further develop an execution scheme tailored to this architecture, combining CUDA Graph replay, fused kernels, and execution-flow simplification while preserving the canonical history update. Evaluations on retargeted HiPHI demonstrate accurate terminal control over rollouts of up to 39.52 s, while short-horizon comparisons on BONES Seed and retargeted HumanML3D show that the model also retains strong spatial control and text-motion matching. On an RTX 4090, the optimized execution reduces median complete-window latency from 1685.35 to 276.14 ms, achieving a median paired speedup of 6.138times while preserving identical outputs and committed states in the tested rollouts. Moreover, we conduct extensive real-world evaluation on the Unitree G1, demonstrating sequential text-guided action composition, expressive motion, and interactive locomotion through keyboard and mouse control.",
+      "takeaways": [
+        "The object is a Mamba-based root-body diffusion architecture with persistent content memory for long-horizon humanoid motion generation.",
+        "A visible limit is that the reported speedup and latency figures are specific to an RTX 4090 and tested rollouts, with no stated generalization to other hardware or longer untested horizons.",
+        "The artifact status is established by the declared code repository URL, though the listing does not confirm the completeness or reproducibility of the provided code."
+      ],
+      "plain": {
+        "reported": "The authors report that on a specific high-end graphics card, their optimized software reduces the average time to process a full motion window from 1685.35 milliseconds to 276.14 milliseconds, achieving a 6.138 times speedup while producing exactly the same motion outputs and internal states in the tested sequences.",
+        "brief": "The authors propose a new computer model for generating human-like movement that uses a specific type of neural network called Mamba to handle long sequences of motion without losing track of past actions. They add a memory system that keeps track of important past movements and text instructions to guide the character's actions over time.\n\nThey tested their model on simulated human movements and found it could control the character accurately for sequences lasting up to 39.52 seconds. They also tested it on a real robot and found it could follow text instructions and move interactively. Their software optimization made the model run much faster on a specific graphics card, reducing processing time significantly while ensuring the results were identical to the slower version.\n\nPeople who build robots or create animations that need to respond to changing instructions over long periods might find this useful. People who only need to generate short, static poses or who use different types of neural networks might not find this specific approach helpful.",
+        "takeaways": [
+          "The main thing being built is a computer model that generates long, continuous human movements using a specific neural network design and a memory system.",
+          "A limitation is that the speed improvements were only measured on one specific type of graphics card and for specific test sequences, so it is not known how well it works on other hardware or for much longer sequences.",
+          "The authors have provided a link to their code, but the listing does not say if the code is complete or if it will work exactly as described without further setup."
+        ]
+      },
+      "actions": [
+        "Verify the claimed 6.138times speedup and identical output preservation by reproducing the median complete-window latency measurements on an RTX 4090 using the provided code.",
+        "Inspect the persistent content memory implementation to confirm how compressed motion history from Mamba recurrent states is transformed into dynamically updated content slots."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/AIGeeksGroup/MotionMamba2.0",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-24",
+        "publishedOn": "2026-11-23",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.29897",
+            "upvotes": 171
+          }
+        ]
+      },
+      "trend": {
+        "votes": 171,
+        "rank": 1,
+        "of": 49,
+        "perDay": 171
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 171,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-24T23:38:56.649Z"
+      }
+    },
+    {
+      "id": "2611.31201",
+      "arxivId": "2611.31201",
+      "url": "https://arxiv.org/abs/2611.31201",
+      "topic": "AI",
+      "reported": "The authors report that Embo-Harness achieves an 83.3% success rate on RoboLab-120, outperforming the strongest reported baseline by 26.2 percentage points.",
+      "metrics": [
+        "83.3% success rate",
+        "26.2 percentage points",
+        "15 of 20 zero-shot trials"
+      ],
+      "title": "Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness",
+      "authors": "Xiao-Ming Wu, Kang Liao, Yuexiao Ma, Taolin Zhang, Mingqian Zhou, Nuo Chen, Ziming Li, Yihang Luo, Rui Li, Zhonghua Wu, Tianyu Xie, Xiawu Zheng, Zhongang Cai, Zhi Hou, Chen Change Loy",
+      "takeaway": "The paper presents Embo-Harness, a framework for systematically studying frontier-model-as-policy harnesses and distilling a practical recipe for their design.",
+      "brief": "The authors propose Embo-Harness to investigate the design principles of robotic harnesses that use frontier multimodal models directly as policies. They examine prompting, planning, action execution, and tool use within the agentic loop.\n\nThe strongest reported result is an 83.3% success rate on RoboLab-120, exceeding the strongest reported baseline by 26.2 percentage points. The authors also report success in 15 of 20 zero-shot trials across four real-world manipulation tasks. Controlled interventions suggest the model relies more on accurate spatial target estimation than on explicit low-level joint or trajectory generation. The listing does not specify the exact baseline model or the specific real-world task names.\n\nResearchers building robotic control systems using large multimodal models may find the empirical findings and recipe relevant. Those focused solely on low-level trajectory generation without high-level policy integration may find the scope less applicable.",
+      "abstract": "Frontier multimodal models exhibit extraordinary generalization in generating robot actions from observations and instructions, enabling a new paradigm in which they serve directly as policies within closed-loop robotic harnesses. However, the design principles of such harnesses, and the capabilities underlying their strong performance, remain unclear. We present Embo-Harness, a framework for systematically studying frontier-model-as-policy harnesses. We investigate four components of the robotic agentic loop, namely, prompting, planning, action execution, and tool use, and distill six empirical findings into a practical recipe. This recipe prioritizes interfaces that exploit the model's native visual reasoning and tool-use capabilities over handcrafted plans, skills, or action priors, and identifies effective choices for action representation, chunking, reasoning effort, visual observations, short multi-action sequences, and policy refinement. On RoboLab-120, Embo-Harness achieves an 83.3\\% success rate, outperforming the strongest reported baseline by 26.2 percentage points. It also succeeds in 15 of 20 zero-shot trials across four real-world manipulation tasks. Beyond performance, controlled interventions indicate that the studied model depends more strongly on accurate spatial target estimation than on explicit low-level joint or trajectory generation. These results provide both a practical recipe for building strong frontier-model-as-policy harnesses and a clearer account of the capabilities that drive their performance.",
+      "takeaways": [
+        "The object is a systematic framework and empirical recipe for designing robotic harnesses that utilize frontier multimodal models as direct policies.",
+        "A visible limit is that the real-world evaluation covers only four manipulation tasks and 20 zero-shot trials, which may not represent the full range of robotic scenarios.",
+        "The artifact status is established by the provided GitHub repository URL, though the listing does not confirm the completeness or current state of the code."
+      ],
+      "plain": {
+        "reported": "The authors report that their system, Embo-Harness, succeeded in 83.3% of tasks in a simulated environment called RoboLab-120, which is 26.2 percentage points better than the best previous method they compared it to.",
+        "brief": "The authors created a system called Embo-Harness to study how to use large, general-purpose AI models to directly control robots. They looked at four parts of the robot's decision-making loop: how to ask the AI for help, how to plan steps, how to perform actions, and how to use external tools.\n\nTheir best result was an 83.3% success rate in a simulated robot environment. This was 26.2 percentage points higher than the best previous method they tested. They also tested the system on four real physical robot tasks, succeeding in 15 out of 20 attempts without prior training on those specific tasks. Their tests showed the AI model relies more on correctly identifying where to move than on calculating detailed joint movements.\n\nPeople who build robot control systems using large AI models might find their findings useful. People who only work on the detailed mathematical calculations for robot joints might find this less relevant.",
+        "takeaways": [
+          "The main contribution is a set of rules and a framework for using large AI models to control robots directly.",
+          "A limitation is that the real-world testing was done on only four specific tasks and 20 attempts, which is a small sample size.",
+          "The authors provide a link to a code repository, but the listing does not confirm if the code is complete or fully functional."
+        ]
+      },
+      "actions": [
+        "Verify the specific baseline model and task definitions in the full PDF to contextualize the 26.2 percentage point improvement.",
+        "Inspect the provided GitHub repository to confirm the availability of the harness implementation and evaluation scripts."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/DravenALG/Embo-Harness",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-24",
+        "publishedOn": "2026-11-23",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.31201",
+            "upvotes": 90
+          }
+        ]
+      },
+      "trend": {
+        "votes": 90,
+        "rank": 2,
+        "of": 49,
+        "perDay": 90
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 90,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-24T23:38:56.649Z"
+      }
+    },
+    {
+      "id": "2611.30989",
+      "arxivId": "2611.30989",
+      "url": "https://arxiv.org/abs/2611.30989",
+      "topic": "AI",
+      "reported": "The authors report that Claude Fable 5.2 achieves 13 of the 60 goals and earns the highest mean Interactive Score (28.58/100) among 13 representative AI systems.",
+      "metrics": [
+        "13 of the 60 goals",
+        "28.58/100",
+        "71.8\\%"
+      ],
+      "title": "WorldLeague: Benchmarking Physical Agency",
+      "authors": "Xinyang Zhou, Qi Li, Xinchao Wang",
+      "takeaway": "The paper introduces WorldLeague, a benchmark comparing AI systems on 60 simulated robot tasks by measuring progress toward physical goals.",
+      "brief": "The authors propose WorldLeague to evaluate physical agency across 60 simulated robot tasks using a common set of goals. They measure progress via an Interactive Score and physical success rate across six capability dimensions. The benchmark supports comparison of vision-language models, vision-language-action models, and world-action models.\n\nThe authors report that Claude Fable 5.2 achieves 13 of the 60 goals with a mean Interactive Score of 28.58/100. They note that vision-language models receive an Interactive Score of zero in 71.8% of episodes where they answer final questions correctly. The listing does not establish specific limitations regarding task difficulty or generalization beyond the simulated environment.\n\nResearchers working on embodied AI, physical AI, or agentic systems may find this benchmark relevant for comparing autonomous goal achievement. Those focused solely on language modeling or non-physical tasks may find the specific robot control interface less applicable. The provided code repository allows for direct verification of the benchmark implementation.",
+      "abstract": "AI systems can now operate Blender, follow instructions in complex video games, and manipulate objects with robot arms. What range of physical goals can today's AI systems achieve autonomously? Answering this question requires testing systems on tasks that demand different combinations of perception, memory, planning, and action. We introduce WorldLeague, a benchmark that compares AI systems on a common set of 60 simulated robot tasks by measuring progress toward each task's physical goal from the robot's trajectory. Robots explore scenes to gather evidence in WorldSeek, rearrange objects in WorldShape, and adapt to changes in WorldShift. Tying these goals to a single control interface limits which AI systems can be compared. In WorldLeague, vision-language models (VLMs) choose targets and motions, while vision-language-action models (VLAs) and world-action models (WAMs) use their native controls. For each of six capability dimensions, we measure how much progress a system makes toward its goals (Interactive Score) and how often it achieves them (physical success rate). Together, these measures form the system's Physical Agency Profile. Among 13 representative AI systems, Claude Fable 5.2 achieves 13 of the 60 goals and earns the highest mean Interactive Score (28.58/100). Fable leads in four dimensions, while GPT-6.1-Sol and GPT-6-Astra tie for first on rule-following tasks. Even when VLMs answer every final question correctly, they receive an Interactive Score of zero in 71.8\\% of those episodes. WorldLeague gives Embodied AI, Physical AI, and Agentic AI a shared basis for comparing what AI systems achieve autonomously, from partial progress toward a physical goal to full goal completion. Project Webpage: https://xyangzhou.github.io/WorldLeague",
+      "takeaways": [
+        "The object is a benchmark for measuring physical agency in AI systems through simulated robot tasks.",
+        "A visible limit is that tying goals to a single control interface restricts which AI systems can be directly compared.",
+        "The artifact status is established by the provided project webpage and GitHub repository URL."
+      ],
+      "plain": {
+        "reported": "The authors state that one specific AI model, Claude Fable 5.2, completed 13 out of 60 simulated robot tasks and had the highest average progress score of 28.58 out of 100.",
+        "brief": "The paper presents a test suite called WorldLeague to see how well AI systems can perform physical tasks in a computer simulation. It uses 60 different robot tasks to measure how close the AI gets to its goal and how often it fully succeeds. This allows comparison between different types of AI models that control robots.\n\nThe authors found that Claude Fable 5.2 was the top performer, completing 13 tasks and scoring 28.58 on average. They also noted that some AI models that answered final questions correctly still got a zero progress score in 71.8% of cases. The text does not explain if these results apply to real-world robots or just the simulation.\n\nPeople studying AI that interacts with the physical world might find this useful for comparing different AI systems. People interested only in text-based AI might find the robot-specific details less relevant. You can check the code and website provided to see exactly how the tests were run.",
+        "takeaways": [
+          "The main thing being tested is how well AI can achieve physical goals in a simulated robot environment.",
+          "One limitation is that the test setup only works with certain types of AI control interfaces, limiting who can be compared.",
+          "The authors provide a website and a code repository where you can see the benchmark details."
+        ]
+      },
+      "actions": [
+        "Verify the specific task definitions and scoring methodology by reviewing the PDF and the provided GitHub repository.",
+        "Check the project webpage for additional details on the six capability dimensions and the specific AI systems evaluated."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/xyangzhou/WorldLeague",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-24",
+        "publishedOn": "2026-11-23",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.30989",
+            "upvotes": 76
+          }
+        ]
+      },
+      "trend": {
+        "votes": 76,
+        "rank": 3,
+        "of": 49,
+        "perDay": 76
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 76,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-24T23:38:56.649Z"
+      }
+    },
+    {
+      "id": "2611.30013",
+      "arxivId": "2611.30013",
+      "url": "https://arxiv.org/abs/2611.30013",
+      "topic": "AI",
+      "reported": "The authors report that their Agentic Motion Framework reduces generation overhead and improves rigging reliability and motion-control accuracy, measured on DivDynBench across six morphology categories.",
+      "metrics": [],
+      "title": "3AGameFactory-Motion: Agentic Rigging and Reliable Complex Motion Generation for Diverse 3D Assets",
+      "authors": "Bohan Zeng, Kaixin Zhu, Yifan Yang, Dongge Yu, Zihao Wu, Yifan Dai, Zhou Liu, Junbo Niu, Xiaochen Ma, Shiran Ge, Zimo Meng, Junzhu Liang, Huanyao Zhang, Jinhang Liu, Tianqi Xiao, Jinhao Zhang, Tianyi Bai, Zhixiong Zeng, Penghao Zhao, Yuanbo Peng, Key Zhang, Wentao Zhang",
+      "takeaway": "The paper introduces DivDynBench and an Agentic Motion Framework for reliable rigging and complex motion generation across diverse 3D assets.",
+      "brief": "The authors propose a benchmark and an agentic framework to handle rigging and motion generation for arbitrary 3D assets beyond standard human or animal skeletons. They report that their agent-driven approach writes compact parametric programs executed deterministically, which they state reduces overhead and improves control accuracy on their new benchmark. No specific quantitative performance numbers are provided in the abstract to verify the magnitude of these improvements.\n\nThe listing does not establish specific error rates, success percentages, or cost figures for the reported improvements. The authors compare three paradigms but do not quantify the exact gap between them in the provided text. The benchmark covers six morphology categories with complex timing and trajectory constraints, but the specific asset types are not detailed.\n\nResearchers working on 3D animation, procedural rigging, or agent-based motion control may find the framework and benchmark relevant. Those seeking immediate quantitative baselines for standard human motion generation may find the abstract insufficient for direct comparison without accessing the full paper.",
+      "abstract": "Animating arbitrary 3D assets from instructions requires both structural inference and motion control, yet existing motion benchmarks mostly cover conventional human or animal skeletons with simple instructions. We introduce DivDynBench, which evaluates rigging and motion generation across six morphology categories, with instructions requiring multi-phase part coordination and explicit timing, angle, repetition, and trajectory constraints. With large language models, we systematically compare three common paradigms: specialized motion generation, video generation followed by motion recovery, and direct agent-driven generation. We analyze their control capabilities, cross-morphology adaptability, and generation costs. Guided by this comparison, we propose an Agentic Motion Framework in which an agent writes compact parametric skeleton and motion programs, and a deterministic executor performs rigging, kinematic solving, and geometric correction. Compact parameter control reduces generation overhead and improves rigging reliability and motion-control accuracy, providing practical guidance for deploying complex 3D motion generation.",
+      "takeaways": [
+        "The object is a benchmark (DivDynBench) and an agentic framework for 3D motion generation across diverse morphologies.",
+        "A visible limit is the lack of quantitative metrics in the abstract to substantiate the claimed improvements in reliability and accuracy.",
+        "The artifact status is indicated by a provided GitHub repository URL, though the code's completeness and functionality are not verified here."
+      ],
+      "plain": {
+        "reported": "The authors state that their system makes it easier to create animations for various 3D models and that it works better at controlling movements, based on tests they designed for six different types of body shapes.",
+        "brief": "The researchers created a new test set and a computer system that can animate 3D objects that are not just humans or animals. They say their system uses an AI agent to write simple instructions for movement, which a computer then executes precisely. They claim this makes the process faster and more accurate, but they do not give specific numbers in the summary to show how much better it is.\n\nThe summary does not say exactly how much faster or more accurate the system is compared to other methods. It mentions comparing three different ways to generate motion but does not list the scores. The test set includes complex movements with specific timing and angles, but it does not list exactly which 3D models were used.\n\nPeople who work on computer animation or AI that controls 3D characters might find this useful. People who need specific numbers to compare against standard human animation tools might need to read the full paper to get that data.",
+        "takeaways": [
+          "The main items are a new test set for 3D animation and a new AI system for creating movements.",
+          "A limitation is that the summary does not include specific numbers showing how well the system performs.",
+          "The authors provide a link to a code repository, but it is not confirmed here if the code works or is complete."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative results and benchmark comparisons in the full PDF to confirm the claimed improvements in rigging reliability and motion-control accuracy.",
+        "Inspect the provided GitHub repository to assess the availability of the DivDynBench dataset and the Agentic Motion Framework implementation."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/OpenDCAI/GameFactory-3A",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-24",
+        "publishedOn": "2026-11-23",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.30013",
+            "upvotes": 57
+          }
+        ]
+      },
+      "trend": {
+        "votes": 57,
+        "rank": 4,
+        "of": 49,
+        "perDay": 57
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 57,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-24T23:38:56.649Z"
+      }
+    },
+    {
+      "id": "2611.27993",
+      "arxivId": "2611.27993",
+      "url": "https://arxiv.org/abs/2611.27993",
+      "topic": "Econ",
+      "reported": "The authors report that the Gini coefficient first decreases, reaches a minimum at a finite tax rate, and then increases again as taxation intensifies.",
+      "metrics": [],
+      "title": "Growth versus equity in a stochastic multiplicative wealth model: The cost of redistribution and the emergence of an inequality Laffer curve",
+      "authors": "Renato Vieira dos Santos",
+      "takeaway": "The paper claims to demonstrate the emergence of an inequality Laffer curve in a stochastic multiplicative wealth model with taxation and redistribution.",
+      "brief": "The authors extend a stochastic multiplicative wealth model to include productive disincentive and administrative inefficiency channels. They claim this extension reveals an inequality Laffer curve where inequality initially falls then rises with higher tax rates.\n\nThe authors state that all predictions are validated by agent-based simulations. They note that the qualitative existence of an optimal tax rate is robust whenever aggregate growth responds to fiscal policy. The listing does not specify the simulation parameters or the exact magnitude of the inequality changes.\n\nResearchers modeling wealth distribution with fiscal policy may find the analytical tractability useful. Those requiring empirical calibration or specific jurisdictional data should note the model is theoretical.",
+      "abstract": "A stochastic multiplicative wealth model with taxation and redistribution is extended to include two channels through which fiscal policy can reduce the economy's average growth rate: productive disincentive (a tax-dependent mean return) and administrative inefficiency (loss of part of the collected revenue). For uniform redistribution, the stationary density of normalized wealth remains an inverse-gamma law, but its shape parameter acquires a richer dependence on the tax rate. The central finding is the emergence of an \"inequality Laffer curve\": when the disincentive is sufficiently strong, the Gini coefficient first decreases, reaches a minimum at a finite tax rate, and then increases again as taxation intensifies. In the extreme limit the stationary state collapses back to the condensed phase, restoring the oligarchic transition. Both channels also create a direct trade-off between inequality and long-run average wealth, giving rise to a welfare-maximizing tax rate. The two channels are combined into a single analytically tractable model, and all predictions are validated by agent-based simulations. The results show that the qualitative existence of an optimal tax rate is robust whenever the aggregate growth rate responds to fiscal policy, while the inequality Laffer curve is a specific prediction of the productive-disincentive channel.",
+      "takeaways": [
+        "The object is an analytical extension of a stochastic wealth model incorporating two specific fiscal policy channels.",
+        "A visible limit is that the model relies on agent-based simulations for validation without specified parameter ranges in the listing.",
+        "The artifact status is not established in the listing, as no code repository or data availability is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that a measure of wealth inequality drops, hits a lowest point at a specific tax level, and then goes back up as taxes get higher.",
+        "brief": "The authors added two ways taxes can slow economic growth to a mathematical model of wealth. They claim this shows a curve where inequality gets better then worse as taxes rise.\n\nThe authors say they checked their math using computer simulations of many people. They say the idea of a best tax rate is generally true if taxes affect growth. The summary does not say how big the changes in inequality were or what specific numbers were used in the simulations.\n\nPeople studying how taxes affect wealth gaps might like the clear math. People needing real-world data for a specific country should note this is a theory model, not a survey of actual people.",
+        "takeaways": [
+          "The thing being studied is a math model of wealth that includes two specific effects of taxes.",
+          "A clear limit is that the check was done with computer simulations, but the summary does not list the specific settings used.",
+          "It is not stated in the summary whether the computer code or data is available for others to use."
+        ]
+      },
+      "actions": [
+        "Verify the agent-based simulation code and parameter settings by obtaining the full PDF.",
+        "Check if the authors provide supplementary data or code links in the full paper to reproduce the Gini coefficient results."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-11-24",
+        "publishedOn": "2026-11-24",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.27993"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-24"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-24T23:38:56.649Z"
+      }
+    },
+    {
+      "id": "2611.28030",
+      "arxivId": "2611.28030",
+      "url": "https://arxiv.org/abs/2611.28030",
+      "topic": "Engineering",
+      "reported": "The authors report that DRU-Mixer achieved 95.19% accuracy on binary IED/Non-IED classification and sensitivity between 74.8% and 89.2% on multiclass regional IED classification.",
+      "metrics": [
+        "95.19% accuracy",
+        "72.76% precision",
+        "82.31% recall"
+      ],
+      "title": "DRU-Mixer: An Explainable Dilated Recurrent Unit-Based Mixer Model with Focal Loss for EEG-Based Interictal Epileptiform Discharges Detection",
+      "authors": "Aditya P Kamath, Xiaohui Tao, Taotao Cai, Prabal Datta Barua, Sreeni Chadalavada, Abdulkadir Sengur",
+      "takeaway": "The paper presents DRU-Mixer, a deep learning network combining convolutional, dilated recurrent, and mixer modules to automate the detection and classification of interictal epileptiform discharges in EEG recordings.",
+      "brief": "The authors propose a hybrid architecture using dilated recurrent units and mixer modules to classify interictal epileptiform discharges from EEG data. They report high accuracy and specificity for binary detection and strong sensitivity for multiclass regional typing, with interpretability shown via occlusion mapping. The listing does not specify the exact dataset, sample size, or external validation cohort used for these measurements.\n\nThe strongest reported result is 95.19% accuracy for binary classification, with sensitivity between 74.8% and 89.2% for multiclass tasks. The authors state the model outperforms VGGEEG and VGGSleep at 70% sensitivity but is on par with vEpiNet. No information is provided regarding cross-dataset generalization, clinical deployment constraints, or the specific EEG channel configurations used in the experiments.\n\nResearchers working on automated EEG biomarker detection or epilepsy diagnosis pipelines may find the architectural details and reported metrics relevant. Those requiring strict external validation benchmarks or clinical trial evidence should note the absence of such details in this listing.",
+      "abstract": "Interictal epileptiform discharges (IED) have been identified as a core electroencephalogram (EEG) biomarker in diagnosing epilepsy patients. However, automatic detection and classification of IED require significant effort by human experts and can be prone to inter-rater variability. This paper presents Dilated Recurrent Units (DRU)-Mixer, a deep learning network to automate the process of identifying and classifying IED based on EEG recordings. The proposed architecture comprises a convolutional front end for extracting local features, dilated recurrent units modeling the temporal relationship between EEG signals, and mixer modules for token- and channel-level representation learning. DRU-Mixer was trained to perform (i) binary classification of IED/Non-IED segments and (ii) multiclass classification of regional IED types. For binary classification, DRU-Mixer showed 95.19% accuracy, 72.76% precision, 82.31% recall, 96.61% specificity, and 77.24% F1-score. For multiclass classification, the proposed network achieved strong sensitivity between 74.8% and 89.2%, as well as precision between 70.5% and 86.3%. Sensitivity-oriented analysis of the results shows that, for 70% sensitivity, DRU-Mixer provided 83.8% precision and 98.5% specificity outperforming VGGEEG and VGGSleep models and being on par with vEpiNet model. Interpretability of the model's results was estimated through occlusion mapping technique, which was used to highlight time intervals and EEG channels providing maximal contribution to the prediction. Maps generated by the technique show specific patterns for IED and Non-IED indicating that the model utilizes structured channel-time features corresponding to the presence of epileptiform activity.",
+      "takeaways": [
+        "The object is a deep learning model for EEG-based interictal epileptiform discharge detection and classification.",
+        "A visible limit is the lack of specified dataset details, sample sizes, or external validation cohorts in the provided abstract.",
+        "The artifact status is not established in the listing, as no code repository or supplementary data link is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that their model, DRU-Mixer, correctly identified 95.19% of brainwave segments as either containing abnormal electrical spikes or not, and correctly identified between 74.8% and 89.2% of the specific types of these spikes in different brain regions.",
+        "brief": "The authors built a computer program that looks at brainwave recordings to find specific abnormal electrical patterns called interictal epileptiform discharges. They say the program is very good at deciding if these patterns are present or not, and reasonably good at identifying which type of pattern it is. They also show that the program focuses on specific parts of the brainwave signal when making its decisions. The summary does not say which specific group of patients or how many recordings were used to test the program.\n\nThe best result they show is that the program was right 95.19% of the time when just deciding if the pattern was there. For identifying the specific type of pattern, it was right between 74.8% and 89.2% of the time. They say their program does better than two other similar programs but performs about the same as a third one. The summary does not say if the program works well on brainwave data from different hospitals or different types of patients.\n\nPeople who are building tools to automatically find these brainwave patterns might find the design of this program useful. People who need to know if the program has been tested on a wide variety of real-world patients should note that this information is missing from the summary.",
+        "takeaways": [
+          "The thing being described is a computer program that finds abnormal brainwave patterns in EEG recordings.",
+          "A clear missing piece is the information about which specific patients or recordings were used to test the program.",
+          "It is not stated in the summary whether the computer code or the test data are available for others to use."
+        ]
+      },
+      "actions": [
+        "Verify the specific EEG dataset, patient cohort size, and split methodology by reading the full PDF.",
+        "Check the full text for details on the occlusion mapping implementation and any available code or data releases."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-24",
+        "publishedOn": "2026-11-24",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.28030"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-24"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-24T23:38:56.649Z"
+      }
+    },
+    {
+      "id": "2611.28152",
+      "arxivId": "2611.28152",
+      "url": "https://arxiv.org/abs/2611.28152",
+      "topic": "Security",
+      "reported": "The authors report that deterministic rewriting prevented full recovery of 103 of 104 synonym-encoded messages when applied unconditionally, but only one when intervention depended on a detector set to limit false alarms.",
+      "metrics": [
+        "103 of 104 synonym-encoded messages",
+        "48-response subset"
+      ],
+      "title": "STEGOGUARD-LM: Evaluating End-to-End Protection Against LLM Covert Channels",
+      "authors": "Martha Dimgba, George Williams",
+      "takeaway": "StegoGuard-LM is a controlled framework for evaluating defenses against covert messages in large language model outputs.",
+      "brief": "The authors present StegoGuard-LM, a framework to evaluate defenses against covert messages in LLM outputs, examining token-rank and synonym channels with Unicode concealment as a structural control.\n\nThey report that deterministic rewriting prevented full recovery of 103 of 104 synonym-encoded messages when applied unconditionally, but only one when intervention depended on a detector set to limit false alarms. In a four-round replay on a 48-response subset, an attacker selecting from a fixed catalog recovered more bits by switching channels, although paired gains were not statistically significant after correction for multiple comparisons. A more sensitive detector improved protection but modified about one-third of clean responses.\n\nResearchers evaluating LLM security defenses against covert channels may find the framework relevant. Those not working on LLM output security or covert channel detection may ignore it.",
+      "abstract": "A defense that disrupts hidden messages may still provide little protection if its detector rarely triggers an intervention. We present StegoGuard-LM, a controlled framework for evaluating defenses against covert messages in large language model outputs. We examine token-rank and synonym channels, with Unicode concealment as a structural control, and track messages through detection, intervention, and recovery. Deterministic rewriting prevented full recovery of 103 of 104 synonym-encoded messages when applied unconditionally, but only one when intervention depended on a detector set to limit false alarms. In a four-round replay on a 48-response subset, an attacker selecting from a fixed catalog recovered more bits by switching channels, although paired gains were not statistically significant after correction for multiple comparisons. Randomized rewriting showed no sustained advantage in this pilot. A more sensitive detector improved protection but modified about one-third of clean responses. These findings show how uneven detection can undermine effective rewriting and why protection must be evaluated alongside attacker adaptation and intervention on legitimate text.",
+      "takeaways": [
+        "The object is a controlled evaluation framework for LLM covert channel defenses, not a new defense mechanism itself.",
+        "A visible limit is that the four-round replay on a 48-response subset showed attacker gains from channel switching were not statistically significant after correction for multiple comparisons.",
+        "The artifact status is not established in the listing; no code repository or release is mentioned."
+      ],
+      "plain": {
+        "reported": "The authors report that a method that changes words in a predictable way stopped 103 out of 104 hidden messages from being fully decoded when it was always used, but only stopped one when it was only used if a security check flagged the text as suspicious.",
+        "brief": "The authors created a test system called StegoGuard-LM to check how well security tools stop hidden messages sent through AI text generators. They tested two types of hidden messages: one based on word order and one based on swapping words for synonyms, using special character encoding as a comparison baseline.\n\nThey found that a security tool that always changed the text stopped 103 out of 104 hidden messages from being decoded. However, when the tool only changed text if a security check said it was risky, it only stopped one message. In a test with 48 text samples, an attacker who switched between different hiding methods got more information out, but this advantage was not strong enough to be considered statistically reliable. A more sensitive security check caught more hidden messages but also changed about one-third of normal, safe text.\n\nPeople who study how to secure AI text generators against hidden data transmission might find this useful. People who do not work on AI security or hidden data transmission can likely ignore this paper.",
+        "takeaways": [
+          "This is a test system for checking security tools, not a new security tool itself.",
+          "The test with 48 samples showed that the attacker's advantage from switching methods was not statistically significant, meaning the result might be due to chance.",
+          "The listing does not say if the code or test system is available for download or use."
+        ]
+      },
+      "actions": [
+        "Verify the statistical correction method and the specific detector configuration used in the four-round replay by reading the full PDF.",
+        "Check the full PDF for details on the Unicode concealment structural control and the exact definition of 'full recovery' used in the 103/104 metric."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "listing": {
+        "listedOn": "2026-11-24",
+        "publishedOn": "2026-11-24",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.28152"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-24"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-24T23:38:56.649Z"
+      }
+    },
+    {
+      "id": "2611.28157",
+      "arxivId": "2611.28157",
+      "url": "https://arxiv.org/abs/2611.28157",
+      "topic": "Stats",
+      "reported": "The authors report that two real examples of complete compositional data were considered and the properties of alternative approaches to analysing them were compared.",
+      "metrics": [],
+      "title": "The statistical analysis of complete compositional data",
+      "authors": "Michael Greenacre, Ionas Erb",
+      "takeaway": "The paper claims that complete compositional data can be analysed on the original compositional scale, providing a simpler and often more valid interpretation than logratios.",
+      "brief": "The authors argue that when the totality of mutually exclusive features is observed, analysis on the original compositional scale is preferable to Aitchison's logratio transformation. They state that this approach provides a simpler and often more valid interpretation than logratios. The listing does not establish specific quantitative performance limits or artifacts for these methods.\n\nThe authors report comparing properties of alternative approaches using two real examples of complete compositional data. They also note that these ideas extend to some cases of incomplete compositions where original-scale or domain-normalized analysis is more appropriate. The abstract mentions a supplement with a detailed comparison of 24-hour activity data but does not specify the outcome of that comparison.\n\nResearchers working with compositional data where the full set of features is observed may find this relevant. Those relying exclusively on subcompositional coherence or logratio methods for incomplete data may find the scope limited. The listing does not provide code or specific benchmark results.",
+      "abstract": "The analysis of compositional data is dominated by the use of Aitchison's logratio transformation; which is the logarithmic transformation of ratios of compositional features. The use of ratios was originally justified to comply with the principle of subcompositional coherence.However, there are many situations in practice where the complete composition is observed, that is, the totality of its mutually exclusive features, without the need for considering any subcompositions. In these cases, the data can be analysed on the original compositional scale, which provides a simpler and often more valid interpretation than logratios. Two real examples of complete compositional data are considered and the properties of alternative approaches to analysing them are compared. These ideas extend to some cases of incomplete compositions, where analysing them at their original scale, or normalized according to domain knowledge, is more appropriate. A Supplement includes a detailed comparison of original-scale and logratio-transformed 24-hour activity data, using a data set typical of many found in the time-use literature.",
+      "takeaways": [
+        "The object is the statistical analysis of complete compositional data on the original scale versus logratio transformations.",
+        "A visible limit is that the abstract does not specify the quantitative results of the comparisons on the two real examples or the 24-hour activity data.",
+        "The artifact status is not established; no code or dataset repository is declared in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that they looked at two real-world examples of data where all parts add up to a whole, and they compared how different statistical methods handled them.",
+        "brief": "The authors say that when you have data where all the parts are known and add up to a total, you can analyze the numbers directly instead of using a complex mathematical transformation called logratios. They claim this direct method is simpler and often makes more sense. The summary does not say if one method was statistically better than the other in specific tests.\n\nThe authors say they compared different methods using two real examples. They also say this idea can apply to some data where not all parts are known, if you use background knowledge to adjust the numbers. The summary mentions an extra section comparing 24-hour activity data but does not say what the result was.\n\nPeople who work with data where all parts are known and add up to a whole might find this useful. People who only work with partial data or who strictly use the logratio method might find this less relevant. The summary does not include any computer code or specific test scores.",
+        "takeaways": [
+          "The paper is about analyzing data where all parts are known and add up to a whole, using direct numbers instead of a complex transformation.",
+          "A limit is that the summary does not say what the specific statistical results were for the two examples or the activity data.",
+          "It is not stated whether the authors provide any computer code or data files."
+        ]
+      },
+      "actions": [
+        "Verify the specific statistical outcomes and comparisons presented in the two real examples by reading the full PDF.",
+        "Check the supplement for the detailed comparison of original-scale and logratio-transformed 24-hour activity data to assess practical validity."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME"
+      ],
+      "listing": {
+        "listedOn": "2026-11-24",
+        "publishedOn": "2026-11-24",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.28157"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-24"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-24T23:38:56.649Z"
+      }
+    },
+    {
+      "id": "2611.28215",
+      "arxivId": "2611.28215",
+      "url": "https://arxiv.org/abs/2611.28215",
+      "topic": "Physics",
+      "reported": "The authors report that their Floquet perturbation theory picture accounts quantitatively for the shift and proliferation of freezing frequencies with interatomic spacing.",
+      "metrics": [],
+      "title": "State-selective dynamical freezing in driven Rydberg atom chains",
+      "authors": "Madhumita Sarkar, Sougato Bose, Roopayan Ghosh",
+      "takeaway": "The paper claims that dynamical freezing in driven Rydberg atom chains is state-dependent, with freezing occurring only where interference amplitudes for all available spin flips vanish simultaneously.",
+      "brief": "The authors propose a mechanism where freezing in driven Rydberg chains depends on the specific many-body configuration, not just the drive frequency. They use Floquet perturbation theory to show that a state freezes when local interaction shifts cause all available spin-flip amplitudes to cancel out.\n\nThey report that this model quantitatively explains how freezing frequencies shift and proliferate as interatomic spacing changes. They note that freezing is strong only within a specific spacing window, bounded by interaction tails and nearest-neighbour excitation facilitation. The listing does not provide specific numerical benchmarks or experimental data points.\n\nResearchers studying Floquet heating mitigation or Rydberg atom dynamics may find the state-dependent freezing condition relevant. Those focused on the PXP limit or large detuning regimes should note the authors state the perturbative window leaves almost no room for that limit.",
+      "abstract": "Dynamical freezing, the near-complete suppression of dynamics at special drive frequencies, offers a route to mitigating Floquet heating in periodically driven quantum systems. In interacting systems, however, the energy cost of each transition depends on the many-body configuration, so that the freezing condition itself becomes state dependent. We study this dependence in periodically driven Rydberg atom chains under single- and bi-frequency driving. Using Floquet perturbation theory, we show that each spin flip is characterised by a single interference amplitude set by its local interaction shift, and that a state freezes only where the amplitudes of all its available flips vanish simultaneously. This picture accounts quantitatively for the shift and proliferation of freezing frequencies with interatomic spacing and for the response of entire families of initial states, which are sorted by a single local motif. Freezing is strong only within a window of spacings bounded by interaction tails on one side and nearest-neighbour excitation facilitation on the other, outside of which the advantage of bi-frequency driving is lost. In the regime of large detuning amplitude, where freezing points are numerous and the perturbative description is controlled, this window leaves almost no room for the PXP limit.",
+      "takeaways": [
+        "The object is a theoretical framework for state-selective dynamical freezing in periodically driven Rydberg atom chains.",
+        "A visible limit is that the perturbative description is controlled only in the regime of large detuning amplitude, where the PXP limit is largely excluded.",
+        "The artifact status is not established in the listing, as no code or data repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that their mathematical model accurately predicts how the frequencies that stop atomic motion change and multiply as the distance between atoms changes.",
+        "brief": "The authors suggest that in chains of special atoms, the stopping of motion depends on the specific arrangement of the atoms, not just the speed of the external push. They use a mathematical method to show that motion stops only when the effects of all possible atomic flips cancel each other out.\n\nThey say this model explains how the stopping frequencies change as the atoms are spaced further apart. They note that this stopping effect is strong only when the atoms are at a specific distance, not too close and not too far. The summary does not give specific numbers or experimental results.\n\nScientists studying how to stop unwanted heating in quantum systems might find this useful. Those studying a specific type of atomic model called the PXP limit should note that the authors say this method does not apply well to that specific case.",
+        "takeaways": [
+          "The subject is a mathematical explanation for why motion stops in chains of special atoms under specific external pushes.",
+          "A clear limitation is that the math only works when the external push is very strong, which excludes a common simplified model of these atoms.",
+          "It is not stated whether the authors have shared their computer code or data files."
+        ]
+      },
+      "actions": [
+        "Verify the quantitative claims about frequency shifts and spacing windows by examining the full PDF and any associated supplementary data.",
+        "Check the authors' derivation of the single interference amplitude to confirm the conditions under which the perturbative theory breaks down."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "cond-mat.stat-mech",
+        "cond-mat.str-el"
+      ],
+      "listing": {
+        "listedOn": "2026-11-24",
+        "publishedOn": "2026-11-24",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.28215"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-24"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-24T23:38:56.649Z"
+      }
+    },
+    {
+      "id": "2611.29879",
+      "arxivId": "2611.29879",
+      "url": "https://arxiv.org/abs/2611.29879",
+      "topic": "Health",
+      "reported": "The authors report that the secondary-persistence ratio associates with ex vivo gut-microbiome reactivation at Spearman rho = 0.815 (p = 0.0002, q = 0.002) on 15 mycophenolic acid profiles.",
+      "metrics": [
+        "Spearman rho = 0.815",
+        "p = 0.0002",
+        "q = 0.002"
+      ],
+      "title": "Topological Pharmacokinetics: A Model-Free Framework for Quantifying the Shape of Concentration-Time Curves",
+      "authors": "Hong-Can Ren, Ya-Xin Gu",
+      "takeaway": "The paper introduces Topological Pharmacokinetics (TPK), a model-free framework that extracts a nine-component topological invariant from concentration-time curves to quantify shape without pre-specified compartmental models.",
+      "brief": "The authors propose a framework that reads curve shape directly from data using persistent homology, aiming to bridge the gap between shape-blind scalar summaries and structure-dependent compartmental models.\n\nThey report that the method distinguishes linear, nonlinear, and recirculating systems in simulations, and that a specific topological descriptor correlates strongly with gut-microbiome reactivation in a small clinical dataset of 15 profiles. The listing does not establish whether the clinical association is causal or if the method generalizes beyond the specific digitized dataset provided.\n\nResearchers working on pharmacokinetic modeling or topological data analysis in biomedical signals may find the framework relevant. Those requiring large-scale clinical validation or specific compartmental model parameters may find the current evidence insufficient for their immediate needs.",
+      "abstract": "Pharmacokinetic analysis compresses concentration-time curves into scalar summaries (non-compartmental analysis, NCA) or pre-specified compartmental models, approaches that are either model-free but shape-blind or shape-sensitive but structure-dependent. We introduce Topological Pharmacokinetics (TPK), a framework that reads curve shape directly from data without committing to any model. TPK delay-embeds each curve into a state-space trajectory and applies persistent homology to extract a nine-component topological invariant: multi-scale shape descriptors (peak hierarchy, secondary-peak isolation, loop structure) with established perturbation-stability properties. We evaluate the framework on four layers of increasing realism. Monophasic linear systems generate no spurious cyclic signals, whereas double-site absorption and enterohepatic recirculation produce distinct loop signatures; 12 nonlinear scenarios resolve as curvature-without-cycles; a weak endogenous rhythm survives superposition with a large exogenous drug signal (inter-peak interval recovered at exactly 24 h); and loop detection stays stable to 10 percent of Cmax additive noise and to sampling thinned to 7 points. As clinical proof of concept, we apply the same pipeline to 15 mycophenolic acid profiles digitized from a published kidney-transplant study. The secondary-persistence ratio associates with ex vivo gut-microbiome reactivation at Spearman rho = 0.815 (p = 0.0002, q = 0.002), whereas the tested exposure metrics show weak, nonsignificant associations (rho <= 0.38). Analyses are fully automated and reproducible; code and data are public. TPK is proposed as a complementary, model-free, shape-sensitive layer alongside NCA and model-based methods.",
+      "takeaways": [
+        "The object is a model-free topological descriptor set for concentration-time curves, specifically a nine-component invariant derived from persistent homology.",
+        "A visible limit is the small clinical sample size of 15 profiles, which constrains the statistical power and generalizability of the reported microbiome association.",
+        "The artifact status is stated as public code and data, though the listing does not provide specific repository URLs or version identifiers for verification."
+      ],
+      "plain": {
+        "reported": "The authors state that a specific mathematical measure of the curve's shape correlated with gut bacteria activity in a small group of 15 patient samples.",
+        "brief": "The authors created a new way to analyze drug levels in the blood by looking at the shape of the graph rather than just the average numbers. This method uses advanced geometry to find patterns that traditional methods miss.\n\nThey showed that this method works well in computer simulations and found a strong link between the graph shape and gut health in a small group of kidney transplant patients. However, because only 15 patients were used, it is not yet clear if this link holds true for larger groups or if other factors caused the result.\n\nPeople who study how drugs move through the body or who use advanced math to analyze medical data might find this useful. People who need large-scale clinical proof or specific drug model details might not find enough information here yet.",
+        "takeaways": [
+          "The tool is a set of nine mathematical numbers that describe the shape of a drug concentration graph without assuming a specific biological model.",
+          "A clear limitation is that the real-world test used only 15 patient samples, which is too small to prove the method works for everyone.",
+          "The authors say the code and data are available to the public, but the summary does not give the exact web addresses to check them."
+        ]
+      },
+      "actions": [
+        "Verify the public code and data repositories mentioned in the abstract to confirm reproducibility and access permissions.",
+        "Check the full PDF to determine if the 15-profile clinical dataset includes details on patient demographics or confounding variables not mentioned in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM"
+      ],
+      "listing": {
+        "listedOn": "2026-11-24",
+        "publishedOn": "2026-11-24",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.29879"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-24"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-24T23:38:56.649Z"
+      }
+    }
+  ]
+}
