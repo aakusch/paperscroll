@@ -1,0 +1,663 @@
+{
+  "date": "2026-11-23",
+  "label": "Mon, Nov 23",
+  "minutes": 10,
+  "poolSize": 93,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-11-24T01:22:15.016Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2611.27193",
+      "arxivId": "2611.27193",
+      "url": "https://arxiv.org/abs/2611.27193",
+      "topic": "AI",
+      "reported": "The authors report that their fused operators on Ascend NPUs reduce hyper-connection execution latency by up to 44.8%.",
+      "metrics": [
+        "44.8%"
+      ],
+      "title": "cmHC: Balancing Stream Mixing in Hyper-Connections via Geometric Contraction",
+      "authors": "Haowei He, Ziwen Zhao, Chenshuo Pan, Gang Lin, Zhihao Yang, Chao Wang, Xinzhang Liu, Kaidong Yu, Han Gao, Dongfang Li, Menglin Yang, Shuangyong Song, Yongxiang Li",
+      "takeaway": "The paper proposes cmHC, a method that geometrically contracts the Birkhoff polytope to balance residual stream mixing in hyper-connections.",
+      "brief": "The authors propose cmHC to balance stream mixing by contracting the Birkhoff polytope toward its interior. They claim this prevents degeneration into independent streams or indistinguishable streams without new parameters.\n\nThey report theoretical bounds on residual mixing and gradient differences. Experiments on dense and mixture-of-experts models show effectiveness and scalability. Fused operators on Ascend NPUs reduce execution latency by up to 44.8%.\n\nResearchers working on residual connection architectures or large-scale pretraining stability may find this relevant. Those not using hyper-connections or Birkhoff polytope constraints may ignore it.",
+      "abstract": "Manifold-constrained Hyper-Connections (mHC) extends residual connections to multiple streams and stabilizes residual propagation by constraining stream-mixing residual matrices to the Birkhoff polytope, the set of doubly stochastic matrices. In this work, we investigate how to effectively mix residual streams within the Birkhoff polytope. We reveal a mixing trade-off: when under-mixed residual matrices stay close to the vertices of the Birkhoff polytope, hyper-connections will degenerate into a set of nearly independent streams; when over-mixed residual matrices are concentrated around the uniform barycenter of the polytope, streams will become less distinguishable from each other. We theoretically validate our findings by bounding the cumulative residual mixing, stream difference and gradient difference of mixing coefficients across layers. Motivated by these findings, we propose Contraction for Manifold-Constrained Hyper-Connections (cmHC), an exact doubly stochastic method which geometrically contracts the Birkhoff polytope toward its interior. This contraction mitigates under-mixing by forcing the residual matrices to explore deeper into the polytope, with a provable stream mixing bound and no new parameterization. Moreover, we apply a moderate contraction at the shallow layers to prevent over-mixing, enabling stable gradient propagation on extremely large-scale model pretraining. Extensive experiments across dense and mixture-of-experts models at various parameter scales demonstrate the effectiveness and scalability of cmHC. We also develop fused operators for cmHC on Ascend NPUs, reducing hyper-connection execution latency by up to 44.8%.",
+      "takeaways": [
+        "The object is a geometric contraction method for doubly stochastic matrices in hyper-connections.",
+        "The visible limit is that the method is specific to the Birkhoff polytope constraint framework.",
+        "The artifact status is established with a provided GitHub repository URL."
+      ],
+      "plain": {
+        "reported": "The authors state that their specialized software components on specific hardware reduce the time taken for the connection process by up to 44.8%.",
+        "brief": "The authors suggest a way to balance how information flows through multiple parallel paths in a neural network. They use a geometric method to keep the flow from becoming too separate or too mixed together.\n\nThey provide mathematical proofs that their method keeps the flow stable. They tested this on large computer models and found it works well. They also made the process faster on specific hardware by 44.8%.\n\nPeople building large AI models might find this useful. People not using these specific network structures might not need it.",
+        "takeaways": [
+          "The main idea is a geometric adjustment to how data mixes in a network.",
+          "The method only works for networks using a specific type of mathematical constraint.",
+          "The code is available in a public online repository."
+        ]
+      },
+      "actions": [
+        "Verify the theoretical bounds and experimental setup in the full PDF.",
+        "Check the GitHub repository for implementation details and benchmark code."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Newiz430/cmHC",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-23",
+        "publishedOn": "2026-11-20",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.27193",
+            "upvotes": 91
+          }
+        ]
+      },
+      "trend": {
+        "votes": 91,
+        "rank": 1,
+        "of": 22,
+        "perDay": 30
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 91,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-20"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-24T01:22:15.016Z"
+      }
+    },
+    {
+      "id": "2611.27963",
+      "arxivId": "2611.27963",
+      "url": "https://arxiv.org/abs/2611.27963",
+      "topic": "AI",
+      "reported": "The authors report that their method reduces the physical violation rate, averaged over six video world models, from 74% to 16%.",
+      "metrics": [
+        "74%",
+        "16%"
+      ],
+      "title": "Non-penetrating World Models",
+      "authors": "Yuhang Dai, Yinwei Wu, Ziyue Lin, Han Ji, Xingyi Yang",
+      "takeaway": "The paper introduces NoPeWorld, a lightweight framework that detects and prevents object penetration in interactive video world models by reading safety signals from frozen diffusion transformer hidden states.",
+      "brief": "The authors propose a method to stop objects from passing through obstacles in generated videos. They argue that existing models fail at this but contain the necessary information to predict when a failure will occur.\n\nThey report a reduction in violation rates from 74% to 16% across six models. They also claim zero-shot generalization to new imagery and viewpoints. The listing does not specify the exact metrics used to define 'safe' actions beyond the violation rate.\n\nResearchers working on physics-aware video generation or world models may find the benchmark and framework relevant. Those focused on other AI domains without a need for physical consistency in video may ignore it.",
+      "abstract": "We study a new problem of preventing object penetration in interactive video world models. To understand how existing models handle this, we introduce NoPeBench, a benchmark that evaluates how world models respond to physical obstacles. Our evaluation reveals that none of the open-source models can reliably prevent such failures. Surprisingly, however, these models already encode the information needed to predict such violations. We find that the hidden states of diffusion transformers (DiTs) can predict whether a candidate action will penetrate an obstacle. Building on this, we introduce NoPeWorld, a lightweight framework that detects and prevents penetration. Specifically, we train a small prediction head on top of a frozen DiT's hidden states to read out if a candidate action is safe or not. Unsafe actions are then replaced with safe ones that best preserve the original intent. Despite its simplicity, NoPeWorld substantially reduces the physical violation rate, averaged over six video world models, from 74% to 16%. Remarkably, our method shows zero-shot generalization to open-domain imagery, third-person viewpoints, and moving obstacles. We publicly release our code, the NoPeBench benchmark, and model weights. Project Page: https://nopeworld.github.io .",
+      "takeaways": [
+        "The core object is a prediction head attached to a frozen diffusion transformer that filters unsafe actions.",
+        "The listing states the method works on open-domain imagery but does not establish limits on computational cost or latency.",
+        "The authors state they publicly release code, benchmark, and weights, but the listing does not verify the current status of these artifacts."
+      ],
+      "plain": {
+        "reported": "The authors state that their tool lowers the rate of physical errors, such as objects passing through walls, from 74% to 16% when tested on six different video generation systems.",
+        "brief": "The paper presents a way to stop computer-generated videos from showing objects moving through solid objects. The team created a test set called NoPeBench to check how well current AI models handle physical rules. They found that current models often fail but contain hidden data that can predict these failures.\n\nThe authors report that their solution cuts the error rate significantly. They also say the method works on new types of images and camera angles without extra training. The text does not explain how much extra computing power the method requires or how it handles complex moving scenes in detail.\n\nPeople building AI systems that need to follow real-world physics in video might find this useful. People working on other types of AI, like text generation or image classification, might not need this specific tool.",
+        "takeaways": [
+          "The main tool is a small add-on to an existing video AI that checks if an action is physically possible before generating it.",
+          "The text mentions the method works on new images but does not say if it slows down the video generation process.",
+          "The authors say they share their code and data, but the listing does not confirm if these links are currently active or accessible."
+        ]
+      },
+      "actions": [
+        "Verify the specific definition of 'physical violation' and the composition of the six video world models in the PDF.",
+        "Check the GitHub repository to confirm the availability and license of the NoPeBench benchmark and model weights."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/yuhangdai427/NoPeWorld",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-23",
+        "publishedOn": "2026-11-20",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.27963",
+            "upvotes": 54
+          }
+        ]
+      },
+      "trend": {
+        "votes": 54,
+        "rank": 2,
+        "of": 22,
+        "perDay": 18
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 54,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-20"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-24T01:22:15.016Z"
+      }
+    },
+    {
+      "id": "2611.24636",
+      "arxivId": "2611.24636",
+      "url": "https://arxiv.org/abs/2611.24636",
+      "topic": "AI",
+      "reported": "The authors report that Clover leads seven evaluated agent metrics, including 73.6 on SWE-bench Verified and 51.7 on Terminal-Bench 2.1.",
+      "metrics": [
+        "73.6 on SWE-bench Verified",
+        "51.7 on Terminal-Bench 2.1",
+        "680 tokens/s"
+      ],
+      "title": "Clover-35B-A3B-Preview Technical Report",
+      "authors": "DiffuSpace Technical Team",
+      "takeaway": "The paper introduces Clover-35B-A3B-Preview, a mixture-of-experts diffusion language model with 35 billion total parameters and 3 billion activated parameters that supports thinking-mode generation.",
+      "brief": "The authors present a diffusion language model that adapts Gated Delta Networks to block diffusion by combining recurrent memory with bidirectional softmax attention. They report leading scores on seven agent metrics, including 73.6 on SWE-bench Verified and 51.7 on Terminal-Bench 2.1, and a generation speed of 680 tokens/s on one NVIDIA GB300 GPU. The listing does not specify the full set of seven metrics or the exact internal workloads used for the speed measurement.\n\nThe strongest reported evidence is the performance on SWE-bench Verified and Terminal-Bench 2.1, where the model leads the evaluated set. The authors also report that a decision-model variant raises question accuracy from 90.37% to 93.88% on an internal set of 500 groups. The listing does not state whether the internal workloads are public or provide the specific hardware configuration details beyond the single GPU mention.\n\nResearchers working on diffusion language models or mixture-of-experts architectures may find the architectural details relevant. Those focused on standard autoregressive models or non-agent tasks may find the specific agent benchmarks less applicable. The availability of the code repository is noted in the listing, but the internal evaluation sets are not described as public.",
+      "abstract": "We introduce Clover-35B-A3B-Preview (Clover), a mixture-of-experts diffusion language model with 35 billion total parameters and 3 billion activated parameters, supporting thinking-mode generation. Clover adapts Gated Delta Networks to block diffusion by combining recurrent memory of previously generated context with bidirectional softmax attention inside the current block. Historical memory readout competes with current-block tokens in a shared softmax, with learnable block-size calibration and a separate, zero-initialized right-context convolution branch. Clover leads the seven evaluated agent metrics, including 73.6 on SWE-bench Verified and 51.7 on Terminal-Bench 2.1. On internal agent workloads, it reaches a reported generation speed of 680 tokens/s using one NVIDIA GB300 GPU at BF16 precision and batch size one. We organize the evaluation around model quality, drafting and verification costs, and deployment under constrained memory. We also describe a decision-model variant that generates answers to related questions in one denoising pass. On an internal set of 500 groups, joint prediction raises question accuracy from 90.37% to 93.88% and all-correct group accuracy from 65.4% to 77.0%.",
+      "takeaways": [
+        "The object is a 35B parameter mixture-of-experts diffusion language model with 3B activated parameters.",
+        "The visible limit is that the internal agent workloads and the full set of seven metrics are not detailed in the listing.",
+        "The artifact status is that a GitHub repository is declared, but the internal evaluation sets are not confirmed as public."
+      ],
+      "plain": {
+        "reported": "The authors report that their model performs better than others on seven specific task tests, scoring 73.6 on a software engineering benchmark and 51.7 on a terminal command benchmark.",
+        "brief": "The authors describe a new type of AI model that generates text in blocks rather than one word at a time. It uses a specific method to remember previous text while looking at the current block. They say it scores highest on seven tests for AI agents, including a software repair test and a terminal command test. They also say it can generate 680 words per second on a specific high-end graphics card. The text does not list all seven tests or describe the specific internal tasks used for the speed test.\n\nThe best proof they give is the high scores on the software repair and terminal command tests. They also say a special version of the model improves accuracy on a set of 500 internal questions from 90.37% to 93.88%. The text does not say if these internal questions are available to the public or give more details about the computer setup used for the speed test.\n\nPeople who build AI models that generate text in blocks or use multiple smaller models might find the design useful. People who use standard word-by-word AI models or focus on non-agent tasks might not find the specific tests relevant. The text mentions a code link, but it is not clear if the internal test data is included.",
+        "takeaways": [
+          "The model has 35 billion total parts but only uses 3 billion parts at a time.",
+          "The listing does not explain all the tests used or the specific internal tasks for the speed measurement.",
+          "A code link is provided, but it is not stated if the internal test data is public."
+        ]
+      },
+      "actions": [
+        "Verify the specific definitions of the seven agent metrics and the internal workloads in the full PDF.",
+        "Check the GitHub repository for the availability of the internal evaluation datasets and the decision-model variant code."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/DiffuSpace/Clover-35B-A3B-Preview",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-23",
+        "publishedOn": "2026-11-18",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.24636",
+            "upvotes": 36
+          }
+        ]
+      },
+      "trend": {
+        "votes": 36,
+        "rank": 3,
+        "of": 22,
+        "perDay": 7
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 36,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-18"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-24T01:22:15.016Z"
+      }
+    },
+    {
+      "id": "2611.26954",
+      "arxivId": "2611.26954",
+      "url": "https://arxiv.org/abs/2611.26954",
+      "topic": "AI",
+      "reported": "The authors report that their framework improves base models by up to 14.2 and 15.9 points on open-ended prediction and closed-ended planning tasks.",
+      "metrics": [
+        "14.2 points",
+        "15.9 points"
+      ],
+      "title": "Learning Video Foresight Reasoning from Unlabeled Videos via On-Policy Self-Distillation",
+      "authors": "Jingchen Sun, Jiaxing Zhang, Qingqiao Hu, Dingqiang Ye, Yuqi Jia, Yijun Liang, Di Fu, Yunjie Tian, Dongdi Zhao, Changyou Chen",
+      "takeaway": "The paper claims to introduce Future-OPSD, an on-policy self-distillation framework for video foresight reasoning that uses unlabeled video pairs and a foresight score to learn decision-relevant future information without external supervision.",
+      "brief": "The authors propose Future-OPSD to address scalability and relevance issues in video foresight reasoning. They claim the method uses on-policy self-distillation on past-future video pairs and a contrastive privilege advantage derived from a foresight score to focus on valuable future information.\n\nThe authors report improvements of up to 14.2 and 15.9 points on open-ended prediction and closed-ended planning, respectively, without compromising general video understanding. The listing does not specify the exact base models, datasets, or evaluation protocols used to measure these gains, nor does it detail the specific metrics beyond the point improvements.\n\nResearchers working on video prediction or self-supervised learning for vision-language models may find the self-distillation approach relevant. Those requiring specific benchmark comparisons or code availability verification should note that the listing states code will be available at a provided URL, but the current status of that repository is not confirmed in the text.",
+      "abstract": "Video foresight reasoning requires vision-language models to anticipate future events or next actions from currently observed videos. Existing methods fit future captions, rationales, or full visual states, but face two limitations. First, they rely on annotations or external large models for supervision, limiting scalability. We address this with an on-policy self-distillation framework that turns past-future video pairs into a natural self-supervised signal without extra annotations or LLM supervision. Second, they treat the whole future clip as equally valuable, although most of it is irrelevant context information. We address this by defining a foresight score, from which we obtain a contrastive privilege advantage that drives the model to learn the most valuable future information. Since the score is intractable, we optimize a tractable lower-bound surrogate that interpolates this advantage, computed between the true and a random reference future, with a teacher-student distillation advantage; together, they amplify decision-relevant content information and suppress irrelevant context information. We call the resulting framework Future-OPSD. On open-ended prediction and closed-ended planning, Future-OPSD improves base models by up to 14.2 and 15.9 points without compromising general video understanding. Code will be available at https://jingchensun.github.io/future-opsd/",
+      "takeaways": [
+        "The core object is a self-distillation framework that treats past-future video pairs as a self-supervised signal to avoid reliance on external annotations or large models.",
+        "A visible limit is the reliance on a tractable lower-bound surrogate for an intractable foresight score, which the authors state interpolates between true and random reference futures.",
+        "The artifact status is uncertain; the listing states code will be available at a specific URL, but the current availability or functionality of that code is not established in the provided text."
+      ],
+      "plain": {
+        "reported": "The authors state that their method makes the underlying models better at predicting future events or planning actions, with gains of up to 14.2 and 15.9 points on specific test sets.",
+        "brief": "The authors suggest a new way to teach AI models to predict what happens next in a video. They claim this method uses the video's own past and future segments to teach itself, avoiding the need for human labels or other large AI systems to provide answers.\n\nThey report that their method improves performance by up to 14.2 and 15.9 points on two types of prediction tasks. However, the summary does not say which specific videos or models were tested, nor does it explain exactly how the 'points' were calculated or which specific benchmarks were used.\n\nPeople interested in how AI can learn from video without human help might find this useful. Those who need to know exactly which datasets were used or if the code works right now should check the full paper, as the summary only promises that code will be available later.",
+        "takeaways": [
+          "The main idea is a system that learns to predict video futures by comparing different parts of the video itself, rather than needing human-written descriptions.",
+          "A limitation is that the method uses an approximate mathematical shortcut to handle a complex calculation, which the authors say helps focus on important details but may not capture the full picture.",
+          "It is not confirmed in the text whether the computer code for this method is currently working or accessible, even though a website link is provided."
+        ]
+      },
+      "actions": [
+        "Verify the existence and functionality of the code repository at https://jingchensun.github.io/future-opsd/ or https://github.com/Jingchensun/future-opsd to confirm the implementation details.",
+        "Consult the full PDF to identify the specific base models, datasets, and evaluation metrics used to calculate the reported 14.2 and 15.9 point improvements."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Jingchensun/future-opsd",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-23",
+        "publishedOn": "2026-11-20",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.26954",
+            "upvotes": 25
+          }
+        ]
+      },
+      "trend": {
+        "votes": 25,
+        "rank": 4,
+        "of": 22,
+        "perDay": 8
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 25,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-20"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-24T01:22:15.016Z"
+      }
+    },
+    {
+      "id": "2611.26695",
+      "arxivId": "2611.26695",
+      "url": "https://arxiv.org/abs/2611.26695",
+      "topic": "Physics",
+      "reported": "The authors report that a numerical analysis of the Hamiltonian spectrum and expectation values of local operators shows a behavior broadly aligned with the Eigenstate Thermalization Hypothesis (ETH).",
+      "metrics": [
+        "discrete gauge group $D_3$"
+      ],
+      "title": "Thermalization and quantum chaos in a pure gauge discrete non-Abelian lattice gauge theory",
+      "authors": "Marco Vaia, Edoardo Ballini, Alberto Bottarelli, Matteo M. Wauters, Philipp Hauke",
+      "takeaway": "The paper investigates the thermalization properties of non-Abelian lattice gauge theories focusing on the discrete gauge group $D_3$ in a linear plaquette chain.",
+      "brief": "The authors investigate thermalization in a non-Abelian lattice gauge theory using the discrete gauge group $D_3$. They study a linear plaquette chain in a gauge-fixed formulation that removes unphysical degrees of freedom. The work targets systems suited for current qudit-based quantum simulators.\n\nA numerical analysis of the Hamiltonian spectrum and local operator expectation values shows behavior broadly aligned with the Eigenstate Thermalization Hypothesis. Real-time dynamics of the entanglement spectrum confirm the emergence of random-matrix level statistics after an initial transient. The listing does not specify the exact system size, lattice dimensions, or numerical precision used for these calculations.\n\nResearchers studying non-Abelian gauge theories, quantum chaos, or qudit-based quantum simulation may find the phenomenology relevant. Those requiring specific experimental parameters or code implementations should note the absence of declared code in the listing.",
+      "abstract": "Gauge theories constitute the basis of our microscopic description of fundamental physical laws, and they are a cornerstone of contemporary scientific research. Yet, how such systems thermalize far from equilibrium remains a fundamental open question at the crossroads of statistical, high-energy, and condensed-matter physics. In this work, we investigate the thermalization properties of non-Abelian lattice gauge theories, focusing on the discrete gauge group $D_3$, which is ideally suited for current qudit-based quantum simulators. Specifically, we study a linear plaquette chain in a gauge-fixed formulation that removes unphysical degrees of freedom. A numerical analysis of the Hamiltonian spectrum and expectation values of local operators shows a behavior broadly aligned with the Eigenstate Thermalization Hypothesis (ETH). We also study thermalization through the real-time dynamics of the entanglement spectrum, confirming the emergence of random-matrix level statistics after an initial transient. Our results expand the rich phenomenology of dihedral non-Abelian gauge systems. Once the relevant symmetry structure is properly resolved, the model displays the same qualitative ETH-based thermalization scenario observed in Abelian gauge models and generic non-integrable quantum many-body systems.",
+      "takeaways": [
+        "The object is a linear plaquette chain in a gauge-fixed formulation of a discrete non-Abelian lattice gauge theory.",
+        "The listing does not establish the specific numerical limits, system sizes, or computational artifacts used in the analysis.",
+        "No code repository or implementation details are declared in the supplied metadata."
+      ],
+      "plain": {
+        "reported": "The authors report that a numerical analysis of the Hamiltonian spectrum and expectation values of local operators shows a behavior broadly aligned with the Eigenstate Thermalization Hypothesis (ETH).",
+        "brief": "The authors investigate how a specific type of quantum system, called a non-Abelian lattice gauge theory, reaches thermal equilibrium. They focus on a system based on the discrete gauge group $D_3$. They study a line of square loops, called a linear plaquette chain, in a mathematical setup that removes unphysical parts of the system. The work targets systems that can be simulated by current quantum computers using qudits.\n\nA numerical analysis of the system's energy levels and local measurements shows behavior that generally matches the Eigenstate Thermalization Hypothesis. This hypothesis suggests that individual energy states of a quantum system look like thermal states. The time evolution of the entanglement spectrum, which measures how parts of the system are correlated, confirms the appearance of random-matrix level statistics after a short initial period. The listing does not specify the exact size of the system, the dimensions of the lattice, or the numerical precision used for these calculations.\n\nResearchers studying non-Abelian gauge theories, quantum chaos, or quantum simulation using qudits may find the observed behavior relevant. Those who need specific experimental parameters or computer code should note that no code is declared in the listing.",
+        "takeaways": [
+          "The object is a line of square loops in a mathematical setup of a discrete non-Abelian lattice gauge theory.",
+          "The listing does not establish the specific numerical limits, system sizes, or computational artifacts used in the analysis.",
+          "No code repository or implementation details are declared in the supplied metadata."
+        ]
+      },
+      "actions": [
+        "Verify the specific lattice size and numerical methods in the PDF to confirm the scope of the ETH alignment.",
+        "Check the PDF for any supplementary data or code availability statements not included in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "cond-mat.stat-mech",
+        "hep-lat"
+      ],
+      "listing": {
+        "listedOn": "2026-11-23",
+        "publishedOn": "2026-11-23",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.26695"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-24T01:22:15.016Z"
+      }
+    },
+    {
+      "id": "2611.26739",
+      "arxivId": "2611.26739",
+      "url": "https://arxiv.org/abs/2611.26739",
+      "topic": "Security",
+      "reported": "The authors report that D-SZZ outperforms existing SZZ and LLM-based baselines in identifying vulnerability-introducing commits, and that incorporating early-stage samples improves detection performance for six representative vulnerability detectors.",
+      "metrics": [
+        "16 inaccurate affected-version records"
+      ],
+      "title": "Exploring Early Vulnerability Analysis via Automatic Identification of Vulnerability-Introducing Commits",
+      "authors": "Weiliang Qi, Shu Wang, Youpeng Li, Ela Guo, Xinda Wang",
+      "takeaway": "The paper presents three manually annotated datasets of vulnerability-introducing commits and proposes D-SZZ, a data state-aware framework for identifying these commits to improve early vulnerability analysis.",
+      "brief": "The authors introduce D-SZZ and three new datasets focused on vulnerability-introducing commits, arguing that existing datasets overlook early vulnerable versions. They report that D-SZZ outperforms SZZ and LLM baselines in identifying these commits and that using early-stage samples improves detector performance. The listing does not specify the exact benchmark scores or the specific open-source projects used for the manual annotation.\n\nThe strongest reported result is the identification of 16 inaccurate affected-version records in the NVD, which the authors state were officially confirmed and updated. They also report that models trained only on pre-VFC code struggle with original vulnerabilities. The listing does not provide the specific quantitative performance metrics for the detector evaluation or the SZZ baseline comparison.\n\nResearchers working on software security datasets or vulnerability detection models may find the VIC datasets and D-SZZ framework relevant. Those not focused on the evolution of vulnerabilities in codebases or NVD record accuracy may find the specific contribution less directly applicable to their immediate work.",
+      "abstract": "Developing effective vulnerability analysis techniques requires high-quality datasets that capture how vulnerabilities appear and evolve in real software codebase. Existing datasets, however, typically label as vulnerable only the code immediately preceding vulnerability-fixing commits (VFCs), overlooking the earlier versions in which vulnerabilities were first introduced and subsequently evolved. This practice limits both dataset coverage and our understanding of whether current detectors can identify vulnerabilities during their early, latent stages. In this paper, we present three manually annotated datasets of vulnerability-introducing commits (VICs) based on recent CVEs and widely used open-source projects. We further propose D-SZZ, a data state-aware VIC identification framework that analyzes security-fixing patterns and performs vulnerability scope slicing to recover the semantics implied by a fix. Experimental results demonstrate that D-SZZ outperforms existing SZZ and LLM-based baselines in identifying VICs. In addition, we evaluate six representative vulnerability detectors and find that models trained only on pre-VFC code struggle with original vulnerabilities, while incorporating early-stage samples improves detection performance. We also show that D-SZZ improves downstream vulnerable-version identification, and use it to uncover 16 inaccurate affected-version records in the NVD, all of which were officially confirmed and updated.",
+      "takeaways": [
+        "The core object is a data state-aware framework (D-SZZ) and three manually annotated datasets for vulnerability-introducing commits.",
+        "A visible limit is the lack of specific quantitative benchmark scores for the detector evaluation and SZZ comparison in the provided abstract.",
+        "The artifact status is unclear as no code repository or dataset link is provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that their new tool, D-SZZ, is better than existing methods at finding the specific code changes that first introduced a security flaw, and that using these early examples helps security scanners work better.",
+        "brief": "The authors created three new sets of data and a new tool called D-SZZ to find the exact moment a security bug was first added to software. They say their tool is better than current methods at finding these moments and that using this early data helps security scanners catch bugs. The summary does not say exactly how much better the tool is or which specific software projects were used to make the data.\n\nThe biggest result they report is finding 16 mistakes in the National Vulnerability Database, a public list of security flaws. They say these mistakes were officially fixed. They also say that security scanners trained only on code right before a fix have trouble finding the original bug. The summary does not give the specific scores for how well the scanners performed.\n\nPeople who study how security bugs appear in code or who build security scanning tools might find this useful. People who do not work on these specific topics might not find it directly helpful for their current projects.",
+        "takeaways": [
+          "The main thing they made is a new tool called D-SZZ and three new sets of data for finding when security bugs were first added.",
+          "A clear limit is that the summary does not show the specific numbers for how well the tool and scanners performed.",
+          "It is not clear if the code or data is available for download because no links are given in the summary."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantitative performance metrics for D-SZZ against SZZ and LLM baselines in the full PDF.",
+        "Check the full paper for the specific open-source projects used to create the three manually annotated VIC datasets."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR"
+      ],
+      "listing": {
+        "listedOn": "2026-11-23",
+        "publishedOn": "2026-11-23",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.26739"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-24T01:22:15.016Z"
+      }
+    },
+    {
+      "id": "2611.26793",
+      "arxivId": "2611.26793",
+      "url": "https://arxiv.org/abs/2611.26793",
+      "topic": "Stats",
+      "reported": "The authors report a Monte Carlo study comparing the performances of the classical and modified $R/S$ statistics for both short-memory and long-memory sequences.",
+      "metrics": [],
+      "title": "A functional Breuer-Major theorem under finite variance, with application to the $R/S$ test for long memory",
+      "authors": "Samir Ben Hariz",
+      "takeaway": "The paper proves a functional Breuer-Major theorem under finite variance and applies it to the $R/S$ test for long memory.",
+      "brief": "The author claims to prove that the functional central limit theorem holds under finite variance only, resolving a long-standing open question regarding tightness under additional moment assumptions. The reported evidence includes a high-order expansion of the partial sum process and a Monte Carlo study comparing classical and modified $R/S$ statistics for short- and long-memory sequences. The listing does not specify the sample sizes, specific data distributions, or quantitative performance differences observed in the Monte Carlo study.\n\nResearchers working on functional limit theorems for Gaussian sequences or nonparametric tests for long memory may find the theoretical proof and the proposed data-driven truncation parameter relevant. Those focused on other statistical testing frameworks or requiring specific numerical benchmarks for implementation may find the listing insufficient without the full PDF.\n\nThe artifact status is not established in the listing, as no code repository or dataset is declared. The primary object is the theoretical proof of the functional central limit theorem under finite variance and the derived limiting distributions for $R/S$ statistics.",
+      "abstract": "The Breuer-Major theorem (Breuer and Major, 1983) states that, for a function $G$ of Hermite rank $m$ such that $\\mathbb{E}(G^{2}(X))<\\infty$, and a stationary Gaussian sequence whose correlation function $r$ satisfies $\\sum_{i}|r(i)|^{m}<\\infty$, the finite dimensional distributions of the normalized partial sum process of $G(X_{i})$ converge to those of a Brownian motion. Whether the functional version of this result holds under these sole conditions has remained open for a long time, the tightness being known only under additional moment assumptions. In this paper we prove that the functional central limit theorem holds under finite variance only. More generally, we give a high order expansion of the partial sum process which covers both short and long-range dependence: the long-range dependent components converge to Hermite processes, while the remainder converges to a Brownian motion. As an application, we discuss the question of testing long-memory in observed data using the $R/S$ statistics. We derive the limiting distributions of the classical and modified $R/S$ statistics, prove the consistency of the test and propose a data-driven choice of the truncation parameter. A Monte Carlo study compares the performances of the classical and modified $R/S$ statistics for both short-memory and long-memory sequences.",
+      "takeaways": [
+        "The core object is a proof that the functional central limit theorem holds under finite variance for Gaussian sequences, extending the Breuer-Major theorem.",
+        "A visible limit is the lack of specific quantitative results or sample sizes in the abstract for the Monte Carlo comparison of $R/S$ statistics.",
+        "The artifact status is unknown because the listing declares no code or data availability."
+      ],
+      "plain": {
+        "reported": "The authors report a computer simulation study comparing how well two versions of a statistical test, called the R/S test, work on data with different types of dependency patterns.",
+        "brief": "The author claims to prove a mathematical rule about how averages of certain data patterns behave when the data has only a finite average squared value. This solves a problem that had been unsolved for a long time. The evidence provided is a mathematical expansion of the data process and a computer simulation comparing two versions of a test for long-term memory in data. The listing does not say how large the simulated datasets were or exactly how much better one test version was than the other.\n\nPeople who study the mathematical limits of data averages or who use tests to check if data has long-term memory might find this useful. People who need specific numbers to build a software tool might need to read the full paper to get enough detail.\n\nIt is not known if the author has shared computer code or data files, as the listing does not say. The main contribution is the mathematical proof and the new formulas for the test's behavior.",
+        "takeaways": [
+          "The main contribution is a proof that a specific mathematical limit holds with fewer assumptions than previously known.",
+          "The abstract does not provide specific numbers from the computer simulations, such as dataset sizes or error rates.",
+          "It is not stated whether computer code or data files are available for download."
+        ]
+      },
+      "actions": [
+        "Verify the specific conditions of the finite variance proof and the exact form of the high-order expansion in the PDF.",
+        "Check the PDF for the quantitative results of the Monte Carlo study and the details of the data-driven truncation parameter choice."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "math.ST",
+        "math.PR",
+        "stat.TH"
+      ],
+      "listing": {
+        "listedOn": "2026-11-23",
+        "publishedOn": "2026-11-23",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.26793"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-24T01:22:15.016Z"
+      }
+    },
+    {
+      "id": "2611.26882",
+      "arxivId": "2611.26882",
+      "url": "https://arxiv.org/abs/2611.26882",
+      "topic": "Econ",
+      "reported": "The authors report that rural engagement evolved more favorably relative to urban engagement in municipalities covered by both reforms, measured using repeated waves of the Social Capital Barometer and a triple-difference event study.",
+      "metrics": [],
+      "title": "The Rural Margin of Territorial Peace: Within-Municipality Evidence from Colombia",
+      "authors": "Hector Galindo-Silva",
+      "takeaway": "The paper claims that Colombia's joint territorial reforms produced a change in rural-urban engagement gaps beyond voting, specifically favoring rural engagement in covered municipalities.",
+      "brief": "The author argues that participatory development programs and reserved congressional constituencies for conflict victims altered rural-urban engagement gaps in Colombia. The analysis compares municipalities covered by both reforms against others using a triple-difference event study on Social Capital Barometer data.\n\nThe strongest reported result is that rural engagement evolved more favorably relative to urban engagement in covered municipalities, with coordination around shared problems providing the clearest evidence. The result persists when the reference period precedes the agreement and the baseline wave is excluded. Program activity and organizational membership patterns are consistent with participatory investment and political mobilization.\n\nResearchers studying territorial peace, rural-urban engagement gaps, or Colombian political reforms may find the event study design and specific index components relevant. Readers should verify the exact definition of the engagement index and the robustness checks against omitted variables.",
+      "abstract": "Colombia's peace agreement introduced participatory development programs and congressional constituencies reserved for conflict victims with a rural electorate. I use repeated waves of the Social Capital Barometer and a triple-difference event study to compare changes in rural-urban engagement gaps in municipalities covered by both reforms with those elsewhere. Rural engagement evolved more favorably relative to urban engagement in the covered municipalities. The index captures coordination around shared problems, civic participation and party linkage, with coordination providing the clearest evidence. The result persists when the reference period precedes the agreement and the baseline wave is excluded. Program activity and organizational membership patterns are consistent with participatory investment and political mobilization. The findings document a change in engagement beyond voting under the joint territorial reforms.",
+      "takeaways": [
+        "The object is a causal estimate of rural-urban engagement gap changes in Colombian municipalities under specific territorial reforms.",
+        "A visible limit is that the index captures coordination, civic participation, and party linkage, but the listing does not specify how these components are weighted or validated.",
+        "The artifact status is not established in the listing; no code or data repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that rural engagement improved more than urban engagement in towns that got both new development programs and special voting seats for conflict victims, measured using repeated surveys and a statistical method that compares changes over time.",
+        "brief": "The author argues that new development programs and special voting seats for conflict victims changed how rural and urban areas interact in Colombia. The analysis compares towns that got both reforms against others using repeated survey data and a statistical method that looks at changes over time.\n\nThe strongest reported result is that rural engagement improved more than urban engagement in towns that got both reforms, with cooperation on shared problems showing the clearest evidence. The result holds up when the comparison period is before the peace agreement and when the first survey wave is left out. Patterns in program activity and group membership fit with the idea of participatory investment and political mobilization.\n\nResearchers studying peace in rural areas, differences between rural and urban engagement, or Colombian political changes may find the statistical method and specific survey measures useful. Readers should check the exact definition of the engagement measure and the tests for other factors that might explain the results.",
+        "takeaways": [
+          "The object is a measurement of how much the gap between rural and urban engagement changed in Colombian towns under specific peace-related reforms.",
+          "A visible limit is that the engagement measure includes cooperation, civic participation, and party connections, but the listing does not say how these parts are combined or checked for accuracy.",
+          "The status of shared code or data is not stated in the listing; no repository is mentioned."
+        ]
+      },
+      "actions": [
+        "Verify the exact construction of the Social Capital Barometer index and the triple-difference specification in the full PDF.",
+        "Check the robustness section for how the exclusion of the baseline wave and pre-agreement reference periods affects the point estimates."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-11-23",
+        "publishedOn": "2026-11-23",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.26882"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-24T01:22:15.016Z"
+      }
+    },
+    {
+      "id": "2611.27022",
+      "arxivId": "2611.27022",
+      "url": "https://arxiv.org/abs/2611.27022",
+      "topic": "Engineering",
+      "reported": "The authors report that Pareto-optimal input distributions exhibit a common structural property where the directional component is uniformly distributed over the complex unit sphere.",
+      "metrics": [],
+      "title": "On Pareto-Optimal Estimation-Information Limits-Achieving Distributions for Integrated Sensing and Communications",
+      "authors": "Zi-Jie Wang",
+      "takeaway": "The paper characterizes optimal input distributions across the entire CRB-rate Pareto boundary for integrated sensing and communications under three distinct power constraints.",
+      "brief": "The authors claim to characterize optimal input distributions across the entire CRB-rate Pareto boundary for integrated sensing and communications under general power, maximum amplitude, and constant modulus constraints.\n\nThey report that Pareto-optimal input distributions exhibit a common structural property where the directional component is uniformly distributed over the complex unit sphere. The listing does not establish specific numerical performance gains or experimental validation limits beyond the described analytical and numerical algorithm development.\n\nResearchers working on information-theoretic limits for joint sensing and communication waveforms should open this paper. Those focused solely on hardware implementation or specific channel coding schemes may ignore it.",
+      "abstract": "ISAC systems enable simultaneous data transmission and environmental sensing using a common waveform. Characterizing their fundamental estimation-information performance limits is of core interest in information theory. In this paper, the achievable data rate for communications and the Miller-Chang-type CRB on sensing distortion are adopted as ISAC performance metrics, both of which are functionals of the ISAC waveform distribution. Our aim is to characterize the optimal input distributions across the entire CRB-rate Pareto boundary, corresponding to different sensing-communication tradeoff preferences. Three types of power constraint on input waveform are considered, namely, i) general power (GP), ii) maximum amplitude (MA), and iii) constant modulus (CM) constraints. Under these constraints, Pareto-optimal input distributions are shown to exhibit a common structural property: the directional component is uniformly distributed over the complex unit sphere; the power distribution is discrete (excluding the communication-optimal point under GP, where it follows a Gamma distribution induced by Gaussian inputs). We further investigate and characterize their Pareto-optimal sensing-communication preference dependent support structures. Finally, numerical algorithms are developed under GP and MA to trace their Pareto boundaries and determine corresponding optimal power distributions based on their respective support characteristics. From both analytical and numerical results, we conclude sensing prefers deterministic power while communication benefits from a richer distribution of power levels, thereby revealing the sensing-communication waveform uncertainty tradeoff in the fundamental power domain.",
+      "takeaways": [
+        "The object is the characterization of optimal input distributions for ISAC systems under specific power constraints.",
+        "A visible limit is that the structural property for the power distribution excludes the communication-optimal point under general power constraints.",
+        "The artifact status is not established in the listing, as no code or dataset is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that the best-performing signal patterns for these systems have a specific shape where the direction of the signal is spread evenly across all possible angles.",
+        "brief": "The authors claim to find the best possible signal patterns for systems that do both data transmission and environmental sensing at the same time, under three different power rules.\n\nThey report that these best patterns have a common shape where the signal direction is spread evenly. The listing does not say how much better these patterns are in real-world tests or what specific limits exist beyond the math and computer simulations described.\n\nPeople studying the theoretical limits of combining data and sensing in one signal should open this paper. People only interested in building the physical hardware or specific data encoding methods may ignore it.",
+        "takeaways": [
+          "The main subject is finding the best signal patterns for systems that combine data and sensing.",
+          "A visible limit is that the rule for how much power to use has an exception for the best data-only case under general power rules.",
+          "The listing does not say if the code or data used for the math is available to download."
+        ]
+      },
+      "actions": [
+        "Verify the analytical derivations of the Pareto-optimal distributions in the full PDF.",
+        "Check the numerical algorithms for GP and MA constraints to confirm the support structures described."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP"
+      ],
+      "listing": {
+        "listedOn": "2026-11-23",
+        "publishedOn": "2026-11-23",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.27022"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-24T01:22:15.016Z"
+      }
+    },
+    {
+      "id": "2611.27422",
+      "arxivId": "2611.27422",
+      "url": "https://arxiv.org/abs/2611.27422",
+      "topic": "Health",
+      "reported": "The authors report that their approach enables time-resolved quantification of tetraspanin-positive extracellular vesicle secretion dynamics from two-dimensional and three-dimensional lung cancer cell models using 50 {\\mu}L of sample within 10 min, without isolation or purification.",
+      "metrics": [
+        "50 {\\mu}L of sample",
+        "10 min"
+      ],
+      "title": "One-Step Self-Assembling Lipopolymer Coatings Enable Direct Longitudinal Biosensing in Native Biological Matrices",
+      "authors": "Pascal R\\\"uedi, Sarina Seiter, Stephan Handschin, Chiara Lombardo, Jaime Ortega Arroyo, Romain Quidant",
+      "takeaway": "The paper claims a one-step, biomimetic surface functionalization strategy using self-assembling lipid-based nanocarriers that enables direct, label-free digital biosensing in native biological environments by suppressing sample-specific cross-reactivity.",
+      "brief": "The authors propose a one-step surface functionalization method using engineered lipid-based nanocarriers that self-assemble into antifouling interfaces. This strategy aims to suppress cross-reactivity in complex biological samples like undiluted serum, enabling direct label-free digital biosensing without prior sample purification.\n\nThe strongest reported result is the time-resolved quantification of tetraspanin-positive extracellular vesicle secretion from lung cancer cell models using 50 {\\mu}L of sample within 10 min. The listing does not establish specific quantitative performance metrics for sensitivity or selectivity compared to baseline methods, nor does it detail the statistical validation of the suppression of cross-reactivity.\n\nResearchers working on microfluidic biosensing, surface functionalization for immunoassays, or extracellular vesicle detection may find this relevant. Those seeking established quantitative benchmarks for sensitivity or selectivity in undiluted serum may need to verify these claims in the full text.",
+      "abstract": "Sample-driven cross-reactivity remains a fundamental bottleneck for sensitive and selective biosensing in complex biological environments, particularly in microfluidic systems where high surface-to-volumes ratios amplify non-specific interactions. Here, we address this challenge with a one-step, biomimetic surface functionalization strategy based on engineered lipid-based nanocarriers that self-assemble within minutes into immunoassay-ready, antifouling interfaces that couple pegylated-lipid passivation with biorthogonal, site-specific probe conjugation. This approach enables rapid, tuneable, and reproducible surface functionalization, which suppresses sample-specific cross-reactivity even in undiluted serum, and supports direct, label-free digital biosensing assays directly in native biological environments. When integrated into an optofluidic platform combining digital in-line holography and microfluidics, this approach allows time-resolved quantification of tetraspanin-positive extracellular vesicle secretion dynamics from two-dimensional and three-dimensional lung cancer cell models using 50 {\\mu}L of sample within 10 min, without isolation or purification. Because the presented surface functionalization proceeds via self-assembly rather than covalent surface modification, this one-step modular-approach is intrinsically decoupled from device fabrication and applies to both glass and PDMS, coating the entire microfluidic channel, thereby establishing a general route for integrating biomimetic nanostructures into robust, high-performance immunoassays, advancing biosensing beyond end-point measurements, and towards rapid and continuous real-time monitoring.",
+      "takeaways": [
+        "The object is a one-step, self-assembling lipopolymer coating strategy for microfluidic surfaces that couples pegylated-lipid passivation with biorthogonal probe conjugation.",
+        "A visible limit is that the listing does not provide quantitative metrics for sensitivity, selectivity, or the degree of cross-reactivity suppression compared to standard methods.",
+        "The artifact status is not established in the listing; no code, dataset, or repository URL is provided, and the method is described as a physical surface functionalization approach."
+      ],
+      "plain": {
+        "reported": "The authors report that their method allows them to measure the release of specific cell fragments from lung cancer cells over time, using a very small amount of sample (50 microliters) in a short time (10 minutes), without needing to separate or clean the sample first.",
+        "brief": "The authors suggest a new way to prepare the surfaces of tiny fluid channels used in lab-on-a-chip devices. They use special fat-based particles that arrange themselves into a protective layer that prevents unwanted sticking of biological materials. This allows them to detect specific biological markers directly in complex fluids like blood serum without diluting or cleaning the sample first.\n\nThe main result they report is the ability to track the release of specific cell fragments from lung cancer cells over time. They did this using a very small sample size and a short time frame. However, the summary does not provide specific numbers showing how sensitive or accurate this method is compared to existing techniques, nor does it detail how they statistically proved that unwanted sticking was reduced.\n\nScientists who work on tiny fluid devices for medical testing, or who study how to make surfaces that do not stick to biological materials, might find this useful. People looking for proven numbers on how well this method works in real blood samples should check the full paper for more details.",
+        "takeaways": [
+          "The thing being described is a new way to coat the inside of tiny fluid channels using fat-based particles that arrange themselves into a protective layer.",
+          "A clear limitation is that the summary does not give specific numbers for how well the method works compared to other methods, such as how sensitive it is or how well it prevents unwanted sticking.",
+          "It is not stated in the summary whether there is any computer code, data, or online repository available for this work; it is described as a physical method for preparing surfaces."
+        ]
+      },
+      "actions": [
+        "Verify the quantitative performance metrics for sensitivity and selectivity in undiluted serum by reviewing the full PDF and supplementary materials.",
+        "Check the full text for details on the statistical validation of the time-resolved quantification of extracellular vesicle secretion dynamics."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "cond-mat.mtrl-sci",
+        "physics.chem-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-11-23",
+        "publishedOn": "2026-11-23",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.27422"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-24T01:22:15.016Z"
+      }
+    }
+  ]
+}
