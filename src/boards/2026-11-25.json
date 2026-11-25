@@ -1,0 +1,690 @@
+{
+  "date": "2026-11-25",
+  "label": "Wed, Nov 25",
+  "minutes": 10,
+  "poolSize": 142,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-11-25T22:37:09.722Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2611.25403",
+      "arxivId": "2611.25403",
+      "url": "https://arxiv.org/abs/2611.25403",
+      "topic": "AI",
+      "reported": "The authors report that in a four-month online experiment on Ant International's billion-scale payment platform, the model reduced the overall loss rate by 37.88% relative to XGB-Online.",
+      "metrics": [
+        "approximately 7B parameters",
+        "approximately 1.7B activated per task route",
+        "34.5% over the same architecture trained from scratch"
+      ],
+      "title": "Antom 3-in-1 Transformer: A Payment Foundation Model",
+      "authors": "Weiyu Han, Haoyu Jiang, Jie Sheng, Youxi Pan, Xianglong Liu, Zeqi Ren, Dongquan Yi, Yinhao Liu, Ruobing Zuo, Ze Zhao, Huilin He, Nairong Zhang, Xinyi He, Xiao Tan, Jun Wang, Pan Fang, Wei Zeng, Jianan Su, Kaixin Shen, Jingtong Wu, Hao Li, Shuai Chen, Jiangming Yang, Tianyi Zhang",
+      "takeaway": "The paper presents Antom 3-in-1 Transformer, a payment foundation model integrating sequence, tabular, and graph representations for payment risk detection.",
+      "brief": "The authors describe a 7B-parameter model pretrained on internal payment data to learn reusable behavioral and relational representations. They report that pretraining improves target business metrics by 34.5% over scratch training and reduces online loss rates by 37.88% relative to a baseline. The listing does not specify the exact definition of the target business metric or the full experimental configuration for the online deployment.\n\nThe strongest reported result is a 37.88% reduction in overall loss rate in a four-month online experiment on a billion-scale platform. The authors also note that with 25% of training labels, the model outperforms a full-label scratch baseline in Average Precision and Recall@0.5%. The listing does not establish whether the reported improvements are statistically significant or provide confidence intervals for these figures.\n\nResearchers working on multi-modal payment risk detection or foundation models for financial data may find the architectural integration of sequence, tabular, and graph data relevant. Those focused solely on standard tabular classification without relational or sequential components may find the specific integration strategy less directly applicable.",
+      "abstract": "We report the development of Antom 3-in-1 Transformer, a payment foundation model that integrates sequence, tabular, and graph representations for payment risk detection. The model contains approximately 7B parameters, with approximately 1.7B activated per task route. Antom 3-in-1 Transformer is pretrained to learn reusable behavioral and relational representations, primarily on Ant International's internal payment data. In a cross-business transfer experiment, pretraining improves the target business metric by 34.5% over the same architecture trained from scratch. With only 25% of the training labels, the pretrained model outperforms the full-label scratch baseline in Average Precision (AP) and Recall@0.5% on different merchant domains. In a four-month online experiment on Ant International's billion-scale payment platform, the model reduced the overall loss rate by 37.88% relative to XGB-Online.",
+      "takeaways": [
+        "The object is a 7B-parameter transformer integrating sequence, tabular, and graph representations for payment risk detection.",
+        "A visible limit is the reliance on Ant International's internal data for pretraining, which may restrict external reproducibility.",
+        "The artifact status is not established in the listing, as no code or model weights are declared."
+      ],
+      "plain": {
+        "reported": "The authors state that in a four-month test on a very large payment system, their model cut the rate of financial losses by 37.88% compared to a previous system called XGB-Online.",
+        "brief": "The authors built a large AI model with 7 billion adjustable parts that combines different types of data: lists of actions, tables of facts, and maps of relationships. They trained it on their own company's payment records to learn general patterns. They claim this pre-training makes the model 34.5% better at a specific business goal than if it were trained from zero. They also say it works well even with only 25% of the usual training data.\n\nThe biggest result they report is a 37.88% drop in losses during a real-world four-month test on a platform handling billions of payments. They also say the model beats a standard baseline in two specific accuracy measures when using less data. The summary does not say if these improvements are statistically certain or how the specific business goal was defined.\n\nPeople studying how to combine different data types for fraud detection might find this useful. People who only work with simple tables of data and do not handle sequences or relationship maps might find the specific design less relevant to their work.",
+        "takeaways": [
+          "The model is a large AI system that mixes three types of data: sequences, tables, and graphs.",
+          "A limitation is that it was trained on private company data, making it hard for others to test exactly the same way.",
+          "The listing does not say if the code or model files are available for download."
+        ]
+      },
+      "actions": [
+        "Verify the specific definition of the 'target business metric' and the baseline 'XGB-Online' configuration in the full PDF.",
+        "Check the full PDF for statistical significance tests and detailed ablation studies on the 3-in-1 integration."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-25",
+        "publishedOn": "2026-11-19",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.25403",
+            "upvotes": 99
+          }
+        ]
+      },
+      "trend": {
+        "votes": 99,
+        "rank": 1,
+        "of": 49,
+        "perDay": 17
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 99,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-19"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-25T22:37:09.722Z"
+      }
+    },
+    {
+      "id": "2611.32884",
+      "arxivId": "2611.32884",
+      "url": "https://arxiv.org/abs/2611.32884",
+      "topic": "AI",
+      "reported": "The authors report that RLVB improves the base model in all nine settings, by 17.1% on average.",
+      "metrics": [
+        "17.1% on average",
+        "9.3% on average",
+        "1.6 times fewer GPU-hours"
+      ],
+      "title": "Lazy Agents Answer Against Their Own Beliefs: Reinforcement Learning with Verifiable Beliefs Teaches Them to Act on What They Believe",
+      "authors": "Richmond Sin Jing Xuan, Peilin Feng, Wenbin Wang, Soujanya Poria",
+      "takeaway": "The paper proposes Reinforcement Learning with Verifiable Beliefs (RLVB), which rewards agents for taking further steps while the posterior allows several answers and for committing once evidence is sufficient.",
+      "brief": "The authors propose RLVB, a method that uses the simulator's exact posterior to reward agents for delaying commitment until evidence is sufficient, without requiring a judge or reward model. They report that RLVB improves the base model in all nine settings by 17.1% on average and outperforms PPO with a process reward by 9.3% on average while using 1.6 times fewer GPU-hours. The listing does not establish specific limitations regarding generalization beyond the tested benchmarks or the computational cost of posterior computation during training.\n\nThe strongest reported result is a 17.1% average improvement over the base model across nine settings, measured on three benchmarks including two unseen in training. The authors state that the trained agent answers with sufficient evidence in 51%, 12%, and 74% of episodes on the three benchmarks, compared to 8%, 0.4%, and 36% for the base model. The listing does not specify the exact nature of the \"visual puzzles\" in the Pro Worlds benchmark or the specific vision-language models used beyond the count of three.\n\nResearchers working on reinforcement learning for AI agents, specifically those addressing premature commitment or laziness in long-horizon tasks, may find this relevant. Those not interested in belief-based reward shaping or visual puzzle benchmarks may ignore it. The paper is situated in the field of AI and focuses on improving agent decision-making through verifiable beliefs.",
+      "abstract": "AI agents working on long tasks often commit to an answer before they have enough evidence, a behavior called laziness. In our evaluations, they frequently commit even while their stated belief still names several possible answers. An outcome reward at the end of the episode scores only the final answer, so it cannot teach the agent when to commit, because a lucky guess receives the same reward as an answer backed by evidence. During training, however, the simulator can compute the exact posterior over the answer at every step and tell whether the evidence is already enough. We propose Reinforcement Learning with Verifiable Beliefs (RLVB), which rewards the agent for taking further steps while this posterior still allows several answers and for committing once the evidence is sufficient. The reward needs no judge, critic or reward model, and it never reads the belief line the agent writes before each action. We also introduce Pro Worlds, a benchmark of visual puzzles where the agent views a large world through a small window. We evaluate three vision-language models on three benchmarks, two of which are never seen in training. RLVB improves the base model in all nine settings, by 17.1% on average. Under the outcome reward, GRPO and PPO fall below the base model on average. RLVB also outperforms PPO with a process reward from an LLM judge by 9.3% on average while using 1.6 times fewer GPU-hours. The trained agent answers with sufficient evidence in 51%, 12% and 74% of the episodes on the three benchmarks, against 8%, 0.4% and 36% for the base model. Its accuracy gain therefore comes from answering more often at high levels of evidence. The belief line shows how the agent reaches this evidence: it acts on its own belief. It commits at only 0.1 to 2.2% of the turns at which the evidence is insufficient and its line still names several answers, against 3 to 68% for the base model.",
+      "takeaways": [
+        "The object is a reinforcement learning method, RLVB, that uses simulator-computed posteriors to shape rewards for commitment timing.",
+        "A visible limit is that the method relies on a simulator that can compute the exact posterior over the answer at every step, which may not be available in all real-world agent environments.",
+        "The artifact status is that the authors declare a code repository at https://github.com/declare-lab/RLVB, but the listing does not confirm the repository's completeness or functionality."
+      ],
+      "plain": {
+        "reported": "The authors report that their method, RLVB, makes the basic AI model perform better in all nine test scenarios, with an average improvement of 17.1%.",
+        "brief": "The authors suggest a new way to train AI agents called RLVB. This method uses the game's internal data to tell the agent when it has enough information to give a final answer, rather than guessing too early. It does not need a separate AI to judge the agent's work. They say this method makes the basic model better in all nine test cases by an average of 17.1%. It also works better than another method called PPO by 9.3% on average and uses 1.6 times less computer time. The listing does not say if this method works in real-world situations where the internal data is not available.\n\nThe best result they show is a 17.1% average improvement. They tested this on three different sets of puzzles, two of which the AI had never seen before. They say the trained agent gives an answer when it has enough evidence in 51%, 12%, and 74% of the puzzles, while the basic model only does this in 8%, 0.4%, and 36% of the puzzles. The listing does not explain what the specific puzzles look like or which exact AI models were used, only that three were tested.\n\nPeople who study how to teach AI agents to make decisions might find this useful. People who are not interested in training AI with internal game data might not need to look at it. This paper is about AI and focuses on making agents wait for more evidence before answering.",
+        "takeaways": [
+          "The main thing they made is a training method that uses the game's hidden data to tell the agent when to stop guessing and give a final answer.",
+          "A clear limit is that this method needs the game to provide exact internal data at every step, which might not be possible in real life.",
+          "They say they have put the code on a website, but the listing does not say if the code actually works or is complete."
+        ]
+      },
+      "actions": [
+        "Verify the declared code repository at https://github.com/declare-lab/RLVB to confirm the availability of the RLVB implementation and the Pro Worlds benchmark.",
+        "Read the full PDF to determine the specific vision-language models evaluated and the detailed composition of the three benchmarks used in the experiments."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/declare-lab/RLVB",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-25",
+        "publishedOn": "2026-11-24",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.32884",
+            "upvotes": 88
+          }
+        ]
+      },
+      "trend": {
+        "votes": 88,
+        "rank": 2,
+        "of": 49,
+        "perDay": 88
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 88,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-24"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-25T22:37:09.722Z"
+      }
+    },
+    {
+      "id": "2611.30634",
+      "arxivId": "2611.30634",
+      "url": "https://arxiv.org/abs/2611.30634",
+      "topic": "AI",
+      "reported": "The authors report that LoomFormer matches Transformers trained with over 3x compute and recent residual-stream baselines trained with ~1.7-2.8x compute.",
+      "metrics": [
+        "over 3x compute",
+        "~1.7-2.8x",
+        "2% extra FLOPs"
+      ],
+      "title": "Rewirable Circuits in Transformers with Loom Attention",
+      "authors": "Da Xiao, Qingye Meng, Shengping Li, Xingyuan Yuan",
+      "takeaway": "The paper proposes loom attention, a mechanism allowing Transformers to dynamically rewire circuits at every token by interweaving vertical and horizontal attention.",
+      "brief": "The authors introduce LoomFormer, a dual-stream architecture that splits control and content between vector and matrix streams using loom attention. This design allows dynamic circuit rewiring at the token level through normalized and gated linear attention over a per-token matrix memory.\n\nThe authors state that LoomFormer matches Transformers trained with over 3x compute and recent residual-stream baselines trained with ~1.7-2.8x compute. Specifically, LoomPythia-2.8B achieves ~1.6x the average downstream gain of mHC-Pythia-2.8B over Pythia-2.8B when trained on the same 300B tokens with only 2% extra FLOPs. The listing does not establish specific limitations or artifacts beyond the reported compute comparisons.\n\nResearchers working on efficient Transformer architectures or dynamic circuit rewiring may find this relevant. Those focused solely on standard static attention mechanisms without interest in dual-stream matrix memory may find it less applicable.",
+      "abstract": "We propose loom attention, which allows a Transformer to dynamically rewire its circuits at every token by interweaving a head's vertical attention over the outputs of earlier heads (to obtain its query, key and value) with its horizontal attention over tokens. We instantiate vertical attention efficiently with normalized and gated linear attention over a per-token matrix memory, which stores the compressed head outputs and serves as a second residual stream. This yields LoomFormer, a dual-stream architecture that splits control and content between the vector and matrix streams. Across model sizes and training token budgets in language modeling and downstream tasks, LoomFormer matches Transformers trained with over 3x compute and recent residual-stream baselines (HC/mHC, MUDDFormer, AttnRes) trained with ~1.7-2.8x. For example, trained on the same 300B tokens with only 2% extra FLOPs, LoomPythia-2.8B achieves ~1.6x the average downstream gain of mHC-Pythia-2.8B over Pythia-2.8B, and matches (0-shot) or surpasses (5-shot) Pythia-12B. Code is available at https://github.com/Caiyun-AI/LoomFormer",
+      "takeaways": [
+        "The core object is a dual-stream architecture using vertical and horizontal attention to rewire circuits dynamically.",
+        "The visible limit is that the reported gains are relative to specific baselines like mHC and standard Transformers, not absolute performance ceilings.",
+        "The artifact status is established by the provided GitHub repository URL for code availability."
+      ],
+      "plain": {
+        "reported": "The authors report that their new model performs as well as standard models that used more than three times the computational power, and as well as other recent improved models that used 1.7 to 2.8 times the power.",
+        "brief": "The authors created a new type of AI model called LoomFormer. It works by letting the model change how it processes information at each step, using a system that mixes two types of data streams: one for control and one for content.\n\nThey say their model is as good as standard models that used much more computer power. For example, their smaller model did better than a similar improved model and matched or beat a much larger standard model. The text does not say what problems the model still has or if there are hidden issues.\n\nPeople who build AI models and want to make them faster or more efficient might want to look at this. People who only care about basic AI models that do not change their internal structure might not find it useful.",
+        "takeaways": [
+          "The main idea is a model that changes its internal connections while reading text, using two separate data paths.",
+          "The main limitation shown is that the improvements are compared to specific other models, not to a perfect standard.",
+          "The code is available in a public online repository, so the method can be checked by others."
+        ]
+      },
+      "actions": [
+        "Verify the specific downstream task metrics and 0-shot/5-shot comparisons in the full PDF to confirm the 1.6x gain claim.",
+        "Check the GitHub repository to confirm the code matches the described normalized and gated linear attention implementation."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Caiyun-AI/LoomFormer",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-25",
+        "publishedOn": "2026-11-23",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.30634",
+            "upvotes": 85
+          }
+        ]
+      },
+      "trend": {
+        "votes": 85,
+        "rank": 3,
+        "of": 49,
+        "perDay": 43
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 85,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-25T22:37:09.722Z"
+      }
+    },
+    {
+      "id": "2611.28947",
+      "arxivId": "2611.28947",
+      "url": "https://arxiv.org/abs/2611.28947",
+      "topic": "AI",
+      "reported": "The authors report that NightWatch reduces non-reasoning wall-clock time by 33% and wasted time by 53% on OSWorld while keeping task success on par.",
+      "metrics": [
+        "reduces non-reasoning wall-clock time by 33%",
+        "wasted time by 53%",
+        "raises success on DynaCU-Bench from 39.5% to 44.2%"
+      ],
+      "title": "Don't Sleep, Keep Watch: Proactive Perception for Computer-Use Agents",
+      "authors": "Jiaqi Su, Jie-Jing Shao, Yichen Liu, Long-Kai Huang, Haiyan Yin",
+      "takeaway": "The paper presents NightWatch, a plug-and-play framework that endows computer-use agents with continuous, temporally grounded perception without changing the agent's model, prompt, or action space.",
+      "brief": "The authors propose NightWatch, a lightweight 0.8B parameter model that performs streaming monitoring of interface states to keep vision-language agents synchronized with dynamic environments. This design aims to close the perception-action gap caused by inference latency and changing screens, grounding decisions in current rather than stale snapshots.\n\nExperiments on OSWorld-Verified and DynaCU-Bench show reduced non-reasoning wall-clock time and wasted time, with improved success rates on dynamic web tasks. The authors state that the system is more efficient than passive-watching baselines and a larger System-1 decision model, though the listing does not specify the exact computational overhead or latency measurements for the watcher itself.\n\nResearchers working on computer-use agents, vision-language model latency, or dynamic interface interaction may find the continuous perception approach relevant. Those focused solely on static screenshot understanding or non-dynamic environments may find the specific benefits less applicable.",
+      "abstract": "Computer-use agents (CUAs) built on vision-language models are increasingly entrusted with long-horizon tasks in live desktop, web, and mobile environments, where the screen keeps changing on its own. However, current CUAs lack real-time situational awareness: they perceive the environment through discrete snapshots, and the substantial inference latency of VLMs, compounded by highly dynamic interfaces, opens a perception-action gap in which the observed state frequently becomes stale before the corresponding action is executed. To bridge this gap, we present NightWatch, a plug-and-play framework that endows any CUA with continuous, temporally grounded perception without changing the agent's model, prompt, or action space. NightWatch couples the VLM agent with NightWatch-0.8B, a lightweight System-1 model that performs streaming monitoring of the interface state and keeps the agent synchronized with the evolving environment at low computational cost and latency, thereby grounding each decision in the current state rather than an outdated snapshot and reducing both stale actions and idle waiting while preserving task success. Experiments on desktop and dynamic web environments (OSWorld-Verified and DynaCU-Bench) show that NightWatch, driven by a watcher of only 0.8B parameters, reduces non-reasoning wall-clock time by 33% and wasted time by 53% on OSWorld while keeping task success on par, raises success on DynaCU-Bench from 39.5% to 44.2% with the large VLM agent, and is more efficient than passive-watching baselines such as AOI and PUSV under the same screenshot-only input, as well as a System-1 decision model more than 30times its size. Overall, NightWatch demonstrates that the timing of perception is as critical as its content, marking a step toward agents that maintain continuous awareness of their environment rather than perceiving it turn by turn.",
+      "takeaways": [
+        "The object is a plug-and-play perception framework for computer-use agents that uses a small streaming model to maintain environmental awareness.",
+        "A visible limit is that the reported efficiency gains are measured against specific baselines and benchmarks, and the listing does not detail the absolute latency or resource cost of the 0.8B watcher.",
+        "The artifact status is indicated by a declared GitHub repository URL, but the listing does not confirm the availability of code, weights, or specific version details."
+      ],
+      "plain": {
+        "reported": "The authors report that their system cuts down the time spent on non-thinking actions by 33% and the time spent waiting or doing nothing by 53% on the OSWorld test, while maintaining the same level of task completion.",
+        "brief": "The authors suggest a new tool called NightWatch. It is a small, fast computer program that watches the screen continuously. It helps larger, slower AI agents keep up with changes on the screen, such as pop-ups or loading pages, so they don't act on old information.\n\nTests on desktop and web tasks show that this system saves time and improves success on changing web pages. The authors say it works better than other watching methods and a much larger AI model. However, the summary does not say exactly how much computer power or time the small watcher itself uses.\n\nPeople who build AI that uses computers, or who study how AI handles slow responses, might find this useful. People who only care about AI looking at single, unchanging images might not find it as relevant.",
+        "takeaways": [
+          "The main thing is a tool that helps AI agents watch the screen continuously instead of just taking snapshots.",
+          "A limit is that we don't know the exact cost of running the small watcher from this summary, only that it is efficient compared to others.",
+          "The authors provide a link to a code repository, but the summary doesn't confirm if the code and models are actually there and ready to use."
+        ]
+      },
+      "actions": [
+        "Verify the specific latency and computational cost metrics of the NightWatch-0.8B model in the full PDF to assess practical deployment constraints.",
+        "Check the declared GitHub repository for code availability, model weights, and reproduction scripts to confirm the artifact status."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/SuJQ0722/NightWatch",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-25",
+        "publishedOn": "2026-11-21",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.28947",
+            "upvotes": 84
+          }
+        ]
+      },
+      "trend": {
+        "votes": 84,
+        "rank": 4,
+        "of": 49,
+        "perDay": 21
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 84,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-21"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-25T22:37:09.722Z"
+      }
+    },
+    {
+      "id": "2611.31752",
+      "arxivId": "2611.31752",
+      "url": "https://arxiv.org/abs/2611.31752",
+      "topic": "Security",
+      "reported": "The authors report that in a seven-cell defence-redesign pilot, calibrated next-byte structure probes breached the 0.02 gate on all 7 cells (0.097 to 0.112).",
+      "metrics": [
+        "0.02 gate",
+        "0.097 to 0.112",
+        "0.79 to 0.89"
+      ],
+      "title": "Separating Measurement Failures from Defence Failures in Split Language-Model Privacy",
+      "authors": "Georgios Politis, Evangelos Pappas",
+      "takeaway": "The paper claims to separate measurement failures from defence failures in split language-model privacy by mapping recorded claims to five admissibility states.",
+      "brief": "The authors propose a retrospective evidentiary reanalysis framework to distinguish between evaluator errors and actual privacy breaches in split-LLM training. They map claims to five admissibility states, including breach, non-detection, and invalid measurement, to clarify which privacy claims survive scrutiny.\n\nIn a 19-configuration exploration, only four of 24 required probes qualified, yet these established qualified privacy breaches in 13 configurations. In a seven-cell defence-redesign pilot, calibrated next-byte structure probes breached the 0.02 gate on all 7 cells, with values ranging from 0.097 to 0.112. The authors note that negative evidence against both defence families remains intact, though scope checks show shared-key wrappers do not hide activations from a compromised host.\n\nResearchers evaluating split-LLM privacy should open this to understand the distinction between measurement and defence failures. Those not involved in privacy evaluation or split-training architectures may ignore it.",
+      "abstract": "Split-training privacy evaluations fail through distinct mechanisms. Evaluators can overlook an exposed gradient channel, align reconstructions against shifted labels, or deploy uncalibrated probes before testing a candidate defence, while calibrated attacks can also refute real defences. Separating these failure modes alters which claims survive. We conduct a retrospective evidentiary reanalysis across four split-LLM campaigns and two cross-cutting scope checks covering host key custody and variational mutual-information bounds, mapping every recorded claim to one of five admissibility states (breach, non-detection, undetermined coverage, invalid measurement, or out-of-scope inference). Across a 19-configuration exploration, only four of 24 required probes qualified, yet those four calibrated probes still established qualified privacy breaches in 13 configurations, while utility or learning-gain failures eliminated the remaining 6. In a seven-cell defence-redesign pilot, 2 quantised configurations failed utility gates, calibrated next-byte structure probes breached the 0.02 gate on all 7 cells (0.097 to 0.112), and qualified punctuation-property probes reached 0.79 to 0.89, yielding 4 failed and 3 undetermined composite privacy assessments (the latter from marginal null-band excursions on punctuation bindings). Negative evidence against both defence families remains intact. Scope checks further show that shared-key orthogonal wrappers protect passive network captures without hiding activations from a compromised restoring host, and why near-zero variational lower bounds leave worst-case leakage unconstrained. Rerunnable scripts verify 1,522 checks across 122 SHA-256-pinned artifacts while preserving each campaign's native seed intervals and retrospective boundaries.",
+      "takeaways": [
+        "The object is a retrospective reanalysis of split-LLM privacy evaluations, focusing on distinguishing measurement errors from actual defence failures.",
+        "A visible limit is that shared-key orthogonal wrappers protect passive network captures but do not hide activations from a compromised restoring host.",
+        "The artifact status is supported by rerunnable scripts verifying 1,522 checks across 122 SHA-256-pinned artifacts, with a declared code repository provided."
+      ],
+      "plain": {
+        "reported": "The authors report that in a seven-cell defence-redesign pilot, calibrated next-byte structure probes breached the 0.02 gate on all 7 cells (0.097 to 0.112).",
+        "brief": "The authors propose a method to re-examine past privacy tests for split language models, aiming to tell apart cases where the test itself was flawed from cases where the security defence actually failed. They categorize each claim into one of five states, such as a confirmed breach or an invalid measurement, to see which privacy claims hold up.\n\nIn a test with 19 different setups, only four out of 24 required tests were valid, but these four still showed privacy breaches in 13 setups. In a smaller test with seven defence designs, the probes measuring next-byte structure went above the 0.02 safety limit in all seven cases, with scores between 0.097 and 0.112. The authors note that the evidence against the tested defences remains valid, but their scope checks show that using shared keys does not hide data from a compromised server.\n\nPeople who test the privacy of split language models should look at this to understand how to separate test errors from real security failures. People who do not work on privacy testing or split model architectures might not need to read it.",
+        "takeaways": [
+          "The paper is about re-analyzing past privacy tests for split language models to distinguish between bad tests and bad security defences.",
+          "A limitation is that using shared keys to protect data in transit does not hide the data from a server that has been compromised.",
+          "The authors provide code that can be run to verify 1,522 checks across 122 fixed files, and a link to the code is provided."
+        ]
+      },
+      "actions": [
+        "Verify the specific probe configurations and gate thresholds in the PDF to confirm the 0.02 gate breach details.",
+        "Check the declared code repository to ensure the 1,522 checks and 122 artifacts are accessible and match the described retrospective boundaries."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/setloop-io/Separating-Measurement-Failures-from-Defence-Failures-in-Split-Language-Model-Privacy",
+      "tags": [
+        "cs.CR",
+        "cs.DC"
+      ],
+      "listing": {
+        "listedOn": "2026-11-25",
+        "publishedOn": "2026-11-24",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.31752",
+            "upvotes": 4
+          },
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.31752"
+          }
+        ]
+      },
+      "trend": {
+        "votes": 4,
+        "rank": 32,
+        "of": 49,
+        "perDay": 4
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 4,
+          "sourceCount": 2,
+          "publishedOn": "2026-11-24"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-25T22:37:09.722Z"
+      }
+    },
+    {
+      "id": "2611.31243",
+      "arxivId": "2611.31243",
+      "url": "https://arxiv.org/abs/2611.31243",
+      "topic": "Health",
+      "reported": "The authors report that at W8A8-cal-QDQ, cosine similarity was 0.944 despite 89/245 empty masks, measured on a stratified 245-field panel spanning BBBC038, BBBC039, and NIST iPSC images.",
+      "metrics": [
+        "cosine similarity was 0.944",
+        "89/245 empty masks",
+        "12.08x storage reduction"
+      ],
+      "title": "Proxy Metrics Can Hide Downstream Collapse: A Case Study on Compressed Cellular Segmentation",
+      "authors": "Sebasti\\'an A. Cruz Romero",
+      "takeaway": "The paper claims that FP32-referenced output proxies are insufficient as standalone acceptance criteria for promptless dense-prediction models, requiring validation against downstream retention stratified by deployment-relevant imaging conditions.",
+      "brief": "The authors argue that standard output-level proxies fail to reliably predict downstream mask retention in compressed vision models. They specifically evaluate post-training quantization of Cellpose-SAM on a 245-field panel to test this hypothesis.\n\nEvidence shows angular error saturated at 90 degrees from A8 through A2, while cosine and NRMSE preserved rank-order without an interpretable threshold. At W8A8-cal-QDQ, cosine similarity was 0.944 despite 89/245 empty masks, and performance varied sharply by modality. Below A8, all modalities collapsed to 245/245 empty fields, whereas ternary weight quantization produced a 12.08x storage reduction correctly identified as catastrophic.\n\nResearchers working on model compression for dense prediction tasks should examine the stratified validation approach. Those relying solely on output-level proxies for acceptance criteria should review the reported discrepancies between proxy scores and actual mask retention.",
+      "abstract": "Post-training compression of vision models is commonly screened using output-level proxies such as normalized RMSE (NRMSE), cosine similarity, and flow angular error. We evaluated post-training quantization of Cellpose-SAM, a promptless Segment-Anything model for cellular instance segmentation, on a stratified 245-field panel spanning BBBC038, BBBC039, and NIST iPSC images across density regimes. These proxies failed to reliably predict downstream mask retention under activation quantization. Angular error saturated at 90{\\deg} from A8 through A2, while cosine and NRMSE preserved rank-order information without providing an interpretable acceptance threshold. At W8A8-cal-QDQ, cosine similarity was 0.944 despite 89/245 empty masks; moreover, performance varied sharply by modality, with BBBC039 yielding 0/47 empty masks versus 63/99 for NIST iPSC fields at the same proxy footprint. Across five modality-density strata, cosine similarity and empty-mask rate showed weak rank agreement (\\r{ho}=~0.3), with the highest-cosine stratum producing the second-worst downstream outcome. Below A8, all modalities collapsed to 245/245 empty fields. By contrast, ternary weight quantization produced a 12.08x storage reduction and was correctly identified as catastrophic by the proxies. These results show that FP32-referenced output proxies are insufficient as standalone acceptance criteria for promptless dense-prediction models; compression should instead be validated against downstream retention stratified by deployment-relevant imaging conditions.",
+      "takeaways": [
+        "The object is the reliability of output-level proxies for screening post-training compression in promptless dense-prediction models.",
+        "A visible limit is the weak rank agreement between cosine similarity and empty-mask rate across modality-density strata, with the highest-cosine stratum producing the second-worst downstream outcome.",
+        "The artifact status is not established in the listing, as no code or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that at a specific compression setting, a similarity score was 0.944 even though 89 out of 245 test images produced no output, measured on a set of 245 images from three different datasets.",
+        "brief": "The authors argue that common simple scores used to check if a compressed AI model still works are not reliable for this specific type of image analysis model. They tested a compressed version of a cell-segmentation model on 245 images to see if these scores matched the actual performance.\n\nThe results showed that one error measure stopped changing once compression got too high, while other measures kept changing but did not give a clear pass/fail line. At one compression level, the similarity score was high (0.944) but many images failed completely. Performance also differed a lot depending on the type of image. At lower compression levels, all images failed, but a different compression method that saved a lot of space was correctly flagged as bad by the scores.\n\nPeople who compress AI models for medical image analysis should look at how the authors tested their models. People who use simple scores to decide if a compressed model is good enough should look at the differences between the scores and the actual results.",
+        "takeaways": [
+          "The paper looks at whether simple scores can tell if a compressed AI model for cell counting still works.",
+          "A clear limitation is that the similarity score did not match the failure rate across different image types, with the best-scoring group having the second-worst results.",
+          "It is not stated in the listing whether the code or data for this study is available to the public."
+        ]
+      },
+      "actions": [
+        "Verify the specific quantization configurations and proxy calculations by reviewing the full PDF methodology section.",
+        "Check the supplementary materials for the detailed breakdown of the 245-field panel and the specific density regimes tested."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "cs.CV",
+        "cs.ET"
+      ],
+      "listing": {
+        "listedOn": "2026-11-25",
+        "publishedOn": "2026-11-25",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.31243"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-25T22:37:09.722Z"
+      }
+    },
+    {
+      "id": "2611.31246",
+      "arxivId": "2611.31246",
+      "url": "https://arxiv.org/abs/2611.31246",
+      "topic": "Stats",
+      "reported": "The authors report that full-sensor detection achieves run-wise mean window $F_1$ scores of 0.834--0.964 across three training seeds on seven Mach-2.9 runs.",
+      "metrics": [
+        "0.834--0.964",
+        "0.5-s",
+        "Mach-2.9"
+      ],
+      "title": "InletScope: Multiscale pressure-based inlet unstart monitoring under changing sensor configurations",
+      "authors": "Jiaming Liu, Fenlou Zhai, Ao Xue, Liangliang Tang, Cheng Ding, Daoqiang Zhang",
+      "takeaway": "InletScope combines shared multiscale pressure encoding, learned scale fusion and sensor-probability averaging to allow measurement sets to change without retraining.",
+      "brief": "The authors propose InletScope, a system for monitoring supersonic inlet unstart using pressure data that can adapt to changing sensor configurations without retraining. The method uses shared multiscale pressure encoding and learned scale fusion to handle varying flow responses and measurement locations.\n\nThe strongest reported result is a run-wise mean window $F_1$ score range of 0.834--0.964 for full-sensor detection across three training seeds. The authors measured this on seven Mach-2.9 runs, each with one annotated event, covering downstream throttling, throat regulation, and splitter adjustment. A stated limit is that configurations with comparable window scores can produce different alarm timing and persistence, which is not resolved by the reported metrics.\n\nResearchers working on aeroengine inlet monitoring or adaptive sensor fusion may find the specific sensor-probability averaging approach relevant. Those not focused on supersonic inlet pressure dynamics or unstart detection may find the application domain too narrow for their immediate needs.",
+      "abstract": "Supersonic inlets capture and compress air for aeroengines, and unstart can disrupt the air supply and compromise propulsion-system stability. Pressure-based monitoring must accommodate flow responses that vary with operating condition and measurement location. InletScope combines shared multiscale pressure encoding, learned scale fusion and sensor-probability averaging, allowing measurement sets to change without retraining. Separate models evaluate unstart detection and new-onset prediction within a 0.5-s future interval. Seven Mach-2.9 runs, each with one annotated event, cover downstream throttling, throat regulation and splitter adjustment; three are held out with fixed weights and source-derived settings. Across three training seeds, full-sensor detection achieves run-wise mean window $F_1$ scores of 0.834--0.964. Eight-sensor aggregation reduces detection-score variation across sensor subsets in both splitter runs while retaining mean scores close to those of the full sets. Regional detection favors cowl and high-speed-channel measurements during splitter adjustment and compression-side measurements during downstream throttling, consistent with their respective pressure responses. Complete-record evaluation shows that configurations with comparable window scores can produce different alarm timing and persistence. These findings connect sensor count and regional coverage to pressure discrimination and sequential alarm behavior, providing experimental guidance for configuring inlet monitoring systems.",
+      "takeaways": [
+        "The object is a pressure-based monitoring system for supersonic inlet unstart that handles changing sensor sets without retraining.",
+        "A visible limit is that comparable window scores do not guarantee consistent alarm timing or persistence across different sensor configurations.",
+        "The artifact status is not established in the listing, as no code repository or dataset link is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their full-sensor detection method achieved average performance scores between 0.834 and 0.964, measured on seven test runs at Mach 2.9 speed.",
+        "brief": "The authors created a system called InletScope to monitor when supersonic aircraft engine inlets fail to function correctly, using pressure sensors. The system can adjust to different sensor setups without needing to be retrained from scratch. It uses a method that combines data from multiple scales and averages sensor probabilities to handle changes in airflow and sensor locations.\n\nThe best result reported is an average performance score between 0.834 and 0.964 for detecting failures using all available sensors. This was tested on seven flight simulations at Mach 2.9, each containing one recorded failure event. The tests covered different engine control scenarios. A limitation noted is that even when performance scores are similar, the timing and duration of alarms can differ depending on which sensors are used, and this issue is not fully solved by the current metrics.\n\nEngineers or researchers studying aircraft engine inlet failures or sensor data fusion might find this useful. People not working on supersonic engine inlet pressure systems might find the topic too specific for their work.",
+        "takeaways": [
+          "The system monitors supersonic engine inlet failures using pressure data and adapts to different sensor setups without retraining.",
+          "A known limitation is that similar performance scores do not ensure consistent alarm timing or duration across different sensor configurations.",
+          "The listing does not state whether code or data is available, so the artifact status is unknown."
+        ]
+      },
+      "actions": [
+        "Verify the exact definition of the window $F_1$ score and the annotation protocol for the seven Mach-2.9 runs in the full PDF.",
+        "Check the full PDF for details on the 'source-derived settings' and how the three held-out runs were selected to assess generalizability."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "stat.ME",
+        "cs.AI",
+        "physics.flu-dyn"
+      ],
+      "listing": {
+        "listedOn": "2026-11-25",
+        "publishedOn": "2026-11-25",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.31246"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-25T22:37:09.722Z"
+      }
+    },
+    {
+      "id": "2611.31247",
+      "arxivId": "2611.31247",
+      "url": "https://arxiv.org/abs/2611.31247",
+      "topic": "Physics",
+      "reported": "The authors report that introducing a corrector tensor makes the stochastic Schrödinger evolution consistent with energy-momentum conservation in a self-gravitating optomechanical system under continuous measurement.",
+      "metrics": [],
+      "title": "A Causal Schr\\\"odinger-Newton Theory that Conserves Energy and Momentum",
+      "authors": "Daisuke Miki, Yanbei Chen, Yiqiu Ma, Yubao Liu, Selim M. Shahriar",
+      "takeaway": "The paper claims to provide a theoretical justification for the Causal-Conditional Schrödinger-Newton theory as a phenomenological model for classical gravity sourced by quantum matter by ensuring energy-momentum conservation.",
+      "brief": "The authors propose a theoretical framework where the gravitational field is driven by conditional expectation values of the stress-energy tensor evaluated on local states determined by measurement records in the causal past. This formulation is stated to be independent of any particular interpretation of quantum measurement while leading to unambiguous phenomenological dynamics.\n\nThe authors report that applying this framework to a self-gravitating optomechanical system under continuous measurement shows that the resulting stochastic Schrödinger evolution can be made consistent with energy-momentum conservation by introducing a corrector tensor. They state that this corrector restores the conservation law without altering the leading Newtonian predictions of CCSN, contributing only negligible post-Newtonian corrections in current experimental regimes. The listing does not specify quantitative experimental results or numerical benchmarks for these corrections.\n\nResearchers working on quantum gravity phenomenology, optomechanics, or stochastic Schrödinger equations may find this relevant. Those not interested in theoretical models coupling classical gravity to quantum matter via measurement records may ignore it.",
+      "abstract": "This paper provides a theoretical justification for using the Causal-Conditional Schr\\\"odinger-Newton theory (CCSN) as a phenomenological model for classical gravity sourced by quantum matter. In CCSN, the gravitational field is driven not by expectation values in the global quantum state, but by conditional expectation values of the stress-energy tensor evaluated on local states determined by measurement records in the causal past. Because these local states are defined operationally from measurement records, the formulation is independent of any particular interpretation of quantum measurement while leading to unambiguous phenomenological dynamics. We apply this framework to a self-gravitating optomechanical system under continuous measurement and show that the resulting stochastic Schr\\\"odinger evolution, augmented by a classical gravitational field sourced by local conditional stress-energy expectations, can be made consistent with energy-momentum conservation by introducing a corrector tensor. The corrector restores the conservation law without altering the leading Newtonian predictions of CCSN, contributing only negligible post-Newtonian corrections in current experimental regimes. These results place CCSN on firmer theoretical footing and clarify its role as a viable phenomenological model for ongoing and future tests of classical gravity coupled to quantum matter.",
+      "takeaways": [
+        "The object is a theoretical modification to the Causal-Conditional Schrödinger-Newton theory that introduces a corrector tensor to enforce energy-momentum conservation.",
+        "A visible limit is that the corrector contributes only negligible post-Newtonian corrections in current experimental regimes, meaning the effect may be difficult to detect with existing technology.",
+        "The artifact status is theoretical; the listing describes a mathematical framework and its consistency properties but does not mention code, datasets, or experimental implementations."
+      ],
+      "plain": {
+        "reported": "The authors report that adding a mathematical adjustment term makes their model obey the laws of energy and momentum conservation in a system where a tiny mechanical object is affected by its own gravity and constantly measured.",
+        "brief": "The authors suggest a new way to describe how gravity works when it is caused by quantum particles. Instead of using the average properties of the entire quantum system, they use the average properties of the system as it appears to an observer based on past measurement records. This approach is said to work regardless of how one interprets the strange behavior of quantum measurements.\n\nThe authors show that when they apply this idea to a tiny mechanical object that is constantly being measured, the math only works if they add a specific correction term. They state that this correction fixes the energy and momentum accounting without changing the main predictions of the model. They also say that in today's experiments, this correction is so small that it is likely too tiny to measure. The listing does not provide specific numbers for how small these corrections are.\n\nScientists studying how gravity might interact with quantum mechanics, or those working with tiny mechanical devices that are constantly measured, might find this useful. People not interested in theoretical physics models of gravity and quantum mechanics might skip it.",
+        "takeaways": [
+          "The main contribution is a mathematical fix to a theory that links gravity and quantum mechanics, ensuring that energy and momentum are properly accounted for.",
+          "A limitation is that the fix is predicted to be extremely small in current experiments, making it hard to test with existing technology.",
+          "This is a theoretical paper; it presents mathematical arguments and does not include computer code, experimental data, or physical devices."
+        ]
+      },
+      "actions": [
+        "Verify the derivation of the corrector tensor and its impact on the stress-energy tensor in the full PDF to ensure the conservation law is rigorously restored.",
+        "Check the specific optomechanical system parameters and measurement record definitions in the PDF to assess the operational independence of the formulation from quantum measurement interpretations."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph"
+      ],
+      "listing": {
+        "listedOn": "2026-11-25",
+        "publishedOn": "2026-11-25",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.31247"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-25T22:37:09.722Z"
+      }
+    },
+    {
+      "id": "2611.31472",
+      "arxivId": "2611.31472",
+      "url": "https://arxiv.org/abs/2611.31472",
+      "topic": "Engineering",
+      "reported": "The authors report that the twist share separates bending, coupled and torsion modes on the first eight finite element modes of a tapered plate with a swept trailing edge.",
+      "metrics": [
+        "15.25 Hz",
+        "in-plane ratio 1.33",
+        "twist share below 0.0005"
+      ],
+      "title": "Automated classification of modal displacements",
+      "authors": "Gabriele Dessena, Marco Civera, Saray Undiano Ech\\'aniz, Oscar Bonilla-Manrique",
+      "takeaway": "The paper proposes four indices to describe the motion of a mode from a few sensor vectors, enabling classification without visually inspecting the mode shapes.",
+      "brief": "The authors propose four indices to describe the motion of a mode from a few sensor vectors: a bending score, a torsion score, a twist share and an in-plane ratio. They are assessed on the first eight finite element modes of a tapered plate with a swept trailing edge. They are applied to identified XB-2 wing modes and to the published modes of the Sheraton Universal Hotel, a reinforced concrete (RC) building.\n\nOn the plate, the twist share separates bending, coupled and torsion modes. The XB-2 modes include one bending and three coupled modes (one dominated by in-plane bending and two by out-of-plane bending). The coupled mode dominated by in-plane bending (15.25 Hz, in-plane ratio 1.33) was not investigated in earlier campaigns on the wing. On the RC building, all five modes are bending (twist share below 0.0005). The twist share and the in-plane ratio indicate the type of each mode. Hence, modes are classified without visually inspecting the mode shapes. Code and processed data are openly released.\n\nThe listing does not establish whether the indices generalize beyond the specific tapered plate, XB-2 wing, and Sheraton Universal Hotel cases. It does not state whether the indices are robust to sensor placement errors or noise levels typical in field testing. The artifact status is stated as openly released code and processed data, but no repository URL is provided in the listing.",
+      "abstract": "The bending, torsional, or coupled character of a mode shape helps determine the dynamic behaviour of aerospace and civil structures. In vibration testing, it is assigned by inspecting mode shape plots, and depends on the analyst. This work proposes four indices to describe the motion of a mode from a few sensor vectors: a bending score, a torsion score, a twist share and an in-plane ratio. They are assessed on the first eight finite element modes of a tapered plate with a swept trailing edge. They are applied to identified XB-2 wing modes and to the published modes of the Sheraton Universal Hotel, a reinforced concrete (RC) building. On the plate, the twist share separates bending, coupled and torsion modes. The XB-2 modes include one bending and three coupled modes (one dominated by in-plane bending and two by out-of-plane bending). The coupled mode dominated by in-plane bending (15.25 Hz, in-plane ratio 1.33) was not investigated in earlier campaigns on the wing. On the RC building, all five modes are bending (twist share below 0.0005). The twist share and the in-plane ratio indicate the type of each mode. Hence, modes are classified without visually inspecting the mode shapes. Code and processed data are openly released.",
+      "takeaways": [
+        "The object is a set of four numerical indices for classifying modal displacement character from sensor vectors.",
+        "A visible limit is that the assessment is restricted to specific finite element modes, XB-2 wing modes, and Sheraton Universal Hotel modes, with no stated generalization to other structures or sensor configurations.",
+        "The artifact status is that code and processed data are openly released, but the listing does not provide a repository URL or access details."
+      ],
+      "plain": {
+        "reported": "The authors report that the twist share separates bending, coupled and torsion modes on the first eight finite element modes of a tapered plate with a swept trailing edge.",
+        "brief": "The authors propose four numerical scores to describe how a structure moves in a specific vibration pattern, using data from a few sensors. These scores are: a bending score, a torsion score, a twist share, and an in-plane ratio. They tested these scores on the first eight vibration patterns of a computer model of a tapered plate with a swept trailing edge. They also applied them to measured vibration patterns from an XB-2 wing and to published vibration patterns from the Sheraton Universal Hotel, a reinforced concrete building.\n\nOn the plate, the twist share score successfully distinguished between bending, coupled, and torsion vibration patterns. The XB-2 wing modes included one bending mode and three coupled modes (one dominated by in-plane bending and two by out-of-plane bending). The coupled mode dominated by in-plane bending (15.25 Hz, in-plane ratio 1.33) had not been studied in previous tests on the wing. On the RC building, all five modes were bending (twist share below 0.0005). The twist share and in-plane ratio scores indicated the type of each mode. Therefore, modes are classified without visually looking at the mode shape plots. Code and processed data are openly released.\n\nThe listing does not state whether these scores work for other types of structures or sensor setups. It does not say if the scores are reliable when sensor data has noise or if sensor placement is imperfect. The listing says code and data are openly released, but does not give a web address to find them.",
+        "takeaways": [
+          "The object is a set of four numerical scores for classifying how a structure vibrates, based on sensor data.",
+          "A visible limit is that the tests were only on a specific computer model, an XB-2 wing, and the Sheraton Universal Hotel, with no statement about how well the scores work elsewhere.",
+          "The artifact status is that code and data are openly released, but the listing does not provide a web address or access details."
+        ]
+      },
+      "actions": [
+        "Verify the PDF to confirm the exact definitions of the four indices and the sensor vector requirements.",
+        "Check the openly released code and processed data to assess reproducibility and whether the indices are applicable to other structures."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP",
+        "cs.CE"
+      ],
+      "listing": {
+        "listedOn": "2026-11-25",
+        "publishedOn": "2026-11-25",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.31472"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-25T22:37:09.722Z"
+      }
+    },
+    {
+      "id": "2611.31518",
+      "arxivId": "2611.31518",
+      "url": "https://arxiv.org/abs/2611.31518",
+      "topic": "Econ",
+      "reported": "The authors report that a supplier bargaining share above about 0.15 is sufficient to make further local-service adoption reduce value added even at negligible foreign costs, using Brazilian accounts as a reference.",
+      "metrics": [
+        "supplier bargaining share above about 0.15",
+        "threshold in tradables is about 0.66"
+      ],
+      "title": "Burning the Bridge: Agentification and Domestic Value Added",
+      "authors": "Eduardo Levy Yeyati",
+      "takeaway": "The paper claims to study the trade-off where firms replacing local work with foreign AI agents produce more per paid hour while generating less domestic income in a small open economy.",
+      "brief": "The paper models a small open economy where exporters and local services use AI agents, arguing that extending agent use in local services lowers domestic income once wages hit a reservation floor. The authors report that a supplier bargaining share above about 0.15 reduces value added in local services, while the threshold in tradables is about 0.66, using Brazilian accounts as a reference. The listing does not establish whether these thresholds hold outside the specific model assumptions or for other economies beyond the illustrative historical accounts for Brazil and Mexico.\n\nThis work is relevant to researchers modeling the macroeconomic effects of AI adoption on domestic value added and trade balances. It may be less relevant to those seeking empirical evidence of current AI agent deployment in specific industries, as the paper relies on a theoretical framework with illustrative historical data. The distinction between local services and tradables is central to the reported thresholds.\n\nThe packet does not advise whether to read the paper. The reader should verify the model assumptions and the applicability of the Brazilian and Mexican historical accounts to their specific context. The listing does not provide code or a dataset for replication.",
+      "abstract": "Firms that replace local work with foreign AI agents can produce more per paid hour while generating less income at home. We study this trade-off in a small open economy where exporters and local services both use agents. Once wages reach a reservation floor, extending agent use in local services lowers domestic income at unchanged foreign costs. Value added at constant prices and consumption also fall if suppliers capture enough of the saving. Exporters have an offset: adopting agents can expand production and earn the foreign exchange needed to pay for them. The difference is substantial. Using Brazilian accounts as a reference, a supplier bargaining share above about 0.15 is sufficient to make further local-service adoption reduce value added even at negligible foreign costs. The corresponding threshold in tradables is about 0.66. We derive separate export-growth requirements for preserving income and consumption and illustrate them using historical accounts for Brazil and Mexico. Cheaper agents ease the consumption requirement; lower export prices raise it. Over time, declining domestic capabilities can also make returning to local production more expensive, allowing suppliers to charge more at renewal.",
+      "takeaways": [
+        "The object is a theoretical model of a small open economy analyzing the impact of AI agents on domestic value added and consumption.",
+        "A visible limit is that the results depend on specific model assumptions, such as the reservation wage floor and supplier bargaining power, which may not hold universally.",
+        "The artifact status is not established in the listing, as no code or dataset is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that if suppliers capture more than about 15% of the savings, using more AI agents in local services reduces the total economic value created in the country, even if the agents are very cheap, based on data from Brazil.",
+        "brief": "The paper uses a mathematical model to look at a small country that trades with the rest of the world. It suggests that when companies use AI to do work that used to be done by local people, the country might make less money overall, even if the AI is efficient. The authors found that if the companies providing the AI keep more than about 15% of the savings, the local economy suffers. For goods that are traded internationally, the break-even point is higher, at about 66%. The paper does not say if these numbers apply to other countries or real-world situations outside the model.\n\nThis is useful for people studying how AI affects national economies and trade. It is less useful for people looking for real-world data on how companies are currently using AI, because the paper is mostly theoretical and uses historical data from Brazil and Mexico as examples. The key difference is between services that stay local and goods that are exported.\n\nThis summary does not tell you whether to read the paper. You should check the full paper to see if the model's assumptions make sense for your situation. The listing does not include any computer code or data files for you to use.",
+        "takeaways": [
+          "The paper is a theoretical model about how AI affects the economy of a small trading country.",
+          "A limitation is that the results depend on specific assumptions in the model, which might not be true in the real world.",
+          "The listing does not say if there is any code or data available to download."
+        ]
+      },
+      "actions": [
+        "Verify the model assumptions and the derivation of the 0.15 and 0.66 thresholds in the full PDF.",
+        "Check the historical accounts for Brazil and Mexico used to illustrate the export-growth requirements."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.GN",
+        "q-fin.EC"
+      ],
+      "listing": {
+        "listedOn": "2026-11-25",
+        "publishedOn": "2026-11-25",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.31518"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-25T22:37:09.722Z"
+      }
+    }
+  ]
+}
