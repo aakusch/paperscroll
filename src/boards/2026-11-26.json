@@ -1,0 +1,677 @@
+{
+  "date": "2026-11-26",
+  "label": "Thu, Nov 26",
+  "minutes": 10,
+  "poolSize": 145,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-11-26T22:56:31.128Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2611.34849",
+      "arxivId": "2611.34849",
+      "url": "https://arxiv.org/abs/2611.34849",
+      "topic": "AI",
+      "reported": "The authors report that Real2SimLab supports 47 coding agents and 5 non-agent methods on 6 benchmarks.",
+      "metrics": [
+        "47 coding agents",
+        "5 non-agent methods",
+        "6 benchmarks"
+      ],
+      "title": "Real2SimLab: A Unified Platform for Real-to-Simulation Transfer",
+      "authors": "Yongchang Zhang, Jie Huang, Yunhe Ni, Ningyu Zhou, Guangyu Zhao, Ruixun Liu, Rui Huang, Yidi Wu, TianZe Zhang, Zixiang Jiang, Xiang Li, Kevin Shen, Yiwu Zhong",
+      "takeaway": "The paper presents Real2SimLab, a unified platform for real-to-simulation transfer that evaluates methods by running their written programs and scoring outputs with original benchmark scorers.",
+      "brief": "The authors introduce Real2SimLab as a unified platform to address the integration burden of evaluating real-to-simulation methods across multiple benchmarks. It runs method-generated programs and scores them using each benchmark's original scorer, while also providing a pipeline for training data and reward annotations that filters out benchmark videos to avoid data contamination.\n\nThe strongest reported result is that the platform currently supports 47 coding agents and 5 non-agent methods across 6 benchmarks. The listing does not report specific performance scores, accuracy metrics, or comparative results against baselines, nor does it establish the quality of the generated simulations or the effectiveness of the training data pipeline.\n\nResearchers working on real-to-simulation transfer, coding agents, or benchmark integration may find the platform useful for standardizing evaluation. Those not involved in simulation generation or multi-benchmark evaluation may find the specific integration details less relevant.",
+      "abstract": "Real-to-simulation transfer, which builds simulations from real-world observations, has long been studied in research and industry. Recently, coding agents have become capable of generating simulation programs from video recordings, and several benchmarks have been proposed to evaluate them. However, each individual benchmark defines its own inputs, deliverables, and scoring pipeline. This leads to N times M integrations when evaluating N methods on M benchmarks. To this end, we present Real2SimLab, a unified platform for real-to-simulation transfer. It evaluates a method by running its written program and scoring the output simulation with the original scorer of each benchmark. Moreover, Real2SimLab provides a pipeline to create training data and reward annotations for real-to-simulation methods. Our pipeline carefully avoids data contamination by filtering out the video recordings that exist in benchmarks. For each video recording, a program is first produced, and then our pipeline computes its reward with the same code that Real2SimLab uses for evaluation. So far, it supports 47 coding agents and 5 non-agent methods on 6 benchmarks. Both the platform and Awesome-Real2Sim, our research map of nearly 300 real-to-simulation papers, are open source, and we invite the Real2SimHub community to build them together.",
+      "takeaways": [
+        "The object is a software platform and data pipeline for evaluating and training real-to-simulation methods.",
+        "A visible limit is the absence of reported performance metrics or comparative results in the listing, leaving the actual quality of the platform's outputs unverified.",
+        "The artifact status is open source, with a provided GitHub repository and an associated research map of nearly 300 papers."
+      ],
+      "plain": {
+        "reported": "The authors state that their software tool currently works with 47 different AI coding tools and 5 other methods across 6 different test suites.",
+        "brief": "The authors built a tool called Real2SimLab to make it easier to test AI systems that create computer simulations from real-world videos. Instead of building separate connections for every test suite, this tool runs the AI's code and uses the original scoring system from each test suite to grade the result. It also helps create training data for these AI systems by making sure the training videos are not the same ones used in the tests.\n\nThe main fact given is that the tool supports 47 coding agents and 5 other methods on 6 test suites. The text does not say how well the AI systems perform, how accurate the simulations are, or how good the training data is. It only describes what the tool can connect to, not how well it works.\n\nPeople who build AI systems that turn videos into simulations or who manage multiple test suites might find this tool helpful. People who do not work on these specific AI tasks might not need this tool.",
+        "takeaways": [
+          "The thing being described is a software tool and a process for making training data for AI systems that build simulations.",
+          "A clear limitation is that the text does not show any scores or comparisons, so we do not know if the tool produces good results.",
+          "The tool is free to use and the code is available online, along with a list of about 300 related research papers."
+        ]
+      },
+      "actions": [
+        "Verify the claimed support for 47 coding agents and 6 benchmarks by inspecting the code in the provided GitHub repository.",
+        "Review the full PDF to check for any reported performance results or ablation studies that are not included in the abstract."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Real2SimHub/Real2SimLab",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-26",
+        "publishedOn": "2026-11-25",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.34849",
+            "upvotes": 101
+          }
+        ]
+      },
+      "trend": {
+        "votes": 101,
+        "rank": 1,
+        "of": 50,
+        "perDay": 101
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 101,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-26T22:56:31.128Z"
+      }
+    },
+    {
+      "id": "2611.34575",
+      "arxivId": "2611.34575",
+      "url": "https://arxiv.org/abs/2611.34575",
+      "topic": "AI",
+      "reported": "The authors report that Sage-Med-Preview achieves an average score of 58.26% on the 31 public multimodal benchmarks.",
+      "metrics": [
+        "average score of 58.26%",
+        "35B-parameter medical multimodal model",
+        "3B activated parameters"
+      ],
+      "title": "Sage-Med: Scaling Medical Multimodal Intelligence",
+      "authors": "Med Team, Ming Hu, Cheng Tang, Wei Li, Rongbin Li, Feilong Tang, Junru Hu, Hongze Zhu, Qiujuan Yan, Huanze Tang, Shaocong Wei, Siyuan Yan, Min Cen, Zhongxing Xu, Zhonghua Wang, Lie Ju, Zhen Yu, Wenjie Li, Shiyan Su, Jing Hao, Jingyong Liang, Diping Song, Fang Yan, Chenglong Ma, Junzhi Ning, Haochen Xue, Zanting Ye, Chenrun Wang, Jinjie Wei, Yi Xin, Jianghan Shen, Siqi Luo, Jiyao Liu, Huidong Xie, Jun Zhao, Rulin Zhou, Longquan Jiang, Ziyan Huang, Ying Chen, Hanxiao Zhang, Junyang Wu, Mouxiao Bian, Jiashi Lin, Chenyu Wang, Qi Qin, Jie Huang, Yiling Zhou, Jiawei Chen, Kefan Wang, Jingjing Hua, Yaoyu Liu, Huihui Xu, Tianbin Li, Jin Ye, Ziyang Chen, Shujian Gao, Zilin Lu, Jiangtao Yan, Changkai Ji, Wenhao Tang, Xinyi Zeng, Yuxing Chen, Hongwei Yang, Rongzhao Zhang, Jinru Ding, Yingcheng Wu, Zhenfei Yin, Jinzhe Li, Lu Lu, Yun Zhong, Zhishan Lin, Bingli Wang, Xiaohan Ren, Jianmin Qian, Penghao Zhao, Zhongbo Tian, Zhenbang Zhou, Peiling Dai, Mengjing Zhao, Jingyu Zheng, Pinan Liu, Shiwei Li, Victoria Mar, Cristina Vico-Alonso, Qiang Wu, Xianming Liu, Lingtong Huang, Dili Song, Minghui Zhang, Wenlong Zhang, Qipeng Guo, Yuqiang Li, Nanqing Dong, Yun Gu, Qi Duan, Hongliang Ren, Hongming Shan, Yin Xie, Xiang An, Benyou Wang, Yueming Su, Yefeng Zheng, Zongyuan Ge, Chun-Mei Feng, Jie Xu, Yu Qiao, Junjun He, Yirong Chen",
+      "takeaway": "The paper claims to introduce Sage-Med-Preview, a 35B-parameter medical multimodal model, and provide empirical evidence toward scalable clinical multimodal intelligence.",
+      "brief": "The authors present Sage-Med-Preview, a 35B-parameter medical multimodal model with 3B activated parameters, built using stage-specific curation and a progressive training curriculum. They state that existing medical MLLMs underperform frontier general-purpose MLLMs and that scaling model size primarily improves text capabilities rather than multimodal perception.\n\nThe authors report an average score of 58.26% on 31 public multimodal benchmarks, outperforming Hulu-Med-235B-A22B at 50.99% and Intern-S2-Preview at 52.24%. They note that substantial challenges remain in complex medical reasoning and multi-step clinical workflows, though the specific nature of these unresolved limits is not detailed in the abstract.\n\nResearchers investigating medical multimodal scaling laws or benchmarking clinical AI systems may find the reported comparisons and training recipes relevant. Those focused solely on general-purpose multimodal models or non-medical domains may find the specialized focus less applicable.",
+      "abstract": "Establishing effective scaling laws for medical multimodal large language models (MLLMs) remains a persistent and fundamental challenge. Our systematic evaluation shows that existing medical MLLMs tend to underperform frontier general-purpose MLLMs across a range of medical tasks, while scaling model size primarily improves text capabilities rather than multimodal perception, and enabling reasoning modes fails to close this visual gap. To investigate how medical multimodal intelligence scales in practice, we introduce Sage-Med-Preview, a 35B-parameter medical multimodal model with 3B activated parameters, built by combining stage-specific curation over 322.7 million candidate records with a progressive training curriculum spanning medical pretraining, staged supervised fine-tuning, and adaptive reinforcement learning. Across this curriculum, progressive supervised refinement and adaptive reinforcement learning yield consistent stage-wise gains, substantially advancing both specialized visual understanding and medical language capabilities. Evaluated against 77 competing models across 238 clinical tasks spanning 61 public and 13 private multi-center benchmarks in more than 40 modalities, Sage-Med-Preview achieves an average score of 58.26% on the 31 public multimodal benchmarks. It outperforms the state-of-the-art open-source medical model Hulu-Med-235B-A22B at 50.99% and the general scientific model Intern-S2-Preview at 52.24%, and approaches the advanced proprietary model GPT-6.2-Sol across multiple tasks such as comprehensive multimodal understanding, report generation, and visual grounding. Although substantial challenges remain in complex medical reasoning and multi-step clinical workflows, this report provides empirical evidence, actionable data and training recipes, and a rigorous benchmark toward scalable clinical multimodal intelligence.",
+      "takeaways": [
+        "The object is a 35B-parameter medical multimodal model with 3B activated parameters, named Sage-Med-Preview.",
+        "A visible limit is the authors' statement that substantial challenges remain in complex medical reasoning and multi-step clinical workflows.",
+        "The artifact status is indicated by a declared code repository URL, but the listing does not confirm the repository's contents or accessibility."
+      ],
+      "plain": {
+        "reported": "The authors report that their model, Sage-Med-Preview, scored 58.26% on average across 31 public tests for medical image and text understanding.",
+        "brief": "The authors built a large AI model called Sage-Med-Preview that handles both medical images and text. It has 35 billion total settings but only uses 3 billion at a time to save resources. They say current medical AI models are worse than general AI models at looking at images, and making the model bigger mostly helps it with text, not images.\n\nThey say their model scored 58.26% on 31 public medical tests. This is better than another open medical model called Hulu-Med-235B-A22B which scored 50.99%, and a general science model called Intern-S2-Preview which scored 52.24%. They admit their model still struggles with complicated medical reasoning and long, multi-step clinical processes, but they do not explain exactly what those struggles are in this summary.\n\nPeople studying how to make medical AI better or testing medical AI systems might find this useful. People who only care about general AI or non-medical topics might not find it relevant.",
+        "takeaways": [
+          "The main thing they made is a medical AI model called Sage-Med-Preview with 35 billion total settings.",
+          "A known weakness is that the model still has trouble with complex medical reasoning and long clinical workflows.",
+          "They list a website link for code, but this summary does not confirm if the code or model files are actually there."
+        ]
+      },
+      "actions": [
+        "Verify the declared code repository URL to confirm the availability of the model weights and training code.",
+        "Review the full PDF to examine the specific definitions of the 238 clinical tasks and the composition of the 61 public and 13 private benchmarks."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/Sage-Med/Sage-Med-Preview",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-26",
+        "publishedOn": "2026-11-25",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.34575",
+            "upvotes": 84
+          }
+        ]
+      },
+      "trend": {
+        "votes": 84,
+        "rank": 2,
+        "of": 50,
+        "perDay": 84
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 84,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-26T22:56:31.128Z"
+      }
+    },
+    {
+      "id": "2611.34923",
+      "arxivId": "2611.34923",
+      "url": "https://arxiv.org/abs/2611.34923",
+      "topic": "AI",
+      "reported": "The authors report that U-MoLT outperforms OLMo3 across 700M/1.5B dense and 3B MoE models in 400B-token pretraining.",
+      "metrics": [
+        "1.7x validation cross-entropy (CE) token efficiency at 700M",
+        "improving 3B MoE 10-domain perplexity by 0.75",
+        "10-task accuracy by 2.1 percentage points"
+      ],
+      "title": "Mixture-of-Loops Transformer",
+      "authors": "Lianghui Zhu, Shijie Wang, Xinggang Wang, Jinze Bai, Bo Wang, Xiang Bai",
+      "takeaway": "The paper introduces Mixture-of-Loops Transformer (MoLT) to improve the expressivity-efficiency frontier of looped Transformers by using keys and values as memory for selective reuse across depths and loops.",
+      "brief": "The authors propose Mixture-of-Loops Transformer (MoLT) to address efficiency costs in looped Transformers by rethinking how information passes between loops. They introduce Mixture-of-Loops Attention (MoLA) which uses keys and values as memory for selective reuse across depths and loops.\n\nThe authors report that U-MoLT outperforms OLMo3 across 700M/1.5B dense and 3B MoE models in 400B-token pretraining. They state U-MoLT achieves 1.7x validation cross-entropy token efficiency at 700M and improves 3B MoE 10-domain perplexity by 0.75. The listing does not establish specific limitations or artifacts beyond the reported efficiency and quality trade-offs.\n\nResearchers working on efficient transformer architectures or looped models may find this relevant. Those not focused on transformer efficiency or loop mechanisms may ignore it.",
+      "abstract": "Looped Transformers boost expressivity by reusing shared layers across loops, yet at the cost of efficiency. Pushing their expressivity-efficiency frontier requires rethinking the core mechanism connecting adjacent loops: What should be passed as a Transformer loops? We introduce Mixture-of-Loops Transformer (MoLT), whose Mixture-of-Loops Attention (MoLA) uses keys and values (KV) as memory for selective reuse across depths and loops. Under loop residual, MoLT-R retains the residual stream and reads local KV across loops for expressivity. Under loop KV, MoLT-KV instead restarts from embeddings and reads current-loop local KV with preceding-loop memory KV at earlier positions for efficiency. MoLT-KV eliminates same-position cross-loop dependence and, paired with loop forcing for parallel training, unlocks single-traversal Mixture-of-Loops (MoL) decoding beyond the training loop horizon. To balance efficiency and quality, we introduce U-shaped MoLT (U-MoLT), which separates memory construction from prediction readout and skips unused decoder traversals without changing predictions. In 400B-token pretraining, U-MoLT outperforms OLMo3 across 700M/1.5B dense and 3B MoE models, achieving 1.7x validation cross-entropy (CE) token efficiency at 700M while improving 3B MoE 10-domain perplexity by 0.75 and 10-task accuracy by 2.1 percentage points. In 100B-token continued pretraining of Qwen3.5-0.8B-Base, our U-MoLT adaptation lowers CE on all 11 domains over the matched baseline with 1.4x mean token efficiency. At inference, U-MoLT with MoL-Hybrid-2 matches non-looped OLMo3 latency at 996.6 vs. 1,000.6 ms on S-size (~113M) models. Code is available at https://github.com/hustvl/MoLT",
+      "takeaways": [
+        "The object is a transformer architecture variant called Mixture-of-Loops Transformer (MoLT) with specific attention mechanisms for loop reuse.",
+        "A visible limit is the trade-off between efficiency and quality, which the authors attempt to balance with U-shaped MoLT.",
+        "The artifact status is that code is available at the provided GitHub repository, but the listing does not confirm its completeness or functionality."
+      ],
+      "plain": {
+        "reported": "The authors report that their U-MoLT model performs better than the OLMo3 model across different sizes (700 million, 1.5 billion, and 3 billion parameters) in a large-scale training run of 400 billion tokens.",
+        "brief": "The authors propose a new type of transformer model called Mixture-of-Loops Transformer (MoLT) to make looped transformers more efficient. They introduce a specific attention mechanism called Mixture-of-Loops Attention (MoLA) that uses keys and values as memory to selectively reuse information across different loops.\n\nThe authors report that their U-MoLT variant outperforms the OLMo3 model in large-scale pretraining. They state that U-MoLT achieves 1.7 times better token efficiency in validation cross-entropy at the 700 million parameter size and improves the 3 billion parameter Mixture-of-Experts model's perplexity by 0.75. The listing does not specify any limitations or artifacts beyond the reported efficiency and quality improvements.\n\nPeople who work on making transformer models more efficient or who study looped models might find this useful. People who do not work on transformer efficiency or loop mechanisms might not need to look at this.",
+        "takeaways": [
+          "The thing being described is a new transformer architecture called Mixture-of-Loops Transformer (MoLT) that uses specific attention methods to reuse information in loops.",
+          "A visible limitation is the balance between making the model efficient and keeping its quality high, which the authors try to manage with a U-shaped design.",
+          "The status of the code is that it is available on GitHub, but the listing does not say if the code is complete or works exactly as described."
+        ]
+      },
+      "actions": [
+        "Verify the reported performance metrics by checking the PDF for detailed experimental setups and baselines.",
+        "Inspect the GitHub repository to confirm the code matches the described MoLT and U-MoLT implementations."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/hustvl/MoLT",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-26",
+        "publishedOn": "2026-11-25",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.34923",
+            "upvotes": 57
+          }
+        ]
+      },
+      "trend": {
+        "votes": 57,
+        "rank": 3,
+        "of": 50,
+        "perDay": 57
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 57,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-26T22:56:31.128Z"
+      }
+    },
+    {
+      "id": "2611.30844",
+      "arxivId": "2611.30844",
+      "url": "https://arxiv.org/abs/2611.30844",
+      "topic": "AI",
+      "reported": "The authors report that DyLoMo-DiT reduces FID by 11-24% relative to DiT and 36-56% relative to DiT-MoE at matched parameter and compute budgets on ImageNet 256times256.",
+      "metrics": [
+        "FID by 11-24%",
+        "FID by 36-56%",
+        "GenEval score 0.714 vs. 0.673"
+      ],
+      "title": "DyLoMo-DiT: Dynamic Looped Mixture-of-Experts Diffusion Transformers",
+      "authors": "Lernie Li, Yuanliu Liu, Pengfei Xiong, Wei Zhang",
+      "takeaway": "The paper proposes DyLoMo-DiT, a diffusion transformer architecture that reuses parameters via weight-shared loops and sparse experts to deepen the network without adding parameters.",
+      "brief": "The authors propose DyLoMo-DiT, which reuses parameters rather than adding them: a weight-shared loop repeatedly applies the middle layers, while sparse experts allocate parameter capacity across tokens. This design deepens the network without adding parameters, freeing the parameter budget for other uses, such as more experts or more distinct layers. It also allocates compute dynamically, varying the number of passes across noise levels.\n\nExperiments show that DyLoMo-DiT makes more effective use of parameter and compute budgets, with further gains from assigning more passes to low-noise steps. On ImageNet 256times256, DyLoMo-DiT reduces FID by 11-24% relative to DiT and 36-56% relative to DiT-MoE at matched parameter and compute budgets. For text-to-image generation, a scaled DyLoMo-DiT achieves a higher GenEval score than FLUX.1 (0.714 vs. 0.673), with less than one tenth of its active parameters (1.05B vs. 12B).\n\nResearchers working on diffusion transformer architectures, mixture-of-experts scaling, or parameter-efficient model design should open this paper. Those uninterested in architectural modifications to DiTs or MoE variants may ignore it.",
+      "abstract": "Diffusion Transformers (DiTs) scale model capacity by increasing both parameter count and computation. Mixture-of-Experts (MoE) variants expand parameter capacity while keeping per-token computation roughly fixed, but still require substantial parameter storage. In this paper, we propose Dynamic Looped MoE DiT (DyLoMo-DiT), which reuses parameters rather than adding them: a weight-shared loop repeatedly applies the middle layers, while sparse experts allocate parameter capacity across tokens. This design deepens the network without adding parameters, freeing the parameter budget for other uses, such as more experts or more distinct layers. It also allocates compute dynamically, varying the number of passes across noise levels. Experiments show that DyLoMo-DiT makes more effective use of parameter and compute budgets, with further gains from assigning more passes to low-noise steps. On ImageNet 256times256, DyLoMo-DiT reduces FID by 11-24% relative to DiT and 36-56% relative to DiT-MoE at matched parameter and compute budgets. For text-to-image generation, a scaled DyLoMo-DiT achieves a higher GenEval score than FLUX.1 (0.714 vs. 0.673), with less than one tenth of its active parameters (1.05B vs. 12B).",
+      "takeaways": [
+        "The object is a diffusion transformer architecture that combines weight-shared loops with sparse experts to reuse parameters.",
+        "The visible limit is that the reported gains are measured at matched parameter and compute budgets, which may not reflect real-world deployment constraints.",
+        "The artifact status is established by the provided GitHub repository URL, though the listing does not confirm the completeness or functionality of the code."
+      ],
+      "plain": {
+        "reported": "The authors report that their model improves image quality scores by 11-24% compared to standard DiT models and by 36-56% compared to MoE DiT models when using the same amount of memory and processing power on the ImageNet 256x256 dataset.",
+        "brief": "The authors propose a new type of AI model called DyLoMo-DiT. Instead of adding more parts to the model, it reuses existing parts by looping through certain layers multiple times. It also uses a system where different parts of the model handle different pieces of data, which saves memory. This allows the model to be deeper and more complex without needing more storage space. It also adjusts how much work it does depending on the stage of image generation.\n\nThe authors show that their model uses memory and processing power more effectively. They found that doing more loops during the early stages of image generation improves results. On a standard image dataset, their model produced higher quality images than previous models, with significantly better scores. For creating images from text descriptions, their smaller model outperformed a much larger competing model, using less than one-tenth of the active components.\n\nPeople who build or study AI models that generate images should look at this paper. People who do not work with these specific types of AI models can skip it.",
+        "takeaways": [
+          "The main subject is a new design for AI image generators that reuses internal components instead of adding new ones.",
+          "A clear limitation is that the performance improvements are only measured under specific conditions where memory and processing power are kept equal to other models.",
+          "The authors provide a link to their code, but the listing does not say if the code is complete or works as described."
+        ]
+      },
+      "actions": [
+        "Verify the reported FID and GenEval scores by checking the experimental setup and baseline comparisons in the full PDF.",
+        "Inspect the GitHub repository to confirm that the code matches the described architecture and that the reported metrics are reproducible."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/OneBoxCream/DyLoMo-DiT",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-26",
+        "publishedOn": "2026-11-23",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.30844",
+            "upvotes": 55
+          }
+        ]
+      },
+      "trend": {
+        "votes": 55,
+        "rank": 4,
+        "of": 50,
+        "perDay": 18
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 55,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-26T22:56:31.128Z"
+      }
+    },
+    {
+      "id": "2611.33166",
+      "arxivId": "2611.33166",
+      "url": "https://arxiv.org/abs/2611.33166",
+      "topic": "Stats",
+      "reported": "The authors report that their proposed test can have higher power than classical alternatives such as the Kolmogorov-Smirnov and Cramér-von Mises tests in the settings considered.",
+      "metrics": [],
+      "title": "Karhunen-Lo\\`{e}ve Expansion of Time-Rescaled Brownian Bridge and Inference of Unit Distribution",
+      "authors": "Leonardo Chhabra, Anindya Goswami, Nikhil Thekkedath Haridas",
+      "takeaway": "The paper claims to construct a new statistic based on the Karhunen-Loève basis of the time-rescaled Brownian bridge for testing unit distributions and deriving its asymptotic distribution.",
+      "brief": "The authors develop a goodness-of-fit test for uniformity using a statistic based on the projection of the empirical process onto the Karhunen-Loève basis functions of the time-rescaled Brownian bridge. They also propose a two-parameter family of these processes with a closed-form expansion that accommodates diverse monotone rate time rescales.\n\nNumerical experiments indicate the proposed test can have higher power than classical alternatives like the Kolmogorov-Smirnov and Cramér-von Mises tests in the settings considered. The listing does not specify the exact numerical power values, sample sizes, or the specific non-uniform alternatives used in these comparisons. An analysis with real data is mentioned to reveal greater flexibility for modelling monotone densities, but specific datasets and performance metrics are not detailed in the abstract.\n\nResearchers working on nonparametric goodness-of-fit tests or stochastic process expansions may find the theoretical construction and power comparisons relevant. Those requiring specific numerical benchmarks or code for immediate implementation should note that the abstract provides no quantitative results or repository links.",
+      "abstract": "We study the Karhunen-Lo\\`{e}ve (KL) basis of the time-rescaled Brownian bridge (TRBB) with time rescales of the form $t\\mapsto\\int_0^t f^2(s)\\mathop{}\\!\\mathrm{d}s$. For testing unit distributions, we construct a new statistic based on the projection of empirical process onto the KL basis functions of the TRBB and derive its asymptotic distribution. Moreover, using this statistic, we develop a goodness-of-fit test for uniformity and study its power against a specific non-uniform alternative. Numerical experiments indicate that, in the settings considered, the proposed test can have higher power than classical alternatives such as the Kolmogorov-Smirnov and Cram\\'{e}r-von Mises tests. Furthermore, we propose a two-parameter family of TRBBs and derive the closed-form KL expansion for this new deterministically time-changed process. The family includes a diverse class of monotone rate time rescales, both increasing and decreasing, while retaining a tractable eigenstructure. Finally, an analysis with real data reveals greater flexibility of the proposed parametric family for modelling monotone densities on $[0,1]$.",
+      "takeaways": [
+        "The core object is a new statistical test for uniformity based on the Karhunen-Loève expansion of a time-rescaled Brownian bridge.",
+        "The listing states that numerical experiments show higher power than classical tests but does not provide the specific quantitative metrics or the exact settings of the non-uniform alternatives.",
+        "No code repository or specific real-world dataset names are provided in the listing, leaving the practical implementation and data analysis details unverified."
+      ],
+      "plain": {
+        "reported": "The authors state that their new statistical test performs better than standard tests like the Kolmogorov-Smirnov and Cramér-von Mises in the specific scenarios they tested.",
+        "brief": "The researchers created a new way to check if data follows a uniform distribution. They used a mathematical tool called the Karhunen-Loève expansion applied to a specific type of random process known as a time-rescaled Brownian bridge. They also created a new family of these processes that can handle different types of changing rates.\n\nTheir computer simulations suggest their new test is better at detecting deviations from uniformity than older, standard tests. However, the summary does not say exactly how much better the test is or what specific data they used to prove this. They also mention using real-world data to show their model is flexible, but they do not name the data or give specific numbers.\n\nPeople who study statistical tests or random processes might find the new mathematical method useful. People who need to use the test right away should know that the summary does not include the actual numbers or the computer code needed to run it.",
+        "takeaways": [
+          "The main contribution is a new statistical test for checking if data is uniformly distributed, based on a specific mathematical expansion of a random process.",
+          "The summary says the new test is better than old ones in their tests, but it does not give the specific numbers showing how much better it is.",
+          "The summary does not provide the computer code or the names of the real-world datasets used, so the practical details are not confirmed."
+        ]
+      },
+      "actions": [
+        "Verify the specific numerical power values and the definitions of the non-uniform alternatives in the full PDF to assess the practical significance of the claimed improvements.",
+        "Check the full paper for the specific real data used in the analysis and the exact parameters of the two-parameter family of time-rescaled Brownian bridges."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "math.ST",
+        "math.PR",
+        "stat.TH"
+      ],
+      "listing": {
+        "listedOn": "2026-11-26",
+        "publishedOn": "2026-11-26",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.33166"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Stats signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-26T22:56:31.128Z"
+      }
+    },
+    {
+      "id": "2611.33187",
+      "arxivId": "2611.33187",
+      "url": "https://arxiv.org/abs/2611.33187",
+      "topic": "Econ",
+      "reported": "The authors report that simulations with lasso and neural forecasts show substantial reductions in size distortion that bootstrapping uncorrected scores does not reproduce.",
+      "metrics": [],
+      "title": "Orthogonal inference for machine learning forecasts",
+      "authors": "Alberto Quaini",
+      "takeaway": "The paper establishes feasible inference for differences in population evaluation risks for machine learning forecasts trained under objectives differing from relevant losses.",
+      "brief": "The authors propose orthogonal inference methods to correct estimation error in machine learning forecast comparisons, aiming to prevent spurious evidence of predictive superiority. They report that simulations using lasso and neural forecasts show substantial reductions in size distortion compared to bootstrapping uncorrected scores, though specific numerical values for this reduction are not provided in the abstract. The method relies on geometric beta-mixing, moment conditions, and simultaneous learning bounds, with explicit corrections given for sparse linear and neural probability forecasts.\n\nThe listing does not specify the exact magnitude of the size distortion reduction or the specific datasets used in the simulations. It also does not state whether the Gaussian limits hold under all practical data conditions or provide empirical results on real-world economic data. The reliance on simultaneous learning bounds and nondegenerate corrected-score covariance for Wald inference represents a theoretical condition whose practical satisfaction is not detailed in the abstract.\n\nResearchers working on econometric inference for machine learning models, particularly those comparing forecast accuracy, may find the theoretical framework and correction methods relevant. Practitioners seeking ready-to-use software or empirical benchmarks on specific economic datasets may need to consult the full paper to assess applicability and implementation details.",
+      "abstract": "Forecast comparisons inform investment and other economic decisions, but machine learning forecasts can be trained under objectives that differ from the relevant losses. Estimation error can then create spurious evidence of predictive superiority, even with out-of-sample evaluation. We establish feasible inference for differences in population evaluation risks in this setting. Building on locally robust estimation, we construct scores that preserve the risk target and remove first-order estimation sensitivity. Under geometric beta-mixing, moment conditions and simultaneous learning bounds, we establish Gaussian limits and consistent long-run covariance estimation for overlapping chronological training windows, allowing refitting at every evaluation date. Uniform extensions provide confidence coverage over classes of data-generating processes; Wald inference requires nondegenerate corrected-score covariance. For sparse linear forecasts and neural probability forecasts, we give explicit corrections and simultaneous learning bounds. Simulations with lasso and neural forecasts show substantial reductions in size distortion that bootstrapping uncorrected scores does not reproduce.",
+      "takeaways": [
+        "The object is a statistical inference procedure for comparing machine learning forecast risks, specifically addressing estimation error from training objectives.",
+        "A visible limit is the absence of specific quantitative results or real-world data applications in the abstract, leaving the practical magnitude of improvements unverified.",
+        "The artifact status is unclear as no code repository is declared, and the abstract does not confirm the availability of implementation tools."
+      ],
+      "plain": {
+        "reported": "The authors report that computer experiments using simple linear models and neural networks showed that their method reduced errors in statistical tests much more than a standard method called bootstrapping, but they did not list the exact numbers in the summary.",
+        "brief": "The authors created a new way to statistically compare predictions made by machine learning algorithms. They argue that standard methods can give false signals that one model is better than another because of how the models were trained. Their new method fixes this by adjusting for the training process. They say their computer tests show this fix works well, reducing false signals significantly compared to older methods, but they do not give the exact size of this improvement in the summary. The method requires certain mathematical conditions about how the data is structured over time, which may not always be met in real-world economic data.\n\nThe summary does not say how much the error was reduced in specific numbers, nor does it say if the method was tested on actual historical economic data like stock prices or GDP. It also does not explain if the mathematical conditions required for the method to work are easy to check in practice. This means a reader cannot know from the summary alone if the method is ready for immediate use in their own work.\n\nPeople who study how to statistically evaluate machine learning models in economics might find this useful. People who just want a ready-made tool or a proven result on a specific dataset should look at the full paper to see if it fits their needs.",
+        "takeaways": [
+          "The paper is about a statistical tool for comparing machine learning predictions in economics.",
+          "The summary does not show the exact numbers for how well the tool works or if it was tested on real data.",
+          "It is not clear if the authors have shared the computer code for this tool."
+        ]
+      },
+      "actions": [
+        "Verify the specific simulation setup and numerical results for size distortion reduction by reading the full PDF.",
+        "Check the paper's supplementary materials or repository for code implementing the orthogonal inference corrections for lasso and neural forecasts."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "econ.EM"
+      ],
+      "listing": {
+        "listedOn": "2026-11-26",
+        "publishedOn": "2026-11-26",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.33187"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Econ signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-26T22:56:31.128Z"
+      }
+    },
+    {
+      "id": "2611.33198",
+      "arxivId": "2611.33198",
+      "url": "https://arxiv.org/abs/2611.33198",
+      "topic": "Engineering",
+      "reported": "The authors report an aggregated average normalized mean square error decrease from 0.1645 for the best baseline to 0.1178 for UniMoE-CP across pooled-training benchmarks.",
+      "metrics": [
+        "29.9% for 100-m VLC",
+        "0.1645 for the best baseline",
+        "0.1178 for UniMoE-CP"
+      ],
+      "title": "UniMoE-CP: Unified Conditional Waveform Prediction Across Measured Optical Wireless Links",
+      "authors": "Yuning Zhou, Ruizhe Jin, Yunkai Wang, Zhilan Lu, Kejia Bian, Chao Shen, Feng Bao, Jianyang Shi, Ziwei Li, Junwen Zhang, Nan Chi",
+      "takeaway": "The paper claims a unified conditional waveform prediction model that reuses expert parameters across measured underwater, visible-light, and free-space optical wireless links.",
+      "brief": "The authors propose UniMoE-CP, a shared-parameter model for forecasting received waveforms in underwater, 100-m visible-light, and 4.3-km free-space optical links using historical observations and future transmitted excitation.\n\nThey report average normalized mean square error reductions of 29.9% for 100-m VLC, 29.1% underwater, and 21.4% for 4.3-km FSO, with an aggregated average NMSE dropping from 0.1645 to 0.1178. The listing does not establish whether these results generalize to unmeasured links or specify computational overhead.\n\nResearchers working on multi-link optical wireless channel prediction or unified time-series forecasting may find the shared-expert architecture relevant. Those focused on single-link optimization or non-optical communication channels may find the scope limited.",
+      "abstract": "Shared prediction across measured optical wireless links requires a common model to accommodate link-dependent waveform dynamics. This paper studies unified learning for underwater optical, 100-m visible-light communication and 4.3-km free-space optical links. We formulate received-waveform forecasting from historical observations and known future transmitted excitation using one shared parameter set. UniMoE-CP combines a shared pool of temporal experts, window-dependent routing and spectral covariate fusion with an autoregressive decoder. The design permits conditional specialization while reusing expert parameters across the measured links. Pooled-training benchmarks evaluate each link separately and report an aggregated result using normalized mean square error (NMSE) and normalized mean absolute error (NMAE). The reported average NMSE reductions are 29.9% for 100-m VLC, 29.1% underwater and 21.4% for 4.3-km FSO. The aggregated average NMSE decreases from 0.1645 for the best baseline to 0.1178 for UniMoE-CP.",
+      "takeaways": [
+        "The object is a unified conditional waveform prediction model for three distinct measured optical wireless link types.",
+        "A visible limit is that the reported benchmarks evaluate each link separately and aggregate results, without establishing generalization to unmeasured links or varying channel conditions.",
+        "The artifact status is not established in the listing, as no code, dataset, or repository URL is provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their model improved the average error score, measured by normalized mean square error, from 0.1645 for the best previous method to 0.1178 for their new model across three different types of light-based communication links.",
+        "brief": "The authors created a single computer model called UniMoE-CP that predicts the signal received in three different light-based communication setups: underwater, a 100-meter visible-light link, and a 4.3-kilometer free-space link. The model uses past signal data and known future sent signals to predict what will be received.\n\nThey measured how much better their model was compared to the best previous methods. They found the error score dropped by 29.9% for the 100-meter link, 29.1% for the underwater link, and 21.4% for the 4.3-kilometer link. The overall average error score went down from 0.1645 to 0.1178. The summary does not say if this model works for other links not tested or how much computer power it needs.\n\nPeople who study how to predict signals in multiple different light-based communication systems might find this useful. People who only care about one specific type of link or non-light communication systems might not find it relevant.",
+        "takeaways": [
+          "The thing being studied is a single computer model that predicts signals for three different light-based communication links.",
+          "A clear limitation is that the tests only looked at the three specific links mentioned, and it is not known if the model works for other links or different conditions.",
+          "It is not known if the computer code or data used in the study is available for others to use, because the summary does not mention any links to code or data."
+        ]
+      },
+      "actions": [
+        "Verify the specific baseline models and experimental setup details in the PDF to confirm the comparability of the reported NMSE reductions.",
+        "Check the PDF for any stated limitations regarding model complexity, inference latency, or sensitivity to link-specific noise characteristics not captured in the abstract."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "eess.SP",
+        "cs.AI"
+      ],
+      "listing": {
+        "listedOn": "2026-11-26",
+        "publishedOn": "2026-11-26",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.33198"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Engineering signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-26T22:56:31.128Z"
+      }
+    },
+    {
+      "id": "2611.33200",
+      "arxivId": "2611.33200",
+      "url": "https://arxiv.org/abs/2611.33200",
+      "topic": "Health",
+      "reported": "The authors report that AARME-GNN improves precision over MKG-FENN by 3.71 and 6.57 percentage points in known drug and known new drug prediction on Dataset 1.",
+      "metrics": [
+        "3.71 percentage points",
+        "6.57 percentage points",
+        "4.53"
+      ],
+      "title": "Adaptive attention routing multimodal expert graph neural network for drug-drug interaction prediction",
+      "authors": "Jingyi Yang, Chengcheng Yan, Hongri Cong, Feifei Zhao",
+      "takeaway": "The paper claims to propose the adaptive attention routing multimodal expert graph neural network (AARME-GNN) to address heterogeneous features, non-adaptive fusion, and modality dilution in drug-drug interaction prediction.",
+      "brief": "The authors propose AARME-GNN to address heterogeneous features, non-adaptive fusion, and modality dilution in drug-drug interaction prediction. They introduce a Feature Adaptive Calibration Module, a Multimodal Weight Router, and a Routing-Aware Weighted Distillation mechanism to improve multimodal integration.\n\nThe authors report that AARME-GNN improves precision over MKG-FENN by 3.71 and 6.57 percentage points in known drug and known new drug prediction on Dataset 1. They also report an AUC improvement of 4.53 in new drug prediction on Dataset 1. The listing does not specify the exact dataset names or the full set of evaluated metrics beyond these specific comparisons.\n\nResearchers working on multimodal graph neural networks for drug safety may find the specific routing and calibration mechanisms relevant. Those focused on single-modality molecular property prediction or non-graph-based DDI methods may find the specific architectural components less directly applicable.",
+      "abstract": "Accurate prediction of drug-drug interactions (DDIs) is essential for drug safety in combination therapy. Multimodal methods built on knowledge graphs (KGs) already combine molecular structures, substructures, targets and biomedical relations into drug representations, but they still face three problems: features are heterogeneous across modalities, fusion does not adapt to individual drug pairs, and modality-specific information is diluted during integration. We propose the adaptive attention routing multimodal expert graph neural network (AARME-GNN) to address them. A Feature Adaptive Calibration Module (FACM) reduces within-modality noise in each representation through bottleneck reparameterization and channelwise recalibration before fusion. A Multimodal Weight Router (MMWR) then sets the modality weights of each drug pair, with an entropy constraint that prevents the weights from collapsing onto one modality. A Routing-Aware Weighted Distillation (RAWD) mechanism builds a soft target from the unimodal branches, so that the fusion classifier retains the knowledge held by each modality. On Dataset 1, AARME-GNN improves precision over MKG-FENN by 3.71 and 6.57 percentage points in known drug and known new drug prediction, and the area under the receiver operating characteristic curve (AUC) by 4.53 in new drug prediction. On Dataset 2, the advantage is concentrated in the two cold-start settings and in precision.",
+      "takeaways": [
+        "The object is a graph neural network architecture designed for multimodal drug-drug interaction prediction.",
+        "A visible limit is that the reported improvements are specific to comparisons against MKG-FENN on two unnamed datasets.",
+        "The artifact status is not established in the listing, as no code repository or implementation details are provided."
+      ],
+      "plain": {
+        "reported": "The authors report that their model, AARME-GNN, is more accurate than a previous model called MKG-FENN by 3.71 and 6.57 percentage points in two specific prediction scenarios on a first dataset.",
+        "brief": "The authors created a new computer model called AARME-GNN to better predict how different drugs interact with each other. They say current models struggle because they mix different types of data unevenly and lose important details. Their new model uses three specific tools to fix these issues: one to clean up data within each type, one to decide how much to trust each data type for each pair of drugs, and one to ensure the final decision keeps the knowledge from each individual data type.\n\nThe authors state that on a first dataset, their model is more accurate than a previous model by 3.71 and 6.57 percentage points in two specific scenarios. They also state it has a higher area under the curve score by 4.53 in a new drug scenario on the same dataset. The listing does not name the specific datasets or provide a full list of all performance scores.\n\nPeople who study how to combine different types of medical data using graph-based computer models might find the specific tools useful. People who study drug interactions using only one type of data or non-graph methods might find the specific design less relevant to their work.",
+        "takeaways": [
+          "The main subject is a specific type of computer model designed to predict drug interactions using multiple data sources.",
+          "A clear limitation is that the reported performance gains are only compared against one specific previous model on two unnamed datasets.",
+          "It is not stated in the listing whether the code or data for this model is publicly available."
+        ]
+      },
+      "actions": [
+        "Verify the specific dataset definitions and baseline configurations by reviewing the full PDF.",
+        "Check the supplementary materials for the complete set of evaluation metrics and statistical significance tests."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "q-bio.QM",
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-26",
+        "publishedOn": "2026-11-26",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.33200"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Health signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-26T22:56:31.128Z"
+      }
+    },
+    {
+      "id": "2611.33218",
+      "arxivId": "2611.33218",
+      "url": "https://arxiv.org/abs/2611.33218",
+      "topic": "Security",
+      "reported": "The authors report that 93.0% of the 513 open-source repositories analyzed were created in 2026.",
+      "metrics": [
+        "513 open-source projects",
+        "93.0% of repositories",
+        "83.2% of paths"
+      ],
+      "title": "Demystifying Real-world LLM Service Freeloading",
+      "authors": "Xinyi Hou, Shenao Wang, Wenhui Pan, Yanjie Zhao, Haoyu Wang",
+      "takeaway": "The paper presents a systematic measurement study characterizing the scale, development, and mechanisms of LLM service freeloading across open-source projects.",
+      "brief": "The authors define LLM service freeloading as the repackaging of free inference into independent APIs beyond permitted conditions. They state that their study traces 1,588 inference paths across 64 upstream services to understand these mechanisms.\n\nThe strongest reported result is that 93.0% of the 513 analyzed repositories were created in 2026. Direct HTTP or WebSocket requests account for 83.2% of paths, making protocol reproduction the dominant method. The listing does not establish specific performance limits or artifact availability beyond the stated disclosure to providers.\n\nResearchers studying API abuse, service security, or LLM infrastructure governance may find the measurement data relevant. Those focused on model training or unrelated security domains may find the specific freeloading context less applicable.",
+      "abstract": "Third-party projects repackage free inference from LLM web applications and dedicated clients into independent APIs. We refer to such use beyond providers' permitted access, allocation, or redistribution conditions as LLM service freeloading (LSF). However, its scale and underlying mechanisms remain poorly understood. We present a systematic measurement study of 513 open-source projects, tracing 1,588 inference paths across 64 upstream LLM services and characterizing their development, dependencies, and operating mechanisms. We find that 93.0% of repositories were created in 2026. Direct HTTP or WebSocket requests account for 83.2% of paths, making reproduction of product protocols the dominant invocation method. Projects adapt messages, reconstruct conversation state, and convert responses to support compatible APIs. Account selection or rotation appears on 304 paths (19.1%), allowing projects with multiple eligible accounts to distribute requests across their separate allowances. Our policy analysis finds that 58 of the 62 services with available terms explicitly prohibit at least one examined practice, including automated access, account sharing, or service redistribution. These restrictions cover both downstream API provision and the means of obtaining upstream inference. Our findings inform defenses against unauthorized consumption and redistribution of free LLM resources. We have responsibly disclosed our findings to the relevant providers.",
+      "takeaways": [
+        "The object is the unauthorized redistribution of free LLM inference via open-source projects.",
+        "The visible limit is the reliance on 513 open-source projects, which may not represent closed-source or private freeloading instances.",
+        "The artifact status is not established in the listing, though the authors state they responsibly disclosed findings to providers."
+      ],
+      "plain": {
+        "reported": "The authors report that 93.0% of the 513 open-source repositories analyzed were created in 2026.",
+        "brief": "The authors define a practice where people take free AI chat services and turn them into their own public tools, which the providers did not allow. They state that they looked at 513 public code projects to see how common this is and how it works.\n\nThe main number they report is that 93.0% of these projects were started in 2026. Most of the connections used standard web methods, accounting for 83.2% of the cases. The text does not say if the code or data is available to download, only that the authors told the AI companies about their findings.\n\nPeople who study how online services are misused or how to protect AI platforms might find this useful. People who are interested in how AI models learn or other types of computer security might not find this specific topic relevant.",
+        "takeaways": [
+          "The thing being studied is people taking free AI chat access and selling or sharing it as a service without permission.",
+          "A limit is that they only looked at public code projects, so they might have missed private or hidden versions of this activity.",
+          "It is not stated in the summary if the researchers shared their data or code, but they did tell the AI companies about the problem."
+        ]
+      },
+      "actions": [
+        "Verify the full PDF to confirm the specific definitions of 'freeloading' and the methodology for tracing inference paths.",
+        "Check the referenced policy analysis section to see which specific terms of service were examined for the 62 services."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "cs.CR",
+        "cs.SE"
+      ],
+      "listing": {
+        "listedOn": "2026-11-26",
+        "publishedOn": "2026-11-26",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.33218"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Security signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-26T22:56:31.128Z"
+      }
+    },
+    {
+      "id": "2611.33270",
+      "arxivId": "2611.33270",
+      "url": "https://arxiv.org/abs/2611.33270",
+      "topic": "Physics",
+      "reported": "The authors report that their one-shot converse bound shows the leftover hash lemma to be tight up to a constant factor for all strongly 4-universal hash functions.",
+      "metrics": [
+        "strongly 4-universal hash functions",
+        "2-universal hash functions"
+      ],
+      "title": "Sharp one-shot bounds and optimal exponents of universal randomness extraction",
+      "authors": "Bartosz Regula, Hao-Chung Cheng",
+      "takeaway": "The paper claims to precisely determine the optimal scaling of the error of quantum privacy amplification in several regimes using techniques relating the problem to hypothesis testing tasks with quadratic constraints.",
+      "brief": "The authors introduce techniques for studying randomness extraction against quantum side information by relating it to hypothesis testing tasks with quadratic constraints. They report that their one-shot converse bound shows the leftover hash lemma to be tight up to a constant factor for strongly 4-universal hash functions, and they establish the exact strong converse exponent under 2-universal hash functions. The listing does not specify experimental datasets or computational benchmarks, and the results are theoretical bounds on error scaling.\n\nThe reported evidence consists of theoretical bounds matching or improving prior asymptotic results, such as the bound of Dupuis and classical results of Hayashi. The authors state that their strong converse achievability and converse bounds match up to a constant factor. No empirical measurements, specific numerical error rates, or finite-size parameter values are provided in the abstract.\n\nResearchers working on quantum information theory, specifically privacy amplification and randomness extraction, may find the theoretical bounds relevant. Those seeking experimental implementations or specific numerical security parameters for finite-size systems should note the abstract describes theoretical scaling and exponents rather than applied cryptographic protocols.",
+      "abstract": "We introduce techniques for the study of randomness extraction against quantum side information (privacy amplification) by relating this problem to variants of hypothesis testing tasks with quadratic constraints. Building also on the recently introduced measured smooth entropy approach of [Regula and Tomamichel, arXiv:2603.04493], we precisely determine the optimal scaling of the error of quantum privacy amplification in several regimes. Our results apply to the standard operational security criterion based on trace distance and focus in particular on universal classes of hash functions. On the technical side, our investigation reveals connections with operator space theory methods used in non-commutative Khintchine inequalities. As one application, we give a one-shot converse bound that shows the leftover hash lemma of [arXiv:2603.04493] to be tight up to a constant factor for all strongly 4-universal hash functions. This allows us to evaluate the asymptotic i.i.d. error exponent of universal randomness extraction for all rates, matching the bound of [Dupuis, arXiv:2105.05342] and improving also earlier classical asymptotic results of [Hayashi, arXiv:1010.1358]. We furthermore give new one-shot achievability and converse bounds on the error in the strong converse regime, which we show to match up to a constant factor. This establishes the exact strong converse exponent of quantum privacy amplification under 2-universal hash functions, complementing the converse bound of [Shen, Gao, and Cheng, arXiv:2202.10263].",
+      "takeaways": [
+        "The object is the optimal error scaling and exponents for quantum privacy amplification using universal hash functions.",
+        "The visible limit is that the results are theoretical bounds and exponents, with no empirical data or finite-size numerical values provided in the listing.",
+        "The artifact status is not established in the listing, as no code, dataset, or repository is mentioned."
+      ],
+      "plain": {
+        "reported": "The authors report that their mathematical limit shows a previous rule for generating random numbers to be nearly exact for a specific type of randomizing function.",
+        "brief": "The authors create new mathematical tools to study how to generate secure random numbers when an eavesdropper has quantum information. They report that their new limit proves a previous rule is nearly perfect for a certain class of randomizing functions, and they find the exact rate at which errors grow in another scenario. The listing does not mention any computer experiments or real-world data, and the results are about theoretical error limits.\n\nThe evidence is made of mathematical proofs that match or improve older theoretical results. The authors say their new limits for the error rate match previous work up to a fixed multiplier. The abstract does not give any specific numbers for error rates or system sizes.\n\nPeople studying the math of quantum security and random number generation might find these theoretical limits useful. People looking for ready-to-use software or specific numbers for building a physical system should note that the abstract talks about theory, not practical tools.",
+        "takeaways": [
+          "The subject is the best possible error limits for making secure random numbers in quantum settings.",
+          "The clear limit is that the results are math proofs, with no real-world data or specific numbers in the summary.",
+          "It is not stated in the summary if there is any code or data available."
+        ]
+      },
+      "actions": [
+        "Verify the specific mathematical definitions of the hypothesis testing variants and quadratic constraints in the full PDF to confirm the scope of the bounds.",
+        "Check the full text for any finite-size numerical examples or parameter regimes where the constant factor tightness is quantified."
+      ],
+      "intake": "arXiv",
+      "tags": [
+        "quant-ph",
+        "cs.IT",
+        "math-ph",
+        "math.IT",
+        "math.MP"
+      ],
+      "listing": {
+        "listedOn": "2026-11-26",
+        "publishedOn": "2026-11-26",
+        "intakes": [
+          {
+            "kind": "arxiv-new",
+            "evidenceUrl": "https://arxiv.org/abs/2611.33270"
+          }
+        ]
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Strongest Physics signal in the eligible pool",
+        "signals": {
+          "hfListed": false,
+          "hfVotes": 0,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-26"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-26T22:56:31.128Z"
+      }
+    }
+  ]
+}
