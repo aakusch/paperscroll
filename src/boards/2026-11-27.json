@@ -1,0 +1,717 @@
+{
+  "date": "2026-11-27",
+  "label": "Fri, Nov 27",
+  "minutes": 10,
+  "poolSize": 21,
+  "live": true,
+  "selection": {
+    "version": "balanced-source-v1",
+    "generatedAt": "2026-11-27T22:15:46.580Z",
+    "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+    "packetBasis": "title-and-abstract"
+  },
+  "papers": [
+    {
+      "id": "2611.34051",
+      "arxivId": "2611.34051",
+      "url": "https://arxiv.org/abs/2611.34051",
+      "topic": "AI",
+      "reported": "The authors report that their proposed method boosts the 128K average RULER score by 6.80 points in the recurrent setting compared to GDN-2.",
+      "metrics": [
+        "128K average RULER score by 6.80 points",
+        "average accuracy across nine downstream tasks by 0.62 points",
+        "~1.6B parameter models"
+      ],
+      "title": "Stable Gated DeltaNet-2: Understanding and Mitigating Recurrent State Instability",
+      "authors": "Xichong Zhang, Xixuan Hao, Zhichen Liu, Le Zhou, Zeyu Zhang, Boyu Chen, Mingfei Lu, Zehao Lin, Bo Tang, Yonggang Zhang, Linyun Liu, Feiyu Xiong, Jianlin Su, Zhiyu Li",
+      "takeaway": "The paper claims to mitigate recurrent state instability in Gated DeltaNet-2 by employing symmetric erasure and decay-regulated residual writing to ensure stable training and improved long-context retrieval.",
+      "brief": "The authors propose a modification to Gated DeltaNet-2 that uses symmetric erasure and decay-regulated residual writing to prevent exponential state growth during long-context training.\n\nThey report that this approach achieves stable training on ~1.6B parameter models, improving the 128K average RULER score by 6.80 points in the recurrent setting and average accuracy across nine downstream tasks by 0.62 points in the hybrid setting. The listing does not specify the exact dataset names for the nine downstream tasks or the specific hardware used for these experiments.\n\nResearchers working on linear attention mechanisms or long-context model stability may find the theoretical O(T) bound and empirical stability results relevant. Those not focused on recurrent state dynamics or specific GDN-2 architectures may find the specialized focus less applicable to their current work.",
+      "abstract": "Linear attention offers an efficient solution for long-sequence modeling via linear complexity and fixed-size recurrent states. Gated DeltaNet-2 (GDN-2) introduces independent channel-wise control over erasure and writing, enhancing state-update expressiveness and in-context retrieval, yet it suffers from training failures during long-context training. We trace these failures to the asymmetry between reading and modification directions during erasure, which yields non-normal erase operators whose directional gains accumulate across tokens, triggering exponential state growth even without new writes. To resolve this, we propose , employing symmetric erasure to ensure non-expansive state propagation and decay-regulated residual writing to preserve writing flexibility. Theoretically, we establish an O(T) upper bound on recurrent state growth while retaining chunkwise parallel computation. Experiments on ~1.6B parameter models show that achieves stable training alongside improved long-context retrieval. Compared to GDN-2, it boosts the 128K average RULER score by 6.80 points in the recurrent setting and average accuracy across nine downstream tasks by 0.62 points in the hybrid setting.",
+      "takeaways": [
+        "The core object is a stability fix for the Gated DeltaNet-2 architecture, specifically targeting the asymmetry between reading and modification directions during erasure.",
+        "A visible limit is that the reported improvements are measured on ~1.6B parameter models, leaving the scalability of this stability fix to much larger foundation models unverified in this listing.",
+        "The artifact status is unclear as no code repository or specific implementation details are provided in the supplied metadata, requiring verification of the theoretical claims against actual code."
+      ],
+      "plain": {
+        "reported": "The authors state that their new method improves a specific long-context benchmark score by 6.80 points compared to the previous version of the model.",
+        "brief": "The researchers suggest a way to fix a problem where a type of AI model becomes unstable when processing very long texts. They change how the model deletes and writes information in its memory to keep it stable.\n\nThey tested this on models with about 1.6 billion parameters. They found that their method made the training stable and improved scores on a long-context test by 6.80 points. They also saw a small improvement of 0.62 points on average across nine other tasks. The text does not list the names of those nine tasks or the computer hardware used.\n\nPeople who build AI models that need to handle very long documents might find this useful. People who do not work on this specific type of model architecture might not need to look at it closely.",
+        "takeaways": [
+          "The main thing being fixed is a stability issue in a specific AI model design called Gated DeltaNet-2.",
+          "The tests were done on relatively small models, so it is not yet known if this fix works for very large AI models.",
+          "There is no link to the code or detailed instructions in the summary, so you would need to read the full paper to see how it works."
+        ]
+      },
+      "actions": [
+        "Verify the theoretical O(T) upper bound on recurrent state growth by checking the mathematical proofs in the full PDF against the stated assumptions of symmetric erasure.",
+        "Inspect the full paper to identify the specific nine downstream tasks used for the hybrid setting evaluation and confirm the exact benchmark configurations for the RULER score."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-27",
+        "publishedOn": "2026-11-25",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.34051",
+            "upvotes": 126
+          }
+        ]
+      },
+      "trend": {
+        "votes": 126,
+        "rank": 1,
+        "of": 18,
+        "perDay": 63
+      },
+      "automation": {
+        "rank": 1,
+        "version": "balanced-source-v1",
+        "reason": "Strongest AI signal in the eligible pool",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 126,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-27T22:15:46.580Z"
+      }
+    },
+    {
+      "id": "2611.34232",
+      "arxivId": "2611.34232",
+      "url": "https://arxiv.org/abs/2611.34232",
+      "topic": "AI",
+      "reported": "The authors report that Claude Opus 5.5 reached 68.5% average success on the v1 release, trailing the 77.3% human reference by 8.8 points.",
+      "metrics": [
+        "67.54 interaction steps",
+        "15.0 steps",
+        "68.5% average success"
+      ],
+      "title": "OS-Omni: Benchmarking Generalist Computer-Using Agents on Long-Horizon Workflows Across Platforms",
+      "authors": "Hui Shen, Yunta Hsieh, Jianing Ma, Zhuoran Yin, Zhuhan Bao, Ziyuan Liu, Qi Han, Xiuqi Xu, Xianbang Wang, Wenhao Chai, Sihan Xu, Chenyang Zhao, Yanheng Shang, Dongfu Jiang, Rui Sun, Xingzhi Li, Chenqi Yin, Zesen Zhao, Boyuan Zheng, Jisen Li, Xiaoxia Wu, Ruoyan Zhang, Ruiyao Liu, Jing Xiong, He Xiao, Nan Zheng, Hangxiang Chen, Shengyang Tao, Deyang Luorong, Yifeng Liu, Jingxuan Zhang, Chaofan Tao, Yuren Wang, Jiaqi Mo, Rui Hu, Xing Wei, Xiaofeng Liu, Xin Xu, Han Wu, Mengyao Wen, Guobin Zhang, Shatong Zhu, Hei Ting Una Chan, Sicheng Chen, Kai Zhang, Mengkang Hu, Zhongwei Wan, Xin Wang, Chuanyang Zheng, Ziheng Zhang, Hengyuan Zhang, Zunhai Su, Kanzhi Cheng, Dehan Kong, Yian Wang, Hanrong Zhang, Jiawei Lu, Yifan Zhang, Junnan Li, Changyi Yang, Jintao Qu, Wenyao Gao, Jiaxuan Luo, Jiaxin Deng, Yuhao Chen, Xuesong Ye, Jingwen Gu, Yichi Zhang, Qun Lou, Shen Yan, Ben Athiwaratkun, Qiushi Sun, Mi Zhang, Ping Luo, Wenhu Chen, Ngai Wong",
+      "takeaway": "The paper introduces OS-Omni, a live cross-platform benchmark and execution environment for evaluating computer-using agents across Windows, Ubuntu, macOS, iOS, Android, and Web environments.",
+      "brief": "The authors present OS-Omni as a benchmark for generalist computer-using agents that must execute long-horizon workflows spanning multiple operating systems and persistent application states. The v1 release contains 48 tasks per platform and 12 cross-platform workflows, with human studies showing tasks require 67.54 interaction steps, substantially exceeding OSWorld references of 15.0 steps.\n\nThe strongest evaluated agent, Claude Opus 5.5, reached 68.5% average success, trailing the 77.3% human reference by 8.8 points. The gap is uneven across platforms, with frontier models exceeding humans on Linux but trailing them by more than 25 points on iOS and macOS. The authors state these results indicate current agents remain far from platform-robust, long-horizon computer use.\n\nResearchers evaluating cross-platform agent capabilities may find the benchmark relevant. Those focused on isolated single-platform GUI actions or non-computer-using agents may find the scope mismatched. The listing does not specify whether the reported results are reproducible without the live environment or if the code repository contains the full evaluation harness.",
+      "abstract": "Computer-using agents are increasingly expected to complete realistic user goals rather than isolated GUI actions. However, existing benchmarks typically isolate web, mobile, or desktop environments, leaving it unclear whether a single generalist agent can execute long-horizon workflows that span multiple operating systems and persistent application states. We introduce OS-Omni, a live cross-platform benchmark and execution environment for evaluating computer-using agents across Windows, Ubuntu, macOS, iOS, Android, and Web environments. OS-Omni is released in versioned waves of 300 tasks each; this paper focuses on the first release, v1, which contains 48 tasks per platform and 12 cross-platform workflows that pair a desktop with an Android phone. OS-Omni provides reproducible initialization, platform-specific adapters, trajectory logging, and executable final-state evaluators, and includes controlled service-backed applications for workflows involving account, cart, budget, calendar, message, and other persistent state. Human studies show that OS-Omni tasks require 67.54 interaction steps, substantially exceeding OSWorld references of 15.0 steps. On v1, the strongest evaluated agent, Claude Opus 5.5, reaches 68.5% average success, trailing the 77.3% human reference by 8.8 points; the gap is uneven across platforms, with frontier models exceeding humans on Linux but trailing them by more than 25 points on iOS and macOS. These results indicate that current agents remain far from platform-robust, long-horizon computer use, especially when success requires sustained state tracking and durable final-state changes.",
+      "takeaways": [
+        "The object is a live cross-platform benchmark and execution environment for computer-using agents, not a static dataset or a single agent model.",
+        "A visible limit is the uneven performance gap across platforms, with agents trailing humans by more than 25 points on iOS and macOS, suggesting platform-specific robustness issues.",
+        "The artifact status is a released benchmark with a declared code repository, but the listing does not confirm whether the repository contains the full evaluation harness or live environment setup."
+      ],
+      "plain": {
+        "reported": "The authors report that the best AI model they tested, Claude Opus 5.5, succeeded in 68.5% of the tasks, which is 8.8 percentage points lower than the 77.3% success rate of human participants.",
+        "brief": "The authors created a test suite called OS-Omni to see if AI agents can perform long, complex tasks that involve using multiple different computer systems, like Windows, Mac, and phones, at the same time. The first version of this test has 48 tasks for each type of system and 12 tasks that require using a desktop computer and an Android phone together. Humans took an average of 67.54 steps to complete these tasks, which is much more than the 15.0 steps needed for similar tasks in a previous test called OSWorld.\n\nThe best AI model they tested, Claude Opus 5.5, got the right answer 68.5% of the time. This is 8.8 percentage points lower than the 77.3% success rate of humans. The AI did better than humans on Linux computers but much worse on iPhones and Macs, where it was more than 25 percentage points behind. The authors say this shows that current AI agents are not yet good enough to reliably use computers across different platforms for long, complex tasks.\n\nPeople who study how well AI can use computers across different systems might find this test useful. People who only care about AI using one specific type of computer or who are not interested in AI agents might not find it relevant. The description does not say if you can run the tests yourself without the live system or if the code on GitHub has everything needed to run the tests.",
+        "takeaways": [
+          "The thing being described is a live test suite for AI agents that use computers, not a list of pre-recorded tasks or a specific AI model.",
+          "A clear weakness is that the AI models did much worse on iPhones and Macs than on Linux computers, showing they are not equally good at using all types of systems.",
+          "The test suite is available with a code link, but it is not clear from the description if the code includes everything needed to run the tests or if you need the live system."
+        ]
+      },
+      "actions": [
+        "Verify the declared code repository at https://github.com/OS-Copilot/OS-Omni to confirm it contains the full evaluation harness and live environment setup.",
+        "Check the PDF for details on how the 12 cross-platform workflows are evaluated and whether the 68.5% success rate for Claude Opus 5.5 is reproducible without the live environment."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/OS-Copilot/OS-Omni",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-27",
+        "publishedOn": "2026-11-25",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.34232",
+            "upvotes": 102
+          }
+        ]
+      },
+      "trend": {
+        "votes": 102,
+        "rank": 2,
+        "of": 18,
+        "perDay": 51
+      },
+      "automation": {
+        "rank": 2,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 102,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-27T22:15:46.580Z"
+      }
+    },
+    {
+      "id": "2611.34813",
+      "arxivId": "2611.34813",
+      "url": "https://arxiv.org/abs/2611.34813",
+      "topic": "AI",
+      "reported": "The authors report that three closed-model coding agents score 0.923, 0.894, and 0.893 on VBVR-Pro-Bench, each exceeding the strongest video model by more than 0.22.",
+      "metrics": [
+        "0.923",
+        "0.894",
+        "0.893"
+      ],
+      "title": "Solve Vision with Code: Coding Agents Are Stronger Visual Reasoners Than Video Models",
+      "authors": "Dezhi Luo, Fengyuan Yu, Haotian Zhang, Zehong Zhao, Ran Ji, Siyuan An, Huayi Qin, Qingying Gao, Zhongang Cai, Lei Yang, Ziqi Huang, Ruisi Wang, Maijunxian Wang, Hokin Deng",
+      "takeaway": "Coding agents are stronger visual reasoners than video models for tasks solvable from a first frame and prompt.",
+      "brief": "The authors claim that program synthesis is a more reliable route to visual reasoning than video generation for specific task types. They report that coding agents outperform video models on VBVR-Pro-Bench, with the best agent scoring 0.923. The listing does not establish whether these results generalize beyond the specific benchmark or task categories tested.\n\nThe evidence is limited to a 500-instance suite with symbolic ground truth. The authors distinguish between depictive and propositional programs but do not provide code or further validation in the listing. The comparison relies on identical inputs and evaluators, but the generalizability to non-symbolic or open-ended visual tasks is not addressed.\n\nResearchers working on visual reasoning benchmarks or coding agents may find the comparative methodology relevant. Those focused solely on video generation without symbolic evaluation needs may find the specific benchmark constraints limiting.",
+      "abstract": "Video generation models are increasingly evaluated as visual reasoners: given a first frame and a natural-language prompt, can the model produce the video in which the specified task is carried out? The paradigm is considered advantageous because the reasoning is native to the visual medium, unfolding directly in the frames rather than through language or code. Whether this native route is in fact the more reliable path to visual reasoning has not been tested against a symbolic alternative under the same conditions. We therefore pose the same tasks, with identical inputs, output specification and evaluator, to both media: rather than denoising pixels, a coding agent writes a program that renders the answer video, which an unmodified rule-based evaluator scores. On VBVR-Pro-Bench (Xu et al., 2026), a 500-instance suite spanning five cognitive categories with symbolic ground truth, the agent receives the same first frame and prompt as the video model, with no access to ground truth, metadata or generation models, and one attempt per instance. Three closed-model agents (Codex with gpt-6-astra, Claude Code with Fable 5.1 and Gemini CLI with Gemini 3.1 Pro) score 0.923, 0.894 and 0.893, each more than 0.22 above the strongest video model. Among 23 runnable open-weight models, the best, GLM-5, reaches 0.572, above all video models except the RL-trained one. Together, we show that for tasks whose solutions can be computed from a first frame and a prompt, program synthesis is currently a substantially more reliable route to visual reasoning than video generation. We further distinguish depictive programs, which navigate the image to recover a transferable scheme, from propositional programs, which operate on hard-coded values, revealing how visual reasoning unfolds in agent-written programs and what it implies for its nature of reasoning in general.",
+      "takeaways": [
+        "The object is a comparative study between coding agents and video models on visual reasoning tasks.",
+        "A visible limit is the reliance on symbolic ground truth and a specific 500-instance benchmark.",
+        "The artifact status is not established in the listing, as no code or repository is declared."
+      ],
+      "plain": {
+        "reported": "The authors report that three closed-model coding agents achieved scores of 0.923, 0.894, and 0.893 on a benchmark called VBVR-Pro-Bench, which is higher than the best video model by more than 0.22 points.",
+        "brief": "The authors claim that writing code to generate images is a better way to solve visual puzzles than using AI video generators. They show that coding tools scored higher than video tools on a specific test set. The listing does not say if this holds true for other types of visual problems or real-world scenarios.\n\nThe test used 500 specific problems with known correct answers. The authors describe two types of code programs but do not share the code itself in this summary. The comparison is fair because both types of AI used the same starting images and instructions, but it is unclear if this works for problems without clear numerical answers.\n\nPeople studying how AI solves visual puzzles or how coding tools work might find this useful. People only interested in creating videos for artistic purposes might find the specific test conditions too narrow.",
+        "takeaways": [
+          "The paper compares coding AI and video AI on visual puzzle solving.",
+          "The test only covers problems with clear, symbolic answers.",
+          "It is not stated whether the code or test tools are available to the public."
+        ]
+      },
+      "actions": [
+        "Verify the full PDF to confirm the specific task categories and evaluator details.",
+        "Check if the authors have released the benchmark or evaluation code for independent replication."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-27",
+        "publishedOn": "2026-11-25",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.34813",
+            "upvotes": 59
+          }
+        ]
+      },
+      "trend": {
+        "votes": 59,
+        "rank": 3,
+        "of": 18,
+        "perDay": 30
+      },
+      "automation": {
+        "rank": 3,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 59,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-27T22:15:46.580Z"
+      }
+    },
+    {
+      "id": "2611.31619",
+      "arxivId": "2611.31619",
+      "url": "https://arxiv.org/abs/2611.31619",
+      "topic": "AI",
+      "reported": "The authors report that GIFT-Eval resolves 6.8 rank places, and its displayed neighbours sit 0.91 apart.",
+      "metrics": [
+        "GIFT-Eval resolves 6.8 rank places",
+        "displayed neighbours sit 0.91 apart",
+        "reversed 43 top-ten pairs"
+      ],
+      "title": "What a Forecasting Leaderboard Can Establish: Resolution Reporting for Zero-Shot Time-Series Models",
+      "authors": "Arya Sikder, Sriram Pillutla",
+      "takeaway": "The paper introduces Vernier, a tool that computes the resolution of public time-series forecasting leaderboards to determine how small a difference their datasets can detect.",
+      "brief": "The authors claim that existing leaderboards do not state how small a difference their datasets can detect, a quantity they define as the board's resolution. They introduce Vernier to compute this from published files and report that GIFT-Eval resolves 6.8 rank places while its neighbours sit 0.91 apart. They also note that across four boards, rules ranking against the pool reversed 43 top-ten pairs without rerunning entries.\n\nThe strongest reported result is that GIFT-Eval resolves 6.8 rank places, with displayed neighbours 0.91 apart. The authors state that the top ten of this board holds fewer than two resolvable steps. They report that shortening history raised the error of three of four open models on 70 configurations, with two increasing by 15%. The listing does not establish whether these findings generalize to all time-series models or other board types.\n\nResearchers evaluating time-series foundation models or designing benchmarking protocols should open this paper to understand resolution limits. Those not concerned with leaderboard statistical power or zero-shot forecasting evaluation may ignore it.",
+      "abstract": "A foundation model for time series is pretrained once and then asked to forecast series it has never seen, so the evidence for it is its score on held-out datasets. Such datasets are scarce, and a few public leaderboards carry most comparisons, yet none of them states how small a difference its datasets can detect. We call that quantity the resolution of a board and introduce Vernier, a tool that computes it from the files a board already publishes. Vernier also reports which entries a board cannot separate from its leader and whether its order changes when unrelated parties submit. GIFT-Eval resolves 6.8 rank places, and its displayed neighbours sit 0.91 apart. The ten places of its top ten hold fewer than two resolvable steps. fev-bench, Chronos Benchmark II and TIME show the same pattern: their resolution is 3.6 to 19 times the gap between neighbours. With each of its 2,554 series as an independent source, BOOM is the one board that resolves its top ten. Below the resolution the order depends on who else submitted: across four boards, rules that rank against the pool reversed 43 top-ten pairs with neither entry rerun, in one update in seven. Boards also do not record how much history a model receives. On 70 configurations, shortening it raised the error of three of four open models, two of them by 15%. We release Vernier, which runs this report with one command on any leaderboard that publishes per-dataset scores: https://github.com/therealram18/vernier",
+      "takeaways": [
+        "The object is a diagnostic tool for leaderboard resolution, not a new forecasting model.",
+        "A visible limit is that the analysis depends on boards publishing per-dataset scores, which may not be universal.",
+        "The artifact is a released code repository, but the listing does not confirm its completeness or maintenance status."
+      ],
+      "plain": {
+        "reported": "The authors report that the GIFT-Eval leaderboard can distinguish between models that are 6.8 ranking positions apart, while the models shown next to each other are only 0.91 units apart in score.",
+        "brief": "The authors argue that current leaderboards for predicting time-series data do not explain how small a difference in performance they can actually detect. They created a tool called Vernier to calculate this detection limit using data already published by these leaderboards. They found that the GIFT-Eval leaderboard can detect differences of 6.8 ranking spots, but the models listed next to each other are only 0.91 score units apart. They also found that in four leaderboards, the ranking of the top ten models changed 43 times just because other models were added, without re-testing the original models.\n\nThe main finding is that the GIFT-Eval leaderboard can distinguish models 6.8 ranking positions apart, but the models displayed next to each other are only 0.91 score units apart. The authors state that the top ten models on this board are so close that there are fewer than two detectable steps between them. They also report that when they tested 70 different settings, reducing the amount of historical data given to the models increased the error for three out of four open-source models, with two models seeing a 15% increase in error. The provided text does not say if these results apply to all types of forecasting models or all leaderboards.\n\nPeople who study or use models that predict future values from historical data should look at this paper to understand the limits of current ranking systems. People who are not interested in the statistical reliability of these rankings or in how zero-shot forecasting models are evaluated can skip this paper.",
+        "takeaways": [
+          "The paper is about a tool that checks how reliable the rankings on forecasting leaderboards are, not about creating a new forecasting model.",
+          "A limitation is that the tool only works on leaderboards that publish detailed scores for each dataset, which may not be common.",
+          "The authors released code for the tool, but the listing does not confirm if the code is complete or still being updated."
+        ]
+      },
+      "actions": [
+        "Verify the GitHub repository URL and check if the code runs on the specific leaderboards mentioned in the abstract.",
+        "Read the full PDF to confirm the exact definitions of 'resolution' and 'rank places' used in the calculations."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/therealram18/vernier",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-27",
+        "publishedOn": "2026-11-23",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.31619",
+            "upvotes": 57
+          }
+        ]
+      },
+      "trend": {
+        "votes": 57,
+        "rank": 4,
+        "of": 18,
+        "perDay": 14
+      },
+      "automation": {
+        "rank": 4,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 57,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-27T22:15:46.580Z"
+      }
+    },
+    {
+      "id": "2611.34457",
+      "arxivId": "2611.34457",
+      "url": "https://arxiv.org/abs/2611.34457",
+      "topic": "AI",
+      "reported": "The authors report that proxies improve spatiotemporal control, while greater proxy detail can coincide with poorer completion, measured on five video generators using verified, case-specific checklists.",
+      "metrics": [
+        "312 evaluation cases",
+        "60 scenes"
+      ],
+      "title": "ProxyGenBench: Benchmarking Proxy-Guided Video Generation",
+      "authors": "Zhenchen Tang, Haolin Lu, Songlin Yang, Xiaotong Zhao, Ran Zhang, Bo Peng, Shuai Li, Haotian Fan, Haobin Zhong, Yanni Zhang, Songlian Li, Ning Zhang, Xun Gao, Alan Zhao, Jing Dong",
+      "takeaway": "The paper introduces ProxyGenBench to study proxy-guided video generation requirements, including structure preservation, content completion, and condition binding.",
+      "brief": "The authors propose a benchmark for evaluating how video generators use structural proxies to control scene layout, motion, and event order. They define three core requirements: preserving intended structure, completing missing content while correcting artifacts, and binding multimodal conditions to the correct entities. The benchmark includes 312 evaluation cases derived from 60 scenes across three scene tasks, with controlled variations in proxy fidelity and input detail.\n\nExperiments on five video generators show that proxies improve spatiotemporal control. However, the authors report that greater proxy detail can coincide with poorer completion, and strong structural adherence does not ensure correct binding. The listing does not specify quantitative performance scores or statistical significance for these findings, only the directional trends observed in the checklist evaluations.\n\nResearchers working on controllable video generation or multimodal conditioning may find the benchmark useful for testing structural adherence versus detail completion. Those focused solely on photorealistic quality without structural control constraints may find the specific proxy-guided evaluation criteria less relevant to their immediate goals.",
+      "abstract": "Recent video generators produce realistic videos, yet controlling how scenes unfold remains challenging. Structural proxies, such as animated 3D blockouts, guide generation by specifying scene layout, motion, camera behavior, and event order. However, these coarse inputs leave details unspecified and may contain artifacts that should not be reproduced. Successful proxy-guided generation must therefore Preserve intended structure, Complete missing content and correct proxy artifacts, and Bind text, image, and audio conditions to the right entities and events. We introduce ProxyGenBench to study these interacting requirements, with 312 evaluation cases from 60 scenes across three scene tasks and controlled variations in proxy fidelity, text detail, and multimodal inputs. We evaluate five video generators using verified, case-specific checklists. Experiments show that proxies improve spatiotemporal control, but greater proxy detail can coincide with poorer completion, while strong structural adherence does not ensure correct binding.",
+      "takeaways": [
+        "The object is a benchmark with 312 cases and 60 scenes designed to test proxy-guided video generation.",
+        "A visible limit is that the listing reports directional trends (e.g., detail vs. completion) without providing specific numerical accuracy scores or error rates.",
+        "The artifact status is indicated by a declared GitHub repository URL, but the listing does not confirm the availability of code, data, or model weights."
+      ],
+      "plain": {
+        "reported": "The authors state that using rough 3D models as guides helps control the timing and position of objects in videos, but adding more detail to these guides can lead to less complete final videos, as measured by checking five different video creation tools against specific lists of requirements.",
+        "brief": "The paper creates a test set to check if AI video tools can follow rough 3D blueprints. These blueprints show where things should be and how they should move, but they do not show fine details. The test checks if the AI keeps the right structure, fills in missing details, and fixes errors in the blueprint, and if it correctly matches text and sound to the right objects. The test set has 312 examples from 60 different scenes.\n\nThe authors found that the blueprints help control where and when things happen. However, they also found that more detailed blueprints sometimes result in less complete videos. Also, following the structure well does not mean the AI correctly matches the text or sound to the right objects. The summary does not give specific scores or percentages for these results.\n\nPeople who build AI video tools that need to follow specific layouts or storyboards might find this test useful. People who only care about making videos look realistic without needing to control specific movements or layouts might not find this test as helpful.",
+        "takeaways": [
+          "The main item is a test set with 312 examples and 60 scenes for checking AI video tools that use 3D blueprints.",
+          "A clear limitation is that the summary says trends were found but does not list the specific numbers or scores from the tests.",
+          "The summary lists a website link for the project, but it does not say if the actual files, code, or data are available for download."
+        ]
+      },
+      "actions": [
+        "Verify the declared GitHub repository to confirm the availability of the benchmark dataset, evaluation scripts, and case-specific checklists.",
+        "Check the full paper for the specific quantitative metrics used in the 'verified, case-specific checklists' to understand how 'poorer completion' and 'correct binding' were measured numerically."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/2kxx/ProxyGenBench",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-27",
+        "publishedOn": "2026-11-25",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.34457",
+            "upvotes": 36
+          }
+        ]
+      },
+      "trend": {
+        "votes": 36,
+        "rank": 5,
+        "of": 18,
+        "perDay": 18
+      },
+      "automation": {
+        "rank": 5,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 36,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-27T22:15:46.580Z"
+      }
+    },
+    {
+      "id": "2611.34290",
+      "arxivId": "2611.34290",
+      "url": "https://arxiv.org/abs/2611.34290",
+      "topic": "AI",
+      "reported": "The authors report that StateWeaver outperforms existing methods and produces long videos with sustained cross-shot consistency under predefined and autonomously planned storyboards.",
+      "metrics": [],
+      "title": "StateWeaver: Multi-Agent Coordination of Story-State Transitions for Long-Horizon Video Generation",
+      "authors": "Modi Jin, Xuying Zhang, Yijing Guo, Haoran Li, Yanwen Ma, Jing Wang, Chenyu Ge, Ming-Ming Cheng, Haoyang Huang",
+      "takeaway": "StateWeaver combines Active States and Hierarchical Collaboration to connect review-driven visual reference updates with cross-shot state inheritance for long-horizon video generation.",
+      "brief": "The authors propose StateWeaver, a multi-agent coordination framework designed to handle story-state transitions in long-horizon video generation. It uses Active States to translate review-identified discrepancies into visual asset requirements and Hierarchical Collaboration to isolate execution contexts by task, clip, and repair round.\n\nThe authors state that the method outperforms existing methods across multiple benchmarks, producing long videos with sustained cross-shot consistency. They note that existing agentic workflows struggle because continual planning accumulates context and reference updates remain limited. The listing does not specify which benchmarks were used or provide quantitative performance figures.\n\nResearchers working on long-form video generation, multi-agent systems, or state consistency in generative models may find this relevant. Those focused on short-clip generation or non-agentic pipelines may find it less applicable. The lack of specific benchmark names or numerical results in the abstract limits immediate assessment of the magnitude of improvement.",
+      "abstract": "Modern video foundation models generate high-quality short clips, but preserving long-video consistency and correctly depicting event-driven state changes remain challenging. Existing agentic workflows face these challenges because continual planning and repair accumulate context, while reference updates remain limited. We introduce StateWeaver, which combines Active States and Hierarchical Collaboration to connect review-driven visual reference updates with cross-shot state inheritance. Active States translate state discrepancies identified during review into concrete visual asset requirements that guide reference construction, validation, and regeneration, preserving identity and already-correct content while repairing target attributes. Confirmed generation results are linked to the corresponding asset states, story time, and reference versions for verification and reuse by subsequent shots. Hierarchical Collaboration isolates execution contexts by task, clip, and repair round, and uses hierarchical memory to organize this process across multiple sets. Across multiple benchmarks, StateWeaver outperforms existing methods and produces long videos with sustained cross-shot consistency under predefined and autonomously planned storyboards.",
+      "takeaways": [
+        "The object is a multi-agent coordination system for long-horizon video generation that manages state transitions and reference updates.",
+        "A visible limit is the absence of specific benchmark names or quantitative metrics in the abstract, making it difficult to gauge the scale of reported improvements.",
+        "The artifact status is indicated by a declared GitHub repository URL, though the listing does not confirm the repository's content or availability."
+      ],
+      "plain": {
+        "reported": "The authors say their system works better than other methods and makes long videos where characters and scenes stay consistent across different shots, based on tests they ran.",
+        "brief": "The authors created a system called StateWeaver that helps computers make long videos. It uses a group of AI agents that work together to keep track of what is happening in the story and fix mistakes as they go. One part of the system looks at errors found during review and turns them into specific instructions for fixing the video assets. Another part organizes the work into separate tasks to keep things from getting confused.\n\nThe authors say their system is better than current methods and keeps videos consistent over long periods. They mention that other systems fail because they get overwhelmed by too much information and don't update their reference images well enough. The summary does not say exactly which tests they used or give any numbers to show how much better their system is.\n\nPeople who are trying to make long videos with AI or who are interested in how multiple AI agents can work together might find this useful. People who only care about making short video clips might not need this. Because the summary doesn't include specific test results or numbers, it is hard to know exactly how good the system is without reading the full paper.",
+        "takeaways": [
+          "This is a system for making long videos using multiple AI agents that work together to keep the story consistent.",
+          "The summary does not list specific tests or numbers, so it is hard to see how much better the system is compared to others.",
+          "The authors provide a link to a code repository, but the summary does not confirm if the code is complete or working."
+        ]
+      },
+      "actions": [
+        "Verify the specific benchmarks and quantitative results by reading the full PDF, as the abstract only claims outperformance without numerical evidence.",
+        "Check the declared GitHub repository to confirm the availability of code and any additional documentation or evaluation scripts."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/ghost233lism/StateWeaver",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-27",
+        "publishedOn": "2026-11-25",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.34290",
+            "upvotes": 27
+          }
+        ]
+      },
+      "trend": {
+        "votes": 27,
+        "rank": 6,
+        "of": 18,
+        "perDay": 14
+      },
+      "automation": {
+        "rank": 6,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 27,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-27T22:15:46.580Z"
+      }
+    },
+    {
+      "id": "2611.34693",
+      "arxivId": "2611.34693",
+      "url": "https://arxiv.org/abs/2611.34693",
+      "topic": "AI",
+      "reported": "The authors report that their 5B model sustains 480p generation at 16 fps with eight prepared futures on a single H100.",
+      "metrics": [
+        "480p generation at 16 fps",
+        "median input-to-display latency from 620 to 208 ms",
+        "restart empty ticks from 1.56% to 0.09%"
+      ],
+      "title": "ShowNow: Fine-Grained Speculative Streaming for Responsive World Models",
+      "authors": "Yiren Song, Guian Fang, Mike Zheng Shou",
+      "takeaway": "The paper introduces ShowNow, a fine-grained speculative streaming framework that uses computation available during playback to prepare action-conditioned futures before input arrives.",
+      "brief": "The authors propose a framework that prepares future video states during playback to reduce the delay between user actions and visual updates. They report that this approach reduces median input-to-display latency from 620 to 208 ms in ViZDoom compared to a native-block deployment. The listing notes measured trade-offs in visual fidelity and long-horizon consistency, but does not quantify these specific degradations.\n\nThe strongest reported result is a reduction in median input-to-display latency from 620 to 208 ms relative to the native-block SolarWM-FT deployment in ViZDoom. The authors also report that their 5B model sustains 480p generation at 16 fps with eight prepared futures on a single H100. The listing states that matched-policy experiments reduce restart empty ticks from 1.56% to 0.09%.\n\nResearchers working on interactive video generation or real-time world models may find the latency reduction metrics relevant. Those requiring strict guarantees on long-horizon visual consistency should verify the specific fidelity trade-offs mentioned in the abstract. The provided code repository link allows for direct inspection of the implementation.",
+      "abstract": "Interactive world models must generate video continuously while responding promptly to user actions. Real-time throughput alone leaves input latency unresolved: coarse generation blocks delay action updates, and generation after input adds work to the response path. We introduce ShowNow, a fine-grained speculative streaming framework that uses computation available during playback to prepare action-conditioned futures before input arrives. Single-latent commitment enables frequent decisions, while configurable preparation covers one to eight actions. We construct a matched multi-future dataset to train alternative continuations from a common state; shared-history tree execution and fused commitment make their preparation efficient. On a single H100, our 5B model sustains 480p generation at 16 fps with eight prepared futures. In ViZDoom, the complete ShowNow deployment reduces median input-to-display latency from 620 to 208 ms relative to the native-block SolarWM-FT deployment. Matched-policy experiments reduce restart empty ticks from 1.56% to 0.09% (94%) and improve on-time responses to action changes. These results establish complementary roles for fine-grained commitment and advance preparation, with measured trade-offs in visual fidelity and long-horizon consistency. ShowNow turns playback-time computation into responsive visual interaction. Project: https://github.com/showlab/ShowNow.",
+      "takeaways": [
+        "The object is a speculative streaming framework for interactive world models that prepares action-conditioned futures during playback.",
+        "A visible limit is the stated trade-off in visual fidelity and long-horizon consistency, which is not quantified in the listing.",
+        "The artifact status is established by the provided GitHub repository URL, though the listing does not confirm the completeness or stability of the code."
+      ],
+      "plain": {
+        "reported": "The authors report that their 5 billion parameter model can generate video at 480p resolution at 16 frames per second on a single H100 GPU.",
+        "brief": "The authors propose a system that prepares future video frames while the current video is playing, aiming to make the video respond faster to user inputs. They report that this system reduces the time from user input to visual display from 620 milliseconds to 208 milliseconds in the ViZDoom game environment. The listing mentions that there are trade-offs in visual quality and long-term consistency, but does not provide specific numbers for these issues.\n\nThe strongest result reported is the reduction in input-to-display latency from 620 to 208 milliseconds in ViZDoom. The authors also state that their model can sustain 480p video generation at 16 frames per second on a single H100 GPU. They report that their experiments reduce the percentage of empty ticks from 1.56% to 0.09%.\n\nPeople working on real-time video generation or interactive AI models might find the latency numbers useful. Those who need high visual quality over long periods should check the full paper for details on the quality trade-offs. The authors provide a link to their code on GitHub for further inspection.",
+        "takeaways": [
+          "The system is a method for generating video in real-time by preparing future frames during playback.",
+          "A limitation is that the system may have lower visual quality or consistency over long periods, though the extent is not specified in the listing.",
+          "The authors provide a link to their code, but the listing does not confirm if the code is complete or stable."
+        ]
+      },
+      "actions": [
+        "Verify the specific visual fidelity and long-horizon consistency trade-offs by examining the full PDF and associated figures.",
+        "Inspect the provided GitHub repository to confirm the availability of the 5B model weights and the ViZDoom evaluation scripts."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/showlab/ShowNow",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-27",
+        "publishedOn": "2026-11-25",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.34693",
+            "upvotes": 19
+          }
+        ]
+      },
+      "trend": {
+        "votes": 19,
+        "rank": 7,
+        "of": 18,
+        "perDay": 10
+      },
+      "automation": {
+        "rank": 7,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 19,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-27T22:15:46.580Z"
+      }
+    },
+    {
+      "id": "2611.34852",
+      "arxivId": "2611.34852",
+      "url": "https://arxiv.org/abs/2611.34852",
+      "topic": "AI",
+      "reported": "The authors report that the best-performing agent reached 57.04% overall coverage when evaluated on the benchmark.",
+      "metrics": [
+        "144 cases",
+        "44,102 rubrics",
+        "57.04% overall coverage"
+      ],
+      "title": "DRBench Pro: A Knowledge-Centric Benchmark for Professional Deep Research Agents",
+      "authors": "Han Huang, Yuchen Yan, Xingyu Wu, Yijun Li, Chao Deng, Jie Liu, Jin Ma, Yongliang Shen",
+      "takeaway": "The paper introduces DRBench Pro, a benchmark that makes structured knowledge coverage the primary evaluation target for deep research agents.",
+      "brief": "The authors propose a benchmark designed to evaluate how well deep research agents cover specific knowledge directions and explore them deeply. It uses automated pipelines to build knowledge trees from Wikipedia and generate research queries with evidence-grounded rubrics.\n\nThe authors report that 16 agents were evaluated, with the best reaching 57.04% overall coverage. They state that rubric judgments agree closely with human annotations and rankings remain stable. The listing does not specify the exact human agreement metric or the specific metric configurations tested.\n\nResearchers evaluating deep research agents may find this useful for measuring knowledge coverage. Those not focused on agent evaluation or knowledge tree structures may ignore it.",
+      "abstract": "Deep research agents gather information from multiple sources and synthesize it into reports on complex, open-ended questions. Existing benchmarks assess report quality along several dimensions, but lack a dedicated knowledge-centric evaluation of which research directions a report covers and how deeply it explores them. We introduce DRBench Pro, a benchmark that makes structured knowledge coverage the primary evaluation target. Our automated pipeline builds local knowledge trees from Wikipedia and uses sampled subgraphs to generate research queries and evidence-grounded rubrics. Each rubric corresponds to a relation in the tree, preserving the structure of the knowledge being evaluated. Agents receive only the research query. This structure allows us to measure breadth across major research directions and depth along related knowledge chains, with their geometric mean giving overall coverage. The benchmark includes 144 cases across 24 domains and 44,102 rubrics. Evaluating 16 deep research agents reveals different strengths in breadth and depth, with the best-performing agent reaching 57.04% overall coverage. Rubric judgments agree closely with human annotations, and agent rankings remain stable across the tested metric configurations.",
+      "takeaways": [
+        "The object is a benchmark for evaluating knowledge coverage in deep research agents.",
+        "The listing does not establish the specific quantitative measure of agreement between rubric judgments and human annotations.",
+        "The artifact status is a declared code repository at https://github.com/ZJU-REAL/DRBenchPro."
+      ],
+      "plain": {
+        "reported": "The authors report that the best-performing agent reached 57.04% overall coverage when evaluated on the benchmark.",
+        "brief": "The authors propose a benchmark designed to evaluate how well AI agents that gather information cover specific knowledge topics and explore them deeply. It uses automated tools to build knowledge structures from Wikipedia and generate research questions with grading criteria.\n\nThe authors report that 16 agents were evaluated, with the best reaching 57.04% overall coverage. They state that the automated grading criteria match human judgments closely and rankings remain stable. The listing does not specify the exact measure of agreement between automated and human judgments or the specific settings tested.\n\nResearchers evaluating AI agents may find this useful for measuring knowledge coverage. Those not focused on agent evaluation or knowledge structures may ignore it.",
+        "takeaways": [
+          "The object is a benchmark for evaluating knowledge coverage in AI research agents.",
+          "The listing does not establish the specific quantitative measure of agreement between automated and human judgments.",
+          "The artifact status is a declared code repository at https://github.com/ZJU-REAL/DRBenchPro."
+        ]
+      },
+      "actions": [
+        "Verify the human annotation agreement metric and stability details in the PDF.",
+        "Check the declared code repository for implementation details and data availability."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/ZJU-REAL/DRBenchPro",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-27",
+        "publishedOn": "2026-11-25",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.34852",
+            "upvotes": 17
+          }
+        ]
+      },
+      "trend": {
+        "votes": 17,
+        "rank": 8,
+        "of": 18,
+        "perDay": 9
+      },
+      "automation": {
+        "rank": 8,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 17,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-25"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-27T22:15:46.580Z"
+      }
+    },
+    {
+      "id": "2611.32238",
+      "arxivId": "2611.32238",
+      "url": "https://arxiv.org/abs/2611.32238",
+      "topic": "AI",
+      "reported": "The authors report that their system outperforms the strongest baseline by over 26 percentage points, reaching 98.4% success in randomized RoboTwin 2.0 scenes.",
+      "metrics": [
+        "over 26 percentage points",
+        "98.4% success",
+        "41.3% and 37.5%"
+      ],
+      "title": "Boundary-Aware Policy Learning for Agent-Orchestrated Robot Manipulation",
+      "authors": "Kaipeng Fang, Yuhao Wang, Ji Zhang, Yunsong Zhou, Jingkuan Song, Lianli Gao",
+      "takeaway": "The paper proposes Boundary-Aware Policy Learning to explicitly shape and expand the handoff boundary of visuomotor policies for agent-orchestrated robot manipulation.",
+      "brief": "The authors introduce a method to define and widen the specific start states from which a robot policy can be reliably invoked by a language model agent.\n\nThey report a 98.4% success rate on randomized RoboTwin 2.0 scenes, claiming this outperforms the strongest baseline by over 26 percentage points while reducing API cost and execution time. The listing does not specify the exact baseline model or the full set of evaluation metrics beyond the headline success rate and cost reductions.\n\nResearchers working on multi-agent robot control or policy generalization may find the boundary-expansion mechanism relevant. Those focused solely on single-agent policy optimization without orchestration may find the specific handoff protocol less applicable.",
+      "abstract": "Agent-orchestrated robot systems combine the general reasoning capability of multimodal agents with the precise physical control of learned visuomotor policies. Yet such systems often fail at the moment of handoff: a policy is reliable only from a limited set of start states, while the agent may invoke it outside this region. We call this region the policy's handoff boundary. Existing whole-task policies typically have handoff boundaries that are narrow and difficult for an agent to characterize, making reliable coordination challenging. We propose Boundary-Aware Policy Learning, which explicitly shapes and then expands the handoff boundary of a visuomotor policy. First, Boundary-Explicit Training fine-tunes the policy on contact segments with diverse start poses, yielding a wide and well-defined boundary that can be communicated to the agent through a simple handoff protocol. Second, Boundary-Expanding Self-Improvement retrains the policy on curated successful system rollouts, extending the boundary toward earlier stages of each task and allowing the agent to hand over sooner with fewer language-model calls. Across RoboTwin 2.0 and RoboDojo, our system outperforms the strongest baseline by over 26 percentage points, reaching 98.4% success in randomized RoboTwin 2.0 scenes, while further reducing its API cost and execution time by 41.3% and 37.5%, respectively. These results suggest that the key to robust agent-policy orchestration lies not only in improving either component individually, but also in explicitly shaping the boundary between them.",
+      "takeaways": [
+        "The core object is a training procedure that modifies the state-space region where a visuomotor policy is considered valid for agent invocation.",
+        "The listing highlights performance on RoboTwin 2.0 and RoboDojo but does not detail the specific failure modes of the baseline or the robustness of the boundary definition under distribution shift.",
+        "No code repository or dataset link is provided in the metadata, so the implementation details of the 'Boundary-Explicit Training' and 'Self-Improvement' phases are not directly verifiable from this listing."
+      ],
+      "plain": {
+        "reported": "The authors state that their system works better than the best competing method by more than 26 percentage points, achieving a 98.4% success rate in randomized scenes from the RoboTwin 2.0 benchmark.",
+        "brief": "The paper presents a way to teach a robot's control system exactly when a language model should take over, by making the robot's reliable starting positions clearer and wider.\n\nThe authors say this method gets a 98.4% success rate on a specific robot benchmark, beating the best other method by a large margin while also using less computing power and time. The summary does not explain exactly which other method was compared or how the 'reliable starting positions' were measured in detail.\n\nPeople building systems where a computer brain talks to a robot arm might find this useful. People only interested in making a single robot move better without a talking brain might not need this specific approach.",
+        "takeaways": [
+          "The main idea is a training trick that makes the robot's 'safe zone' for starting a task bigger and easier for the computer brain to understand.",
+          "The summary gives big success numbers but doesn't show how well the system handles unexpected situations or exactly how the 'safe zone' is defined mathematically.",
+          "There is no link to the code or data in this summary, so you cannot check the exact steps used to train the robot without reading the full paper."
+        ]
+      },
+      "actions": [
+        "Verify the specific baseline comparison and the definition of 'strongest baseline' by reviewing the full PDF methodology section.",
+        "Check the supplementary materials or repository for the exact protocol used to communicate the handoff boundary to the agent, as the abstract only mentions a 'simple handoff protocol'."
+      ],
+      "intake": "HF Daily",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-27",
+        "publishedOn": "2026-11-24",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.32238",
+            "upvotes": 7
+          }
+        ]
+      },
+      "trend": {
+        "votes": 7,
+        "rank": 9,
+        "of": 18,
+        "perDay": 2
+      },
+      "automation": {
+        "rank": 9,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 7,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-24"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-27T22:15:46.580Z"
+      }
+    },
+    {
+      "id": "2611.30483",
+      "arxivId": "2611.30483",
+      "url": "https://arxiv.org/abs/2611.30483",
+      "topic": "AI",
+      "reported": "The authors report that out of the box, the engines differ less in what a mistake destroys than in what they let you undo.",
+      "metrics": [
+        "22 canonical mistakes",
+        "792 cells",
+        "9,468 trials"
+      ],
+      "title": "When an AI agent makes a mistake in a database, what decides the damage?",
+      "authors": "Abdullah Kaya, Cevheri Bozoglan, Yusuf Gundogdu",
+      "takeaway": "The paper claims to identify whether the model, a guard layer, or the database engine itself decides the damage when an AI agent makes a mistake in a database.",
+      "brief": "The authors investigate what determines the damage when an AI agent makes a mistake in a database, specifically testing the roles of the model, a guard layer, and the database engine. They use two preregistered layers: one applying a frozen library of mistakes to relational engines, and another using a minimal tool-calling agent with small open-weight models across nine engines.\n\nThe strongest reported result is that engines differ less in what a mistake destroys than in what they let you undo. Three of seven preregistered hypotheses met their decision rule, while four did not. The authors note that post-hoc analyses are exploratory and uncorrected for multiple comparisons, and that one hypothesis was uninformative because agents never found the credential in its task.\n\nResearchers studying AI agent safety, database reliability, or error recovery mechanisms should open this paper to examine the preregistered experimental design and the specific engine behaviors. Those not interested in the intersection of AI agents and database engine recovery capabilities may ignore it.",
+      "abstract": "AI agents now run statements against production databases, and several of the incidents that followed deleted production data, which came back only through backups or the provider's help. We ask what decides the damage when such an agent makes a mistake: the model, a guard layer in front of the database, or the database engine itself. The study has two preregistered layers. In Layer A, a frozen library of 22 canonical mistakes is applied by script, with no model involved, to four relational engines under five permission arms and two recovery arms, followed by an engine-native recovery drill (792 cells; 874 drill runs including 10-minute repeats). In Layer B, a minimal tool-calling agent driven by six small open-weight models (4B to 12B parameters, plus one 35B mixture-of-experts model with about 3B active, served locally) works on tasks that contain hazards across nine engines: PostgreSQL, MySQL, SQLite, ClickHouse, Apache Cassandra, MongoDB, Valkey, Apache Kafka and OpenSearch (9,468 trials). A secondary run added MariaDB, Redis and Elasticsearch (2,916 trials); each behaved like its closest core engine. Out of the box, the engines differ less in what a mistake destroys than in what they let you undo. Three of the seven preregistered hypotheses met their decision rule: H2 (for one of nine damage classes) and H3 largely by construction of the arms, and H4 only under its original measure. Four did not; one of them (H5) was uninformative, because in its task the agents never found the credential. The post-hoc analyses (S1-S13) are exploratory and uncorrected for multiple comparisons; on PostgreSQL, MySQL, OpenSearch and ClickHouse the preregistered outcome and original-row loss disagree about G1. We report all of them, with every deviation from the preregistration and its timing.",
+      "takeaways": [
+        "The object is the comparative damage and recovery behavior of nine database engines under AI agent mistakes.",
+        "A visible limit is that post-hoc analyses are exploratory and uncorrected for multiple comparisons, and one hypothesis was uninformative due to agents failing to find credentials.",
+        "The artifact status is established by the declared code repository URL provided in the listing."
+      ],
+      "plain": {
+        "reported": "The authors report that out of the box, the engines differ less in what a mistake destroys than in what they let you undo.",
+        "brief": "The authors investigate what determines the damage when an AI agent makes a mistake in a database, specifically testing the roles of the model, a guard layer, and the database engine. They use two preregistered layers: one applying a frozen library of mistakes to relational engines, and another using a minimal tool-calling agent with small open-weight models across nine engines.\n\nThe strongest reported result is that engines differ less in what a mistake destroys than in what they let you undo. Three of seven preregistered hypotheses met their decision rule, while four did not. The authors note that post-hoc analyses are exploratory and uncorrected for multiple comparisons, and that one hypothesis was uninformative because agents never found the credential in its task.\n\nResearchers studying AI agent safety, database reliability, or error recovery mechanisms should open this paper to examine the preregistered experimental design and the specific engine behaviors. Those not interested in the intersection of AI agents and database engine recovery capabilities may ignore it.",
+        "takeaways": [
+          "The object is the comparative damage and recovery behavior of nine database engines under AI agent mistakes.",
+          "A visible limit is that post-hoc analyses are exploratory and uncorrected for multiple comparisons, and one hypothesis was uninformative due to agents failing to find credentials.",
+          "The artifact status is established by the declared code repository URL provided in the listing."
+        ]
+      },
+      "actions": [
+        "Verify the preregistered hypotheses and their decision rules against the PDF to confirm the reported outcomes.",
+        "Inspect the declared code repository to confirm the availability of the 22 canonical mistakes and the agent implementation."
+      ],
+      "intake": "HF Daily",
+      "github": "https://github.com/libredb/agent-blast-radius",
+      "tags": [
+        "cs.LG"
+      ],
+      "listing": {
+        "listedOn": "2026-11-27",
+        "publishedOn": "2026-11-23",
+        "intakes": [
+          {
+            "kind": "hf-daily",
+            "evidenceUrl": "https://huggingface.co/papers/2611.30483",
+            "upvotes": 4
+          }
+        ]
+      },
+      "trend": {
+        "votes": 4,
+        "rank": 10,
+        "of": 18,
+        "perDay": 1
+      },
+      "automation": {
+        "rank": 10,
+        "version": "balanced-source-v1",
+        "reason": "Next strongest source signal after field coverage",
+        "signals": {
+          "hfListed": true,
+          "hfVotes": 4,
+          "sourceCount": 1,
+          "publishedOn": "2026-11-23"
+        },
+        "packetBasis": "title-and-abstract",
+        "model": "/models/qwen38-27b/Qwen3.8-27B-Q4_K_M.gguf",
+        "generatedAt": "2026-11-27T22:15:46.580Z"
+      }
+    }
+  ]
+}
